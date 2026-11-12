@@ -1,0 +1,74 @@
+---
+permalink: api-automation/concept_workflow_space_issue.html 
+sidebar: sidebar 
+keywords: determine, space, issue, aggregate 
+summary: 'Vous pouvez utiliser les API du centre de données dans Active IQ Unified Manager pour surveiller la disponibilité et l"utilisation de l"espace dans vos volumes. Vous pouvez déterminer les problèmes d"espace dans votre volume et identifier les ressources de stockage surutilisées ou sous-utilisées.' 
+---
+= Déterminez les problèmes d'espace dans les agrégats à l'aide des API Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser les API du centre de données dans Active IQ Unified Manager pour surveiller la disponibilité et l'utilisation de l'espace dans vos volumes. Vous pouvez déterminer les problèmes d'espace dans votre volume et identifier les ressources de stockage surutilisées ou sous-utilisées.
+
+Les API des centres de données pour les agrégats récupèrent les informations pertinentes concernant l'espace disponible et utilisé, ainsi que les paramètres d'efficacité des économies d'espace. Vous pouvez également filtrer les informations récupérées en fonction d'attributs spécifiques.
+
+Pour identifier un éventuel manque d'espace dans vos agrégats, vérifiez si des volumes de votre environnement ont le mode de dimensionnement automatique activé. Vous devrez ensuite repérer les volumes surutilisés et prendre les mesures correctives nécessaires.
+
+L'organigramme suivant illustre le processus de récupération des informations relatives aux volumes dont le mode de dimensionnement automatique est activé :
+
+image::../media/space_utilization.gif[Organigramme permettant d'identifier les volumes surutilisés en mode de dimensionnement automatique dans les agrégats de clusters]
+
+Ce flux suppose que les clusters ont déjà été créés dans ONTAP et ajoutés à Unified Manager.
+
+. Obtenez la clé du cluster, sauf si vous connaissez sa valeur :
++
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+centre de données
+ a| 
+GET
+ a| 
+`/datacenter/cluster/clusters`
+
+|===
+. En utilisant la clé du cluster comme paramètre de filtre, interrogez les agrégats de ce cluster.
++
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+centre de données
+ a| 
+GET
+ a| 
+`/datacenter/storage/aggregates`
+
+|===
+. À partir de la réponse, analysez l'utilisation de l'espace des agrégats et identifiez ceux qui présentent des problèmes d'espace. Pour chaque agrégat concerné, récupérez sa clé à partir de la même sortie JSON.
+. À l'aide de chaque clé d'agrégation, filtrez tous les volumes dont la valeur du paramètre autosize.mode est définie sur `grow.`
++
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+centre de données
+ a| 
+GET
+ a| 
+`/datacenter/storage/volumes`
+
+|===
+. Analysez quels volumes sont surutilisés.
+. Pour résoudre les problèmes d'espace dans votre volume, effectuez toute action corrective nécessaire, comme le déplacement du volume entre les agrégats. Vous pouvez effectuer ces actions depuis l'interface utilisateur web d'ONTAP ou de Unified Manager.
+

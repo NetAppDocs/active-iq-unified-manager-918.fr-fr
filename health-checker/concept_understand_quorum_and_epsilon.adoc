@@ -1,0 +1,30 @@
+---
+permalink: health-checker/concept_understand_quorum_and_epsilon.html 
+sidebar: sidebar 
+keywords: understand, quorum, epsilon 
+summary: 'Le quorum et l"epsilon sont des mesures importantes de la santé et du fonctionnement des clusters qui, ensemble, indiquent comment les clusters relèvent les défis potentiels en matière de communication et de connectivité.' 
+---
+= Comprendre le quorum et l'epsilon dans les clusters ONTAP dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le quorum et l'epsilon sont des mesures importantes de la santé et du fonctionnement des clusters qui, ensemble, indiquent comment les clusters relèvent les défis potentiels en matière de communication et de connectivité.
+
+Le _quorum_ est une condition préalable au bon fonctionnement d'un cluster. Lorsqu'un cluster est en quorum, une majorité simple de nœuds sont sains et peuvent communiquer entre eux. Lorsque le quorum est perdu, le cluster perd la capacité d'effectuer les opérations normales du cluster. Une seule collection de nœuds peut être en quorum à un moment donné, car tous les nœuds partagent collectivement une vue unique des données. Par conséquent, si deux nœuds qui ne communiquent pas sont autorisés à modifier les données de manière divergente, il n'est plus possible de réconcilier les données en une vue unique des données.
+
+Chaque nœud du cluster participe à un protocole de vote qui élit un nœud maître ; chacun des nœuds restants est un nœud secondaire. Le nœud maître est chargé de synchroniser les informations dans l’ensemble du cluster. Une fois le quorum formé, il est maintenu par un vote continu. Si le nœud maître passe hors ligne et que le cluster conserve le quorum, un nouveau maître est élu par les nœuds qui restent en ligne.
+
+Comme il existe une possibilité d'égalité dans un cluster comportant un nombre pair de nœuds, l'un des nœuds possède un poids de vote fractionnaire supplémentaire appelé epsilon. Si la connectivité entre deux portions égales d'un grand cluster est interrompue, le groupe de nœuds contenant epsilon maintient le quorum, à condition que tous les nœuds soient opérationnels. Par exemple, l'illustration suivante montre un cluster à quatre nœuds dans lequel deux des nœuds sont défaillants. Cependant, comme l'un des nœuds restants détient epsilon, le cluster reste en quorum même s'il n'y a pas de majorité simple de nœuds opérationnels.
+
+image::../media/epsilon_preserving_quorum.gif[Cette image est expliquée par le texte qui l'entoure.]
+
+Epsilon est automatiquement attribué au premier nœud lors de la création du cluster. Si le nœud détenant epsilon devient défaillant, prend le relais de son partenaire haute disponibilité ou est repris par son partenaire haute disponibilité, epsilon est automatiquement réattribué à un nœud sain appartenant à une autre paire haute disponibilité.
+
+La mise hors ligne d'un nœud peut affecter la capacité du cluster à conserver le quorum. Par conséquent, ONTAP émet un message d'avertissement si vous tentez une opération qui fera soit sortir le cluster du quorum, soit le rendra vulnérable à une perte de quorum en cas d'une panne supplémentaire. Vous pouvez désactiver les messages d'avertissement relatifs au quorum à l'aide de la commande cluster quorum-service options modify au niveau de privilège avancé.
+
+En général, en supposant une connectivité fiable entre les nœuds du cluster, un cluster plus grand est plus stable qu'un cluster plus petit. Le quorum requis (majorité simple de la moitié des nœuds plus epsilon) est plus facile à maintenir dans un cluster de 24 nœuds que dans un cluster de deux nœuds.
+
+Un cluster à deux nœuds présente des défis uniques pour le maintien du quorum. Les clusters à deux nœuds utilisent la HA de cluster, dans laquelle aucun nœud ne détient l'epsilon ; les deux nœuds sont interrogés en continu afin de garantir que, si l'un des nœuds tombe en panne, l'autre dispose d'un accès complet en lecture-écriture aux données, ainsi que d'un accès aux interfaces logiques et aux fonctions de gestion.

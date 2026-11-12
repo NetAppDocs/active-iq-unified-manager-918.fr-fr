@@ -1,0 +1,55 @@
+---
+permalink: health-checker/task_restore_mysql_db_on_linux.html 
+sidebar: sidebar 
+keywords: restore, linux system, mysql, database, backup 
+summary: 'En cas de perte de données ou de corruption des données, vous pouvez restaurer Unified Manager à son état stable précédent avec une perte de données minimale. Vous pouvez restaurer la base de données Unified Manager sur un système Red Hat Enterprise Linux local ou distant à l"aide de la console de maintenance Unified Manager.' 
+---
+= Restaurez une sauvegarde de base de données MySQL sur un système Linux dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En cas de perte de données ou de corruption des données, vous pouvez restaurer Unified Manager à son état stable précédent avec une perte de données minimale. Vous pouvez restaurer la base de données Unified Manager sur un système Red Hat Enterprise Linux local ou distant à l'aide de la console de maintenance Unified Manager.
+
+.Avant de commencer
+* Vous devez disposer des identifiants de l'utilisateur root pour l'hôte Linux sur lequel Unified Manager est installé.
+* Vous devez disposer d'un identifiant utilisateur et d'un mot de passe autorisés pour vous connecter à la console de maintenance du serveur Unified Manager.
+* Vous devez avoir copié le fichier de sauvegarde Unified Manager et le contenu du répertoire du référentiel de base de données sur le système sur lequel vous effectuerez l'opération de restauration.
++
+Il est recommandé de copier le fichier de sauvegarde dans le répertoire par défaut /`data/ocum`-backup. Les fichiers du référentiel de base de données doivent être copiés dans le sous-répertoire /`database-dumps-repo` du répertoire /`ocum-backup`.
+
+* Les fichiers de sauvegarde doivent être de `.7z` type.
+
+
+La fonction de restauration est spécifique à la plateforme et à la version. Vous ne pouvez restaurer une sauvegarde Unified Manager que sur la même version de Unified Manager. Vous pouvez restaurer un fichier de sauvegarde Linux ou un fichier de sauvegarde d'appliance virtuelle sur un système Red Hat Enterprise Linux.
+
+[TIP]
+====
+Si le nom du dossier de sauvegarde contient un espace, vous devez inclure le chemin absolu ou relatif entre guillemets doubles.
+
+====
+.Étapes
+. Si vous effectuez une restauration sur un nouveau serveur, après l’installation d’Unified Manager, ne lancez pas l’interface utilisateur et ne configurez aucun cluster, utilisateur ou paramètre d’authentification lorsque l’installation est terminée. Le fichier de sauvegarde renseignera ces informations lors de la restauration.
+. Utilisez Secure Shell pour vous connecter à l’adresse IP ou au nom de domaine complet du système Unified Manager.
+. Connectez-vous au système avec le nom d'utilisateur et le mot de passe de l'utilisateur de maintenance (umadmin).
+. Saisissez la commande `maintenance_console` et appuyez sur Entrée.
+. Dans la console de maintenance *Menu principal*, saisissez le numéro de l'option *Sauvegarde et restauration*.
+. Saisissez le numéro de *Restore MySQL Backup*.
+. Lorsque vous y êtes invité, saisissez le chemin d'accès absolu du fichier de sauvegarde.
++
+[listing]
+----
+Bundle to restore from: /data/ocum-backup/UM_9.8.N151113.1348_backup_rhel_02-20-2020-04-45.7z
+----
++
+Une fois l'opération de restauration terminée, vous pourrez vous connecter à Unified Manager.
+
+
+
+Après avoir restauré la sauvegarde, si le serveur OnCommand Workflow Automation ne fonctionne pas, procédez comme suit :
+
+. Sur le serveur Workflow Automation, modifiez l'adresse IP du serveur Unified Manager pour qu'elle pointe vers la machine la plus récente.
+. Sur le serveur Unified Manager, réinitialisez le mot de passe de la base de données si l'acquisition échoue à l'étape 1.
+

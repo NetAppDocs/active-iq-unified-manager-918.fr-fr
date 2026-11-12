@@ -1,0 +1,20 @@
+---
+permalink: storage-mgmt/concept_how_discovery_process_works_tobe_rmvd.html 
+sidebar: sidebar 
+keywords: discovery, process, works 
+summary: Après avoir ajouté le cluster à Unified Manager, le serveur détecte les objets du cluster et les ajoute à sa base de données. Comprendre ce processus de détection vous permettra de mieux gérer les clusters de votre organisation et leurs objets. 
+---
+= Découvrez comment fonctionne le processus de découverte de clusters dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une fois que vous avez ajouté le cluster à Unified Manager, le serveur détecte les objets du cluster et les ajoute à sa base de données. Comprendre le fonctionnement du processus de détection vous aide à gérer les clusters de votre organisation et leurs objets.
+
+L'intervalle de surveillance par défaut est de 15 minutes : si vous avez ajouté un cluster au serveur Unified Manager, l'affichage des détails du cluster dans l'interface utilisateur d'Unified Manager prend 15 minutes.
+
+L'image suivante illustre le processus de découverte dans Active IQ Unified Manager :
+
+image::../media/discovery_process_oc_6_0.gif[Comment fonctionne le processus de découverte]

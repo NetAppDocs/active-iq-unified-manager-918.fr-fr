@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_understand_performance_cluster_landing_page.html 
+sidebar: sidebar 
+keywords: understand, performance, cluster, landing page 
+summary: 'La page de destination du cluster de performances fournit une vue d"ensemble des performances de haut niveau d"un cluster sélectionné, en mettant l"accent sur l"état des performances des 10 principaux objets du cluster. Les problèmes de performances sont affichés en haut de la page, dans le panneau « Tous les événements de ce cluster ».' 
+---
+= Comprendre la page d'accueil du cluster de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page de destination du cluster de performances fournit une vue d'ensemble des performances de haut niveau d'un cluster sélectionné, en mettant l'accent sur l'état des performances des 10 principaux objets du cluster. Les problèmes de performances sont affichés en haut de la page, dans le panneau « Tous les événements de ce cluster ».
+
+La page d'accueil du cluster de performances offre une vue d'ensemble de chaque cluster géré par une instance de Unified Manager. Cette page vous fournit des informations sur les événements et les performances, et vous permet de surveiller et de dépanner les clusters. L'image suivante illustre un exemple de la page d'accueil du cluster de performances pour le cluster nommé opm-mobility :
+
+image::../media/opm_cluster_landing_page_draft.gif[Capture d'écran de l'interface utilisateur montrant un exemple de la page d'accueil du cluster de performances appelé opm-mobility.]
+
+Le nombre d'événements figurant sur la page Résumé du cluster peut ne pas correspondre au nombre d'événements figurant sur la page Inventaire des événements de performance. En effet, la page Résumé du cluster peut afficher un événement dans chacune des barres Latence et Utilisation lorsque des stratégies de seuil combiné ont été enfreintes, alors que la page Inventaire des événements de performance n'affiche qu'un seul événement lorsqu'une stratégie combinée a été enfreinte.
+
+[NOTE]
+====
+Si un cluster a été retiré de la gestion par Unified Manager, le statut *Removed* s'affiche à droite du nom du cluster en haut de la page.
+
+====

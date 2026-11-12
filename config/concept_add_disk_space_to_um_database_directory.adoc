@@ -1,0 +1,23 @@
+---
+permalink: config/concept_add_disk_space_to_um_database_directory.html 
+sidebar: sidebar 
+keywords: add, disk, space, unified manager, database, directory 
+summary: 'Le répertoire de la base de données Unified Manager contient toutes les données de santé et de performance collectées à partir des systèmes ONTAP. Dans certains cas, il peut être nécessaire d"augmenter la taille du répertoire de la base de données.' 
+---
+= Ajoutez de l'espace disque au répertoire de la base de données Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le répertoire de la base de données Unified Manager contient toutes les données de santé et de performance collectées à partir des systèmes ONTAP. Dans certains cas, il peut être nécessaire d'augmenter la taille du répertoire de la base de données.
+
+Par exemple, le répertoire de la base de données peut se remplir si Unified Manager collecte des données à partir d'un grand nombre de clusters, chacun comportant de nombreux nœuds. Vous recevrez un événement d'avertissement lorsque le répertoire de la base de données sera rempli à 90 % et un événement critique lorsqu'il sera rempli à 95 %.
+
+[NOTE]
+====
+Aucune donnée supplémentaire n'est collectée à partir des clusters une fois que le répertoire est rempli à 95 %.
+
+====
+Les étapes nécessaires pour ajouter de la capacité au répertoire de données diffèrent selon que Unified Manager est exécuté sur un serveur VMware ESXi, sur un serveur Red Hat ou sur un serveur Microsoft Windows.

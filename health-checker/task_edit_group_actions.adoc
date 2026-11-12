@@ -1,0 +1,24 @@
+---
+permalink: health-checker/task_edit_group_actions.html 
+sidebar: sidebar 
+keywords: edit, group actions 
+summary: 'Vous pouvez modifier les paramètres d"action de groupe que vous avez configurés dans Unified Manager, tels que le nom de l"action de groupe, sa description, le nom du groupe associé et les paramètres du type d"action.' 
+---
+= Modifier les actions de groupe dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les paramètres d'action de groupe que vous avez configurés dans Unified Manager, tels que le nom de l'action de groupe, sa description, le nom du groupe associé et les paramètres du type d'action.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Groupes*.
+. Dans l'onglet *Actions de groupe*, sélectionnez l'action de groupe que vous souhaitez modifier, puis cliquez sur *Modifier*.
+. Dans la boîte de dialogue *Modifier l'action de groupe*, modifiez, si nécessaire, le nom de l'action de groupe, sa description, le nom du groupe associé et les paramètres du type d'action.
+. Cliquez sur *Enregistrer*.
+

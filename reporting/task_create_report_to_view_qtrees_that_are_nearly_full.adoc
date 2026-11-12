@@ -1,0 +1,41 @@
+---
+permalink: reporting/task_create_report_to_view_qtrees_that_are_nearly_full.html 
+sidebar: sidebar 
+keywords: create, report, view, qtrees, full 
+summary: 'Vous pouvez créer un rapport pour analyser la capacité de stockage et l"utilisation des qtrees, et pour visualiser les qtrees qui sont presque pleins.' 
+---
+= Créez un rapport pour afficher les qtrees presque pleins dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un rapport pour analyser la capacité de stockage et l'utilisation des qtrees, et pour visualiser les qtrees qui sont presque pleins.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée affichant les qtrees presque pleins, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Qtrees*.
+. Sélectionnez *Afficher/Masquer* pour supprimer les colonnes que vous ne souhaitez pas voir apparaître dans le rapport.
+. Faites glisser la colonne « `Disk Used %` » près de la colonne « `Qtrees` ».
+. Cliquez sur l'icône de filtre, ajoutez les filtres suivants, puis cliquez sur *Apply Filter* :
++
+** Le pourcentage d'utilisation du disque est supérieur à 75%
+
+
+. Cliquez en haut de la colonne "`Disk Used %`" pour trier les résultats par pourcentage de capacité.
+. Enregistrez la vue sous un nom spécifique qui reflète ce qu’elle affiche, par exemple « `Qtrees presque pleins` », puis cliquez sur la coche (image:../media/blue_check.gif[""]).
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Cliquez sur *Ajouter une planification* pour ajouter une nouvelle ligne à la page *Planifications des rapports* afin de définir les caractéristiques de la planification du nouveau rapport.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+En fonction des résultats présentés dans le rapport, vous pourriez vouloir ajuster les limites strictes et souples du disque (si elles sont définies) ou équilibrer les données entre les qtrees.

@@ -1,0 +1,16 @@
+---
+permalink: events/concept_what_alerts_are.html 
+sidebar: sidebar 
+keywords: alerts 
+summary: 'Bien que les événements se produisent en continu, Unified Manager génère une alerte uniquement lorsqu"un événement répond à des critères de filtrage spécifiés. Vous pouvez choisir les événements pour lesquels des alertes doivent être générées, par exemple, lorsqu"un seuil d"espace est dépassé ou qu"un objet est mis hors ligne. Vous pouvez également associer une alerte à un script qui s"exécute lorsqu"elle est déclenchée.' 
+---
+= Découvrez les alertes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bien que les événements se produisent en continu, Unified Manager génère une alerte uniquement lorsqu'un événement répond à des critères de filtrage spécifiés. Vous pouvez choisir les événements pour lesquels des alertes doivent être générées--par exemple, lorsqu'un seuil d'espace est dépassé ou qu'un objet passe hors ligne. Vous pouvez également associer une alerte à un script qui s'exécute lorsqu'une alerte est déclenchée.
+
+Les critères de filtrage incluent la classe d'objet, le nom ou la gravité de l'événement.

@@ -1,0 +1,39 @@
+---
+permalink: install-vapp/task_download_unified_manager_ova_file.html 
+sidebar: sidebar 
+keywords: download, unified manager, installation, file 
+summary: 'Téléchargez le fichier d"installation d"Unified Manager depuis le site de support NetApp pour déployer Unified Manager en tant qu"appliance virtuelle.' 
+---
+= Téléchargez le fichier d'installation Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Téléchargez le fichier d'installation d'Unified Manager depuis le site de support NetApp pour déployer Unified Manager en tant qu'appliance virtuelle.
+
+.Avant de commencer
+Vous devez disposer des identifiants de connexion pour le site de support NetApp.
+
+Le fichier d'installation est un `.tar` fichier qui contient un certificat racine, un `README` fichier et un `OVA` fichier contenant le logiciel Unified Manager configuré pour une appliance virtuelle.
+
+.Étapes
+. Connectez-vous au site de support NetApp et accédez à la page de téléchargement d’Unified Manager :
++
+https://mysupport.netapp.com/site/products/all/details/activeiq-unified-manager/downloads-tab["Site de support NetApp"]
+
+. Sélectionnez la version requise de Unified Manager et acceptez le contrat de licence de l’utilisateur final (EULA).
+. Téléchargez et enregistrez le `.tar` fichier d'installation VMware vSphere dans un répertoire local ou un répertoire réseau accessible à votre vSphere Client.
+. Vérifiez la somme de contrôle pour vous assurer que le logiciel a été téléchargé correctement.
+. Accédez au répertoire dans lequel vous avez téléchargé le `.tar` fichier et saisissez la commande suivante dans votre fenêtre de terminal pour développer le bundle Unified Manager :
++
+[listing]
+----
+tar -xvzf ActiveIQUnifiedManager-<version>.tar.gz
+----
++
+Le fichier requis `OVA`, un certificat racine et un `README` fichier pour Unified Manager sont décompressés dans le répertoire cible.
+
+. Vérifiez l'intégrité du `OVA` fichier en suivant les étapes indiquées dans le `README` fichier.
+

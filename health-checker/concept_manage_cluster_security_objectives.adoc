@@ -1,0 +1,22 @@
+---
+permalink: health-checker/concept_manage_cluster_security_objectives.html 
+sidebar: sidebar 
+keywords: cluster, security, manage, objectives 
+summary: 'Unified Manager fournit un tableau de bord qui identifie le niveau de sécurité de vos clusters ONTAP, de vos machines virtuelles de stockage (SVM) et de vos volumes en fonction des recommandations définies dans le guide de renforcement de la sécurité NetApp pour ONTAP 9.' 
+---
+= Gérer les objectifs de sécurité du cluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager fournit un tableau de bord qui identifie le niveau de sécurité de vos clusters ONTAP, de vos machines virtuelles de stockage (SVM) et de vos volumes, en fonction des recommandations définies dans le _NetApp Security Hardening Guide for ONTAP 9_.
+
+Le tableau de bord de sécurité a pour objectif de montrer les domaines dans lesquels vos clusters ONTAP ne sont pas conformes aux recommandations de NetApp, afin que vous puissiez corriger ces problèmes potentiels. Dans la plupart des cas, vous corrigerez les problèmes à l'aide de ONTAP System Manager ou de ONTAP CLI. Votre organisation ne suit peut-être pas toutes les recommandations, donc, dans certains cas, vous n'aurez pas besoin d'apporter de modifications.
+
+Voir le https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["NetApp Guide de renforcement de la sécurité pour ONTAP 9"^] (TR-4569) pour des recommandations et des résolutions détaillées.
+
+Outre le signalement de l'état de sécurité, Unified Manager génère également des événements de sécurité pour tout cluster ou SVM présentant des violations de sécurité. Vous pouvez suivre ces problèmes dans la page d'inventaire Event Management, et configurer des alertes afin que votre administrateur du stockage soit notifié lorsque de nouveaux événements de sécurité se produisent.
+
+Pour plus d'informations, consultez link:../health-checker/concept_what_security_criteria_is_being_evaluated.html["Quels critères de sécurité sont évalués"].

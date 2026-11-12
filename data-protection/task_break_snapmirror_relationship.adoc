@@ -1,0 +1,31 @@
+---
+permalink: data-protection/task_break_snapmirror_relationship.html 
+sidebar: sidebar 
+keywords: break, snapmirror, relationship, volume, relationship page 
+summary: 'Vous pouvez rompre une relation de protection pour interrompre les transferts de données entre un volume source et un volume de destination dans une relation SnapMirror. Vous pouvez rompre une relation lorsque vous souhaitez migrer des données, pour la reprise après sinistre ou pour les tests d"application. Le volume de destination est modifié en volume en lecture/écriture. Vous ne pouvez pas rompre une relation SnapVault.' 
+---
+= Rompre une relation SnapMirror depuis la page Relations de volumes d’Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez rompre une relation de protection pour interrompre les transferts de données entre un volume source et un volume de destination dans une relation SnapMirror. Vous pouvez rompre une relation lorsque vous souhaitez migrer des données, pour la reprise après sinistre ou pour les tests d'application. Le volume de destination est modifié en volume en lecture/écriture. Vous ne pouvez pas rompre une relation SnapVault.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+
+
+.Étapes
+. Sur la page *Relations entre volumes*, sélectionnez un ou plusieurs volumes avec des relations de protection pour lesquels vous souhaitez arrêter les transferts de données et, dans la barre d'outils, cliquez sur *Interrompre*.
++
+La boîte de dialogue « Rompre la relation » s'affiche.
+
+. Cliquez sur *Continuer* pour rompre la relation.
+. Sur la page *Relations de volume*, vérifiez dans la colonne *État de la relation* que la relation est rompue.
++
+La colonne « État de la relation » est masquée par défaut, vous devrez donc peut-être la sélectionner dans la liste des colonnes à afficher/masquer image:../media/icon_columnshowhide_sm_onc.gif[""].
+
+

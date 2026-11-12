@@ -1,0 +1,38 @@
+---
+permalink: performance-checker/task_edit_user_defined_performance_threshold_policies.html 
+sidebar: sidebar 
+keywords: edit, user-defined, performance, threshold, policies 
+summary: 'Vous pouvez modifier les paramètres de seuil des politiques de seuil de performance existantes. Cela peut s"avérer utile si vous recevez trop ou trop peu d"alertes pour certaines conditions de seuil.' 
+---
+= Modifiez les règles de seuil de performance définies par l'utilisateur dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les paramètres de seuil des politiques de seuil de performance existantes. Cela peut s'avérer utile si vous recevez trop ou trop peu d'alertes pour certaines conditions de seuil.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Vous ne pouvez pas modifier le nom de la stratégie ni le type d'objet de stockage surveillé pour les stratégies de seuil existantes.
+
+.Étapes
+. Dans le volet de navigation de gauche, sélectionnez *Seuils d'événements* > *Performance*.
++
+La page « Seuils de performance » s'affiche.
+
+. Sélectionnez la stratégie de seuil que vous souhaitez modifier et cliquez sur *Modifier*.
++
+La page « Modifier la politique de seuil de performance » s'affiche.
+
+. Apportez vos modifications à la politique de seuil et cliquez sur *Enregistrer*.
++
+Vous revenez à la page des seuils de performance.
+
+
+
+Une fois enregistrées, les modifications s’appliquent immédiatement à tous les objets de stockage qui utilisent cette stratégie.
+
+Selon le type de modifications apportées à la stratégie, vous pouvez consulter les paramètres d'alerte configurés pour les objets qui utilisent cette stratégie sur la page Configuration des alertes.

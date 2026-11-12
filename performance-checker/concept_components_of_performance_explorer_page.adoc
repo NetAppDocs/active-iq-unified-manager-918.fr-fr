@@ -1,0 +1,70 @@
+---
+permalink: performance-checker/concept_components_of_performance_explorer_page.html 
+sidebar: sidebar 
+keywords: components, performance, explorer, page 
+summary: La page Explorateur de performances vous permet de comparer les performances d’objets similaires dans un cluster, par exemple tous les volumes d’un cluster. Cette fonctionnalité est utile pour résoudre les événements de performance et affiner les performances des objets. Vous pouvez également comparer les objets à l’objet racine, qui constitue la référence par rapport à laquelle les autres comparaisons d’objets sont effectuées. 
+---
+= Consultez la page Performance Explorer dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page Explorateur de performances vous permet de comparer les performances d’objets similaires dans un cluster, par exemple, tous les volumes d’un cluster. Cette fonctionnalité est utile pour le dépannage des événements de performance et l’optimisation des performances des objets. Vous pouvez également comparer des objets avec l’objet racine, qui constitue la référence par rapport à laquelle les autres comparaisons d’objets sont effectuées.
+
+Vous pouvez cliquer sur le bouton *Switch to Health View* pour afficher la page de détails de l'état de santé de cet objet. Dans certains cas, vous pouvez y trouver des informations importantes sur les paramètres de configuration du stockage pour cet objet, qui peuvent vous aider lors du dépannage d'un problème.
+
+La page Explorateur de performances affiche la liste des objets du cluster et leurs données de performance. Elle présente tous les objets du cluster de même type (par exemple, les volumes et leurs statistiques de performance spécifiques) sous forme de tableau. Cette vue offre un aperçu efficace des performances des objets du cluster.
+
+[NOTE]
+====
+Si « `N/A` » apparaît dans une cellule du tableau, cela signifie qu’aucune valeur n’est disponible pour ce compteur, car il n’y a aucune opération d’E/S sur cet objet à ce moment-là.
+
+====
+La page Performance Explorer contient les composants suivants :
+
+* *Plage de temps*
++
+Permet de sélectionner une plage horaire pour les données de l’objet.
+
++
+Vous pouvez choisir une plage prédéfinie ou spécifier votre propre plage horaire personnalisée.
+
+* *Voir et comparer*
++
+Permet de sélectionner le type d'objet corrélé affiché dans la grille.
+
++
+Les options disponibles dépendent du type d'objet racine et des données associées. Vous pouvez cliquer sur la liste déroulante « Afficher et comparer » pour sélectionner un type d'objet. Le type d'objet sélectionné s'affiche dans la liste.
+
+* *Filtrage*
++
+Vous permet de limiter la quantité de données que vous recevez, en fonction de vos préférences.
+
++
+Vous pouvez créer des filtres qui s'appliquent aux données d'objet, par exemple IOPS supérieures à 4. Vous pouvez ajouter jusqu'à quatre filtres simultanés.
+
+* *Comparaison*
++
+Affiche la liste des objets que vous avez sélectionnés pour comparaison avec l'objet racine.
+
++
+Les données des objets du volet Comparaison sont affichées dans les graphiques de compteurs.
+
+* *Afficher les statistiques dans*
++
+Pour les volumes et les LUN, vous pouvez choisir si les statistiques sont affichées après chaque cycle de collecte (5 minutes par défaut) ou si les statistiques sont présentées sous forme de moyenne horaire. Cette fonctionnalité vous permet de consulter le graphique de latence dans le cadre du programme « Performance Guarantee » de NetApp.
+
+* *Graphiques de compteurs*
++
+Affiche des données graphiques pour chaque catégorie de performance d'objet.
+
++
+En général, seuls trois ou quatre graphiques sont affichés par défaut. Le composant Choose charts vous permet d’afficher des graphiques supplémentaires ou de masquer certains d’entre eux. Vous pouvez également choisir d’afficher ou de masquer Events Timeline.
+
+* *Chronologie des événements*
++
+Affiche les événements de performance et de santé survenus pendant la période sélectionnée dans le composant Plage de temps.
+
+

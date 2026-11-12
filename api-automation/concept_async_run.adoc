@@ -1,0 +1,56 @@
+---
+permalink: api-automation/concept_async_run.html 
+sidebar: sidebar 
+keywords: job, objects, asynchronous, processes 
+summary: 'Active IQ Unified Manager fournit l"API Jobs qui récupère des informations sur les tâches effectuées lors de l"exécution d"autres API. Vous devez comprendre le fonctionnement du traitement asynchrone à l"aide de l"objet Job.' 
+---
+= Comprenez comment Active IQ Unified Manager utilise les objets Job pour le traitement asynchrone
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager fournit l’ `jobs`API qui récupère des informations sur les tâches exécutées lors de l’utilisation d’autres API. Vous devez comprendre le fonctionnement du traitement asynchrone à l’aide de l’objet Job.
+
+Certains appels d'API, notamment ceux utilisés pour ajouter ou modifier des ressources, peuvent prendre plus de temps à s'exécuter que d'autres appels. Unified Manager traite ces requêtes de longue durée de manière asynchrone.
+
+
+
+[[asynchronous-requests-described-using-job-object]]
+== Requêtes asynchrones décrites à l'aide de l'objet Job
+
+Après un appel API asynchrone, le code de réponse HTTP 202 indique que la requête a été validée et acceptée, mais pas encore terminée. La requête est traitée comme une tâche en arrière-plan qui continue de s'exécuter après la réponse HTTP initiale au client. La réponse inclut l'objet Job associé à la requête, ainsi que son identifiant unique.
+
+
+
+[[query-the-job-object-associated-with-an-api-request]]
+== Interroger l'objet Job associé à une requête API
+
+L'objet Job renvoyé dans la réponse HTTP contient plusieurs propriétés. Vous pouvez interroger la propriété state pour déterminer si la requête a été complétée avec succès. Un objet Job peut se trouver dans l'un des états suivants :
+
+* `NORMAL`
+* `WARNING`
+* `PARTIAL_FAILURES`
+* `ERROR`
+
+
+Il existe deux techniques que vous pouvez utiliser lors de l'interrogation d'un objet Job pour détecter un état terminal de la tâche, soit la réussite, soit l'échec :
+
+* Requête d'interrogation standard : l'état actuel de la tâche est renvoyé immédiatement.
+* Requête d'interrogation longue : lorsque l'état de l'emploi passe à `NORMAL, ERROR,` ou `PARTIAL_FAILURES.`
+
+
+
+
+[[steps-in-an-asynchronous-request]]
+== Étapes d'une requête asynchrone
+
+Vous pouvez utiliser la procédure générale suivante pour effectuer un appel d'API asynchrone :
+
+. Effectuez l'appel API asynchrone.
+. Recevez une réponse HTTP 202 indiquant l’acceptation réussie de la requête.
+. Extrayez l'identifiant de l'objet Job du corps de la réponse.
+. Dans une boucle, attendez que l'objet Job atteigne l'état terminal `NORMAL, ERROR,` ou `PARTIAL_FAILURES.`
+. Vérifiez l'état final du Job et récupérez son résultat.
+

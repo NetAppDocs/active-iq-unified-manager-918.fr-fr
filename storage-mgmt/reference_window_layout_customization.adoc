@@ -1,0 +1,45 @@
+---
+permalink: storage-mgmt/reference_window_layout_customization.html 
+sidebar: sidebar 
+keywords: window, layout, customization 
+summary: 'Active IQ Unified Manager vous permet de personnaliser la mise en page des informations sur les pages des objets de stockage et de réseau. En personnalisant les fenêtres, vous pouvez contrôler les données visibles et leur mode d"affichage.' 
+---
+= Personnalisation de la disposition des fenêtres dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager vous permet de personnaliser la mise en page des informations sur les pages des objets de stockage et de réseau. En personnalisant les fenêtres, vous pouvez contrôler les données visibles et leur mode d'affichage.
+
+* *Tri*
++
+Vous pouvez cliquer sur l'en-tête de colonne pour modifier l'ordre de tri des entrées de la colonne. Lorsque vous cliquez sur l'en-tête de colonne, les flèches de tri (image:../media/sort_asc_um60.gif["Icône pour le tri des colonnes – ascendant"] et image:../media/sort_desc_um60.gif["Icône de tri des colonnes – ordre décroissant"]) apparaissent pour cette colonne.
+
+* *Filtrage*
++
+Vous pouvez cliquer sur l'icône de filtre (image:../media/filtering_icon.gif[""]) pour appliquer des filtres et personnaliser l'affichage des informations sur les pages des objets de stockage et de réseau afin que seules les entrées correspondant aux conditions spécifiées soient affichées. Vous appliquez les filtres depuis le volet Filtres.
+
++
+Le volet Filtres vous permet de filtrer la plupart des colonnes en fonction des options sélectionnées. Par exemple, dans la vue Health: All Volumes, vous pouvez utiliser le volet Filtres pour afficher tous les volumes hors ligne en sélectionnant l’option de filtre appropriée sous State.
+
++
+Dans toute liste, les colonnes relatives à la capacité affichent toujours les données de capacité dans les unités appropriées, arrondies à deux décimales. Cela s'applique également lors du filtrage des colonnes de capacité. Par exemple, si vous utilisez le filtre dans la colonne Total Data Capacity de la vue Health: All Aggregates pour filtrer les données supérieures à 20.45 GB, la capacité réelle de 20.454 GB s'affiche comme 20.45 GB. De même, si vous filtrez les données inférieures à 20.45 GB, la capacité réelle de 20.449 GB s'affiche comme 20.45 GB.
+
++
+Si vous utilisez le filtre de la colonne « Pourcentage de données disponibles » dans la vue « Santé : Tous les agrégats » pour filtrer les données supérieures à 20,45 %, la capacité réelle de 20,454 % s’affiche comme 20,45 %. De même, si vous filtrez les données inférieures à 20,45 %, la capacité réelle de 20,449 % s’affiche comme 20,45 %.
+
+* *Afficher ou masquer les colonnes*
++
+Vous pouvez cliquer sur l'icône d'affichage des colonnes (*Afficher/Masquer*) pour sélectionner les colonnes à afficher. Une fois les colonnes sélectionnées, vous pouvez les réorganiser en les faisant glisser avec la souris.
+
+* *Recherche*
++
+Vous pouvez utiliser le champ de recherche pour rechercher certains attributs d'objet afin d'affiner la liste des éléments dans la page d'inventaire. Par exemple, vous pouvez saisir « cloud » pour affiner la liste des volumes dans la page d'inventaire des volumes et afficher tous les volumes contenant le mot « cloud ».
+
+* *Exportation des données*
++
+Vous pouvez cliquer sur le bouton *Rapports* (ou sur le bouton *Exporter* pour exporter les données vers un fichier de valeurs séparées par des virgules  `(.csv)`, `(.pdf)` un document ou un fichier Microsoft Excel `(.xlsx)` et utiliser les données exportées pour créer des rapports).
+
+

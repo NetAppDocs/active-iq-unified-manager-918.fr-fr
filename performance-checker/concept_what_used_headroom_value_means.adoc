@@ -1,0 +1,38 @@
+---
+permalink: performance-checker/concept_what_used_headroom_value_means.html 
+sidebar: sidebar 
+keywords: performance, capacity, value, means 
+summary: 'L"indicateur de capacité de performance utilisée vous aide à identifier les nœuds et les agrégats actuellement surutilisés ou sous-utilisés. Vous pouvez ainsi redistribuer les charges de travail afin d"optimiser l"utilisation de vos ressources de stockage.' 
+---
+= Utilisez la valeur de capacité de performance utilisée dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'indicateur de capacité de performance utilisée vous aide à identifier les nœuds et les agrégats actuellement surutilisés ou sous-utilisés. Vous pouvez ainsi redistribuer les charges de travail afin d'optimiser l'utilisation de vos ressources de stockage.
+
+La figure suivante illustre la courbe de latence en fonction de l'utilisation d'une ressource et identifie, par des points colorés, trois zones où pourrait se situer le point de fonctionnement actuel.
+
+image::../media/headroom_chart_over_under.gif[Capture d'écran de l'interface utilisateur montrant la courbe de latence en fonction de l'utilisation d'une ressource.]
+
+* Un pourcentage d'utilisation de la capacité de performance égal à 100 correspond au point optimal.
++
+Les ressources sont utilisées efficacement à ce stade.
+
+* Un pourcentage de capacité de performances utilisée supérieur à 100 indique que le nœud ou l'agrégat est surutilisé et que les workloads bénéficient de performances sous-optimales.
++
+Aucun nouveau workload ne doit être ajouté à la ressource, et les workloads existants pourraient devoir être redistribués.
+
+* Un pourcentage de capacité de performance utilisée inférieur à 100 indique que le nœud ou l'agrégat est sous-utilisé et que les ressources ne sont pas utilisées efficacement.
++
+D'autres workloads peuvent être ajoutés à la ressource.
+
+
+
+[NOTE]
+====
+Contrairement au taux d'utilisation, le pourcentage de capacité de performance utilisée peut dépasser 100 %. Il n'y a pas de pourcentage maximal, mais les ressources se situent généralement entre 110 % et 140 % lorsqu'elles sont surutilisées. Des pourcentages plus élevés indiquent qu'une ressource présente de graves problèmes.
+
+====

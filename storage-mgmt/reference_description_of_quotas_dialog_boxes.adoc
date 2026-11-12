@@ -1,0 +1,14 @@
+---
+permalink: storage-mgmt/reference_description_of_quotas_dialog_boxes.html 
+sidebar: sidebar 
+keywords: description, quotas, dialog, boxes 
+summary: Configurez le format des notifications par e-mail relatives aux quotas et les règles de spécification des adresses e-mail dans la vue Toutes les machines virtuelles de stockage de la page État. 
+---
+= Utilisez la boîte de dialogue Quotas dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser l’option appropriée dans l’onglet User and Group Quotas de la vue Health: All Storage VMs pour configurer le format de la notification par e-mail envoyée lorsqu’un problème lié aux quotas survient et pour configurer des règles afin de spécifier les adresses e-mail en fonction du quota utilisateur.

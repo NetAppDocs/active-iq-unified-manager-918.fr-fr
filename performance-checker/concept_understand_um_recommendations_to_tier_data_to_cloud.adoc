@@ -1,0 +1,59 @@
+---
+permalink: performance-checker/concept_understand_um_recommendations_to_tier_data_to_cloud.html 
+sidebar: sidebar 
+keywords: understand, unified manager, recommendations, tier, data, cloud 
+summary: 'La vue « Tous les volumes » de la page « Performances » affiche la taille des données inactives (froides) et identifie les volumes qui bénéficieraient d"une hiérarchisation vers un niveau cloud FabricPool.' 
+---
+= Consultez les recommandations d'Active IQ Unified Manager concernant la hiérarchisation des données vers le cloud
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La vue « Performances : Tous les volumes » affiche des informations relatives à la taille des données utilisateur stockées sur le volume qui est inactif (froid). Dans certains cas, Unified Manager identifie certains volumes pour lesquels il serait avantageux de hiérarchiser les données inactives vers le niveau cloud (fournisseur de cloud ou StorageGRID) d’un agrégat compatible avec FabricPool.
+
+[NOTE]
+====
+FabricPool a été introduit dans ONTAP 9.2. Par conséquent, si vous utilisez une version du logiciel ONTAP antérieure à 9.2, la recommandation de Unified Manager de hiérarchiser les données exige une mise à niveau de votre logiciel ONTAP. De plus, la stratégie de hiérarchisation  `*auto*` a été introduite dans ONTAP 9.4, et la stratégie de hiérarchisation  `*all*` a été introduite dans ONTAP 9.6. Par conséquent, si la recommandation consiste à utiliser la stratégie de hiérarchisation auto, vous devez effectuer une mise à niveau vers ONTAP 9.4 ou une version ultérieure.
+
+====
+Les trois champs suivants de la vue Performance : All Volumes fournissent des informations indiquant si vous pouvez améliorer l’utilisation des disques de votre système de stockage et gagner de l’espace sur le niveau de performance en déplaçant les données inactives vers le niveau cloud.
+
+* *Stratégie de tiering*
++
+La politique de hiérarchisation détermine si les données du volume restent sur le niveau de performance ou si certaines données sont déplacées du niveau de performance vers le niveau cloud.
+
++
+La valeur de ce champ indique la stratégie de hiérarchisation définie sur le volume, même si le volume ne réside pas actuellement sur un agrégat FabricPool. La stratégie de hiérarchisation ne prend effet que lorsque le volume se trouve sur un agrégat FabricPool.
+
+* *Données froides*
++
+Les données froides indiquent la taille des données utilisateur inactives (froides) stockées sur le volume.
+
++
+Cette valeur s’affiche ici uniquement lorsque vous utilisez ONTAP 9.4 ou une version ultérieure, car cela exige que l’agrégat sur lequel le volume est déployé ait le  `*inactive data reporting parameter*` défini sur  `*enabled*`, et que le seuil minimal du nombre de jours de refroidissement ait été atteint (pour les volumes qui utilisent la stratégie de hiérarchisation  `*snapshot-only*` ou  `*auto*`). Sinon, la valeur est indiquée comme "`N/A`".
+
+* *Recommandation cloud*
++
+Une fois que suffisamment d'informations ont été collectées sur l'activité des données sur le volume, Unified Manager peut déterminer qu'aucune action n'est requise ou que vous pourriez économiser de l'espace sur le niveau de performance en déplaçant les données inactives vers le niveau cloud.
+
+
+
+[NOTE]
+====
+Le champ « Données froides » est mis à jour toutes les 15 minutes, tandis que le champ « Recommandation cloud » est mis à jour tous les 7 jours lors de l’analyse des données froides du volume. Par conséquent, la quantité exacte de données froides peut différer entre les deux champs. Le champ « Recommandation cloud » affiche la date d’exécution de l’analyse.
+
+====
+Lorsque la fonctionnalité de création de rapports sur les données inactives est activée, le champ « Données froides » affiche la quantité exacte de données inactives. Sans la fonctionnalité de création de rapports sur les données inactives, Unified Manager utilise les statistiques de performance pour déterminer si des données sont inactives sur un volume. Dans ce cas, la quantité de données inactives n'est pas affichée dans le champ « Données froides », mais elle s'affiche lorsque vous placez le curseur sur le mot *Tier* pour consulter la recommandation cloud.
+
+Les recommandations cloud que vous verrez sont :
+
+* *En cours d'apprentissage*. Les données recueillies sont insuffisantes pour formuler une recommandation.
+* *Niveau*. L'analyse a déterminé que le volume contient des données inactives (froides) et que vous devez le configurer pour déplacer ces données vers le niveau cloud. Dans certains cas, cela peut nécessiter de déplacer le volume vers un agrégat sur lequel FabricPool est activé. Dans d'autres cas, lorsque le volume se trouve déjà sur un agrégat FabricPool, il vous suffit de modifier la stratégie de hiérarchisation.
+* *Aucune action*. Soit le volume contient très peu de données inactives, soit le volume est déjà défini sur la stratégie de hiérarchisation "`auto`" sur un agrégat FabricPool, soit le volume est un volume de protection des données. Cette valeur s'affiche également lorsque le volume est hors ligne ou lorsqu'il est utilisé dans une configuration MetroCluster.
+
+
+Pour déplacer un volume ou pour modifier la politique de hiérarchisation du volume ou les paramètres de rapport des données inactives de l'agrégat, utilisez ONTAP System Manager, les commandes ONTAP CLI ou une combinaison de ces outils.
+
+Si vous êtes connecté à Unified Manager avec le rôle Application Administrator ou Storage Administrator, le lien *Configure Volume* est disponible dans la recommandation cloud lorsque vous survolez le mot *Tier* avec votre curseur. Cliquez sur ce bouton pour ouvrir la page Volumes dans System Manager et effectuer la modification recommandée.

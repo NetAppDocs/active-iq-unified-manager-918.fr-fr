@@ -1,0 +1,784 @@
+---
+permalink: health-checker/reference_health_volume_details_page.html 
+sidebar: sidebar 
+keywords: volume, health details page 
+summary: 'La page Détails du volume/de l"état vous permet de consulter des informations détaillées sur un volume sélectionné, telles que sa capacité, son efficacité de stockage, sa configuration, sa protection, ses annotations et les événements générés. Vous pouvez également y consulter des informations sur les objets associés et les alertes relatives à ce volume.' 
+---
+= Consultez la page Détails du volume/de la santé dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page Détails du volume/de l'état vous permet de consulter des informations détaillées sur un volume sélectionné, telles que sa capacité, son efficacité de stockage, sa configuration, sa protection, ses annotations et les événements générés. Vous pouvez également y consulter des informations sur les objets associés et les alertes relatives à ce volume.
+
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes pour le volume sélectionné :
+
+* *Passer à la vue Performance*
++
+Permet d'accéder à la page de détails du volume/des performances.
+
+* *Actions*
++
+** Ajouter une alerte
++
+Permet d'ajouter une alerte au volume sélectionné.
+
+** Modifier les seuils
++
+Permet de modifier les paramètres de seuil pour le volume sélectionné.
+
+** Annoter
++
+Permet d'annoter le volume sélectionné.
+
+** Protéger
++
+Permet de créer des relations SnapMirror ou SnapVault pour le volume sélectionné.
+
+** Relation
++
+Permet d'exécuter les opérations suivantes relatives aux relations de protection :
+
++
+*** Modifier
++
+Ouvre la boîte de dialogue Modifier la relation, qui vous permet de modifier les politiques SnapMirror, les planifications et les taux de transfert maximum pour une relation de protection existante.
+
+*** Abandonner
++
+Interrompt les transferts en cours pour une relation sélectionnée. Permet également de supprimer le point de contrôle de redémarrage pour les transferts autres que le transfert de base. Il est impossible de supprimer le point de contrôle d'un transfert de base.
+
+*** Suspendre
++
+Désactive temporairement les mises à jour planifiées pour une relation sélectionnée. Les transferts déjà en cours doivent se terminer avant que la relation ne soit mise en attente.
+
+*** Rompre
++
+Rompt la relation entre les volumes source et de destination et transforme le volume de destination en un volume de lecture-écriture.
+
+*** Retirer
++
+Supprime définitivement la relation entre la source et la destination sélectionnées. Les volumes ne sont pas détruits et les copies Snapshot présentes sur ces volumes ne sont pas supprimées. Cette opération est irréversible.
+
+*** Résumé
++
+Active les transferts planifiés pour une relation mise en pause. Au prochain intervalle de transfert planifié, un point de contrôle de redémarrage est utilisé, s'il en existe un.
+
+*** Resynchroniser
++
+Permet de resynchroniser une relation précédemment rompue.
+
+*** Initialiser/Mettre à jour
++
+Permet d'effectuer un premier transfert de base sur une nouvelle relation de protection, ou d'effectuer une mise à jour manuelle si la relation est déjà initialisée.
+
+*** Resynchronisation inversée
++
+Permet de rétablir une relation de protection précédemment interrompue, en inversant la fonction de la source et de la destination en faisant de la source une copie de la destination d'origine. Le contenu de la source est écrasé par celui de la destination, et toutes les données plus récentes que celles de la copie Snapshot commune sont supprimées.
+
+
+
+** Restaurer
++
+Permet de restaurer des données d'un volume vers un autre volume. Pour plus d'informations, consultez link:../data-protection/task_restore_data_use_health_volume_details_page.html["Restauration des données à l'aide de la page Détails du volume / de l'état"].
+
+
+
++
+[NOTE]
+====
+Le bouton Restaurer et les boutons d’opération de la relation ne sont pas disponibles pour les volumes qui se trouvent dans des relations de protection synchrone.
+
+====
+* *Afficher les volumes*
++
+Permet d'accéder à la vue Santé : Tous les volumes.
+
+
+
+
+
+[[capacity-tab]]
+== Onglet Capacité
+
+L'onglet Capacité affiche des détails sur le volume sélectionné, tels que sa capacité physique, sa capacité logique, ses paramètres de seuil, sa capacité de quota et des informations sur toute opération de déplacement de volume:
+
+* *Capacité physique*
++
+Indique la capacité physique du volume :
+
++
+** Débordement de l'instantané
++
+Affiche l'espace de données consommé par les copies Snapshot.
+
+** Utilisé
++
+Affiche l'espace utilisé par les données dans le volume.
+
+** Avertissement
++
+Indique que l'espace dans le volume est presque plein. Si ce seuil est dépassé, l'événement « Espace presque plein » est généré.
+
+** Erreur
++
+Indique que l'espace dans le volume est plein. Si ce seuil est dépassé, l'événement Space Full est généré.
+
+** Inutilisable
++
+Indique qu'un événement « Espace à risque pour un volume à provisionnement fin » a été généré et que l'espace du volume à provisionnement fin est menacé en raison de problèmes de capacité de l'agrégat. La capacité inutilisable est affichée uniquement pour les volumes à provisionnement fin.
+
+** Graphique de données
++
+Affiche la capacité totale de données et la capacité de données utilisée du volume.
+
++
+Si l'extension automatique est activée, le graphique de données affiche également l'espace disponible dans l'agrégat. Ce graphique affiche l'espace de stockage effectif utilisable par les données du volume, qui peut prendre l'une des valeurs suivantes :
+
++
+*** Capacité de données réelle du volume pour les conditions suivantes :
++
+**** La croissance automatique est désactivée.
+**** Le volume en mode de croissance automatique a atteint sa taille maximale.
+**** Le volume à provisionnement épais avec croissance automatique activée ne peut plus croître.
+
+
+*** Capacité de données du volume après prise en compte de la taille maximale du volume (pour les volumes à provisionnement fin et pour les volumes à provisionnement épais lorsque l'agrégat dispose d'espace pour que le volume atteigne sa taille maximale)
+*** Capacité de données du volume après prise en compte de la prochaine taille d'extension automatique possible (pour les volumes à provisionnement dense ayant un seuil de pourcentage d'extension automatique)
+
+
+** Graphique des copies Snapshot
++
+Ce graphique s'affiche uniquement lorsque la capacité Snapshot utilisée ou la réserve Snapshot n'est pas égale à zéro.
+
+
+
++
+Les deux graphiques affichent la capacité de dépassement de la réserve Snapshot par la capacité Snapshot si la capacité Snapshot utilisée dépasse la réserve Snapshot.
+
+* *Capacité logique*
++
+Affiche les caractéristiques de l’espace logique du volume. L’espace logique indique la taille réelle des données stockées sur le disque sans appliquer les économies permises par l’utilisation des technologies d’efficacité du stockage ONTAP.
+
++
+** Rapports sur l'espace logique
++
+Indique si le volume est configuré pour le rapport d'espace logique. La valeur peut être Activée, Désactivée ou Non applicable. « Non applicable » s'affiche pour les volumes sur des versions antérieures de ONTAP ou pour les volumes qui ne prennent pas en charge le rapport d'espace logique.
+
+** Utilisé
++
+Affiche la quantité d'espace logique utilisé par les données dans le volume, ainsi que le pourcentage d'espace logique utilisé par rapport à la capacité totale des données.
+
+** Application de l'espace logique
++
+Indique si l’application de l’espace logique est configurée pour les volumes à provisionnement fin. Lorsqu’elle est activée, la taille logique utilisée du volume ne peut pas être supérieure à la taille physique du volume actuellement définie.
+
+
+
+* *Croissance automatique*
++
+Indique si le volume augmente automatiquement lorsqu’il manque d’espace.
+
+* *Garantie d'espace*
++
+Affiche le contrôle du paramètre du volume FlexVol lorsqu'un volume supprime des blocs libres d'un agrégat. Ces blocs sont alors garantis comme disponibles pour l'écriture dans les fichiers du volume. La garantie d'espace peut être définie sur l'une des valeurs suivantes :
+
++
+** Aucune
++
+Aucune garantie d'espace n'est configurée pour le volume.
+
+** Fichier
++
+La taille totale des fichiers écrits de manière éparse (par exemple, les LUN) est garantie.
+
+** Volume
++
+La taille totale du volume est garantie.
+
+** Partiel
++
+Le volume FlexCache® réserve de l'espace en fonction de sa taille. Si la taille du volume FlexCache® est supérieure ou égale à 100 Mo, la garantie d'espace minimale est définie sur 100 Mo par défaut. Si la taille du volume FlexCache® est inférieure à 100 Mo, la garantie d'espace minimale est définie sur la taille du volume FlexCache®. Si la taille du volume FlexCache® augmente par la suite, la garantie d'espace minimale n'est pas incrémentée.
+
+
+
++
+[NOTE]
+====
+La garantie d'espace est partielle lorsque le volume est de type Data-Cache.
+
+====
+* *Détails (physiques)*
++
+Affiche les caractéristiques physiques du volume.
+
+* *Capacité totale*
++
+Affiche la capacité physique totale dans le volume.
+
+* *Capacité des données*
++
+Affiche l'espace physique occupé par le volume (capacité utilisée) et l'espace physique restant disponible (capacité libre) dans le volume. Ces valeurs sont également affichées en pourcentage de la capacité physique totale.
+
++
+Lorsque l'événement « Espace à risque pour les volumes à provisionnement fin » est généré pour des volumes à provisionnement fin, la quantité d'espace utilisée par le volume (capacité utilisée) et la quantité d'espace disponible dans le volume, mais inutilisable (capacité inutilisable) en raison de problèmes de capacité de l'agrégat, s'affichent.
+
+* *Réserve de snapshots*
++
+Affiche l'espace utilisé par les copies Snapshot (capacité utilisée) et l'espace disponible pour les copies Snapshot (capacité libre) dans le volume. Ces valeurs sont également affichées en pourcentage de la réserve Snapshot totale.
+
++
+Lorsque l'événement « Espace à risque pour les volumes à provisionnement fin » est généré pour les volumes à provisionnement fin, la quantité d'espace utilisée par les copies Snapshot (capacité utilisée) et la quantité d'espace disponible dans le volume, mais qui ne peut pas être utilisée pour créer des copies Snapshot (capacité inutilisable) en raison de problèmes de capacité de l'agrégat, sont affichées.
+
+* *Seuils de volume*
++
+Affiche les seuils de capacité de volume suivants :
+
++
+** Seuil de remplissage presque complet
++
+Indique le pourcentage auquel un volume est presque plein.
+
+** Seuil plein
++
+Indique le pourcentage de remplissage d'un volume.
+
+
+
+* *Autres détails*
++
+** Taille maximale de croissance automatique
++
+Affiche la taille maximale que le volume peut atteindre automatiquement. La valeur par défaut est de 120 % de la taille du volume à sa création. Ce champ s'affiche uniquement lorsque l'extension automatique est activée pour le volume.
+
+** Capacité engagée du quota Qtree
++
+Affiche l'espace réservé dans les quotas.
+
+** Capacité de surallocation du quota Qtree
++
+Affiche la quantité d'espace utilisable avant que le système ne génère l'événement « Volume Qtree Quota Overcommitted ».
+
+** Réserve fractionnaire
++
+Contrôle la taille de la réserve pour écrasement. Par défaut, la réserve fractionnaire est définie sur 100 %, ce qui indique que 100 % de l'espace réservé requis est réservé afin que les objets soient entièrement protégés contre les écrasements. Si la réserve fractionnaire est inférieure à 100 %, l'espace réservé pour tous les fichiers à espace réservé de ce volume est réduit au pourcentage de la réserve fractionnaire.
+
+** Taux de croissance quotidien de Snapshot
++
+Affiche la modification (en pourcentage, ou en Ko, Mo, Go, etc.) qui survient toutes les 24 heures dans les copies Snapshot du volume sélectionné.
+
+** Jours avant saturation de Snapshot
++
+Affiche le nombre estimé de jours restants avant que l'espace réservé aux copies Snapshot dans le volume n'atteigne le seuil spécifié.
+
++
+Le champ « Jours avant remplissage de Snapshot » affiche la valeur « Non applicable » lorsque le taux de croissance des copies Snapshot dans le volume est nul ou négatif, ou lorsqu’il n’y a pas suffisamment de données pour calculer le taux de croissance.
+
+** Suppression automatique des copies Snapshot
++
+Indique si les copies Snapshot sont automatiquement supprimées pour libérer de l'espace lorsqu'une écriture sur un volume échoue en raison d'un manque d'espace dans l'agrégat.
+
+** Copies Snapshot
++
+Affiche des informations sur les copies Snapshot dans le volume.
+
++
+Le nombre de copies Snapshot dans le volume est affiché sous forme de lien. Lorsque vous cliquez sur ce lien, la boîte de dialogue « Copies Snapshot d'un volume » s'ouvre et affiche les détails des copies Snapshot.
+
++
+Le nombre de copies Snapshot est mis à jour environ toutes les heures ; cependant, la liste des copies Snapshot est mise à jour au moment où vous cliquez sur l’icône. Il peut donc y avoir une différence entre le nombre de copies Snapshot affiché dans la topologie et le nombre de copies Snapshot répertoriées lorsque vous cliquez sur l’icône.
+
+
+
+* *Déplacement de volume*
++
+Affiche l'état de l'opération de déplacement de volume en cours ou de la dernière opération effectuée sur le volume, ainsi que d'autres détails, tels que la phase actuelle de l'opération de déplacement de volume en cours, l'agrégat source, l'agrégat de destination, l'heure de début, l'heure de fin et l'heure de fin estimée.
+
++
+Affiche également le nombre d'opérations de déplacement de volume effectuées sur le volume sélectionné. Pour plus d'informations sur ces opérations, cliquez sur le lien *Historique des déplacements de volume*.
+
+
+
+
+
+[[configuration-tab]]
+== Onglet Configuration
+
+L'onglet Configuration affiche des détails sur le volume sélectionné, tels que les règles d'export, le type RAID, la capacité et les fonctionnalités liées à l'efficacité du stockage du volume :
+
+* *Aperçu*
++
+** Nom complet
++
+Affiche le nom complet du volume.
+
+** Agrégats
++
+Affiche le nom de l'agrégat sur lequel réside le volume, ou le nombre d'agrégats sur lesquels réside le volume FlexGroup.
+
+** Politique de hiérarchisation
++
+Affiche la stratégie de hiérarchisation définie pour le volume, si celui-ci est déployé sur un agrégat compatible avec FabricPool. La stratégie peut être Aucune, Instantané uniquement, Sauvegarde, Automatique ou Toutes.
+
+** VM de stockage
++
+Affiche le nom de la SVM qui contient le volume.
+
+** Chemin de jonction
++
+Affiche l'état du chemin, qui peut être actif ou inactif. Le chemin dans la SVM sur lequel le volume est monté s'affiche également. Vous pouvez cliquer sur le lien *Historique* pour afficher les cinq modifications les plus récentes apportées au chemin de jonction.
+
+** Règles d'export
++
+Affiche le nom de la règles d'export créée pour le volume. Vous pouvez cliquer sur le lien pour afficher des détails sur les règles d'export, les protocoles d'authentification et l'accès activé sur les volumes appartenant à la SVM.
+
+** Style
++
+Affiche le style de volume. Le style de volume peut être FlexVol ou FlexGroup.
+
+** Type
++
+Affiche le type du volume sélectionné. Le type de volume peut être : Lecture-écriture, Partage de charge, Protection des données, Cache de données ou Temporaire.
+
+** Type RAID
++
+Affiche le type RAID du volume sélectionné. Le type RAID peut être RAID0, RAID4, RAID-DP ou RAID-TEC.
+
++
+[NOTE]
+====
+Plusieurs types RAID peuvent s'afficher pour les volumes FlexGroup, car les volumes constitutifs des FlexGroups peuvent se trouver sur des agrégats de types différents.
+
+====
+** Type de SnapLock
++
+Affiche le type SnapLock de l’agrégat qui contient le volume.
+
+** SnapLock Expiration
++
+Affiche la date d'expiration du volume SnapLock.
+
+
+
+* *Capacité*
++
+** Provisionnement fin
++
+Indique si le provisionnement est configuré pour le volume.
+
+** Dimensionnement automatique
++
+Indique si le volume flexible augmente automatiquement dans un agrégat.
+
+** Suppression automatique des copies Snapshot
++
+Indique si les copies Snapshot sont automatiquement supprimées pour libérer de l'espace lorsqu'une écriture sur un volume échoue en raison d'un manque d'espace dans l'agrégat.
+
+** Quotas
++
+Indique si les quotas sont activés pour le volume.
+
+
+
+* *Efficacité*
++
+** Compression
++
+Indique si la compression est activée ou désactivée.
+
+** Déduplication
++
+Indique si la déduplication est activée ou désactivée.
+
+** Mode de déduplication
++
+Indique si l'opération de déduplication activée sur un volume est manuelle, planifiée ou basée sur une stratégie. Si le mode est défini sur Planifiée, la planification de l'opération est affichée, et si le mode est défini sur une stratégie, le nom de la stratégie est affiché.
+
+** Type de déduplication
++
+Spécifie le type d'opération de déduplication exécutée sur le volume. Si le volume est dans une relation SnapVault, le type affiché est SnapVault. Pour tout autre volume, le type affiché est Régulier.
+
+** Politique d'efficacité du stockage
++
+Indique le nom des règles d'efficacité attribuées à ce volume via Unified Manager. Ces règles peuvent contrôler les paramètres de compression et de déduplication.
+
+
+
+* *Protection*
++
+** Copies Snapshot
++
+Indique si les copies Snapshot automatiques sont activées ou désactivées.
+
+
+
+
+
+
+
+[[protection-tab]]
+== Onglet Protection
+
+L'onglet Protection affiche des détails de protection sur le volume sélectionné, tels que les informations sur le retard, le type de relation et la topologie de la relation.
+
+* *Résumé*
++
+Affiche les propriétés des relations de protection (SnapMirror, SnapVault ou Storage VM DR) pour un volume sélectionné. Pour tout autre type de relation, seule la propriété Type de relation est affichée. Si un volume principal est sélectionné, seules les stratégies de copie Snapshot gérée et locale sont affichées. Les propriétés affichées pour les relations SnapMirror et SnapVault incluent les suivantes :
+
++
+** Volume source
++
+Affiche le nom de la source du volume sélectionné si celui-ci est une destination.
+
+** État du retard
++
+Affiche l'état du délai de mise à jour ou de transfert d'une relation de protection. L'état peut être Erreur, Avertissement ou Critique.
+
++
+L'état du décalage ne s'applique pas aux relations synchrones.
+
+** Durée du décalage
++
+Affiche le délai de décalage temporel entre les données du miroir et celles de la source.
+
+** Dernière mise à jour réussie
++
+Affiche la date et l'heure de la dernière mise à jour de protection réussie.
+
++
+La dernière mise à jour réussie n'est pas applicable aux relations synchrones.
+
+** Membre du service de stockage
++
+Affiche Oui ou Non pour indiquer si le volume appartient à un service de stockage et est géré par celui-ci.
+
+** Version de la réplication flexible
++
+Affiche « Oui », « Oui avec option de sauvegarde » ou « Aucun ». « Oui » indique que la réplication SnapMirror est possible même si les volumes source et de destination exécutent différentes versions du logiciel ONTAP. « Oui avec option de sauvegarde » indique la mise en œuvre de la protection SnapMirror avec la possibilité de conserver plusieurs versions des copies de sauvegarde sur la destination. « Aucun » indique que la réplication flexible de version n'est pas activée.
+
+** Capacité de la relation
++
+Indique les capacités ONTAP disponibles pour la relation de protection.
+
+** Service de protection
++
+Affiche le nom du service de protection si la relation est gérée par une application partenaire de protection.
+
+** Type de relation
++
+Affiche tout type de relation, y compris Miroir asynchrone, coffre-fort asynchrone, MirrorVault asynchrone, StrictSync et Sync.
+
+** État de la relation
++
+Affiche l’état de la relation SnapMirror ou SnapVault. L’état peut être Uninitialized, SnapMirrored ou Broken-Off. Si un volume source est sélectionné, l’état de la relation n’est pas applicable et n’est pas affiché.
+
+** État du transfert
++
+Affiche l'état du transfert pour la relation de protection. L'état du transfert peut être l'un des suivants :
+
++
+*** Annulation en cours
++
+Les transferts SnapMirror sont activés ; cependant, une opération d'annulation de transfert pouvant inclure la suppression du point de contrôle est en cours.
+
+*** Vérification
++
+Le volume de destination subit une vérification diagnostique et aucun transfert n'est en cours.
+
+*** Finalisation
++
+Les transferts SnapMirror sont activés. Le volume est actuellement en phase de post-transfert pour les transferts incrémentiels SnapVault.
+
+*** Inactif
++
+Les transferts sont activés et aucun transfert n'est en cours.
+
+*** Synchronisé
++
+Les données des deux volumes de la relation synchrone sont synchronisées.
+
+*** Désynchronisé
++
+Les données du volume de destination ne sont pas synchronisées avec le volume source.
+
+*** Préparation
++
+SnapMirror est activé pour les transferts. Le volume est actuellement dans la phase de pré-transfert pour les transferts incrémentiels SnapVault.
+
+*** En file d'attente
++
+SnapMirror les transferts sont activés. Aucun transfert n'est en cours.
+
+*** Suspendu
++
+Les transferts SnapMirror sont désactivés. Aucun transfert n'est en cours.
+
+*** Suspension
++
+Un transfert SnapMirror est en cours. Les transferts supplémentaires sont désactivés.
+
+*** Transfert
++
+SnapMirror est activé et un transfert est en cours.
+
+*** Transition
++
+Le transfert asynchrone des données du volume source vers le volume de destination est terminé et la transition vers un fonctionnement synchrone a commencé.
+
+*** En attente
++
+Un transfert SnapMirror a été lancé, mais certaines tâches associées sont en attente de mise en file d'attente.
+
+
+
+** Taux de transfert maximal
++
+Affiche le débit de transfert maximal pour la relation. Le débit de transfert maximal peut être une valeur numérique en kilo-octets par seconde (Kbps), mégaoctets par seconde (Mbps), gigaoctets par seconde (Gbps) ou téraoctets par seconde (Tbps). Si la mention « Aucune limite » apparaît, le transfert de base entre les relations est illimité.
+
+** SnapMirror stratégie
++
+Affiche la stratégie de protection du volume. DPDefault indique la stratégie de protection par défaut « Miroir asynchrone », XDPDefault indique la stratégie par défaut « Vault asynchrone » et DPSyncDefault indique la stratégie par défaut MirrorVault asynchrone. StrictSync indique la stratégie de protection stricte synchrone par défaut, et Sync indique la stratégie synchrone par défaut. Vous pouvez cliquer sur le nom de la stratégie pour afficher les détails associés à cette stratégie, y compris les informations suivantes :
+
++
+*** priorité de transfert
+*** Ignorer le paramètre de temps d'accès
+*** Limite de tentatives
+*** Commentaires
+*** SnapMirror étiquettes
+*** Paramètres de rétention
+*** Copies Snapshot réelles
+*** Conserver les copies Snapshot
+*** Seuil d'alerte de rétention
+*** Copies Snapshot sans paramètres de rétention Dans une relation SnapVault en cascade où la source est un volume de protection des données (DP), seule la règle « `sm_created` » s'applique.
+
+
+** Calendrier de mise à jour
++
+Affiche la planification SnapMirror associée à la relation. Placez votre curseur sur l'icône d'information pour afficher les détails de la planification.
+
+** Stratégie Snapshot locale
++
+Affiche la stratégie de copie Snapshot pour le volume. La stratégie est Default, None ou tout nom donné à une stratégie personnalisée.
+
+** Protégé par
++
+Affiche le type de protection utilisé pour le volume sélectionné. Par exemple, si un volume est protégé par des relations de volume Consistency Group et SnapMirror, ce champ affiche à la fois SnapMirror et Consistency Group. Ce champ fournit également un lien qui vous redirige vers la page Relationships pour afficher l'état unifié des relations. Le lien s'applique uniquement aux relations de constituants.
+
+** Groupe de cohérence
++
+Pour les volumes protégés par des relations de synchronisation active SnapMirror, cette colonne affiche le groupe de cohérence du volume.
+
+
+
+* *Vues*
++
+Affiche la topologie de protection du volume sélectionné. Cette topologie comprend des représentations graphiques de tous les volumes liés au volume sélectionné. Le volume sélectionné est indiqué par une bordure gris foncé, et les lignes entre les volumes indiquent le type de relation de protection. Le sens des relations dans la topologie est affiché de gauche à droite, la source de chaque relation étant à gauche et la destination à droite.
+
++
+Les doubles traits gras indiquent une relation Mirror asynchrone, un seul trait gras indique une relation Vault asynchrone, les doubles traits simples indiquent une relation MirrorVault asynchrone, et un trait gras et un trait non gras indiquent une relation synchrone. Le tableau ci-dessous indique si la relation synchrone est de type StrictSync ou Sync.
+
++
+Un clic droit sur un volume affiche un menu qui vous permet de choisir de protéger le volume ou d'y restaurer des données. Un clic droit sur une relation affiche un menu qui vous permet de choisir de modifier, d'interrompre, de mettre en pause, de rompre, de supprimer ou de reprendre une relation.
+
++
+Les menus ne s'afficheront pas dans les cas suivants :
+
++
+** Si les paramètres RBAC ne permettent pas cette action, par exemple si vous ne disposez que de privilèges d'opérateur
+** Si le volume fait partie d'une relation de protection synchrone
+** Lorsque l'ID du volume est inconnu, par exemple lorsque vous avez une relation intercluster et que le cluster de destination n'a pas encore été découvert, le fait de cliquer sur un autre volume dans la topologie sélectionne ce volume et affiche les informations le concernant. Un point d'interrogation (image:../media/hastate_unknown.gif["Icône pour l'état HA – inconnu"] ) dans le coin supérieur gauche d'un volume indique que le volume est manquant ou qu'il n'a pas encore été découvert. Il peut également indiquer que les informations de capacité sont manquantes. Le fait de placer votre curseur sur le point d'interrogation affiche des informations supplémentaires, y compris des suggestions d'actions correctives.
+
+
++
+La topologie affiche des informations sur la capacité du volume, le retard, les copies Snapshot et le dernier transfert de données réussi si elle correspond à l'un de plusieurs modèles de topologie courants. Si une topologie ne correspond à aucun de ces modèles, les informations sur le retard du volume et le dernier transfert de données réussi s'affichent dans un tableau des relations sous la topologie. Dans ce cas, la ligne mise en surbrillance dans le tableau indique le volume sélectionné et, dans la vue de topologie, des lignes en gras avec un point bleu indiquent la relation entre le volume sélectionné et son volume source.
+
+
+
+Les vues topologiques comprennent les informations suivantes :
+
+* Capacité
++
+Affiche la capacité totale utilisée par le volume. Lorsque vous placez le curseur sur un volume dans la topologie, les paramètres de seuil d'avertissement et critique actuels de ce volume s'affichent dans la boîte de dialogue « Paramètres de seuil actuels ». Vous pouvez également modifier les paramètres de seuil en cliquant sur le lien *Edit Thresholds* dans la boîte de dialogue « Paramètres de seuil actuels ». Si vous décochez la case à cocher *Capacity*, toutes les informations de capacité de tous les volumes de la topologie sont masquées.
+
+* Décalage
++
+Affiche la durée du décalage et l'état du décalage des relations de protection entrantes. Le fait de décocher la case à cocher *Lag* masque toutes les informations de décalage pour tous les volumes de la topologie. Lorsque la case à cocher *Lag* est grisée, les informations de décalage du volume sélectionné s'affichent dans le tableau des relations situé sous la topologie, ainsi que les informations de décalage de tous les volumes associés.
+
+* Instantané
++
+Affiche le nombre de copies Snapshot disponibles pour un volume. Décocher la case à cocher *Snapshot* masque toutes les informations relatives aux copies Snapshot pour tous les volumes de la topologie. Cliquer sur l'icône de copie Snapshot ( image:../media/icon_snapshot_list.gif["Icône pour la liste des copies Snapshot associées à un volume"] ) affiche la liste des copies Snapshot d'un volume. Le nombre de copies Snapshot affiché à côté de l'icône est mis à jour environ toutes les heures ; cependant, la liste des copies Snapshot est mise à jour lorsque vous cliquez sur l'icône. Cela peut entraîner une différence entre le nombre de copies Snapshot affiché dans la topologie et le nombre de copies Snapshot répertoriées lorsque vous cliquez sur l'icône.
+
+* Dernier transfert réussi
++
+Affiche la quantité, la durée, l'heure et la date du dernier transfert de données réussi. Lorsque la case à cocher *Last Successful Transfer* est grisée, les informations relatives au dernier transfert de données réussi du volume sélectionné s'affichent dans le tableau des relations situé sous la topologie, ainsi que les informations relatives au dernier transfert de données réussi de tous les volumes associés.
+
++
+** *Histoire*
++
+Affiche sous forme de graphique l'historique des relations de protection entrantes SnapMirror et SnapVault pour le volume sélectionné. Trois graphiques d'historique sont disponibles : durée du décalage des relations entrantes, durée du transfert des relations entrantes et taille du transfert des relations entrantes. Les informations d'historique ne sont affichées que lorsque vous sélectionnez un volume de destination. Si vous sélectionnez un volume principal, les graphiques sont vides et le message No data found s'affiche. Si les volumes sont protégés par des relations de groupe de cohérence et SnapMirror synchrones, les informations sur la durée du transfert des relations et la taille du transfert des relations ne sont pas affichées.
+
+
+
++
+Vous pouvez sélectionner un type de graphique dans la liste déroulante située en haut du volet Historique. Vous pouvez également consulter les détails d'une période spécifique en sélectionnant 1 semaine, 1 mois ou 1 an. Les graphiques d'historique peuvent vous aider à identifier des tendances : par exemple, si d'importantes quantités de données sont transférées à la même heure de la journée ou le même jour de la semaine, ou si le seuil d'avertissement de retard ou le seuil d'erreur de retard est régulièrement dépassé, vous pouvez prendre les mesures appropriées. De plus, vous pouvez cliquer sur le bouton *Export* pour créer un rapport au format CSV pour le graphique que vous consultez.
+
+
+
+Les graphiques d'historique de protection affichent les informations suivantes :
+
+* *Durée du décalage de la relation*
++
+Affiche les secondes, les minutes ou les heures sur l'axe vertical (y), et les jours, les mois ou les années sur l'axe horizontal (x), selon la période de durée sélectionnée. La valeur supérieure sur l'axe y indique la durée de retard maximale atteinte pendant la période de durée affichée sur l'axe x. La ligne orange horizontale du graphique représente le seuil d'erreur de retard, et la ligne jaune horizontale représente le seuil d'avertissement de retard. Lorsque vous placez votre curseur sur ces lignes, le paramètre de seuil s'affiche. La ligne bleue horizontale représente la durée de retard. Vous pouvez afficher les détails de points spécifiques du graphique en plaçant votre curseur sur une zone d'intérêt.
+
+* *Durée du transfert de relation*
++
+L'axe vertical (y) affiche les secondes, les minutes ou les heures, et l'axe horizontal (x) les jours, les mois ou les années, selon la période sélectionnée. La valeur supérieure sur l'axe des y indique la durée de transfert maximale atteinte pendant la période affichée sur l'axe des x. Vous pouvez afficher les détails de points précis du graphique en plaçant votre curseur sur la zone souhaitée.
+
++
+[NOTE]
+====
+Ce graphique n'est pas disponible pour les volumes faisant l'objet de relations de protection synchrones.
+
+====
+* *Taille transférée de la relation*
++
+L'axe vertical (y) affiche les octets, kilo-octets, méga-octets, etc., en fonction de la taille du transfert, et l'axe horizontal (x) affiche les jours, mois ou années en fonction de la période sélectionnée. La valeur maximale sur l'axe y correspond à la taille maximale du transfert atteinte pendant la période indiquée sur l'axe x. Vous pouvez afficher les détails de points précis du graphique en plaçant votre curseur sur la zone souhaitée.
+
++
+[NOTE]
+====
+Ce graphique n'est pas disponible pour les volumes faisant l'objet de relations de protection synchrones.
+
+====
+
+
+
+
+[[history-area]]
+== Zone historique
+
+La section Historique affiche des graphiques fournissant des informations sur la capacité et les réservations d'espace du volume sélectionné. Vous pouvez également cliquer sur le bouton *Exporter* pour générer un rapport au format CSV à partir du graphique affiché.
+
+Les graphiques peuvent être vides et le message No data found peut s'afficher lorsque les données ou l'état du volume restent inchangés pendant un certain temps.
+
+Vous pouvez sélectionner un type de graphique dans la liste déroulante située en haut du volet Historique. Vous pouvez également consulter les détails d'une période spécifique en sélectionnant 1 semaine, 1 mois ou 1 an. Les graphiques d'historique peuvent vous aider à identifier les tendances ; par exemple, si l'utilisation du volume dépasse régulièrement le seuil « Presque plein », vous pouvez prendre les mesures appropriées.
+
+Les graphiques historiques affichent les informations suivantes :
+
+* *Capacité utilisée du volume*
++
+Affiche la capacité utilisée dans le volume ainsi que la tendance d’utilisation de la capacité du volume, en fonction de l’historique d’utilisation, sous forme de graphiques linéaires en octets, kilo-octets, méga-octets, etc., sur l’axe vertical (y). La période est affichée sur l’axe horizontal (x). Vous pouvez sélectionner une période d’une semaine, d’un mois ou d’une année. Vous pouvez afficher les détails de points spécifiques sur le graphique en plaçant votre curseur sur une zone donnée. Vous pouvez masquer ou afficher un graphique linéaire en cliquant sur la légende appropriée. Par exemple, lorsque vous cliquez sur la légende « Capacité utilisée du volume », la courbe du graphique Capacité utilisée du volume est masquée.
+
+* *Capacité du volume utilisée par rapport à la capacité totale*
++
+Affiche l'évolution de l'utilisation de la capacité du volume en fonction de l'historique d'utilisation, ainsi que la capacité utilisée, la capacité totale et les détails des économies d'espace grâce à la déduplication et à la compression, sous forme de graphiques linéaires, en octets, kilo-octets, mégaoctets, etc., sur l'axe vertical (y). La période est affichée sur l'axe horizontal (x). Vous pouvez sélectionner une période d'une semaine, d'un mois ou d'un an. Vous pouvez afficher les détails de points spécifiques sur le graphique en plaçant votre curseur sur une zone particulière. Vous pouvez masquer ou afficher un graphique linéaire en cliquant sur la légende appropriée. Par exemple, lorsque vous cliquez sur la légende Trend Capacity Used, la ligne du graphique Trend Capacity Used est masquée.
+
+* *Capacité du volume utilisée (%)*
++
+Affiche la capacité utilisée dans le volume et la tendance de l'utilisation de la capacité du volume en fonction de l'historique d'utilisation, sous forme de courbes, en pourcentage, sur l'axe vertical (y). La période est affichée sur l'axe horizontal (x). Vous pouvez sélectionner une période d'une semaine, d'un mois ou d'une année. Vous pouvez afficher les détails de points spécifiques du graphique en plaçant votre curseur sur une zone particulière. Vous pouvez masquer ou afficher une courbe en cliquant sur la légende appropriée. Par exemple, lorsque vous cliquez sur la légende Volume Used Capacity, la courbe Volume Used Capacity est masquée.
+
+* *Capacité de snapshot utilisée (%)*
++
+Affiche la réserve Snapshot et le seuil d'avertissement Snapshot sous forme de courbes, ainsi que la capacité utilisée par les copies Snapshot sous forme de graphique en aires, en pourcentage, sur l'axe vertical (y). Le dépassement Snapshot est représenté par différentes couleurs. La période est affichée sur l'axe horizontal (x). Vous pouvez sélectionner une période d'une semaine, d'un mois ou d'un an. Vous pouvez afficher les détails de points spécifiques du graphique en plaçant votre curseur sur une zone particulière. Vous pouvez masquer ou afficher une courbe en cliquant sur la légende correspondante. Par exemple, lorsque vous cliquez sur la légende Snapshot Reserve, la courbe Snapshot Reserve est masquée.
+
+
+
+
+
+[[events-list]]
+== Liste des événements
+
+La liste des événements affiche des détails sur les événements nouveaux et acquittés :
+
+* *Gravité*
++
+Indique la gravité de l'événement.
+
+* *Événement*
++
+Affiche le nom de l'événement.
+
+* *Heure de déclenchement*
++
+Affiche le temps écoulé depuis la génération de l'événement. Si ce temps dépasse une semaine, l'horodatage de la génération de l'événement s'affiche.
+
+
+
+
+
+[[related-annotations-pane]]
+== Volet des annotations associées
+
+Le volet Annotations associées vous permet d'afficher les détails des annotations associées au volume sélectionné. Ces détails comprennent le nom de l'annotation et les valeurs d'annotation appliquées au volume. Vous pouvez également supprimer manuellement des annotations depuis le volet Annotations associées.
+
+
+
+[[related-devices-pane]]
+== Volet Appareils associés
+
+Le volet Périphériques associés vous permet d'afficher les SVM, les agrégats, les qtrees, les LUN et les copies Snapshot liés au volume, et d'y accéder :
+
+* *Machine virtuelle de stockage*
++
+Affiche la capacité et l’état de santé de la SVM qui contient le volume sélectionné.
+
+* *Agrégat*
++
+Affiche la capacité et l'état de santé de l'agrégat contenant le volume sélectionné. Pour les volumes FlexGroup, le nombre d'agrégats qui composent le FlexGroup est indiqué.
+
+* *Volumes dans l'agrégat*
++
+Affiche le nombre et la capacité de tous les volumes appartenant à l'agrégat parent du volume sélectionné. L'état de santé des volumes est également affiché, selon le niveau de gravité le plus élevé. Par exemple, si un agrégat contient dix volumes, dont cinq affichent l'état « Avertissement » et les cinq autres l'état « Critique », l'état affiché est « Critique ». Ce composant n'apparaît pas pour les volumes FlexGroup.
+
+* *Qtrees*
++
+Affiche le nombre de qtrees que contient le volume sélectionné ainsi que la capacité des qtrees avec quota que contient le volume sélectionné. La capacité des qtrees avec quota est affichée par rapport à la capacité de données du volume. L’état de santé des qtrees est également affiché, en fonction du niveau de gravité le plus élevé. Par exemple, si un volume comporte dix qtrees, cinq avec l’état Avertissement et les cinq autres avec l’état Critique, l’état affiché est Critique.
+
+* *Partages NFS*
++
+Affiche le nombre et l'état des partages NFS associés au volume.
+
+* *Partages SMB*
++
+Affiche le nombre et l'état des partages SMB/CIFS.
+
+* *LUN*
++
+Affiche le nombre et la taille totale de tous les LUN du volume sélectionné. L'état de santé des LUN est également affiché, selon le niveau de gravité le plus élevé.
+
+* *Quotas par utilisateur et par groupe*
++
+Affiche le nombre et l'état des quotas d'utilisateurs et de groupes d'utilisateurs associés au volume et à ses qtrees.
+
+* *Volumes FlexClone®*
++
+Affiche le nombre et la capacité de tous les volumes clonés du volume sélectionné. Le nombre et la capacité ne sont affichés que si le volume sélectionné contient des volumes clonés.
+
+* *Volume parent*
++
+Affiche le nom et la capacité du volume parent d'un volume FlexClone sélectionné. Le volume parent n'est affiché que si le volume sélectionné est un volume FlexClone.
+
+
+
+
+
+[[related-groups-pane]]
+== volet Groupes associés
+
+Le volet Groupes associés vous permet d'afficher la liste des groupes associés au volume sélectionné.
+
+
+
+[[related-alerts-pane]]
+== Volet Alertes associées
+
+Le volet « Alertes associées » vous permet de consulter la liste des alertes créées pour le volume sélectionné. Vous pouvez également ajouter une alerte en cliquant sur le lien « Ajouter une alerte » ou modifier une alerte existante en cliquant sur son nom.

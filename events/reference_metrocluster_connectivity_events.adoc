@@ -1,0 +1,258 @@
+---
+permalink: events/reference_metrocluster_connectivity_events.html 
+sidebar: sidebar 
+keywords: metrocluster, connectivity, events, impact area, availability 
+summary: 'Les événements de connectivité vous fournissent des informations sur la connectivité entre les composants d"un cluster et entre les clusters dans une configuration MetroCluster afin que vous puissiez surveiller d"éventuels problèmes. Les événements sont regroupés par zone d"impact et incluent le nom de l"événement et du trap, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements de connectivité MetroCluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements de connectivité vous fournissent des informations sur la connectivité entre les composants d'un cluster et entre les clusters dans les configurations MetroCluster over FC et MetroCluster over IP, afin que vous puissiez surveiller d'éventuels problèmes. Les événements sont regroupés par zone d'impact et comprennent le nom de l'événement et du trap, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[events-common-in-both-configurations]]
+== Événements communs aux deux configurations
+
+Ces événements de connectivité sont courants aussi bien pour les configurations MetroCluster over FC que pour les configurations MetroCluster over IP.
+
+
+
+[[impact-area-availability]]
+=== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Tous les liens entre les partenaires MetroCluster sont hors service (ocumEvtMetroClusterAllLinksBetweenPartnersDown)
+ a| 
+Incident
+ a| 
+MetroCluster relation
+ a| 
+Primordial
+
+
+
+ a| 
+MetroCluster Partenaires non joignables via le réseau de peering (ocumEvtMetroClusterPartnersNotReachableOverPeeringNetwork)
+ a| 
+Incident
+ a| 
+MetroCluster relation
+ a| 
+Primordial
+
+
+
+ a| 
+MetroCluster Capacité de reprise après sinistre impactée(ocumEvtMetroClusterDRStatusImpacted)
+ a| 
+Risque
+ a| 
+MetroCluster relation
+ a| 
+Primordial
+
+
+
+ a| 
+MetroCluster Configuration basculée (ocumEvtMetroClusterDRStatusImpacted)
+ a| 
+Risque
+ a| 
+MetroCluster relation
+ a| 
+Avertissement
+
+|===
+
+
+[[metrocluster-over-fc-configuration]]
+== Configuration MetroCluster over FC
+
+Ces événements concernent les configurations MetroCluster sur FC.
+
+
+
+[[impact-area-availability]]
+=== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Toutes les liaisons inter-commutateurs sont hors service(ocumEvtMetroClusterAllISLBetweenSwitchesDown)
+ a| 
+Incident
+ a| 
+MetroCluster connexion intercommutateurs
+ a| 
+Primordial
+
+
+
+ a| 
+Liaison FC-SAS Bridge vers la pile de stockage en panne(ocumEvtBridgeSasPortDown)
+ a| 
+Incident
+ a| 
+MetroCluster connexion de la pile de ponts
+ a| 
+Primordial
+
+
+
+ a| 
+MetroCluster Configuration partiellement basculée(ocumEvtMetroClusterDRStatusPartiallyImpacted)
+ a| 
+Risque
+ a| 
+MetroCluster relation
+ a| 
+Erreur
+
+
+
+ a| 
+Commutateur de nœud vers FC Switch : toutes les liaisons d’interconnexion FC-VI sont hors service(ocumEvtMccNodeSwitchFcviLinksDown)
+ a| 
+Incident
+ a| 
+MetroCluster connexion du commutateur de nœud
+ a| 
+Primordial
+
+
+
+ a| 
+Nœud vers commutateur FC : une ou plusieurs liaisons d'initiateur FC sont hors service(ocumEvtMccNodeSwitchFcLinksOneOrMoreDown)
+ a| 
+Risque
+ a| 
+MetroCluster connexion du commutateur de nœud
+ a| 
+Avertissement
+
+
+
+ a| 
+Passage du nœud au commutateur FC : toutes les liaisons d’initiateur FC sont hors service (ocumEvtMccNodeSwitchFcLinksDown)
+ a| 
+Incident
+ a| 
+MetroCluster connexion du commutateur de nœud
+ a| 
+Primordial
+
+
+
+ a| 
+Liaison FC du commutateur vers le pont FC-SAS inactive (ocumEvtMccSwitchBridgeFcLinksDown)
+ a| 
+Incident
+ a| 
+MetroCluster connexion du pont de commutateur
+ a| 
+Primordial
+
+
+
+ a| 
+Toutes les liaisons FC VI InterConnect inter-nœuds sont hors service (ocumEvtMccInterNodeLinksDown)
+ a| 
+Incident
+ a| 
+Connexion inter-nœuds
+ a| 
+Primordial
+
+
+
+ a| 
+Un ou plusieurs liens FC VI InterConnect inter-nœuds sont en panne (ocumEvtMccInterNodeLinksOneOrMoreDown)
+ a| 
+Risque
+ a| 
+Connexion inter-nœuds
+ a| 
+Avertissement
+
+
+
+ a| 
+Liaison nœud-pont en panne (ocumEvtMccNodeBridgeLinksDown)
+ a| 
+Incident
+ a| 
+Connexion au bridge du nœud
+ a| 
+Primordial
+
+
+
+ a| 
+Tous les liens SAS du nœud vers la pile de stockage sont hors service ( ocumEvtMccNodeStackLinksDown)
+ a| 
+Incident
+ a| 
+Connexion de la pile de nœuds
+ a| 
+Primordial
+
+
+
+ a| 
+Nœud vers pile de stockage : une ou plusieurs liaisons SAS sont hors service (ocumEvtMccNodeStackLinksOneOrMoreDown)
+ a| 
+Risque
+ a| 
+Connexion de la pile de nœuds
+ a| 
+Avertissement
+
+|===
+
+
+[[metrocluster-over-ip-configuration]]
+== Configuration MetroCluster sur IP
+
+Ces événements concernent les configurations MetroCluster over IP.
+
+
+
+[[impact-area-availability]]
+=== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+MetroCluster l’état de la connectivité intersite IP est indisponible (mccIntersiteconnectivityStatusDown)
+ a| 
+Risque
+ a| 
+MetroCluster Relation
+ a| 
+Primordial
+
+
+
+ a| 
+MetroCluster-IP Connexion du nœud au commutateur hors ligne (mccIpPortStatusOffline)
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Erreur
+
+|===

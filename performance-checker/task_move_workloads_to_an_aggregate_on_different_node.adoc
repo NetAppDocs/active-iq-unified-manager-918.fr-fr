@@ -1,0 +1,85 @@
+---
+permalink: performance-checker/task_move_workloads_to_an_aggregate_on_different_node.html 
+sidebar: sidebar 
+keywords: moving, workloads, aggregate, different, node 
+summary: Vous pouvez utiliser Unified Manager pour identifier un agrégat sur un autre nœud moins sollicité que le nœud sur lequel vos workloads s’exécutent actuellement, puis déplacer les volumes sélectionnés vers cet agrégat. Le déplacement de workloads hautement performants vers un agrégat sur un nœud moins sollicité permet aux workloads sur les deux nœuds de fonctionner plus efficacement. 
+---
+= Déplacez les charges de travail vers un agrégat sur un autre nœud dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour identifier un agrégat sur un autre nœud moins sollicité que le nœud sur lequel vos workloads s’exécutent actuellement, puis déplacer les volumes sélectionnés vers cet agrégat. Le déplacement de workloads hautement performants vers un agrégat sur un nœud moins sollicité permet aux workloads sur les deux nœuds de fonctionner plus efficacement.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Vous avez dû noter le nom du nœud qui rencontre actuellement un problème de performance.
+* Vous devez avoir enregistré la date et l'heure auxquelles le nœud a reçu l'événement de performance.
+* Unified Manager doit avoir collecté et analysé au moins un mois de données de performance.
+
+
+Ces étapes vous aident à identifier les ressources suivantes afin que vous puissiez déplacer les workloads les plus performants vers un nœud moins utilisé :
+
+* Les nœuds du même cluster qui sont moins utilisés
+* Les agrégats sur le nouveau nœud qui sont les moins utilisés
+* Les volumes les plus performants sur le nœud actuel
+
+
+.Étapes
+. Identifiez le nœud du cluster qui est le moins utilisé :
++
+.. Sur la page de détails de l'*événement*, cliquez sur le nom du cluster sur lequel se trouve le nœud.
++
+Les détails du cluster sont affichés sur la page de destination Performance/Cluster.
+
+.. Sur la page *Résumé*, cliquez sur *Nœuds* dans le volet *Objets gérés*.
++
+La liste des nœuds de ce cluster est affichée.
+
+.. Cliquez sur la colonne *Utilisation* pour trier les nœuds du moins utilisé au plus utilisé.
++
+Vous pouvez également identifier les nœuds disposant de la plus grande *capacité libre*. Cela vous fournit une liste de nœuds potentiels vers lesquels vous pourriez déplacer des workloads.
+
+.. Notez le nom du nœud vers lequel vous souhaitez déplacer les workloads.
+
+
+. Identifiez sur le nouveau nœud l’agrégat le moins utilisé :
++
+.. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Agrégats* et sélectionnez *Performances* > *Tous les agrégats* dans le menu Affichage.
++
+La vue « Performances : Tous les agrégats » s’affiche.
+
+.. Cliquez sur *Filtrage*, sélectionnez *Nœud* dans le menu déroulant de gauche, saisissez le nom du nœud dans le champ de texte, puis cliquez sur *Appliquer le filtre*.
++
+La vue « Performances : Tous les agrégats » s’affiche à nouveau avec la liste des agrégats disponibles sur ce nœud.
+
+.. Cliquez sur la colonne *Utilisation* pour trier les agrégats du moins utilisé au plus utilisé.
++
+Vous pouvez également identifier les agrégats présentant la plus grande *capacité libre*. Ceci fournit une liste d'agrégats potentiels vers lesquels vous pourriez déplacer des workloads.
+
+.. Notez le nom de l'agrégat vers lequel vous souhaitez déplacer les workloads.
+
+
+. Identifiez les workloads les plus performants du nœud qui a reçu l'événement :
++
+.. Retournez à la page des détails de l’*Event* pour l’événement.
+.. Dans le champ *Volumes concernés*, cliquez sur le lien correspondant au nombre de volumes.
++
+La vue « Performances : Tous les volumes » affiche une liste filtrée des volumes présents sur ce nœud.
+
+.. Cliquez sur la colonne *Capacité totale* pour trier les volumes selon l'espace alloué le plus important.
++
+Ceci fournit une liste des volumes potentiels que vous souhaiterez peut-être déplacer.
+
+.. Notez les noms des volumes que vous souhaitez déplacer, ainsi que les noms des agrégats actuels sur lesquels ils se trouvent.
+
+
+. Déplacez les volumes vers les agrégats que vous avez identifiés comme ayant une faible utilisation sur le nouveau nœud.
++
+Vous pouvez effectuer l'opération de déplacement à l'aide de ONTAP System Manager, OnCommand Workflow Automation, des commandes ONTAP ou d'une combinaison de ces outils.
+
+
+
+Après quelques jours, vérifiez si vous recevez le même type d'événements de ce nœud ou de cet agrégat.

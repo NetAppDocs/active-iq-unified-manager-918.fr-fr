@@ -1,0 +1,36 @@
+---
+permalink: performance-checker/task_search_on_object_inventory_performance_pages.html 
+sidebar: sidebar 
+keywords: object, inventory, performance, pages 
+summary: 'Vous pouvez effectuer des recherches sur les pages de performances de l"inventaire des objets. Utilisez le champ de recherche situé en haut à droite de la page pour trouver rapidement des données par nom d"objet ou par nom de stratégie. Vous pouvez ainsi localiser rapidement des objets spécifiques et leurs données associées, ou des stratégies et consulter les données des objets de stratégie associés.' 
+---
+= Recherche sur les pages de performances de l'inventaire des objets dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez rechercher des chaînes sur les pages de performances de l’inventaire des objets. Utilisez le champ *Rechercher* situé en haut à droite de la page pour localiser rapidement des données par nom d’objet ou par nom de stratégie. Cela vous permet de localiser rapidement des objets spécifiques et leurs données associées, ou de localiser rapidement des stratégies et d’afficher les données des objets de stratégie associés.
+
+.Étape
+. Choisissez l'une des options suivantes, en fonction de vos critères de recherche :
++
+|===
+| Pour localiser cela... | Tapez ceci... 
+
+
+ a| 
+Un objet spécifique
+ a| 
+Saisissez le nom de l'objet dans le champ *Rechercher*, puis cliquez sur *Rechercher*. L'objet recherché et ses données associées s'affichent.
+
+
+
+ a| 
+Une politique de seuil de performance définie par l'utilisateur
+ a| 
+Saisissez tout ou partie du nom de la politique dans le champ *Rechercher*, puis cliquez sur *Rechercher*. Les objets associés à la politique recherchée s'affichent.
+
+|===
+

@@ -1,0 +1,16 @@
+---
+permalink: config/concept_login_banner.html 
+sidebar: sidebar 
+keywords: login banner, feature settings 
+summary: 'Cette fonctionnalité permet à votre organisation d"afficher des informations telles que les personnes autorisées à accéder au système et les conditions générales d"utilisation lors de la connexion et de la déconnexion.' 
+---
+= Ajouter une bannière de connexion dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'ajout d'une bannière de connexion permet à votre organisation d'afficher des informations telles que les personnes autorisées à accéder au système et les conditions générales d'utilisation lors de la connexion et de la déconnexion.
+
+Tout utilisateur, tel qu’un opérateur de stockage ou un administrateur, peut voir cette fenêtre contextuelle de bannière de connexion lors de la connexion, de la déconnexion et de l’expiration de la session.

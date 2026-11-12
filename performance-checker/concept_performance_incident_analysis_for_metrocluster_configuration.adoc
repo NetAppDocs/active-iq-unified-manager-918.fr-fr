@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_performance_incident_analysis_for_metrocluster_configuration.html 
+sidebar: sidebar 
+keywords: performance, event, analysis, metrocluster, configuration 
+summary: 'Vous pouvez utiliser Unified Manager pour analyser un incident de performance lié à une configuration MetroCluster. Vous pouvez identifier les workloads impliqués dans l"incident et consulter les actions suggérées pour le résoudre.' 
+---
+= Analysez les événements de performance MetroCluster avec Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour analyser un incident de performance lié à une configuration MetroCluster. Vous pouvez identifier les workloads impliqués dans l'incident et consulter les actions suggérées pour le résoudre.
+
+MetroCluster Les incidents de performance peuvent être dus à des workloads _bully_ qui surutilisent les liaisons intercommutateurs (ISL) entre les clusters, ou à des problèmes d'état des liaisons. Unified Manager surveille chaque cluster d'une configuration MetroCluster indépendamment, sans tenir compte des incidents de performance sur un cluster partenaire.
+
+Les événements de performance des deux clusters de la configuration MetroCluster sont également affichés sur la page du tableau de bord d'Unified Manager. Vous pouvez aussi consulter les pages d'état d'Unified Manager pour vérifier l'état de chaque cluster et visualiser leur relation.

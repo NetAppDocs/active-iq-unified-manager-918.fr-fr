@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_use_qos_policy_settings_to_prioritize_work_on_this_node.html 
+sidebar: sidebar 
+keywords: qos, policy, settings, prioritize, work, node 
+summary: 'Vous pouvez définir une limite pour un groupe de stratégie QoS afin de contrôler la limite de débit des workloads en E/S par seconde (IOPS) ou en Mo/s qu"il contient. Si les workloads se trouvent dans un groupe de stratégie sans limite définie, comme le groupe de stratégie par défaut, ou si la limite définie ne répond pas à vos besoins, vous pouvez l"augmenter ou déplacer les workloads vers un groupe de stratégie nouveau ou existant disposant de la limite souhaitée.' 
+---
+= Utilisez les paramètres de stratégie QoS pour prioriser les charges de travail des nœuds dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez définir une limite pour un groupe de stratégie QoS afin de contrôler la limite de débit des workloads en E/S par seconde (IOPS) ou en Mo/s qu'il contient. Si les workloads se trouvent dans un groupe de stratégie sans limite définie, comme le groupe de stratégie par défaut, ou si la limite définie ne répond pas à vos besoins, vous pouvez l'augmenter ou déplacer les workloads vers un groupe de stratégie nouveau ou existant disposant de la limite souhaitée.
+
+Si un événement de performance sur un nœud est dû à des workloads qui surutilisent les ressources du nœud, la description de l'événement sur la page Détails de l'événement affiche un lien vers la liste des volumes concernés. Sur la page Performance/Volumes, vous pouvez trier les volumes affectés par IOPS et Mo/s afin de voir quels workloads présentent l'utilisation la plus élevée et ont pu contribuer à l'événement.
+
+En attribuant les volumes qui utilisent excessivement les ressources du nœud à un paramètre de groupe de stratégies plus restrictif, le groupe de stratégies limite les workloads afin de restreindre leur activité, ce qui peut réduire l'utilisation des ressources sur ce nœud.
+
+Vous pouvez utiliser ONTAP System Manager ou les commandes ONTAP pour gérer les groupes de stratégies, notamment les tâches suivantes :
+
+* Création d'un groupe de règles
+* Ajout ou suppression de workloads dans un groupe de stratégies
+* Déplacer un workload entre des groupes de stratégie
+* Modification de la limite de débit d'un groupe de stratégies
+

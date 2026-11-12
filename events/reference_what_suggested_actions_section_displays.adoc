@@ -1,0 +1,26 @@
+---
+permalink: events/reference_what_suggested_actions_section_displays.html 
+sidebar: sidebar 
+keywords: suggest, actions, section, displays 
+summary: 'La section « Actions suggérées » de la page Détails de l"événement présente les causes possibles de l"événement et suggère quelques actions afin que vous puissiez essayer de résoudre l"événement vous-même. Les actions suggérées sont personnalisées en fonction du type d"événement ou du type de seuil qui a été dépassé.' 
+---
+= Découvrez les actions suggérées dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La section « Actions suggérées » de la page Détails de l'événement présente les causes possibles de l'événement et suggère quelques actions afin que vous puissiez essayer de résoudre l'événement vous-même. Les actions suggérées sont personnalisées en fonction du type d'événement ou du type de seuil qui a été dépassé.
+
+Cette zone n'est affichée que pour certains types d'événements.
+
+Dans certains cas, des liens *Aide* sont disponibles sur la page et renvoient à des informations complémentaires pour de nombreuses actions suggérées, notamment des instructions pour effectuer une action spécifique. Certaines de ces actions peuvent nécessiter l'utilisation de Unified Manager, ONTAP System Manager, OnCommand Workflow Automation, de commandes ONTAP CLI ou d'une combinaison de ces outils.
+
+Les actions suggérées ici ne constituent qu'une orientation pour la résolution de cet événement. La solution que vous entreprendrez devra être adaptée à votre environnement.
+
+Pour analyser l'objet et l'événement plus en détail, cliquez sur le bouton *Analyser la charge de travail* pour afficher la page d'analyse de la charge de travail.
+
+Unified Manager peut diagnostiquer certains événements en détail et proposer une solution unique. Le cas échéant, ces solutions sont affichées avec un bouton *Fix It*. Cliquez sur ce bouton pour qu'Unified Manager résolve le problème à l'origine de l'événement.
+
+Pour les événements de la plateforme Active IQ, cette section peut contenir, le cas échéant, un lien vers un article de la base de connaissances NetApp qui décrit le problème et les solutions possibles. Sur les sites sans accès réseau externe, un PDF de l'article de la base de connaissances s'ouvre localement ; ce PDF fait partie du fichier de règles que vous téléchargez manuellement sur l'instance Unified Manager.

@@ -1,0 +1,31 @@
+---
+permalink: events/task_view_events_that_occurred_during_maintenance_window.html 
+sidebar: sidebar 
+keywords: view, events, occurred, maintenance, window 
+summary: 'Au besoin, vous pouvez consulter les événements générés pour tous les objets de stockage pendant une fenêtre de maintenance d"Unified Manager. La plupart des événements apparaîtront à l"état Obsolète une fois la fenêtre de maintenance terminée et toutes les ressources système de nouveau opérationnelles.' 
+---
+= Consultez les événements générés pendant une fenêtre de maintenance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Au besoin, vous pouvez consulter les événements générés pour tous les objets de stockage pendant une fenêtre de maintenance d'Unified Manager. La plupart des événements apparaîtront à l'état Obsolète une fois la fenêtre de maintenance terminée et toutes les ressources système de nouveau opérationnelles.
+
+.Avant de commencer
+Au moins une période de maintenance doit être terminée avant que des événements ne soient disponibles.
+
+Les événements survenus pendant une période de maintenance n'apparaissent pas par défaut sur la page d'inventaire Event Management.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Événements*.
++
+Par défaut, tous les événements actifs (nouveaux et reconnus) sont affichés sur la page d'inventaire de gestion des événements.
+
+. Dans le volet Affichage, sélectionnez l'option *Tous les événements générés pendant la maintenance*.
++
+La liste des événements déclenchés au cours des 7 derniers jours, provenant de toutes les sessions de maintenance et de tous les clusters, est affichée.
+
+. S'il y a eu plusieurs fenêtres de maintenance pour un seul cluster, vous pouvez cliquer sur l'icône de calendrier *Heure de déclenchement* et sélectionner la période pour les événements de fenêtre de maintenance que vous souhaitez consulter.
+

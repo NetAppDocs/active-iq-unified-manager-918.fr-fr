@@ -1,0 +1,88 @@
+---
+permalink: events/task_add_alerts.html 
+sidebar: sidebar 
+keywords: add, alerts 
+summary: 'Vous pouvez configurer des alertes pour être notifié lorsqu"un événement particulier est généré. Vous pouvez configurer des alertes pour une ressource unique, pour un groupe de ressources ou pour des événements d"un type de gravité particulier. Vous pouvez définir la fréquence à laquelle vous souhaitez être notifié et associer un script à l"alerte.' 
+---
+= Ajouter des alertes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer des alertes pour être notifié lorsqu'un événement particulier est généré. Vous pouvez configurer des alertes pour une ressource unique, pour un groupe de ressources ou pour des événements d'un type de gravité particulier. Vous pouvez définir la fréquence à laquelle vous souhaitez être notifié et associer un script à l'alerte.
+
+.Avant de commencer
+* Vous devez avoir configuré les paramètres de notification, tels que l'adresse e-mail de l'utilisateur, le serveur SMTP et l'hôte de trap SNMP, pour permettre au serveur Active IQ Unified Manager d'utiliser ces paramètres afin d'envoyer des notifications aux utilisateurs lorsqu'un événement est généré.
+* Vous devez connaître les ressources et les événements pour lesquels vous souhaitez déclencher l'alerte, ainsi que les noms d'utilisateur ou les adresses électroniques des utilisateurs que vous souhaitez notifier.
+* Si vous souhaitez qu'un script s'exécute en fonction de l'événement, vous devez l'avoir ajouté à Unified Manager via la page Scripts.
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Vous pouvez créer une alerte directement depuis la page de détails de l'événement après avoir reçu un événement, en plus de la possibilité de créer une alerte depuis la page de configuration des alertes, comme décrit ici.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration des alertes*.
+. Sur la page *Configuration des alertes*, cliquez sur *Ajouter*.
+. Dans la boîte de dialogue *Ajouter une alerte*, cliquez sur *Nom*, puis saisissez un nom et une description pour l'alerte.
+. Cliquez sur *Ressources*, et sélectionnez les ressources à inclure dans l'alerte ou à exclure de l'alerte.
++
+Vous pouvez définir un filtre en saisissant une chaîne de caractères dans le champ « Le nom contient » afin de sélectionner un groupe de ressources. En fonction de la chaîne de caractères que vous spécifiez, la liste des ressources disponibles n’affiche que les ressources qui correspondent à la règle de filtrage. La chaîne de caractères que vous spécifiez est sensible à la casse.
+
++
+Si une ressource correspond à la fois aux règles d'inclusion et d'exclusion que vous avez spécifiées, la règle d'exclusion prévaut sur la règle d'inclusion, et aucune alerte n'est générée pour les événements liés à la ressource exclue.
+
+. Cliquez sur *Events*, puis sélectionnez les événements en fonction du nom de l'événement ou du type de gravité de l'événement pour lesquels vous souhaitez déclencher une alerte.
++
+[TIP]
+====
+Pour sélectionner plusieurs événements, maintenez la touche Ctrl enfoncée pendant que vous effectuez vos sélections.
+
+====
+. Cliquez sur *Actions*, puis sélectionnez les utilisateurs que vous souhaitez notifier, choisissez la fréquence des notifications, indiquez si un trap SNMP doit être envoyé au récepteur de traps, et attribuez un script à exécuter lorsqu'une alerte est générée.
++
+[NOTE]
+====
+Si vous modifiez l'adresse e-mail spécifiée pour l'utilisateur et rouvrez l'alerte pour la modifier, le champ Nom apparaît vide, car l'adresse e-mail modifiée n'est plus associée à l'utilisateur précédemment sélectionné. De même, si vous modifiez l'adresse e-mail de l'utilisateur sélectionné depuis la page Users, l'adresse e-mail modifiée n'est pas mise à jour pour l'utilisateur sélectionné.
+
+====
++
+Vous pouvez également choisir d’informer les utilisateurs via des traps SNMP.
+
+. Cliquez sur *Enregistrer*.
+
+
+
+
+[[example-of-adding-an-alert]]
+== Exemple d'ajout d'une alerte
+
+Cet exemple montre comment créer une alte qui répond aux exigences suivantes :
+
+* Nom de l'alerte : HealthTest
+* Ressources : comprend tous les volumes dont le nom contient « abc » et exclut tous les volumes dont le nom contient « xyz »
+* Événements : inclut tous les événements de santé critiques
+* Actions : inclut « sample@domain.com », un script « Test » et l’utilisateur doit être notifié toutes les 15 minutes
+
+
+Dans la boîte de dialogue Ajouter une alerte, procédez comme suit :
+
+. Cliquez sur *Nom*, et saisissez *`HealthTest`* dans le champ *Nom de l'alerte*.
+. Cliquez sur *Ressources*, puis dans l'onglet Inclure, sélectionnez *Volumes* dans la liste déroulante.
++
+.. Saisissez *`abc`* dans le champ *Name contains* pour afficher les volumes dont le nom contient "abc".
+.. Sélectionnez *+<<All Volumes whose name contains 'abc'>>+* dans la zone Ressources disponibles et déplacez-le vers la zone Ressources sélectionnées.
+.. Cliquez sur *Exclure*, saisissez *`xyz`* dans le champ *Le nom contient*, puis cliquez sur *Ajouter*.
+
+
+. Cliquez sur *Événements*, puis sélectionnez *Critique* dans le champ Gravité de l'événement.
+. Sélectionnez *Tous les événements critiques* dans la zone Événements correspondants, et déplacez-les vers la zone Événements sélectionnés.
+. Cliquez sur *Actions*, et saisissez *`sample@domain.com`* dans le champ Alerter ces utilisateurs.
+. Sélectionnez *Rappeler toutes les 15 minutes* pour notifier l'utilisateur toutes les 15 minutes.
++
+Vous pouvez configurer une alerte pour envoyer des notifications répétées aux destinataires pendant une période déterminée. Vous devez définir l'heure à partir de laquelle la notification d'événement est active pour cette alerte.
+
+. Dans le menu Sélectionner le script à exécuter, sélectionnez le script *Test*.
+. Cliquez sur *Enregistrer*.
+

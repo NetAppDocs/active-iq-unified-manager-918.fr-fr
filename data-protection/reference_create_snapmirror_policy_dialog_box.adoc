@@ -1,0 +1,68 @@
+---
+permalink: data-protection/reference_create_snapmirror_policy_dialog_box.html 
+sidebar: sidebar 
+keywords: create, snapmirror, policy, dialog box 
+summary: 'La boîte de dialogue Créer une stratégie SnapMirror vous permet de créer une stratégie pour définir la priorité des transferts SnapMirror. Vous utilisez des stratégies pour optimiser l"efficacité des transferts de la source vers la destination.' 
+---
+= Utilisez la boîte de dialogue Créer une stratégie SnapMirror dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La boîte de dialogue Créer une stratégie SnapMirror vous permet de créer une stratégie pour définir la priorité des transferts SnapMirror. Vous utilisez des stratégies pour optimiser l'efficacité des transferts de la source vers la destination.
+
+* *Cluster de destination*
++
+Le nom du cluster que vous avez sélectionné dans l'onglet SnapMirror de la boîte de dialogue Configurer la protection.
+
+* *SVM de destination*
++
+Le nom de la SVM que vous avez sélectionnée dans l'onglet SnapMirror de la boîte de dialogue Configurer la protection.
+
+* *Nom de la stratégie*
++
+Le nom que vous attribuez à la nouvelle stratégie. Les noms de stratégie peuvent contenir les caractères A à Z, a à z, 0 à 9, le point (.), le tiret (-) et le trait de soulignement (_).
+
+* *Priorité de transfert*
++
+La priorité à laquelle un transfert s'exécute pour les opérations asynchrones. Vous pouvez sélectionner Normal ou Low. Les relations de transfert avec des stratégies qui spécifient une priorité de transfert normale s'exécutent avant celles avec des stratégies qui spécifient une priorité de transfert faible.
+
+* *Commentaire*
++
+Champ facultatif dans lequel vous pouvez ajouter des commentaires sur la stratégie.
+
+* *Redémarrage du transfert*
++
+Indique l'action de redémarrage à entreprendre lorsqu'un transfert est interrompu par une opération d'annulation ou tout autre type de panne, comme une coupure réseau. Vous pouvez sélectionner l'une des options suivantes :
+
++
+** Toujours
++
+Spécifie qu'une nouvelle copie Snapshot est créée avant le redémarrage d'un transfert, puis que, s'il existe un point de contrôle, le transfert redémarre à partir de ce point de contrôle, suivi d'un transfert incrémentiel depuis la copie Snapshot nouvellement créée.
+
+** Jamais
++
+Indique que les transferts interrompus ne sont jamais redémarrés.
+
+
+
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Annuler*
++
+Annule les sélections et ferme la boîte de dialogue Configurer la protection.
+
+* *Appliquer*
++
+Applique les sélections que vous avez effectuées et lance le processus de protection.
+
+

@@ -1,0 +1,26 @@
+---
+permalink: data-protection/task_verify_um_data_source_caching_in_workflow_automation.html 
+sidebar: sidebar 
+keywords: verify, unified manager, data source, cache, workflow automation 
+summary: 'Vous pouvez déterminer si la mise en cache des sources de données de Unified Manager fonctionne correctement en vérifiant si l"acquisition de la source de données réussit dans Workflow Automation. Vous pouvez effectuer cette vérification lorsque vous intégrez Workflow Automation à Unified Manager afin de vous assurer que les fonctionnalités de Workflow Automation sont disponibles après l"intégration.' 
+---
+= Vérifiez la mise en cache de la source de données Active IQ Unified Manager dans Workflow Automation
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez déterminer si la mise en cache des sources de données de Unified Manager fonctionne correctement en vérifiant si l'acquisition de la source de données réussit dans Workflow Automation. Vous pouvez effectuer cette vérification lorsque vous intégrez Workflow Automation à Unified Manager afin de vous assurer que les fonctionnalités de Workflow Automation sont disponibles après l'intégration.
+
+.Avant de commencer
+Vous devez disposer du rôle Administrator ou du rôle Architect dans Workflow Automation pour effectuer cette tâche.
+
+.Étapes
+. Dans l’interface utilisateur de Workflow Automation, sélectionnez *Execution* > *Data Sources*.
+. Cliquez avec le bouton droit sur le nom de la source de données Unified Manager, puis sélectionnez *Acquire Now*.
+. Vérifiez que l'acquisition se déroule sans erreurs.
++
+Les erreurs d'acquisition doivent être résolues pour que l'intégration de Workflow Automation avec Unified Manager réussisse.
+
+

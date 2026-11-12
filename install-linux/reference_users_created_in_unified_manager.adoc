@@ -1,0 +1,36 @@
+---
+permalink: install-linux/reference_users_created_in_unified_manager.html 
+sidebar: sidebar 
+keywords: users, created, unified manager, installation 
+summary: Lorsque vous installez Unified Manager sur Red Hat Enterprise Linux, les utilisateurs umadmin, jboss et mysql sont créés. 
+---
+= Découvrez les utilisateurs créés lors de l'installation d'Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque vous installez Unified Manager sur Red Hat Enterprise Linux, les utilisateurs suivants sont créés par Unified Manager et les utilitaires tiers : umadmin, jboss et mysql.
+
+* *umadmin*
++
+Utilisé pour vous connecter à Unified Manager pour la première fois. Cet utilisateur se voit attribuer le rôle d'utilisateur "`Application Administrator`" et est configuré avec le type "`Maintenance User`". Cet utilisateur est créé par Unified Manager.
+
+* *jboss*
++
+Utilisé pour exécuter les services Unified Manager liés à l'utilitaire JBoss. Cet utilisateur est créé par Unified Manager.
+
+* *mysql*
++
+Utilisé pour exécuter des requêtes de base de données MySQL de Unified Manager. Cet utilisateur est créé par l'utilitaire tiers MySQL.
+
+
+
+Outre ces utilisateurs, Unified Manager crée également des groupes correspondants : maintenance, jboss et mysql. Les groupes maintenance et jboss sont créés par Unified Manager, tandis que le groupe mysql est créé par un utilitaire tiers.
+
+[NOTE]
+====
+Si vous avez créé un répertoire local et défini votre propre mot de passe utilisateur umadmin avant d'installer Unified Manager, le programme d'installation ne recrée pas le groupe de maintenance ni l'utilisateur umadmin.
+
+====

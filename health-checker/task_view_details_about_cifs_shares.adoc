@@ -1,0 +1,53 @@
+---
+permalink: health-checker/task_view_details_about_cifs_shares.html 
+sidebar: sidebar 
+keywords: smb, cifs, view, shares, details 
+summary: 'Consultez les détails des partages SMB/CIFS, tels que le nom du partage, le chemin de jonction, les paramètres de sécurité et les règles d"export, à l"aide de la vue Tous les partages SMB sur la page État.' 
+---
+= Affichez les détails concernant les partages SMB/CIFS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter les détails de tous les partages SMB/CIFS, tels que le nom du partage, le chemin de jonction, les objets contenus, les paramètres de sécurité et les règles d'export définies pour le partage. Utilisez la vue « État : Tous les partages SMB » pour afficher tous les partages SMB sur tous les clusters surveillés, et la page « Détails de l'état de la machine virtuelle de stockage » pour afficher tous les partages SMB sur une machine virtuelle de stockage (SVM) spécifique.
+
+.Avant de commencer
+* La licence CIFS doit être activée sur le cluster.
+* Les interfaces réseau desservant les partages SMB/CIFS doivent être configurées.
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+
+[NOTE]
+====
+Les partages dans les dossiers ne sont pas affichés.
+
+====
+.Étape
+. Dans le volet de navigation de gauche, suivez les étapes ci-dessous selon que vous souhaitez afficher tous les partages SMB/CIFS ou uniquement les partages d'une SVM particulière.
++
+[cols="2*"]
+|===
+| À... | Suivez ces étapes... 
+
+
+ a| 
+Afficher tous les partages SMB/CIFS
+ a| 
+Cliquez sur *Stockage* > *Partages SMB*
+
+
+
+ a| 
+Afficher les partages SMB/CIFS pour une seule SVM
+ a| 
+.. Cliquez sur *Stockage* > *Machines virtuelles de stockage*
+.. Cliquez sur le SVM pour lequel vous souhaitez afficher les détails du partage CIFS.
+.. Dans la page de détails de la machine virtuelle de stockage / État, cliquez sur l'onglet *Partages SMB*.
+
+
+|===
+
+
+Pour plus d'informations, consultez link:../api-automation/concept_provision_file_share.html["Provisionnement des partages de fichiers CIFS et NFS à l'aide d'API"].

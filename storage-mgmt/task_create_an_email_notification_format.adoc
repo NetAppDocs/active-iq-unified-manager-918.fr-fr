@@ -1,0 +1,26 @@
+---
+permalink: storage-mgmt/task_create_an_email_notification_format.html 
+sidebar: sidebar 
+keywords: create, email, notification, format, user, group, quotas 
+summary: 'Vous pouvez créer un format de notification pour les e-mails envoyés à un utilisateur ou à un groupe d"utilisateurs en cas de problème lié aux quotas (limite souple dépassée ou limitation stricte atteinte).' 
+---
+= Créez un format de notification par e-mail pour les quotas d'utilisateurs et de groupes d'utilisateurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un format de notification pour les e-mails envoyés à un utilisateur ou à un groupe d'utilisateurs en cas de problème lié aux quotas (limite souple dépassée ou limitation stricte atteinte).
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Format de l'e-mail de quota*.
+. Saisissez ou modifiez les informations dans les champs *De*, *Sujet* et *Détails de l'e-mail*.
+. Cliquez sur *Aperçu* pour prévisualiser la notification par e-mail.
+. Cliquez sur *Fermer* pour fermer la fenêtre d'aperçu.
+. Modifiez le contenu de la notification par courriel, si nécessaire.
+. Cliquez sur *Enregistrer*.
+

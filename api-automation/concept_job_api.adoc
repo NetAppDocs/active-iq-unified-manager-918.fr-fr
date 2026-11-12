@@ -1,0 +1,74 @@
+---
+permalink: api-automation/concept_job_api.html 
+sidebar: sidebar 
+keywords: jobs, view 
+summary: Vous pouvez utiliser l’API jobs de la catégorie management-server pour consulter les détails d’exécution des opérations asynchrones. 
+---
+= Affichez les tâches et les détails du système à l'aide des API dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser l `jobs`API de la catégorie `management-server` pour consulter les détails d'exécution des opérations asynchrones. L `system`API de la catégorie `management-server` vous permet de consulter les détails de l'instance dans votre environnement Active IQ Unified Manager.
+
+
+
+[[view-jobs]]
+== Voir les offres d'emploi
+
+Dans Active IQ Unified Manager, les opérations, telles que l’ajout et la modification de ressources, sont effectuées par des appels d’API synchrones et asynchrones. Les appels planifiés pour une exécution asynchrone peuvent être suivis par un objet Job créé pour cet appel. Chaque objet Job possède une clé unique d’identification. Chaque objet Job renvoie l’URI de l’objet Job pour vous permettre d’accéder à la tâche et d’en suivre la progression. Vous pouvez utiliser cette API pour récupérer les détails de chaque exécution.
+
+Cette API vous permet d'interroger tous les objets Job de votre centre de données, y compris les données historiques. Par défaut, l'interrogation de tous les jobs renvoie les détails des 20 derniers jobs déclenchés via l'interface web et l'API. Utilisez les filtres intégrés pour afficher des jobs spécifiques. Vous pouvez également utiliser la clé Job pour consulter les détails d'un job spécifique et exécuter le prochain ensemble d'opérations sur les ressources.
+
+[cols="4*"]
+|===
+| Catégorie | Verbe HTTP | Chemin | Description 
+
+
+ a| 
+serveur de gestion
+ a| 
+GET
+ a| 
+`/management-server/jobs`
+ a| 
+Renvoie les détails de toutes les tâches. Sans ordre de tri, le dernier objet Job soumis apparaît en premier.
+
+
+
+ a| 
+serveur de gestion
+ a| 
+GET
+ a| 
+`/management-server/jobs/\{key}`
+
+Saisissez la clé du job de l'objet Job pour afficher les détails spécifiques de ce job.
+ a| 
+Renvoie les détails de l'objet Job spécifique.
+
+|===
+
+
+[[view-system-details]]
+== Afficher les détails du système
+
+En utilisant l' `/management-server/system`API, vous pouvez interroger les détails spécifiques à votre instance Unified Manager. L'API renvoie des informations sur le produit et les services, telles que la version d'Unified Manager installée sur votre système, son UUID, le nom du fournisseur, le système d'exploitation hôte, ainsi que le nom, la description et l'état des services exécutés sur l'instance Unified Manager.
+
+[cols="4*"]
+|===
+| Catégorie | Verbe HTTP | Chemin | Description 
+
+
+ a| 
+serveur de gestion
+ a| 
+GET
+ a| 
+`/management-server/system`
+ a| 
+Aucun paramètre d'entrée n'est requis pour exécuter cette API. Les informations système de l'instance Unified Manager actuelle sont renvoyées par défaut.
+
+|===

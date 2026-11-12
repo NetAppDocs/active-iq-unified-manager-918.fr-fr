@@ -1,0 +1,61 @@
+---
+permalink: reporting/task_manage_report_schedules.html 
+sidebar: sidebar 
+keywords:  
+summary: Vous pouvez gérer vos planifications de rapports depuis la page « Planifications de rapports ». Vous pouvez consulter, modifier ou supprimer les planifications existantes. 
+---
+= Gérer les calendriers de rapports dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez gérer vos planifications de rapports depuis la page « Planifications de rapports ». Vous pouvez consulter, modifier ou supprimer les planifications existantes.
+
+[NOTE]
+.Avant de commencer
+====
+Il n'est pas possible de programmer de nouveaux rapports depuis la page « Planification des rapports ». Vous pouvez uniquement ajouter des rapports planifiés depuis les pages d'inventaire des objets.
+
+====
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Planification des rapports*.
+. Sur la page des planifications de rapports:
++
+[cols="2*"]
+|===
+| Si vous voulez... | Ensuite... 
+
+
+ a| 
+Afficher une planification existante
+ a| 
+Parcourez la liste des rapports existants à l'aide des barres de défilement et des commandes de page.
+
+
+
+ a| 
+Modifier une planification existante
+ a| 
+.. Cliquez sur l’icône Plus image:../media/more_icon.gif[""] pour la planification que vous souhaitez utiliser.
+.. Cliquez sur *Modifier*.
+.. Apportez les modifications nécessaires.
+.. Cliquez sur la coche pour enregistrer vos modifications.
+
+
+
+
+ a| 
+Supprimer une planification existante
+ a| 
+.. Cliquez sur l’icône Plus image:../media/more_icon.gif[""] pour la planification que vous souhaitez utiliser.
+.. Cliquez sur *Delete*.
+.. Confirmez votre décision.
+
+
+|===
+

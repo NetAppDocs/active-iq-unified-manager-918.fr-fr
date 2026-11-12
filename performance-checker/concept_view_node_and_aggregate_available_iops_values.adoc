@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/concept_view_node_and_aggregate_available_iops_values.html 
+sidebar: sidebar 
+keywords: view, node, aggregate, available, iops, values 
+summary: 'Vous pouvez surveiller les valeurs IOPS disponibles pour tous les nœuds ou pour tous les agrégats d"un cluster, ou vous pouvez consulter les détails d"un seul nœud ou agrégat.' 
+---
+= Consultez les valeurs IOPS disponibles pour les nœuds et les agrégats dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez surveiller les valeurs IOPS disponibles pour tous les nœuds ou pour tous les agrégats d'un cluster, ou vous pouvez consulter les détails d'un seul nœud ou agrégat.
+
+Les valeurs d’IOPS disponibles apparaissent dans les pages d’inventaire des performances et dans les graphiques de la page Performance Explorer pour les nœuds et les agrégats. Par exemple, lorsque vous affichez un nœud dans la page Node/Performance Explorer, vous pouvez sélectionner le graphique du compteur « `Available IOPS` » dans la liste afin de comparer les valeurs d’IOPS disponibles pour le nœud et plusieurs agrégats sur ce nœud.
+
+image::../media/available_iops_zoom.gif[Capture d'écran de l'interface utilisateur montrant comment afficher un nœud sur la page Node/Performance Explorer et sélectionner « Available IOPS » dans la liste.]
+
+La surveillance du compteur des IOPS disponibles vous permet d'identifier :
+
+* Les nœuds ou agrégats présentant les valeurs d’IOPS disponibles les plus élevées permettent de déterminer où les futurs workloads peuvent être déployés.
+* Les nœuds ou agrégats présentant les valeurs IOPS disponibles les plus faibles permettent d'identifier les ressources à surveiller afin de déceler d'éventuels problèmes de performance futurs.
+* Les volumes et LUN les plus sollicités sur un agrégat ayant une faible valeur d'IOPS disponible.
+

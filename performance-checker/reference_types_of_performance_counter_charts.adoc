@@ -1,0 +1,138 @@
+---
+permalink: performance-checker/reference_types_of_performance_counter_charts.html 
+sidebar: sidebar 
+keywords: types, performance, counter, charts 
+summary: 'Des graphiques de performance standard affichent les valeurs des compteurs pour l"objet de stockage sélectionné. Chaque graphique de compteur détaillé présente les valeurs totales ventilées par catégories : lecture, écriture et autres. De plus, certains graphiques de compteur détaillés affichent des informations supplémentaires lorsque le graphique est affiché en mode Zoom.' 
+---
+= Comprendre les types de graphiques de compteurs de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Des graphiques de performance standard affichent les valeurs des compteurs pour l'objet de stockage sélectionné. Chaque graphique de compteur détaillé présente les valeurs totales ventilées par catégories : lecture, écriture et autres. De plus, certains graphiques de compteur détaillés affichent des informations supplémentaires lorsque le graphique est affiché en mode Zoom.
+
+Le tableau suivant présente les graphiques des compteurs de performance disponibles.
+
+|===
+| Graphiques disponibles | Description du graphique 
+
+
+ a| 
+Événements
+ a| 
+Affiche les événements critiques, d'erreur, d'avertissement et d'information en corrélation avec les graphiques statistiques de l'objet racine. Les événements de santé s'affichent en plus des événements de performance afin de fournir une vue d'ensemble complète des raisons pour lesquelles les performances peuvent être affectées.
+
+
+
+ a| 
+Latence - Totale
+ a| 
+Nombre de millisecondes nécessaires pour répondre aux requêtes de l'application. Notez que les valeurs de latence moyennes sont pondérées par les E/S.
+
+
+
+ a| 
+Latence - Répartition
+ a| 
+Les mêmes informations sont affichées dans Latency Total, mais les données de performance sont ventilées en latence de lecture, d'écriture et autres latences. Cette option de graphique s'applique uniquement lorsque l'objet sélectionné est une SVM, un nœud, un agrégat, un volume, un LUN ou un namespace.
+
+
+
+ a| 
+Latence - Composants du cluster
+ a| 
+Les mêmes informations que celles affichées dans Latency Total, mais avec les données de performance ventilées par composant de cluster. Cette option de graphique s'applique uniquement lorsque l'objet sélectionné est un volume.
+
+
+
+ a| 
+IOPS - Total
+ a| 
+Nombre d'opérations d'entrée/sortie traitées par seconde. Lorsqu'elles sont affichées pour un nœud, la sélection de "`Total`" affiche les IOPS des données transitant par ce nœud, qui peuvent résider sur le nœud local ou sur le nœud distant, et la sélection de "`Total (Local)`" affiche les IOPS des données qui résident uniquement sur le nœud actuel.
+
+
+
+ a| 
+IOPS - Répartition
+ a| 
+Les mêmes informations sont affichées dans IOPS Total, mais les données de performance sont ventilées en IOPS de lecture, d'écriture et autres. Cette option de graphique s'applique uniquement lorsque l'objet sélectionné est une SVM, un nœud, un agrégat, un volume, un LUN ou un namespace.
+
+Lorsqu'il est affiché en mode Zoom, le graphique des volumes affiche les valeurs de débit minimum et maximum de la QoS, si elles sont configurées dans ONTAP.
+
+Lorsqu’elle est affichée pour un nœud, la sélection de « `Répartition` » affiche la répartition des IOPS pour les données transitant par ce nœud et pouvant résider sur le nœud local ou sur le nœud distant, et la sélection de « `Répartition (Local)` » affiche la répartition des IOPS pour les données résidant uniquement sur le nœud actuel.
+
+
+
+ a| 
+IOPS - Protocoles
+ a| 
+Les mêmes informations sont affichées dans IOPS Total, mais les données de performance sont présentées dans des graphiques distincts pour le trafic des protocoles CIFS, NFS, FCP, NVMe et iSCSI. Cette option de graphique s’applique uniquement lorsque l’objet sélectionné est une SVM.
+
+
+
+ a| 
+IOPS/To - Total
+ a| 
+Nombre d'opérations d'entrée/sortie traitées par seconde, en fonction de l'espace total consommé par le workload, en téraoctets. Également appelé densité d'E/S, ce compteur mesure le niveau de performances pouvant être fourni par une capacité de stockage donnée. Lorsqu'il est affiché en vue Zoom, le graphique des volumes affiche les valeurs de débit attendues et de débit de pointe, si elles sont configurées dans ONTAP.
+
+Cette option de graphique s'applique uniquement lorsque l'objet sélectionné est un volume.
+
+
+
+ a| 
+Mo/s - Total
+ a| 
+Nombre de mégaoctets de données transférés vers et depuis l'objet par seconde.
+
+
+
+ a| 
+MB/s - Détail
+ a| 
+Les mêmes informations sont affichées que dans le graphique en MB/s, mais les données de débit sont ventilées en lectures sur disque, lectures de Flash Cache, écritures et autres. En mode Zoom, le graphique des volumes affiche les valeurs de débit maximal QoS, si elles sont configurées dans ONTAP.
+
+Cette option de graphique s'applique uniquement lorsque l'objet sélectionné est un SVM, un nœud, un agrégat, un volume, un LUN ou un namespace.
+
+[NOTE]
+====
+Les données Flash Cache sont affichées uniquement pour les nœuds, et uniquement lorsqu'un module Flash Cache est installé sur le nœud.
+
+====
+
+
+ a| 
+Capacité de performances utilisée - Total
+ a| 
+Pourcentage de capacité de performance consommée par le nœud ou l'agrégat.
+
+
+
+ a| 
+Capacité de performance utilisée - Détail
+ a| 
+Les données relatives à la capacité de performance utilisée sont ventilées entre les protocoles utilisateur et les processus système en arrière-plan. En outre, la quantité de capacité de performance libre est indiquée.
+
+
+
+ a| 
+IOPS disponibles - Total
+ a| 
+Nombre d'opérations d'entrée/sortie par seconde actuellement disponibles (libres) sur cet objet. Ce nombre résulte de la soustraction des IOPS actuellement utilisées du total des IOPS que Unified Manager calcule que l'objet peut effectuer. Cette option de graphique s'applique uniquement lorsque l'objet sélectionné est un nœud ou un agrégat.
+
+
+
+ a| 
+Utilisation - Totale
+ a| 
+Pourcentage des ressources disponibles de l'objet en cours d'utilisation. L'utilisation indique l'utilisation des nœuds pour les nœuds, l'utilisation des disques pour les agrégats et l'utilisation de la bande passante pour les ports. Cette option de graphique s'applique uniquement lorsque l'objet sélectionné est un nœud, un agrégat ou un port.
+
+
+
+ a| 
+Taux de défaut du cache - Total
+ a| 
+Pourcentage de requêtes de lecture provenant d'applications clientes renvoyées depuis le disque plutôt que depuis le cache. Cette option du graphique s'applique uniquement lorsque l'objet sélectionné est un volume.
+
+|===

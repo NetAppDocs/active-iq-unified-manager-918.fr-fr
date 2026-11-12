@@ -1,0 +1,23 @@
+---
+permalink: storage-mgmt/task_view_active_events_from_notification_bell.html 
+sidebar: sidebar 
+keywords: view, active, events, notification, bell 
+summary: La cloche de notification dans la barre de menu permet de visualiser rapidement les événements actifs les plus importants suivis par Unified Manager. 
+---
+= Consultez les événements actifs à partir de la cloche de notification dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La cloche de notification (image:../media/notification_bell.png[""]) dans la barre de menu offre un moyen rapide de visualiser les événements actifs les plus importants suivis par Unified Manager.
+
+La liste des événements actifs permet de visualiser le nombre total d'événements critiques, d'erreurs, d'avertissements et de mises à niveau sur tous les clusters. Cette liste inclut les événements des 7 derniers jours, à l'exclusion des événements d'information. Vous pouvez cliquer sur un lien pour afficher la liste des événements qui vous intéressent le plus.
+
+Notez que lorsqu'un cluster est inaccessible, Unified Manager affiche cette information sur cette page. Vous pouvez consulter des informations détaillées sur un cluster inaccessible en cliquant sur le bouton *Détails*. Cette action ouvre la page Détails de l'événement. Les problèmes de surveillance liés à l'évolutivité, tels qu'un espace disque ou une mémoire vive insuffisants sur le poste de gestion, sont également affichés sur cette page.
+
+.Étapes
+. Dans la barre de menu, cliquez sur image:../media/notification_bell.png[""].
+. Pour afficher les détails de l’un des événements actifs, cliquez sur le lien de texte de l’événement, tel que « 2 Capacité » ou « 4 Performance ».
+

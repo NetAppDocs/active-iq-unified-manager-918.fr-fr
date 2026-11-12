@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_what_happens_when_performance_threshold_policy_is_changed.html 
+sidebar: sidebar 
+keywords: happens, performance, threshold, policy, changed 
+summary: 'Si vous modifiez la valeur du compteur ou la durée d"une stratégie de seuil de performance existante, la modification de la stratégie est appliquée à tous les objets de stockage qui utilisent cette stratégie. Le nouveau paramètre prend effet immédiatement, et Unified Manager commence à comparer les valeurs du compteur de performance aux nouveaux paramètres de seuil pour toutes les nouvelles données de performance collectées.' 
+---
+= Comprendre les modifications apportées aux politiques de seuil de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous modifiez la valeur du compteur ou la durée d'une stratégie de seuil de performance existante, la modification de la stratégie est appliquée à tous les objets de stockage qui utilisent cette stratégie. Le nouveau paramètre prend effet immédiatement, et Unified Manager commence à comparer les valeurs du compteur de performance aux nouveaux paramètres de seuil pour toutes les nouvelles données de performance collectées.
+
+S'il existe des événements actifs pour des objets utilisant la politique de seuil modifiée, ces événements sont marqués comme obsolètes, et la politique de seuil commence à surveiller le compteur en tant que politique de seuil nouvellement définie.
+
+Dans la vue détaillée des graphiques de compteurs, lorsque vous consultez le compteur auquel le seuil a été appliqué, les lignes de seuil critique et d'alerte reflètent les paramètres de seuil actuels. Les paramètres de seuil d'origine n'apparaissent pas sur cette page, même si vous consultez les données historiques lorsque les anciens paramètres de seuil étaient en vigueur.
+
+[NOTE]
+====
+Étant donné que les anciens paramètres de seuil n'apparaissent pas dans la vue détaillée des graphiques de compteurs, il se peut que vous voyiez des événements historiques qui apparaissent sous les lignes de seuil actuelles.
+
+====

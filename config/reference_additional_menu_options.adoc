@@ -1,0 +1,66 @@
+---
+permalink: config/reference_additional_menu_options.html 
+sidebar: sidebar 
+keywords: additional menu, options 
+summary: 'Les options de menu suivantes vous permettent d"effectuer diverses tâches d"administration sur le serveur Unified Manager.' 
+---
+= Découvrez les options supplémentaires du menu de la console de maintenance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les options de menu suivantes vous permettent d'effectuer diverses tâches d'administration sur le serveur Unified Manager.
+
+Les options de menu suivantes sont disponibles :
+
+* *Réinitialiser le certificat du serveur*
++
+Régénère le certificat du serveur HTTPS.
+
++
+Vous pouvez régénérer le certificat du serveur dans l'interface graphique d'Unified Manager en cliquant sur *Général* > *Certificats HTTPS* > *Régénérer le certificat HTTPS*.
+
+* *Désactiver l'authentification SAML*
++
+Désactive l'authentification SAML afin que le fournisseur d'identité (IdP) ne fournisse plus l'authentification de connexion aux utilisateurs accédant à l'interface graphique d'Unified Manager. Cette option de console est généralement utilisée lorsqu'un problème avec le serveur IdP ou la configuration SAML empêche les utilisateurs d'accéder à l'interface graphique d'Unified Manager.
+
+* *Fournisseur de données externe*
++
+Propose des options pour connecter Unified Manager à un fournisseur de données externe. Une fois la connexion établie, les données de performance sont envoyées à un serveur externe afin que les experts en performances du stockage puissent représenter graphiquement les indicateurs de performance à l'aide d'un logiciel tiers. Les options suivantes s'affichent :
+
++
+** *Configuration du serveur d'affichage*--Affiche la connexion actuelle et les paramètres de configuration d'un fournisseur de données externe.
+** *Ajouter / modifier la connexion au serveur*--Vous permet de saisir de nouveaux paramètres de connexion pour un fournisseur de données externe ou de modifier les paramètres existants.
+** *Modifier la configuration du serveur*--Permet de saisir de nouveaux paramètres de configuration pour un fournisseur de données externe ou de modifier les paramètres existants.
+** *Supprimer la connexion au serveur*--Supprime la connexion à un fournisseur de données externe.
++
+Une fois la connexion supprimée, Unified Manager perd sa connexion au serveur externe.
+
+
+
+* *Restauration de sauvegarde*
++
+Pour plus d'informations, consultez les rubriques sous link:../health-checker/concept_manage_backup_and_restore_operations.html["Gestion des opérations de sauvegarde et de restauration"].
+
+* *Configuration de l'intervalle d'interrogation des performances*
++
+Permet de configurer la fréquence à laquelle Unified Manager collecte les données statistiques de performance des clusters. L'intervalle de collecte par défaut est de 5 minutes.
+
++
+Vous pouvez régler cet intervalle sur 10 ou 15 minutes si vous constatez que les collectes provenant de grands clusters ne se terminent pas à temps.
+
+* *Afficher/Modifier les ports de l'application*
++
+Offre la possibilité de modifier les ports par défaut utilisés par Unified Manager pour les protocoles HTTP et HTTPS, si nécessaire pour des raisons de sécurité. Les ports par défaut sont 80 pour HTTP et 443 pour HTTPS.
+
+* *Contrôler l'accès au port 3306 de MySQL*
++
+Contrôle l'accès de l'hôte au port MySQL par défaut 3306. Pour des raisons de sécurité, l'accès via ce port est limité à localhost uniquement lors d'une nouvelle installation de Unified Manager sur les systèmes Linux, Windows et VMware vSphere. Cette option vous permet d'activer ou de désactiver la visibilité de ce port entre localhost et les hôtes distants, c'est-à-dire que, s'il est activé pour localhost uniquement dans votre environnement, vous pouvez également rendre ce port disponible pour les hôtes distants. À l'inverse, lorsqu'il est activé pour tous les hôtes, vous pouvez restreindre l'accès à ce port à localhost uniquement. Si l'accès était précédemment activé sur les hôtes distants, la configuration est conservée dans un scénario de mise à niveau. Vous devez vérifier les paramètres du pare-feu sur les systèmes Windows après avoir modifié la visibilité du port, et désactiver les paramètres du pare-feu s'ils sont configurés pour restreindre l'accès au port MySQL 3306.
+
+* *Sortie*
++
+Quitte le menu de la console de maintenance.
+
+

@@ -1,0 +1,36 @@
+---
+permalink: reporting/task_create_report_to_view_svms_reaching_maximum_volume_limit.html 
+sidebar: sidebar 
+keywords: create, report, view, storage VMs, volume, limit 
+summary: Vous pouvez générer un rapport pour identifier les SVM qui atteignent la limite de volume maximale. 
+---
+= Créez un rapport pour visualiser les machines virtuelles de stockage atteignant la limite maximale de volumes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez générer un rapport pour identifier les SVM qui atteignent la limite de volume maximale.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée affichant les machines virtuelles de stockage qui atteignent la limite de volume maximale, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Machines virtuelles de stockage*.
+. Sélectionnez *Afficher/Masquer* pour supprimer les colonnes que vous ne souhaitez pas voir apparaître dans le rapport.
+. Faites glisser les colonnes « `Volume Count` » et « `Maximum Allowed Volumes` » près de la colonne « `Storage VM` ».
+. Cliquez en haut de la colonne « Volumes maximums autorisés » pour trier les résultats par nombre de volumes le plus élevé.
+. Enregistrez la vue avec un nom spécifique qui reflète ce que la vue affiche, par exemple « `SVMs atteignant le nombre maximal de volumes` » et cliquez sur la coche (image:../media/blue_check.gif[""]).
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Cliquez sur *Ajouter une planification* pour ajouter une nouvelle ligne à la page *Planifications des rapports* afin de définir les caractéristiques de la planification du nouveau rapport.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pourriez vouloir équilibrer les volumes attribués aux machines virtuelles de stockage ou, si possible, utiliser ONTAP System Manager pour modifier le nombre maximal de volumes autorisés.

@@ -1,0 +1,67 @@
+---
+permalink: events/reference_volume_move_status_events.html 
+sidebar: sidebar 
+keywords: volume, move, status, events, impact area, capacity 
+summary: 'Les événements d"état du déplacement de volume vous informent de l"état de votre déplacement de volume afin que vous puissiez surveiller d"éventuels problèmes. Les événements sont regroupés par zone d"impact et comprennent le nom de l"événement et du piège, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements liés à l'état des transferts de volume dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements d'état du déplacement de volume vous informent de l'état de votre déplacement de volume afin que vous puissiez surveiller d'éventuels problèmes. Les événements sont regroupés par zone d'impact et comprennent le nom de l'événement et du piège, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-capacity]]
+== Domaine d'impact : capacité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+État du déplacement de volume : En cours(Non applicable)
+ a| 
+Événement
+ a| 
+Volume
+ a| 
+Informations
+
+
+
+ a| 
+État du déplacement de volume - Échec(ocumEvtVolumeMoveFailed)
+ a| 
+Risque
+ a| 
+Volume
+ a| 
+Erreur
+
+
+
+ a| 
+État du déplacement de volume : Terminé(Non applicable)
+ a| 
+Événement
+ a| 
+Volume
+ a| 
+Informations
+
+
+
+ a| 
+Déplacement de volume - Basculement différé(ocumEvtVolumeMoveCutoverDeferred)
+ a| 
+Risque
+ a| 
+Volume
+ a| 
+Avertissement
+
+|===

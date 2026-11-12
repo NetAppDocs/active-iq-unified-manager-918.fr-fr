@@ -1,0 +1,43 @@
+---
+permalink: health-checker/task_view_volume_list_and_details.html 
+sidebar: sidebar 
+keywords: view, volume list, details 
+summary: 'Utilisez la vue « Tous les volumes » sur la page « Santé » pour surveiller votre inventaire de volumes, et la vue « Tous les volumes » sur la page « Capacité » pour obtenir des détails sur la capacité et l"utilisation.' 
+---
+= Consultez la liste des volumes et les détails dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La vue « Santé : Tous les volumes » vous permet de surveiller votre inventaire de volumes. La vue « Capacité : Tous les volumes » vous permet de consulter les informations relatives à la capacité et à l’utilisation des volumes d’un cluster.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Vous pouvez également utiliser la page Détails du volume/de l'état pour afficher des informations détaillées sur les volumes surveillés, notamment leur capacité, leur efficacité, leur configuration et leur protection. Vous pouvez également afficher des informations sur les périphériques associés et les alertes associées à un volume spécifique.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Choisissez l'une des méthodes suivantes pour afficher les détails du volume :
++
+** Pour afficher des informations détaillées sur l’état des volumes d’un cluster, dans le menu Affichage, sélectionnez la vue État : tous les volumes.
+** Pour afficher des informations détaillées sur la capacité et l'utilisation des volumes dans un cluster, dans le menu Affichage, sélectionnez la vue Capacité : Tous les volumes.
+** Pour afficher tous les détails, cliquez sur le nom du volume.
++
+Vous pouvez également afficher tous les détails en cliquant sur *Afficher les détails* dans la boîte de dialogue des détails minimaux.
+
+
+
+. *Facultatif:* Consultez les objets liés au volume en cliquant sur *Afficher les éléments associés* dans la boîte de dialogue des détails minimaux.
+
+
+*Informations connexes*
+
+* link:../health-checker/reference_health_volume_details_page.html["Volume: page de détails sur l'état"]
+* link:../performance-checker/performance-view-all.html#performance-all-volumes-view["Performance : vue de tous les volumes"]
+* link:../health-checker/task_view_antiransomware_status_of_all_volumes_storage_vms.html#view-security-details-of-all-volumes-with-anti-ransomware-detection["Sécurité: Vue anti-ransomware"]
+* link:../data-protection/task_view_volume_protection_relationships.html["Affichage des relations de protection du volume"]
+* link:../reporting/task_create_report_to_view_available_volume_capacity_charts.html["Création d'un rapport pour afficher les graphiques de capacité disponible des volumes"]
+

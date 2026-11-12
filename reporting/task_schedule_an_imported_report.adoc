@@ -1,0 +1,40 @@
+---
+permalink: reporting/task_schedule_an_imported_report.html 
+sidebar: sidebar 
+keywords: schedule, imported, reports 
+summary: 'Vous pouvez planifier des rapports existants créés et importés dans une version antérieure d"Unified Manager.' 
+---
+= Planifiez l’importation des rapports .rptdesign dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez planifier des rapports existants créés et importés dans une version antérieure d'Unified Manager.
+
+La planification des rapports importés nécessite les éléments suivants :
+
+* rapports de fichiers .rptdesign conçus dans BIRT importés dans une version antérieure de Unified Manager
+* applicable lors de la mise à niveau vers Unified Manager 9.6 GA ou version ultérieure
+
+
+Après la mise à niveau vers Unified Manager 9.6 GA ou une version ultérieure, la page « Planification des rapports » affiche les rapports importés. Vous pouvez modifier la planification de ces rapports afin de spécifier les adresses e-mail des destinataires, la fréquence et le format (PDF ou CSV). Sinon, ces rapports ne peuvent être ni modifiés ni consultés dans l'interface utilisateur de Unified Manager.
+
+.Étapes
+. Ouvrez la page « Planification des rapports ». Si vous avez importé des rapports, un message s'affiche.
++
+image::../media/message_non_scehduled_reports.png[Capture d'écran de l'interface utilisateur montrant le message qui apparaît si des rapports importés sont présents.]
+
+. Cliquez sur le nom *View* pour afficher la requête SQL utilisée pour générer le rapport.
++
+image::../media/importedreport1.png[Capture d'écran de l'interface utilisateur montrant la requête SQL utilisée pour générer le rapport.]
+
+. Cliquez sur l'icône « Plus » image:../media/more_icon.gif[""], cliquez sur *Modifier*, définissez les détails de la planification du rapport et enregistrez le rapport.
++
+[NOTE]
+====
+Vous pouvez également supprimer les rapports indésirables à partir de l’icône Plus image:../media/more_icon.gif[""].
+
+====
+

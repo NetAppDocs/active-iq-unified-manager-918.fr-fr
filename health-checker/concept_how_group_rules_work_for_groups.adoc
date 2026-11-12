@@ -1,0 +1,140 @@
+---
+permalink: health-checker/concept_how_group_rules_work_for_groups.html 
+sidebar: sidebar 
+keywords: group rules, work, groups 
+summary: 'Une règle de groupe est un critère que vous définissez pour permettre d’inclure des objets de stockage (volumes, clusters ou SVM) dans un groupe spécifique. Vous pouvez utiliser des groupes de conditions ou des conditions pour définir une règle de groupe pour un groupe.' 
+---
+= Comprendre le fonctionnement des règles de groupe dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une règle de groupe est un critère que vous définissez pour permettre d’inclure des objets de stockage (volumes, clusters ou SVM) dans un groupe spécifique. Vous pouvez utiliser des groupes de conditions ou des conditions pour définir une règle de groupe pour un groupe.
+
+* Vous devez associer une règle de groupe à un groupe.
+* Vous devez associer un type d'objet à une règle de groupe ; un seul type d'objet peut être associé à une règle de groupe.
+* Les objets de stockage sont ajoutés ou supprimés du groupe après chaque cycle de surveillance ou lorsqu'une règle est créée, modifiée ou supprimée.
+* Une règle de groupe peut comporter un ou plusieurs groupes de conditions, et chaque groupe de conditions peut comporter une ou plusieurs conditions.
+* Les objets de stockage peuvent appartenir à plusieurs groupes en fonction des règles de groupe que vous créez.
+
+
+
+
+[[conditions]]
+== Conditions
+
+Vous pouvez créer plusieurs groupes de conditions, et chaque groupe de conditions peut comporter une ou plusieurs conditions. Vous pouvez appliquer tous les groupes de conditions définis dans une règle de groupe pour les groupes afin de spécifier les objets de stockage inclus dans le groupe.
+
+Les conditions d'un groupe de conditions sont exécutées à l'aide de l'opérateur logique ET. Toutes les conditions d'un groupe de conditions doivent être remplies. Lorsque vous créez ou modifiez une règle de groupe, une condition est créée pour appliquer, sélectionner et regrouper uniquement les objets de stockage qui satisfont à toutes les conditions du groupe de conditions. Vous pouvez utiliser plusieurs conditions au sein d'un groupe de conditions lorsque vous souhaitez restreindre la portée des objets de stockage à inclure dans un groupe.
+
+Vous pouvez créer des conditions avec des objets de stockage en utilisant les opérandes et l’opérateur suivants, et en spécifiant la valeur requise.
+
+[cols="2*"]
+|===
+| Type d'objet de stockage | Opérandes applicables 
+
+
+ a| 
+Volume
+ a| 
+* Nom de l'objet
+* Nom du cluster propriétaire
+* Nom de la SVM propriétaire
+* Annotations
+
+
+
+
+ a| 
+SVM
+ a| 
+* Nom de l'objet
+* Nom du cluster propriétaire
+* Annotations
+
+
+
+
+ a| 
+Cluster
+ a| 
+* Nom de l'objet
+* Annotations
+
+
+|===
+Lorsque vous sélectionnez une annotation comme opérande pour n’importe quel objet de stockage, l’opérateur "`Is`" est disponible. Pour tous les autres opérandes, vous pouvez sélectionner "`Is`" ou "`Contains`" comme opérateur.
+
+* Opérande
++
+La liste des opérandes dans Unified Manager varie selon le type d'objet sélectionné. Elle comprend le nom de l'objet, le nom du cluster propriétaire, le nom du SVM propriétaire et les annotations définies dans Unified Manager.
+
+* Opérateur
++
+La liste des opérateurs varie selon l'opérande sélectionné pour une condition. Les opérateurs pris en charge par Unified Manager sont « Is » et « Contains ».
+
++
+Lorsque vous sélectionnez l’opérateur « `Is` », la condition est évaluée afin de vérifier une correspondance exacte entre la valeur de l’opérande et la valeur fournie pour l’opérande sélectionné.
+
++
+Lorsque vous sélectionnez l’opérateur « `Contains` », la condition est évaluée afin de déterminer si elle répond à l’un des critères suivants :
+
++
+** La valeur de l'opérande correspond exactement à la valeur fournie pour l'opérande sélectionné
+** La valeur de l'opérande contient la valeur fournie pour l'opérande sélectionné
+
+
+* Valeur
++
+La valeur du champ change en fonction de l'opérande sélectionné.
+
+
+
+
+
+[[example-of-a-group-rule-with-conditions]]
+== Exemple de règle de groupe avec conditions
+
+Considérons un groupe de conditions pour un volume avec les deux conditions suivantes :
+
+* Le nom contient « `vol` »
+* Le nom de la SVM est « `data_svm` »
+
+
+Ce groupe de conditions sélectionne tous les volumes qui incluent « `vol` » dans leur nom et qui sont hébergés sur des SVM portant le nom « `data_svm` ».
+
+
+
+[[condition-groups]]
+== Groupes de conditions
+
+Les groupes de conditions sont exécutés à l'aide de l'opérateur logique OU, puis appliqués aux objets de stockage. Les objets de stockage doivent satisfaire à l'un des groupes de conditions pour être inclus dans un groupe. Les objets de stockage de tous les groupes de conditions sont combinés. Vous pouvez utiliser les groupes de conditions pour élargir la portée des objets de stockage à inclure dans un groupe.
+
+
+
+[[example-of-a-group-rule-with-condition-groups]]
+== Exemple de règle de groupe avec groupes de conditions
+
+Considérez deux groupes de conditions pour un volume, chaque groupe contenant les deux conditions suivantes :
+
+* Groupe de conditions 1
++
+** Le nom contient « `vol` »
+** Le nom de la SVM est « `data_svm` » Le groupe de conditions 1 sélectionne tous les volumes qui incluent « `vol` » dans leur nom et qui sont hébergés sur des SVM portant le nom « `data_svm` ».
+
+
+* Groupe de conditions 2
++
+** Le nom contient « `vol` »
+** La valeur d’annotation de data-priority est « `critical` » Le groupe de conditions 2 sélectionne tous les volumes qui incluent « `vol` » dans leur nom et qui comportent la valeur d’annotation data-priority « `critical` ».
+
+
+
+
+Lorsqu'une règle de groupe contenant ces deux groupes de conditions est appliquée à des objets de stockage, les objets de stockage suivants sont ajoutés au groupe sélectionné :
+
+* Tous les volumes qui incluent « `vol` » dans leur nom et qui sont hébergés sur la SVM nommée « `data_svm` ».
+* Tous les volumes qui incluent « `vol` » dans leur nom et qui sont annotés avec la valeur d’annotation de priorité des données « `critical` ».
+

@@ -1,0 +1,26 @@
+---
+permalink: storage-mgmt/task_view_user_and_user_group_quotas.html 
+sidebar: sidebar 
+keywords: view, user, user, group, quotas 
+summary: 'La page de détails Storage VM / Health affiche des informations sur les quotas des utilisateurs et des groupes d"utilisateurs configurés sur la SVM. Vous pouvez consulter le nom de l"utilisateur ou du groupe d"utilisateurs, les limites définies sur les disques et les fichiers, l"espace disque et l"espace fichier utilisés, ainsi que l"adresse e-mail de notification.' 
+---
+= Consultez les quotas des utilisateurs et des groupes d'utilisateurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page de détails Storage VM / Health affiche des informations sur les quotas des utilisateurs et des groupes d'utilisateurs configurés sur la SVM. Vous pouvez consulter le nom de l'utilisateur ou du groupe d'utilisateurs, les limites définies sur les disques et les fichiers, l'espace disque et l'espace fichier utilisés, ainsi que l'adresse e-mail de notification.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Machines virtuelles de stockage*.
+. Dans la vue *Santé : Toutes les machines virtuelles de stockage*, sélectionnez une machine virtuelle de stockage, puis cliquez sur l’onglet *Quotas utilisateur et groupe*.
+
+
+*Informations connexes*
+
+link:../config/task_add_users.html["Ajout d'utilisateurs"]

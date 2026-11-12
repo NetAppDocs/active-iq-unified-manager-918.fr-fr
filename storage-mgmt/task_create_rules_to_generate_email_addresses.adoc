@@ -1,0 +1,40 @@
+---
+permalink: storage-mgmt/task_create_rules_to_generate_email_addresses.html 
+sidebar: sidebar 
+keywords: create, rules, generate, email, addresses 
+summary: 'Vous pouvez créer des règles pour spécifier l"adresse e-mail en fonction du quota utilisateur associé aux clusters, aux machines virtuelles de stockage (SVM), aux volumes, aux qtrees, aux utilisateurs ou aux groupes d"utilisateurs. Une notification est envoyée à l"adresse e-mail spécifiée en cas de dépassement de quota.' 
+---
+= Créez des règles pour générer des adresses e-mail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des règles pour spécifier l'adresse e-mail en fonction du quota utilisateur associé aux clusters, aux machines virtuelles de stockage (SVM), aux volumes, aux qtrees, aux utilisateurs ou aux groupes d'utilisateurs. Une notification est envoyée à l'adresse e-mail spécifiée en cas de dépassement de quota.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir consulté les directives sur la page « Règles de génération de l'adresse e-mail de quota utilisateur et de quota au groupe ».
+
+
+Vous devez définir les règles relatives aux adresses e-mail de quota et les saisir dans l'ordre dans lequel vous souhaitez les exécuter. Par exemple, si vous souhaitez utiliser l'adresse e-mail abc@xyz.com pour recevoir des notifications sur les dépassements de quota pour abc et l'adresse e-mail dl-$GROUP@$DOMAIN pour tous les autres groupes, les règles doivent être répertoriées dans l'ordre suivant :
+
+* si ( $USER == 'abc' ) alors abc@xyz.com
+* si ( $GROUP == * ) alors dl-$GROUP@$DOMAIN
+
+
+Si aucun des critères des règles que vous avez spécifiées n'est rempli, la règle par défaut est utilisée:
+
+si ( $USER_OR_GROUP == * ) alors $USER_OR_GROUP@$DOMAIN
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Règles d'e-mails de quota*.
+. Saisissez la règle en fonction de vos critères.
+. Cliquez sur *Validate* pour valider la syntaxe de la règle.
++
+Un message d'erreur s'affiche si la syntaxe de la règle est incorrecte. Vous devez corriger la syntaxe et cliquer à nouveau sur *Valider*.
+
+. Cliquez sur *Enregistrer*.
+. Vérifiez que l'adresse e-mail que vous avez créée s'affiche dans l'onglet *User and Group Quotas* de la page de détails *Storage VM / Health*.
+

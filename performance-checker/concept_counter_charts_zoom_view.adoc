@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_counter_charts_zoom_view.html 
+sidebar: sidebar 
+keywords: counter, charts, zoom, view 
+summary: 'Les graphiques de compteurs offrent une vue zoomée qui vous permet d"examiner en détail les performances sur la période spécifiée. Vous pouvez ainsi visualiser les détails des performances et les événements avec une granularité beaucoup plus fine, ce qui est particulièrement utile pour le dépannage des problèmes de performance.' 
+---
+= Découvrez la vue zoom dans les graphiques de compteurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les graphiques de compteurs offrent une vue zoomée qui vous permet d'examiner en détail les performances sur la période spécifiée. Vous pouvez ainsi visualiser les détails des performances et les événements avec une granularité beaucoup plus fine, ce qui est particulièrement utile pour le dépannage des problèmes de performance.
+
+En mode Zoom, certains graphiques de répartition fournissent des informations supplémentaires par rapport à leur affichage normal. Par exemple, les pages en mode Zoom des graphiques de répartition IOPS, IOPS/TB et MBps affichent les valeurs de stratégie QoS pour les volumes et les LUN si elles ont été définies dans ONTAP.
+
+[NOTE]
+====
+Pour les politiques de seuil de performance définies par le système, seules les politiques "`Node resources over-utilized`" et "`QoS throughput limit breached`" sont disponibles dans la liste *Policies*. Les autres politiques de seuil définies par le système ne sont pas disponibles pour le moment.
+
+====

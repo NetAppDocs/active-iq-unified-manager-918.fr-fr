@@ -1,0 +1,19 @@
+---
+permalink: health-checker/concept_understand_node_root_volumes.html 
+sidebar: sidebar 
+keywords: understand, node, root, volumes 
+summary: 'Vous pouvez surveiller le volume racine du nœud à l"aide d"Unified Manager. La bonne pratique consiste à ce que le volume racine du nœud dispose d"une capacité suffisante pour éviter toute panne du nœud.' 
+---
+= Comprendre les volumes racine des nœuds dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez surveiller le volume racine du nœud à l'aide d'Unified Manager. La bonne pratique consiste à ce que le volume racine du nœud dispose d'une capacité suffisante pour éviter toute panne du nœud.
+
+Lorsque la capacité utilisée du volume racine du nœud dépasse 80 % de la capacité totale du volume racine du nœud, l'événement « Espace du volume racine du nœud presque plein » est généré. Vous pouvez configurer une alerte pour recevoir une notification. Vous pouvez prendre les mesures appropriées pour éviter que le nœud ne tombe en panne à l'aide de ONTAP System Manager ou de ONTAP CLI.
+
+
+NOTE: La fonctionnalité de surveillance des volumes racine des nœuds n'est pas disponible si les clusters exécutent ONTAP version 9.14.1 ou ultérieure.

@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_how_um_determines_performance_impact_for_incident.html 
+sidebar: sidebar 
+keywords: unified manager, determines, performance, impact, event 
+summary: 'Unified Manager utilise les variations d"activité, d"utilisation, de débit d"écriture, d"utilisation des composants du cluster ou de latence d"E/S (temps de réponse) d"un workload pour déterminer le niveau d"impact sur les performances du workload. Ces informations déterminent le rôle de chaque workload dans l"événement et leur classement sur la page de détails de l"événement.' 
+---
+= Comprendre comment Active IQ Unified Manager détermine l'impact sur les performances d'un événement
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager utilise les variations d'activité, d'utilisation, de débit d'écriture, d'utilisation des composants du cluster ou de latence d'E/S (temps de réponse) d'un workload pour déterminer le niveau d'impact sur les performances du workload. Ces informations déterminent le rôle de chaque workload dans l'événement et leur classement sur la page de détails de l'événement.
+
+Unified Manager compare les dernières valeurs analysées pour un workload à la plage de valeurs attendue (prévision de latence). L'écart entre les dernières valeurs analysées et la plage de valeurs attendue permet d'identifier les workloads dont les performances ont été les plus affectées par l'événement.
+
+Par exemple, supposons qu'un cluster contienne deux charges de travail : la charge de travail A et la charge de travail B. La latence prévue pour la charge de travail A est de 5 à 10 millisecondes par opération (ms/op) et sa latence réelle est généralement d'environ 7 ms/op. La latence prévue pour la charge de travail B est de 10 à 20 ms/op et sa latence réelle est généralement d'environ 15 ms/op. Les deux charges de travail respectent leurs prévisions de latence. En raison d'une contention sur le cluster, la latence des deux charges de travail augmente à 40 ms/op, dépassant ainsi le seuil de performance dynamique, qui correspond à la limite supérieure des prévisions de latence, et déclenchant des événements. L'écart de latence entre les valeurs attendues et les valeurs supérieures au seuil de performance est d'environ 33 ms/op pour la charge de travail A et d'environ 25 ms/op pour la charge de travail B. La latence des deux charges de travail atteint un pic de 40 ms/op, mais la charge de travail A a eu l'impact le plus important sur les performances, car elle présentait l'écart de latence le plus élevé, à 33 ms/op.
+
+Sur la page Détails de l'événement, dans la section Diagnostic système, vous pouvez trier les workloads selon leur écart d'activité, d'utilisation ou de débit pour un composant du cluster. Vous pouvez également trier les workloads par latence. Lorsque vous sélectionnez une option de tri, Unified Manager analyse l'écart d'activité, d'utilisation, de débit ou de latence depuis la détection de l'événement par rapport aux valeurs attendues afin de déterminer l'ordre de tri des workloads. Pour la latence, les points rouges (image:../media/opm_incident_icon_png.gif["icône d'avertissement de Performance Manager"]) indiquent le franchissement d'un seuil de performance par un workload victime, ainsi que l'impact qui en résulte sur la latence. Chaque point rouge indique un niveau d'écart de latence plus élevé, ce qui vous aide à identifier les workloads victimes dont la latence a été la plus affectée par un événement.

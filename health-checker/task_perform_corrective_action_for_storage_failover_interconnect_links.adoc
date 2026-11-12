@@ -1,0 +1,61 @@
+---
+permalink: health-checker/task_perform_corrective_action_for_storage_failover_interconnect_links.html 
+sidebar: sidebar 
+keywords: perform, corrective action, storage failover, interconnect links 
+summary: 'Lorsque vous affichez la page de détails de l"événement relatif à un basculement de stockage, vous pouvez consulter les informations récapitulatives de la page pour déterminer l"urgence de l"événement, la cause possible du problème et une solution possible à celui-ci.' 
+---
+= Effectuez une action corrective en cas de défaillance d'une liaison d'interconnexion de basculement de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque vous affichez la page de détails de l'événement relatif à un basculement de stockage, vous pouvez consulter les informations récapitulatives de la page pour déterminer l'urgence de l'événement, la cause possible du problème et une solution possible à celui-ci.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Dans cet exemple, le résumé de l'événement fourni sur la page Détails de l'événement contient les informations suivantes concernant l'état de la liaison d'interconnexion de basculement de stockage :
+
+[listing]
+----
+Event: Storage Failover Interconnect One or More Links Down
+
+Summary
+
+Severity: Warning
+State: New
+Impact Level: Risk
+Impact Area: Availability
+Source: aardvark
+Source Type: Node
+Acknowledged By:
+Resolved By:
+Assigned To:
+Cause: At least one storage failover interconnected link
+       between the nodes aardvark and bonobo is down.
+       RDMA interconnect is up (Link0 up, Link1 down)
+----
+L'exemple d'information d'événement indique qu'une liaison d'interconnexion de basculement de stockage, Link1, entre les nœuds de la paire haute disponibilité aardvark et bonobo est hors service, tandis que Link0 entre Apple et Boy est active. Comme une liaison est active, l'accès direct à la mémoire à distance (RDMA) fonctionne toujours et une opération de basculement de stockage peut encore réussir.
+
+Toutefois, pour éviter que les deux liaisons ne tombent en panne et que la protection de basculement du stockage ne soit totalement désactivée, vous décidez de diagnostiquer plus en détail la raison de l’arrêt de Link1.
+
+.Étapes
+. Depuis la page de détails de l'*événement*, vous pouvez cliquer sur le lien vers l'événement spécifié dans le champ Source pour obtenir plus de détails sur d'autres événements susceptibles d'être liés à l'état d'indisponibilité de la liaison d'interconnexion de basculement du stockage.
++
+Dans cet exemple, la source de l'événement est le nœud nommé aardvark. Cliquer sur ce nom de nœud affiche les HA Details de la paire haute disponibilité concernée, aardvark et bonobo, dans l'onglet Nodes de la page Cluster / Health details, et affiche d'autres événements survenus récemment sur la paire haute disponibilité concernée.
+
+. Consultez *HA Details* pour plus d'informations concernant l'événement.
++
+Dans cet exemple, les informations pertinentes se trouvent dans le tableau Events. Le tableau affiche l’événement "`Storage Failover Connection One or More Link Down`", l’heure à laquelle l’événement a été généré et, là encore, le nœud d’où cet événement provient.
+
+
+
+À l’aide des informations d’emplacement des nœuds dans HA Details, demandez ou effectuez vous-même une inspection physique et la réparation du problème de basculement du stockage sur les nœuds de la paire haute disponibilité concernée.
+
+*Informations connexes*
+
+link:../events/reference_event_details_page.html["Page de détails de l'événement"]
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Rôles et fonctionnalités des utilisateurs d'Unified Manager"]

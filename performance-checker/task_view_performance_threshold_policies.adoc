@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_view_performance_threshold_policies.html 
+sidebar: sidebar 
+keywords: view, performance, threshold, policies 
+summary: Vous pouvez consulter toutes les politiques de seuil de performance actuellement définies sur la page « Seuils de performance ». 
+---
+= Consultez les règles de seuil de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter toutes les politiques de seuil de performance actuellement définies sur la page « Seuils de performance ».
+
+La liste des politiques de seuil est triée par ordre alphabétique selon le nom de la politique et comprend des politiques pour tous les types d’objets de stockage. Vous pouvez cliquer sur l’en-tête d’une colonne pour trier les politiques selon cette colonne. Si vous recherchez une politique spécifique, utilisez les mécanismes de filtre et de recherche pour affiner la liste des politiques de seuil qui s’affichent dans la liste d’inventaire.
+
+Vous pouvez survoler le nom de la stratégie et le nom de la condition avec votre curseur pour voir les détails de configuration de la stratégie. De plus, vous pouvez utiliser les boutons fournis pour créer, cloner, modifier et supprimer des stratégies de seuil définies par l'utilisateur.
+
+.Étape
+. Dans le volet de navigation de gauche, sélectionnez *Seuils d'événements* > *Performance*.
++
+La page « Seuils de performance » s'affiche.
+
+

@@ -1,0 +1,29 @@
+---
+permalink: health-checker/task_edit_annotation_rules.html 
+sidebar: sidebar 
+keywords: edit, annotation rules 
+summary: 'Vous pouvez modifier les règles d"annotation afin de modifier les groupes de conditions et les conditions au sein du groupe de conditions pour ajouter ou supprimer des annotations sur les objets de stockage.' 
+---
+= Modifier les règles d'annotation dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les règles d'annotation afin de modifier les groupes de conditions et les conditions au sein du groupe de conditions pour ajouter ou supprimer des annotations sur les objets de stockage.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Les annotations sont dissociées des objets de stockage lorsque vous modifiez les règles d'annotation associées.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Annotations*.
+. Dans l'onglet *Règles d'annotation*, sélectionnez la règle d'annotation que vous souhaitez modifier, puis cliquez sur *Actions* > *Modifier*.
+. Dans la boîte de dialogue *Modifier la règle d'annotation*, modifiez le nom de la règle, le nom et la valeur de l'annotation, les groupes de conditions et les conditions selon vos besoins.
++
+Vous ne pouvez pas modifier le type d'objet cible d'une règle d'annotation.
+
+. Cliquez sur *Enregistrer*.
+

@@ -1,0 +1,74 @@
+---
+permalink: data-protection/reference_create_schedule_dialog_box.html 
+sidebar: sidebar 
+keywords: create, schedule, dialog box 
+summary: La boîte de dialogue Créer une planification vous permet de créer une planification de protection de base ou avancée pour les transferts de relations SnapMirror et SnapVault. Vous pouvez créer une nouvelle planification pour augmenter la fréquence des transferts de données en raison de mises à jour fréquentes, ou une planification moins fréquente lorsque les données changent rarement. 
+---
+= Utilisez la boîte de dialogue Créer une planification dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La boîte de dialogue Créer une planification vous permet de créer une planification de protection de base ou avancée pour les transferts de relations SnapMirror et SnapVault. Vous pouvez créer une nouvelle planification pour augmenter la fréquence des transferts de données en raison de mises à jour fréquentes, ou une planification moins fréquente lorsque les données changent rarement.
+
+Il est impossible de configurer des planifications pour les relations synchrones SnapMirror.
+
+* *Cluster de destination*
++
+Le nom du cluster que vous avez sélectionné dans l'onglet SnapVault ou l'onglet SnapMirror de la boîte de dialogue Configurer la protection.
+
+* *Nom de la planification*
++
+Nom que vous fournissez pour la planification. Les noms de planification peuvent contenir les caractères A à Z, a à z, 0 à 9, ainsi que les caractères spéciaux suivants : ! @ # $ % {caret} & * ( ) _ -. Les noms de planification ne peuvent pas contenir les caractères suivants : < >.
+
+* *Niveau de base ou avancé*
++
+Le mode de planification que vous souhaitez utiliser.
+
++
+Le mode de base comprend les éléments suivants :
+
++
+** Répéter
++
+Fréquence à laquelle un transfert planifié a lieu. Les choix incluent horaire, quotidien et hebdomadaire.
+
+** Jour
++
+Lorsqu'une répétition hebdomadaire est sélectionnée, le jour de la semaine où un transfert a lieu.
+
+** Durée
++
+Lorsque l’option « Quotidien » ou « Hebdomadaire » est sélectionnée, cela détermine l’heure de la journée à laquelle le transfert a lieu.
+
+
+
++
+Le mode avancé comprend les éléments suivants :
+
++
+** Mois
++
+Liste numérique des mois de l'année, séparés par des virgules. Les valeurs valides vont de 0 à 11, 0 représentant janvier, et ainsi de suite. Cet élément est facultatif. S'il est laissé vide, les transferts sont effectués tous les mois.
+
+** Jours
++
+Liste numérique séparée par des virgules représentant le jour du mois. Les valeurs valides vont de 1 à 31. Cet élément est facultatif. Si le champ est laissé vide, un transfert a lieu chaque jour du mois.
+
+** Jours de la semaine
++
+Liste numérique séparée par des virgules représentant les jours de la semaine. Les valeurs valides vont de 0 à 6, 0 représentant le dimanche, et ainsi de suite. Cet élément est facultatif. Laisser le champ vide signifie qu’un transfert a lieu chaque jour de la semaine. Si un jour de la semaine est spécifié mais qu’aucun jour du mois ne l’est, un transfert a lieu uniquement le jour de la semaine indiqué, et non tous les jours.
+
+** Heures
++
+Liste numérique, séparée par des virgules, représentant le nombre d'heures dans une journée. Les valeurs valides sont comprises entre 0 et 23, 0 représentant minuit. Cet élément est facultatif.
+
+** Minutes
++
+Liste numérique séparée par des virgules représentant les minutes d'une heure. Les valeurs valides sont comprises entre 0 et 59. Cet élément est obligatoire.
+
+
+
+

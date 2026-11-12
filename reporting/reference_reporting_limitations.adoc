@@ -1,0 +1,57 @@
+---
+permalink: reporting/reference_reporting_limitations.html 
+sidebar: sidebar 
+keywords: reporting, limitations 
+summary: Il existe certaines limitations concernant la nouvelle fonctionnalité de génération de rapports d’Active IQ Unified Manager dont vous devez être conscient. 
+---
+= Comprendre les limitations de reporting dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il existe certaines limitations concernant la nouvelle fonctionnalité de génération de rapports d’Active IQ Unified Manager dont vous devez être conscient.
+
+
+
+[[existing-reports-from-previous-versions-of-unified-manager]]
+== Rapports existants des versions précédentes d'Unified Manager
+
+Vous pouvez uniquement modifier la planification et les destinataires des rapports existants qui ont été créés et importés (sous forme de fichiers .rptdesign) dans Unified Manager 9.5 et les versions antérieures. Si vous avez personnalisé l’un des rapports standard fournis avec Unified Manager 9.5 ou une version antérieure, ces rapports personnalisés ne sont pas importés dans le nouvel outil de création de rapports.
+
+Si vous devez modifier des rapports existants importés à partir de fichiers .rptdesign, effectuez l'une des opérations suivantes et supprimez le rapport importé :
+
+* Créez une nouvelle vue et planifiez un rapport à partir de cette vue (méthode recommandée)
+* Survolez le rapport, copiez le code SQL et récupérez les données à l'aide d'un outil externe
+
+
+Les vues par défaut peuvent être générées sous forme de rapports sans aucune personnalisation. Vous pouvez utiliser la nouvelle solution de reporting pour recréer tout rapport personnalisé.
+
+
+
+[[schedule-and-report-relationship]]
+== Planification et relation de rapport
+
+Vous pouvez créer plusieurs planifications différentes avec n'importe quelle combinaison de destinataires pour chaque rapport enregistré. Cependant, vous ne pouvez pas réutiliser une même planification pour plusieurs rapports.
+
+
+
+[[report-protection]]
+== Protection des rapports
+
+Tout utilisateur disposant des autorisations appropriées peut modifier ou supprimer des rapports. Il est impossible d'empêcher d'autres utilisateurs de supprimer ou de modifier les vues ou les planifications enregistrées.
+
+
+
+[[event-reports]]
+== Rapports d'événements
+
+Bien que vous puissiez personnaliser l'affichage des événements et télécharger le rapport résultant au format CSV, vous ne pouvez pas programmer la génération et la distribution de rapports d'événements récurrents.
+
+
+
+[[report-attachments]]
+== Pièces jointes au rapport
+
+Les rapports ne peuvent pas être inclus dans le corps d'un courriel. À la place, les rapports sont uniquement envoyés en pièces jointes aux formats PDF, Excel ou CSV.

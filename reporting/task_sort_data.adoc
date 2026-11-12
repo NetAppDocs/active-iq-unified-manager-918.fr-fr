@@ -1,0 +1,19 @@
+---
+permalink: reporting/task_sort_data.html 
+sidebar: sidebar 
+keywords: sort, data 
+summary: 'Pour trier les résultats, cliquez sur une colonne et indiquez l"ordre croissant ou décroissant. Le tri des données permet de prioriser les informations nécessaires à votre rapport.' 
+---
+= Trier les données dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour trier les résultats, cliquez sur une colonne et indiquez l'ordre croissant ou décroissant. Le tri des données permet de prioriser les informations nécessaires à votre rapport.
+
+.Étapes
+. Cliquez en haut d'une colonne pour trier les résultats afin que les informations les plus importantes apparaissent en haut de la vue.
+. Donnez un nom à la vue non enregistrée pour enregistrer vos modifications.
+

@@ -1,0 +1,48 @@
+---
+permalink: health-checker/task_view_details_about_nfs_shares.html 
+sidebar: sidebar 
+keywords: view, details, nfs shares 
+summary: 'Consultez les détails relatifs aux partages NFS, tels que leur statut, le chemin d"accès au volume, les niveaux d"accès client et les règles d"export, à l"aide de la vue « All NFS Shares » sur la page « Health ».' 
+---
+= Consultez les détails relatifs aux partages NFS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez afficher des détails sur tous les partages NFS, tels que leur état, le chemin associé au volume (volumes FlexGroup ou volumes FlexVol®), les niveaux d'accès des clients aux partages NFS et les règles d'export définies pour les volumes exportés. Utilisez la vue Santé : tous les partages NFS pour afficher tous les partages NFS sur l'ensemble des clusters surveillés, et utilisez la page Détails de la VM de stockage / Santé pour afficher tous les partages NFS sur une machine virtuelle de stockage (SVM) spécifique.
+
+.Avant de commencer
+* La licence NFS doit être activée sur le cluster.
+* Les interfaces réseau desservant les partages NFS doivent être configurées.
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+
+.Étape
+. Dans le volet de navigation de gauche, suivez les étapes ci-dessous selon que vous souhaitez afficher tous les partages NFS ou uniquement les partages NFS d'une SVM particulière.
++
+[cols="2*"]
+|===
+| À... | Suivez ces étapes... 
+
+
+ a| 
+Afficher tous les partages NFS
+ a| 
+Cliquez sur *Stockage* > *Partages NFS*
+
+
+
+ a| 
+Afficher les partages NFS pour une seule SVM
+ a| 
+.. Cliquez sur *Stockage* > *Machines virtuelles de stockage*
+.. Cliquez sur le SVM pour lequel vous souhaitez afficher les détails des partages NFS.
+.. Dans la page Détails de la machine virtuelle de stockage / État, cliquez sur l'onglet *Partages NFS*.
+
+
+|===
+
+
+Pour plus d'informations, voir link:../storage-mgmt/task_provision_fileshares.html["Provisionnement des volumes de partage de fichiers"] et link:../api-automation/concept_provision_file_share.html["Provisionnement des partages de fichiers CIFS et NFS à l'aide d'API"].

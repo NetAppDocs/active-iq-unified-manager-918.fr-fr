@@ -1,0 +1,26 @@
+---
+permalink: reporting/concept_customize_reports.html 
+sidebar: sidebar 
+keywords: customize, reports 
+summary: Il existe de nombreuses façons de personnaliser les vues afin de créer un rapport contenant toutes les informations dont vous avez besoin pour gérer vos clusters ONTAP. 
+---
+= Personnalisez les rapports dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il existe de nombreuses façons de personnaliser les vues afin de créer un rapport contenant toutes les informations dont vous avez besoin pour gérer vos clusters ONTAP.
+
+Commencez par une page d'inventaire par défaut ou une vue personnalisée, puis personnalisez-la en ajoutant ou en supprimant des colonnes, en modifiant l'ordre des colonnes, en filtrant les données ou en les triant sur une colonne spécifique par ordre croissant ou décroissant.
+
+À partir de Unified Manager 9.8, vous pouvez également télécharger la vue au format Excel pour la personnaliser à l'aide de fonctionnalités avancées. Une fois la personnalisation terminée, importez le fichier Excel personnalisé. Si vous planifiez un rapport à partir de cette vue, celui-ci utilisera le fichier Excel personnalisé pour générer des rapports robustes que vous pourrez partager.
+
+Pour plus d'informations sur la personnalisation des rapports à l'aide d'Excel, consultez _Exemples de rapports Microsoft Excel_.
+
+[NOTE]
+====
+Vous devez disposer du rôle d'administrateur d'applications ou d'administrateur de stockage pour gérer les rapports.
+
+====

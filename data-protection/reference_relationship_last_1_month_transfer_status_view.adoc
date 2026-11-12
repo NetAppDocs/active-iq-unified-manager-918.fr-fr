@@ -1,0 +1,73 @@
+---
+permalink: data-protection/reference_relationship_last_1_month_transfer_status_view.html 
+sidebar: sidebar 
+keywords: relationship, 1 month, transfer status, view 
+summary: La vue « Statut des transferts du dernier mois » sur la page Relation affiche les tendances des transferts et leur statut de réussite ou d’échec pour les relations asynchrones. 
+---
+= Afficher la vue de l’état des transferts du dernier mois dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La vue « Relation : État des transferts du dernier mois » permet d’analyser les tendances de transfert sur une période donnée pour les volumes et les machines virtuelles de stockage dans des relations asynchrones. Cette page indique également si le transfert a réussi ou échoué.
+
+Les commandes situées en haut de la page vous permettent d’effectuer des recherches pour localiser des objets spécifiques, de créer et d’appliquer des filtres pour affiner la liste des données affichées, d’ajouter, de supprimer ou de réorganiser les colonnes sur la page, et d’exporter les données de la page vers un fichier `.csv`, `.pdf`, ou `.xlsx`. Après avoir personnalisé la page, vous pouvez enregistrer les résultats en tant que vue personnalisée, puis planifier la génération et l’envoi régulier par e-mail d’un rapport de ces données. Vous pouvez utiliser l’option *Filter* pour afficher uniquement certains systèmes de stockage, par exemple seulement les volumes ou seulement les Storage VMs. Le même rapport s’affiche dans la page Storage et uniquement pour l’entité de stockage sélectionnée. Par exemple, si vous souhaitez afficher les relations de volume, vous pouvez accéder au rapport *Relationship: Last 1 Month Transfer Status* pour les Storage VMs, soit à partir du menu *Storage* > *Storage VMs* > *Relationship: Last 1 Month Transfer Status*, soit à partir du menu *Protection* > *Relationships* > *Relationship: Last 1 Month Transfer Status*, et utiliser *Filter* pour afficher uniquement les données relatives aux volumes.
+
+* *Volume source*
++
+Affiche le nom du volume source.
+
+* *Volume de destination*
++
+Affiche le nom du volume de destination.
+
+* *Type d'opération*
++
+Affiche le type de transfert de volume.
+
+* *Résultat de l'opération*
++
+Indique si le transfert de volume a réussi.
+
+* *Heure de début du transfert*
++
+Affiche l'heure de début du transfert du volume.
+
+* *Heure de fin du transfert*
++
+Affiche l'heure de fin du transfert de volume.
+
+* *Durée du transfert*
++
+Affiche le temps nécessaire (en heures) pour effectuer le transfert du volume.
+
+* *Taille de transfert*
++
+Affiche la taille (en Mo) du volume transféré.
+
+* *SVM source*
++
+Affiche le nom de la machine virtuelle de stockage (SVM).
+
+* *Cluster source*
++
+Affiche le nom du cluster source.
+
+* *SVM de destination*
++
+Affiche le nom de la SVM de destination.
+
+* *Cluster de destination*
++
+Affiche le nom du cluster de destination.
+
+
+
+*Informations connexes*
+
+* Pour plus d'informations sur la vue *Relations : Toutes les relations*, voir link:../data-protection/reference_relationship_all_relationships_view.html["Relation : vue Toutes les relations"].
+* Pour plus d'informations sur la vue *Relation :MetroCluster*, voir link:../storage-mgmt/task_monitor_metrocluster_configurations.html["Surveillance des MetroCluster configurations"].
+* Pour plus d'informations sur la vue *Relations : Toutes les relations*, voir link:../data-protection/reference_relationship_last_1_month_transfer_rate_view.html["Relation : vue du taux de transfert du dernier mois"].
+

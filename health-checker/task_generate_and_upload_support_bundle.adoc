@@ -1,0 +1,89 @@
+---
+permalink: health-checker/task_generate_and_upload_support_bundle.html 
+sidebar: sidebar 
+keywords: generate, upload, support bundle 
+summary: 'Vous pouvez générer un dossier de support contenant des informations de diagnostic afin de l"envoyer au support technique pour obtenir de l"aide au dépannage. Vous pouvez également télécharger le dossier de support vers NetApp depuis la console de maintenance.' 
+---
+= Générez et téléversez un bundle de support depuis Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez générer un dossier de support contenant des informations de diagnostic afin de l’envoyer au support technique pour obtenir de l’aide au dépannage.
+
+À partir de Unified Manager 9.8, si votre serveur Unified Manager est connecté à Internet, vous pouvez également envoyer le bundle de support à NetApp depuis la console de maintenance.
+
+.Avant de commencer
+Vous devez avoir accès à la console de maintenance en tant qu'utilisateur de maintenance.
+
+Étant donné que certains types de données de support peuvent consommer beaucoup de ressources du cluster ou nécessiter un temps de traitement important, lorsque vous sélectionnez le pack de support complet, vous pouvez spécifier les types de données à inclure ou à exclure afin de réduire sa taille. Vous pouvez également créer un pack de support allégé contenant uniquement les journaux des 30 derniers jours et les enregistrements de la base de données de configuration -- il exclut les données de performance, les fichiers d'enregistrement d'acquisition et le vidage du tas du serveur.
+
+Unified Manager ne conserve que les deux derniers bundles de support générés. Les bundles de support plus anciens sont supprimés du système.
+
+.Étapes
+. Dans la console *Menu principal*, sélectionnez *Support/Diagnostics*.
+. Sélectionnez *Générer un pack de support léger* ou *Générer un pack de support* selon le niveau de détail que vous souhaitez inclure dans le pack de support.
+. Si vous choisissez le pack de support complet, sélectionnez ou désélectionnez les types de données suivants à inclure ou à exclure du pack de support :
++
+** *dump de base de données*
++
+Une sauvegarde de la base de données MySQL Server.
+
+** *vidage du tas*
++
+Aperçu de l'état des principaux processus du serveur Unified Manager. Cette option est désactivée par défaut et ne doit être sélectionnée que sur demande du support client.
+
+** *enregistrements d'acquisition*
++
+Enregistrement de toutes les communications entre Unified Manager et les clusters surveillés.
+
+
+
++
+[NOTE]
+====
+Si vous désélectionnez tous les types de données, le bundle de support est tout de même généré avec d'autres données Unified Manager.
+
+====
+. Tapez `g`, puis appuyez sur Entrée pour générer le bundle de support.
++
+Comme la génération d'un bundle de support est une opération gourmande en mémoire, il vous est demandé de confirmer que vous voulez vraiment générer le bundle de support maintenant.
+
+. Tapez `y`, puis appuyez sur Entrée pour générer le bundle de support.
++
+Si vous ne souhaitez pas générer le package de support pour le moment, saisissez `n`, puis appuyez sur Entrée.
+
+. Si vous avez inclus des fichiers de vidage de la base de données dans le pack de support complet, vous serez invité à préciser la période pour laquelle vous souhaitez inclure les statistiques de performance. L’inclusion des statistiques de performance peut prendre beaucoup de temps et d’espace. Vous pouvez donc également vider la base de données sans inclure les statistiques de performance :
++
+.. Saisissez la date de début au format AAAAMMJJ.
++
+Par exemple, saisissez `20210101` pour le 1er janvier 2021. Saisissez `n` si vous ne souhaitez pas inclure les statistiques de performance.
+
+.. Saisissez le nombre de jours de statistiques à inclure, à compter de 0 h à la date de début spécifiée.
++
+Vous pouvez saisir un nombre de 1 à 10.
+
+
+
++
+Si vous incluez des statistiques de performance, le système affiche la période pendant laquelle ces statistiques seront collectées.
+
+. Une fois le package de support créé, il vous sera demandé si vous souhaitez le télécharger vers NetApp. Tapez `y`, puis appuyez sur Entrée.
++
+Saisissez votre numéro de dossier de support.
+
+. Si vous disposez déjà d'un numéro de dossier, saisissez-le et appuyez sur Entrée. Sinon, appuyez simplement sur Entrée.
++
+Le bundle de support est téléchargé sur NetApp.
+
+
+
+Si votre serveur Unified Manager n'est pas connecté à Internet ou si vous ne pouvez pas téléverser le support bundle pour une autre raison, vous pouvez le récupérer et l'envoyer manuellement. Vous pouvez le récupérer à l'aide d'un client SFTP ou de commandes CLI UNIX ou Linux. Sur les installations Windows, vous pouvez utiliser Remote Desktop (RDP) pour récupérer le support bundle.
+
+Le package de support généré se trouve dans le répertoire /support sur les systèmes VMware, dans /opt/netapp/data/support/ sur les systèmes Linux et dans ProgramData\NetApp\OnCommandAppData\ocum\support sur les systèmes Windows.
+
+*Informations connexes*
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Rôles et fonctionnalités des utilisateurs d'Unified Manager"]

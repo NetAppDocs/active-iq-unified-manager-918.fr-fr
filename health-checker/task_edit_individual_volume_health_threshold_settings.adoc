@@ -1,0 +1,37 @@
+---
+permalink: health-checker/task_edit_individual_volume_health_threshold_settings.html 
+sidebar: sidebar 
+keywords: edit, individual, volume, health, threshold, settings 
+summary: 'Vous pouvez modifier les paramètres de seuil d"état de santé relatifs à la capacité, à la croissance, au quota et à la réserve d"espace d"un ou plusieurs volumes. Lorsqu"un seuil est franchi, des alertes sont générées et vous recevez des notifications. Ces notifications vous permettent de prendre des mesures préventives en fonction de l"événement généré.' 
+---
+= Modifiez les paramètres de seuil de santé du volume individuel dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les paramètres de seuil d'état de santé relatifs à la capacité, à la croissance, au quota et à la réserve d'espace d'un ou plusieurs volumes. Lorsqu'un seuil est franchi, des alertes sont générées et vous recevez des notifications. Ces notifications vous permettent de prendre des mesures préventives en fonction de l'événement généré.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+En fonction des modifications apportées aux valeurs de seuil, des événements sont générés ou rendus obsolètes lors du prochain cycle de surveillance.
+
+Notez que lorsque Autogrow est activé sur un volume, les seuils de capacité sont considérés comme dépassés en fonction de la taille maximale du volume définie par Autogrow, et non en fonction de la taille du volume d’origine.
+
+[NOTE]
+====
+La valeur par défaut de 1 000 copies Snapshot s’applique uniquement aux volumes FlexVol lorsque la version d’ONTAP est 9.4 ou ultérieure, et aux volumes FlexGroup lorsque la version d’ONTAP est 9.8 ou ultérieure. Pour les clusters installés avec des versions plus anciennes du logiciel ONTAP, le nombre maximal est de 250 copies Snapshot par volume. Pour ces versions plus anciennes, Unified Manager interprète ce nombre de 1 000 (et tout nombre compris entre 1 000 et 250) comme 250 ; cela signifie que vous continuerez à recevoir des événements lorsque le nombre de copies Snapshot atteindra 250. Si vous souhaitez définir ce seuil à une valeur inférieure à 250 pour ces versions plus anciennes, vous devez définir le seuil sur 250 ou moins ici, dans la vue Health: All Volumes, ou dans la page de détails Volume / Health.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Dans la vue *Santé: Tous les volumes*, sélectionnez un ou plusieurs volumes puis cliquez sur *Modifier les seuils*.
+. Dans la boîte de dialogue *Modifier les seuils de volume*, modifiez les paramètres de seuil de l’un des éléments suivants : capacité, copies Snapshot, quota qtree, croissance ou inodes, en sélectionnant la case à cocher appropriée, puis en modifiant les paramètres.
+. Cliquez sur *Enregistrer*.
+
+
+*Informations connexes*
+
+link:../config/task_add_users.html["Ajout d'utilisateurs"]

@@ -1,0 +1,43 @@
+---
+permalink: data-protection/task_abort_an_active_data_protection_transfer.html 
+sidebar: sidebar 
+keywords: abort, active data protection, transfer, volume relationships page, SnapMirror active sync 
+summary: 'Vous pouvez interrompre un transfert actif de protection des données lorsque vous souhaitez arrêter une réplication SnapMirror en cours. Vous pouvez également effacer le point de contrôle de redémarrage pour les transferts postérieurs au transfert de base. Vous pouvez interrompre un transfert s"il entre en conflit avec une autre opération, comme un déplacement de volume.' 
+---
+= Annuler un transfert depuis la page Relations de volumes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez interrompre un transfert actif de protection des données lorsque vous souhaitez arrêter une réplication SnapMirror en cours. Vous pouvez également effacer le point de contrôle de redémarrage pour les transferts postérieurs au transfert de base. Vous pouvez interrompre un transfert s'il entre en conflit avec une autre opération, comme un déplacement de volume.
+
+
+NOTE: Vous ne pouvez pas interrompre les relations de volume protégées par le groupe de cohérence.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+
+
+L'option d'annulation ne s'affiche pas dans les cas suivants :
+
+* Si les paramètres RBAC ne permettent pas cette action: par exemple, si vous ne disposez que de privilèges d’opérateur
+* Lorsque l'ID du volume est inconnu : par exemple, lorsque vous avez une relation intercluster et que le cluster de destination n'a pas encore été découvert
+
+
+Vous ne pouvez pas effacer le point de contrôle de redémarrage pour un transfert de base.
+
+.Étapes
+. Pour annuler les transferts pour une ou plusieurs relations de protection, depuis la page *Volume Relationships*, sélectionnez un ou plusieurs volumes et, dans la barre d'outils, cliquez sur *Abort*.
++
+La boîte de dialogue « Annuler le transfert » s'affiche.
+
+. Si vous souhaitez effacer le point de contrôle de redémarrage pour un transfert qui n'est pas un transfert de base, sélectionnez *Effacer les points de contrôle*.
+. Cliquez sur *Continuer*.
++
+La boîte de dialogue Annuler le transfert se ferme et l'état de la tâche d'abandon s'affiche en haut de la page Relations de volume, ainsi qu'un lien vers les détails de la tâche.
+
+. *Facultatif :* Cliquez sur le lien *View details* pour accéder à la page de détails du *Job* afin d’obtenir des informations supplémentaires et de consulter la progression du job.
+

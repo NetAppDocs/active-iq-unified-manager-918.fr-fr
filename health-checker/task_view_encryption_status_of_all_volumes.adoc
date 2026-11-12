@@ -1,0 +1,31 @@
+---
+permalink: health-checker/task_view_encryption_status_of_all_volumes.html 
+sidebar: sidebar 
+keywords: view, encryption status, volumes 
+summary: 'Vous pouvez consulter la liste de tous les volumes et leur état de chiffrement actuel afin de déterminer si les données de vos volumes sont suffisamment protégées contre l"accès par des utilisateurs non autorisés.' 
+---
+= Affichez l'état de chiffrement de tous les volumes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter la liste de tous les volumes et leur état de chiffrement actuel afin de déterminer si les données de vos volumes sont suffisamment protégées contre l'accès par des utilisateurs non autorisés.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Les types de chiffrement pouvant être appliqués à un volume sont :
+
+* Logiciel - Volumes protégés à l’aide des solutions de chiffrement logiciel NetApp Volume Encryption (NVE) ou NetApp Aggregate Encryption (NAE).
+* Matériel - Volumes protégés à l’aide du chiffrement matériel NetApp Storage Encryption (NSE).
+* Logiciel et matériel - Volumes protégés par un chiffrement à la fois logiciel et matériel.
+* Aucun - Volumes non chiffrés.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Dans le menu Affichage, sélectionnez *Santé* > *Chiffrement des volumes*
+. Dans la vue *Santé : Chiffrement des volumes*, triez sur le champ *Type de chiffrement* ou utilisez le filtre pour afficher les volumes qui ont un type de chiffrement spécifique ou qui ne sont pas chiffrés (Type de chiffrement « `None` »).
+

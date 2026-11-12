@@ -1,0 +1,51 @@
+---
+permalink: storage-mgmt/task_edit_user_and_group_quota_email_addresses.html 
+sidebar: sidebar 
+keywords: edit, user, group, quota, email, addresses 
+summary: 'Vous pouvez modifier les adresses e-mail en fonction du quota utilisateur associé aux clusters, aux machines virtuelles de stockage (SVM), aux volumes, aux qtrees, aux utilisateurs ou aux groupes d"utilisateurs. Vous pouvez modifier l"adresse e-mail lorsque vous souhaitez remplacer celle générée par les règles définies dans la boîte de dialogue « Règles de génération des adresses e-mail de quota utilisateur et groupe ».' 
+---
+= Modifier les adresses e-mail des quotas d'utilisateurs et de groupes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les adresses e-mail en fonction du quota utilisateur associé aux clusters, aux machines virtuelles de stockage (SVM), aux volumes, aux qtrees, aux utilisateurs ou aux groupes d'utilisateurs. Vous pouvez modifier l'adresse e-mail lorsque vous souhaitez remplacer celle générée par les règles définies dans la boîte de dialogue « Règles de génération des adresses e-mail de quota utilisateur et groupe ».
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Vous devez avoir examiné le link:reference_rules_to_generate_user_and_group_quota.html["lignes directrices pour la création de règles"].
+
+
+Si vous modifiez une adresse e-mail, les règles de génération des adresses e-mail de quota utilisateur et de quota au groupe ne s'appliquent plus au quota. Pour que les notifications soient envoyées à l'adresse e-mail générée par les règles spécifiées, vous devez supprimer l'adresse e-mail et enregistrer la modification.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Storage* > *SVMs*.
+. Dans la vue *Santé : Toutes les machines virtuelles de stockage*, sélectionnez une SVM, puis cliquez sur l'onglet *Quotas utilisateur et groupe*.
+. Cliquez sur *Modifier l'adresse e-mail* sous la rangée d'onglets.
+. Dans la boîte de dialogue *Modifier l'adresse e-mail*, effectuez l'action appropriée :
++
+|===
+| Si... | Ensuite... 
+
+
+ a| 
+Vous souhaitez que les notifications soient envoyées à l'adresse e-mail générée par les règles spécifiées
+ a| 
+.. Supprimez l'adresse e-mail du champ *Adresse e-mail*.
+.. Cliquez sur *Enregistrer*.
+.. Actualisez le navigateur en appuyant sur F5 pour recharger la boîte de dialogue Modifier l'adresse e-mail. L'adresse e-mail générée par la règle spécifiée s'affiche dans le champ *Adresse e-mail*.
+
+
+
+
+ a| 
+Vous souhaitez que les notifications soient envoyées à une adresse e-mail spécifique
+ a| 
+.. Modifiez l'adresse e-mail dans le champ *Adresse e-mail*.
+.. Cliquez sur *Enregistrer*. Les règles de génération des adresses e-mail de quota utilisateur et de quota au groupe ne s'appliquent plus au quota.
+
+
+|===
+

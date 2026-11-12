@@ -1,0 +1,59 @@
+---
+permalink: api-automation/concept_rest_services_offered_in_unified_manager_apis.html 
+sidebar: sidebar 
+keywords: rest, services, offer, active iq, unified, manager 
+summary: Vous devez connaître les services et opérations REST proposés avant de commencer à utiliser les API Active IQ Unified Manager. 
+---
+= Comprendre les services REST proposés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez connaître les services et opérations REST proposés avant de commencer à utiliser les API Active IQ Unified Manager.
+
+Les API de provisionnement et d'administration utilisées pour configurer le serveur d'API prennent en charge les opérations de lecture (GET) ou d'écriture (POST, PATCH, DELETE). Voici quelques exemples d'opérations GET, PATCH, POST et DELETE prises en charge par les API :
+
+* Exemple pour GET : `GET /datacenter/cluster/clusters` récupère les détails du cluster dans votre centre de données. Le nombre maximal d’enregistrements renvoyés par l’opération `GET` est de 1000.
++
+[NOTE]
+====
+Les API vous permettent de filtrer, trier et ordonner les enregistrements selon les attributs pris en charge.
+
+====
+* Exemple pour POST: `POST /datacenter/svm/svms` crée une machine virtuelle de stockage (SVM) personnalisée.
+* Exemple de PATCH : `PATCH /datacenter/svm/svms/{key}` modifie les propriétés d'une SVM à l'aide de sa clé unique.
+* Exemple de DELETE :  `DELETE /storage-provider/access-endpoints/{key}`supprime un point de terminaison d'accès d'un LUN, d'un SVM ou d'un partage de fichiers à l'aide de sa clé unique.
+
+
+Les opérations REST pouvant être effectuées via les API dépendent du rôle de l'utilisateur : opérateur, administrateur de stockage ou administrateur d'application.
+
+[cols="2*"]
+|===
+| Rôle utilisateur | Méthode REST prise en charge 
+
+
+ a| 
+Opérateur
+ a| 
+Accès en lecture seule aux données. Les utilisateurs disposant de ce rôle peuvent exécuter toutes les requêtes GET.
+
+
+
+ a| 
+Administrateur de stockage
+ a| 
+Accès en lecture à toutes les données. Les utilisateurs disposant de ce rôle peuvent exécuter toutes les requêtes GET.
+
+De plus, ils disposent d'un accès en écriture (pour exécuter des requêtes PATCH, POST et DELETE) afin d'effectuer des activités spécifiques, telles que la gestion des objets de service de stockage et des options de gestion du stockage.
+
+
+
+ a| 
+Administrateur d’application
+ a| 
+Accès en lecture et en écriture à toutes les données. Les utilisateurs disposant de ce rôle peuvent exécuter des requêtes GET, PATCH, POST et DELETE pour toutes les fonctions.
+
+|===
+Pour plus d'informations sur toutes les opérations REST, consultez la _documentation de l'API en ligne_.

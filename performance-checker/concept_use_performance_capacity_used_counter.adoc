@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_use_performance_capacity_used_counter.html 
+sidebar: sidebar 
+keywords: performance, capacity, counter, manage, performance 
+summary: En règle générale, les organisations souhaitent fonctionner avec un pourcentage de capacité de performance utilisée inférieur à 100 afin que les ressources soient utilisées efficacement tout en réservant une capacité de performance supplémentaire pour répondre aux demandes des périodes de pointe. Vous pouvez utiliser des politiques de seuil pour personnaliser le moment où des alertes sont envoyées en cas de valeurs élevées de capacité de performance utilisée. 
+---
+= Utilisez le compteur de capacité de performance utilisée dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En règle générale, les organisations souhaitent fonctionner avec un pourcentage de capacité de performance utilisée inférieur à 100 afin que les ressources soient utilisées efficacement tout en réservant une capacité de performance supplémentaire pour répondre aux demandes des périodes de pointe. Vous pouvez utiliser des politiques de seuil pour personnaliser le moment où des alertes sont envoyées en cas de valeurs élevées de capacité de performance utilisée.
+
+Vous pouvez définir des objectifs précis en fonction de vos exigences de performance. Par exemple, les entreprises de services financiers peuvent réserver une capacité de performance plus importante afin de garantir l'exécution rapide des transactions. Elles peuvent fixer des seuils d'utilisation de la capacité de performance compris entre 70 et 80 %. Les entreprises manufacturières aux marges plus faibles peuvent choisir de réserver une capacité de performance moindre si elles sont prêtes à accepter un certain risque de performance afin de mieux maîtriser leurs coûts IT. Ces entreprises peuvent fixer des seuils d'utilisation de la capacité de performance compris entre 85 et 95 %.
+
+Lorsque la valeur de capacité de performance utilisée dépasse le pourcentage défini dans une règle de seuil définie par l'utilisateur, Unified Manager envoie un e-mail d'alerte et ajoute l'événement à la page Event Inventory. Vous pouvez ainsi gérer les problèmes potentiels avant qu'ils n'affectent les performances. Ces événements peuvent également indiquer que vous devez déplacer des workloads et effectuer des modifications au sein de vos nœuds et agrégats.

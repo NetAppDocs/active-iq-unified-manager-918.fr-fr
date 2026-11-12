@@ -1,0 +1,130 @@
+---
+permalink: events/reference_port_events.html 
+sidebar: sidebar 
+keywords: port, events, impact area, availability, performance 
+summary: Les événements de ports vous fournissent des informations sur l’état des ports du cluster, ce qui vous permet de surveiller les changements ou les problèmes sur le port, par exemple si le port est hors service. 
+---
+= Découvrez les événements de port dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements de ports vous fournissent des informations sur l’état des ports du cluster, ce qui vous permet de surveiller les changements ou les problèmes sur le port, par exemple si le port est hors service.
+
+
+
+[[impact-area-availability]]
+== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+État du port hors service (ocumEvtPortStatusDown)
+ a| 
+Incident
+ a| 
+Nœud
+ a| 
+Primordial
+
+|===
+
+
+[[impact-area-performance]]
+== Domaine d'impact : performance
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Dépassement du seuil critique du débit du port réseau (MB/s)(ocumNetworkPortMbpsIncident)
+ a| 
+Incident
+ a| 
+Port
+ a| 
+Primordial
+
+
+
+ a| 
+Seuil d'avertissement MB/s du port réseau dépassé(ocumNetworkPortMbpsWarning)
+ a| 
+Risque
+ a| 
+Port
+ a| 
+Avertissement
+
+
+
+ a| 
+Dépassement du seuil critique en MB/s du port FCP(ocumFcpPortMbpsIncident)
+ a| 
+Incident
+ a| 
+Port
+ a| 
+Primordial
+
+
+
+ a| 
+Seuil d'alerte du port FCP en MB/s dépassé(ocumFcpPortMbpsWarning)
+ a| 
+Risque
+ a| 
+Port
+ a| 
+Avertissement
+
+
+
+ a| 
+Seuil critique d'utilisation des ports réseau dépassé(ocumNetworkPortUtilizationIncident)
+ a| 
+Incident
+ a| 
+Port
+ a| 
+Primordial
+
+
+
+ a| 
+Seuil d'alerte d'utilisation du port réseau dépassé(ocumNetworkPortUtilizationWarning)
+ a| 
+Risque
+ a| 
+Port
+ a| 
+Avertissement
+
+
+
+ a| 
+Seuil critique d'utilisation du port FCP dépassé(ocumFcpPortUtilizationIncident)
+ a| 
+Incident
+ a| 
+Port
+ a| 
+Primordial
+
+
+
+ a| 
+Seuil d'alerte d'utilisation du port FCP dépassé(ocumFcpPortUtilizationWarning)
+ a| 
+Risque
+ a| 
+Port
+ a| 
+Avertissement
+
+|===

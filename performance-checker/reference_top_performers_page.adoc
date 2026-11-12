@@ -1,0 +1,77 @@
+---
+permalink: performance-checker/reference_top_performers_page.html 
+sidebar: sidebar 
+keywords: top, performers, page 
+summary: 'La page « Meilleures performances » affiche les objets de stockage présentant les performances les plus élevées ou les plus faibles, selon le compteur de performances que vous sélectionnez. Par exemple, dans la catégorie « Machines virtuelles de stockage », vous pouvez afficher les SVM qui ont le plus grand nombre d’IOPS, la latence la plus élevée ou le débit en MB/s le plus faible. Cette page indique également si certains des éléments les plus performants ont des événements de performances actifs (New ou Acknowledged).' 
+---
+= Affichez la page Top Performers dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page « Meilleures performances » affiche les objets de stockage présentant les performances les plus élevées ou les plus faibles, selon le compteur de performances que vous sélectionnez. Par exemple, dans la catégorie « Machines virtuelles de stockage », vous pouvez afficher les SVM qui ont le plus grand nombre d’IOPS, la latence la plus élevée ou le débit en MB/s le plus faible. Cette page indique également si certains des éléments les plus performants ont des événements de performances actifs (New ou Acknowledged).
+
+La page « Meilleures performances » affiche un maximum de 10 de chaque objet. Notez que l’objet « Volume » inclut à la fois les volumes FlexVol et les volumes FlexGroup.
+
+* *Plage de temps*
++
+Vous pouvez sélectionner une période pour afficher les objets les plus performants ; la période sélectionnée s’applique à tous les objets de stockage. Périodes disponibles :
+
++
+** Dernière heure
+** 24 dernières heures
+** Dernières 72 heures (par défaut)
+** 7 derniers jours
+
+
+* *Métrique*
++
+Cliquez sur le menu *Métrique* pour sélectionner un autre compteur. Les options de compteur sont spécifiques à chaque type d'objet. Par exemple, pour l'objet *Volumes*, les compteurs disponibles sont *Latence*, *IOPS* et *Mo/s*. La modification du compteur recharge les données du panneau avec les éléments les plus performants selon le compteur sélectionné.
+
++
+Compteurs disponibles :
+
++
+** Latence
+** Op E/S par sec
+** Mo/s
+** Capacité de performance utilisée (pour les nœuds et les agrégats)
+** Utilisation (pour les nœuds et les agrégats)
+
+
+* *Trier*
++
+Cliquez sur le menu *Trier* pour sélectionner un tri ascendant ou descendant pour l'objet et le compteur sélectionnés. Les options sont *Du plus élevé au plus faible* et *Du plus faible au plus élevé*. Ces options vous permettent d'afficher les objets présentant les performances les plus élevées ou les plus faibles.
+
+* *Barre de compteur*
++
+La barre de compteur du graphique affiche les statistiques de performance pour chaque objet, représenté par une barre pour cet élément. Les graphiques à barres sont codés par couleur. Si le compteur ne dépasse pas un seuil de performance, la barre de compteur s’affiche en bleu. Si un dépassement de seuil est actif (événement nouveau ou reconnu), la barre s’affiche dans la couleur de l’événement : les événements d’avertissement s’affichent en jaune (image:../media/treemapstatus_warning_png.gif["Icône pour TreeMap – État d'avertissement"]), et les événements critiques s’affichent en rouge (image:../media/treemapred_png.gif["Icône pour TreeMap – couleur rouge"]). Les dépassements de seuil sont en outre indiqués par des icônes d’indicateur de gravité pour les événements d’avertissement et les événements critiques.
+
++
+image::../media/top_10_example.gif[Capture d'écran de l'interface utilisateur montrant les statistiques de performance de chaque objet représenté sous forme de barre de compteur dans le graphique.]
+
++
+Pour chaque graphique, l’axe des abscisses affiche les objets les plus performants pour le type d’objet sélectionné. L’axe des ordonnées affiche les unités applicables au compteur sélectionné. En cliquant sur le lien du nom de l’objet sous chaque élément du graphique à barres verticales, vous accédez à la page Performance Landing de l’objet sélectionné.
+
+* *Indicateur de gravité de l'événement*
++
+L'icône d'indicateur *Événement de gravité* s'affiche à gauche du nom d'un objet pour les événements critiques actifs (image:../media/sev_critical_um60.png["Icône de gravité de l'événement – critique"]) ou d'avertissement actifs (image:../media/sev_warning_um60.png["Icône de gravité de l'événement – avertissement"]) dans les graphiques des meilleurs performeurs. Cliquez sur l'icône d'indicateur *Événement de gravité* pour afficher :
+
++
+** *Un événement*
++
+Permet d'accéder à la page de détails de cet événement.
+
+** *Deux événements ou plus*
++
+Permet d'accéder à la page d'inventaire des événements, filtrée pour afficher tous les événements relatifs à l'objet sélectionné.
+
+
+
+* *Bouton Exporter*
++
+Crée un `.csv` fichier contenant les données affichées dans la barre de compteur. Vous pouvez choisir de créer le fichier pour le cluster que vous consultez ou pour tous les clusters du centre de données.
+
+

@@ -1,0 +1,24 @@
+---
+permalink: events/task_view_alerts.html 
+sidebar: sidebar 
+keywords: view, alerts 
+summary: 'Vous pouvez consulter la liste des alertes créées pour différents événements à partir de la page Configuration des alertes. Vous pouvez également consulter les propriétés des alertes, telles que la description de l"alerte, la méthode et la fréquence de notification, les événements qui déclenchent l"alerte, les destinataires des alertes par e-mail et les ressources concernées, telles que les clusters, les agrégats et les volumes.' 
+---
+= Consultez les alertes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter la liste des alertes créées pour différents événements à partir de la page Configuration des alertes. Vous pouvez également consulter les propriétés des alertes, telles que la description de l'alerte, la méthode et la fréquence de notification, les événements qui déclenchent l'alerte, les destinataires des alertes par e-mail et les ressources concernées, telles que les clusters, les agrégats et les volumes.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+.Étape
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration des alertes*.
++
+La liste des alertes est affichée sur la page Configuration des alertes.
+
+

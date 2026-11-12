@@ -1,0 +1,49 @@
+---
+permalink: health-checker/concept_configure_destination_and_schedule_for_database_dump_backups.html 
+sidebar: sidebar 
+keywords: configure, destination, schedule, database dump, backups, snapshot copy, copies 
+summary: Vous pouvez configurer les paramètres de sauvegarde du vidage de la base de données Unified Manager afin de définir le chemin de sauvegarde de la base de données, le nombre de rétentions et la planification des sauvegardes. Vous pouvez activer des sauvegardes planifiées quotidiennes ou hebdomadaires. Par défaut, les sauvegardes planifiées sont désactivées, mais vous devez définir une planification des sauvegardes. 
+---
+= Configurez les paramètres de sauvegarde de la base de données dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer les paramètres de sauvegarde du vidage de la base de données Unified Manager afin de définir le chemin de sauvegarde de la base de données, le nombre de rétentions et la planification des sauvegardes. Vous pouvez activer des sauvegardes planifiées quotidiennes ou hebdomadaires. Par défaut, les sauvegardes planifiées sont désactivées, mais vous devez définir une planification des sauvegardes.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Vous devez disposer d'un minimum de 150 Go d'espace disponible à l'emplacement que vous définissez comme chemin de sauvegarde.
++
+Il est recommandé d'utiliser un emplacement distant externe au système hôte Unified Manager.
+
+* Lorsque Unified Manager est installé sur un système Linux et utilise une sauvegarde MySQL, assurez-vous que les autorisations et les propriétaires suivants sont définis sur le répertoire de sauvegarde.
++
+Autorisations : 0750, Propriétaire : jboss:maintenance
+
+* Lorsqu'Unified Manager est installé sur un système Windows et utilise une sauvegarde MySQL, assurez-vous que seul l'administrateur a accès au répertoire de sauvegarde.
+
+
+La première sauvegarde prend plus de temps que les suivantes, car il s'agit d'une sauvegarde complète. Une sauvegarde complète peut dépasser 1 Go et durer de trois à quatre heures. Les sauvegardes suivantes sont incrémentales et requièrent moins de temps.
+
+[NOTE]
+====
+* Si le nombre de fichiers de sauvegarde incrémentielle est trop important par rapport à l'espace alloué aux sauvegardes, vous pouvez effectuer une sauvegarde complète régulièrement pour remplacer l'ancienne sauvegarde et ses fichiers incrémentiels. Vous pouvez également effectuer une sauvegarde à l'aide de copies Snapshot.
+* Les sauvegardes effectuées pendant les 15 premiers jours suivant l'ajout d'un nouveau cluster peuvent ne pas être suffisamment précises pour obtenir les données de performance historiques.
+
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Sauvegarde de la base de données*.
+. Sur la page *Sauvegarde de la base de données*, cliquez sur *Paramètres de sauvegarde*.
+. Configurez les valeurs appropriées pour un chemin de sauvegarde, un nombre de sauvegardes à conserver et une planification.
++
+La valeur par défaut du nombre de sauvegardes à conserver est de 10 ; vous pouvez utiliser 0 pour créer un nombre illimité de sauvegardes.
+
+. Sélectionnez le bouton *Planifié quotidiennement* ou *Planifié hebdomadairement*, puis spécifiez les détails de la planification.
+. Cliquez sur *Appliquer*.
+
+
+Les fichiers de sauvegarde de la base de données sont créés selon la planification. Vous pouvez consulter les fichiers de sauvegarde disponibles sur la page Sauvegarde de la base de données.

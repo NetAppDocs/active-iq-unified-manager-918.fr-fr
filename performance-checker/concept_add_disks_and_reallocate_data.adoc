@@ -1,0 +1,34 @@
+---
+permalink: performance-checker/concept_add_disks_and_reallocate_data.html 
+sidebar: sidebar 
+keywords: add, disks, reallocate, data 
+summary: 'Vous pouvez ajouter des disques à un agrégat pour augmenter sa capacité de stockage et ses performances. Après l"ajout des disques, l"amélioration des performances en lecture ne sera visible qu"après la réallocation des données entre les disques ajoutés.' 
+---
+= Comprendre comment l'ajout de disques affecte la réallocation des données dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez ajouter des disques à un agrégat pour augmenter sa capacité de stockage et ses performances. Après l'ajout des disques, l'amélioration des performances en lecture ne sera visible qu'après la réallocation des données entre les disques ajoutés.
+
+Vous pouvez utiliser ces instructions lorsque Unified Manager a reçu des événements d’agrégat déclenchés par des seuils dynamiques ou par des seuils de performance définis par le système :
+
+* Lorsque vous recevez un événement de seuil dynamique, sur la page de détails de l'événement, l'icône du composant de cluster qui représente l'agrégat en conflit est mise en évidence en rouge.
++
+Sous l'icône, entre parenthèses, figure le nom de l'agrégat, qui identifie l'agrégat auquel vous pouvez ajouter des disques.
+
+* Lorsque vous avez reçu un événement de seuil défini par le système, sur la page Détails de l'événement, le texte de description de l'événement indique le nom de l'agrégat qui rencontre le problème.
++
+Vous pouvez ajouter des disques et réallouer des données sur cet agrégat.
+
+
+
+Les disques que vous ajoutez à l'agrégat doivent déjà être présents dans le cluster. Si le cluster ne dispose pas de disques supplémentaires, vous devrez peut-être contacter votre administrateur ou acheter davantage de disques. Vous pouvez utiliser ONTAP System Manager ou les commandes ONTAP pour ajouter des disques à un agrégat.
+
+[NOTE]
+====
+Vous devez réallouer les données uniquement lorsque vous utilisez des agrégats HDD et Flash Pool. Ne réallouez pas les données sur des agrégats SSD ou FabricPool.
+
+====

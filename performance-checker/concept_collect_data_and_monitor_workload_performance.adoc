@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_collect_data_and_monitor_workload_performance.html 
+sidebar: sidebar 
+keywords: collect, data, monitor, workload, performance 
+summary: 'Unified Manager collecte et analyse l"activité des workloads toutes les 5 minutes afin d"identifier les événements de performance, et détecte les modifications de configuration toutes les 15 minutes. Il conserve au maximum 30 jours de données historiques de performance et d"événements par tranches de 5 minutes, et utilise ces données pour prévoir la plage de latence attendue pour tous les workloads surveillés.' 
+---
+= Collectez des données et surveillez les performances de la charge de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager collecte et analyse l'activité des workloads toutes les 5 minutes afin d'identifier les événements de performance, et détecte les modifications de configuration toutes les 15 minutes. Il conserve au maximum 30 jours de données historiques de performance et d'événements par tranches de 5 minutes, et utilise ces données pour prévoir la plage de latence attendue pour tous les workloads surveillés.
+
+Unified Manager doit collecter au minimum 3 jours d’activité de workload avant de pouvoir commencer son analyse et avant que les prévisions de latence du temps de réponse des E/S puissent être affichées sur la page « Analyse de workload » et sur la page « Détails de l’événement ». Pendant la collecte de cette activité, les prévisions de latence n’affichent pas toutes les modifications résultant de l’activité du workload. Après avoir collecté 3 jours d’activité, Unified Manager ajuste les prévisions de latence toutes les 24 heures à 00:00 afin de refléter les modifications de l’activité du workload et d’établir un seuil de performance dynamique plus précis.
+
+Pendant les 4 premiers jours durant lesquels Unified Manager surveille un workload, si plus de 24 heures se sont écoulées depuis la dernière collecte de données, les graphiques de latence n’afficheront pas les prévisions de latence pour ce workload. Les événements détectés avant la dernière collecte restent disponibles.
+
+[NOTE]
+====
+Le passage à l'heure d'été modifie l'heure système, ce qui affecte les prévisions de latence des statistiques de performance des workloads surveillés. Unified Manager commence immédiatement à corriger la prévision de latence, ce qui prend environ 15 jours. Pendant cette période, vous pouvez continuer à utiliser Unified Manager, mais comme Unified Manager utilise la prévision de latence pour détecter les événements dynamiques, certains événements peuvent ne pas être exacts. Les événements détectés avant le changement d'heure ne sont pas affectés.
+
+====

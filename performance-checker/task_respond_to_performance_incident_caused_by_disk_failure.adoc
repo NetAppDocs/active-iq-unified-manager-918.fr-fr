@@ -1,0 +1,48 @@
+---
+permalink: performance-checker/task_respond_to_performance_incident_caused_by_disk_failure.html 
+sidebar: sidebar 
+keywords: dynamic, performance, event, disk, failure 
+summary: 'Vous pouvez utiliser Unified Manager pour analyser un incident de performance causé par des workloads qui surutilisent un agrégat. Vous pouvez également utiliser Unified Manager pour vérifier l"état de l"agrégat afin de voir si des incidents d"état récents détectés sur l"agrégat ont contribué à l"incident de performance.' 
+---
+= Répondez à un événement de performance causé par une défaillance de disques dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour analyser un incident de performance causé par des workloads qui surutilisent un agrégat. Vous pouvez également utiliser Unified Manager pour vérifier l'état de l'agrégat afin de voir si des incidents d'état récents détectés sur l'agrégat ont contribué à l'incident de performance.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Il doit y avoir des événements de performance nouveaux, reconnus ou obsolètes.
+
+
+.Étapes
+. Consultez la page *Détails de l'événement* pour obtenir des informations sur l'événement.
+. Lisez la *Description*, qui décrit les workloads impliqués dans l'événement et le composant du cluster en conflit.
++
+Plusieurs volumes victimes ont une latence affectée par le composant de cluster en conflit. L'agrégat, en cours de reconstruction RAID pour remplacer la défaillance de disque par un disque de secours, est le composant de cluster en conflit. Sous « Composant en conflit », l'icône de l'agrégat est surlignée en rouge et le nom de l'agrégat est affiché entre parenthèses.
+
+. Dans le graphique d'utilisation de la charge de travail, sélectionnez *Bully Workloads*.
+. Passez votre curseur sur le graphique pour afficher les principaux workloads perturbateurs qui affectent le composant.
++
+Les workloads ayant enregistré les pics d'utilisation les plus élevés depuis la détection de l'événement sont affichés en haut du graphique. L'un des workloads principaux est le workload défini par le système Disk Health, qui indique une reconstruction RAID. Une reconstruction est le processus interne impliqué dans la reconstruction de l'agrégat avec le disque de secours. Le workload Disk Health, ainsi que d'autres workloads sur l'agrégat, a probablement provoqué la contention sur l'agrégat et l'événement associé.
+
+. Après avoir confirmé que l'activité du workload Disk Health a provoqué l'événement, veuillez patienter environ 30 minutes afin que la reconstruction se termine et que Unified Manager analyse l'événement et détecte si l'agrégat est toujours en conflit.
+. Actualisez les *détails de l'événement*.
++
+Une fois la reconstruction RAID terminée, vérifiez que l’état est obsolète, ce qui indique que l’événement est résolu.
+
+. Dans le graphique d'utilisation des workloads, sélectionnez *Bully Workloads* pour afficher les workloads sur l'agrégat en fonction de l'utilisation maximale.
+. Dans la zone *Actions suggérées*, cliquez sur le bouton *Analyser le workload* pour le workload principal.
+. Dans la page *Workload Analysis*, définissez la plage de temps pour afficher les données des dernières 24 heures (1 jour) du volume sélectionné.
++
+Dans la chronologie des événements, un point rouge (image:../media/opm_incident_icon_png.gif["Icône d'incident de Performance Manager"]) indique le moment où l'événement de défaillance de disques s'est produit.
+
+. Dans le graphique d'utilisation des nœuds et des agrégats, masquez la ligne des statistiques des nœuds afin de ne conserver que la ligne des agrégats.
+. Comparez les données de ce graphique aux données au moment de l'événement dans le graphique *Latency*.
++
+Au moment de l'incident, l'utilisation de l'agrégat montrait une activité de lecture et d'écriture élevée, due aux processus de reconstruction RAID, ce qui a augmenté la latence du volume sélectionné. Quelques heures après l'incident, les lectures, les écritures et la latence avaient diminué, confirmant que l'agrégat n'était plus en contention.
+
+

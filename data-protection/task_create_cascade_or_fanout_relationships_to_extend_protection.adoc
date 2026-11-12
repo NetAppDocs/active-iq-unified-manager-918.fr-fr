@@ -1,0 +1,39 @@
+---
+permalink: data-protection/task_create_cascade_or_fanout_relationships_to_extend_protection.html 
+sidebar: sidebar 
+keywords: create, cascade fanout, relationships, extend protection, existing protection relationship 
+summary: 'Vous pouvez étendre la protection d"une relation existante en créant soit un fanout à partir du volume source, soit une cascade à partir du volume de destination d"une relation existante. Vous pouvez le faire lorsque vous devez copier des données d"un site vers plusieurs sites ou fournir une protection supplémentaire en créant davantage de sauvegardes.' 
+---
+= Étendez la protection à l'aide de relations en cascade ou en éventail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez étendre la protection d'une relation existante en créant soit un fanout à partir du volume source, soit une cascade à partir du volume de destination d'une relation existante. Vous pouvez le faire lorsque vous devez copier des données d'un site vers plusieurs sites ou fournir une protection supplémentaire en créant davantage de sauvegardes.
+
+Vous pouvez étendre la protection aux volumes à l'aide d'un groupe de cohérence, qui est un conteneur regroupant plusieurs volumes afin que vous puissiez gérer tous les volumes comme une seule entité. Vous pouvez afficher le groupe de cohérence de synchronisation active SnapMirror et la relation de groupe de cohérence synchrone dans la page Relations de Unified Manager.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+
+
+.Étapes
+. Cliquez sur *Protection* > *Relations*. Vous pouvez également consulter les relations depuis la page de détails du volume.
+. Sur la page *Relations de volume*, sélectionnez la relation SnapMirror à partir de laquelle vous souhaitez étendre la protection.
+. Dans la barre d'actions, cliquez sur *Étendre la protection*.
+. Dans le menu, sélectionnez *Depuis la source* ou *Depuis la destination*, selon que vous créez une relation de diffusion à partir de la source ou une relation en cascade à partir de la destination.
+. Sélectionnez *Avec SnapMirror* ou *Avec SnapVault* selon le type de relation de protection que vous créez.
++
+La boîte de dialogue *Configurer la protection* s'affiche.
+
++
+[NOTE]
+====
+Cela peut être effectué à partir de la page de détails Relation unifiée / Relation de volume et Volume / Santé.
+
+====
+. Renseignez les informations comme indiqué dans la boîte de dialogue *Configure Protection*.
+

@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_understand_performance_events_and_alerts.html 
+sidebar: sidebar 
+keywords: understand, performance, events, alerts 
+summary: 'Les événements de performance sont des notifications générées automatiquement par Unified Manager lorsqu"une condition prédéfinie est remplie ou lorsqu"une valeur de compteur de performance dépasse un seuil. Ces événements vous aident à identifier les problèmes de performance dans les clusters surveillés.' 
+---
+= Comprendre les événements et alertes de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements de performance sont des incidents liés aux performances des workloads sur un cluster. Ils vous aident à identifier les workloads dont les temps de réponse sont lents. Associés aux événements de santé survenus au même moment, ils vous permettent de déterminer les problèmes qui ont pu causer ces temps de réponse lents ou y contribuer.
+
+Lorsque Unified Manager détecte plusieurs occurrences de la même condition d'événement pour le même composant du cluster, il traite toutes les occurrences comme un seul événement, et non comme des événements distincts.
+
+Vous pouvez configurer des alertes pour envoyer automatiquement des notifications par e-mail lorsque des événements de performance d'un certain niveau de gravité se produisent.

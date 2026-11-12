@@ -1,0 +1,50 @@
+---
+permalink: performance-checker/reference_managed_objects_pane.html 
+sidebar: sidebar 
+keywords: managed, objects, pane 
+summary: 'Le volet Objets gérés de l"onglet Résumé des performances offre une vue d"ensemble des types et du nombre d"objets de stockage du cluster. Ce volet permet de suivre l"état des objets dans chaque cluster.' 
+---
+= Consultez le volet Objets gérés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le volet Objets gérés de l'onglet Résumé des performances offre une vue d'ensemble des types et du nombre d'objets de stockage du cluster. Ce volet permet de suivre l'état des objets dans chaque cluster.
+
+Le nombre d'objets gérés correspond aux données à un instant donné de la dernière période de collecte. De nouveaux objets sont découverts toutes les 15 minutes.
+
+Le fait de cliquer sur le numéro lié pour tout type d'objet affiche la page d'inventaire des performances des objets pour ce type d'objet. La page d'inventaire des objets est filtrée pour n'afficher que les objets de ce cluster.
+
+Les objets gérés sont :
+
+* *Nœuds*
++
+Un système physique au sein d'un cluster.
+
+* *Agrégats*
++
+Un ensemble de plusieurs groupes RAID (Redundant Array of Independent Disks) pouvant être gérés comme une seule unité pour la protection et le provisionnement.
+
+* *Ports*
++
+Un point de connexion physique sur les nœuds utilisé pour connecter d'autres appareils sur un réseau.
+
+* *Machines virtuelles de stockage*
++
+Une machine virtuelle fournissant un accès réseau via des adresses réseau uniques. Une SVM peut fournir des données à partir d'un namespace distinct et être administrée séparément du reste du cluster.
+
+* *Volumes*
++
+Entité logique contenant des données utilisateur accessibles via un ou plusieurs protocoles d'accès pris en charge. Le nombre comprend à la fois les volumes FlexVol et les volumes FlexGroup ; il n'inclut pas les constituants FlexGroup.
+
+* *LUN*
++
+L'identifiant d'une unité logique Fibre Channel (FC) ou d'une unité logique iSCSI. Une unité logique correspond généralement à un volume de stockage et est représentée au sein d'un système d'exploitation sous la forme d'un périphérique.
+
+* *Interfaces réseau*
++
+Une interface réseau logique représentant un point d'accès réseau à un nœud. Ce nombre inclut tous les types d'interfaces.
+
+

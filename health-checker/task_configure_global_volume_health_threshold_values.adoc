@@ -1,0 +1,36 @@
+---
+permalink: health-checker/task_configure_global_volume_health_threshold_values.html 
+sidebar: sidebar 
+keywords: configure, global, volume, health, threshold values 
+summary: Vous pouvez configurer les valeurs globales de seuil d’intégrité pour tous les volumes afin de suivre tout dépassement de seuil. Des événements appropriés sont générés en cas de dépassement des seuils d’intégrité, et vous pouvez prendre des mesures préventives en fonction de ces événements. Vous pouvez configurer les valeurs globales en fonction des paramètres de bonne pratique pour les seuils qui s’appliquent à tous les volumes surveillés. 
+---
+= Configurez les valeurs seuils de santé des volumes globaux dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer les valeurs globales de seuil d’intégrité pour tous les volumes afin de suivre tout dépassement de seuil. Des événements appropriés sont générés en cas de dépassement des seuils d’intégrité, et vous pouvez prendre des mesures préventives en fonction de ces événements. Vous pouvez configurer les valeurs globales en fonction des paramètres de bonne pratique pour les seuils qui s’appliquent à tous les volumes surveillés.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+La plupart des options de seuil possèdent des valeurs par défaut pour une meilleure surveillance. Vous pouvez toutefois les modifier en fonction des besoins de votre environnement.
+
+Notez que lorsque Autogrow est activé sur un volume, les seuils de capacité sont considérés comme dépassés en fonction de la taille maximale du volume définie par Autogrow, et non en fonction de la taille du volume d’origine.
+
+[NOTE]
+====
+La valeur par défaut de 1 000 copies Snapshot s’applique uniquement aux volumes FlexVol lorsque la version d’ONTAP est 9.4 ou ultérieure, et aux volumes FlexGroup lorsque la version d’ONTAP est 9.8 ou ultérieure. Pour les clusters installés avec des versions plus anciennes du logiciel ONTAP, le nombre maximal est de 250 copies Snapshot par volume. Pour ces versions plus anciennes, Unified Manager interprète ce nombre de 1 000 (et tout nombre compris entre 1 000 et 250) comme 250 ; cela signifie que vous continuerez à recevoir des événements lorsque le nombre de copies Snapshot atteindra 250. Si vous souhaitez définir ce seuil à une valeur inférieure à 250 pour ces versions plus anciennes, vous devez définir le seuil sur 250 ou moins ici, dans la vue Health: All Volumes, ou dans la page de détails Volume / Health.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Seuils d'événements* > *Volume*.
+. Configurez les valeurs de seuil appropriées pour la capacité, les copies Snapshot, les quotas qtree, la croissance du volume et les inodes.
+. Cliquez sur *Enregistrer*.
+
+
+*Informations connexes*
+
+link:../config/task_add_users.html["Ajout d'utilisateurs"]

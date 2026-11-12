@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/reference_how_expected_range_is_used_in_performance_analysis.html 
+sidebar: sidebar 
+keywords: latency, forecast, performance, analysis 
+summary: 'Unified Manager utilise les prévisions de latence pour représenter l"activité de latence d"E/S typique (temps de réponse) de vos workloads surveillés. Il vous alerte lorsque la latence réelle d"un workload dépasse les limites supérieures des prévisions de latence, ce qui déclenche un événement de performance dynamique, afin que vous puissiez analyser le problème de performance et prendre les mesures correctives nécessaires pour le résoudre.' 
+---
+= Utilisez les prévisions de latence pour l'analyse des performances dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager utilise les prévisions de latence pour représenter l'activité de latence d'E/S typique (temps de réponse) de vos workloads surveillés. Il vous alerte lorsque la latence réelle d'un workload dépasse les limites supérieures des prévisions de latence, ce qui déclenche un événement de performance dynamique, afin que vous puissiez analyser le problème de performance et prendre les mesures correctives nécessaires pour le résoudre.
+
+La prévision de latence définit la performance de référence pour le workload. Au fil du temps, Unified Manager s'appuie sur les mesures de performance passées pour prévoir les niveaux de performance et d'activité attendus pour le workload. La limite supérieure de la plage attendue établit le seuil de performance dynamique. Unified Manager utilise cette référence pour déterminer si la latence réelle est supérieure ou inférieure à un seuil, ou si elle se situe en dehors des limites de sa plage attendue. La comparaison entre les valeurs réelles et les valeurs attendues crée un profil de performance pour le workload.
+
+Lorsque la latence réelle d'un workload dépasse le seuil de performance dynamique en raison d'une contention sur un composant du cluster, la latence est élevée et le workload s'exécute plus lentement que prévu. Les performances des autres workloads partageant les mêmes composants du cluster peuvent également être plus lentes que prévu.
+
+Unified Manager analyse le franchissement de seuil et détermine s'il s'agit d'un événement de performance. Si l'activité de workload élevée reste constante pendant une longue période, par exemple plusieurs heures, Unified Manager considère l'activité comme normale et ajuste dynamiquement les prévisions de latence afin de définir le nouveau seuil de performance dynamique.
+
+Certaines charges de travail peuvent présenter une activité constamment faible, lorsque les prévisions de latence n'affichent pas un taux élevé de variation au fil du temps. Afin de minimiser le nombre d'événements lors de l'analyse des événements de performance, Unified Manager ne déclenche un événement que pour les volumes à faible activité dont les opérations et les latences sont nettement supérieures aux prévisions.
+
+image::../media/opm_expected_range_jpg.png[Plage de latence attendue dans Unified Manager]
+
+Dans cet exemple, la latence d'un volume fait l'objet d'une prévision de latence, en gris, de 3,5 millisecondes par opération (ms/op) au plus bas et de 5,5 ms/op au plus haut. Si la latence réelle, en bleu, augmente soudainement jusqu'à 10 ms/op, en raison d'un pic intermittent du trafic réseau ou d'une contention sur un composant du cluster, elle est alors supérieure à la prévision de latence et a dépassé le seuil de performance dynamique.
+
+Lorsque le trafic réseau a diminué ou que le composant du cluster n'est plus en situation de contention, la latence revient dans les prévisions de latence. Si la latence reste supérieure ou égale à 10 ms/op pendant une période prolongée, vous devrez peut-être prendre des mesures correctives pour résoudre l'événement.

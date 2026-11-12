@@ -1,0 +1,177 @@
+---
+permalink: events/reference_event_management_inventory_page.html 
+sidebar: sidebar 
+keywords: event, management, inventory, page, filter, components, xommand buttons, list 
+summary: La page d’inventaire de la gestion des événements vous permet de consulter la liste des événements en cours et leurs propriétés. Vous pouvez effectuer des tâches telles qu’accuser réception, résoudre et attribuer des événements. Vous pouvez également configurer une alerte pour certains événements. 
+---
+= Découvrez la page d'inventaire de gestion des événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page d’inventaire de la gestion des événements vous permet de consulter la liste des événements en cours et leurs propriétés. Vous pouvez effectuer des tâches telles qu’accuser réception, résoudre et attribuer des événements. Vous pouvez également configurer une alerte pour certains événements.
+
+Les informations de cette page sont actualisées automatiquement toutes les 5 minutes afin que les nouveaux événements les plus récents s'affichent.
+
+
+
+[[filter-components]]
+== Composants du filtre
+
+Vous pouvez personnaliser les informations affichées dans la liste des événements. Vous pouvez affiner la liste des événements affichés à l’aide des composants suivants :
+
+* Menu Affichage pour sélectionner une option dans une liste prédéfinie de filtres.
++
+Cela inclut des éléments tels que tous les événements actifs (nouveaux et acquittés), les événements de performance actifs, les événements qui me sont attribués (l’utilisateur connecté) et tous les événements générés pendant toutes les fenêtres de maintenance.
+
+* Volet de recherche pour affiner la liste des événements en saisissant des termes complets ou partiels.
+* Le bouton Filtre ouvre le volet Filtres afin que vous puissiez sélectionner parmi tous les champs et attributs de champ disponibles pour affiner la liste des événements.
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Attribuer à*
++
+Permet de sélectionner l'utilisateur auquel l'événement est attribué. Lorsque vous attribuez un événement à un utilisateur, son nom et l'heure à laquelle vous avez attribué l'événement sont ajoutés dans la liste des événements pour les événements sélectionnés.
+
++
+** Moi
++
+Attribue l'événement à l'utilisateur actuellement connecté.
+
+** Un autre utilisateur
++
+Affiche la boîte de dialogue « Attribuer le propriétaire », qui vous permet d’attribuer ou de réattribuer l’événement à d’autres utilisateurs. Vous pouvez également annuler l’attribution d’événements en laissant le champ « Propriétaire » vide.
+
+
+
+* *Acquitter*
++
+Reconnaît les événements sélectionnés.
+
++
+Lorsque vous accusez réception d'un événement, votre nom d'utilisateur et l'heure à laquelle vous avez accusé réception de l'événement sont ajoutés à la liste des événements pour les événements sélectionnés. Lorsque vous accusez réception d'un événement, vous êtes responsable de sa gestion.
+
++
+[NOTE]
+====
+Vous ne pouvez pas acquitter les événements d'information.
+
+====
+* *Marquer comme résolu*
++
+Permet de modifier l'état de l'événement en « résolu ».
+
++
+Lorsque vous résolvez un événement, votre nom d'utilisateur et l'heure à laquelle vous avez résolu l'événement sont ajoutés dans la liste des événements pour les événements sélectionnés. Après avoir pris une mesure corrective pour l'événement, vous devez marquer l'événement comme résolu.
+
+* *Ajouter une alte*
++
+Affiche la boîte de dialogue Ajouter une alerte, qui vous permet d'ajouter des alertes pour les événements sélectionnés.
+
+* *Rapports*
++
+Permet d'exporter les détails de la vue d'événement actuelle vers un fichier de valeurs séparées par des virgules (.csv) ou un document PDF.
+
+* *Afficher/Masquer le sélecteur de colonnes*
++
+Permet de choisir les colonnes affichées sur la page et de sélectionner l'ordre dans lequel elles sont affichées.
+
+
+
+
+
+[[events-list]]
+== Liste des événements
+
+Affiche les détails de tous les événements classés par heure de déclenchement.
+
+Par défaut, la vue « Tous les événements actifs » affiche les événements nouveaux et acquittés des sept derniers jours ayant un niveau d'impact « Incident » ou « Risque ».
+
+* *Heure de déclenchement*
++
+L'heure à laquelle l'événement a été généré.
+
+* *Gravité*
++
+La gravité de l'événement : Critique (image:../media/sev_critical_um60.png[""]), Erreur (image:../media/sev_error_um60.png[""]), Avertissement (image:../media/sev_warning_um60.png[""]) et Information (image:../media/sev_information_um60.gif[""]).
+
+* *État*
++
+État de l'événement : Nouveau, acquitté, résolu ou obsolète.
+
+* *Niveau d'impact*
++
+Niveau d'impact de l'événement : Incident, Risque, Événement ou Mise à niveau.
+
+* *Zone d'impact*
++
+Le domaine d'impact de l'événement : disponibilité, capacité, performance, protection, configuration ou sécurité.
+
+* *Nom*
++
+Nom de l'événement. Vous pouvez sélectionner ce nom pour afficher la page Détails de l'événement correspondant.
+
+* *Source*
++
+Le nom de l'objet sur lequel l'événement s'est produit. Vous pouvez sélectionner ce nom pour afficher la page de détails relative à l'état ou aux performances de cet objet.
+
++
+En cas de violation d'une politique QoS partagée, seul l'objet de workload qui consomme le plus d'IOPS ou de Mo/s est affiché dans ce champ. Les autres workloads qui utilisent cette politique sont affichés sur la page Détails de l'événement.
+
+* *Type de source*
++
+Le type d'objet (par exemple, Storage VM, Volume ou Qtree) auquel l'événement est associé.
+
+* *Attribué à*
++
+Le nom de l'utilisateur auquel l'événement est attribué.
+
+* *Origine de l'événement*
++
+Que l'événement provienne de « Active IQ Portal » ou directement de « Active IQ Unified Manager ».
+
+* *Nom de l'annotation*
++
+Le nom de l'annotation attribuée à l'objet de stockage.
+
+* *Remarques*
++
+Le nombre de notes ajoutées pour un événement.
+
+* *Jours restants*
++
+Le nombre de jours écoulés depuis la génération initiale de l'événement.
+
+* *Temps attribué*
++
+Le temps écoulé depuis l’attribution de l’événement à un utilisateur. Si le temps écoulé dépasse une semaine, l’horodatage de l’attribution de l’événement à un utilisateur s’affiche.
+
+* *Reconnu par*
++
+Nom de l'utilisateur ayant accusé réception de l'événement. Ce champ est vide si l'événement n'a pas été acquitté.
+
+* *Heure d’accusé de réception*
++
+Le temps écoulé depuis l'acquittement de l'événement. Si le temps écoulé dépasse une semaine, l'horodatage auquel l'événement a été acquitté s'affiche.
+
+* *Résolu par*
++
+Nom de l'utilisateur ayant résolu l'événement. Ce champ est vide si l'événement n'a pas été résolu.
+
+* *Heure de résolution*
++
+Le temps écoulé depuis la résolution de l'événement. Si ce temps dépasse une semaine, l'horodatage de la résolution de l'événement est affiché.
+
+* *Temps obsolète*
++
+L’heure à laquelle l’état de l’événement est devenu obsolète.
+
+

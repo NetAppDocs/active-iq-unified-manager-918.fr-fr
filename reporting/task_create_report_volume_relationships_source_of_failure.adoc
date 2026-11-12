@@ -1,0 +1,44 @@
+---
+permalink: reporting/task_create_report_volume_relationships_source_of_failure.html 
+sidebar: sidebar 
+keywords: create, report, group, volume, relationships, source, failure 
+summary: Vous pouvez créer un rapport qui regroupe les volumes en fonction de la raison pour laquelle la relation se trouve dans un état non sain. 
+---
+= Créez un rapport pour regrouper les relations de volume par source de défaillance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un rapport qui regroupe les volumes en fonction de la raison pour laquelle la relation se trouve dans un état non sain.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée qui regroupe les volumes par source de défaillance, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Dans le menu Affichage, sélectionnez *Relation* > *Toutes les relations*.
+. Sélectionnez *Afficher/Masquer* pour vous assurer que les colonnes « `Relationship Health` » et « `Unhealthy Reason` » apparaissent dans la vue.
++
+Ajoutez ou supprimez d'autres colonnes pour créer une vue importante pour votre rapport.
+
+. Faites glisser les colonnes « Relationship Health » et « Unhealthy Reason » près de la colonne « State ».
+. Cliquez sur l'icône de filtre, ajoutez le filtre suivant, puis cliquez sur *Appliquer le filtre*:
++
+** L'état de la relation est mauvais
+
+
+. Cliquez sur le haut de la colonne « `Raison de l'état non sain` » pour regrouper les relations de volume par source de défaillance.
+. Enregistrez la vue sous un nom spécifique qui reflète ce qu’elle affiche, par exemple « `Relations de volume par défaillance` ».
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pouvez analyser la source et l’impact de chaque type de défaillance.

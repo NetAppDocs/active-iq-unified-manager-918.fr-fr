@@ -1,0 +1,42 @@
+---
+permalink: config/task_configure_unified_manager_to_send_alert_notifications.html 
+sidebar: sidebar 
+keywords: configure, unified manager, send, alert, notifications 
+summary: 'Vous pouvez configurer Unified Manager pour envoyer des notifications qui vous alertent sur les événements survenant dans votre environnement. Avant que ces notifications puissent être envoyées, vous devez configurer plusieurs autres options d"Unified Manager.' 
+---
+= Configurez Active IQ Unified Manager pour envoyer des notifications d'alerte
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer Unified Manager pour envoyer des notifications qui vous alertent sur les événements survenant dans votre environnement. Avant que ces notifications puissent être envoyées, vous devez configurer plusieurs autres options d'Unified Manager.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Après avoir déployé Unified Manager et effectué la configuration initiale, vous devriez envisager de configurer votre environnement pour déclencher des alertes et générer des e-mails de notification ou des traps SNMP à la réception d'événements.
+
+.Étapes
+. link:task_configure_event_notification_settings.html["Configurer les paramètres de notification d'événements"].
++
+Si vous souhaitez que des notifications d'alerte soient envoyées lorsque certains événements se produisent dans votre environnement, vous devez configurer un serveur SMTP et fournir une adresse e-mail à partir de laquelle la notification d'alerte sera envoyée. Si vous souhaitez utiliser des traps SNMP, vous pouvez sélectionner cette option et fournir les informations nécessaires.
+
+. link:task_enable_remote_authentication.html["Activer l'authentification à distance"].
++
+Si vous souhaitez que les utilisateurs LDAP ou Active Directory distants puissent accéder à l'instance Unified Manager et recevoir des notifications d'alerte, vous devez activer l'authentification à distance.
+
+. link:task_add_authentication_servers.html["Ajouter des serveurs d'authentification"].
++
+Vous pouvez ajouter des serveurs d'authentification afin que les utilisateurs distants du serveur d'authentification puissent accéder à Unified Manager.
+
+. link:task_add_users.html["Ajouter des utilisateurs"].
++
+Vous pouvez ajouter différents types d'utilisateurs locaux ou distants et leur attribuer des rôles spécifiques. Lorsque vous créez une alerte, vous désignez un utilisateur pour recevoir les notifications d'alerte.
+
+. link:task_add_alerts.html["Ajouter des alertes"].
++
+Une fois que vous avez ajouté l'adresse e-mail pour l'envoi des notifications, ajouté les utilisateurs qui recevront les notifications, configuré vos paramètres réseau et configuré les options SMTP et SNMP nécessaires à votre environnement, vous pouvez alors attribuer des alertes.
+
+

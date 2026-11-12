@@ -1,0 +1,41 @@
+---
+permalink: data-protection/task_set_up_protection_relationships_in_unified_manager.html 
+sidebar: sidebar 
+keywords: set, protection, relationships, unified manager 
+summary: Vous devez effectuer plusieurs étapes pour utiliser Unified Manager et OnCommand Workflow Automation afin de configurer des relations SnapMirror et SnapVault pour protéger vos données. 
+---
+= Configurez les relations de protection dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez effectuer plusieurs étapes pour utiliser Unified Manager et OnCommand Workflow Automation afin de configurer des relations SnapMirror et SnapVault pour protéger vos données.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir établi des relations d'égal à égal entre deux clusters ou deux machines virtuelles de stockage (SVM).
+* OnCommand Workflow Automation doit être intégré à Unified Manager :
++
+** link:task_configure_connection_between_workflow_automation_um.html["Configurer OnCommand Workflow Automation"].
+** link:task_verify_um_data_source_caching_in_workflow_automation.html["Vérification de la mise en cache de la source de données Unified Manager dans Workflow Automation"].
+
+
+
+
+.Étapes
+. Selon le type de relation de protection que vous souhaitez créer, procédez comme suit :
++
+** link:task_create_snapmirror_relationship_from_health_volume.html["Créer une relation de protection SnapMirror"].
+** link:task_create_snapvault_protection_relationship_from_health_volume_details.html["Créer une relation de protection SnapVault"].
+
+
+. Si vous souhaitez créer une politique pour la relation, en fonction du type de relation que vous créez, procédez comme suit :
++
+** link:task_create_snapvault_policy_to_maximize_transfer_efficiency.html["Créer une stratégie SnapVault"].
+** link:task_create_snapmirror_policy_to_maximize_transfer_efficiency.html["Créer une stratégie SnapMirror"].
+
+
+. link:task_create_snapmirror_and_snapvault_schedules.html["Créez une planification SnapMirror ou SnapVault"].
+

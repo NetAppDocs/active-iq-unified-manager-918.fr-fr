@@ -1,0 +1,36 @@
+---
+permalink: health-checker/task_configure_global_health_threshold_settings.html 
+sidebar: sidebar 
+keywords: configure, global health, threshold settings 
+summary: 'Vous pouvez configurer des conditions de seuil d"état de santé globales pour la capacité, la croissance, la réserve Snapshot, les quotas et les inodes afin de surveiller efficacement la taille de votre agrégat, de votre volume et de votre qtree. Vous pouvez également modifier les paramètres de génération d"événements en cas de dépassement des seuils de décalage.' 
+---
+= Configurez les paramètres de seuil de santé global dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer des conditions de seuil d'état de santé globales pour la capacité, la croissance, la réserve Snapshot, les quotas et les inodes afin de surveiller efficacement la taille de votre agrégat, de votre volume et de votre qtree. Vous pouvez également modifier les paramètres de génération d'événements en cas de dépassement des seuils de décalage.
+
+Les paramètres de seuil de santé globale s'appliquent à tous les objets auxquels ils sont associés, tels que les agrégats, les volumes, etc. Lorsqu'un seuil est franchi, un événement est généré et, si des alertes sont configurées, une notification d'alerte est envoyée. Les valeurs par défaut des seuils sont définies sur des valeurs recommandées, mais vous pouvez les modifier pour générer des événements à des intervalles adaptés à vos besoins spécifiques. Lorsque les seuils sont modifiés, des événements sont générés ou rendus obsolètes lors du prochain cycle de surveillance.
+
+Les paramètres globaux de seuil de santé sont accessibles depuis la section « Seuils d’événements » du menu de navigation de gauche. Vous pouvez également modifier les paramètres de seuil pour chaque objet, depuis sa page d’inventaire ou sa page de détails.
+
+* Pour plus d’informations, consultez link:task_configure_global_aggregate_health_threshold_values.html["Configuration des valeurs de seuil globales de santé des agrégats"].
++
+Vous pouvez configurer les paramètres de seuil de santé pour la capacité, la croissance et les copies Snapshot de tous les agrégats afin de suivre tout dépassement de seuil.
+
+* Pour plus d’informations, consultez link:task_configure_global_volume_health_threshold_values.html["Configuration des valeurs de seuil globales de l'état de santé des volumes"].
++
+Vous pouvez modifier les paramètres de seuil d’état pour la capacité, les copies Snapshot, les quotas qtree, la croissance du volume, l’espace de réserve d’écrasement et les inodes pour tous les volumes afin de suivre tout dépassement de seuil.
+
+* Pour plus d’informations, consultez link:task_configure_global_qtree_health_threshold_values.html["Configuration des valeurs globales de seuil d'état des qtree"].
++
+Vous pouvez modifier les paramètres de seuil de santé de la capacité pour tous les qtrees afin de détecter tout dépassement de seuil.
+
+* Pour plus d’informations, consultez link:task_configure_lag_threshold_settings_for_unmanaged_protection.html["Modification des paramètres de seuil d'intégrité du retard pour les relations de protection non gérées"].
++
+Vous pouvez augmenter ou diminuer le pourcentage de délai d'avertissement ou d'erreur afin de générer des événements à des intervalles plus adaptés à vos besoins.
+
+

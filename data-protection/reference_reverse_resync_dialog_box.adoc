@@ -1,0 +1,67 @@
+---
+permalink: data-protection/reference_reverse_resync_dialog_box.html 
+sidebar: sidebar 
+keywords: reverse, resync, dialog box 
+summary: 'Lorsqu"une relation de protection est rompue parce que le volume source est désactivé et que la destination devient un volume en lecture/écriture, la resynchronisation inverse vous permet d"inverser le sens de la relation afin que la destination devienne la nouvelle source et la source la nouvelle destination.' 
+---
+= Inversion de la resynchronisation dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsqu'une relation de protection est rompue parce que le volume source est désactivé et que la destination devient un volume en lecture/écriture, la resynchronisation inverse vous permet d'inverser le sens de la relation afin que la destination devienne la nouvelle source et la source la nouvelle destination.
+
+Lorsqu'un sinistre rend inutilisable le volume source de votre relation de protection, vous pouvez utiliser le volume de destination pour servir les données en le convertissant en mode lecture/écriture, le temps de réparer ou de remplacer la source, de la mettre à jour et de rétablir la relation. Lors d'une opération de resynchronisation inverse, les données de la source plus récentes que celles de la copie Snapshot commune sont supprimées.
+
+
+
+[[before-reverse-resync]]
+== Avant la resynchronisation inverse
+
+Affiche la source et la destination d'une relation avant une opération de resynchronisation inverse.
+
+* *Volume source*
++
+Le nom et l'emplacement du volume source avant une opération de resynchronisation inverse.
+
+* *Volume de destination*
++
+Le nom et l'emplacement du volume de destination avant une opération de resynchronisation inverse.
+
+
+
+
+
+[[after-reverse-resync]]
+== Après resynchronisation inverse
+
+Affiche la source et la destination d'une relation après une opération de resynchronisation de réserve.
+
+* *Volume source*
++
+Nom et emplacement du volume source après une opération de resynchronisation inverse.
+
+* *Volume de destination*
++
+Le nom et l’emplacement du volume de destination après une opération de resynchronisation inverse.
+
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les actions suivantes :
+
+* *Soumettre*
++
+Démarre le processus de resynchronisation inverse.
+
+* *Annuler*
++
+Ferme la boîte de dialogue de resynchronisation inverse sans lancer d'opération de resynchronisation inverse.
+
+

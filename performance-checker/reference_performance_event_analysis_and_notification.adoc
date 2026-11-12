@@ -1,0 +1,90 @@
+---
+permalink: performance-checker/reference_performance_event_analysis_and_notification.html 
+sidebar: sidebar 
+keywords: performance, event, analysis, notification 
+summary: 'Les événements de performance vous informent des problèmes de performances d"E/S sur un workload causés par une contention sur un composant du cluster. Unified Manager analyse l"événement pour identifier tous les workloads concernés, le composant en contention et déterminer si le problème persiste et nécessite une intervention.' 
+---
+= Analysez les événements et notifications de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements de performance vous informent des problèmes de performances d'E/S sur un workload causés par une contention sur un composant du cluster. Unified Manager analyse l'événement pour identifier tous les workloads concernés, le composant en contention et déterminer si le problème persiste et nécessite une intervention.
+
+Unified Manager surveille la latence d'E/S (temps de réponse) et les IOPS (opérations) des volumes sur un cluster. Lorsque d'autres workloads sollicitent excessivement un composant du cluster, par exemple, le composant est en contention et ne peut pas fonctionner à un niveau optimal pour répondre aux exigences du workload. Les performances des autres workloads qui utilisent le même composant peuvent être affectées, ce qui entraîne une augmentation de leur latence. Si la latence dépasse le seuil de performance dynamique, Unified Manager déclenche un événement de performance pour vous en informer.
+
+
+
+[[event-analysis]]
+== Analyse d'événements
+
+Unified Manager effectue les analyses suivantes, en utilisant les statistiques de performance des 15 derniers jours, afin d'identifier les workloads victimes, les workloads agresseurs et le composant du cluster impliqué dans un événement :
+
+* Identifie les workloads victimes dont la latence a dépassé le seuil de performance dynamique, qui correspond à la limite supérieure de la prévision de latence :
++
+** Pour les volumes sur des agrégats hybrides HDD ou Flash Pool (niveau local), les événements ne sont déclenchés que lorsque la latence est supérieure à 5 millisecondes (ms) et que les IOPS sont supérieures à 10 opérations par seconde (ops/sec).
+** Pour les volumes sur des agrégats entièrement SSD ou des agrégats FabricPool (niveau cloud), les événements ne sont déclenchés que lorsque la latence est supérieure à 1 ms et que les IOPS sont supérieures à 100 ops/sec.
+
+
+* Identifie le composant du cluster en contention.
++
+[NOTE]
+====
+Si la latence des workloads victimes au niveau de l'interconnexion de cluster est supérieure à 1 ms, Unified Manager considère cela comme significatif et déclenche un événement pour l'interconnexion de cluster.
+
+====
+* Identifie les workloads perturbateurs qui surutilisent le composant du cluster et provoquent un état de contention.
+* Classe les workloads concernés, en fonction de leur écart d'utilisation ou d'activité d'un composant du cluster, afin de déterminer quels bullies présentent la plus forte variation d'utilisation du composant du cluster et quelles victims sont les plus impactées.
+
+
+Un événement peut ne se produire que pendant un bref instant, puis se corriger de lui-même une fois que le composant qu'il utilise n'est plus en situation de contention. Un événement continu est un événement qui se reproduit pour le même composant du cluster dans un intervalle de cinq minutes et reste à l'état actif. Pour les événements continus, Unified Manager déclenche une alerte après avoir détecté le même événement pendant deux intervalles d'analyse consécutifs.
+
+Lorsqu'un événement est résolu, il reste disponible dans Unified Manager dans l'historique des problèmes de performance passés d'un volume. Chaque événement possède un identifiant unique qui précise son type, ainsi que les volumes, le cluster et les composants du cluster concernés.
+
+[NOTE]
+====
+Un seul volume peut être impliqué dans plusieurs événements simultanément.
+
+====
+
+
+[[event-state]]
+== État de l'événement
+
+Les événements peuvent se trouver dans l'un des états suivants :
+
+* *Actif*
++
+Indique que l'événement de performance est actuellement actif (nouveau ou confirmé). Le problème à l'origine de l'événement ne s'est pas corrigé ou n'a pas été résolu. Le compteur de performance de l'objet de stockage reste supérieur au seuil de performance.
+
+* *Obsolète*
++
+Indique que l'événement n'est plus actif. Le problème à l'origine de l'événement s'est résolu de lui-même ou a été résolu. Le compteur de performances de l'objet de stockage ne dépasse plus le seuil de performance.
+
+
+
+
+
+[[event-notification]]
+== Notification d'événement
+
+Les événements sont affichés sur la page Dashboard et sur de nombreuses autres pages de l'interface utilisateur, et des alertes pour ces événements sont envoyées aux adresses e-mail spécifiées. Vous pouvez consulter des informations d'analyse détaillées sur un événement et obtenir des suggestions pour le résoudre sur la page Event details et sur la page Workload Analysis.
+
+
+
+[[event-interaction]]
+== Interaction avec l’événement
+
+Sur la page Détails de l'événement et sur la page Analyse du workload, vous pouvez interagir avec les événements des manières suivantes :
+
+* En déplaçant la souris sur un événement, un message s'affiche indiquant la date et l'heure de sa détection.
++
+S'il y a plusieurs événements pour la même période, le message affiche le nombre d'événements.
+
+* Lorsque vous cliquez sur un seul événement, une boîte de dialogue s'affiche et présente des informations plus détaillées sur cet événement, notamment les composants du cluster impliqués.
++
+Le composant en cause est encerclé et surligné en rouge. Cliquez sur *Afficher l'analyse complète* pour consulter l'analyse complète sur la page Détails de l'événement. Si plusieurs événements se produisent pour la même période, la boîte de dialogue affiche les détails des trois événements les plus récents. Cliquez sur un événement pour afficher son analyse sur la page Détails de l'événement.
+
+

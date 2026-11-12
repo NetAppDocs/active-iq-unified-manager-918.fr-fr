@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_what_timestamp_means_in_collected_data_and_events.html 
+sidebar: sidebar 
+keywords: timestamp, means, collected, data, events 
+summary: 'L"horodatage qui apparaît dans les données de santé et de performance collectées, ou qui apparaît comme heure de détection d"un événement, est basé sur l"heure du cluster ONTAP, ajustée au fuseau horaire défini dans le navigateur web.' 
+---
+= Découvrez les horodatages des données collectées et des événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'horodatage qui apparaît dans les données de santé et de performance collectées, ou qui apparaît comme heure de détection d'un événement, est basé sur l'heure du cluster ONTAP, ajustée au fuseau horaire défini dans le navigateur web.
+
+Il est fortement recommandé d'utiliser un serveur NTP (Network Time Protocol) pour synchroniser l'heure sur vos serveurs Unified Manager, vos clusters ONTAP et vos navigateurs Web.
+
+[NOTE]
+====
+Si vous constatez des horodatages qui semblent incorrects pour un cluster particulier, vous devriez vérifier que l'heure du cluster est correctement réglée.
+
+====

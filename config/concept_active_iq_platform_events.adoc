@@ -1,0 +1,20 @@
+---
+permalink: config/concept_active_iq_platform_events.html 
+sidebar: sidebar 
+keywords: feature settings, active iq, portal, events 
+summary: 'Vous pouvez préciser si vous souhaitez activer ou désactiver les événements du portail Active IQ. Ce paramètre permet au portail Active IQ de détecter et d"afficher des événements supplémentaires concernant la configuration du système, le câblage, etc. Cette option est activée par défaut.' 
+---
+= Activer les événements du portail Active IQ dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez préciser si vous souhaitez activer ou désactiver les événements du portail Active IQ. Ce paramètre permet au portail Active IQ de détecter et d'afficher des événements supplémentaires concernant la configuration du système, le câblage, etc. Cette option est activée par défaut.
+
+Lorsque cette fonctionnalité est activée, Active IQ Unified Manager affiche les événements détectés par le portail Active IQ. Ces événements sont créés par l'application d'un ensemble de règles aux messages AutoSupport générés à partir de tous les systèmes de stockage surveillés. Ces événements sont différents des autres événements d'Unified Manager, et ils identifient des incidents ou des risques liés à la configuration du système, au câblage, aux bonnes pratiques et aux problèmes de disponibilité.
+
+Vous pouvez choisir d’activer ou de désactiver cette fonctionnalité depuis *General* > *Feature Settings* > *Active IQ Portal Events*. Sur les sites sans accès au réseau externe, vous devez télécharger les règles manuellement depuis *Storage Management* > *Event Setup* > *Upload Rules*.
+
+Cette fonctionnalité est activée par défaut. La désactivation de cette fonctionnalité empêche la détection ou l'affichage des événements Active IQ dans Unified Manager. Lorsqu'elle est désactivée, l'activation de cette fonctionnalité permet à Unified Manager de recevoir les événements Active IQ sur un cluster à l'heure prédéfinie de 00:15 pour le fuseau horaire de ce cluster.

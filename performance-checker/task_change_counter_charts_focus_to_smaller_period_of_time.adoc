@@ -1,0 +1,33 @@
+---
+permalink: performance-checker/task_change_counter_charts_focus_to_smaller_period_of_time.html 
+sidebar: sidebar 
+keywords: change, counter, charts, focus, shorter, period, time 
+summary: 'Vous pouvez utiliser votre souris pour réduire la plage temporelle afin de vous concentrer sur une période spécifique dans le volet Graphique de compteurs ou dans la fenêtre Vue zoom des graphiques de compteurs. Cela vous permet d"obtenir une vue plus granulaire et microscopique de n"importe quelle partie de la chronologie des données de performance, des événements et des seuils.' 
+---
+= Modifiez la période des graphiques de compteurs pour une période plus courte dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser votre souris pour réduire la plage temporelle afin de vous concentrer sur une période spécifique dans le volet Graphique de compteurs ou dans la fenêtre Vue zoom des graphiques de compteurs. Cela vous permet d'obtenir une vue plus granulaire et microscopique de n'importe quelle partie de la chronologie des données de performance, des événements et des seuils.
+
+.Avant de commencer
+Le curseur doit s'être transformé en loupe pour indiquer que cette fonctionnalité est active.
+
+[NOTE]
+====
+Lorsque vous utilisez cette fonctionnalité, qui modifie la chronologie pour afficher des valeurs correspondant à l’affichage plus précis, la plage de dates et d’heures du sélecteur *Plage de dates* ne change pas par rapport aux valeurs d’origine du graphique.
+
+====
+.Étapes
+. Pour effectuer un zoom sur une période spécifique, cliquez à l’aide de la loupe et faites glisser la souris pour mettre en surbrillance la zone que vous souhaitez voir en détail.
++
+Les valeurs du compteur pour la période que vous sélectionnez alimentent le graphique du compteur.
+
+. Pour revenir à la période initiale définie dans le sélecteur *Plage de temps*, cliquez sur le bouton *Réinitialiser le zoom du graphique*.
++
+Le graphique du compteur s'affiche dans son état d'origine.
+
+

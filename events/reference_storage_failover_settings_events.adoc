@@ -1,0 +1,100 @@
+---
+permalink: events/reference_storage_failover_settings_events.html 
+sidebar: sidebar 
+keywords: storage, failover, settings, events, impact area, availability 
+summary: 'Les événements liés aux paramètres de basculement du stockage (SFO) vous informent de l"état de votre basculement (désactivé ou non configuré) afin de vous permettre de détecter d"éventuels problèmes. Les événements sont regroupés par zone d"impact et comprennent le nom de l"événement et du piège, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements liés aux paramètres de basculement du stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements liés aux paramètres de basculement du stockage (SFO) vous informent de l'état de votre basculement (désactivé ou non configuré) afin de vous permettre de détecter d'éventuels problèmes. Les événements sont regroupés par zone d'impact et comprennent le nom de l'événement et du piège, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-availability]]
+== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Interconnexion de basculement du stockage : une ou plusieurs liaisons hors service(ocumEvtSfoInterconnectOneOrMoreLinksDown)
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Avertissement
+
+
+
+ a| 
+Basculement du stockage désactivé(ocumEvtSfoSettingsDisabled)
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Erreur
+
+
+
+ a| 
+Basculement du stockage non configuré(ocumEvtSfoSettingsNotConfigured)
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Erreur
+
+
+
+ a| 
+État du basculement du stockage - Prise de contrôle(ocumEvtSfoStateTakeover)
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Avertissement
+
+
+
+ a| 
+État de basculement du stockage - Remise partielle(ocumEvtSfoStatePartialGiveback)
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Erreur
+
+
+
+ a| 
+État du nœud de basculement du stockage hors service(ocumEvtSfoNodeStatusDown)
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Erreur
+
+
+
+ a| 
+Basculement du stockage impossible(ocumEvtSfoTakeoverNotPossible)
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Erreur
+
+|===

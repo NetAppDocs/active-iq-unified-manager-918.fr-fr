@@ -1,0 +1,47 @@
+---
+permalink: performance-checker/task_select_performance_charts_to_display.html 
+sidebar: sidebar 
+keywords: select, performance, charts, display 
+summary: La liste déroulante « Choisir les graphiques » vous permet de sélectionner les types de graphiques de compteurs de performances à afficher dans le volet « Graphiques de compteurs ». Vous pouvez ainsi visualiser des données et des compteurs spécifiques, en fonction de vos besoins en matière de performances. 
+---
+= Sélectionnez les graphiques de performance à afficher dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La liste déroulante « Choisir les graphiques » vous permet de sélectionner les types de graphiques de compteurs de performances à afficher dans le volet « Graphiques de compteurs ». Vous pouvez ainsi visualiser des données et des compteurs spécifiques, en fonction de vos besoins en matière de performances.
+
+.Étapes
+. Dans le volet *Graphiques de compteur*, cliquez sur la liste déroulante *Choisir les graphiques*.
+. Ajouter ou supprimer des graphiques :
++
+|===
+| À... | Faites ceci... 
+
+
+ a| 
+Ajouter ou supprimer des graphiques individuels
+ a| 
+Cochez les cases en regard des graphiques que vous souhaitez afficher ou masquer
+
+
+
+ a| 
+Ajouter tous les graphiques
+ a| 
+Cliquez sur *Tout sélectionner*
+
+
+
+ a| 
+Supprimer tous les graphiques
+ a| 
+Cliquez sur *Tout désélectionner*
+
+|===
++
+Vos sélections de graphiques s'affichent dans le volet Counter Charts. Notez que lorsque vous ajoutez des graphiques, les nouveaux graphiques sont insérés dans le volet Counter Charts pour correspondre à l'ordre des graphiques répertoriés dans la liste déroulante Choose charts. La sélection de graphiques supplémentaires peut nécessiter un défilement supplémentaire.
+
+

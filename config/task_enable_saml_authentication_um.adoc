@@ -1,0 +1,62 @@
+---
+permalink: config/task_enable_saml_authentication_um.html 
+sidebar: sidebar 
+keywords: enable, saml, authentication 
+summary: 'Vous pouvez activer l"authentification SAML (Security Assertion Markup Language) afin qu"un fournisseur d"identité sécurisé (IdP) authentifie les utilisateurs distants avant qu"ils puissent accéder à l"interface utilisateur web de Unified Manager.' 
+---
+= Activer l'authentification SAML dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez activer l'authentification SAML (Security Assertion Markup Language) afin qu'un fournisseur d'identité sécurisé (IdP) authentifie les utilisateurs distants avant qu'ils puissent accéder à l'interface utilisateur web de Unified Manager.
+
+.Avant de commencer
+* Vous devez avoir configuré l'authentification à distance et vérifié son bon fonctionnement.
+* Vous devez avoir créé au moins un utilisateur distant ou un groupe distant avec le rôle Application Administrator.
+* Le fournisseur d'identité (IdP) doit être pris en charge par Unified Manager et doit être configuré.
+* Vous devez disposer de l’URL et des métadonnées de l’IdP.
+* Vous devez avoir accès au serveur IdP.
+
+
+Une fois que vous avez activé l'authentification SAML depuis Unified Manager, les utilisateurs ne peuvent pas accéder à l'interface utilisateur graphique tant que le fournisseur d'identité (IdP) n'a pas été configuré avec les informations sur l'hôte du serveur Unified Manager. Vous devez donc être prêt à effectuer les deux parties de la connexion avant de commencer le processus de configuration. Le fournisseur d'identité peut être configuré avant ou après la configuration de Unified Manager.
+
+Seuls les utilisateurs distants auront accès à l'interface graphique de Unified Manager après l'activation de l'authentification SAML. Les utilisateurs locaux et les utilisateurs de maintenance ne pourront pas accéder à l'interface utilisateur. Cette configuration n'affecte pas les utilisateurs qui accèdent à la console de maintenance, aux commandes Unified Manager ou aux ZAPIs.
+
+[NOTE]
+====
+Unified Manager redémarre automatiquement une fois la configuration SAML terminée sur cette page.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Authentification SAML*.
+. Cochez la case *Activer l'authentification SAML*.
++
+Les champs nécessaires à la configuration de la connexion IdP sont affichés.
+
+. Saisissez l'URI IdP et les métadonnées IdP requises pour connecter le serveur Unified Manager au serveur IdP.
++
+Si le serveur IdP est accessible directement depuis le serveur Unified Manager, vous pouvez cliquer sur le bouton *Récupérer les métadonnées IdP* après avoir saisi l'URI IdP pour renseigner automatiquement le champ Métadonnées IdP.
+
+. Copiez l'URI des métadonnées de l'hôte Unified Manager ou enregistrez les métadonnées de l'hôte dans un fichier texte XML.
++
+Vous pouvez configurer le serveur IdP avec ces informations dès maintenant.
+
+. Cliquez sur *Enregistrer*.
++
+Une boîte de dialogue s'affiche pour confirmer que vous souhaitez terminer la configuration et redémarrer Unified Manager.
+
+. Cliquez sur *Confirmer et se déconnecter* ; Unified Manager redémarre.
+
+
+La prochaine fois que des utilisateurs distants autorisés tenteront d'accéder à l'interface graphique de Unified Manager, ils saisiront leurs identifiants sur la page de connexion IdP au lieu de la page de connexion de Unified Manager.
+
+Si ce n'est pas déjà fait, accédez à votre IdP et saisissez l'URI du serveur Unified Manager ainsi que les métadonnées pour terminer la configuration.
+
+[NOTE]
+====
+Lorsque vous utilisez ADFS comme fournisseur d'identité, l'interface graphique de Unified Manager ne tient pas compte du délai d'expiration de ADFS et continue de fonctionner jusqu'à ce que le délai d'expiration de la session Unified Manager soit atteint. Vous pouvez modifier le délai d'expiration de la session de l'interface graphique en cliquant sur *General* > *Feature Settings* > *Inactivity Timeout*.
+
+====

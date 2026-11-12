@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/concept_view_node_and_aggregate_performance_capacity_used_values.html 
+sidebar: sidebar 
+keywords: view, node, aggregate, performance, capacity, used, values 
+summary: 'Vous pouvez surveiller les valeurs de capacité de performance utilisées pour tous les nœuds ou pour tous les agrégats d"un cluster, ou consulter les détails d"un seul nœud ou agrégat.' 
+---
+= Afficher les valeurs de capacité de performance utilisées des nœuds et des agrégats dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez surveiller les valeurs de capacité de performance utilisées pour tous les nœuds ou pour tous les agrégats d'un cluster, ou consulter les détails d'un seul nœud ou agrégat.
+
+Les valeurs de capacité de performance utilisée apparaissent dans le Dashboard, les pages Performance Inventory, la page Top Performers, la page Create Threshold Policy, les pages Performance Explorer et dans les graphiques détaillés. Par exemple, la page Performance: All Aggregates comporte une colonne Performance Capacity Used permettant d’afficher la valeur de capacité de performance utilisée pour tous les agrégats.
+
+image::../media/node_inventory_used_headroom.gif[Capture d'écran de l'interface utilisateur de la page Performances : Tous les agrégats]
+
+Le compteur de capacité de performance utilisée vous permet d'identifier les éléments suivants :
+
+* Si des nœuds ou des agrégats de clusters ont une valeur élevée de capacité de performance utilisée
+* Si des nœuds ou des agrégats sur un cluster présentent des événements actifs d’utilisation de la capacité de performance
+* Les nœuds et les agrégats qui présentent la valeur de capacité de performances utilisée la plus élevée et la plus faible dans un cluster
+* Valeurs des compteurs de latence et d'utilisation associées aux nœuds ou agrégats présentant des valeurs d'utilisation de capacité de performance élevées
+* Comment les valeurs de capacité de performance utilisées pour les nœuds d'une paire haute disponibilité seront affectées si l'un des nœuds tombe en panne
+* Les volumes et les LUN les plus sollicités sur un agrégat ayant une valeur élevée de capacité de performance utilisée
+

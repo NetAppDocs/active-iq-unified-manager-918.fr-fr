@@ -1,0 +1,34 @@
+---
+permalink: reporting/task_create_report_to_view_volume_transfers_grouped_by_day.html 
+sidebar: sidebar 
+keywords: create, report, view, volume, transfers, day 
+summary: Vous pouvez générer un rapport pour visualiser les transferts de volume regroupés par jour. 
+---
+= Créez un rapport pour visualiser les transferts de volume regroupés par jour dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez générer un rapport pour visualiser les transferts de volume regroupés par jour.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée des transferts de volume regroupés par jour, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Dans le menu Affichage, sélectionnez *Relation* > *Taux de transfert du dernier mois*.
+. Cliquez en haut de la colonne « `Jour` » pour trier les transferts de volume par jour.
+. Enregistrez la vue sous un nom spécifique qui reflète son contenu, par exemple « Transferts de volume par jour ».
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pouvez analyser les transferts de volumes par jour.

@@ -1,0 +1,25 @@
+---
+permalink: config/task_download_an_https_certificate_sign_request_ocf.html 
+sidebar: sidebar 
+keywords: download, https, certificate, signing, request 
+summary: Vous pouvez télécharger une demande de signature de certificat pour le certificat de sécurité HTTPS actuel afin de fournir le fichier à une autorité de certification pour qu’elle le signe. Un certificat signé par une autorité de certification contribue à prévenir les attaques de l’homme du milieu et offre une meilleure protection de sécurité qu’un certificat autosigné. 
+---
+= Téléchargez une demande de signature de certificat HTTPS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez télécharger une demande de signature de certificat pour le certificat de sécurité HTTPS actuel afin de fournir le fichier à une autorité de certification pour qu’elle le signe. Un certificat signé par une autorité de certification contribue à prévenir les attaques de l’homme du milieu et offre une meilleure protection de sécurité qu’un certificat autosigné.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Certificat HTTPS*.
+. Cliquez sur *Télécharger la demande de signature de certificat HTTPS*.
+. Enregistrez le `<hostname>.csr` fichier.
+
+
+Vous pouvez soumettre le fichier à une autorité de certification pour qu’elle le signe, puis installer le certificat signé.

@@ -1,0 +1,26 @@
+---
+permalink: health-checker/task_reorder_group_actions.html 
+sidebar: sidebar 
+keywords: reorder, group actions 
+summary: 'Vous pouvez modifier l"ordre des actions de groupe à appliquer aux objets de stockage d"un groupe. Les actions de groupe sont appliquées aux objets de stockage de manière séquentielle en fonction de leur rang. Le rang le plus bas est attribué à l"action de groupe que vous avez configurée en dernier. Vous pouvez modifier le rang de l"action de groupe en fonction de vos besoins.' 
+---
+= Réorganiser les actions de groupe dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier l'ordre des actions de groupe à appliquer aux objets de stockage d'un groupe. Les actions de groupe sont appliquées aux objets de stockage de manière séquentielle en fonction de leur rang. Le rang le plus bas est attribué à l'action de groupe que vous avez configurée en dernier. Vous pouvez modifier le rang de l'action de groupe en fonction de vos besoins.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Vous pouvez sélectionner une seule ligne ou plusieurs lignes, puis effectuer plusieurs opérations de glisser-déposer pour modifier l'ordre de priorité des actions de groupe. Toutefois, vous devez enregistrer les modifications pour que la nouvelle priorisation soit prise en compte dans la grille des actions de groupe.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Groupes*.
+. Dans l'onglet *Actions de groupe*, cliquez sur *Réorganiser*.
+. Dans la boîte de dialogue *Réorganiser les actions de groupe*, faites glisser-déposer les lignes pour réorganiser la séquence des actions de groupe selon vos besoins.
+. Cliquez sur *Enregistrer*.
+

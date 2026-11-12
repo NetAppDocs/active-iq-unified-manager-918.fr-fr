@@ -1,0 +1,30 @@
+---
+permalink: data-protection/task_remove_protection_relationship.html 
+sidebar: sidebar 
+keywords: remove, protection, relationship, volume, relationships page 
+summary: Depuis la page Relations de volumes, supprimez définitivement une relation de protection entre une source et une destination. Cette action est irréversible. 
+---
+= Supprimez une relation de protection depuis la page Volume Relationships dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depuis la page Relations de volumes, vous pouvez supprimer une relation de protection afin de supprimer définitivement une relation existante entre la source et la destination sélectionnées : par exemple, lorsque vous souhaitez créer une relation avec une destination différente. Cette opération supprime toutes les métadonnées et ne peut pas être annulée.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+
+
+.Étapes
+. Sur la page *Relations entre volumes*, sélectionnez un ou plusieurs volumes avec des relations de protection que vous souhaitez supprimer, puis, dans la barre d'outils, cliquez sur *Supprimer*.
++
+La boîte de dialogue Supprimer la relation s'affiche.
+
+. Cliquez sur *Continuer* pour supprimer la relation.
++
+La relation est supprimée de la page Relations de volume.
+
+

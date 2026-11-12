@@ -1,0 +1,41 @@
+---
+permalink: config/task_enable_and_disable_ability_to_upload_scripts.html 
+sidebar: sidebar 
+keywords: script upload, enable, disable 
+summary: La possibilité de télécharger des scripts sur Unified Manager et de les exécuter est activée par défaut. Si votre organisation souhaite interdire cette activité pour des raisons de sécurité, vous pouvez désactiver cette fonctionnalité. 
+---
+= Activer et désactiver le chargement de scripts dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La possibilité de télécharger des scripts sur Unified Manager et de les exécuter est activée par défaut. Si votre organisation souhaite interdire cette activité pour des raisons de sécurité, vous pouvez désactiver cette fonctionnalité.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Paramètres des fonctionnalités*.
+. Sur la page *Feature Settings*, désactivez ou activez les scripts en choisissant l'une des options suivantes :
++
+[cols="2*"]
+|===
+| Si vous voulez... | Ensuite, faites ceci... 
+
+
+ a| 
+Désactiver les scripts
+ a| 
+Dans le panneau *Téléchargement de script*, déplacez le curseur vers la gauche.
+
+
+
+ a| 
+Activer les scripts
+ a| 
+Dans le panneau *Script Upload*, déplacez le curseur vers la droite.
+
+|===
+

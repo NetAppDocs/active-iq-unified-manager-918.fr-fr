@@ -1,0 +1,28 @@
+---
+permalink: install-linux/task_remove_custom_umadmin_user_and_maintenance_group.html 
+sidebar: sidebar 
+keywords: remove, custom, umadmin, user, maintenance group 
+summary: 'Si vous avez créé un répertoire local pour définir votre propre utilisateur umadmin et votre compte de maintenance avant d"installer Unified Manager, vous devez supprimer ces éléments après avoir désinstallé Unified Manager.' 
+---
+= Supprimez l'utilisateur umadmin personnalisé et le groupe de maintenance pour Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous avez créé un répertoire local pour définir votre propre utilisateur umadmin et votre compte de maintenance avant d'installer Unified Manager, vous devez supprimer ces éléments après avoir désinstallé Unified Manager.
+
+La désinstallation standard d'Unified Manager ne supprime pas l'utilisateur umadmin et le compte de maintenance personnalisés. Vous devez les supprimer manuellement.
+
+.Étapes
+. Connectez-vous en tant qu'utilisateur root au serveur Red Hat Enterprise Linux.
+. Supprimez l'utilisateur umadmin :
++
+`userdel umadmin`
+
+. Supprimer le groupe de maintenance :
++
+`groupdel maintenance`
+
+

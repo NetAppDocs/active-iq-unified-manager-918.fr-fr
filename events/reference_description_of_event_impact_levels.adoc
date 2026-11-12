@@ -1,0 +1,32 @@
+---
+permalink: events/reference_description_of_event_impact_levels.html 
+sidebar: sidebar 
+keywords: description, event, impact, levels 
+summary: 'Chaque événement est associé à un niveau d"impact (Incident, Risque, Événement ou Mise à niveau) afin de vous aider à prioriser les événements qui nécessitent une action corrective immédiate.' 
+---
+= Découvrez les niveaux d'impact des événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Chaque événement est associé à un niveau d'impact (Incident, Risque, Événement ou Mise à niveau) afin de vous aider à prioriser les événements qui nécessitent une action corrective immédiate.
+
+* *Incident*
++
+Un incident est un ensemble d'événements qui peut amener un cluster à ne plus servir de données au client et à manquer d'espace pour le stockage des données. Les événements ayant un niveau d'impact Incident sont les plus graves. Vous devez prendre immédiatement des mesures correctives pour éviter toute interruption de service.
+
+* *Risque*
++
+Un risque est un ensemble d'événements susceptibles d'empêcher un cluster de fournir des données au client et de provoquer une saturation de l'espace de stockage. Les événements de niveau de risque peuvent entraîner une interruption de service. Des mesures correctives peuvent s'avérer nécessaires.
+
+* *Événement*
++
+Un événement correspond à une modification d'état ou de statut des objets de stockage et de leurs attributs. Les événements de niveau « Événement » sont informatifs et ne nécessitent aucune action corrective.
+
+* *Mise à niveau*
++
+Les événements de mise à niveau sont un type spécifique d'événement signalé par la plateforme Active IQ. Ils identifient les problèmes dont la résolution nécessite la mise à niveau du logiciel ONTAP, du firmware des nœuds ou du logiciel du système d'exploitation (pour les avis de sécurité). Vous pouvez souhaiter prendre immédiatement des mesures correctives pour certains de ces problèmes, tandis que d'autres peuvent attendre votre prochaine maintenance planifiée.
+
+

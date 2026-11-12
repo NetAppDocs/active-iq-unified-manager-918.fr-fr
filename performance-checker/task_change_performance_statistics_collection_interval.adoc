@@ -1,0 +1,40 @@
+---
+permalink: performance-checker/task_change_performance_statistics_collection_interval.html 
+sidebar: sidebar 
+keywords: unified manager, change, performance, statistics, collection, interval 
+summary: 'L"intervalle de collecte par défaut des statistiques de performance est de 5 minutes. Vous pouvez le modifier à 10 ou 15 minutes si la collecte des données provenant de grands clusters ne se termine pas dans le délai par défaut. Ce paramètre affecte la collecte des statistiques de tous les clusters surveillés par cette instance d"Unified Manager.' 
+---
+= Modifiez l'intervalle de collecte des statistiques de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'intervalle de collecte par défaut des statistiques de performance est de 5 minutes. Vous pouvez le modifier à 10 ou 15 minutes si la collecte des données provenant de grands clusters ne se termine pas dans le délai par défaut. Ce paramètre affecte la collecte des statistiques de tous les clusters surveillés par cette instance d'Unified Manager.
+
+.Avant de commencer
+Vous devez disposer d'un identifiant utilisateur et d'un mot de passe autorisés pour vous connecter à la console de maintenance du serveur Unified Manager.
+
+Le problème de la collecte des statistiques de performance qui ne se termine pas à temps est indiqué par les messages de bannière `Unable to consistently collect from cluster <cluster_name>` ou `Data collection is taking too long on cluster <cluster_name>`.
+
+Vous ne devez modifier l'intervalle de collecte que si cela s'avère nécessaire en raison d'un problème lié à la collecte de statistiques. Ne modifiez pas ce paramètre pour toute autre raison.
+
+[NOTE]
+====
+Modifier cette valeur par rapport au paramètre par défaut de 5 minutes peut affecter le nombre et la fréquence des événements de performance signalés par Unified Manager. Par exemple, les seuils de performance définis par le système déclenchent des événements lorsque la règle est dépassée pendant 30 minutes. Avec des collectes toutes les 5 minutes, la règle doit être dépassée pendant six collectes consécutives. Avec des collectes toutes les 15 minutes, la règle doit être dépassée pendant seulement deux périodes de collecte.
+
+====
+Un message en bas de la page de configuration du cluster indique l’intervalle actuel de collecte des données statistiques.
+
+.Étapes
+. Connectez-vous à l’hôte Unified Manager via SSH en tant qu’utilisateur de maintenance.
++
+Les invites de la console de maintenance Unified Manager s'affichent.
+
+. Saisissez le numéro de l'option de menu intitulée *Configuration de l'intervalle d'interrogation des performances*, puis appuyez sur Entrée.
+. Si vous y êtes invité, saisissez à nouveau le mot de passe de l'utilisateur de maintenance.
+. Saisissez le numéro du nouvel intervalle d'interrogation que vous souhaitez définir, puis appuyez sur Entrée.
+
+
+Si vous avez modifié l'intervalle de collecte d'Unified Manager à 10 ou 15 minutes et que vous disposez d'une connexion actuelle à un fournisseur de données externe (tel que Graphite), vous devez modifier l'intervalle de transmission du fournisseur de données afin qu'il soit égal ou supérieur à l'intervalle de collecte d'Unified Manager.

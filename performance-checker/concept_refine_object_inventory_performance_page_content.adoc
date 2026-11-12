@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_refine_object_inventory_performance_page_content.html 
+sidebar: sidebar 
+keywords: refining, performance, inventory, page, contents 
+summary: 'Les pages d"inventaire des objets de performance contiennent des outils pour vous aider à affiner le contenu des données d"inventaire des objets, ce qui vous permet de localiser rapidement et facilement des données spécifiques.' 
+---
+= Affinez le contenu de la page d'inventaire des performances dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les pages d'inventaire des objets de performance contiennent des outils pour vous aider à affiner le contenu des données d'inventaire des objets, ce qui vous permet de localiser rapidement et facilement des données spécifiques.
+
+Les pages d'inventaire des objets de performance contiennent des informations très volumineuses, souvent réparties sur plusieurs pages. Ces données complètes sont idéales pour le suivi et l'amélioration des performances ; cependant, la recherche de données spécifiques nécessite des outils permettant de les localiser rapidement. C'est pourquoi les pages d'inventaire des objets de performance intègrent des fonctionnalités de recherche, de tri et de filtrage. De plus, la recherche et le filtrage peuvent être combinés pour affiner vos résultats.

@@ -1,0 +1,45 @@
+---
+permalink: performance-checker/concept_understand_counter_charts.html 
+sidebar: sidebar 
+keywords: understand, counter, charts 
+summary: Les graphiques du volet « Graphiques de compteurs » vous permettent de visualiser et de comparer les données de performance de l’objet racine et des objets que vous avez ajoutés à partir de la grille des objets corrélés. Cela peut vous aider à comprendre les tendances de performance et à isoler et résoudre les problèmes de performance. 
+---
+= Comprendre les graphiques de compteurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les graphiques du volet « Graphiques de compteurs » vous permettent de visualiser et de comparer les données de performance de l’objet racine et des objets que vous avez ajoutés à partir de la grille des objets corrélés. Cela peut vous aider à comprendre les tendances de performance et à isoler et résoudre les problèmes de performance.
+
+Les graphiques de compteur affichés par défaut sont Events, Latency, IOPS et MBps. Les graphiques facultatifs que vous pouvez choisir d’afficher sont Utilization, Performance Capacity Used, Available IOPS, IOPS/TB et Cache Miss Ratio. De plus, vous pouvez choisir d’afficher les valeurs totales ou les valeurs de répartition pour les graphiques Latency, IOPS, MBps et Performance Capacity Used.
+
+L'explorateur de performances affiche par défaut certains graphiques de compteurs, que l'objet de stockage les prenne tous en charge ou non. Lorsqu'un compteur n'est pas pris en charge, le graphique de compteur est vide et le message `Not applicable for <object>`s'affiche.
+
+Les graphiques affichent les tendances de performance de l'objet racine et de tous les objets sélectionnés dans le volet Comparaison. Les données de chaque graphique sont organisées comme suit :
+
+* *Axe X*
++
+Affiche la période spécifiée. Si vous n'avez pas spécifié de plage horaire, la valeur par défaut est la période de 72 heures précédente.
+
+* *Axe Y*
++
+Affiche les unités de comptage propres à l’objet ou aux objets sélectionnés.
+
+
+
+La couleur des courbes de tendance correspond à celle du nom de l'objet affiché dans le volet Comparaison. Vous pouvez placer votre curseur sur un point d'une courbe de tendance pour afficher les détails temporels et de valeur de ce point.
+
+Si vous souhaitez étudier une période spécifique au sein d'un graphique, vous pouvez utiliser l'une des méthodes suivantes :
+
+* Utilisez le bouton *<* pour étendre le volet Graphiques de compteurs sur toute la largeur de la page.
+* Utilisez le curseur (lorsqu'il se transforme en loupe) pour sélectionner une portion de la période sur le graphique afin de vous concentrer sur cette zone et de l'agrandir. Vous pouvez cliquer sur « Réinitialiser le zoom du graphique » pour rétablir la période par défaut.
+* Utilisez le bouton *Zoom View* pour afficher un grand graphique d’un seul compteur contenant des détails étendus et des indicateurs de seuil.
+
+
+[NOTE]
+====
+Il arrive que des interruptions apparaissent dans les courbes de tendance. Ces interruptions indiquent soit que Unified Manager n'a pas pu collecter les données de performance du système de stockage, soit que Unified Manager était hors service.
+
+====

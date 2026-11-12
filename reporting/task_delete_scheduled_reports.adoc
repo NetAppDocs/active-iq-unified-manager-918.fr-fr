@@ -1,0 +1,43 @@
+---
+permalink: reporting/task_delete_scheduled_reports.html 
+sidebar: sidebar 
+keywords: delete, reports 
+summary: Après avoir programmé les rapports, vous pouvez les supprimer depuis la page « Programmation des rapports ». 
+---
+= Supprimer les rapports planifiés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir programmé les rapports, vous pouvez les supprimer depuis la page « Programmation des rapports ».
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Planification des rapports*.
++
+image::../media/scheduled_reports_2.gif[Capture d'écran de l'interface utilisateur montrant les rapports programmés.]
+
++
+[NOTE]
+====
+Si vous disposez des autorisations appropriées, vous pouvez supprimer n'importe quel rapport et sa planification dans le système.
+
+====
+. Cliquez sur l’icône Plus image:../media/more_icon.gif[""] pour la planification que vous souhaitez supprimer.
+. Cliquez sur *Delete*.
+. Confirmez votre décision.
++
+Le rapport programmé a été retiré de la liste et ne sera plus généré ni distribué selon la planification établie.
+
++
+[NOTE]
+====
+Si vous supprimez une vue personnalisée de la page d'inventaire, tous les fichiers Excel personnalisés ou les rapports planifiés qui utilisent cette vue sont également supprimés.
+
+====
+

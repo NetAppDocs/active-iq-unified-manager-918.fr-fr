@@ -1,0 +1,103 @@
+---
+permalink: events/reference_enclosures_events.html 
+sidebar: sidebar 
+keywords: enclosures, events, impact area, availability, configuration 
+summary: 'Les événements relatifs aux boîtiers de tiroir disque vous fournissent des informations sur l"état des boîtiers de tiroir disque dans votre centre de données afin que vous puissiez surveiller d"éventuels problèmes. Les événements sont regroupés par zone d"impact et incluent le nom de l"événement et du trap, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements liés aux enclosures dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements relatifs aux boîtiers de tiroir disque vous fournissent des informations sur l'état des boîtiers de tiroir disque dans votre centre de données afin que vous puissiez surveiller d'éventuels problèmes. Les événements sont regroupés par zone d'impact et incluent le nom de l'événement et du trap, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-availability]]
+== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Ventilateurs du tiroir disque en panne(ocumEvtShelfFanFailed)
+ a| 
+Incident
+ a| 
+Tiroir de stockage
+ a| 
+Primordial
+
+
+
+ a| 
+Les alimentations du tiroir disque ont échoué(ocumEvtShelfPowerSupplyFailed)
+ a| 
+Incident
+ a| 
+Tiroir de stockage
+ a| 
+Primordial
+
+
+
+ a| 
+Multipath du tiroir disque non configuré(ocumDiskShelfConnectivityNotInMultiPath)
+
+Cet événement ne s'applique pas à :
+
+* Les clusters qui sont dans une configuration MetroCluster
+* Les plateformes suivantes: FAS2554, FAS2552, FAS2520 et FAS2240
+
+ a| 
+Risque
+ a| 
+Nœud
+ a| 
+Avertissement
+
+
+
+ a| 
+Échec du chemin d'accès du tiroir disque(ocumDiskShelfConnectivityPathFailure)
+ a| 
+Risque
+ a| 
+Tiroir de stockage
+ a| 
+Avertissement
+
+|===
+
+
+[[impact-area-configuration]]
+== Domaine d'impact : configuration
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Tiroir disque détecté(Non applicable)
+ a| 
+Événement
+ a| 
+Nœud
+ a| 
+Informations
+
+
+
+ a| 
+Tiroirs disques retirés(Non applicable)
+ a| 
+Événement
+ a| 
+Nœud
+ a| 
+Informations
+
+|===

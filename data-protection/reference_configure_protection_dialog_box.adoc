@@ -1,0 +1,268 @@
+---
+permalink: data-protection/reference_configure_protection_dialog_box.html 
+sidebar: sidebar 
+keywords: configure, protection, dialog box 
+summary: 'Vous pouvez utiliser la boîte de dialogue Configurer la protection pour créer des relations SnapMirror et SnapVault pour tous les volumes en lecture, en écriture et de protection des données sur les clusters afin de garantir que les données d"un volume source ou d"un volume principal sont répliquées.' 
+---
+= Utilisez la boîte de dialogue Configurer la protection dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la boîte de dialogue Configurer la protection pour créer des relations SnapMirror et SnapVault pour tous les volumes en lecture, en écriture et de protection des données sur les clusters afin de garantir que les données d'un volume source ou d'un volume principal sont répliquées.
+
+
+
+[[source-tab]]
+== Onglet source
+
+* *Vue topologique*
++
+Affiche une représentation visuelle de la relation que vous créez. La source dans la topologie est mise en surbrillance par défaut.
+
+* *Informations sur la source*
++
+Affiche les détails relatifs aux volumes sources sélectionnés, notamment les informations suivantes :
+
++
+** Nom du cluster source
+** Nom de la SVM source
+** Taille totale du volume cumulé
++
+Affiche la taille totale de tous les volumes sources sélectionnés.
+
+** Taille cumulée utilisée du volume
++
+Affiche la taille cumulée utilisée pour tous les volumes sources sélectionnés.
+
+** Volume source
++
+Affiche les informations suivantes dans un tableau :
+
++
+*** Volume source
++
+Affiche les noms des volumes sources sélectionnés.
+
+*** Type
++
+Affiche le type de volume.
+
+*** Type de SnapLock
++
+Affiche le type SnapLock du volume. Les options sont Compliance, Enterprise et Non-SnapLock.
+
+*** Copie instantanée
++
+Affiche la copie Snapshot utilisée pour le transfert de base. Si le volume source est accessible en lecture/écriture, la valeur « Par défaut » dans la colonne « Copie Snapshot » indique qu'une nouvelle copie Snapshot est créée par défaut et utilisée pour le transfert de base. Si le volume source est un volume de protection des données, la valeur « Par défaut » dans la colonne « Copie Snapshot » indique qu'aucune nouvelle copie Snapshot n'est créée et que toutes les copies Snapshot existantes sont transférées vers la destination. Cliquer sur la valeur de la copie Snapshot affiche une liste de copies Snapshot parmi lesquelles vous pouvez sélectionner une copie Snapshot existante à utiliser pour le transfert de base. Vous ne pouvez pas sélectionner une autre copie Snapshot par défaut si le type de source est « protection des données ».
+
+
+
+
+
+
+
+
+
+[[snapmirror-tab]]
+== onglet SnapMirror
+
+Permet de spécifier un cluster de destination, une machine virtuelle de stockage (SVM) et un agrégat pour une relation de protection, ainsi qu'une convention de nommage pour les destinations lors de la création d'une relation SnapMirror. Vous pouvez également spécifier une stratégie et une planification SnapMirror.
+
+* *Vue topologique*
++
+Affiche une représentation visuelle de la relation que vous créez. La ressource de destination SnapMirror dans la topologie est mise en surbrillance par défaut.
+
+* *Informations sur la destination*
++
+Vous permet de sélectionner les ressources de destination pour une relation de protection :
+
++
+** Lien avancé
++
+Ouvre la boîte de dialogue Paramètres de destination avancés lors de la création d'une relation SnapMirror.
+
+** Cluster
++
+Répertorie les clusters disponibles en tant qu'hôtes de destination de protection. Ce champ est obligatoire.
+
+** machine virtuelle de stockage (SVM)
++
+Affiche la liste des SVM disponibles sur le cluster sélectionné. Un cluster doit être sélectionné pour que la liste des SVM s'affiche. Ce champ est obligatoire.
+
+** Agrégat
++
+Affiche la liste des agrégats disponibles sur le SVM sélectionné. Un cluster doit être sélectionné pour que la liste des agrégats s'affiche. Ce champ est obligatoire. La liste des agrégats affiche les informations suivantes :
+
++
+*** Rang
++
+Lorsque plusieurs agrégats satisfont à toutes les exigences d'une destination, le rang indique la priorité dans laquelle l'agrégat est répertorié, selon les conditions suivantes :
+
++
+.... Il est préférable d'utiliser un agrégat situé sur un nœud différent de celui du volume source afin de permettre la séparation des domaines de défaillance.
+.... Il est préférable d'utiliser un agrégat sur un nœud comportant moins de volumes pour permettre l'équilibrage de charge entre les nœuds d'un cluster.
+.... Pour permettre l’équilibrage de la capacité, on privilégie un agrégat disposant de plus d’espace libre que les autres agrégats. Un rang de 1 signifie que l’agrégat est le plus privilégié selon les trois critères.
+
+
+*** Nom de l'agrégat
++
+Nom de l'agrégat
+
+*** Capacité disponible
+*** Quantité d'espace disponible sur l'agrégat pour les données
+*** Pool de ressources
++
+Nom du pool de ressources auquel appartient l'agrégat
+
+
+
+** Convention d'appellation
++
+Spécifie la convention de dénomination par défaut appliquée au volume de destination. Vous pouvez accepter la convention proposée ou en créer une personnalisée. Cette convention peut comporter les attributs suivants : %C, %M, %V et %N, où %C correspond au nom du cluster, %M au nom de la SVM, %V au volume source et %N au nom du nœud de destination de la topologie.
+
++
+Le champ de convention d'appellation est surligné en rouge si votre saisie n'est pas valide. Le fait de cliquer sur le lien "`Preview Name`" affiche un aperçu de la convention d'appellation que vous avez saisie, et le texte d'aperçu se met à jour dynamiquement à mesure que vous saisissez une convention d'appellation dans le champ de texte. Un suffixe compris entre 001 et 999 est ajouté au nom de destination lors de la création de la relation, remplaçant nnn affiché dans le texte d'aperçu, 001 étant attribué en premier, 002 en deuxième, et ainsi de suite.
+
+
+
+* *Paramètres de la relation*
++
+Permet de spécifier le taux de transfert maximal, la stratégie SnapMirror et le planning utilisés par la relation de protection :
+
++
+** Taux de transfert maximal
++
+Spécifie le débit maximal de transfert de données entre les clusters sur le réseau. Si vous choisissez de ne pas spécifier de débit maximal, le transfert de base entre les relations est illimité.
+
+** SnapMirror stratégie
++
+Spécifie la stratégie ONTAP SnapMirror pour la relation. La valeur par défaut est DPDefault.
+
+** Créer une stratégie
++
+Ouvre la boîte de dialogue Créer une stratégie SnapMirror, qui vous permet de créer et d'utiliser une nouvelle stratégie SnapMirror.
+
+** SnapMirror calendrier
++
+Spécifie la stratégie ONTAP SnapMirror pour la relation. Les planifications disponibles sont : Aucune, 5 min, 8 heures, quotidienne, horaire et hebdomadaire. La valeur par défaut est Aucune, ce qui indique qu’aucune planification n’est associée à la relation. Les relations sans planification n’ont pas de valeurs d’état de décalage, sauf si elles appartiennent à un service de stockage.
+
+** Créer une planification
++
+Ouvre la boîte de dialogue Créer une planification, qui vous permet de créer une nouvelle planification SnapMirror.
+
+
+
+
+
+
+
+[[snapvault-tab]]
+== onglet SnapVault
+
+Permet de spécifier un cluster secondaire, une SVM et un agrégat pour une relation de protection, ainsi qu'une convention de dénomination pour les volumes secondaires lors de la création d'une relation SnapVault. Vous pouvez également spécifier une stratégie et une planification SnapVault.
+
+* *Vue topologique*
++
+Affiche une représentation visuelle de la relation que vous créez. La ressource secondaire SnapVault dans la topologie est mise en surbrillance par défaut.
+
+* *Informations secondaires*
++
+Vous permet de sélectionner les ressources secondaires pour une relation de protection:
+
++
+** Lien avancé
++
+Ouvre la boîte de dialogue Paramètres secondaires avancés.
+
+** Cluster
++
+Répertorie les clusters disponibles en tant qu'hôtes de protection secondaires. Ce champ est obligatoire.
+
+** machine virtuelle de stockage (SVM)
++
+Affiche la liste des SVM disponibles sur le cluster sélectionné. Un cluster doit être sélectionné pour que la liste des SVM s'affiche. Ce champ est obligatoire.
+
+** Agrégat
++
+Affiche la liste des agrégats disponibles sur le SVM sélectionné. Un cluster doit être sélectionné pour que la liste des agrégats s'affiche. Ce champ est obligatoire. La liste des agrégats affiche les informations suivantes :
+
++
+*** Rang
++
+Lorsque plusieurs agrégats satisfont à toutes les exigences d'une destination, le rang indique la priorité dans laquelle l'agrégat est répertorié, selon les conditions suivantes :
+
++
+.... Il est préférable d'utiliser un agrégat situé sur un nœud différent de celui du volume principal afin de permettre la séparation des domaines de défaillance.
+.... Il est préférable d'utiliser un agrégat sur un nœud comportant moins de volumes pour permettre l'équilibrage de charge entre les nœuds d'un cluster.
+.... Pour permettre l’équilibrage de la capacité, on privilégie un agrégat disposant de plus d’espace libre que les autres agrégats. Un rang de 1 signifie que l’agrégat est le plus privilégié selon les trois critères.
+
+
+*** Nom de l'agrégat
++
+Nom de l'agrégat
+
+*** Capacité disponible
+*** Quantité d'espace disponible sur l'agrégat pour les données
+*** Pool de ressources
++
+Nom du pool de ressources auquel appartient l'agrégat
+
+
+
+** Convention d'appellation
++
+Spécifie la convention d'appellation par défaut appliquée au volume secondaire. Vous pouvez accepter la convention proposée ou en créer une personnalisée. Cette convention peut comporter les attributs suivants : %C, %M, %V et %N, où %C correspond au nom du cluster, %M au nom de la SVM, %V au volume source et %N au nom du nœud secondaire de la topologie.
+
++
+Le champ de convention d'appellation est surligné en rouge si votre saisie n'est pas valide. Le fait de cliquer sur le lien « `Preview Name` » affiche un aperçu de la convention d'appellation que vous avez saisie, et le texte d'aperçu se met à jour dynamiquement à mesure que vous saisissez une convention d'appellation dans le champ de texte. Si vous saisissez une valeur non valide, les informations non valides s'affichent sous forme de points d'interrogation rouges dans la zone d'aperçu. Un suffixe compris entre 001 et 999 est ajouté au nom secondaire lorsque la relation est créée, remplaçant le nnn affiché dans le texte d'aperçu, 001 étant attribué en premier, 002 en second, et ainsi de suite.
+
+
+
+* *Paramètres de la relation*
++
+Vous permet de spécifier le taux de transfert maximal, la politique SnapVault et la planification SnapVault utilisés par la relation de protection :
+
++
+** Taux de transfert maximal
++
+Spécifie le débit maximal de transfert de données entre les clusters sur le réseau. Si vous choisissez de ne pas spécifier de débit maximal, le transfert de base entre les relations est illimité.
+
+** SnapVault Stratégie
++
+Spécifie la stratégie ONTAP SnapVault pour la relation. La valeur par défaut est XDPDefault.
+
+** Créer une stratégie
++
+Ouvre la boîte de dialogue Créer une stratégie SnapVault, qui vous permet de créer et d'utiliser une nouvelle stratégie SnapVault.
+
+** SnapVault Calendrier
++
+Spécifie la planification ONTAP SnapVault pour la relation. Les planifications disponibles incluent None, 5min, 8hour, daily, hourly et weekly. La valeur par défaut est None, ce qui indique qu’aucune planification n’est associée à la relation. Les relations sans planification n’ont pas de valeurs d’état de décalage, sauf si elles appartiennent à un service de stockage.
+
+** Créer une planification
++
+Ouvre la boîte de dialogue Créer une planification, qui vous permet de créer une planification SnapVault.
+
+
+
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Annuler*
++
+Annule vos sélections et ferme la boîte de dialogue Configurer la protection.
+
+* *Appliquer*
++
+Applique les sélections que vous avez effectuées et lance le processus de protection.
+
+

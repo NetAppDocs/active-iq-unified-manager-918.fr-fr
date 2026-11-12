@@ -1,0 +1,52 @@
+---
+permalink: health-checker/task_configure_netapp_snapshot_backup_from_maintenance_console.html 
+sidebar: sidebar 
+keywords: configure, backup, snapshot copy, copies maintenance console 
+summary: 'Pour effectuer une sauvegarde d"Active IQ Unified Manager à l"aide d"une copie Snapshot, vous devez suivre quelques étapes de configuration à partir de la console de maintenance.' 
+---
+= Configurez une sauvegarde par instantané depuis la console de maintenance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour effectuer une sauvegarde d'Active IQ Unified Manager à l'aide d'une copie Snapshot, vous devez suivre quelques étapes de configuration à partir de la console de maintenance.
+
+.Avant de commencer
+Vous devriez disposer des informations suivantes concernant votre système :
+
+* Adresse IP du cluster
+* Nom de la machine virtuelle de stockage
+* Nom du volume
+* Nom LUN
+* Chemin de montage
+* Identifiants du système de stockage
+
+
+.Étapes
+. Accédez à la console de maintenance d’Unified Manager.
+. Saisissez 4 pour sélectionner *Sauvegarde et restauration*.
+. Saisissez 2 pour sélectionner *Sauvegarde et restauration à l’aide de NetApp Snapshot*.
++
+[NOTE]
+====
+Si vous souhaitez modifier la configuration de sauvegarde, saisissez 3 pour sélectionner *Mettre à jour NetApp Snapshot Backup Configuration*. Vous pouvez uniquement mettre à jour le mot de passe.
+
+====
+. Dans le menu, saisissez 1 pour sélectionner *Configurer la sauvegarde Snapshot NetApp*.
+. Saisissez 1 pour fournir les informations requises.
+. Veuillez fournir le nom d'utilisateur et le mot de passe de la console de maintenance, puis confirmer que LUN est monté sur l'hôte.
++
+Le processus vérifie ensuite que le répertoire de données, le chemin de la LUN, la machine virtuelle de stockage, les volumes, l’espace disponible, le disque, etc. que vous avez fournis sont corrects. Les opérations qui s’exécutent en arrière-plan sont les suivantes :
+
++
+** Les services sont arrêtés
+** Le répertoire de la base de données a été déplacé vers un stockage monté
+** Le répertoire de la base de données est supprimé et des liens symboliques sont créés
+** Les services redémarrent une fois la configuration terminée dans l’interface Active IQ Unified Manager, et le type de sauvegarde est remplacé par NetApp Snapshot et apparaît dans l’interface utilisateur comme Database backup (Snapshot based).
+
+
+
+
+Avant de lancer une opération de sauvegarde, vous devez vérifier s’il y a eu une modification de la configuration Snapshot, car cela pourrait rendre le Snapshot non valide. Supposons que vous ayez configuré la sauvegarde sur le lecteur G et qu’un Snapshot ait été créé. Vous avez ensuite reconfiguré la sauvegarde sur le lecteur E et les données sont enregistrées sur le lecteur E conformément à la nouvelle configuration. Si vous essayez de restaurer le Snapshot créé lorsqu’il était sur le lecteur G, l’opération échoue avec une erreur indiquant que le lecteur G n’existe pas.

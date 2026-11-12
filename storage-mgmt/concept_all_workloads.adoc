@@ -1,0 +1,81 @@
+---
+permalink: storage-mgmt/concept_all_workloads.html 
+sidebar: sidebar 
+keywords: view, workloads, add, provision, storage, filter, analyze, performance, capacity, criteria 
+summary: 'La vue « Toutes les charges de travail » affiche la liste de toutes les charges de travail disponibles sur les clusters d"un centre de données.' 
+---
+= Afficher les charges de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque vous ajoutez des clusters à Unified Manager, les workloads de stockage de chaque cluster sont automatiquement détectés et affichés sur la page Workloads.
+
+Unified Manager ne commence à analyser les workloads afin de formuler des recommandations (PSL recommandés) qu'après le démarrage des opérations d'E/S sur les workloads de stockage.
+
+FlexGroup volumes et leurs constituants sont exclus.
+
+
+
+[[workloads-overview]]
+== Aperçu des workloads
+
+La page Workloads Overview affiche la vue d'ensemble des workloads du data center ainsi que la vue d'ensemble de l'espace et des performances du data center.
+
+* Panneau *Workloads Overview* : affiche le nombre total de workloads et le nombre de workloads avec ou sans PSL qui leur sont attribués. La répartition du nombre de workloads pour chaque PSL est également affichée. En cliquant sur les nombres, vous accédez à la vue *All Workloads* avec les workloads filtrés. Vous pouvez également consulter le nombre de workloads non conformes à la recommandation du système et leur attribuer les PSL recommandés par le système en cliquant sur le bouton *Assign System-Recommended PSLs*.
+* Panneau *Vue d'ensemble du centre de données* : affiche l'espace disponible et utilisé (Tio) ainsi que les performances (IOPS) du centre de données. La répartition de l'espace disponible et utilisé (Tio) ainsi que des performances (IOPS) de tous les workloads sous chaque PSL est également affichée.
+
+
+
+
+[[all-workloads-view]]
+== Vue de tous les workloads
+
+La page *Stockage > Workloads > All Workloads* répertorie les workloads de stockage associés aux clusters ONTAP gérés par Unified Manager.
+
+Pour les workloads de stockage nouvellement découverts sur lesquels aucune opération d’E/S n’a eu lieu, le statut est « `Waiting for I/O` ». Après le début des opérations d’E/S sur les workloads de stockage, Unified Manager commence l’analyse et le statut du workload devient « `Learning...` ». Une fois l’analyse terminée (dans les 24 heures suivant le début des opérations d’E/S), les PSL recommandés s’affichent pour les workloads de stockage.
+
+Cette page vous permet également d'attribuer des politiques d'efficacité du stockage (SEP) et des niveaux de service de performance (PSL) aux workloads de stockage. Vous pouvez effectuer plusieurs tâches :
+
+* Ajouter ou provisionner des workloads de stockage
+* Afficher et filtrer la liste des workloads
+* Attribuer des PSL aux workloads de stockage
+* Évaluer les PSL recommandés par le système et les affecter aux workloads
+* Attribuer des SEP aux workloads de stockage
+
+
+
+
+[[adding-or-provisioning-storage-workloads]]
+=== Ajout ou provisionnement de workloads de stockage
+
+Vous pouvez ajouter ou provisionner des workloads de stockage sur les LUN prises en charge (prenant en charge les protocoles iSCSI et FCP), les partages de fichiers NFS et les partages SMB.
+
+.Étapes
+. Cliquez sur *Stockage > Workloads > Tous les workloads > Créer*.
+. Créez des workloads. Pour plus d'informations, consultez link:../storage-mgmt/concept_provision_and_manage_workloads.html["Provisionnement et gestion des workloads"].
+
+
+
+
+[[viewing-and-filtering-workloads]]
+=== Affichage et filtrage des workloads
+
+Sur l'écran « Toutes les charges de travail », vous pouvez afficher toutes les charges de travail de votre centre de données ou rechercher des charges de travail de stockage spécifiques en fonction de leurs PSL ou de leur nom. Vous pouvez utiliser l'icône de filtre pour saisir des conditions spécifiques pour votre recherche. Vous pouvez effectuer une recherche selon différents critères de filtre, tels que le cluster hôte ou la machine virtuelle de stockage. L'option « Capacité totale » permet de filtrer selon la capacité totale des charges de travail (en MB). Toutefois, dans ce cas, le nombre de charges de travail renvoyées peut varier, car la capacité totale est comparée au niveau de l'octet.
+
+Pour chaque workload, des informations telles que le cluster hôte et la VM de stockage sont affichées, ainsi que le PSL et le SEP attribués.
+
+Cette page vous permet également de consulter les détails de performance d'un workload. Vous pouvez afficher des informations détaillées sur les IOPS, la capacité et la latence du workload en cliquant sur le bouton *Choisir / Ordonner les colonnes* et en sélectionnant les colonnes spécifiques à afficher. La colonne « Vue des performances » affiche les IOPS moyennes et de pointe d'un workload, et vous pouvez cliquer sur l'icône de l'analyseur de workload pour afficher l'analyse détaillée des IOPS.
+
+
+
+[[analyzing-performance-and-capacity-criteria-for-a-workload]]
+=== Analyse des critères de performance et de capacité d'un workload
+
+Le bouton *Analyze Workload* de la fenêtre contextuelle *IOPS Analysis* vous redirige vers la page Workload Analysis, où vous pouvez sélectionner une plage horaire et afficher les tendances de latence, de débit et de capacité pour le workload sélectionné. Pour plus d'informations sur l'analyseur de workload, consultez link:..//performance-checker/concept_troubleshooting_workloads_using_workload_analyzer.html["Dépannage des workloads à l’aide de l’analyseur de workload"].
+
+Pour faciliter le dépannage, vous pouvez consulter les informations de performance d’un workload en cliquant sur l’icône de graphique à barres dans la colonne *Performance View*. Pour afficher les graphiques de performance et de capacité sur la page *Workload Analysis* afin d’analyser l’objet, cliquez sur le bouton *Analyze Workload*.
+
+Pour plus d'informations, consultez link:../performance-checker/reference_what_data_does_workload_analyzer_display.html["Quelles données l’analyseur de workload affiche-t-il ?"].

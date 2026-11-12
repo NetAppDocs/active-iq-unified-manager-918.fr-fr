@@ -1,0 +1,59 @@
+---
+permalink: storage-mgmt/task_search_for_storage_objects.html 
+sidebar: sidebar 
+keywords: search, storage, objects 
+summary: 'Pour accéder rapidement à un objet spécifique, vous pouvez utiliser le champ « Rechercher dans tous les objets de stockage » en haut de la barre de menu. Cette méthode de recherche globale dans tous les objets vous permet de localiser rapidement des objets spécifiques par type. Les résultats de la recherche sont triés par type d"objet de stockage et vous pouvez les filtrer davantage par objet à l"aide du menu déroulant.' 
+---
+= Rechercher des objets de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour accéder rapidement à un objet spécifique, vous pouvez utiliser le champ *Rechercher dans tous les objets de stockage* en haut de la barre de menu. Cette méthode de recherche globale dans tous les objets vous permet de localiser rapidement des objets spécifiques par type. Les résultats de la recherche sont triés par type d'objet de stockage, et vous pouvez les filtrer davantage par objet à l'aide du menu déroulant.
+
+.Avant de commencer
+* Vous devez disposer de l’un des rôles suivants pour effectuer cette tâche : Operator, Application Administrator ou Storage Administrator.
+* Une recherche valide doit contenir au moins trois caractères.
+
+
+Lorsque vous sélectionnez « Tous » dans le menu déroulant, la recherche globale affiche le nombre total de résultats trouvés dans toutes les catégories d'objets, avec un maximum de 25 résultats de recherche pour chaque catégorie d'objets. Vous pouvez sélectionner un type d'objet spécifique dans le menu déroulant pour affiner la recherche au sein d'un type d'objet spécifique. Dans ce cas, la liste renvoyée n'est pas limitée aux 25 premiers objets.
+
+Les types d'objets que vous pouvez rechercher incluent :
+
+* Groupes
+* Nœuds
+* Machines virtuelles de stockage
+* Agrégats
+* Volumes
+* Qtrees
+* Partages SMB
+* Partages NFS
+* Quotas d'utilisateurs ou de groupes
+* LUN
+* Espaces de noms NVMe
+* Groupes d'initiateurs
+* Initiateurs
+* Groupe de cohérence
+
+
+La saisie d’un nom de workload renvoie la liste des workloads dans la catégorie Volumes ou LUNs appropriée.
+
+Vous pouvez cliquer sur n'importe quel objet dans les résultats de recherche pour accéder à la page de détails de l'état de cet objet. S'il n'existe pas de page d'état directe pour un objet, la page d'état de l'objet parent s'affiche. Par exemple, lorsque vous recherchez un LUN spécifique, la page de détails du SVM sur lequel réside ce LUN s'affiche.
+
+[NOTE]
+====
+Les ports et les LIF ne peuvent pas être recherchés dans la barre de recherche globale.
+
+====
+.Étapes
+. Sélectionnez un type d'objet dans le menu pour affiner les résultats de la recherche et n'afficher que ce type d'objet.
+. Saisissez au minimum trois caractères du nom de l'objet dans le champ *Rechercher tous les objets de stockage*.
++
+Dans cet exemple, le type d'objet Volumes est sélectionné dans la liste déroulante. Lorsque vous saisissez « vol1 » dans le champ *Rechercher tous les objets de stockage*, la liste de tous les volumes dont le nom contient ces caractères s'affiche.
+
++
+image::../media/opm_search_field_jpg.gif[Champ de recherche dans Unified Manager]
+
+

@@ -1,0 +1,16 @@
+---
+permalink: health-checker/concept_what_storage_capacity_health_thresholds_are.html 
+sidebar: sidebar 
+keywords: storage, capacity, health, thresholds 
+summary: 'Un seuil d"intégrité de la capacité de stockage est le point auquel le serveur Unified Manager génère des événements pour signaler tout problème de capacité des objets de stockage. Vous pouvez configurer des alertes pour envoyer une notification chaque fois que de tels événements se produisent.' 
+---
+= Découvrez les seuils de santé de la capacité de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un seuil d'intégrité de la capacité de stockage est le point auquel le serveur Unified Manager génère des événements pour signaler tout problème de capacité des objets de stockage. Vous pouvez configurer des alertes pour envoyer une notification chaque fois que de tels événements se produisent.
+
+Les seuils de santé de la capacité de stockage pour tous les agrégats, volumes et qtrees sont définis sur leurs valeurs par défaut. Vous pouvez modifier ces paramètres selon les besoins d'un objet ou d'un groupe d'objets.

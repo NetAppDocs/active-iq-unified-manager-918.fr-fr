@@ -1,0 +1,32 @@
+---
+permalink: health-checker/task_edit_individual_aggregate_health_threshold_settings.html 
+sidebar: sidebar 
+keywords: edit, individual, aggregate, health, threshold, settings 
+summary: 'Vous pouvez modifier les paramètres de seuil d"intégrité pour la capacité, la croissance et les copies Snapshot d"un ou de plusieurs agrégats. Lorsqu"un seuil est franchi, des alertes sont générées et vous recevez des notifications. Ces notifications vous aident à prendre des mesures préventives en fonction de l"événement généré.' 
+---
+= Modifiez les paramètres de seuil de santé des agrégats individuels dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les paramètres de seuil d'intégrité pour la capacité, la croissance et les copies Snapshot d'un ou de plusieurs agrégats. Lorsqu'un seuil est franchi, des alertes sont générées et vous recevez des notifications. Ces notifications vous aident à prendre des mesures préventives en fonction de l'événement généré.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+En fonction des modifications apportées aux valeurs de seuil, des événements sont générés ou rendus obsolètes lors du prochain cycle de surveillance.
+
+Lorsque Autogrow est activé sur les volumes qui se trouvent sur l’agrégat, les seuils de capacité de l’agrégat sont considérés comme dépassés en fonction de la taille maximale du volume définie par autogrow, et non en fonction de la taille du volume d’origine.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Agrégats*.
+. Dans la vue *Santé: Tous les agrégats*, sélectionnez un ou plusieurs agrégats, puis cliquez sur *Modifier les seuils*.
+. Dans la boîte de dialogue *Modifier les seuils d’agrégat*, modifiez les paramètres de seuil de l’un des éléments suivants : la capacité, la croissance ou les copies Snapshot, en sélectionnant la case à cocher appropriée puis en modifiant les paramètres.
+. Cliquez sur *Enregistrer*.
+
+
+*Informations connexes*
+
+link:../config/task_add_users.html["Ajout d'utilisateurs"]

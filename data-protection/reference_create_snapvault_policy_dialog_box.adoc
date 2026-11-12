@@ -1,0 +1,78 @@
+---
+permalink: data-protection/reference_create_snapvault_policy_dialog_box.html 
+sidebar: sidebar 
+keywords: create, snapvault, policy, dialog box 
+summary: 'La boîte de dialogue Créer une stratégie SnapVault vous permet de créer une stratégie pour définir la priorité des transferts SnapVault. Vous utilisez des stratégies pour optimiser l"efficacité des transferts du volume principal vers le volume secondaire.' 
+---
+= Utilisez la boîte de dialogue Créer une stratégie SnapVault dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La boîte de dialogue Créer une stratégie SnapVault vous permet de créer une stratégie pour définir la priorité des transferts SnapVault. Vous utilisez des stratégies pour optimiser l'efficacité des transferts du volume principal vers le volume secondaire.
+
+* *Cluster de destination*
++
+Le nom du cluster que vous avez sélectionné dans l’onglet SnapVault de la boîte de dialogue Configurer la protection.
+
+* *SVM de destination*
++
+Le nom de la SVM que vous avez sélectionnée dans l’onglet SnapVault de la boîte de dialogue Configurer la protection.
+
+* *Nom de la stratégie*
++
+Le nom que vous attribuez à la nouvelle stratégie. Les noms de stratégie peuvent contenir les caractères A à Z, a à z, 0 à 9, le point (.), le tiret (-) et le trait de soulignement (_).
+
+* *Priorité de transfert*
++
+La priorité à laquelle le transfert s’exécute. Vous pouvez sélectionner soit Normal, soit Low. Les relations de transfert avec des règles qui spécifient une priorité de transfert Normal s’exécutent avant celles avec des règles qui spécifient une priorité de transfert Low. Le paramètre par défaut est Normal.
+
+* *Commentaire*
++
+Champ facultatif dans lequel vous pouvez ajouter un commentaire de 255 caractères maximum sur la politique SnapVault.
+
+* *Ignorer le temps d'accès*
++
+Indique si les transferts incrémentiels sont ignorés pour les fichiers dont seul le temps d'accès a été modifié.
+
+* *Étiquette de réplication*
++
+Affiche dans un tableau les règles associées aux copies Snapshot sélectionnées par ONTAP et possédant une étiquette de réplication spécifique dans une stratégie. Les informations et actions suivantes sont également disponibles :
+
++
+** Boutons de commande
++
+Les boutons de commande vous permettent d'effectuer les actions suivantes :
+
++
+*** Ajouter
++
+Permet de créer une étiquette de copie Snapshot et un nombre de copies à conserver.
+
+*** Modifier le nombre de rétentions
++
+Permet de modifier le nombre de copies à conserver d'une étiquette de copie Snapshot existante. Ce nombre doit être compris entre 1 et 251. La somme de tous les nombres de copies à conserver pour toutes les règles ne peut pas dépasser 251.
+
+*** Supprimer
++
+Permet de supprimer une étiquette de copie Snapshot existante.
+
+
+
+** Étiquette de copie Snapshot
++
+Affiche l'étiquette de copie Snapshot. Si vous sélectionnez un ou plusieurs volumes ayant la même stratégie de copie Snapshot locale, une entrée est affichée pour chaque étiquette de la stratégie. Si vous sélectionnez plusieurs volumes ayant deux stratégies de copie Snapshot locales ou plus, le tableau affiche toutes les étiquettes de toutes les stratégies
+
+** Calendrier
++
+Affiche la planification associée à chaque étiquette de copie Snapshot. Si une étiquette est associée à plusieurs planifications, celles-ci sont affichées dans une liste séparée par des virgules. Si vous sélectionnez plusieurs volumes portant la même étiquette mais des planifications différentes, la mention « `Various` » s'affiche pour indiquer que plusieurs planifications sont associées aux volumes sélectionnés.
+
+** Nombre de rétentions de destination
++
+Affiche le nombre de copies Snapshot portant l'étiquette spécifiée qui sont conservées sur le système secondaire SnapVault. Pour les étiquettes comportant plusieurs planifications, le nombre de copies conservées correspond à la somme des nombres de copies conservées de chaque paire étiquette/planification. Si vous sélectionnez plusieurs volumes avec au moins deux stratégies locales de copie Snapshot, le nombre de copies conservées est vide.
+
+
+
+

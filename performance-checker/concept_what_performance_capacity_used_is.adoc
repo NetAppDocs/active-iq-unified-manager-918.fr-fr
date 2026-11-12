@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_what_performance_capacity_used_is.html 
+sidebar: sidebar 
+keywords: performance, capacity, used 
+summary: 'Le compteur de capacité de performance utilisée permet d"identifier si les performances d"un nœud ou d"un agrégat atteignent un point où elles risquent de se dégrader si les workloads augmentent. Il peut également indiquer si un nœud ou un agrégat est actuellement surutilisé pendant certaines périodes. La capacité de performance utilisée est similaire à l"utilisation, mais elle fournit davantage d"informations sur les capacités de performance disponibles d"une ressource physique pour un workload spécifique.' 
+---
+= Comprendre le compteur de capacité de performance utilisée dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le compteur de capacité de performance utilisée permet d'identifier si les performances d'un nœud ou d'un agrégat atteignent un point où elles risquent de se dégrader si les workloads augmentent. Il peut également indiquer si un nœud ou un agrégat est actuellement surutilisé pendant certaines périodes. La capacité de performance utilisée est similaire à l'utilisation, mais elle fournit davantage d'informations sur les capacités de performance disponibles d'une ressource physique pour un workload spécifique.
+
+La capacité de performance utilisée optimale correspond au point où un nœud ou un agrégat présente une utilisation et une latence (temps de réponse) optimales, et est utilisé efficacement. La figure suivante illustre un exemple de courbe de latence en fonction de l'utilisation pour un agrégat.
+
+image::../media/headroom_chart.gif[Capture d'écran de l'interface utilisateur montrant un exemple de courbe de latence en fonction de l'utilisation pour un agrégat.]
+
+Dans cet exemple, le _point opérationnel_ indique que l’agrégat fonctionne actuellement à 50 % d’utilisation avec une latence de 1,0 ms/op. D’après les statistiques collectées à partir de l’agrégat, Unified Manager détermine qu’une capacité de performance supplémentaire est disponible pour cet agrégat. Dans cet exemple, le _point optimal_ correspond au moment où l’agrégat est à 80 % d’utilisation avec une latence de 2,0 ms/op. Vous pouvez donc ajouter davantage de volumes et de LUN à cet agrégat afin d’utiliser vos systèmes plus efficacement.
+
+Le compteur de capacité de performance utilisée devrait afficher une valeur supérieure au compteur "`utilization`", car la capacité de performance prend en compte l'impact sur la latence. Par exemple, si un nœud ou un agrégat est utilisé à 70 %, la valeur de capacité de performance peut se situer entre 80 % et 100 %, selon la latence.
+
+Dans certains cas, toutefois, le compteur d'utilisation peut être plus élevé sur la page Dashboard. Cela est normal, car le tableau de bord actualise les valeurs actuelles du compteur à chaque période de collecte ; il n'affiche pas de moyennes sur une période donnée comme le font les autres pages de l'interface utilisateur Unified Manager. Le compteur de capacité de performance utilisée est préférable comme indicateur des performances moyennées sur une période donnée, tandis que le compteur d'utilisation est préférable pour déterminer l'utilisation instantanée d'une ressource.

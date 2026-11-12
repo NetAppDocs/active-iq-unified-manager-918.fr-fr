@@ -1,0 +1,53 @@
+---
+permalink: data-protection/task_initialize_or_update_protection_relationships.html 
+sidebar: sidebar 
+keywords: initialize, update, protection, relationships, volume, page 
+summary: À partir de la page Relations de volumes, vous pouvez effectuer un premier transfert de base sur une nouvelle relation de protection, ou mettre à jour une relation si elle est déjà initialisée et que vous souhaitez effectuer immédiatement une mise à jour incrémentielle manuelle non planifiée. 
+---
+= Initialisez ou mettez à jour les relations de protection à partir de la page Relations de volumes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+À partir de la page Relations de volumes, vous pouvez effectuer un premier transfert de base sur une nouvelle relation de protection, ou mettre à jour une relation si elle est déjà initialisée et que vous souhaitez effectuer immédiatement une mise à jour incrémentielle manuelle non planifiée.
+
+
+NOTE: Vous ne pouvez pas initialiser ni mettre à jour les volumes protégés par des groupes de cohérence.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré OnCommand Workflow Automation.
+
+
+.Étapes
+. Depuis la page *Relations entre volumes*, cliquez avec le bouton droit sur un volume et sélectionnez un ou plusieurs volumes avec des relations que vous souhaitez mettre à jour ou initialiser, puis, dans la barre d'outils, cliquez sur *Initialiser/Mettre à jour*.
++
+La boîte de dialogue *Initialiser/Mettre à jour* s'affiche.
+
+. Dans l'onglet *Options de transfert*, sélectionnez une priorité de transfert et le débit de transfert maximal.
+. Cliquez sur *Copies d'instantané source*; puis, dans la colonne *Copie d'instantané*, cliquez sur *Par défaut*.
++
+La boîte de dialogue « Sélectionner la copie d'instantané source » s'affiche.
+
+. Si vous souhaitez spécifier une copie Snapshot existante plutôt que de transférer la copie Snapshot par défaut, cliquez sur *Copie Snapshot existante* et sélectionnez une copie Snapshot dans la liste.
+. Cliquez sur *Submit*.
++
+Vous revenez à la boîte de dialogue *Initialize/Update*.
+
+. Si vous avez sélectionné plusieurs sources à initialiser ou à mettre à jour, cliquez sur *Default* pour la source suivante pour laquelle vous souhaitez spécifier une copie Snapshot existante.
+. Cliquez sur *Submit* pour démarrer la tâche d'initialisation ou de mise à jour.
++
+La tâche d'initialisation ou de mise à jour démarre, vous revenez à la page Relations de volumes, et un lien vers les tâches s'affiche en haut de la page.
+
+. *Facultatif:* Cliquez sur *Afficher les tâches* dans la vue *Santé: Tous les volumes* pour suivre l’état de chaque tâche d’initialisation ou de mise à jour.
++
+Une liste filtrée des tâches s'affiche.
+
+. *Facultatif :* Cliquez sur chaque tâche pour en voir les détails.
+. *Facultatif:* Cliquez sur la flèche *Retour* de votre navigateur pour revenir à la page *Relations de volume*.
++
+L'opération d'initialisation ou de mise à jour est terminée lorsque toutes les tâches se sont achevées avec succès.
+
+

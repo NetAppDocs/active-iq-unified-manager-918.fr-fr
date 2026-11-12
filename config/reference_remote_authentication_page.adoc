@@ -1,0 +1,182 @@
+---
+permalink: config/reference_remote_authentication_page.html 
+sidebar: sidebar 
+keywords: remote authentication, page 
+summary: 'Vous pouvez utiliser la page Authentification à distance pour configurer Unified Manager afin qu"il communique avec votre serveur d"authentification pour authentifier les utilisateurs distants qui tentent de se connecter à la web UI de Unified Manager.' 
+---
+= Utilisez la page d'authentification à distance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la page Authentification à distance pour configurer Unified Manager afin qu'il communique avec votre serveur d'authentification pour authentifier les utilisateurs distants qui tentent de se connecter à la web UI de Unified Manager.
+
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Après avoir coché la case « Activer l'authentification à distance », vous pouvez activer l'authentification à distance à l'aide d'un serveur d'authentification.
+
+* *Service d'authentification*
++
+Permet de configurer le serveur d'administration pour authentifier les utilisateurs via des fournisseurs de services d'annuaire, tels qu'Active Directory ou OpenLDAP, ou de spécifier votre propre mécanisme d'authentification. Vous pouvez spécifier un service d'authentification uniquement si l'authentification à distance est activée.
+
++
+** *Active Directory*
++
+*** Nom de l'administrateur
++
+Spécifie le nom de l’administrateur du serveur d’authentification.
+
+*** Mot de passe
++
+Spécifie le mot de passe pour accéder au serveur d'authentification.
+
+*** Nom distinctif de base
++
+Spécifie l'emplacement des utilisateurs distants sur le serveur d'authentification. Par exemple, si le nom de domaine du serveur d'authentification est +ou@domain.com+, alors le nom unique est *cn=ou,dc=domain,dc=com*.
+
+*** Désactiver la recherche de groupes imbriqués
++
+Indique si l'option de recherche de groupes imbriqués doit être activée ou désactivée. Par défaut, cette option est désactivée. Si vous utilisez Active Directory, vous pouvez accélérer l'authentification en désactivant la prise en charge des groupes imbriqués.
+
+*** Utiliser une connexion sécurisée
++
+Spécifie le service d'authentification utilisé pour communiquer avec les serveurs d'authentification.
+
+
+
+** *OpenLDAP*
++
+*** Nom unique de liaison
++
+Spécifie le nom unique de liaison utilisé avec le nom unique de base pour trouver les utilisateurs distants sur le serveur d'authentification.
+
+*** Mot de passe de liaison
++
+Spécifie le mot de passe pour accéder au serveur d'authentification.
+
+*** Nom distinctif de base
++
+Spécifie l'emplacement des utilisateurs distants sur le serveur d'authentification. Par exemple, si le nom de domaine du serveur d'authentification est +ou@domain.com+, alors le nom unique est *cn=ou,dc=domain,dc=com*.
+
+*** Utiliser une connexion sécurisée
++
+Indique que le protocole LDAP sécurisé est utilisé pour communiquer avec les serveurs d'authentification LDAP.
+
+
+
+** *Autres*
++
+*** Nom unique de liaison
++
+Spécifie le nom unique de liaison utilisé avec le nom unique de base pour trouver les utilisateurs distants sur le serveur d'authentification que vous avez configuré.
+
+*** Mot de passe de liaison
++
+Spécifie le mot de passe pour accéder au serveur d'authentification.
+
+*** Nom distinctif de base
++
+Spécifie l'emplacement des utilisateurs distants sur le serveur d'authentification. Par exemple, si le nom de domaine du serveur d'authentification est +ou@domain.com+, alors le nom unique est *cn=ou,dc=domain,dc=com*.
+
+*** Version du protocole
++
+Spécifie la version du protocole LDAP (Lightweight Directory Access Protocol) prise en charge par votre serveur d'authentification. Vous pouvez indiquer si la version du protocole doit être détectée automatiquement ou définir la version sur 2 ou 3.
+
+*** Attribut de nom d'utilisateur
++
+Spécifie le nom de l'attribut du serveur d'authentification contenant les noms de connexion des utilisateurs que le serveur de gestion doit authentifier.
+
+*** Attribut d'appartenance à un groupe
++
+Spécifie une valeur qui attribue l'appartenance au groupe de serveurs de gestion aux utilisateurs distants en fonction d'un attribut et d'une valeur spécifiés dans le serveur d'authentification de l'utilisateur.
+
+*** UGID
++
+Si les utilisateurs distants sont inclus en tant que membres d'un objet GroupOfUniqueNames dans le serveur d'authentification, cette option vous permet d'attribuer l'appartenance au groupe du serveur de gestion aux utilisateurs distants en fonction d'un attribut spécifié dans cet objet GroupOfUniqueNames.
+
+*** Désactiver la recherche de groupes imbriqués
++
+Indique si l'option de recherche de groupes imbriqués doit être activée ou désactivée. Par défaut, cette option est désactivée. Si vous utilisez Active Directory, vous pouvez accélérer l'authentification en désactivant la prise en charge des groupes imbriqués.
+
+*** Membre
++
+Spécifie le nom de l'attribut que votre serveur d'authentification utilise pour stocker les informations relatives aux membres individuels d'un groupe.
+
+*** Classe d'objet utilisateur
++
+Spécifie la classe d'objet d'un utilisateur sur le serveur d'authentification distant.
+
+*** Classe d'objet de groupe
++
+Spécifie la classe d'objet de tous les groupes sur le serveur d'authentification distant.
+
++
+
+NOTE: Les valeurs que vous saisissez pour les attributs _Member_, _User Object Class_ et _Group Object Class_ doivent être identiques à celles ajoutées dans vos configurations Active Directory, OpenLDAP et LDAP. Dans le cas contraire, l'authentification risque d'échouer.
+
+*** Utiliser une connexion sécurisée
++
+Spécifie le service d'authentification utilisé pour communiquer avec les serveurs d'authentification.
+
+
+
+
+
++
+[NOTE]
+====
+Si vous souhaitez modifier le service d'authentification, veillez à supprimer tous les serveurs d'authentification existants et à ajouter de nouveaux serveurs d'authentification.
+
+====
+
+
+
+
+[[authentication-servers-area]]
+== Zone des serveurs d'authentification
+
+La section Serveurs d'authentification affiche les serveurs d'authentification avec lesquels le serveur de gestion communique pour trouver et authentifier les utilisateurs distants. Les informations d'identification des utilisateurs ou groupes distants sont gérées par le serveur d'authentification.
+
+* *Boutons de commande*
++
+Permet d'ajouter, de modifier ou de supprimer des serveurs d'authentification.
+
++
+** Ajouter
++
+Permet d'ajouter un serveur d'authentification.
+
++
+Si le serveur d'authentification que vous ajoutez fait partie d'une paire à haute disponibilité (utilisant la même base de données), vous pouvez également ajouter le serveur d'authentification partenaire. Cela permet au serveur de gestion de communiquer avec le partenaire lorsqu'un des serveurs d'authentification est injoignable.
+
+** Modifier
++
+Permet de modifier les paramètres d'un serveur d'authentification sélectionné.
+
+** Supprimer
++
+Supprime les serveurs d'authentification sélectionnés.
+
+
+
+* *Nom ou adresse IP*
++
+Affiche le nom de l'hôte ou l'adresse IP du serveur d'authentification utilisé pour authentifier l'utilisateur sur le serveur de gestion.
+
+* *Port*
++
+Affiche le numéro de port du serveur d'authentification.
+
+* *Test d'authentification*
++
+Ce bouton valide la configuration de votre serveur d'authentification en authentifiant un utilisateur ou un groupe distant.
+
++
+Lors des tests, si vous ne spécifiez que le nom d'utilisateur, le serveur de gestion recherche l'utilisateur distant sur le serveur d'authentification, mais ne l'authentifie pas. Si vous spécifiez à la fois le nom d'utilisateur et le mot de passe, le serveur de gestion recherche et authentifie l'utilisateur distant.
+
++
+Vous ne pouvez pas tester l'authentification si l'authentification à distance est désactivée.
+
+

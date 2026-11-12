@@ -1,0 +1,31 @@
+---
+permalink: events/task_test_alerts.html 
+sidebar: sidebar 
+keywords: test, alerts 
+summary: 'Vous pouvez tester une alerte pour vérifier qu"elle est correctement configurée. Lorsqu"un événement est déclenché, une alerte est générée et un e-mail d"alerte est envoyé aux destinataires configurés. Vous pouvez vérifier si la notification est envoyée et si votre script est exécuté en utilisant le test d"alerte.' 
+---
+= Tester les alertes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez tester une alerte pour vérifier qu'elle est correctement configurée. Lorsqu'un événement est déclenché, une alerte est générée et un e-mail d'alerte est envoyé aux destinataires configurés. Vous pouvez vérifier si la notification est envoyée et si votre script est exécuté en utilisant le test d'alerte.
+
+.Avant de commencer
+* Vous devez avoir configuré les paramètres de notification tels que l'adresse e-mail des destinataires, le serveur SMTP et le trap SNMP.
++
+Le serveur Unified Manager peut utiliser ces paramètres pour envoyer des notifications aux utilisateurs lorsqu'un événement est généré.
+
+* Vous devez avoir attribué un script et configuré ce script pour qu'il s'exécute lors de la génération de l'alerte.
+* Vous devez posséder le rôle d'administrateur d'application.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration des alertes*.
+. Sur la page *Configuration des alertes*, sélectionnez l'alerte que vous souhaitez tester, puis cliquez sur *Tester*.
++
+Un courriel d'alerte de test est envoyé aux adresses électroniques que vous avez spécifiées lors de la création de l'alerte.
+
+

@@ -1,0 +1,18 @@
+---
+permalink: config/concept_what_role_based_access_control_does.html 
+sidebar: sidebar 
+keywords: role-based, access, control 
+summary: 'Le contrôle d"accès basé sur les rôles (RBAC) permet aux administrateurs de gérer des groupes d"utilisateurs en définissant des rôles. Si vous devez restreindre l"accès à une fonctionnalité spécifique à certains administrateurs, vous devez configurer des comptes d"administrateur pour eux. Si vous souhaitez restreindre les informations que les administrateurs peuvent consulter et les opérations qu"ils peuvent effectuer, vous devez appliquer des rôles aux comptes d"administrateur que vous créez.' 
+---
+= Découvrez le contrôle d'accès basé sur les rôles dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le RBAC (contrôle d'accès basé sur les rôles) offre la possibilité de contrôler qui a accès aux différentes fonctionnalités et ressources sur le serveur Active IQ Unified Manager. Le RBAC permet aux administrateurs de gérer des groupes d'utilisateurs en définissant des rôles. Si vous devez restreindre l'accès à certaines fonctionnalités à des administrateurs spécifiques, vous devez créer des comptes d'administrateur pour eux. Si vous souhaitez limiter les informations que les administrateurs peuvent consulter et les opérations qu'ils peuvent effectuer, vous devez appliquer des rôles aux comptes d'administrateur que vous créez.
+
+Le serveur d'administration utilise le contrôle d'accès basé sur les rôles (RBAC) pour la connexion des utilisateurs et les autorisations des rôles. Si vous n'avez pas modifié les paramètres par défaut du serveur d'administration relatifs à l'accès des utilisateurs administratifs, vous n'avez pas besoin de vous connecter pour les consulter.
+
+Lorsque vous lancez une opération nécessitant des privilèges spécifiques, le serveur de gestion vous invite à vous connecter. Par exemple, pour créer des comptes d'administrateur, vous devez vous connecter avec un accès au compte Application Administrator.

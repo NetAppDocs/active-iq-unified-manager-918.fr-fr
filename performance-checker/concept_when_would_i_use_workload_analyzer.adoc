@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_when_would_i_use_workload_analyzer.html 
+sidebar: sidebar 
+keywords: workload analyzer, use 
+summary: 'Vous utiliseriez généralement l"analyseur de workload pour résoudre un problème de latence signalé par un utilisateur, pour analyser plus en détail un événement ou une alerte signalé, ou pour explorer un workload que vous constatez comme fonctionnant anormalement.' 
+---
+= Comprendre quand utiliser l'analyseur de charge de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous utiliseriez généralement l'analyseur de workload pour résoudre un problème de latence signalé par un utilisateur, pour analyser plus en détail un événement ou une alerte signalé, ou pour explorer un workload que vous constatez comme fonctionnant anormalement.
+
+Si des utilisateurs vous signalent que l’application qu’ils utilisent fonctionne très lentement, vous pouvez consulter les graphiques de latence, de débit et d’utilisation du workload sur lequel l’application s’exécute pour voir si le stockage est la cause du problème de performance. Vous pouvez également utiliser le graphique de capacité pour vérifier si la capacité est faible, car un système ONTAP dont la capacité est utilisée à plus de 85 % peut entraîner des problèmes de performance. Ces graphiques vous aideront à déterminer si le problème est causé par le stockage, ou par le réseau ou un autre problème connexe.
+
+Dans le cas où Unified Manager a généré un événement de performance et que vous souhaitez examiner plus en détail la cause du problème, vous pouvez lancer l’analyseur de workload depuis la page Détails de l’événement en cliquant sur le bouton *Analyze Workload* afin d’étudier certaines tendances de latence, de débit et de capacité pour le workload.
+
+Si vous remarquez un workload qui semble fonctionner de manière anormale lors de la consultation de n’importe quelle page d’inventaire des workloads (volume, LUN, workload, partage NFS ou partage CIFS), vous pouvez cliquer sur l’icône Plus image:../media/more_icon.gif[""], puis sur *Analyze Workload* pour ouvrir la page Workload Analysis afin d’examiner plus en détail le workload.

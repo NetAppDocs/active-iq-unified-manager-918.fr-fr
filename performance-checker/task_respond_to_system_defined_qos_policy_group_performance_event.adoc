@@ -1,0 +1,53 @@
+---
+permalink: performance-checker/task_respond_to_system_defined_qos_policy_group_performance_event.html 
+sidebar: sidebar 
+keywords: qos, policy, group, performance, events 
+summary: 'Unified Manager génère des événements d"avertissement de politique QoS lorsque le débit du workload (IOPS, IOPS/TB ou Mo/s) a dépassé le paramètre défini de la politique QoS ONTAP et que la latence du workload commence à être affectée. Ces événements définis par le système offrent la possibilité de corriger des problèmes de performance potentiels avant que de nombreux workloads ne soient affectés par la latence.' 
+---
+= Répondez aux événements de performance des groupes de règles QoS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager génère des événements d'avertissement de politique QoS lorsque le débit du workload (IOPS, IOPS/TB ou Mo/s) a dépassé le paramètre défini de la politique QoS ONTAP et que la latence du workload commence à être affectée. Ces événements définis par le système offrent la possibilité de corriger des problèmes de performance potentiels avant que de nombreux workloads ne soient affectés par la latence.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Il doit y avoir des événements de performance nouveaux, reconnus ou obsolètes.
+
+
+Unified Manager génère des événements d'avertissement en cas de non-respect des règles de QoS lorsque le débit du workload a dépassé le paramètre de règle de QoS défini pendant chaque période de collecte des performances de l'heure précédente. Le débit du workload peut dépasser le seuil de QoS pendant une courte période seulement au cours de chaque période de collecte, mais Unified Manager affiche uniquement le débit "`average`" de la période de collecte sur le graphique. C'est pourquoi vous pouvez recevoir des événements QoS alors que le débit d'un workload n'a peut-être pas dépassé le seuil de règle indiqué sur le graphique.
+
+Vous pouvez utiliser System Manager ou les commandes ONTAP pour gérer les groupes de stratégies, notamment les tâches suivantes :
+
+* Création d'un nouveau groupe de stratégies pour le workload
+* Ajout ou suppression de workloads dans un groupe de stratégies
+* Déplacer un workload entre des groupes de stratégie
+* Modification de la limite de débit d'un groupe de stratégies
+* Déplacement d'un workload vers un autre agrégat ou nœud
+
+
+.Étapes
+. Consultez la page *Détails de l'événement* pour obtenir des informations sur l'événement.
+. Veuillez consulter la *Description*, qui décrit le dépassement de seuil ayant provoqué l'événement.
++
+Par exemple, le message « `La valeur IOPS de 1 352 IOPS sur vol1_NFS1 a déclenché un événement AVERTISSEMENT afin d’identifier des problèmes de performance potentiels pour le workload` » indique qu’un événement QoS Max IOPS s’est produit sur le volume vol1_NFS1.
+
+. Consultez la section *Informations sur l'événement* pour obtenir plus de détails sur le moment où l'événement s'est produit et depuis combien de temps l'événement est actif.
++
+De plus, pour les volumes ou LUN qui partagent le débit d'une politique QoS, vous pouvez voir les noms des trois principaux workloads qui consomment le plus d'IOPS ou de MBps.
+
+. Dans la section *Diagnostic système*, consultez les deux graphiques : l’un présente le nombre moyen total d’IOPS ou de Mo/s (selon l’événement), et l’autre la latence. Cette présentation permet d’identifier les composants du cluster qui affectent le plus la latence lorsque la workload approche de la limite maximale de la QoS.
++
+Lors d'un événement de politique QoS partagée, les trois principaux workloads sont affichés dans le graphique de débit. Si plus de trois workloads partagent la politique QoS, les workloads supplémentaires sont alors regroupés dans une catégorie « `Other workloads` ». Par ailleurs, le graphique de latence affiche la latence moyenne de tous les workloads qui font partie de la politique QoS.
+
++
+Notez que, pour les événements de politique de QoS adaptative, les graphiques IOPS et MBps affichent des valeurs IOPS ou MBps qu’ONTAP a converties à partir de la politique de seuil IOPS/TB attribuée en fonction de la taille du volume.
+
+. Dans la section *Actions suggérées*, examinez les suggestions et déterminez les actions que vous devez entreprendre pour éviter une augmentation de la latence du workload.
++
+Si nécessaire, cliquez sur le bouton *Aide* pour afficher plus de détails sur les actions suggérées que vous pouvez effectuer pour tenter de résoudre l'incident de performance.
+
+

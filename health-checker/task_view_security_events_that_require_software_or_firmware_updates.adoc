@@ -1,0 +1,30 @@
+---
+permalink: health-checker/task_view_security_events_that_require_software_or_firmware_updates.html 
+sidebar: sidebar 
+keywords: upgrade events, view, security events, software, firmware updates 
+summary: 'Certains événements de sécurité ont une zone d’impact « mise à niveau ». Ces événements sont signalés par la plateforme Active IQ et identifient les problèmes dont la résolution nécessite la mise à niveau du logiciel ONTAP, du microprogramme des nœuds ou du logiciel du système d’exploitation (pour les avis de sécurité).' 
+---
+= Consultez les événements de sécurité susceptibles de nécessiter des mises à jour logicielles ou micrologicielles dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Certains événements de sécurité ont une zone d'impact de "`Upgrade`". Ces événements sont signalés par la plateforme Active IQ et identifient des problèmes dont la résolution nécessite que vous mettiez à niveau le logiciel ONTAP, le microprogramme du nœud ou le logiciel du système d'exploitation (pour les avis de sécurité).
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Vous pouvez prendre immédiatement des mesures correctives pour certains de ces problèmes, tandis que d'autres peuvent attendre votre prochaine maintenance planifiée. Vous pouvez consulter tous ces événements et les attribuer à des utilisateurs capables de résoudre les problèmes. De plus, s'il existe certains événements de mise à niveau de sécurité pour lesquels vous ne souhaitez pas recevoir de notification, cette liste peut vous aider à identifier ces événements afin que vous puissiez les désactiver.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion des événements*.
++
+Par défaut, tous les événements actifs (nouveaux et acquittés) s’affichent sur la page d’inventaire de gestion des événements.
+
+. Dans le menu Affichage, sélectionnez *Événements de mise à niveau*.
++
+Cette page affiche tous les événements de sécurité de mise à niveau actifs.
+
+

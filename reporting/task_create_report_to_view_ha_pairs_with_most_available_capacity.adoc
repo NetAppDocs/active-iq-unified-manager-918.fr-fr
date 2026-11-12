@@ -1,0 +1,42 @@
+---
+permalink: reporting/task_create_report_to_view_ha_pairs_with_most_available_capacity.html 
+sidebar: sidebar 
+keywords: create, report, view, HA pairs, available, capacity 
+summary: 'Vous pouvez créer un rapport pour trouver les paires haute disponibilité (HA) ayant la plus grande capacité pour provisionner de nouveaux volumes et LUNs.' 
+---
+= Créez un rapport pour afficher les paires haute disponibilité avec la capacité disponible la plus élevée dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un rapport pour trouver les paires haute disponibilité (HA) ayant la plus grande capacité pour provisionner de nouveaux volumes et LUNs.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée affichant les paires HA triées par la capacité disponible la plus élevée afin de provisionner de nouveaux volumes et LUNs, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Clusters*.
+. Dans le menu Affichage, sélectionnez *Capacité* > *Tous les clusters*.
+. Sélectionnez *Afficher/Masquer* pour supprimer les colonnes que vous ne souhaitez pas voir apparaître dans le rapport.
+. Faites glisser la colonne « `Capacité inutilisée de l’agrégat` » près de la colonne « `Paire HA` ».
+. Cliquez sur l'icône de filtre, ajoutez le filtre suivant, puis cliquez sur *Appliquer le filtre*:
++
+** Capacité inutilisée de l’agrégat supérieure à 0,5 To
+
+
+. Cliquez en haut de la colonne « `Capacité inutilisée agrégée` » pour trier les résultats par valeur décroissante de capacité inutilisée agrégée.
+. Enregistrez la vue sous un nom spécifique qui reflète ce qu'elle affiche, par exemple « `Capacité agrégée la moins utilisée` », et cliquez sur la coche (image:../media/blue_check.gif[""]).
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Cliquez sur *Ajouter une planification* pour ajouter une nouvelle ligne à la page Planifications des rapports afin de définir les caractéristiques de la planification du nouveau rapport.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pourriez envisager d’équilibrer les paires HA en fonction de la capacité des agrégats.

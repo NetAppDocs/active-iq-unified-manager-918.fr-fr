@@ -1,0 +1,28 @@
+---
+permalink: data-protection/task_delete_resource_pools.html 
+sidebar: sidebar 
+keywords: delete, resource, pools 
+summary: 'Vous pouvez supprimer les pools de ressources lorsqu"ils ne sont plus nécessaires. Par exemple, vous pouvez redistribuer les agrégats membres d"un pool de ressources vers plusieurs autres pools de ressources, rendant ainsi le pool de ressources d"origine obsolète.' 
+---
+= Supprimer les pools de ressources dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer les pools de ressources lorsqu'ils ne sont plus nécessaires. Par exemple, vous pouvez redistribuer les agrégats membres d'un pool de ressources vers plusieurs autres pools de ressources, rendant ainsi le pool de ressources d'origine obsolète.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Le bouton *Supprimer* est activé uniquement lorsqu'au moins un pool de ressources est sélectionné.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Protection* > *Resource Pools*.
+. Sélectionnez le pool de ressources que vous souhaitez supprimer.
+. Cliquez sur *Delete*.
++
+Le pool de ressources est supprimé de la liste des pools de ressources et ses agrégats sont supprimés de la liste des membres.
+
+

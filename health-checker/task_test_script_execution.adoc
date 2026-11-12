@@ -1,0 +1,53 @@
+---
+permalink: health-checker/task_test_script_execution.html 
+sidebar: sidebar 
+keywords: test, script, execution 
+summary: 'Vous pouvez vérifier que votre script s"exécute correctement lorsqu"une alerte est générée pour un objet de stockage.' 
+---
+= Exécution du script de test dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez vérifier que votre script s'exécute correctement lorsqu'une alerte est générée pour un objet de stockage.
+
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir téléchargé un script dans le format de fichier pris en charge vers Unified Manager.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Scripts*.
+. Sur la page Scripts, ajoutez votre script de test.
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration des alertes*.
+. Sur la page *Configuration des alertes*, effectuez l'une des actions suivantes :
++
+[cols="2*"]
+|===
+| À... | Faites ceci... 
+
+
+ a| 
+Ajouter une alerte
+ a| 
+.. Cliquez sur *Add*.
+.. Dans la section Actions, associez l'alerte à votre script de test.
+
+
+
+
+ a| 
+Modifier une alerte
+ a| 
+.. Sélectionnez une alerte, puis cliquez sur *Modifier*.
+.. Dans la section Actions, associez l'alerte à votre script de test.
+
+
+|===
+. Cliquez sur *Enregistrer*.
+. Sur la page *Configuration des alertes*, sélectionnez l'alerte que vous avez ajoutée ou modifiée, puis cliquez sur *Tester*.
++
+Le script est exécuté avec l’argument « `-test` », et une alerte de notification est envoyée aux adresses électroniques qui ont été spécifiées lors de la création de l’alerte.
+
+

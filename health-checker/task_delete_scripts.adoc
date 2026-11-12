@@ -1,0 +1,25 @@
+---
+permalink: health-checker/task_delete_scripts.html 
+sidebar: sidebar 
+keywords: delete, scripts 
+summary: 'Vous pouvez supprimer un script de Unified Manager lorsque celui-ci n"est plus nécessaire ou n"est plus valide.' 
+---
+= Supprimer les scripts dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer un script de Unified Manager lorsque celui-ci n'est plus nécessaire ou n'est plus valide.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Le script ne doit pas être associé à une alerte.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Scripts*.
+. Sur la page *Scripts*, sélectionnez le script que vous souhaitez supprimer, puis cliquez sur *Supprimer*.
+. Dans la boîte de dialogue *Avertissement*, confirmez la suppression en cliquant sur *Oui*.
+

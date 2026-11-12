@@ -1,0 +1,190 @@
+---
+permalink: events/reference_management_station_events.html 
+sidebar: sidebar 
+keywords: management, station, events, impact area, configuration, performance 
+summary: 'Les événements de la station de gestion vous fournissent des informations sur l"état du serveur sur lequel Unified Manager est installé, ce qui vous permet de surveiller d"éventuels problèmes. Les événements sont regroupés par zone d"impact et comprennent le nom de l"événement et du trap, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements de la station de gestion dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements de la station de gestion vous fournissent des informations sur l'état du serveur sur lequel Unified Manager est installé, ce qui vous permet de surveiller d'éventuels problèmes. Les événements sont regroupés par zone d'impact et comprennent le nom de l'événement et du trap, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-configuration]]
+== Domaine d'impact : configuration
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Espace disque du serveur de gestion presque plein(ocumEvtUnifiedManagerDiskSpaceNearlyFull)
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+
+
+ a| 
+Espace disque du serveur de gestion saturé(ocumEvtUnifiedManagerDiskSpaceFull)
+ a| 
+Incident
+ a| 
+Station de gestion
+ a| 
+Primordial
+
+
+
+ a| 
+Serveur de gestion avec peu de mémoire(ocumEvtUnifiedManagerMemoryLow)
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+
+
+ a| 
+Le serveur de gestion est presque à court de mémoire(ocumEvtUnifiedManagerMemoryAlmostOut)
+ a| 
+Incident
+ a| 
+Station de gestion
+ a| 
+Primordial
+
+
+
+ a| 
+La taille du fichier journal MySQL a augmenté ; un redémarrage est nécessaire(ocumEvtMysqlLogFileSizeWarning)
+ a| 
+Incident
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+
+
+ a| 
+L'espace alloué à la taille totale du journal d'audit est sur le point d'être saturé
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+
+
+ a| 
+Certificat du serveur Syslog sur le point d'expirer
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+
+
+ a| 
+Certificat du serveur Syslog expiré
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Erreur
+
+
+
+ a| 
+Fichier journal d'audit falsifié
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+
+
+ a| 
+Fichier journal d'audit supprimé
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+
+
+ a| 
+Erreur de connexion au serveur Syslog
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Erreur
+
+
+
+ a| 
+Configuration du serveur Syslog modifiée
+ a| 
+Événement
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+|===
+
+
+[[impact-area-performance]]
+== Domaine d'impact : performance
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+L'analyse des données de performance est affectée(ocumEvtUnifiedManagerDataMissingAnalyze)
+ a| 
+Risque
+ a| 
+Station de gestion
+ a| 
+Avertissement
+
+
+
+ a| 
+La collecte des données de performance est affectée(ocumEvtUnifiedManagerDataMissingCollection)
+ a| 
+Incident
+ a| 
+Station de gestion
+ a| 
+Primordial
+
+|===
+[NOTE]
+====
+Ces deux derniers événements de performances étaient disponibles uniquement pour Unified Manager 7.2. Si l’un de ces événements existe à l’état « Nouveau » et que vous effectuez ensuite une mise à niveau vers une version plus récente du logiciel Unified Manager, les événements ne seront pas supprimés automatiquement. Vous devrez déplacer manuellement les événements vers l’état « Résolu ».
+
+====

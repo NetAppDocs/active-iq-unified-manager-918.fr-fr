@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/task_specify_correlated_objects_time_range.html 
+sidebar: sidebar 
+keywords: specify, time range, correlated objects 
+summary: Le sélecteur de plage horaire de la page Performance Explorer vous permet de spécifier la plage horaire pour la comparaison des données d’objet. La spécification d’une plage horaire affine le contenu des pages Performance Explorer afin d’afficher uniquement les données d’objet comprises dans la plage horaire que vous avez spécifiée. 
+---
+= Spécifiez une plage horaire pour les objets corrélés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le sélecteur de plage horaire de la page Performance Explorer vous permet de spécifier la plage horaire pour la comparaison des données d’objet. La spécification d’une plage horaire affine le contenu des pages Performance Explorer afin d’afficher uniquement les données d’objet comprises dans la plage horaire que vous avez spécifiée.
+
+Le filtrage temporel permet d'afficher efficacement uniquement les données de performance qui vous intéressent. Vous pouvez sélectionner une plage horaire prédéfinie ou en spécifier une personnalisée. La plage horaire par défaut correspond aux 72 dernières heures.

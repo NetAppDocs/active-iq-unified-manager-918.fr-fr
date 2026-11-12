@@ -1,0 +1,28 @@
+---
+permalink: config/task_delete_users_or_groups.html 
+sidebar: sidebar 
+keywords: delete, users, groups 
+summary: 'Vous pouvez supprimer un ou plusieurs utilisateurs de la base de données du serveur de gestion afin d"empêcher certains utilisateurs d"accéder à Unified Manager. Vous pouvez également supprimer des groupes afin que tous les utilisateurs qui en font partie ne puissent plus accéder au serveur de gestion.' 
+---
+= Supprimer des utilisateurs ou des groupes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer un ou plusieurs utilisateurs de la base de données du serveur de gestion afin d'empêcher certains utilisateurs d'accéder à Unified Manager. Vous pouvez également supprimer des groupes afin que tous les utilisateurs qui en font partie ne puissent plus accéder au serveur de gestion.
+
+.Avant de commencer
+* Lorsque vous supprimez des groupes distants, vous devez avoir réattribué les événements qui sont attribués aux utilisateurs de ces groupes.
++
+Si vous supprimez des utilisateurs locaux ou distants, les événements qui leur sont attribués ne leur sont plus attribués automatiquement.
+
+* Vous devez posséder le rôle d'administrateur d'application.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Utilisateurs*.
+. Sur la page Utilisateurs, sélectionnez les utilisateurs ou les groupes que vous souhaitez supprimer, puis cliquez sur *Supprimer*.
+. Cliquez sur *Oui* pour confirmer la suppression.
+

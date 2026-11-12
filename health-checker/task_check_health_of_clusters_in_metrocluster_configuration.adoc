@@ -1,0 +1,78 @@
+---
+permalink: health-checker/task_check_health_of_clusters_in_metrocluster_configuration.html 
+sidebar: sidebar 
+keywords: check, health, clusters, metrocluster, configuration 
+summary: 'Vous pouvez utiliser Unified Manager pour vérifier l"état de fonctionnement des clusters et de leurs composants dans une configuration MetroCluster. Si les clusters ont été impliqués dans un incident de performance détecté par Unified Manager, leur état de fonctionnement peut vous aider à déterminer si un problème matériel ou logiciel a contribué à l"incident.' 
+---
+= Vérifiez l'état des clusters dans une configuration MetroCluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Active IQ Unified Manager (Unified Manager) pour vérifier l’état opérationnel des clusters et de leurs composants dans des configurations MetroCluster sur FC et MetroCluster sur IP. Si les clusters ont été impliqués dans un incident de performance détecté par Unified Manager, leur état de fonctionnement peut vous aider à déterminer si un problème matériel ou logiciel a contribué à l’incident.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Vous devez avoir analysé un événement de performance pour une configuration MetroCluster et obtenu le nom du cluster concerné.
+* Les deux clusters de la configuration MetroCluster sur FC et IP doivent être surveillés par la même instance de Unified Manager.
+
+
+
+
+[[determine-cluster-health-in-metrocluster-over-fc-configuration]]
+== Déterminer l'état du cluster dans une configuration MetroCluster sur FC
+
+Suivez ces étapes pour déterminer l'état du cluster dans une configuration MetroCluster over FC.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion des événements* pour afficher la liste des événements.
+. Dans le panneau de filtres, sélectionnez tous les filtres MetroCluster de la catégorie *Type de source*. Vous voyez tous les événements générés dans votre environnement pour toutes les configurations MetroCluster.
+. À côté d’un événement MetroCluster, cliquez sur le nom du cluster.
++
+[NOTE]
+====
+Si aucun événement MetroCluster n'est affiché, vous pouvez utiliser la barre de recherche pour rechercher le nom du cluster impliqué dans l'événement lié à votre configuration MetroCluster sur FC.
+
+====
++
+La vue « Santé : Tous les clusters » affiche des informations détaillées sur l’événement.
+
+. Sélectionnez l’onglet *MetroCluster Connectivity* pour afficher l’état de la connexion entre le cluster sélectionné et son cluster partenaire.
++
+image::../media/opm_um_mcc_connectivity_tab_png.gif[Unified Manager MetroCluster onglet Connectivité]
+
++
+Dans cet exemple, les noms et les composants du cluster local et de son cluster partenaire sont affichés. Une icône jaune ou rouge indique un événement d’intégrité pour le composant mis en évidence. L’icône de connectivité représente la liaison entre les clusters. Vous pouvez placer le pointeur de votre souris sur une icône pour afficher des informations sur l’événement, ou cliquer sur l’icône pour afficher les événements. Un problème d’intégrité sur l’un ou l’autre cluster peut avoir contribué à l’événement de performances.
+
++
+Unified Manager surveille le composant NVRAM de la liaison entre les clusters. Si l'icône des commutateurs FC sur le cluster local ou partenaire, ou l'icône de connectivité, est rouge, un problème d'intégrité de la liaison peut être à l'origine de l'incident de performance.
+
+. Sélectionnez l’onglet *MetroCluster Replication*.
++
+image::../media/opm_um_mcc_replication_tab_png.gif[Onglet Réplication de Unified Manager MetroCluster]
+
++
+Dans cet exemple, si l’icône NVRAM sur le cluster local ou partenaire est jaune ou rouge, un problème d’intégrité de la NVRAM peut avoir causé l’incident de performance. S’il n’y a aucune icône rouge ou jaune sur la page, un problème de performance sur le cluster partenaire peut avoir causé l’incident de performance.
+
+
+
+
+
+[[determine-cluster-health-in-metrocluster-over-ip-configuration]]
+== Déterminer l'état du cluster dans une configuration MetroCluster sur IP
+
+Suivez ces étapes pour déterminer l'état de santé du cluster dans une configuration MetroCluster over IP.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion des événements* pour afficher la liste des événements.
+. Dans le panneau de filtres, sous la catégorie *Type de source*, sélectionnez le `MetroCluster Relationship` filtre. Vous voyez tous les événements déclenchés dans votre environnement pour toutes les configurations MetroCluster.
++
+[NOTE]
+====
+Si vous ne pouvez pas voir les événements signalés de MetroCluster, vous pouvez utiliser la barre de recherche pour effectuer une recherche par nom du cluster impliqué dans l'événement lié à votre configuration MetroCluster over IP.
+
+====
+. À côté de l'événement MetroCluster concerné, cliquez sur le nom du cluster. La page Clusters s'affiche avec les détails de ce cluster. Pour plus d'informations sur l'identification des problèmes de santé, consultez link:../storage-mgmt/task_monitor_metrocluster_configurations.html["Surveiller les problèmes de connectivité dans la configuration MetroCluster sur IP"].
+

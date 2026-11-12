@@ -1,0 +1,24 @@
+---
+permalink: config/task_set_session_timeout_CLI.html 
+sidebar: sidebar 
+keywords: session timeout, CLI, maximum 
+summary: Vous pouvez définir, à l’aide de la CLI, une valeur maximale de délai d’expiration de session pour Unified Manager afin que la session se termine automatiquement après un certain laps de temps. 
+---
+= Définissez le délai d'expiration de la session à l'aide de la CLI dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez définir une durée maximale de session pour Unified Manager via l'interface de ligne de commande (CLI) afin que la session se termine automatiquement après un certain laps de temps. Par défaut, cette durée est fixée à sa valeur maximale, soit 4 320 minutes (72 heures). Cela signifie que votre session se termine automatiquement après 72 heures, même si vous êtes connecté et utilisez activement Unified Manager.
+
+.À propos de cette tâche
+Vous devez posséder le rôle d'administrateur d'application.
+
+Le paramètre de délai d'expiration de session affecte toutes les sessions utilisateur connectées.
+
+.Étapes
+. Connectez-vous à l'interface de ligne de commande Unified Manager en saisissant la `um cli login` commande. Utilisez un nom d'utilisateur et un mot de passe valides pour l'authentification.
+. Saisissez la `um option set max.session.timeout.value=<in mins>` commande permettant de modifier la valeur du délai d'expiration de la session.
+

@@ -1,0 +1,31 @@
+---
+permalink: config/concept_policy_based_storage_management.html 
+sidebar: sidebar 
+keywords: slo, storage efficiency policy, storage workloads 
+summary: 'L"option de gestion du stockage basée sur des politiques permet de gérer le stockage en fonction des objectifs de niveau de service (SLO). Cette option est activée par défaut.' 
+---
+= Activez la gestion du stockage basée sur des politiques dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'option *Gestion du stockage basée sur des politiques* permet de gérer le stockage en fonction des objectifs de niveau de service (SLO). Cette option est activée par défaut.
+
+En activant cette fonctionnalité, vous pouvez provisionner des workloads de stockage sur les clusters ONTAP ajoutés à votre instance Active IQ Unified Manager et gérer ces workloads en fonction des niveaux de service de performance et des politiques d'efficacité du stockage attribués.
+
+Vous pouvez choisir d’activer ou de désactiver cette fonctionnalité dans *Général* > *Paramètres des fonctionnalités* > *Gestion du stockage basée sur des stratégies*. Une fois cette fonctionnalité activée, les pages suivantes sont disponibles pour l’utilisation et la surveillance :
+
+* Provisionnement (provisionnement du workload de stockage)
+* *Politiques* > *Niveaux de service de performance*
+* *Politiques* > *Efficacité du stockage*
+* workloads gérés par la colonne Niveau de service de performance sur la page Configuration des clusters
+* Panneau Performance du workload sur le *Dashboard*
+
+
+Vous pouvez utiliser ces écrans pour créer des Performance Service Levels et des Storage Efficiency Policies, et provisionner des charges de travail de stockage. Vous pouvez également surveiller les charges de travail de stockage qui sont conformes aux Performance Service Levels attribués, ainsi que celles qui ne le sont pas. Le panneau Workload Performance and Workload IOPS vous permet également d'évaluer la capacité et les performances (IOPS) totales, disponibles et utilisées des clusters dans l'ensemble de votre centre de données, en fonction des charges de travail de stockage qui y sont provisionnées.
+
+Après avoir activé cette fonctionnalité, vous pouvez exécuter les API REST de Unified Manager pour effectuer certaines de ces fonctions à partir de *Menu Bar* > *Help button* > *API Documentation* > catégorie *storage-provider*. Vous pouvez également saisir le nom de l'hôte ou l'adresse IP et l'URL pour accéder à la page de l'API REST au format +https://<hostname>/docs/api/+
+
+Pour plus d'informations sur les API, consultez link:../api-automation/concept_get_started_with_um_apis.html["Premiers pas avec les API REST d'Active IQ Unified Manager"].

@@ -1,0 +1,28 @@
+---
+permalink: config/task_delete_authentication_servers.html 
+sidebar: sidebar 
+keywords: delete, authentication, servers 
+summary: 'Vous pouvez supprimer un serveur d"authentification si vous souhaitez empêcher le serveur Unified Manager de communiquer avec le serveur d"authentification. Par exemple, si vous souhaitez modifier le serveur d"authentification utilisé par le serveur de gestion, vous pouvez supprimer le serveur d"authentification et en ajouter un nouveau.' 
+---
+= Supprimer les serveurs d'authentification dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer un serveur d'authentification si vous souhaitez empêcher le serveur Unified Manager de communiquer avec le serveur d'authentification. Par exemple, si vous souhaitez modifier le serveur d'authentification utilisé par le serveur de gestion, vous pouvez supprimer le serveur d'authentification et en ajouter un nouveau.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Lorsque vous supprimez un serveur d'authentification, les utilisateurs ou groupes distants de ce serveur ne pourront plus accéder à Unified Manager.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Authentification à distance*.
+. Sélectionnez un ou plusieurs serveurs d'authentification que vous souhaitez supprimer, puis cliquez sur *Supprimer*.
+. Cliquez sur *Oui* pour confirmer la demande de suppression.
++
+Si l'option *Utiliser une connexion sécurisée* est activée, les certificats associés au serveur d'authentification sont supprimés en même temps que le serveur d'authentification.
+
+

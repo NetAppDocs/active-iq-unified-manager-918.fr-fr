@@ -1,0 +1,37 @@
+---
+permalink: data-protection/task_monitor_storage_vms_using_relationships_page.html 
+sidebar: sidebar 
+keywords: relationships page, monitor, storage, vm 
+summary: Vous pouvez surveiller les relations de reprise après sinistre de vos VM de stockage depuis la page Relationships de la section PROTECTION de l’INVENTORY. Par défaut, la page Relationships répertorie uniquement les relations de niveau supérieur, car le filtre des relations constituantes est appliqué. 
+---
+= Surveillez les machines virtuelles de stockage à l'aide de la page Relationships dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez surveiller les relations de reprise après sinistre de vos VM de stockage depuis la page Relationships de la section PROTECTION de l’INVENTORY. Par défaut, la page Relationships répertorie uniquement les relations de niveau supérieur, car le filtre des relations constituantes est appliqué.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Vous utilisez des filtres pour visualiser les relations de reprise après sinistre des machines virtuelles de stockage.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *PROTECTION* > *Relations*.
++
+Cette page affiche tous les types de relations : les relations de volume, de groupe de cohérence et de VM de stockage.
+
+. Cliquez sur *Filtrer*, puis sélectionnez *Type d'objet de relation* et *VM de stockage* pour afficher uniquement les relations de reprise après sinistre des VM de stockage.
+. Cliquez sur *Appliquer le filtre*.
++
+[NOTE]
+====
+Vous devez effacer le filtre des relations entre les constituants pour afficher toutes les relations de protection.
+
+====
++
+Cette page affiche uniquement les relations de reprise après sinistre des machines virtuelles de stockage.
+
+

@@ -1,0 +1,60 @@
+---
+permalink: install-linux/task_create_custom_user_home_directory_and_umadmin.html 
+sidebar: sidebar 
+keywords: create, custom, user, home, directory, umadmin, password, prior, installation 
+summary: 'Vous pouvez créer un répertoire local personnalisé et définir votre propre mot de passe utilisateur umadmin avant d"installer Unified Manager. Cette tâche est facultative, mais certains sites peuvent avoir besoin de la flexibilité nécessaire pour remplacer les paramètres d"installation par défaut de Unified Manager.' 
+---
+= Créez un répertoire local utilisateur personnalisé et un mot de passe umadmin avant d’installer Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un répertoire local personnalisé et définir votre propre mot de passe utilisateur umadmin avant d'installer Unified Manager. Cette tâche est facultative, mais certains sites peuvent avoir besoin de la flexibilité nécessaire pour remplacer les paramètres d'installation par défaut de Unified Manager.
+
+.Avant de commencer
+* Le système doit satisfaire aux exigences décrites dans link:concept_virtual_infrastructure_or_hardware_system_requirements.html["Configuration matérielle requise du système"].
+* Vous devez pouvoir vous connecter en tant qu'utilisateur root au système Red Hat Enterprise Linux.
+
+
+L'installation par défaut d'Unified Manager effectue les tâches suivantes :
+
+* Crée l'utilisateur umadmin avec `/home/umadmin`comme répertoire local.
+* Attribue le mot de passe par défaut "`admin`" à l'utilisateur umadmin.
+
+
+Comme certains environnements d'installation restreignent l'accès à `/home`, l'installation échoue. Vous devez créer le répertoire local à un autre emplacement. Par ailleurs, certains sites peuvent imposer des règles de complexité des mots de passe ou exiger que ceux-ci soient définis par les administrateurs locaux plutôt que par le programme d'installation.
+
+Si votre environnement d'installation nécessite que vous modifiiez ces paramètres d'installation par défaut, suivez ces étapes pour créer un répertoire local et définir le mot de passe de l'utilisateur umadmin.
+
+Lorsque ces informations sont définies avant l'installation, le script d'installation détecte ces paramètres et utilise les valeurs définies au lieu des paramètres par défaut de l'installation.
+
+De plus, l'installation par défaut d'Unified Manager inclut l'utilisateur umadmin dans les fichiers sudoers (`ocum_sudoers` et `ocie_sudoers`) dans le `/etc/sudoers.d/` répertoire. Si vous supprimez ce contenu de votre environnement en raison de politiques de sécurité ou à cause d'un outil de surveillance de la sécurité, vous devez l'ajouter de nouveau. Vous devez conserver la configuration sudoers, car certaines opérations d'Unified Manager nécessitent ces privilèges sudo.
+
+Les politiques de sécurité de votre environnement ne doivent pas restreindre les privilèges sudo de l'utilisateur de maintenance d'Unified Manager. Certaines opérations d'Unified Manager pourraient échouer si ces privilèges sont restreints. Après une installation réussie, vérifiez que vous pouvez exécuter la commande sudo suivante lorsque vous êtes connecté en tant qu'utilisateur umadmin.
+
+`sudo systemctl  status ocie`
+
+Cette commande devrait renvoyer l’état approprié du service ocie sans aucune erreur.
+
+.Étapes
+. Connectez-vous au serveur en tant qu'utilisateur root.
+. Créez le compte de groupe umadmin appelé "`maintenance`" :
++
+`groupadd maintenance`
+
+. Créez le compte utilisateur "`umadmin`" dans le groupe de maintenance sous un répertoire local de votre choix :
++
+`adduser --home <home_directory\> -g maintenance umadmin`
+
+. Définissez le mot de passe umadmin :
++
+`passwd umadmin`
+
++
+Le système vous invite à saisir un nouveau mot de passe pour l'utilisateur umadmin.
+
+
+
+Après avoir installé Unified Manager, vous devez spécifier le shell de connexion de l'utilisateur umadmin.

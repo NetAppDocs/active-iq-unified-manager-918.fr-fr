@@ -1,0 +1,25 @@
+---
+permalink: data-protection/task_create_resource_pools.html 
+sidebar: sidebar 
+keywords: creating, resource, pools 
+summary: Vous pouvez utiliser la boîte de dialogue Créer un pool de ressources pour regrouper les agrégats à des fins de provisionnement. 
+---
+= Créez des pools de ressources dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la boîte de dialogue Créer un pool de ressources pour regrouper les agrégats à des fins de provisionnement.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+.Étapes
+Les pools de ressources peuvent contenir des agrégats provenant de différents clusters, mais un même agrégat ne peut pas appartenir à différents pools de ressources.
+
+. Dans le volet de navigation de gauche, cliquez sur *Protection* > *Resource Pools*.
+. Dans la page *Resource Pools*, cliquez sur *Create*.
+. Suivez les instructions de la boîte de dialogue *Créer un pool de ressources* pour indiquer un nom et une description et pour ajouter des agrégats en tant que membres du pool de ressources que vous souhaitez créer.
+

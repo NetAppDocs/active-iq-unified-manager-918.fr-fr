@@ -1,0 +1,46 @@
+---
+permalink: performance-checker/task_respond_to_performance_incident_caused_by_ha_takeover.html 
+sidebar: sidebar 
+keywords: dynamic, performance, event, ha, takeover 
+summary: 'Vous pouvez utiliser Unified Manager pour analyser un incident de performance dû à un traitement des données élevé sur un nœud de cluster appartenant à une paire haute disponibilité (HA). Vous pouvez également utiliser Unified Manager pour vérifier l"état de santé des nœuds afin de déterminer si des incidents d"état de santé récents détectés sur les nœuds ont contribué à l"incident de performance.' 
+---
+= Répondez à un événement de performance provoqué par une prise de contrôle HA dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour analyser un incident de performance dû à un traitement des données élevé sur un nœud de cluster appartenant à une paire haute disponibilité (HA). Vous pouvez également utiliser Unified Manager pour vérifier l'état de santé des nœuds afin de déterminer si des incidents d'état de santé récents détectés sur les nœuds ont contribué à l'incident de performance.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Il doit y avoir des événements de performance nouveaux, reconnus ou obsolètes.
+
+
+.Étapes
+. Consultez la page *Détails de l'événement* pour obtenir des informations sur l'événement.
+. Lisez la *Description*, qui décrit les workloads impliqués dans l'événement et le composant du cluster en conflit.
++
+Il existe un volume victime dont la latence a été affectée par le composant du cluster en conflit. Le nœud Data Processing, qui a pris en charge tous les workloads de son nœud partenaire, est le composant du cluster en conflit. Sous « Composant en conflit », l’icône Data Processing est surlignée en rouge et le nom du nœud qui gérait le Data Processing au moment de l’événement est affiché entre parenthèses.
+
+. Dans la *Description*, cliquez sur le nom du volume.
++
+La page Explorateur des performances du volume s'affiche. En haut de la page, dans la chronologie des événements, une icône d'événement de modification (image:../media/opm_change_icon.gif["Icône de l'événement de modification"]) indique l'heure à laquelle Unified Manager a détecté le début de la prise de contrôle HA.
+
+. Placez votre curseur sur l'icône de l'événement de changement pour la prise de contrôle HA, et les détails concernant cette prise de contrôle s'affichent dans le texte au survol.
++
+Dans le graphique de latence, un événement indique que le volume sélectionné a franchi le seuil de performance en raison d'une latence élevée à peu près au même moment que le basculement HA.
+
+. Cliquez sur *Zoom View* pour afficher le graphique de latence sur une nouvelle page.
+. Dans le menu Affichage, sélectionnez *Composants du cluster* pour afficher la latence totale par composant du cluster.
+. Pointez le curseur de votre souris sur l'icône d'événement de changement au début du basculement HA et comparez la latence du traitement des données à la latence totale.
++
+Au moment de la prise de contrôle HA, il y a eu une hausse du traitement des données due à l'augmentation de la demande de workload sur le nœud de traitement des données. L'augmentation du taux d'utilisation du processeur a accru la latence et déclenché l'incident.
+
+. Après avoir réparé le nœud défaillant, utilisez ONTAP System Manager pour effectuer un retour HA, qui déplace les workloads du nœud partenaire vers le nœud réparé.
+. Une fois le retour HA terminé, après la prochaine découverte de configuration dans Unified Manager (environ 15 minutes), recherchez l'événement et workload déclenchés par la prise de contrôle HA sur la page d'inventaire *Gestion des événements*.
++
+L'événement déclenché par la prise de contrôle HA a désormais l'état obsolète, ce qui indique que l'événement est résolu. La latence au niveau du composant de traitement des données a diminué, ce qui a réduit la latence totale. Le nœud que le volume sélectionné utilise désormais pour le traitement des données a résolu l'événement.
+
+

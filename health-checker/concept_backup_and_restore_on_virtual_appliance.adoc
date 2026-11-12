@@ -1,0 +1,29 @@
+---
+permalink: health-checker/concept_backup_and_restore_on_virtual_appliance.html 
+sidebar: sidebar 
+keywords: backup, restore, unified manager, virtual, appliance, snapshot copy, copies 
+summary: 'Le modèle de sauvegarde et de restauration d"Unified Manager, lorsqu"il est installé sur une appliance virtuelle, consiste à capturer et à restaurer une image de l"application virtuelle complète.' 
+---
+= Sauvegarde et restauration d'Active IQ Unified Manager sur une appliance virtuelle
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le modèle de sauvegarde et de restauration d'Unified Manager, lorsqu'il est installé sur une appliance virtuelle, consiste à capturer et à restaurer une image de l'application virtuelle complète.
+
+Les tâches suivantes vous permettent d'effectuer une sauvegarde de l'appliance virtuelle :
+
+. Mettez la machine virtuelle hors tension et prenez un instantané VMware de l'appliance virtuelle Unified Manager.
+. Créez une NetApp copie Snapshot sur la banque de données pour capturer l'instantané VMware.
++
+Si la banque de données n'est pas hébergée sur un système exécutant le logiciel ONTAP, suivez les instructions du fournisseur de stockage pour créer une sauvegarde de l'instantané VMware.
+
+. Répliquez la copie Snapshot NetApp, ou son équivalent, sur un support de stockage alternatif.
+. Supprimez l'instantané VMware.
+
+
+Vous devez mettre en place un plan de sauvegarde à l’aide de ces tâches afin de garantir la protection de l’appliance virtuelle Unified Manager en cas de problème.
+
+Pour restaurer la machine virtuelle, vous pouvez utiliser l’instantané VMware que vous avez créé pour la restaurer à l’état correspondant au point de sauvegarde.

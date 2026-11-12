@@ -1,0 +1,61 @@
+---
+permalink: storage-mgmt/task_provision_luns.html 
+sidebar: sidebar 
+keywords: provision, luns 
+summary: 'Vous pouvez créer des LUN qui prennent en charge les protocoles CIFS/SMB et NFS sur un cluster existant et une Storage Virtual Machine (storage VM) existante à partir de la page Provision Workload.' 
+---
+= Provisionnez des LUN dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des LUN qui prennent en charge les protocoles CIFS/SMB et NFS sur un cluster existant et une Storage Virtual Machine (storage VM) existante à partir de la page Provision Workload.
+
+.Avant de commencer
+* La machine virtuelle de stockage doit disposer d'espace pour provisionner le LUN.
+* Les protocoles iSCSI et FCP doivent être activés sur la VM de stockage sur laquelle vous créez la LUN.
+* Pour sélectionner et attribuer le niveau de service de performance (PSL) et la politique d'efficacité du stockage (SEP) au workload, vous devez avoir créé les politiques avant de commencer à créer le workload.
+
+
+.Étapes
+. Sur la page *Provisionner le workload*, ajoutez le nom du workload que vous souhaitez créer, puis sélectionnez le cluster dans la liste disponible.
++
+En fonction du cluster que vous avez sélectionné, le champ *STORAGE VM* filtre les machines virtuelles de stockage disponibles pour ce cluster.
+
+. Sélectionnez dans la liste la machine virtuelle de stockage qui prend en charge les services iSCSI et FCP.
++
+En fonction de votre sélection, l'option SAN est activée dans la section Informations sur l'hôte.
+
+. Dans la section *Stockage et optimisation*, attribuez la capacité de stockage et le PSL, et éventuellement le SEP pour le workload.
++
+Les spécifications du SEP sont attribuées au LUN et les définitions du PSL sont appliquées au workload lors de sa création.
+
+. Cochez la case à cocher *Enforce performance limits* si vous souhaitez appliquer le PSL attribué au workload.
++
+L'attribution d'un PSL à un workload garantit que l'agrégat sur lequel le workload est créé peut prendre en charge les objectifs de performance et de capacité définis dans la politique correspondante. Par exemple, si un workload se voit attribuer le PSL « Performances extrêmes », l'agrégat sur lequel le workload doit être provisionné doit être capable de prendre en charge les objectifs de performance et de capacité de la politique « Performances extrêmes », comme le stockage SSD.
+
++
+[NOTE]
+====
+À moins que vous ne cochiez cette case à cocher, le PSL n'est pas appliqué au workload, et l'état du workload sur le tableau de bord apparaît comme `unassigned`.
+
+====
+. Sélectionnez l'option *SAN*. Si vous ne voyez pas l'option *SAN* activée, vérifiez si la machine virtuelle de stockage que vous avez sélectionnée prend en charge iSCSI et FCP.
+. Sélectionnez le système d'exploitation hôte.
+. Spécifiez le mappage de l'hôte pour contrôler l'accès des initiateurs au LUN. Vous pouvez affecter des groupes d'initiateurs existants (igroups) ou définir et mapper de nouveaux igroups.
++
+[NOTE]
+====
+Si vous créez un nouvel igroup lors du provisionnement du LUN, vous devrez attendre le prochain cycle de découverte (jusqu'à 15 minutes) avant de pouvoir l'utiliser. Il est donc recommandé d'utiliser un igroup existant dans la liste des igroups disponibles.
+
+====
++
+Si vous souhaitez créer un nouvel igroup, sélectionnez le bouton *Créer un nouveau groupe d'initiateurs* et saisissez les informations pour l'igroup.
+
+. Cliquez sur *Enregistrer*.
++
+Le LUN est ajouté à la liste des workloads de stockage.
+
+

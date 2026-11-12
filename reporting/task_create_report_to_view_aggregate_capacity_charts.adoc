@@ -1,0 +1,99 @@
+---
+permalink: reporting/task_create_report_to_view_aggregate_capacity_charts.html 
+sidebar: sidebar 
+keywords: create, report, show, aggregate, total, available, capacity, charts 
+summary: Vous pouvez créer un rapport pour analyser la capacité de stockage totale et la capacité engagée sous forme de graphique Excel. 
+---
+= Afficher les graphiques comparant la capacité totale agrégée à la capacité disponible dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un rapport pour analyser la capacité de stockage totale et la capacité engagée sous forme de graphique Excel.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes suivantes pour ouvrir une vue Health: All Aggregates, télécharger la vue dans Excel, créer un graphique de capacité totale et engagée, charger le fichier Excel personnalisé et planifier le rapport final.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Agrégats*.
+. Sélectionnez *Reports* > *Download Excel*.
++
+image::../media/download_excel_menu.png[Capture d'écran de l'interface utilisateur montrant comment télécharger un fichier Excel à partir des rapports.]
+
++
+Selon votre navigateur, vous devrez peut-être cliquer sur *OK* pour enregistrer le fichier.
+
+. Dans Excel, ouvrez le fichier téléchargé.
+. Si nécessaire, cliquez sur *Activer la modification*.
+. Dans la feuille de données, cliquez avec le bouton droit sur la colonne Type et sélectionnez *Trier* > *Trier de A à Z*.
++
+image::../media/sort_01.png[Capture d'écran de l'interface utilisateur montrant comment sélectionner le tri dans la colonne de type.]
+
++
+Cela permettra de classer vos données par type de stockage, par exemple :
+
++
+** disque dur
+** Hybride
+** SSD
+** SSD (FabricPool)
+
+
+. Sélectionnez les colonnes  `Type, Total Data Capacity,` et  `Available Data Capacity`.
+. Dans le menu *Insérer*, sélectionnez un `3-D column` graphique.
++
+Le graphique figure sur la fiche technique.
+
++
+image::../media/3d_column_01.png[Capture d'écran de l'interface utilisateur montrant le graphique à colonnes 3D.]
+
+. Faites un clic droit sur le graphique et sélectionnez *Déplacer le graphique*.
+. Sélectionnez *Nouvelle feuille* et nommez la feuille *Tableaux de stockage total*.
++
+[NOTE]
+====
+Assurez-vous que la nouvelle feuille apparaisse après les feuilles d'informations et de données.
+
+====
+. Intitulez le graphique *Capacité totale versus capacité disponible*.
+. Les menus *Design* et *Format*, disponibles lorsque le graphique est sélectionné, vous permettent de personnaliser son apparence.
+. Une fois satisfait(e), enregistrez le fichier avec vos modifications. Ne modifiez ni le nom ni l'emplacement du fichier.
++
+image::../media/total_vs_available_capacity.png[Capture d'écran de l'interface utilisateur montrant un graphique de capacité totale par rapport à la capacité disponible.]
+
+. Dans Unified Manager, sélectionnez *Rapports* > *Importer Excel*.
++
+[NOTE]
+====
+Assurez-vous d'être dans la même vue que celle où vous avez téléchargé le fichier Excel.
+
+====
+. Sélectionnez le fichier Excel que vous avez modifié.
+. Cliquez sur *Ouvrir*.
+. Cliquez sur *Submit*.
++
+Une coche apparaît à côté de l'élément de menu *Rapports* > *Importer Excel*.
+
++
+image::../media/upload_excel.png[Capture d'écran de l'interface utilisateur montrant comment importer des fichiers excel dans les rapports.]
+
+. Cliquez sur *Scheduled Reports*.
+. Cliquez sur *Ajouter une planification* pour ajouter une nouvelle ligne à la page *Planifications des rapports* afin de définir les caractéristiques de la planification du nouveau rapport.
++
+[NOTE]
+====
+Sélectionnez le format *XLSX* pour le rapport.
+
+====
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pourriez envisager d’équilibrer la charge sur vos agrégats.

@@ -1,0 +1,110 @@
+---
+permalink: storage-mgmt/task_add_space_to_data_directory_of_um_linux_host.html 
+sidebar: sidebar 
+keywords: add, space, data directory, linux host 
+summary: 'Si vous n"avez pas alloué suffisamment d"espace disque au `/opt/netapp/data` répertoire pour prendre en charge Unified Manager lors de la configuration initiale de l"hôte Linux et de l"installation de Unified Manager, vous pouvez ajouter de l"espace disque après l"installation en augmentant l"espace disque sur le `/opt/netapp/data` répertoire.' 
+---
+= Ajoutez de l'espace au répertoire de données de l'hôte Linux dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous n'avez pas alloué suffisamment d'espace disque au `/opt/netapp/data` répertoire pour prendre en charge Unified Manager lors de la configuration initiale de l'hôte Linux et de l'installation de Unified Manager, vous pouvez ajouter de l'espace disque après l'installation en augmentant l'espace disque sur le `/opt/netapp/data` répertoire.
+
+.Avant de commencer
+Vous devez disposer d'un accès utilisateur root à la machine Red Hat Enterprise Linux sur laquelle Unified Manager est installé.
+
+Nous vous recommandons de sauvegarder la base de données Unified Manager avant d'augmenter la taille du répertoire de données.
+
+.Étapes
+. Connectez-vous en tant qu'utilisateur root à la machine Linux sur laquelle vous souhaitez ajouter de l'espace disque.
+. Arrêtez le service Unified Manager et le logiciel MySQL associé dans l'ordre indiqué : `systemctl stop ocieau ocie mysqld`
+. Créez un dossier de sauvegarde temporaire (par exemple, `/backup-data`) avec suffisamment d'espace disque pour contenir les données dans le répertoire `/opt/netapp/data` actuel.
+. Copiez le contenu et la configuration des privilèges du répertoire `/opt/netapp/data` existant vers le répertoire de données de sauvegarde :
++
+`cp -arp /opt/netapp/data/* /backup-data`
+
+. Si SE Linux est activé:
++
+.. Obtenez le type SE Linux pour les dossiers du dossier `/opt/netapp/data` existant :
++
+`se_type=`ls -Z /opt/netapp/data| awk '{print $4}'| awk -F: '{print $3}'| head -1`
+
++
+Le système renvoie une confirmation similaire à la suivante :
+
++
+[listing]
+----
+echo $se_type
+mysqld_db_t
+----
+.. Exécutez la `chcon` commande pour définir le type SE Linux du répertoire de sauvegarde :
++
+`chcon -R --type=mysqld_db_t /backup-data`
+
+
+
+. Supprimez le contenu du `/opt/netapp/data` répertoire:
++
+.. `cd /opt/netapp/data`
+.. `rm -rf *`
+
+
+. Augmentez la taille du `/opt/netapp/data` répertoire à un minimum de 150 Go via les commandes LVM ou en ajoutant des disques supplémentaires.
++
+[NOTE]
+====
+Si vous avez créé `/opt/netapp/data` à partir d’un disque, vous ne devez pas essayer de le monter `/opt/netapp/data` en tant que partage NFS ou CIFS. En effet, dans ce cas, si vous essayez d’étendre l’espace disque, certaines commandes LVM, telles que `resize` et `extend` pourraient ne pas fonctionner comme prévu.
+
+====
+. Vérifiez que le  `/opt/netapp/data`propriétaire du répertoire (mysql) et le groupe (root) sont inchangés:
++
+`ls -ltr /opt/netapp/ | grep data`
+
++
+Le système renvoie une confirmation similaire à la suivante :
+
++
+[listing]
+----
+drwxr-xr-x.  17 mysql root  4096 Aug 28 13:08 data
+----
+. Si SE Linux est activé, vérifiez que le contexte du répertoire  `/opt/netapp/data` est toujours défini sur mysqld_db_t :
++
+.. `touch /opt/netapp/data/abc`
+.. `ls -Z /opt/netapp/data/abc`
++
+Le système renvoie une confirmation similaire à la suivante :
+
++
+[listing]
+----
+-rw-r--r--. root root unconfined_u:object_r:mysqld_db_t:s0 /opt/netapp/data/abc
+----
+
+
+. Supprimez le fichier `abc` afin que ce fichier superflu ne provoque pas d'erreur de base de données à l'avenir.
+. Copiez le contenu depuis  `backup-data` vers le répertoire décompressé  `/opt/netapp/data` :
++
+`cp -arp /backup-data/* /opt/netapp/data/`
+
+. Si SE Linux est activé, exécutez la commande suivante :
++
+`chcon -R --type=mysqld_db_t /opt/netapp/data`
+
+. Démarrez le service MySQL :
++
+`systemctl start mysqld`
+
+. Une fois le service MySQL démarré, démarrez les services ocie et ocieau dans l'ordre indiqué :
++
+`systemctl start ocie ocieau`
+
+. Une fois tous les services démarrés, supprimez le dossier de sauvegarde `/backup-data`:
++
+`rm -rf /backup-data`
+
+

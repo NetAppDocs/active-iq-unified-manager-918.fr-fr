@@ -1,0 +1,164 @@
+---
+permalink: performance-checker/reference_types_of_system_defined_performance_threshold_policies.html 
+sidebar: sidebar 
+keywords: system-defined, performance, threshold, policies, cluster, node. aggregate, qos 
+summary: 'Unified Manager fournit des politiques de seuil standard qui surveillent les performances du cluster et génèrent automatiquement des événements. Ces politiques sont activées par défaut et génèrent des événements d"avertissement ou d"information lorsque les seuils de performance surveillés sont dépassés.' 
+---
+= Comprendre les politiques de seuil de performance définies par le système dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager fournit des politiques de seuil standard qui surveillent les performances du cluster et génèrent automatiquement des événements. Ces politiques sont activées par défaut et génèrent des événements d'avertissement ou d'information lorsque les seuils de performance surveillés sont dépassés.
+
+[NOTE]
+====
+Les politiques de seuil de performance définies par le système ne sont pas activées sur les systèmes Cloud Volumes ONTAP, ONTAP Edge ou ONTAP Select.
+
+====
+Si vous recevez des événements inutiles provenant de politiques de seuil de performance définies par le système, vous pouvez désactiver les événements pour chaque politique individuellement à partir de la page Configuration des événements.
+
+
+
+[[cluster-threshold-policies]]
+== Politiques de seuil du cluster
+
+Les politiques de seuil de performance de cluster définies par le système sont attribuées, par défaut, à chaque cluster surveillé par Unified Manager :
+
+* *Déséquilibre de charge du cluster*
++
+Identifie les situations dans lesquelles un nœud fonctionne avec une charge bien plus élevée que les autres nœuds du cluster et peut donc potentiellement affecter les latences du workload.
+
++
+Pour ce faire, il compare la valeur de capacité de performance utilisée pour tous les nœuds d'un cluster afin de déterminer si l'un d'eux a dépassé le seuil de 30 % pendant plus de 24 heures. Il s'agit d'un événement d'alerte.
+
+* *Déséquilibre de capacité du cluster*
++
+Identifie les situations dans lesquelles un agrégat a une capacité utilisée beaucoup plus élevée que les autres agrégats du cluster et peut donc potentiellement affecter l'espace requis pour les opérations.
+
++
+Il procède en comparant la capacité utilisée de tous les agrégats du cluster afin de détecter une éventuelle différence de 70 % entre eux. Il s'agit d'un événement d'alerte.
+
+
+
+
+
+[[node-threshold-policies]]
+== Politiques de seuil de nœud
+
+Les politiques de seuil de performance des nœuds définies par le système sont attribuées, par défaut, à chaque nœud des clusters surveillés par Unified Manager :
+
+* *Seuil de capacité de performance utilisée dépassé*
++
+Identifie les situations dans lesquelles un seul nœud fonctionne au-delà des limites de son efficacité opérationnelle et peut donc potentiellement affecter les latences des workloads.
+
++
+Il détecte les nœuds qui utilisent plus de 100 % de leur capacité de performance pendant plus de 12 heures. Il s'agit d'un événement d'alerte.
+
+* *Paire haute disponibilité de nœuds surutilisée*
++
+Identifie les situations dans lesquelles les nœuds d'une paire haute disponibilité fonctionnent au-delà des limites d'efficacité opérationnelle de la paire haute disponibilité.
+
++
+Le système effectue cela en examinant la valeur de capacité de performance utilisée pour les deux nœuds de la paire haute disponibilité. Si la capacité de performance utilisée combinée des deux nœuds dépasse 200 % pendant plus de 12 heures, un basculement du contrôleur aura un impact sur la latence des workloads. Cet événement est informatif.
+
+* *Fragmentation du disque du nœud*
++
+Identifie les situations dans lesquelles un ou plusieurs disques d’un agrégat sont fragmentés, ce qui ralentit les services système essentiels et peut potentiellement affecter les latences des workload sur un nœud.
+
++
+Il le fait en examinant certains ratios d'opérations de lecture et d'écriture sur l'ensemble des agrégats d'un nœud. Cette politique peut également être déclenchée lors d'une resynchronisation SyncMirror ou lorsque des erreurs sont détectées lors d'opérations de nettoyage de disque. Il s'agit d'un événement d'avertissement.
+
++
+[NOTE]
+====
+La politique « Fragmentation du disque du nœud » analyse uniquement les agrégats HDD ; les agrégats Flash Pool, SSD et FabricPool ne sont pas analysés.
+
+====
+
+
+
+
+[[aggregate-threshold-policies]]
+== Politiques de seuil d'agrégat
+
+La politique de seuil de performance d’agrégat définie par le système est attribuée par défaut à chaque agrégat des clusters surveillés par Unified Manager :
+
+* *Disques d’agrégat surutilisés*
++
+Ce système identifie les situations dans lesquelles un agrégat fonctionne au-delà des limites de son efficacité opérationnelle, ce qui peut affecter les latences de workload. Il repère ces situations en recherchant les agrégats dont les disques sont utilisés à plus de 95 % pendant plus de 30 minutes. Cette politique multiconditionnelle effectue ensuite l'analyse suivante pour aider à déterminer la cause du problème :
+
++
+** Un disque de l’agrégat fait-il actuellement l’objet d’une activité de maintenance en arrière-plan ?
++
+Parmi les activités de maintenance en arrière-plan qu’un disque peut subir figurent la reconstruction du disque, le nettoyage du disque, la resynchronisation de SyncMirror et la réparation de la parité.
+
+** Existe-t-il un goulot d'étranglement des communications au niveau de l'interconnexion Fibre Channel du tiroir disque ?
+** L'espace libre est-il insuffisant dans l'agrégat ? Un événement d'avertissement est émis pour cette stratégie uniquement si une (ou plusieurs) des trois stratégies subordonnées est également considérée comme non respectée. Aucun événement de performance n'est déclenché si seuls les disques de l'agrégat sont utilisés à plus de 95 %.
+
+
+
+
+[NOTE]
+====
+La politique « Surutilisation des disques d’agrégat » analyse les agrégats composés uniquement de HDD et les agrégats Flash Pool (hybrides) ; les agrégats SSD et FabricPool ne sont pas analysés.
+
+====
+
+
+[[workload-latency-threshold-policies]]
+== Politiques de seuil de latence du workload
+
+Les politiques de seuil de latence de workload définies par le système sont attribuées à tout workload disposant d’une politique de niveau de service de performance configurée avec une valeur « latence attendue » définie :
+
+* *Seuil de latence du volume/de la LUN du workload dépassé, conformément au niveau de service de performances*
++
+Identifie les volumes (partages de fichiers) et les LUN qui ont dépassé leur limite de "`latence attendue`" et qui affectent les performances du workload. Il s'agit d'un événement d'avertissement.
+
++
+Pour ce faire, il recherche les workloads qui ont dépassé la valeur de latence attendue pendant 30 % du temps au cours de l’heure précédente.
+
+
+
+
+
+[[qos-threshold-policies]]
+== Politiques de seuil de QoS
+
+Les politiques de seuil de performance QoS définies par le système sont attribuées à tout workload disposant d’une politique ONTAP QoS de débit maximal configurée (IOPS, IOPS/TB ou Mo/s). Unified Manager déclenche un événement lorsque la valeur de débit du workload est inférieure de 15 % à la valeur QoS configurée :
+
+* *Seuil QoS max. en IOPS ou Mo/s*
++
+Identifie les volumes et les LUN qui ont dépassé leur limite maximale de QoS en IOPS ou en débit (Mo/s) et qui affectent la latence des workloads. Il s'agit d'un événement d'avertissement.
+
++
+Lorsqu’une seule workload est affectée à un groupe de stratégies, cela consiste à rechercher les workloads qui ont dépassé le seuil de débit maximal défini dans le groupe de stratégies QoS affecté au cours de chaque période de collecte de l’heure précédente.
+
++
+Lorsque plusieurs workloads partagent une seule politique QoS, celle-ci procède en additionnant les IOPS ou les MB/s de tous les workloads de la politique et en comparant ce total au seuil.
+
+* *QoS Peak IOPS/TB ou IOPS/TB avec seuil de taille de bloc*
++
+Identifie les volumes ayant dépassé leur limite de débit de pointe IOPS/TB de la QoS adaptative (ou leur limite IOPS/TB avec taille de bloc) et qui affectent la latence du workload. Il s'agit d'un événement d'avertissement.
+
++
+Il le fait en convertissant le seuil maximal d’IOPS/TB défini dans la politique de QoS adaptative en une valeur maximale d’IOPS QoS basée sur la taille de chaque volume, puis en recherchant les volumes qui ont dépassé le nombre maximal d’IOPS QoS au cours de chaque période de collecte des performances pendant l’heure précédente.
+
++
+[NOTE]
+====
+Cette politique s'applique aux volumes uniquement lorsque le cluster est installé avec le logiciel ONTAP 9.3 ou une version ultérieure.
+
+====
++
+Lorsque l’élément "`block size`" a été défini dans la politique QoS adaptative, le seuil est converti en une valeur QoS maximale en Mo/s en fonction de la taille de chaque volume. Ensuite, le système recherche les volumes qui ont dépassé la valeur QoS maximale en Mo/s pendant chaque période de collecte des performances de l’heure précédente.
+
++
+[NOTE]
+====
+Cette politique s'applique aux volumes uniquement lorsque le cluster est installé avec le logiciel ONTAP 9.5 ou une version ultérieure.
+
+====
+

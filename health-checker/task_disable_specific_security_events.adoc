@@ -1,0 +1,50 @@
+---
+permalink: health-checker/task_disable_specific_security_events.html 
+sidebar: sidebar 
+keywords: disable, specific, security events 
+summary: Tous les événements sont activés par défaut. Vous pouvez désactiver certains événements pour éviter la génération de notifications concernant ceux qui ne sont pas importants dans votre environnement. Vous pouvez réactiver les événements désactivés si vous souhaitez à nouveau recevoir des notifications les concernant. 
+---
+= Désactiver certains événements de sécurité dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tous les événements sont activés par défaut. Vous pouvez désactiver certains événements pour éviter la génération de notifications concernant ceux qui ne sont pas importants dans votre environnement. Vous pouvez réactiver les événements désactivés si vous souhaitez à nouveau recevoir des notifications les concernant.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Lorsque vous désactivez des événements, ceux précédemment générés dans le système sont marqués comme obsolètes et les alertes configurées pour ces événements ne sont pas déclenchées. Lorsque vous activez des événements désactivés, les notifications pour ces événements sont générées à partir du prochain cycle de surveillance.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration de l'événement*.
+. Dans la page de configuration *Event*, désactivez ou activez les événements en choisissant l'une des options suivantes :
++
+[cols="2*"]
+|===
+| Si vous voulez... | Ensuite, faites ceci... 
+
+
+ a| 
+Désactiver les événements
+ a| 
+.. Cliquez sur *Disable*.
+.. Dans la boîte de dialogue Désactiver les événements, sélectionnez le niveau de gravité *Avertissement*. Il s'agit de la catégorie de tous les événements de sécurité.
+.. Dans la colonne Événements correspondants, sélectionnez les événements de sécurité que vous souhaitez désactiver, puis cliquez sur la flèche vers la droite pour déplacer ces événements vers la colonne Désactiver les événements.
+.. Cliquez sur *Enregistrer et fermer*.
+.. Vérifiez que les événements que vous avez désactivés apparaissent dans la vue de liste de la page Configuration des événements.
+
+
+
+
+ a| 
+Activer les événements
+ a| 
+.. Dans la liste des événements désactivés, cochez la case à cocher correspondant à l’événement ou aux événements que vous souhaitez réactiver.
+.. Cliquez sur *Enable*.
+
+
+|===
+

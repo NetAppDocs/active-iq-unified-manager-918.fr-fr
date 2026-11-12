@@ -1,0 +1,45 @@
+---
+permalink: health-checker/task_delete_snapshot_copies.html 
+sidebar: sidebar 
+keywords: delete, snapshot copies 
+summary: 'Vous pouvez supprimer une copie Snapshot pour économiser de l"espace ou pour libérer de l"espace disque, ou vous pouvez supprimer la copie Snapshot si elle n"est plus nécessaire.' 
+---
+= Supprimer les copies d'instantané dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer une copie Snapshot pour économiser de l'espace ou pour libérer de l'espace disque, ou vous pouvez supprimer la copie Snapshot si elle n'est plus nécessaire.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Le volume doit être en ligne.
+
+Pour supprimer une copie Snapshot occupée ou verrouillée, vous devez avoir libéré la copie Snapshot de l'application qui l'utilisait.
+
+* Vous ne pouvez pas supprimer la copie Snapshot de base dans un volume parent si un volume FlexClone utilise cette copie Snapshot.
++
+La copie Snapshot de base est la copie Snapshot utilisée pour créer le volume FlexClone et affiche l’état `Busy` et la dépendance de l’application en tant que `Busy, Vclone` dans le volume parent.
+
+* Vous ne pouvez pas supprimer une copie Snapshot verrouillée utilisée dans une relation SnapMirror.
++
+La copie Snapshot est verrouillée et est requise pour la prochaine mise à jour.
+
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Dans la vue *Santé : Tous les volumes*, sélectionnez le volume contenant les copies Snapshot que vous souhaitez consulter.
++
+La liste des copies Snapshot s'affiche.
+
+. Sur la page de détails *Volume / Santé*, cliquez sur l'onglet *Capacité*.
+. Dans le volet *Détails* de l’onglet *Capacité*, dans la section Autres détails, cliquez sur le lien en regard de *Copies instantanées*.
++
+Le nombre de copies Snapshot est un lien qui affiche la liste des copies Snapshot.
+
+. Dans la vue *Copies Snapshot*, sélectionnez les copies Snapshot que vous souhaitez supprimer, puis cliquez sur *Supprimer la sélection*.
+

@@ -1,0 +1,34 @@
+---
+permalink: performance-checker/concept_what_available_iops_is.html 
+sidebar: sidebar 
+keywords: available, iops, total iops, aggregate iops, volume iops 
+summary: 'Le compteur d"IOPS disponibles indique le nombre d"IOPS restantes pouvant être ajoutées à un nœud ou à un agrégat avant que la ressource n"atteigne sa limite. Le nombre total d"IOPS qu"un nœud peut fournir dépend de ses caractéristiques physiques, par exemple le nombre de CPUs, la vitesse du CPU et la quantité de RAM. Le nombre total d"IOPS qu"un agrégat peut fournir dépend des propriétés physiques des disques, par exemple un disque SATA, SAS ou SSD.' 
+---
+= Comprendre les IOPS disponibles dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le compteur d'IOPS disponibles indique le nombre d'IOPS restants pouvant être ajoutés à un nœud ou à un agrégat avant que la ressource n'atteigne sa limite.
+
+Le nombre total d'IOPS qu'un nœud peut fournir est basé sur les caractéristiques physiques du nœud, par exemple le nombre de processeurs, la vitesse du processeur et la quantité de RAM. Le nombre total d'IOPS qu'un agrégat peut fournir est basé sur les propriétés physiques des disques, par exemple un disque SATA, SAS ou SSD.
+
+Le total des IOPS de tous les volumes d'un agrégat peut ne pas correspondre au total des IOPS de l'agrégat. Ce point est abordé dans l'article suivant de la base de connaissances : KB link:https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/Active_IQ_Unified_Manager/Why_does_the_sum_of_all_volume_IOPs_in_an_aggregate_not_match_the_aggregate_IOPs%3F["Pourquoi la somme de tous les IOPs de volume dans un agrégat ne correspond-elle pas aux IOPs de l’agrégat ?"]
+
+Alors que le compteur de capacité de performances disponible indique le pourcentage d’une ressource encore disponible, le compteur d’IOPS disponibles vous indique le nombre exact d’IOPS (workloads) qui peuvent être ajoutées à une ressource avant d’atteindre la capacité de performances maximale.
+
+Par exemple, si vous utilisez une paire de systèmes de stockage FAS2520 et FAS8060, une valeur de capacité de performances disponible de 30 % signifie que vous disposez d'une certaine capacité de performances libre. Cependant, cette valeur n'indique pas combien de workloads supplémentaires vous pouvez déployer sur ces nœuds. Le compteur d'IOPS disponibles peut indiquer que vous disposez de 500 IOPS disponibles sur le FAS8060, mais de seulement 100 IOPS disponibles sur le FAS2520.
+
+La figure suivante présente un exemple de courbe de latence en fonction des IOPS pour un nœud.
+
+image::../media/available_iops.gif[Capture d'écran de l'interface utilisateur montrant un exemple de courbe de latence en fonction des IOPS pour un nœud.]
+
+Le nombre maximal d’IOPS qu’une ressource peut fournir est le nombre d’IOPS lorsque le compteur de capacité de performance utilisée est à 100 % (le point optimal). Le point de fonctionnement indique que le nœud fonctionne actuellement à 100K IOPS avec une latence de 1.0 ms/op. D’après les statistiques capturées à partir du nœud, Unified Manager détermine que le nombre maximal d’IOPS pour le nœud est de 160K, ce qui signifie qu’il y a 60K IOPS libres ou disponibles. Par conséquent, vous pouvez ajouter davantage de workloads à ce nœud afin que vos systèmes soient utilisés plus efficacement.
+
+[NOTE]
+====
+En cas d'activité utilisateur minimale sur la ressource, la valeur des IOPS disponibles est calculée sur la base d'un workload générique d'environ 4 500 IOPS par cœur de processeur. En effet, Unified Manager ne dispose pas des données nécessaires pour estimer précisément les caractéristiques du workload pris en charge.
+
+====

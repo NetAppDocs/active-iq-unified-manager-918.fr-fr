@@ -1,0 +1,18 @@
+---
+permalink: health-checker/concept_what_annotations_are.html 
+sidebar: sidebar 
+keywords: annotations 
+summary: 'Une annotation est une chaîne de texte (le nom) attribuée à une autre chaîne de texte (la valeur). Chaque paire nom-valeur d"annotation peut être associée dynamiquement à des objets de stockage à l"aide de règles d"annotation. Lorsque vous associez des objets de stockage à des annotations prédéfinies, vous pouvez filtrer et afficher les événements qui leur sont associés. Vous pouvez appliquer des annotations aux clusters, aux volumes et aux machines virtuelles de stockage (SVM).' 
+---
+= Découvrez les annotations dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une annotation est une chaîne de texte (le nom) attribuée à une autre chaîne de texte (la valeur). Chaque paire nom-valeur d'annotation peut être associée dynamiquement à des objets de stockage à l'aide de règles d'annotation. Lorsque vous associez des objets de stockage à des annotations prédéfinies, vous pouvez filtrer et afficher les événements qui leur sont associés. Vous pouvez appliquer des annotations aux clusters, aux volumes et aux machines virtuelles de stockage (SVM).
+
+Chaque nom d'annotation peut avoir plusieurs valeurs ; chaque paire nom-valeur peut être associée à un objet de stockage via des règles.
+
+Par exemple, vous pouvez créer une annotation nommée "`data-center`" avec les valeurs "`Boston`" et "`Canada`". Vous pouvez ensuite appliquer l'annotation "`data-center`" avec la valeur "`Boston`" au volume v1. Lorsqu'une alerte est générée pour un événement sur le volume v1 annoté avec "`data-center`", l'e-mail généré indique l'emplacement du volume, "`Boston`", ce qui vous permet de hiérarchiser et de résoudre le problème.

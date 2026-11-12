@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_troubleshooting_workloads_using_workload_analyzer.html 
+sidebar: sidebar 
+keywords: workload analyzer, troubleshoot 
+summary: 'L"analyseur de workload permet de visualiser sur une seule page les principaux critères d"état et de performance d"un workload afin de faciliter le dépannage. En consultant tous les événements actuels et passés d"un workload, vous pouvez mieux comprendre pourquoi le workload rencontre actuellement un problème de performance ou de capacité.' 
+---
+= Dépannez les charges de travail avec l'analyseur de charge de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'analyseur de workload permet de visualiser sur une seule page les principaux critères d'état et de performance d'un workload afin de faciliter le dépannage. En consultant tous les événements actuels et passés d'un workload, vous pouvez mieux comprendre pourquoi le workload rencontre actuellement un problème de performance ou de capacité.
+
+Cet outil peut également vous aider à déterminer si le stockage est à l'origine des problèmes de performance d'une application ou si le problème est dû à un problème de réseau ou à un autre problème connexe.
+
+Vous pouvez activer cette fonctionnalité à partir de différents endroits de l'interface utilisateur :
+
+* À partir de la sélection Analyse du workload dans le menu de navigation de gauche
+* Depuis la page de détails de l'événement en cliquant sur le bouton *Analyze Workload*
+* Depuis n'importe quelle page d'inventaire des workloads (volume, LUN, workload, partage NFS ou partage SMB/CIFS), en cliquant sur l'icône Plus image:../media/more_icon.gif[""], puis sur *Analyser le workload*
+* Depuis la page Machines virtuelles, cliquez sur le bouton *Analyser le workload* à partir de n'importe quel objet Datastore.
+
+
+Lorsque vous lancez l'outil depuis le menu de navigation de gauche, vous pouvez saisir le nom de n'importe quel workload que vous souhaitez analyser et sélectionner la période pour laquelle vous souhaitez effectuer le dépannage. Lorsque vous lancez l'outil depuis l'une des pages d'inventaire des workloads ou des machines virtuelles, le nom du workload est renseigné automatiquement, et les données du workload sont présentées avec la période par défaut de 2 heures. Lorsque vous lancez l'outil depuis la page Event details, le nom du workload est renseigné automatiquement, et les données de 10 jours sont affichées.

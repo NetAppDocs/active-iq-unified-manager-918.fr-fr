@@ -1,0 +1,129 @@
+---
+permalink: data-protection/reference_job_details_page.html 
+sidebar: sidebar 
+keywords: job, details, page 
+summary: 'La page Détails du travail vous permet de consulter l"état et d"autres informations sur des tâches spécifiques de travaux de protection en cours d"exécution, en file d"attente ou terminées. Vous pouvez utiliser ces informations pour suivre la progression des tâches de protection et résoudre les problèmes liés aux échecs des tâches.' 
+---
+= Découvrez la page des détails du travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page Détails du travail vous permet de consulter l'état et d'autres informations sur des tâches spécifiques de travaux de protection en cours d'exécution, en file d'attente ou terminées. Vous pouvez utiliser ces informations pour suivre la progression des tâches de protection et résoudre les problèmes liés aux échecs des tâches.
+
+
+
+[[job-summary]]
+== Résumé du poste
+
+Le résumé de la tâche affiche les informations suivantes :
+
+* ID de tâche
+* Type
+* État
+* Heure de soumission
+* Heure d’achèvement
+* Durée
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Rafraîchir*
++
+Actualise la liste des tâches et les propriétés associées à chaque tâche.
+
+* *Voir les tâches*
++
+Vous ramène à la page Jobs.
+
+
+
+
+
+[[job-tasks-list]]
+== Liste des tâches du poste
+
+La liste des tâches affiche, dans un tableau, toutes les tâches associées à un travail spécifique et les propriétés liées à chaque tâche.
+
+* *Heure de début*
++
+Affiche le jour et l'heure de début de la tâche. Par défaut, les tâches les plus récentes apparaissent en haut de la colonne et les plus anciennes en bas.
+
+* *Type*
++
+Affiche le type de tâche.
+
+* *État*
++
+L'état d'une tâche particulière:
+
++
+** *Terminé*
++
+La tâche est terminée.
+
+** *En file d'attente*
++
+La tâche est sur le point de s'exécuter.
+
+** *En cours d'exécution*
++
+La tâche est en cours d'exécution.
+
+** *En attente*
++
+Un travail a été soumis et certaines tâches associées sont en attente de mise en file d'attente et d'exécution.
+
+
+
+* *Statut*
++
+Affiche l'état de la tâche :
+
++
+** *Erreur (image:../media/sev_error.gif[""])*
++
+La tâche a échoué.
+
+** *Normal (image:../media/sev_normal.gif[""])*
++
+La tâche a réussi.
+
+** *Ignoré (image:../media/icon_skipped.gif[""])*
++
+Une tâche a échoué, ce qui a entraîné l’omission des tâches suivantes.
+
+
+
+* *Durée*
++
+Affiche le temps écoulé depuis le début de la tâche.
+
+* *Heure d’achèvement*
++
+Affiche l'heure à laquelle la tâche s'est terminée. Par défaut, cette colonne est masquée.
+
+* *ID de la tâche*
++
+Affiche le GUID qui identifie une tâche individuelle pour un job. Cette colonne peut être triée et filtrée. Par défaut, cette colonne est masquée.
+
+* *Ordre de dépendance*
++
+Affiche un entier représentant la séquence des tâches dans un graphe, où la valeur zéro est attribuée à la première tâche. Par défaut, cette colonne est masquée.
+
+* *Volet Détails de la tâche*
++
+Affiche des informations supplémentaires sur chaque tâche, notamment le nom de la tâche, sa description et, en cas d'échec de la tâche, la raison de cet échec.
+
+* *Volet Messages des tâches*
++
+Affiche les messages spécifiques à la tâche sélectionnée. Ces messages peuvent inclure la raison de l'erreur et des suggestions pour la résoudre. Certaines tâches n'affichent pas de messages.
+
+

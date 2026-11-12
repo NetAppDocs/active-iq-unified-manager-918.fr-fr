@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/concept_monitor_cluster_object_navigation.html 
+sidebar: sidebar 
+keywords: monitor, cluster, object, navigation 
+summary: 'Vous pouvez surveiller les performances de tous les objets de tout cluster géré par Unified Manager. La surveillance de vos objets de stockage vous offre une vue d"ensemble des performances du cluster et des objets, et inclut la surveillance des événements de performance. Vous pouvez consulter les performances et les événements de manière générale, ou examiner plus en détail les performances des objets et les événements de performance.' 
+---
+= Surveiller la navigation des objets du cluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez surveiller les performances de tous les objets de tout cluster géré par Unified Manager. La surveillance de vos objets de stockage vous offre une vue d'ensemble des performances du cluster et des objets, et inclut la surveillance des événements de performance. Vous pouvez consulter les performances et les événements de manière générale, ou examiner plus en détail les performances des objets et les événements de performance.
+
+Voici un exemple parmi tant d'autres de navigations possibles entre les objets d'un cluster:
+
+. Depuis la page Dashboard, consultez les détails dans le panneau Performance Capacity pour identifier le cluster qui utilise le plus de capacité de performance, puis cliquez sur l’histogramme pour accéder à la liste des nœuds de ce cluster.
+. Identifiez le nœud présentant la valeur de capacité de performance utilisée la plus élevée et cliquez sur ce nœud.
+. Depuis la page Node / Performance Explorer, cliquez sur *Aggregates on this Node* dans le menu View and Compare.
+. Identifiez l'agrégat qui utilise le plus de capacité de performances et cliquez dessus.
+. Dans la page Aggregate / Performance Explorer, cliquez sur *Volumes on this Aggregate* dans le menu View and Compare.
+. Identifiez les volumes qui utilisent le plus d'IOPS.
+
+
+Vous devriez examiner ces volumes pour voir s'il convient d'appliquer une politique QoS ou une politique de niveau de service des performances, ou de modifier les paramètres de la politique, afin que ces volumes n'utilisent pas un pourcentage aussi élevé d'IOPS sur le cluster.
+
+image::../media/monitor_cluster_object.png[Capture d'écran d'interface utilisateur illustrant un exemple parmi les nombreuses navigations possibles entre les objets du cluster.]

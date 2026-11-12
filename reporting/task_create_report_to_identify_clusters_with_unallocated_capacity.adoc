@@ -1,0 +1,42 @@
+---
+permalink: reporting/task_create_report_to_identify_clusters_with_unallocated_capacity.html 
+sidebar: sidebar 
+keywords: clusters, unallocated, LUN, capacity, indentify, additional, workloads 
+summary: 'Vous pouvez créer un rapport pour trouver les clusters ayant la plus grande capacité LUN non allouée, supérieure à 0,5 To, afin d"identifier où vous pouvez ajouter des charges de travail supplémentaires.' 
+---
+= Identifiez les clusters disposant d'une capacité LUN non allouée dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un rapport pour trouver les clusters ayant la plus grande capacité LUN non allouée, supérieure à 0,5 To, afin d'identifier où vous pouvez ajouter des charges de travail supplémentaires.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée affichant les clusters ayant la plus grande capacité LUN non allouée, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Clusters*.
+. Dans le menu Affichage, sélectionnez *Capacité* > *Tous les clusters*.
+. Sélectionnez *Afficher/Masquer* pour supprimer les colonnes que vous ne souhaitez pas voir apparaître dans le rapport.
+. Faites glisser la colonne « `Unallocated LUN Capacity` » près de la colonne « `HA Pair` ».
+. Cliquez sur l'icône de filtre, ajoutez le filtre suivant, puis cliquez sur *Appliquer le filtre*:
++
+** Capacité LUN non allouée supérieure à 0,5 To
+
+
+. Cliquez en haut de la colonne « `Capacité LUN non allouée` » pour trier les résultats par valeur décroissante de capacité LUN non allouée.
+. Enregistrez la vue sous un nom spécifique qui reflète ce qu’elle affiche, par exemple « `Most unallocated LUN capacity` » et cliquez sur la coche (image:../media/blue_check.gif[""]).
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Cliquez sur *Ajouter une planification* pour ajouter une nouvelle ligne à la page Planifications des rapports afin de définir les caractéristiques de la planification du nouveau rapport.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pourriez souhaiter utiliser la capacité de LUN non allouée du cluster.

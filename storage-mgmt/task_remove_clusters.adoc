@@ -1,0 +1,38 @@
+---
+permalink: storage-mgmt/task_remove_clusters.html 
+sidebar: sidebar 
+keywords: remove, cluster 
+summary: 'Vous pouvez supprimer un cluster de Unified Manager à l"aide de la page Configuration du cluster. Par exemple, vous pouvez supprimer un cluster si la découverte du cluster échoue, ou lorsque vous souhaitez mettre hors service un système de stockage.' 
+---
+= Supprimez les clusters d'Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer un cluster de Unified Manager à l'aide de la page Configuration du cluster. Par exemple, vous pouvez supprimer un cluster si la découverte du cluster échoue, ou lorsque vous souhaitez mettre hors service un système de stockage.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'applications ou le rôle d'administrateur de stockage.
+
+Cette tâche supprime le cluster sélectionné de Unified Manager. Une fois supprimé, le cluster n'est plus surveillé. L'instance de Unified Manager enregistrée auprès du cluster supprimé est également désenregistrée du cluster.
+
+La suppression d'un cluster entraîne également la suppression de tous ses objets de stockage, de ses données historiques, de ses services de stockage et de tous les événements associés dans Unified Manager. Ces modifications sont visibles sur les pages d'inventaire et les pages de détails après le prochain cycle de collecte de données.
+
+[NOTE]
+====
+Vous devez supprimer un cluster de Unified Manager avant de le mettre hors service. Si le cluster est déjà hors ligne ou inaccessible lorsque vous tentez de le supprimer, Unified Manager ne peut pas communiquer avec le cluster pour supprimer l'enregistrement de l'application et les abonnements Event Management System (EMS) configurés. Cela entraînera l'échec du processus de suppression ou le rendra non réactif avant son achèvement.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration du cluster*.
+. Sur la page Configuration du cluster, sélectionnez le cluster que vous souhaitez supprimer et cliquez sur *Supprimer*.
+. Dans la boîte de dialogue *Supprimer la source de données*, cliquez sur *Supprimer* pour confirmer la demande de suppression.
+
+
+*Informations connexes*
+
+link:../config/task_add_users.html["Ajout d'utilisateurs"]
+
+link:../health-checker/task_view_cluster_list_and_details.html["Affichage de la liste et des détails des clusters"]

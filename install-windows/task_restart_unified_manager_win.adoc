@@ -1,0 +1,69 @@
+---
+permalink: install-windows/task_restart_unified_manager_win.html 
+sidebar: sidebar 
+keywords: restart, unified manager 
+summary: Il se peut que vous deviez redémarrer Unified Manager après avoir effectué des modifications de configuration. 
+---
+= Redémarrez Active IQ Unified Manager sous Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il se peut que vous deviez redémarrer Unified Manager après avoir effectué des modifications de configuration.
+
+.Avant de commencer
+Vous devez disposer des privilèges d'administrateur Windows.
+
+.Étapes
+. Connectez-vous à Windows en utilisant le compte administrateur local par défaut.
+. Arrêtez les services Unified Manager :
++
+[cols="2*"]
+|===
+| Depuis... | Arrêtez les services dans l'ordre suivant... 
+
+
+ a| 
+Ligne de commandes
+ a| 
+.. `sc stop ocie-au`
+.. `sc stop Oncommandsvc`
+
+
+
+
+ a| 
+Microsoft Service Manager
+ a| 
+.. Service d'acquisition NetApp Active IQ (Ocie-au)
+.. NetApp Service du serveur de gestion Active IQ (Oncommandsvc)
+
+
+|===
+. Démarrez les services Unified Manager :
++
+[cols="2*"]
+|===
+| Depuis... | Démarrez les services dans l'ordre suivant... 
+
+
+ a| 
+Ligne de commandes
+ a| 
+.. `sc start Oncommandsvc`
+.. `sc start ocie-au`
+
+
+
+
+ a| 
+Microsoft Service Manager
+ a| 
+.. NetApp Service du serveur de gestion Active IQ (Oncommandsvc)
+.. Service d'acquisition NetApp Active IQ (Ocie-au)
+
+
+|===
+

@@ -1,0 +1,119 @@
+---
+permalink: api-automation/concept_manage_psl.html 
+sidebar: sidebar 
+keywords: manage, performance, service, level 
+summary: Vous pouvez consulter, créer, modifier et supprimer des niveaux de service de performance en utilisant les API du fournisseur de stockage sur votre Active IQ Unified Manager. 
+---
+= Gérez les niveaux de service de performance à l'aide des API dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter, créer, modifier et supprimer des niveaux de service de performance en utilisant les API du fournisseur de stockage sur votre Active IQ Unified Manager.
+
+
+
+[[view-performance-service-levels]]
+== Afficher les niveaux de service de performance
+
+Vous pouvez utiliser la méthode suivante pour afficher les Performance Service Levels afin de les attribuer aux charges de travail de stockage. L'API répertorie tous les Performance Service Levels définis par le système et créés par l'utilisateur, et récupère les attributs de tous les Performance Service Levels. Si vous souhaitez interroger un Performance Service Level spécifique, vous devez saisir l'identifiant unique du Performance Service Level pour en récupérer les détails.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+GET
+ a| 
+`/storage-provider/performance-service-levels`
+
+`/storage-provider/performance-service-levels/\{key}`
+
+|===
+
+
+[[add-performance-service-levels]]
+== Ajouter des niveaux de service de performances
+
+Vous pouvez utiliser la méthode suivante pour créer des niveaux de service de performance personnalisés et les affecter à vos charges de travail de stockage si les niveaux de service de performance définis par le système ne répondent pas aux objectifs de niveau de service (SLO) requis. Saisissez les détails du niveau de service de performance que vous souhaitez créer. Pour les propriétés IOPS, assurez-vous de saisir une plage de valeurs valide.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+POST
+ a| 
+`/storage-provider/performance-service-levels`
+
+|===
+
+
+[[delete-performance-service-levels]]
+== Supprimer les niveaux de service de performance
+
+Vous pouvez utiliser la méthode suivante pour supprimer un Performance Service Level spécifique. Vous ne pouvez pas supprimer un Performance Service Level s'il est attribué à un workload, ou s'il s'agit du seul Performance Service Level disponible. Pour supprimer un Performance Service Level particulier, vous devez fournir son ID unique en tant que paramètre d'entrée.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+SUPPRIMER
+ a| 
+`/storage-provider/performance-service-levels/\{key}`
+
+|===
+
+
+[[modify-performance-service-levels]]
+== Modifier les niveaux de service de performance
+
+Vous pouvez utiliser la méthode suivante pour modifier un niveau de service de performance et mettre à jour ses propriétés. Vous ne pouvez pas modifier un niveau de service de performance défini par le système ou affecté à un workload. Pour modifier un niveau de service de performance particulier, vous devez fournir son identifiant unique. Vous devez également saisir la propriété IOPS à mettre à jour, ainsi qu'une valeur valide.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+CORRECTIF
+ a| 
+`/storage-provider/performance-service-levels/\{key}`
+
+|===
+
+
+[[view-aggregate-capabilities-based-on-performance-service-levels]]
+== Afficher les capacités de l'agrégat en fonction des Performance Service Levels
+
+Vous pouvez utiliser la méthode suivante pour interroger les capacités des agrégats en fonction des niveaux de service de performance. Cette API renvoie la liste des agrégats disponibles dans votre centre de données et indique les capacités en termes de niveaux de service de performance qui peuvent être prises en charge par ces agrégats. Lors du provisionnement de workloads sur un volume, vous pouvez consulter la capacité d’un agrégat à prendre en charge un niveau de service de performance particulier et provisionner des workloads en fonction de cette capacité. La possibilité de spécifier l’agrégat n’est disponible que lorsque vous provisionnez un workload à l’aide des API. Cette fonctionnalité n’est pas disponible dans l’interface utilisateur Web de Unified Manager.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+GET
+ a| 
+`/storage-provider/aggregate-capabilities`
+
+`/storage-provider/aggregate-capabilities/\{key}`
+
+|===

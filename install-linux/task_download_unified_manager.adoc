@@ -1,0 +1,60 @@
+---
+permalink: install-linux/task_download_unified_manager.html 
+sidebar: sidebar 
+keywords: download, Unified Manager 
+summary: 'Vous devez télécharger le fichier Unified Manager `.zip` depuis le site de support NetApp pour installer Unified Manager.' 
+---
+= Télécharger Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez télécharger le fichier Unified Manager `.zip` depuis le site de support NetApp pour installer Unified Manager.
+
+.Avant de commencer
+Vous devez disposer d'identifiants de connexion pour le site de support NetApp.
+
+Vous téléchargez le package d'installation d'Unified Manager pour le système Red Hat Enterprise Linux.
+
+.Étapes
+. Connectez-vous au site de support NetApp et accédez à la page de téléchargement d’Unified Manager :
++
+https://mysupport.netapp.com/site/products/all/details/activeiq-unified-manager/downloads-tab["Site de support NetApp"]
+
+. Sélectionnez la version requise de Unified Manager et acceptez le contrat de licence de l’utilisateur final (EULA).
+. Téléchargez le fichier d'installation d'Unified Manager pour Linux et enregistrez le `.zip` fichier dans un répertoire du système cible.
++
+[NOTE]
+====
+** Assurez-vous de télécharger la version correcte du fichier d'installation pour votre système Red Hat Enterprise Linux. Selon que Red Hat Enterprise Linux 8 ou 9 soit installé, veillez à télécharger la version appropriée du fichier Unified Manager `.zip`.
+** NetApp vous recommande de télécharger le certificat de signature de code (`.pem`) et la signature numérique (`.sig`) ainsi que le fichier  `.zip`.
+
+
+====
+. Vérifiez la somme de contrôle pour vous assurer de l'intégrité du logiciel téléchargé.
+. Si vous avez téléchargé le certificat de signature de code et la signature numérique, vous pouvez vérifier l'intégrité du fichier d'installation. Vous pouvez utiliser les commandes suivantes pour vérifier l'intégrité du fichier d'installation :
++
+** Cette commande crée un fichier contenant la clé publique du certificat de signature de code :
++
+[listing]
+----
+openssl x509 -pubkey -noout -in AIQUM-RHEL-CLIENT-INTER-ROOT.pem > <public_key_file_name>
+----
++
+*** Où *AIQUM-RHEL-CLIENT-INTER-ROOT.pem* est le fichier qui contient le certificat de signature du code.
+
+
+** Cette commande vérifie la signature du fichier d'installation :
++
+[listing]
+----
+openssl dgst -sha256 -verify <public_key_file_name> -signature <signature_file_name> ActiveIQUnifiedManager-<version>.zip
+----
++
+Le message similaire à  `Verified Ok` confirme que le fichier d'installation peut être utilisé en toute sécurité.
+
+
+
+

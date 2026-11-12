@@ -1,0 +1,85 @@
+---
+permalink: config/reference_system_configuration_menu.html 
+sidebar: sidebar 
+keywords: system, configuration, menu 
+summary: 'Le menu Configuration système vous permet de gérer votre appliance virtuelle en proposant diverses options, telles que la consultation de l"état du serveur, le redémarrage et l"arrêt de la machine virtuelle.' 
+---
+= Utilisez le menu Configuration système dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le menu Configuration système vous permet de gérer votre appliance virtuelle en proposant diverses options, telles que la consultation de l'état du serveur, le redémarrage et l'arrêt de la machine virtuelle.
+
+[NOTE]
+====
+Lorsque Unified Manager est installé sur un système Linux ou Microsoft Windows, seule l'option "`Restore from a Unified Manager Backup`" est disponible dans ce menu.
+
+====
+Les options de menu suivantes sont disponibles :
+
+* *Afficher l'état du serveur*
++
+Affiche l'état actuel du serveur. Les options d'état incluent « En cours d'exécution » et « À l'arrêt ».
+
++
+Si le serveur ne fonctionne pas, vous devrez peut-être contacter le support technique.
+
+* *Redémarrer la machine virtuelle*
++
+Redémarre la machine virtuelle en arrêtant tous les services. Après le redémarrage, la machine virtuelle et les services redémarrent.
+
+* *Arrêter la machine virtuelle*
++
+Arrête la machine virtuelle et tous les services.
+
++
+Vous pouvez sélectionner cette option uniquement depuis la console de la machine virtuelle.
+
+* *Modifier <logged in user> le mot de passe utilisateur*
++
+Modifie le mot de passe de l'utilisateur actuellement connecté, qui ne peut être que l'utilisateur de maintenance.
+
+* *Augmenter la taille du disque de données*
++
+Augmente la taille du disque de données (disque 3) dans la machine virtuelle.
+
+* *Augmenter la taille du disque swap*
++
+Augmente la taille du disque d'échange (disque 2) dans la machine virtuelle.
+
+* *Changer de fuseau horaire*
++
+Modifie le fuseau horaire en fonction de votre emplacement.
+
+* *Changer le serveur NTP*
++
+Modifie les paramètres du serveur NTP, tels que l’adresse IP ou le nom de domaine complet (FQDN).
+
+* *Modifier le service NTP*
++
+Permet de basculer entre les services  `ntp` et  `systemd-timesyncd`.
+
+* *Restaurer à partir d'une sauvegarde Unified Manager*
++
+Restaure la base de données et les paramètres de configuration d'Unified Manager à partir d'une version précédemment sauvegardée.
+
+* *Réinitialiser le certificat du serveur*
++
+Réinitialise le certificat de sécurité du serveur.
+
+* *Changer le nom de l'hôte*
++
+Modifie le nom de l'hôte sur lequel l'appliance virtuelle est installée.
+
+* *Retour*
++
+Quitte le menu de configuration système et revient au menu principal.
+
+* *Sortie*
++
+Quitte le menu de la console de maintenance.
+
+

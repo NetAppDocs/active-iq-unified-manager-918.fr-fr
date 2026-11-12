@@ -1,0 +1,34 @@
+---
+permalink: data-protection/task_create_snapmirror_policy_to_maximize_transfer_efficiency.html 
+sidebar: sidebar 
+keywords: create, snapmirror, policy, maximize, transfer, efficiency 
+summary: 'Vous pouvez créer une stratégie SnapMirror pour spécifier la priorité de transfert SnapMirror pour les relations de protection. Les stratégies SnapMirror vous permettent d"optimiser l"efficacité des transferts de la source vers la destination en attribuant des priorités, de sorte que les transferts de priorité inférieure soient planifiés après les transferts de priorité normale.' 
+---
+= Créez une politique SnapMirror pour optimiser l'efficacité des transferts dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer une stratégie SnapMirror pour spécifier la priorité de transfert SnapMirror pour les relations de protection. Les stratégies SnapMirror vous permettent d'optimiser l'efficacité des transferts de la source vers la destination en attribuant des priorités, de sorte que les transferts de priorité inférieure soient planifiés après les transferts de priorité normale.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+* Cette tâche suppose que vous avez déjà rempli la section « Informations sur la destination » de la boîte de dialogue « Configurer la protection ».
+
+
+.Étapes
+. À partir de l’onglet *SnapMirror* de la boîte de dialogue *Configurer la protection*, cliquez sur le lien *Créer une stratégie* dans la zone *Paramètres de relation*.
++
+La boîte de dialogue Créer une stratégie SnapMirror s'affiche.
+
+. Dans le champ *Nom de la stratégie*, saisissez le nom que vous souhaitez donner à la stratégie.
+. Dans le champ *Priorité de transfert*, sélectionnez la priorité de transfert que vous souhaitez attribuer à la stratégie.
+. Dans le champ *Commentaire*, saisissez un commentaire facultatif concernant la politique.
+. Cliquez sur *Créer*.
++
+La nouvelle stratégie s'affiche dans la liste déroulante de stratégie SnapMirror.
+
+

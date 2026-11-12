@@ -1,0 +1,36 @@
+---
+permalink: data-protection/task_add_resource_pool_members.html 
+sidebar: sidebar 
+keywords: add, resource, pool, members 
+summary: 'Un pool de ressources est composé de plusieurs agrégats membres. Vous pouvez ajouter des agrégats aux pools de ressources existants afin d"augmenter l"espace disponible pour le provisionnement des volumes secondaires.' 
+---
+= Ajouter des membres au pool de ressources dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un pool de ressources est composé de plusieurs agrégats membres. Vous pouvez ajouter des agrégats aux pools de ressources existants afin d'augmenter l'espace disponible pour le provisionnement des volumes secondaires.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Vous ne pouvez pas ajouter plus de 200 agrégats à un pool de ressources à la fois. Les agrégats affichés dans la boîte de dialogue Aggregates n'appartiennent à aucun autre pool de ressources.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Protection* > *Resource Pools*.
+. Sélectionnez un pool de ressources dans la liste *Pools de ressources*.
++
+Les membres du pool de ressources sont affichés dans la zone située sous la liste des pools de ressources.
+
+. Dans la zone des membres du pool de ressources, cliquez sur *Ajouter*.
++
+La boîte de dialogue Aggregates s'affiche.
+
+. Sélectionnez un ou plusieurs agrégats.
+. Cliquez sur *Add*.
++
+La boîte de dialogue se ferme et les agrégats s'affichent dans la liste des membres du pool de ressources sélectionné.
+
+

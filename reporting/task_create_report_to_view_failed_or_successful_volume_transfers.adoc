@@ -1,0 +1,36 @@
+---
+permalink: reporting/task_create_report_to_view_failed_or_successful_volume_transfers.html 
+sidebar: sidebar 
+keywords: create, report, view, failed, successful, volume, transfer 
+summary: 'Vous pouvez générer un rapport affichant l"état des transferts de volume. Ce rapport permet de visualiser les transferts de volume réussis et ceux ayant échoué.' 
+---
+= Créez un rapport pour visualiser les transferts de volume ayant échoué ou réussi dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez générer un rapport affichant l'état des transferts de volume. Ce rapport permet de visualiser les transferts de volume réussis et ceux ayant échoué.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée permettant d'afficher les transferts qui ont échoué et ceux qui ont réussi, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Dans le menu Affichage, sélectionnez *Relation* > *Statut des transferts du dernier mois*.
+. Sélectionnez *Afficher/Masquer* pour supprimer les colonnes que vous ne souhaitez pas inclure dans le rapport.
+. Faites glisser la colonne "`Operation Result`" près de la colonne "`State`".
+. Cliquez en haut de la colonne "`Operation Result`" pour trier les volumes par statut.
+. Enregistrez la vue sous un nom spécifique qui reflète ce qu’elle affiche, par exemple "`Volumes par statut de transfert`".
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pouvez consulter l’état du transfert.

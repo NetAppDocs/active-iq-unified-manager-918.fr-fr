@@ -1,0 +1,29 @@
+---
+permalink: data-protection/task_configure_protection_destination_settings.html 
+sidebar: sidebar 
+keywords: configure, destination, efficiency, settings 
+summary: 'Vous pouvez configurer les paramètres d"efficacité de destination, tels que la déduplication, la compression, l"extension automatique et la garantie d"espace, sur une destination de protection à l"aide de la boîte de dialogue Advanced Destination Settings. Vous utilisez ces paramètres lorsque vous souhaitez optimiser l"utilisation de l"espace sur une destination ou un volume secondaire.' 
+---
+= Configurez les paramètres d'efficacité de la destination dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer les paramètres d'efficacité de destination, tels que la déduplication, la compression, l'extension automatique et la garantie d'espace, sur une destination de protection à l'aide de la boîte de dialogue Advanced Destination Settings. Vous utilisez ces paramètres lorsque vous souhaitez optimiser l'utilisation de l'espace sur une destination ou un volume secondaire.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Par défaut, les paramètres d'efficacité correspondent à ceux du volume source, à l'exception des paramètres de compression dans une relation SnapVault, qui sont désactivés par défaut.
+
+.Étapes
+. Cliquez sur l'onglet *SnapMirror* ou sur l'onglet *SnapVault* dans la boîte de dialogue *Configurer la protection*, selon le type de relation que vous configurez.
+. Cliquez sur *Avancé* dans la section *Informations sur la destination*.
++
+La boîte de dialogue Paramètres de destination avancés s'ouvre.
+
+. Activez ou désactivez les paramètres d'efficacité pour la déduplication, la compression, l'extension automatique et la garantie d'espace, selon vos besoins.
+. Cliquez sur *Appliquer* pour enregistrer vos sélections et revenir à la boîte de dialogue *Configurer la protection*.
+

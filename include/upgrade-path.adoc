@@ -1,0 +1,29 @@
+---
+permalink: include/upgrade-path.html 
+sidebar: sidebar 
+keywords: supported upgrade path, upgrade path, n-2, which versions can be upgraded 
+summary: Chemin de mise à niveau pris en charge 
+---
+= Utilisez la voie de mise à niveau prise en charge pour les versions de Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager prend en charge un chemin de mise à niveau spécifique pour chaque version.
+
+Toutes les versions d'Unified Manager ne permettent pas d'effectuer une mise à niveau sur place vers des versions ultérieures. Les mises à niveau d'Unified Manager sont limitées à un modèle N-2. Cela signifie que vous ne pouvez effectuer une mise à niveau que vers les deux versions suivantes sur toutes les plateformes. Par exemple, vous pouvez effectuer une mise à niveau vers Unified Manager 9.18 uniquement à partir d'Unified Manager 9.14 et 9.16.
+
+Si vous utilisez une version antérieure aux versions prises en charge, votre instance d'Unified Manager devra d'abord être mise à niveau vers l'une des versions prises en charge, puis vers la version actuelle.
+
+Par exemple, si votre version installée est Unified Manager 9.9 et que vous souhaitez passer à Unified Manager 9.14, vous devez suivre une séquence de mises à niveau.
+
+.Exemple de chemin de mise à niveau :
+. Mise à niveau 9.11 -> 9.13
+. Mise à niveau 9.13 -> 9.14
+. Mise à niveau 9.13 -> 9.16
+. Mise à niveau 9.14 ou 9.16 -> 9.18
+
+
+Pour plus d'informations sur la matrice des chemins de mise à niveau, consultez ceci https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/Active_IQ_Unified_Manager/What_is_the_upgrade_path_for_Active_IQ_Unified_Manager_versions["article de la base de connaissances (KB)"].

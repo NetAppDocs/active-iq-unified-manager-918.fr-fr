@@ -1,0 +1,31 @@
+---
+permalink: config/task_test_configuration_of_authentication_servers_um_6_0.html 
+sidebar: sidebar 
+keywords: test, configuration, authentication servers 
+summary: 'Vous pouvez valider la configuration de vos serveurs d"authentification pour vous assurer que le serveur de gestion peut communiquer avec eux. Pour ce faire, recherchez un utilisateur ou un groupe distant sur vos serveurs d"authentification et authentifiez-le à l"aide des paramètres configurés.' 
+---
+= Testez la configuration des serveurs d'authentification dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez valider la configuration de vos serveurs d'authentification pour vous assurer que le serveur de gestion peut communiquer avec eux. Pour ce faire, recherchez un utilisateur ou un groupe distant sur vos serveurs d'authentification et authentifiez-le à l'aide des paramètres configurés.
+
+.Avant de commencer
+* Vous devez avoir activé l'authentification à distance et configuré votre service d'authentification afin que le serveur Unified Manager puisse authentifier l'utilisateur ou le groupe distant.
+* Vous devez avoir ajouté vos serveurs d'authentification afin que le serveur de gestion puisse rechercher l'utilisateur distant ou le groupe distant sur ces serveurs et les authentifier.
+* Vous devez posséder le rôle d'administrateur d'application.
+
+
+Si le service d'authentification est configuré sur Active Directory et que vous validez l'authentification d'utilisateurs distants appartenant au groupe principal du serveur d'authentification, les informations relatives au groupe principal ne sont pas affichées dans les résultats d'authentification.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Authentification à distance*.
+. Cliquez sur *Test Authentication*.
+. Dans la boîte de dialogue Test User, spécifiez le nom d'utilisateur et le mot de passe de l'utilisateur distant ou le nom du groupe distant, puis cliquez sur *Test*.
++
+Si vous authentifiez un groupe distant, vous ne devez pas saisir le mot de passe.
+
+

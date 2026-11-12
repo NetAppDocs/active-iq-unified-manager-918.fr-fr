@@ -1,0 +1,93 @@
+---
+permalink: config/reference_identity_provider_requirements_um.html 
+sidebar: sidebar 
+keywords: identity, provider, requirements 
+summary: 'Lors de la configuration d"Unified Manager pour utiliser un fournisseur d"identité (IdP) afin d"effectuer l"authentification SAML pour tous les utilisateurs distants, vous devez connaître certains paramètres de configuration requis pour que la connexion à Unified Manager réussisse.' 
+---
+= Utilisez un fournisseur d'identité dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lors de la configuration d'Unified Manager pour utiliser un fournisseur d'identité (IdP) afin d'effectuer l'authentification SAML pour tous les utilisateurs distants, vous devez connaître certains paramètres de configuration requis pour que la connexion à Unified Manager réussisse.
+
+Vous devez saisir l'URI et les métadonnées d'Unified Manager dans le serveur IdP. Vous pouvez copier ces informations depuis la page Unified ManagerSAML Authentication. Unified Manager est considéré comme le fournisseur de services (SP) dans la norme SAML (Security Assertion Markup Language).
+
+
+
+[[supported-encryption-standards]]
+== Normes de chiffrement prises en charge
+
+* Norme de chiffrement avancée (AES) : AES-128 et AES-256
+* Algorithme de hachage sécurisé (SHA) : SHA-1 et SHA-256
+
+
+
+
+[[validated-identity-providers]]
+== Fournisseurs d'identité validés
+
+* Shibboleth
+* Services de fédération Active Directory (ADFS)
+
+
+
+
+[[adfs-configuration-requirements]]
+== Exigences de configuration d'ADFS
+
+* Vous devez définir trois règles de revendication dans l’ordre suivant, nécessaires pour que Unified Manager puisse analyser les réponses SAML ADFS pour cette entrée d’approbation de partie de confiance.
++
+[cols="2*"]
+|===
+| Règle de revendication | Valeur 
+
+
+ a| 
+SAM-account-name
+ a| 
+ID de nom
+
+
+
+ a| 
+SAM-account-name
+ a| 
+urn:oid:0.9.2342.19200300.100.1.1
+
+
+
+ a| 
+Groupes de jetons -- Nom non qualifié
+ a| 
+urn:oid:1.3.6.1.4.1.5923.1.5.1.1
+
+|===
+* Vous devez définir la méthode d'authentification sur "`Forms Authentication`", sinon les utilisateurs risquent de recevoir une erreur lors de leur déconnexion de Unified Manager. Procédez comme suit :
++
+.. Ouvrez la Console de gestion ADFS.
+.. Cliquez sur le dossier « Stratégies d’authentification » dans l’arborescence de gauche.
+.. Dans Actions à droite, cliquez sur Modifier la stratégie d'authentification principale globale.
+.. Définissez la méthode d'authentification Intranet sur « `Forms Authentication` » au lieu de la valeur par défaut « `Windows Authentication` ».
+
+
+* Dans certains cas, la connexion via l'IdP est refusée lorsque le certificat de sécurité d'Unified Manager est signé par une autorité de certification. Deux solutions permettent de résoudre ce problème :
++
+** Suivez les instructions indiquées dans le lien pour désactiver la vérification de révocation sur le serveur ADFS pour le certificat d’autorité de certification chaîné associé à la partie de confiance :
++
+http://www.torivar.com/2016/03/22/adfs-3-0-disable-revocation-check-windows-2012-r2/["Désactiver la vérification de révocation par approbation de partie de confiance"]
+
+** Le serveur d’autorité de certification doit résider sur le serveur ADFS pour signer la demande de certificat du serveur Unified Manager.
+
+
+
+
+
+
+[[other-configuration-requirements]]
+== Autres exigences de configuration
+
+* Le décalage horaire d'Unified Manager est fixé à 5 minutes. La différence de temps entre le serveur IdP et le serveur Unified Manager ne peut donc pas dépasser 5 minutes, sinon l'authentification échouera.
+

@@ -1,0 +1,30 @@
+---
+permalink: performance-checker/concept_metrocluster_configuration_verification.html 
+sidebar: sidebar 
+keywords: metrocluster, configuration, verification 
+summary: Vous pouvez éviter les problèmes de performance des workloads mis en miroir dans une configuration MetroCluster en vous assurant que la configuration MetroCluster est correctement définie. Vous pouvez également améliorer les performances des workloads en modifiant la configuration ou en mettant à niveau les composants logiciels ou matériels. 
+---
+= Vérifiez les configurations MetroCluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez éviter les problèmes de performance des workloads mis en miroir dans une configuration MetroCluster sur FC et IP en vous assurant que la configuration MetroCluster est correctement configurée. Vous pouvez également améliorer les performances des workloads en modifiant la configuration ou en mettant à niveau les composants logiciels ou matériels.
+
+Consultez https://docs.netapp.com/us-en/ontap-metrocluster/index.html["Documentation MetroCluster"] pour obtenir des instructions sur la configuration des clusters dans la configuration MetroCluster, y compris les commutateurs Fibre Channel (FC), les câbles et les liaisons inter-commutateurs (ISL). Cela vous aide également à configurer le logiciel MetroCluster afin que les clusters locaux et distants puissent communiquer avec les données de volume miroir. Pour obtenir des informations spécifiques à votre configuration MetroCluster over IP, consultez https://docs.netapp.com/us-en/ontap-metrocluster/install-ip/index.html["Installer une configuration IP MetroCluster"].
+
+Vous pouvez comparer votre configuration MetroCluster aux exigences dans https://docs.netapp.com/us-en/ontap-metrocluster/index.html["Documentation MetroCluster"] afin de déterminer si la modification ou la mise à niveau de composants de votre configuration MetroCluster pourrait améliorer les performances du workload. Cette comparaison peut vous aider à répondre aux questions suivantes :
+
+* Ces contrôleurs sont-ils adaptés à vos workloads ?
+* Avez-vous besoin de mettre à niveau vos bundles ISL vers une bande passante plus élevée pour gérer un débit plus important ?
+* Pouvez-vous ajuster les crédits de tampon à tampon (BBC) sur vos commutateurs pour augmenter la bande passante?
+* Si vos workloads présentent un débit d’écriture élevé vers un stockage SSD, devez-vous mettre à niveau vos ponts FC-SAS pour prendre en charge ce débit ?
+
+
+*Informations connexes*
+
+* Pour plus d'informations sur le remplacement ou la mise à niveau des composants MetroCluster, consultez le https://docs.netapp.com/us-en/ontap-metrocluster/index.html["Documentation MetroCluster"].
+* Pour plus d'informations sur la mise à niveau des contrôleurs, consultez https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_fc_mcc_us_switchover_and_switchback_mcc_fc_4n_cu.html["Mise à niveau des contrôleurs dans une configuration FC MetroCluster à l’aide du basculement et du rétablissement"] et https://docs.netapp.com/us-en/ontap-metrocluster/upgrade/task_upgrade_controllers_in_a_four_node_ip_mcc_us_switchover_and_switchback_mcc_ip.html["Mise à niveau des contrôleurs dans une configuration IP MetroCluster à l’aide du basculement et du rétablissement"]
+

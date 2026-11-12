@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_what_storage_efficiency_is.html 
+sidebar: sidebar 
+keywords: storage, efficiency 
+summary: 'L"efficacité du stockage vous permet de stocker un maximum de données au moindre coût et de prendre en charge une croissance rapide du volume des données tout en consommant moins d"espace. NetApp strategy for storage efficiency repose sur les fondements intégrés de la virtualisation du stockage et du stockage unifié fournis par son système d"exploitation ONTAP principal et le système de fichiers Write Anywhere File Layout (WAFL).' 
+---
+= Comprendre l'efficacité du stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'efficacité du stockage vous permet de stocker un maximum de données au moindre coût et de prendre en charge une croissance rapide du volume des données tout en consommant moins d'espace. NetApp strategy for storage efficiency repose sur les fondements intégrés de la virtualisation du stockage et du stockage unifié fournis par son système d'exploitation ONTAP principal et le système de fichiers Write Anywhere File Layout (WAFL).
+
+L'efficacité du stockage inclut l'utilisation de technologies telles que le provisionnement fin, la copie Snapshot, la déduplication, la compression des données, FlexClone, la réplication fine avec SnapVault et volume SnapMirror, RAID-DP, Flash Cache, l'agrégat Flash Pool et les agrégats compatibles FabricPool, qui contribuent à augmenter l'utilisation du stockage et à diminuer les coûts de stockage.
+
+L'architecture de stockage unifiée vous permet de consolider efficacement un réseau de stockage (SAN), un stockage en réseau (NAS) et un stockage secondaire sur une seule plateforme.
+
+Les disques durs haute densité, tels que les disques SATA (Serial Advanced Technology Attachment) configurés au sein d'un agrégat Flash Pool ou avec la technologie Flash Cache et RAID-DP, augmentent l'efficacité sans affecter les performances et la résilience.
+
+Un agrégat compatible FabricPool comprend un agrégat entièrement SSD ou un agrégat HDD (à partir de ONTAP 9.8) comme niveau de performance local et un stockage objet que vous spécifiez comme niveau cloud. La configuration de FabricPool vous permet de gérer le niveau de stockage (niveau local ou niveau cloud) sur lequel les données doivent être stockées en fonction de leur fréquence d'accès.
+
+Des technologies telles que le provisionnement fin, la copie Snapshot, la déduplication, la compression des données, la réplication fine avec SnapVault et SnapMirror de volume, ainsi que FlexClone®, offrent de meilleures économies. Vous pouvez utiliser ces technologies individuellement ou ensemble pour atteindre une efficacité de stockage maximale.

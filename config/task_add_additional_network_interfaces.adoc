@@ -1,0 +1,49 @@
+---
+permalink: config/task_add_additional_network_interfaces.html 
+sidebar: sidebar 
+keywords: add, network, interfaces 
+summary: Vous pouvez ajouter de nouvelles interfaces réseau si vous devez séparer le trafic réseau. 
+---
+= Ajouter des interfaces réseau à Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez ajouter de nouvelles interfaces réseau si vous devez séparer le trafic réseau.
+
+.Avant de commencer
+Vous devez avoir ajouté l'interface réseau à l'appliance virtuelle à l'aide de vSphere.
+
+L'appliance virtuelle doit être mise sous tension.
+
+[NOTE]
+====
+Vous ne pouvez pas effectuer cette opération si Unified Manager est installé sur Red Hat Enterprise Linux ou sur Microsoft Windows.
+
+====
+.Étapes
+. Dans le menu principal de la console vSphere, sélectionnez *Configuration système* > *Redémarrer le système d'exploitation*.
++
+Après le redémarrage, la console de maintenance peut détecter la nouvelle interface réseau ajoutée.
+
+. Accédez à la console de maintenance.
+. Sélectionnez *Configuration réseau* > *Activer l'interface réseau*.
+. Sélectionnez la nouvelle interface réseau et appuyez sur *Entrée*.
++
+Sélectionnez *eth1* et appuyez sur *Entrée*.
+
+. Tapez *y* pour activer l'interface réseau.
+. Saisissez les paramètres du réseau.
++
+Vous serez invité à saisir les paramètres réseau si vous utilisez une interface statique ou si le DHCP n'est pas détecté.
+
++
+Après avoir saisi les paramètres réseau, vous revenez automatiquement au menu *Configuration réseau*.
+
+. Sélectionnez *Valider les modifications*.
++
+Vous devez valider les modifications pour ajouter l'interface réseau.
+
+

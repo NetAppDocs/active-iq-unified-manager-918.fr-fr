@@ -1,0 +1,29 @@
+---
+permalink: reporting/concept_understand_view_and_reports_relationship.html 
+sidebar: sidebar 
+keywords: understand, view, report, relationship 
+summary: 'Les pages de visualisation et d"inventaire se transforment en rapports lorsque vous les téléchargez ou les planifiez.' 
+---
+= Comprendre la relation entre la vue et le rapport dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les pages de visualisation et d'inventaire se transforment en rapports lorsque vous les téléchargez ou les planifiez.
+
+Vous pouvez personnaliser et enregistrer les vues et les pages d'inventaire pour les réutiliser. Presque tout ce que vous pouvez visualiser dans Unified Manager peut être enregistré, réutilisé, personnalisé, programmé et partagé sous forme de rapport.
+
+Dans le menu déroulant « Vue », les éléments comportant l’icône de suppression correspondent aux vues personnalisées existantes que vous ou un autre utilisateur avez créées. Les éléments sans icône sont les vues par défaut fournies avec Unified Manager. Ces vues par défaut ne peuvent être ni modifiées ni supprimées.
+
+[NOTE]
+====
+* Si vous supprimez une vue personnalisée de la liste, cela supprime également tous les fichiers Excel ou rapports planifiés qui utilisent cette vue.
+* Si vous modifiez une vue personnalisée, les rapports qui utilisent cette vue refléteront la modification lors de leur prochaine génération et de leur envoi par e-mail conformément à la planification des rapports. Lorsque vous modifiez des vues, assurez-vous que vos modifications sont compatibles avec les personnalisations Excel associées utilisées pour les rapports. Si nécessaire, vous pouvez mettre à jour le fichier Excel en le téléchargeant, en apportant les modifications requises, puis en le chargeant comme nouvelle personnalisation Excel pour la vue.
+
+
+====
+image::../media/view_drop_down_3.png[Capture d'écran de l'interface utilisateur du menu déroulant View.]
+
+Seuls les utilisateurs ayant le rôle d'administrateur d'application ou d'administrateur de stockage peuvent voir l'icône de suppression, modifier ou supprimer une vue, ou modifier ou supprimer un rapport planifié.

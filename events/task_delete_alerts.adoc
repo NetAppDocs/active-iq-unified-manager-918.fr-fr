@@ -1,0 +1,23 @@
+---
+permalink: events/task_delete_alerts.html 
+sidebar: sidebar 
+keywords: delete, alerts 
+summary: 'Vous pouvez supprimer une alerte lorsqu"elle n"est plus nécessaire. Par exemple, vous pouvez supprimer une alerte créée pour une ressource particulière lorsque cette ressource n"est plus surveillée par Unified Manager.' 
+---
+= Supprimer les alertes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer une alerte lorsqu'elle n'est plus nécessaire. Par exemple, vous pouvez supprimer une alerte créée pour une ressource particulière lorsque cette ressource n'est plus surveillée par Unified Manager.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration des alertes*.
+. Sur la page *Configuration des alertes*, sélectionnez les alertes que vous souhaitez supprimer, puis cliquez sur *Supprimer*.
+. Cliquez sur *Oui* pour confirmer la demande de suppression.
+

@@ -1,0 +1,228 @@
+---
+permalink: config/reference_unified_manager_roles_and_capabilities.html 
+sidebar: sidebar 
+keywords: unified manager, user, roles, capabilities 
+summary: En fonction du rôle utilisateur qui vous a été attribué, vous pouvez déterminer les opérations que vous pouvez effectuer dans Unified Manager. 
+---
+= Découvrez les rôles et les capacités des utilisateurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+En fonction du rôle utilisateur qui vous a été attribué, vous pouvez déterminer les opérations que vous pouvez effectuer dans Unified Manager.
+
+Le tableau suivant présente les fonctions que chaque rôle utilisateur peut effectuer :
+
+[cols="6*"]
+|===
+| Fonction | Opérateur | Administrateur de stockage | Administrateur d’application | Schéma d'intégration | Schéma du rapport 
+
+
+ a| 
+Afficher les informations du système de stockage
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+•
+
+
+
+ a| 
+Consultez d'autres données, telles que les historiques et les tendances de capacité
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+•
+
+
+
+ a| 
+Afficher, attribuer et résoudre les événements
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Afficher les objets du service de stockage, tels que les associations SVM et les pools de ressources
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Consultez les politiques de seuil
+ a| 
+•
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Gérer les objets de service de stockage, tels que les associations SVM et les pools de ressources
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Définir les alertes
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Gérer les options de gestion du stockage
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Gérer les politiques de gestion du stockage
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Gérer les utilisateurs
+ a| 
+ a| 
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Gérer les options d'administration
+ a| 
+ a| 
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Définir des politiques de seuil
+ a| 
+ a| 
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Gérer l'accès à la base de données
+ a| 
+ a| 
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Gérer l’intégration avec WFA et fournir l’accès aux vues de la base de données
+ a| 
+ a| 
+ a| 
+ a| 
+•
+ a| 
+
+
+
+ a| 
+Planifier et enregistrer les rapports
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Exécutez les opérations "`Fix It`" depuis Management Actions
+ a| 
+ a| 
+•
+ a| 
+•
+ a| 
+ a| 
+
+
+
+ a| 
+Fournir un accès en lecture seule aux vues de la base de données
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+•
+
+|===

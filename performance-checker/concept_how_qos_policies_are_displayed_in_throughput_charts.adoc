@@ -1,0 +1,64 @@
+---
+permalink: performance-checker/concept_how_qos_policies_are_displayed_in_throughput_charts.html 
+sidebar: sidebar 
+keywords: different, types, qos, policies, display, throughput, charts 
+summary: 'Vous pouvez consulter les paramètres de stratégie de qualité de service (QoS) définis par ONTAP et appliqués à un volume ou un LUN dans l"Explorateur de performances et les graphiques IOPS, IOPS/TB et Mo/s de l"analyse du workload. Les informations affichées dans les graphiques diffèrent selon le type de stratégie de QoS appliquée au workload.' 
+---
+= Affichez les politiques QoS dans les graphiques de débit avec Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter les paramètres de stratégie de qualité de service (QoS) définis par ONTAP et appliqués à un volume ou un LUN dans l'Explorateur de performances et les graphiques IOPS, IOPS/TB et Mo/s de l'analyse du workload. Les informations affichées dans les graphiques diffèrent selon le type de stratégie de QoS appliquée au workload.
+
+Le paramètre de débit maximal (ou « `peak` ») définit le débit maximal que le workload peut consommer, et limite ainsi l’impact des workloads concurrents sur les ressources système. Le paramètre de débit minimal (ou « `expected` ») définit le débit minimal qui doit être disponible pour le workload, afin qu’un workload critique atteigne ses objectifs de débit minimal, quelle que soit la demande des workloads concurrents.
+
+Les politiques QoS partagées et non partagées pour les IOPS et les Mo/s utilisent les termes « `minimum` » et « `maximum` » pour définir les valeurs plancher et plafond. Les politiques QoS adaptatives pour les IOPS/To, introduites dans ONTAP 9.3, utilisent les termes « `expected` » et « `peak` » pour définir les valeurs plancher et plafond.
+
+Bien que ONTAP vous permette de créer ces deux types de politiques QoS, selon la manière dont elles sont appliquées aux workloads, la politique QoS s’affichera de trois manières différentes dans les graphiques de performance.
+
+|===
+| Type de politique | Fonctionnalité | Indicateur dans l'interface Unified Manager 
+
+
+ a| 
+Politique QoS partagée attribuée à un seul workload, ou politique QoS non partagée attribuée à un seul workload ou à plusieurs workloads
+ a| 
+Chaque workload peut consommer le paramètre de débit spécifié
+ a| 
+Affiche « `(QoS)` »
+
+
+
+ a| 
+Politique QoS partagée attribuée à plusieurs workloads
+ a| 
+Tous les workloads partagent le paramètre de débit spécifié
+ a| 
+Affiche « `(QoS Shared)` »
+
+
+
+ a| 
+Politique QoS adaptative attribuée à un seul workload ou à plusieurs workloads
+ a| 
+Chaque workload peut consommer le paramètre de débit spécifié
+ a| 
+Affiche « `(QoS Adaptive)` »
+
+|===
+La figure suivante illustre un exemple de la manière dont les trois options sont affichées dans les graphiques de compteurs.
+
+image::../media/3_qos_policy_charts.gif[Capture d'écran de l'interface utilisateur montrant un exemple de la façon dont les trois options sont affichées dans les graphiques de compteurs.]
+
+Lorsqu'une politique QoS normale définie en IOPS apparaît dans le graphique IOPS/TB d'une workload, ONTAP convertit la valeur IOPS en une valeur IOPS/TB et Unified Manager affiche cette politique dans le graphique IOPS/TB avec le texte « `QoS, defined in IOPS` ».
+
+Lorsqu’une stratégie QoS adaptative définie en IOPS/TB apparaît dans le graphique des IOPS d’un workload, ONTAP convertit la valeur IOPS/TB en une valeur IOPS et Unified Manager affiche cette stratégie dans le graphique des IOPS avec le texte « `QoS Adaptive - Used, defined in IOPS/TB` » ou « `QoS Adaptive - Allocated, defined in IOPS/TB` », selon la configuration du paramètre d’allocation des IOPS maximales. Lorsque le paramètre d’allocation est défini sur « `allocated-space` », les IOPS maximales sont calculées en fonction de la taille du volume. Lorsque le paramètre d’allocation est défini sur « `used-space` », les IOPS maximales sont calculées en fonction de la quantité de données stockées dans le volume, en tenant compte des efficacités de stockage.
+
+[NOTE]
+====
+Le graphique IOPS/TB affiche les données de performance uniquement lorsque la capacité logique utilisée par le volume est supérieure ou égale à 128 Go. Des lacunes s'affichent dans le graphique lorsque la capacité utilisée passe en dessous de 128 Go pendant la période sélectionnée.
+
+====

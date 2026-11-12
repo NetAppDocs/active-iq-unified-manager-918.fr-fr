@@ -1,0 +1,49 @@
+---
+permalink: data-protection/task_resynchronize_protection_relationships.html 
+sidebar: sidebar 
+keywords: resynchronize, protection, relationships, volume, relationships page 
+summary: Depuis la page Relations de volume, vous pouvez resynchroniser une relation soit pour récupérer après un événement ayant désactivé votre volume source, soit lorsque vous souhaitez remplacer le volume source actuel par un autre volume. 
+---
+= Resynchronisez les relations de protection à partir de la page Relations de volumes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Depuis la page Relations de volume, vous pouvez resynchroniser une relation soit pour récupérer après un événement ayant désactivé votre volume source, soit lorsque vous souhaitez remplacer le volume source actuel par un autre volume.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+
+
+.Étapes
+. Dans la page *Relations entre volumes*, sélectionnez un ou plusieurs volumes dont les relations sont en pause, puis, dans la barre d'outils, cliquez sur *Resynchroniser*.
++
+La boîte de dialogue Resynchroniser s'affiche.
+
+. Dans l'onglet *Options de resynchronisation*, sélectionnez une priorité de transfert et le débit de transfert maximal.
+. Cliquez sur *Copies d'instantané source*; puis, dans la colonne *Copie d'instantané*, cliquez sur *Par défaut*.
++
+La boîte de dialogue « Sélectionner la copie d'instantané source » s'affiche.
+
+. Si vous souhaitez spécifier une copie Snapshot existante plutôt que de transférer la copie Snapshot par défaut, cliquez sur *Copie Snapshot existante* et sélectionnez une copie Snapshot dans la liste.
+. Cliquez sur *Submit*.
++
+Vous revenez à la boîte de dialogue Resynchronize.
+
+. Si vous avez sélectionné plusieurs sources à resynchroniser, cliquez sur *Default* pour la source suivante pour laquelle vous souhaitez spécifier une copie Snapshot existante.
+. Cliquez sur *Submit* pour lancer la tâche de resynchronisation.
++
+La tâche de resynchronisation démarre, vous revenez à la page Relations de volumes et un lien vers les tâches s'affiche en haut de la page.
+
+. *Facultatif:* Cliquez sur *Afficher les tâches* sur la page *Relations de volume* pour suivre l’état de chaque tâche de resynchronisation.
++
+Une liste filtrée des tâches s'affiche.
+
+. *Facultatif:* Cliquez sur la flèche *Retour* de votre navigateur pour revenir à la page *Relations de volume*.
++
+L'opération de resynchronisation est terminée lorsque toutes les tâches du travail se terminent avec succès.
+
+

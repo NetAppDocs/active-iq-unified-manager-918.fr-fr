@@ -1,0 +1,67 @@
+---
+permalink: events/reference_disk_events.html 
+sidebar: sidebar 
+keywords: disks, events, impact area, availability 
+summary: Les événements liés aux disques vous fournissent des informations sur leur état afin que vous puissiez surveiller d’éventuels problèmes. Les événements sont regroupés par zone d’impact et incluent le nom de l’événement et du trap, le niveau d’impact, le type de source et la gravité. 
+---
+= Découvrez les événements de disque dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements liés aux disques vous fournissent des informations sur leur état afin que vous puissiez surveiller d’éventuels problèmes. Les événements sont regroupés par zone d’impact et incluent le nom de l’événement et du trap, le niveau d’impact, le type de source et la gravité.
+
+
+
+[[impact-area-availability]]
+== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Disques Flash - Blocs de rechange presque épuisés(ocumEvtClusterFlashDiskFewerSpareBlockError)
+ a| 
+Risque
+ a| 
+Cluster
+ a| 
+Erreur
+
+
+
+ a| 
+Disques Flash - Pas de blocs de rechange(ocumEvtClusterFlashDiskNoSpareBlockCritical)
+ a| 
+Incident
+ a| 
+Cluster
+ a| 
+Primordial
+
+
+
+ a| 
+Certains disques non attribués(ocumEvtClusterUnassignedDisksSome)
+ a| 
+Risque
+ a| 
+Cluster
+ a| 
+Avertissement
+
+
+
+ a| 
+Certains disques défectueux(ocumEvtDisksSomeFailed)
+ a| 
+Incident
+ a| 
+Cluster
+ a| 
+Primordial
+
+|===

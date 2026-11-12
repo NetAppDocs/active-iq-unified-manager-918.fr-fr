@@ -1,0 +1,53 @@
+---
+permalink: events/concept_event_state_definitions.html 
+sidebar: sidebar 
+keywords: event, state, definitions 
+summary: 'L"état d"un événement vous aide à déterminer si une action corrective appropriée est nécessaire. Un événement peut être Nouveau, Accusé de réception, Résolu ou Obsolète. Notez que les événements Nouveau et Accusé de réception sont tous deux considérés comme des événements actifs.' 
+---
+= États des événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'état d'un événement vous aide à déterminer si une action corrective appropriée est nécessaire. Un événement peut être Nouveau, Accusé de réception, Résolu ou Obsolète. Notez que les événements Nouveau et Accusé de réception sont tous deux considérés comme des événements actifs.
+
+Les états de l'événement sont les suivants :
+
+* *Nouveau*
++
+L'état d'un nouvel événement.
+
+* *Reconnu*
++
+L'état d'un événement lorsque vous en avez pris connaissance.
+
+* *Résolu*
++
+L'état d'un événement lorsqu'il est marqué comme résolu.
+
+* *Obsolète*
++
+L'état d'un événement lorsqu'il est automatiquement corrigé ou lorsque la cause de l'événement n'est plus valable.
+
++
+[NOTE]
+====
+Vous ne pouvez ni acquitter ni résoudre un événement obsolète.
+
+====
+
+
+
+
+[[example-of-different-states-of-an-event]]
+== Exemple de différents états d'un événement
+
+Les exemples suivants illustrent les changements d'état manuels et automatiques des événements.
+
+Lorsque l’événement « Cluster Not Reachable » est déclenché, son état est « New ». Lorsque vous accusez réception de l’événement, son état passe à « Acknowledged ». Lorsque vous avez pris la mesure corrective appropriée, vous devez marquer l’événement comme résolu. Son état passe alors à « Resolved ».
+
+Si l’événement « Cluster Not Reachable » est généré à la suite d’une coupure de courant, le cluster recommence à fonctionner une fois le courant rétabli, sans aucune intervention de l’administrateur. Par conséquent, l’événement « Cluster Not Reachable » n’est plus valide, et son état passe à « Obsolete » lors du prochain cycle de surveillance.
+
+Unified Manager envoie une alerte lorsqu'un événement est à l'état Obsolète ou Résolu. L'objet et le contenu de l'e-mail d'alerte fournissent des informations sur l'état de l'événement. Un trap SNMP contient également des informations sur l'état de l'événement.

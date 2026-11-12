@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_set_up_connection_between_um_and_external_data_provider.html 
+sidebar: sidebar 
+keywords: setting, connection, between, unified manager, server, external, data, provider 
+summary: 'Une connexion entre un serveur Unified Manager et un fournisseur de données externe vous permet d"envoyer des données de performances du cluster à un serveur externe afin que les administrateurs du stockage puissent représenter graphiquement les indicateurs de performances à l"aide d"un logiciel tiers.' 
+---
+= Établissez une connexion entre Active IQ Unified Manager et un fournisseur de données externe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une connexion entre un serveur Unified Manager et un fournisseur de données externe vous permet d'envoyer des données de performances du cluster à un serveur externe afin que les administrateurs du stockage puissent représenter graphiquement les indicateurs de performances à l'aide d'un logiciel tiers.
+
+Une connexion entre un serveur Unified Manager et un fournisseur de données externe est établie via l’option de menu intitulée « `External Data Provider` » dans la console de maintenance.

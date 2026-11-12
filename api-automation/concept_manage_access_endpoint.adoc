@@ -1,0 +1,102 @@
+---
+permalink: api-automation/concept_manage_access_endpoint.html 
+sidebar: sidebar 
+keywords: manage, endpoints, access 
+summary: 'Vous devez créer des points de terminaison d"accès ou des interfaces logiques (LIF), nécessaires au provisionnement des machines virtuelles de stockage (SVM), des LUN et des partages de fichiers. Vous pouvez consulter, créer, modifier et supprimer les points de terminaison d"accès des SVM, des LUN ou des partages de fichiers dans votre environnement Active IQ Unified Manager.' 
+---
+= Gérez les points de terminaison d'accès à l'aide des API dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez créer des points de terminaison d'accès ou des interfaces logiques (LIF), nécessaires au provisionnement des machines virtuelles de stockage (SVM), des LUN et des partages de fichiers. Vous pouvez consulter, créer, modifier et supprimer les points de terminaison d'accès des SVM, des LUN ou des partages de fichiers dans votre environnement Active IQ Unified Manager.
+
+
+
+[[view-access-endpoints]]
+== Afficher les points de terminaison d'accès
+
+Vous pouvez consulter la liste des points de terminaison d'accès de votre environnement Unified Manager en procédant comme suit. Pour obtenir la liste des points de terminaison d'accès d'une SVM, d'un LUN ou d'un partage de fichiers spécifique, vous devez saisir l'identifiant unique de cette SVM, de ce LUN ou de ce partage de fichiers. Vous pouvez également saisir la clé unique du point de terminaison d'accès pour récupérer les détails de ce point de terminaison d'accès particulier.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+GET
+ a| 
+`/storage-provider/access-endpoints`
+
+`/storage-provider/access-endpoints/\{key}`
+
+|===
+
+
+[[add-access-endpoints]]
+== Ajouter des points de terminaison d'accès
+
+Vous pouvez créer des points de terminaison d'accès personnalisés et leur attribuer les propriétés requises. Vous devez saisir les détails du point de terminaison d'accès que vous souhaitez créer comme paramètres d'entrée. Vous pouvez utiliser cette API, System Manager ou ONTAP CLI pour créer un point de terminaison d'accès sur chaque nœud. Les adresses IPv4 et IPv6 sont prises en charge pour la création de points de terminaison d'accès.
+
+[NOTE]
+====
+Pour le provisionnement des LUN et des partages de fichiers, vous devez configurer votre SVM avec un nombre minimal de points d'accès par nœud. Il est recommandé de configurer votre SVM avec au moins deux points d'accès par nœud : l'un prenant en charge les protocoles CIFS et/ou NFS, et l'autre les protocoles iSCSI ou FCP.
+
+====
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+POST
+ a| 
+`/storage-provider/access-endpoints`
+
+|===
+
+
+[[delete-access-endpoints]]
+== Supprimer les points de terminaison d'accès
+
+Vous pouvez supprimer un point de terminaison d'accès spécifique en utilisant la méthode suivante. Vous devez fournir la clé du point de terminaison d'accès comme paramètre d'entrée pour supprimer un point de terminaison d'accès particulier.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+SUPPRIMER
+ a| 
+`/storage-provider/access-endpoints/\{key}`
+
+|===
+
+
+[[modify-access-endpoints]]
+== Modifier les points de terminaison d'accès
+
+Vous pouvez modifier un point de terminaison d'accès et mettre à jour ses propriétés en utilisant la méthode suivante. Vous devez fournir la clé du point de terminaison d'accès pour modifier un point de terminaison d'accès particulier. Vous devez également indiquer la propriété à mettre à jour, ainsi que sa valeur.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+CORRECTIF
+ a| 
+`/storage-provider/access-endpoints/\{key}`
+
+|===

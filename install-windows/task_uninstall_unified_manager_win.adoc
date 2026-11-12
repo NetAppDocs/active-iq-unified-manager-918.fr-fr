@@ -1,0 +1,56 @@
+---
+permalink: install-windows/task_uninstall_unified_manager_win.html 
+sidebar: sidebar 
+keywords: uninstall, unified manager 
+summary: 'Vous pouvez désinstaller Unified Manager en utilisant l"assistant Programmes et fonctionnalités, ou en effectuant une désinstallation sans assistance depuis l"interface de ligne de commandes.' 
+---
+= Désinstaller Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:pp: &#43;&#43;
+
+
+[role="lead"]
+Vous pouvez désinstaller Unified Manager en utilisant l'assistant Programmes et fonctionnalités, ou en effectuant une désinstallation sans assistance depuis l'interface de ligne de commandes.
+
+.Avant de commencer
+* Vous devez disposer des privilèges d'administrateur Windows.
+* Tous les clusters (sources de données) doivent être supprimés du serveur Unified Manager avant de désinstaller le logiciel.
+* Vous devez supprimer manuellement les règles de pare-feu créées pour autoriser ou bloquer le port 3306 de MySQL. Les règles de pare-feu ne sont pas supprimées automatiquement.
+
+
+.Étapes
+. Désinstallez Unified Manager en choisissant l'une des options suivantes :
++
+** Si vous désinstallez Unified Manager depuis l'assistant *Programmes et fonctionnalités*, procédez comme suit :
++
+... Accédez à *Panneau de configuration* > *Programmes et fonctionnalités*.
+... Sélectionnez Active IQ Unified Manager, puis cliquez sur *Désinstaller*.
+
+
+** Si vous désinstallez Unified Manager depuis la ligne de commandes, procédez comme suit :
++
+... Connectez-vous à la ligne de commandes Windows avec des privilèges d'administrateur.
+... Accédez au répertoire Active IQ Unified Manager et exécutez la commande suivante :
++
+`+msiexec /x {A78760DB-7EC0-4305-97DB-E4A89CDFF4E1} /qn /l*v %systemdrive%\UmUnInstall.log+`
+
++
+Si le contrôle de compte d'utilisateur (UAC) est activé sur le serveur et que vous êtes connecté en tant qu'utilisateur de domaine, vous devez utiliser la méthode de désinstallation en ligne de commande.
+
++
+Unified Manager a été désinstallé de votre système.
+
+
+
+
+
+. Désinstallez les packages tiers et les données suivants qui ne sont pas supprimés lors de la désinstallation de Unified Manager :
++
+** Logiciels tiers : JRE, MySQL, Microsoft Visual C&#43;&#43; 2015 Redistributable, Python et 7zip
+** Données d'application MySQL générées par Unified Manager
+** Journaux d'application et contenu du répertoire de données d'application
+
+
+

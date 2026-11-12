@@ -1,0 +1,20 @@
+---
+permalink: events/concept_what_um_maintenance_window_is.html 
+sidebar: sidebar 
+keywords: unified manager, maintenance, window 
+summary: Vous définissez une fenêtre de maintenance Unified Manager pour supprimer temporairement les événements et les alertes pendant une période spécifique lorsque vous avez planifié la maintenance du cluster et que vous ne souhaitez pas recevoir un flot de notifications indésirables. 
+---
+= Découvrez les fenêtres de maintenance d'Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous définissez une fenêtre de maintenance Unified Manager pour supprimer temporairement les événements et les alertes pendant une période spécifique lorsque vous avez planifié la maintenance du cluster et que vous ne souhaitez pas recevoir un flot de notifications indésirables.
+
+Lorsque la fenêtre de maintenance commence, un événement « Démarrage de la fenêtre de maintenance de l’objet » est publié sur la page d’inventaire de la gestion des événements. Cet événement devient automatiquement obsolète à la fin de la fenêtre de maintenance.
+
+Pendant une fenêtre de maintenance, les événements relatifs à tous les objets de ce cluster sont toujours générés, mais ils n’apparaissent sur aucune des pages de l’interface utilisateur, et aucune alerte ni aucun autre type de notification n’est envoyé pour ces événements. Vous pouvez toutefois afficher les événements générés pour tous les objets de stockage pendant une fenêtre de maintenance en sélectionnant l’une des options View sur la page d’inventaire Event Management.
+
+Vous pouvez programmer une fenêtre de maintenance à une date ultérieure, modifier les heures de début et de fin d'une fenêtre de maintenance programmée et annuler une fenêtre de maintenance programmée.

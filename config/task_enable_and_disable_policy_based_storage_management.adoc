@@ -1,0 +1,78 @@
+---
+permalink: config/task_enable_and_disable_policy_based_storage_management.html 
+sidebar: sidebar 
+keywords: provisioning, performance service levels, storage management, enable, disable, policy-based 
+summary: 'À partir d"Unified Manager 9.7, vous pouvez provisionner des charges de travail de stockage (volumes et LUN) sur vos clusters ONTAP et gérer ces charges de travail en fonction des niveaux de service de performance qui leur sont attribués. Cette fonctionnalité est similaire à la création de charges de travail dans ONTAP System Manager et à l"association de politiques QoS, mais avec Unified Manager, vous pouvez provisionner et gérer des charges de travail sur l"ensemble des clusters surveillés par votre instance d"Unified Manager.' 
+---
+= Activer et désactiver la gestion du stockage basée sur des stratégies dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+À partir d'Unified Manager 9.7, vous pouvez provisionner des charges de travail de stockage (volumes et LUN) sur vos clusters ONTAP et gérer ces charges de travail en fonction des niveaux de service de performance qui leur sont attribués. Cette fonctionnalité est similaire à la création de charges de travail dans ONTAP System Manager et à l'association de politiques QoS, mais avec Unified Manager, vous pouvez provisionner et gérer des charges de travail sur l'ensemble des clusters surveillés par votre instance d'Unified Manager.
+
+Vous devez posséder le rôle d'administrateur d'application.
+
+Cette option est activée par défaut, mais vous pouvez la désactiver si vous ne souhaitez pas provisionner et gérer les charges de travail à l'aide d'Unified Manager.
+
+Lorsqu'elle est activée, cette option ajoute de nombreux nouveaux éléments à l'interface utilisateur :
+
+[cols="2*"]
+|===
+| Nouveau contenu | Pays 
+
+
+ a| 
+Une page pour provisionner de nouvelles charges de travail
+ a| 
+Disponible depuis *Tâches courantes* > *Provisionnement*
+
+
+
+ a| 
+Une page pour créer des politiques de niveau de service de performance
+ a| 
+Disponible dans *Paramètres* > *Stratégies* > *Niveaux de service de performance*
+
+
+
+ a| 
+Une page pour créer des politiques de performances de l’efficacité du stockage
+ a| 
+Disponible dans *Paramètres* > *Stratégies* > *Efficacité du stockage*
+
+
+
+ a| 
+Panneaux décrivant les performances actuelles de votre charge de travail et les IOPS de la charge de travail
+ a| 
+Disponible depuis le Dashboard
+
+|===
+Consultez l'aide en ligne du produit pour plus d'informations sur ces pages et sur cette fonctionnalité.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Paramètres des fonctionnalités*.
+. Sur la page *Feature Settings*, désactivez ou activez la gestion du stockage basée sur des stratégies en choisissant l'une des options suivantes :
++
+[cols="2*"]
+|===
+| Si vous voulez... | Ensuite, faites ceci... 
+
+
+ a| 
+Désactiver la gestion du stockage basée sur des stratégies
+ a| 
+Dans le panneau *Gestion du stockage basée sur des stratégies*, déplacez le bouton du curseur vers la gauche.
+
+
+
+ a| 
+Activer la gestion du stockage basée sur des politiques
+ a| 
+Dans le panneau *Gestion du stockage basée sur des stratégies*, déplacez le bouton du curseur vers la droite.
+
+|===
+

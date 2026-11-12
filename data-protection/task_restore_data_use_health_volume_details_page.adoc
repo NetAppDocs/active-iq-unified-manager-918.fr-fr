@@ -1,0 +1,75 @@
+---
+permalink: data-protection/task_restore_data_use_health_volume_details_page.html 
+sidebar: sidebar 
+keywords: restore, data, volume, health details page, console 
+summary: 'Vous pouvez restaurer des fichiers, des répertoires ou un volume entier écrasés ou supprimés à partir d"une copie Snapshot à l"aide de la fonctionnalité de restauration sur la page Volume / Health details.' 
+---
+= Restaurez les données à l'aide des pages de détails Volume et Volume/Santé dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez restaurer des fichiers, des répertoires ou un volume entier écrasés ou supprimés à partir d'une copie Snapshot en utilisant la fonction de restauration sur les pages de détails Volume et Volume / Health.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+NOTE: Veuillez noter les points suivants :
+
+* Vous ne pouvez pas restaurer un répertoire ou un volume à partir d'un instantané dans l'un des scénarios suivants :
++
+** L’option *Oui, conserver toutes les copies d’instantané* est sélectionnée.
+** Vous utilisez un compte LDAP pour surveiller le cluster.
+** Vous êtes connecté en tant qu'utilisateur du domaine.
+** Votre compte est configuré pour l'authentification SAML.
+** Vous utilisez le protocole NDMP.
++
+Pour plus de détails, consultez l'article de la base de connaissances https://kb.netapp.com/on-prem/ontap/DP/NDMP/NDMP-KBs/How_to_configure_NDMP_authentication_in_the_SVM-scope_previously_known_as_Vserver-scope_mode["Comment configurer l'authentification NDMP en mode 'SVM-scope'"^].
+
+
+
+* Il est impossible de restaurer les flux de fichiers NTFS.
+* L'option de restauration n'est pas disponible lorsque :
++
+** L'identifiant du volume est inconnu : par exemple, lorsque vous avez une relation intercluster et que le cluster de destination n'a pas encore été découvert.
+** Le volume est configuré pour la réplication synchrone SnapMirror.
+
+
+
+
+.Étapes
+. Dans le volet de navigation de gauche, accédez à *Stockage > Volumes*.
+. Sélectionnez le volume et cliquez sur le bouton *Restaurer*. Vous pouvez également cliquer sur le volume pour accéder à *Détails du volume/de l’état > Actions > Restaurer*. La boîte de dialogue Restaurer s’affiche. Pour plus d’informations sur cette page, consultez link:../data-protection/reference_restore_dialog_box.html["Boîte de dialogue Restore"].
+. Sélectionnez le volume et la copie Snapshot à partir desquels vous souhaitez restaurer les données, s'ils sont différents de ceux par défaut.
+. Sélectionnez les éléments que vous souhaitez restaurer, par exemple, le LUN source.
++
+Vous pouvez restaurer l'intégralité du volume, ou spécifier les dossiers et fichiers que vous souhaitez restaurer.
+
+. Sélectionnez l'emplacement où vous souhaitez restaurer les éléments sélectionnés : soit *Emplacement d'origine*, soit *Autre emplacement existant*.
+. Si vous sélectionnez un autre emplacement existant, effectuez l'une des opérations suivantes :
++
+** Dans le champ de texte Chemin de restauration, saisissez le chemin d'accès à l'emplacement où vous souhaitez restaurer les données, puis cliquez sur *Sélectionner un répertoire*.
+** Cliquez sur *Parcourir* pour ouvrir la boîte de dialogue Parcourir les répertoires et suivez les étapes suivantes :
++
+... Sélectionnez le cluster de destination, la machine virtuelle de stockage (SVM) et le volume sur lesquels vous souhaitez effectuer la restauration.
+... Dans le tableau Nom, sélectionnez un nom de répertoire à restaurer.
+... Cliquez sur *Sélectionner un répertoire*.
+
+
+
+
+. Cliquez sur *Restaurer*.
++
+Le processus de restauration commence. Une tâche est créée sur le back-end pour mener à bien le processus de restauration.
+
+. Si vous voulez voir la progression du job, dans le volet de navigation de gauche, accédez à *Protection > Jobs* pour afficher l’état du job de restauration dans la liste des jobs.
++
+[NOTE]
+====
+Si une opération de restauration échoue entre des clusters HA Cloud Volumes ONTAP avec une erreur NDMP, vous devrez peut-être ajouter une route AWS explicite dans le cluster de destination afin que celui-ci puisse communiquer avec la LIF de gestion du cluster du système source. Vous effectuez cette étape de configuration à l'aide de la NetApp Console.
+
+====
+

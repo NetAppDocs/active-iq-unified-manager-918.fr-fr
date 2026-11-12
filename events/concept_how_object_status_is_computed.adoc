@@ -1,0 +1,14 @@
+---
+permalink: events/concept_how_object_status_is_computed.html 
+sidebar: sidebar 
+keywords: object, status, computed 
+summary: 'L"état d"un objet est déterminé par l"événement le plus grave dont l"état actuel est « Nouveau » ou « Accusé de réception ». Par exemple, si l"état d"un objet est « Erreur », cela signifie que l"un des événements de cet objet est de type « Erreur ». Une fois la correction effectuée, l"état de l"événement passe à « Résolu ».' 
+---
+= Comment Active IQ Unified Manager calcule l'état des objets
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'état d'un objet est déterminé par l'événement le plus grave dont l'état actuel est « Nouveau » ou « Accusé de réception ». Par exemple, si l'état d'un objet est « Erreur », cela signifie que l'un des événements de cet objet est de type « Erreur ». Une fois la correction effectuée, l'état de l'événement passe à « Résolu ».

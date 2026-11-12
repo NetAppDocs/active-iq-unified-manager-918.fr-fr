@@ -1,0 +1,104 @@
+---
+permalink: performance-checker/reference_workload_performance_measurement_values.html 
+sidebar: sidebar 
+keywords: workload, performance, measurement, values 
+summary: Unified Manager mesure les performances des workloads sur un cluster en se basant sur des valeurs statistiques historiques et attendues, qui constituent la prévision de latence des valeurs pour les workloads. Il compare les valeurs statistiques réelles des workloads à la prévision de latence afin de déterminer quand les performances des workloads sont trop élevées ou trop faibles. Un workload qui ne fonctionne pas comme prévu déclenche un événement de performance dynamique pour vous en informer. 
+---
+= Comprendre les valeurs de mesure des performances de la charge de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager mesure les performances des workloads sur un cluster en se basant sur des valeurs statistiques historiques et attendues, qui constituent la prévision de latence des valeurs pour les workloads. Il compare les valeurs statistiques réelles des workloads à la prévision de latence afin de déterminer quand les performances des workloads sont trop élevées ou trop faibles. Un workload qui ne fonctionne pas comme prévu déclenche un événement de performance dynamique pour vous en informer.
+
+Dans l'illustration suivante, la valeur réelle, en rouge, représente les statistiques de performance réelles sur la période considérée. Cette valeur a dépassé le seuil de performance, qui correspond à la limite supérieure de la prévision de latence. Le pic représente la valeur réelle la plus élevée enregistrée sur cette période. L'écart mesure la différence entre les valeurs attendues (la prévision) et les valeurs réelles, tandis que l'écart maximal indique la différence la plus importante entre ces deux valeurs.
+
+image::../media/opm_wrkld_perf_measurement_png.gif[Mesures de performance des workloads de Unified Manager]
+
+Le tableau suivant répertorie les valeurs de mesure des performances du workload.
+
+|===
+| Mesure | Description 
+
+
+ a| 
+Activité
+ a| 
+Le pourcentage de la limite QoS utilisée par les workloads du groupe de politiques.
+
+[NOTE]
+====
+Si Unified Manager détecte une modification apportée à un groupe de stratégies, comme l'ajout ou la suppression d'un volume ou la modification de la limite QoS, les valeurs réelles et attendues peuvent dépasser 100 % de la limite définie. Si une valeur dépasse 100 % de la limite définie, elle s'affiche comme >100 %. Si une valeur est inférieure à 1 % de la limite définie, elle s'affiche comme <1 %.
+
+====
+
+
+ a| 
+Réel
+ a| 
+La valeur de performance mesurée à un moment précis pour un workload donné.
+
+
+
+ a| 
+Déviation
+ a| 
+L'écart entre les valeurs attendues et les valeurs réelles. Il s'agit du rapport entre la valeur réelle moins la valeur attendue et la valeur supérieure de l'intervalle attendu moins la valeur attendue.
+
+[NOTE]
+====
+Une valeur d'écart négative indique que les performances du workload sont inférieures aux attentes, tandis qu'une valeur d'écart positive indique que les performances du workload sont supérieures aux attentes.
+
+====
+
+
+ a| 
+Attendu
+ a| 
+Les valeurs attendues sont basées sur l'analyse des données de performance historiques pour un workload donné. Unified Manager analyse ces valeurs statistiques afin de déterminer la plage de valeurs attendue (prévision de latence).
+
+
+
+ a| 
+Prévision de latence (plage attendue)
+ a| 
+La prévision de latence est une estimation des valeurs de performance minimales et maximales attendues à un instant précis. Pour la latence du workload, les valeurs maximales constituent le seuil de performance. Lorsque la valeur réelle dépasse ce seuil, Unified Manager déclenche un événement de performance dynamique.
+
+
+
+ a| 
+Pic
+ a| 
+La valeur maximale mesurée sur une période donnée.
+
+
+
+ a| 
+Déviation maximale
+ a| 
+La valeur maximale de l’écart mesurée sur une période donnée.
+
+
+
+ a| 
+Profondeur de la file d'attente
+ a| 
+Le nombre de requêtes d'E/S en attente au niveau du composant d'interconnexion.
+
+
+
+ a| 
+Utilisation
+ a| 
+Pour les composants de traitement réseau, de traitement des données et d’agrégat, il s’agit du pourcentage de temps d’activité nécessaire pour effectuer des opérations de workload sur une période donnée. Par exemple, le pourcentage de temps nécessaire aux composants de traitement réseau ou de traitement des données pour traiter une requête d’E/S, ou à un agrégat pour répondre à une requête de lecture ou d’écriture.
+
+
+
+ a| 
+Débit d'écriture
+ a| 
+Le débit d’écriture, en mégaoctets par seconde (Mo/s), des workloads sur un cluster local vers le cluster partenaire dans une configuration MetroCluster.
+
+|===

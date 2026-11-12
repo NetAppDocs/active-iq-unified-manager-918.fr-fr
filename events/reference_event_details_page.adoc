@@ -1,0 +1,88 @@
+---
+permalink: events/reference_event_details_page.html 
+sidebar: sidebar 
+keywords: event, details, page 
+summary: 'Sur la page de détails de l"événement, vous pouvez consulter les détails d"un événement sélectionné, tels que sa gravité, son niveau d"impact, sa zone d"impact et sa source d"événement. Vous pouvez également consulter des informations complémentaires sur les solutions possibles pour résoudre le problème.' 
+---
+= Découvrez la page de détails de l'événement dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sur la page de détails de l'événement, vous pouvez consulter les détails d'un événement sélectionné, tels que sa gravité, son niveau d'impact, sa zone d'impact et sa source d'événement. Vous pouvez également consulter des informations complémentaires sur les solutions possibles pour résoudre le problème.
+
+* *Nom de l'événement*
++
+Le nom de l'événement et l'heure à laquelle il a été vu pour la dernière fois.
+
++
+Pour les événements non liés aux performances, tant que l'événement est à l'état Nouveau ou Reconnu, les informations de dernière observation ne sont pas disponibles et sont donc masquées.
+
+* *Description de l'événement*
++
+Une brève description de l'événement.
+
++
+Dans certains cas une raison du déclenchement de l'événement est indiquée dans la description de l'événement.
+
+* *Composant en conflit*
++
+Pour les événements de performance dynamiques, cette section affiche des icônes représentant les composants logiques et physiques du cluster. Si un composant est en situation de contention, son icône est entourée et surlignée en rouge.
+
++
+Consultez la section _Composants du cluster et raisons pour lesquelles ils peuvent être en conflit_ pour obtenir une description des composants affichés ici.
+
+
+
+Les sections Informations sur l'événement, Diagnostic du système et Actions suggérées sont décrites dans d'autres rubriques.
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Icône Notes*
++
+Permet d'ajouter ou de mettre à jour une note concernant l'événement, et de consulter toutes les notes laissées par les autres utilisateurs.
+
+
+
+*Menu Actions*
+
+* *M’attribuer*
++
+Vous assigne l'événement.
+
+* *Attribuer à d'autres*
++
+Ouvre la boîte de dialogue « Attribuer le propriétaire », qui vous permet d'attribuer ou de réattribuer l'événement à d'autres utilisateurs.
+
++
+Lorsque vous attribuez un événement à un utilisateur, le nom de l'utilisateur et l'heure à laquelle l'événement a été attribué sont ajoutés dans la liste des événements pour les événements sélectionnés.
+
++
+Vous pouvez également retirer l’attribution d’événements en laissant le champ de propriétaire vide.
+
+* *Acquitter*
++
+Acquitte les événements sélectionnés afin que vous ne continuiez pas à recevoir des notifications d'alerte répétées.
+
++
+Lorsque vous accusez réception d'un événement, votre nom d'utilisateur et l'heure à laquelle vous avez accusé réception de l'événement sont ajoutés à la liste des événements (Accusé de réception par) pour les événements sélectionnés. Lorsque vous accusez réception d'un événement, vous assumez la responsabilité de sa gestion.
+
+* *Marquer comme résolu*
++
+Permet de modifier l'état de l'événement en Résolu.
+
++
+Lorsque vous résolvez un événement, votre nom d'utilisateur et l'heure de résolution sont ajoutés à la liste des événements (Résolu par) pour les événements sélectionnés. Une fois l'action corrective effectuée, vous devez marquer l'événement comme résolu.
+
+* *Ajouter une alte*
++
+Affiche la boîte de dialogue Ajouter une alerte, qui vous permet d'ajouter une alerte pour l'événement sélectionné.
+
+

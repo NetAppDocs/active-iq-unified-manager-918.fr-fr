@@ -1,0 +1,35 @@
+---
+permalink: data-protection/task_resume_scheduled_transfers_voldtls_page.html 
+sidebar: sidebar 
+keywords: resume schedule, transfers, quiesce, relationship,  volume, health details page 
+summary: 'Après avoir mis en pause une relation pour interrompre les transferts planifiés, vous pouvez utiliser Resume sur la page Détails du volume / Intégrité pour réactiver les transferts planifiés afin de protéger les données du volume source ou principal. Les transferts reprennent à partir d"un point de contrôle, s"il en existe un, lors du prochain intervalle de transfert planifié.' 
+---
+= Reprenez les transferts sur une relation mise en veille depuis la page Détails du volume/de la santé dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir mis en pause une relation pour empêcher les transferts planifiés de se produire, vous pouvez utiliser *Resume* sur la page Volume / Health details pour réactiver les transferts planifiés afin que les données du volume source ou principal soient protégées. Les transferts reprennent à partir d'un point de contrôle, s'il en existe un, lors du prochain intervalle de transfert planifié.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+
+
+.Étapes
+. Dans l'onglet *Protection* de la page de détails *Volume / Santé*, cliquez avec le bouton droit dans la vue topologique sur une relation mise en veille que vous souhaitez reprendre.
++
+Vous pouvez également sélectionner *Reprendre* dans le menu *Actions* > *Relation*.
+
+. Dans la boîte de dialogue *Reprendre*, cliquez sur *Continuer*.
++
+Vous revenez à la page Détails du volume / de l'état de santé.
+
+. Pour consulter les tâches associées et suivre leur progression, cliquez sur le lien de la tâche affiché en haut de la page de détails *Volume / Santé*.
+. Dans la page de détails du *Job*, cliquez sur *Refresh* pour mettre à jour la liste des tâches et les détails des tâches associés au job de configuration de la protection et pour déterminer quand le job est terminé.
++
+Une fois les tâches terminées, les transferts de données reprennent au prochain intervalle de transfert programmé.
+
+

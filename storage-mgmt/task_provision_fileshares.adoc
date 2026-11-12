@@ -1,0 +1,61 @@
+---
+permalink: storage-mgmt/task_provision_fileshares.html 
+sidebar: sidebar 
+keywords: provision, file, share, volumes 
+summary: 'Vous pouvez créer des volumes de partage de fichiers qui prennent en charge les protocoles CIFS/SMB et NFS sur un cluster existant et une Storage Virtual Machine (storage VM) existante à partir de la page Provision Workload.' 
+---
+= Provisionnez des volumes de partage de fichiers dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des volumes de partage de fichiers qui prennent en charge les protocoles CIFS/SMB et NFS sur un cluster existant et une Storage Virtual Machine (storage VM) existante à partir de la page Provision Workload.
+
+.Avant de commencer
+* La machine virtuelle de stockage doit disposer d'espace pour le provisionnement du volume de partage de fichiers.
+* L’un des services SMB ou NFS, ou les deux, doit être activé sur votre machine virtuelle de stockage.
+* Pour sélectionner et attribuer le niveau de service de performance (PSL) et la politique d'efficacité du stockage (SEP) au workload, vous devez avoir créé les politiques avant de commencer à créer le workload.
+
+
+.Étapes
+. Sur la page *Provisionner le workload*, ajoutez le nom du workload que vous souhaitez créer, puis sélectionnez le cluster dans la liste disponible.
+. En fonction du cluster sélectionné, le champ *VM de stockage* filtre les VM de stockage disponibles pour ce cluster. Sélectionnez la VM de stockage souhaitée dans la liste.
++
+En fonction des services SMB et NFS pris en charge par la machine virtuelle de stockage, l'option NAS est activée dans la section Informations sur l'hôte.
+
+. Dans la section Stockage et optimisation, attribuez la capacité de stockage et le PSL, et éventuellement un SEP pour la workload.
++
+Les spécifications du SEP sont attribuées au LUN et les définitions du PSL sont appliquées au workload lors de sa création.
+
+. Cochez la case à cocher *Enforce performance limits* si vous souhaitez appliquer le PSL que vous avez attribué au workload.
++
+L'attribution d'un PSL à un workload garantit que l'agrégat sur lequel le workload est créé peut prendre en charge les objectifs de performance et de capacité définis dans la politique correspondante. Par exemple, si un workload se voit attribuer le PSL « Extreme Performance », l'agrégat sur lequel le workload doit être provisionné doit être capable de prendre en charge les objectifs de performance et de capacité de la politique « Extreme Performance », comme le stockage SSD.
+
++
+[NOTE]
+====
+Si vous ne cochez pas cette case à cocher, le PSL n'est pas appliqué au workload et l'état du workload sur le tableau de bord apparaît comme non attribué.
+
+====
+. Sélectionnez l'option *NAS*.
++
+Si vous ne voyez pas l'option *NAS* activée, vérifiez si la machine virtuelle de stockage que vous avez sélectionnée prend en charge SMB ou NFS, ou les deux.
+
++
+[NOTE]
+====
+Si votre machine virtuelle de stockage est activée pour les services SMB et NFS, vous pouvez cocher les cases à cocher *Partager par NFS* et *Partager par SMB* et créer un partage de fichiers prenant en charge les protocoles NFS et SMB. Si vous souhaitez créer un partage SMB ou un partage CIFS, cochez uniquement la case à cocher correspondante.
+
+====
+. Pour les volumes de partage de fichiers NFS, spécifiez l'adresse IP de l'hôte ou du réseau permettant d'accéder au volume de partage de fichiers. Vous pouvez saisir des valeurs séparées par des virgules pour plusieurs hôtes.
++
+Lors de l'ajout de l'adresse IP de l'hôte, une vérification interne est effectuée pour faire correspondre les détails de l'hôte avec la machine virtuelle de stockage, et les règles d'export pour cet hôte sont créées ou, si une règle existe déjà, elles sont réutilisées. Si plusieurs partages NFS sont créés pour le même hôte, des règles d'export disponibles pour le même hôte avec des règles correspondantes sont réutilisées pour tous les partages de fichiers. La fonction permettant de spécifier les règles de stratégies individuelles ou de réutiliser des stratégies en fournissant des clés de stratégie spécifiques est disponible lorsque vous provisionnez le partage NFS à l'aide des API.
+
+. Pour un partage SMB, spécifiez quels utilisateurs ou groupes d'utilisateurs peuvent accéder au partage SMB et attribuez les autorisations requises. Pour chaque groupe d'utilisateurs, une nouvelle liste de contrôle d'accès (ACL) est générée lors de la création du partage de fichiers.
+. Cliquez sur *Enregistrer*.
++
+Le workload est ajouté à la liste des workloads de stockage.
+
+

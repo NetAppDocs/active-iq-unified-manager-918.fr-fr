@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_verify_qos_policy_group.html 
+sidebar: sidebar 
+keywords: verify, volumes, qos, policy, group, unusually, high, activity 
+summary: 'Examinez les charges de travail dans un groupe de stratégie de qualité de service (QoS) présentant la plus grande variation d"activité afin de déterminer quelle charge de travail a provoqué l"événement.' 
+---
+= Analysez les volumes à forte activité au sein d'un groupe de politiques QoS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez examiner les workloads du groupe de règles de qualité de service (QoS) présentant la plus forte variation d'activité afin de déterminer si plusieurs workloads sont à l'origine de l'événement. Vous pouvez également vérifier si d'autres workloads dépassent toujours la limite de débit définie ou s'ils sont revenus dans leur plage d'activité attendue.
+
+Sur la page Détails de l'événement, dans la section Diagnostic système, vous pouvez trier les workloads par écart maximal d'activité afin d'afficher en haut du tableau les workloads présentant la plus forte variation d'activité. Ces workloads peuvent être les « bullies », dont l'activité a dépassé la limite définie et qui peuvent avoir provoqué l'événement.
+
+Vous pouvez accéder à la page d’analyse du workload pour chaque volume afin d’examiner son activité IOPS. Si le workload présente des périodes d’activité des opérations très élevée, il a peut-être contribué à l’événement. Vous pouvez modifier les paramètres du groupe de stratégies du workload ou déplacer le workload vers un autre groupe de stratégies.
+
+Vous pouvez utiliser ONTAP System Manager ou les commandes de l'interface de ligne de commande ONTAP pour gérer les groupes de règles, comme suit :
+
+* Créer un groupe de politiques.
+* Ajouter ou supprimer des charges de travail dans un groupe de stratégies.
+* Déplacer un workload entre des groupes de règles.
+* Modifier la limite de débit d'un groupe de stratégies.
+

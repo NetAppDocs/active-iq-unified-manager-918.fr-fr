@@ -1,0 +1,27 @@
+---
+permalink: events/task_edit_alerts.html 
+sidebar: sidebar 
+keywords: edit, alerts 
+summary: 'Vous pouvez modifier les propriétés de l"alerte, telles que la ressource à laquelle l"alerte est associée, les événements, les destinataires, les options de notification, la fréquence de notification et les scripts associés.' 
+---
+= Modifier les alertes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les propriétés de l'alerte, telles que la ressource à laquelle l'alerte est associée, les événements, les destinataires, les options de notification, la fréquence de notification et les scripts associés.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration des alertes*.
+. Sur la page *Configuration des alertes*, sélectionnez l'alerte que vous souhaitez modifier, puis cliquez sur *Modifier*.
+. Dans la boîte de dialogue *Modifier l'alerte*, modifiez les sections Nom, Ressources, Événements et Actions, selon vos besoins.
++
+Vous pouvez modifier ou supprimer le script associé à l'alerte.
+
+. Cliquez sur *Enregistrer*.
+

@@ -1,0 +1,53 @@
+---
+permalink: performance-checker/concept_performance_capacity_used_threshold_conditions.html 
+sidebar: sidebar 
+keywords: performance, capacity, threshold, conditions 
+summary: 'Vous pouvez créer des règles de seuil de performance définies par l"utilisateur afin que des événements soient déclenchés lorsque la valeur de capacité de performance utilisée pour un nœud ou un agrégat dépasse le paramètre de seuil de capacité de performance utilisée défini.' 
+---
+= Configurez les seuils de capacité de performance utilisés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des règles de seuil de performance définies par l'utilisateur afin que des événements soient déclenchés lorsque la valeur de capacité de performance utilisée pour un nœud ou un agrégat dépasse le paramètre de seuil de capacité de performance utilisée défini.
+
+De plus, les nœuds peuvent être configurés avec une politique de seuil « `Performance capacity used takeover` ». Cette politique de seuil totalise les statistiques de capacité de performance utilisée pour les deux nœuds d'une paire haute disponibilité afin de déterminer si l'un des nœuds manquerait de capacité suffisante en cas de défaillance de l'autre nœud. Étant donné que la workload lors d'un basculement est la combinaison des workloads des deux nœuds partenaires, la même politique « Performance capacity used takeover » peut être appliquée aux deux nœuds.
+
+[NOTE]
+====
+Cette équivalence de capacité de performance utilisée est généralement vérifiée entre les nœuds. Cependant, si le trafic inter-nœuds destiné à l'un des nœuds via son partenaire de basculement est nettement plus important, la capacité de performance totale utilisée lors de l'exécution de tous les workloads sur un nœud partenaire par rapport à l'autre pourrait être légèrement différente selon le nœud défaillant.
+
+====
+Les conditions de capacité de performance utilisée peuvent également servir de paramètres de seuil de performance secondaires pour créer une stratégie de seuil combinée lors de la définition des seuils pour les LUN et les volumes. La condition de capacité de performance utilisée s'applique à l'agrégat ou au nœud sur lequel se trouvent le volume ou le LUN. Par exemple, vous pouvez créer une stratégie de seuil combinée à l'aide des critères suivants :
+
+|===
+| Objet de stockage | Compteur de performances | Seuil d'alerte | Seuil critique | Durée 
+
+
+ a| 
+Volume
+ a| 
+Latence
+ a| 
+15 ms/op
+ a| 
+25 ms/op
+ a| 
+20 minutes
+
+
+
+ a| 
+Agrégat
+ a| 
+Capacité de performance utilisée
+ a| 
+80%
+ a| 
+95%
+ a| 
+
+|===
+Les politiques de seuil combiné ne génèrent un événement que lorsque les deux conditions sont dépassées pendant toute la durée.

@@ -1,0 +1,23 @@
+---
+permalink: data-protection/task_abort_jobs.html 
+sidebar: sidebar 
+keywords: abort, jobs 
+summary: 'Vous pouvez utiliser la page Tâches pour interrompre une tâche si elle prend trop de temps, rencontre trop d"erreurs ou n"est plus nécessaire. L"interruption est possible uniquement si l"état et le type de la tâche le permettent. Vous pouvez interrompre toute tâche en cours.' 
+---
+= Annuler les tâches dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la page Tâches pour interrompre une tâche si elle prend trop de temps, rencontre trop d'erreurs ou n'est plus nécessaire. L'interruption est possible uniquement si l'état et le type de la tâche le permettent. Vous pouvez interrompre toute tâche en cours.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Protection* > *Tâches*.
+. Dans la liste des travaux, sélectionnez-en un, puis cliquez sur *Abort*.
+. Lorsque l'invite de confirmation s'affiche, cliquez sur *Oui* pour annuler la tâche sélectionnée.
+

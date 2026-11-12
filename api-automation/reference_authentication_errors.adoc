@@ -1,0 +1,111 @@
+---
+permalink: api-automation/reference_authentication_errors.html 
+sidebar: sidebar 
+keywords: http, status, code, active iq, unified manager 
+summary: 'Lors de l"exécution des API ou du dépannage des problèmes, vous devez connaître les différents codes d"état HTTP et codes d"erreur utilisés par les API d"Active IQ Unified Manager.' 
+---
+= Découvrez les codes d'état HTTP d'Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lors de l'exécution des API ou du dépannage des problèmes, vous devez connaître les différents codes d'état HTTP et codes d'erreur utilisés par les API d'Active IQ Unified Manager.
+
+Le tableau suivant répertorie les codes d'erreur liés à l'authentification :
+
+[cols="3*"]
+|===
+| code d'état HTTP | Titre du code d'état | Description 
+
+
+ a| 
+200
+ a| 
+OK
+ a| 
+Renvoyé en cas d'exécution réussie des appels API synchrones.
+
+
+
+ a| 
+201
+ a| 
+Créé
+ a| 
+Création de nouvelles ressources par appels synchrones, comme la configuration d'Active Directory.
+
+
+
+ a| 
+202
+ a| 
+Accepté
+ a| 
+Renvoyé lors de l'exécution réussie d'appels asynchrones pour des fonctions de provisionnement, telles que la création de LUN et de partages de fichiers.
+
+
+
+ a| 
+400
+ a| 
+Requête invalide
+ a| 
+Indique un échec de validation des données saisies. L'utilisateur doit corriger les données saisies, par exemple les clés valides dans le corps de la requête.
+
+
+
+ a| 
+401
+ a| 
+Requête non autorisée
+ a| 
+Vous n'êtes pas autorisé à consulter la ressource/Non autorisé.
+
+
+
+ a| 
+403
+ a| 
+Requête interdite
+ a| 
+L'accès à la ressource que vous tentiez de consulter est interdit.
+
+
+
+ a| 
+404
+ a| 
+Ressource introuvable
+ a| 
+La ressource que vous tentiez d'atteindre est introuvable.
+
+
+
+ a| 
+405
+ a| 
+Méthode non autorisée
+ a| 
+Méthode non autorisée.
+
+
+
+ a| 
+429
+ a| 
+Trop de requêtes
+ a| 
+Renvoyé lorsque l'utilisateur envoie trop de requêtes dans un laps de temps donné.
+
+
+
+ a| 
+500
+ a| 
+Erreur interne du serveur
+ a| 
+Erreur interne du serveur. Impossible d'obtenir la réponse du serveur. Cette erreur interne peut être temporaire ou permanente. Par exemple, si vous exécutez une `GET` ou `GET ALL` opération et que vous recevez cette erreur, il est recommandé de répéter cette opération au moins cinq fois. En cas d'erreur permanente, le code d'état renvoyé reste 500. Si l'opération réussit, le code d'état renvoyé est 200.
+
+|===

@@ -1,0 +1,32 @@
+---
+permalink: health-checker/task_configure_lag_threshold_settings_for_unmanaged_protection.html 
+sidebar: sidebar 
+keywords: configure, lag, threshold settings, unmanaged, protection, relationships 
+summary: Vous pouvez modifier les paramètres globaux par défaut d’avertissement de retard et de seuil d’erreur d’intégrité pour les relations de protection non gérées afin que les événements soient générés à des intervalles adaptés à vos besoins. 
+---
+= Configurez les seuils de latence pour les relations de protection non gérées dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les paramètres globaux par défaut d’avertissement de retard et de seuil d’erreur d’intégrité pour les relations de protection non gérées afin que les événements soient générés à des intervalles adaptés à vos besoins.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Le délai de latence ne doit pas dépasser l’intervalle défini de la planification du transfert. Par exemple, si la planification du transfert est horaire, le délai de latence ne doit pas dépasser une heure. Le seuil de latence spécifie un pourcentage que le délai de latence ne doit pas dépasser. En reprenant l’exemple d’une heure, si le seuil de latence est défini à 150 %, vous recevrez un événement lorsque le délai de latence dépassera 1,5 heure.
+
+Les paramètres décrits dans cette tâche s'appliquent globalement à toutes les relations de protection non gérées. Ils ne peuvent pas être spécifiés et appliqués exclusivement à une seule relation de protection non gérée.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Seuils d'événements* > *Relation*.
+. Augmentez ou diminuez, selon les besoins, le pourcentage global par défaut du délai des avertissements ou des erreurs.
+. Pour empêcher le déclenchement d’un avertissement ou d’une erreur, quel que soit le seuil de décalage, décochez la case en regard de *Enabled*.
+. Cliquez sur *Enregistrer*.
+
+
+*Informations connexes*
+
+link:../config/task_add_users.html["Ajout d'utilisateurs"]

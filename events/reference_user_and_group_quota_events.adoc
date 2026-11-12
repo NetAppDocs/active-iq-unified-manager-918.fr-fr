@@ -1,0 +1,67 @@
+---
+permalink: events/reference_user_and_group_quota_events.html 
+sidebar: sidebar 
+keywords: user, group, quota, events, impact area, capacity 
+summary: 'Les événements de quota utilisateur et de quota au groupe vous fournissent des informations sur la capacité du quota utilisateur et du quota au groupe, ainsi que sur les limites de fichiers et de disques, afin de vous permettre de détecter d"éventuels problèmes. Les événements sont regroupés par zone d"impact et comprennent le nom de l"événement et du piège, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements liés aux quotas d'utilisateurs et de quota au groupe dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements de quota utilisateur et de quota au groupe vous fournissent des informations sur la capacité du quota utilisateur et du quota au groupe, ainsi que sur les limites de fichiers et de disques, afin de vous permettre de détecter d'éventuels problèmes. Les événements sont regroupés par zone d'impact et comprennent le nom de l'événement et du piège, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-capacity]]
+== Domaine d'impact : capacité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Limite logicielle d'espace disque du quota utilisateur ou de groupe dépassée(ocumEvtUserOrGroupQuotaDiskSpaceSoftLimitBreached)
+ a| 
+Risque
+ a| 
+Quota utilisateur ou quota au groupe
+ a| 
+Avertissement
+
+
+
+ a| 
+Limite stricte d'espace disque de quota pour l'utilisateur ou le groupe atteinte(ocumEvtUserOrGroupQuotaDiskSpaceHardLimitReached)
+ a| 
+Incident
+ a| 
+Quota utilisateur ou quota au groupe
+ a| 
+Primordial
+
+
+
+ a| 
+Limite logicielle du nombre de fichiers du quota utilisateur ou de groupe dépassée(ocumEvtUserOrGroupQuotaFileCountSoftLimitBreached)
+ a| 
+Risque
+ a| 
+Quota utilisateur ou quota au groupe
+ a| 
+Avertissement
+
+
+
+ a| 
+Limite stricte du nombre de fichiers du quota utilisateur ou groupe atteinte(ocumEvtUserOrGroupQuotaFileCountHardLimitReached)
+ a| 
+Incident
+ a| 
+Quota utilisateur ou quota au groupe
+ a| 
+Primordial
+
+|===

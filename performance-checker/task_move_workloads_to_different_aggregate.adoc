@@ -1,0 +1,71 @@
+---
+permalink: performance-checker/task_move_workloads_to_different_aggregate.html 
+sidebar: sidebar 
+keywords: move, workloads, different, aggregate 
+summary: Vous pouvez utiliser Unified Manager pour identifier un agrégat moins sollicité que l’agrégat où résident actuellement vos workloads, puis déplacer les volumes ou LUN sélectionnés vers cet agrégat. Le déplacement de workloads hautes performances vers un agrégat moins sollicité, ou vers un agrégat avec stockage Flash activé, permet au workload de fonctionner plus efficacement. 
+---
+= Déplacez les charges de travail vers un autre agrégat dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour identifier un agrégat moins sollicité que l’agrégat où résident actuellement vos workloads, puis déplacer les volumes ou LUN sélectionnés vers cet agrégat. Le déplacement de workloads hautes performances vers un agrégat moins sollicité, ou vers un agrégat avec stockage Flash activé, permet au workload de fonctionner plus efficacement.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Vous devez avoir noté le nom de l'agrégat qui rencontre actuellement un problème de performance.
+* Vous devez avoir enregistré la date et l'heure auxquelles l'agrégat a reçu l'événement.
+* Unified Manager doit avoir collecté et analysé au moins un mois de données de performance.
+
+
+Ces étapes vous aident à identifier les ressources suivantes afin que vous puissiez déplacer les charges de travail les plus performantes vers un agrégat moins utilisé :
+
+* Les agrégats du même cluster qui sont moins utilisés
+* Les volumes les plus performants sur l'agrégat actuel
+
+
+.Étapes
+. Identifiez l'agrégat du cluster qui est le moins utilisé :
++
+.. Sur la page de détails de l'*événement*, cliquez sur le nom du cluster sur lequel se trouve l'agrégat.
++
+Les détails du cluster sont affichés sur la page de destination Performance/Cluster.
+
+.. Sur la page *Résumé*, cliquez sur *Aggregates* dans le volet *Managed Objects*.
++
+La liste des agrégats de ce cluster est affichée.
+
+.. Cliquez sur la colonne *Utilisation* pour trier les agrégats du moins utilisé au plus utilisé.
++
+Vous pouvez également identifier les agrégats présentant la plus grande *capacité libre*. Ceci fournit une liste d'agrégats potentiels vers lesquels vous pourriez déplacer des workloads.
+
+.. Notez le nom de l'agrégat vers lequel vous souhaitez déplacer les workloads.
+
+
+. Identifiez les volumes les plus performants parmi l'agrégat ayant reçu l'événement :
++
+.. Cliquez sur l’agrégat qui présente le problème de performance.
++
+Les détails de l’agrégat sont affichés sur la page Performance/Explorateur d’agrégats.
+
+.. Dans le sélecteur *Plage de temps*, sélectionnez *30 derniers jours*, puis cliquez sur *Appliquer la plage*.
++
+Cela vous permet de consulter un historique des performances sur une période plus longue que les 72 heures par défaut. Vous souhaitez déplacer un volume qui utilise beaucoup de ressources de manière constante, et pas seulement au cours des 72 dernières heures.
+
+.. Dans *Afficher et comparer*, sélectionnez *Volumes sur cet agrégat*.
++
+Une liste des volumes FlexVol et des volumes constitutifs FlexGroup de cet agrégat est affichée.
+
+.. Triez les volumes par débit en Mo/s le plus élevé, puis par nombre d’IOPS le plus élevé, afin de visualiser les volumes les plus performants.
+.. Notez les noms des volumes que vous souhaitez déplacer vers un autre agrégat.
+
+
+. Déplacez les volumes les plus performants vers l’agrégat que vous avez identifié comme ayant une faible utilisation.
++
+Vous pouvez effectuer l'opération de déplacement à l'aide de ONTAP System Manager, OnCommand Workflow Automation, des commandes ONTAP ou d'une combinaison de ces outils.
+
+
+
+Après quelques jours, vérifiez si vous recevez le même type d'événements de ce nœud ou de cet agrégat.

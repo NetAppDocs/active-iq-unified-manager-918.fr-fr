@@ -1,0 +1,30 @@
+---
+permalink: health-checker/task_configure_volume_health_thresholds_for_groups.html 
+sidebar: sidebar 
+keywords: configure, volume, health, thresholds, groups 
+summary: Vous pouvez configurer des seuils d’état de santé des volumes au niveau du groupe pour la capacité, les copies Snapshot, les quotas qtree, la croissance et les inodes. 
+---
+= Configurez les seuils de santé des volumes pour les groupes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer des seuils d’état de santé des volumes au niveau du groupe pour la capacité, les copies Snapshot, les quotas qtree, la croissance et les inodes.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+L'action de groupe de type seuil de santé de volume s'applique uniquement aux volumes d'un groupe.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Groupes*.
+. Dans l'onglet *Actions de groupe*, cliquez sur *Ajouter*.
+. Saisissez un nom et une description pour l’action de groupe.
+. Dans la liste déroulante *Groupe*, sélectionnez un groupe pour lequel vous souhaitez configurer une action de groupe.
+. Sélectionnez *Type d'action* comme seuil d'état de santé du volume.
+. Sélectionnez la catégorie pour laquelle vous souhaitez définir le seuil.
+. Saisissez les valeurs requises pour le seuil de santé.
+. Cliquez sur *Add*.
+

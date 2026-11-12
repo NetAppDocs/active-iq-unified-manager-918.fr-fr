@@ -1,0 +1,27 @@
+---
+permalink: health-checker/task_send_support_bundle_to_technical_support.html 
+sidebar: sidebar 
+keywords: support bundle, technical support 
+summary: 'Lorsqu"un problème nécessite des informations de diagnostic et de dépannage plus détaillées que celles fournies par un message AutoSupport, vous pouvez envoyer un dossier de support au support technique.' 
+---
+= Envoyez un bundle de support au support technique depuis Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsqu'un problème nécessite des informations de diagnostic et de dépannage plus détaillées que celles fournies par un message AutoSupport, vous pouvez envoyer un dossier de support au support technique.
+
+.Avant de commencer
+Vous devez avoir accès au support bundle pour l’envoyer au support technique.
+
+Vous devez disposer d'un numéro de dossier généré par le site web d'assistance technique.
+
+.Étapes
+. Connectez-vous au site d’assistance NetApp.
+. Téléversez le fichier.
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Miscellaneous/How_to_upload_a_file_to_NetApp["Comment téléverser un fichier sur NetApp"]
+
+

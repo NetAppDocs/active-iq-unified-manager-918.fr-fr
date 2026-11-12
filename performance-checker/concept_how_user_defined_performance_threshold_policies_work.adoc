@@ -1,0 +1,107 @@
+---
+permalink: performance-checker/concept_how_user_defined_performance_threshold_policies_work.html 
+sidebar: sidebar 
+keywords: user-defined, performance, threshold, policies, work 
+summary: 'Vous définissez des politiques de seuil de performance sur les objets de stockage (par exemple, sur les agrégats et les volumes) afin qu"un événement puisse être envoyé à l"administrateur de stockage pour l"informer que le cluster rencontre un problème de performance.' 
+---
+= Utilisez des politiques de seuil de performance définies par l'utilisateur dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous définissez des politiques de seuil de performance sur les objets de stockage (par exemple, sur les agrégats et les volumes) afin qu'un événement puisse être envoyé à l'administrateur de stockage pour l'informer que le cluster rencontre un problème de performance.
+
+Vous créez une politique de seuil de performance pour un objet de stockage en :
+
+* Sélection d'un objet de stockage
+* Sélection d'un compteur de performance associé à cet objet
+* Spécifier les valeurs qui définissent les limites supérieures du compteur de performance considérées comme des situations d'avertissement et critiques
+* Spécifier une période de temps définissant la durée pendant laquelle le compteur doit dépasser la limite supérieure
+
+
+Par exemple, vous pouvez définir une politique de seuil de performance pour un volume afin de recevoir une notification d'événement critique lorsque les IOPS de ce volume dépassent 750 opérations par seconde pendant 10 minutes consécutives. Cette même politique de seuil peut également spécifier l'envoi d'un avertissement lorsque les IOPS dépassent 500 opérations par seconde pendant 10 minutes.
+
+[NOTE]
+====
+La version actuelle permet de définir des seuils qui déclenchent l'envoi d'événements lorsqu'une valeur de compteur dépasse le seuil défini. Il n'est pas possible de définir des seuils qui déclenchent l'envoi d'événements lorsqu'une valeur de compteur passe en dessous d'un seuil défini.
+
+====
+Un exemple de graphique de compteur est présenté ici, indiquant qu'un seuil d'alerte (icône jaune) a été franchi à 1 h 00 et qu'un seuil critique (icône rouge) a été franchi à 12 h 10, 12 h 30 et 1 h 10:
+
+image::../media/opm2_threshold_breach.gif[Capture d'écran de l'interface utilisateur montrant un exemple de graphique de compteur.]
+
+Le dépassement du seuil doit se produire de manière continue pendant la durée spécifiée. Si le seuil descend en dessous des valeurs limites pour quelque raison que ce soit, tout dépassement ultérieur est considéré comme le début d'une nouvelle période.
+
+Certains objets de cluster et des compteurs de performance permettent de créer une stratégie de seuil combinée qui exige que deux compteurs de performance dépassent leurs limites maximales avant qu'un événement ne soit généré. Par exemple, vous pouvez créer une stratégie de seuil à l'aide des critères suivants :
+
+|===
+| Objet de cluster | Compteur de performances | Seuil d'alerte | Seuil critique | Durée 
+
+
+ a| 
+Volume
+ a| 
+Latence
+ a| 
+10 millisecondes
+ a| 
+20 millisecondes
+ a| 
+15 minutes
+
+
+
+ a| 
+Agrégat
+ a| 
+Utilisation
+ a| 
+65%
+ a| 
+85%
+ a| 
+
+|===
+Les politiques de seuil utilisant deux objets de cluster ne génèrent un événement que lorsque les deux conditions sont dépassées. Par exemple, avec la politique de seuil définie dans le tableau :
+
+|===
+| Si la latence du volume est en moyenne... | Et l'utilisation du disque de l'agrégat est... | Ensuite... 
+
+
+ a| 
+15 millisecondes
+ a| 
+50%
+ a| 
+Aucun événement n'est signalé.
+
+
+
+ a| 
+15 millisecondes
+ a| 
+75%
+ a| 
+Un événement d'avertissement a été signalé.
+
+
+
+ a| 
+25 millisecondes
+ a| 
+75%
+ a| 
+Un événement d'avertissement a été signalé.
+
+
+
+ a| 
+25 millisecondes
+ a| 
+90%
+ a| 
+Un événement critique a été signalé.
+
+|===

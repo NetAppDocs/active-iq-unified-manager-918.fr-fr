@@ -1,0 +1,36 @@
+---
+permalink: reporting/task_create_report_view_nodes_running_older_versions_of_ontap.html 
+sidebar: sidebar 
+keywords: create, report, view, nodes, running, older versions, ONTAP 
+summary: Vous pouvez générer un rapport affichant la version du logiciel ONTAP installée sur tous les nœuds du cluster afin de déterminer quels nœuds doivent être mis à niveau. 
+---
+= Créez un rapport pour afficher les nœuds exécutant d'anciennes versions d'ONTAP dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez générer un rapport affichant la version du logiciel ONTAP installée sur tous les nœuds du cluster afin de déterminer quels nœuds doivent être mis à niveau.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Utilisez les étapes suivantes pour créer une vue personnalisée affichant les nœuds exécutant des versions plus anciennes d'ONTAP, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Nœuds*.
+. Sélectionnez *Afficher/Masquer* pour supprimer les colonnes que vous ne souhaitez pas inclure dans le rapport.
+. Faites glisser la colonne « `OS Version` » près de la colonne « `Node` ».
+. Cliquez en haut de la colonne « `OS Version` » pour trier les résultats par version la plus ancienne d’ONTAP.
+. Enregistrez la vue sous un nom spécifique qui reflète ce qu'elle affiche, par exemple, « `Nodes by ONTAP version` ».
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Cliquez sur *Ajouter une planification* pour ajouter une nouvelle ligne à la page Planifications des rapports afin de définir les caractéristiques de la planification du nouveau rapport.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pourriez envisager de mettre à niveau les nœuds exécutant des versions plus anciennes d’ONTAP.

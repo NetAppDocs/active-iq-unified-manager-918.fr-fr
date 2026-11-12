@@ -1,0 +1,41 @@
+---
+permalink: performance-checker/task_view_volume_latency_by_cluster_component.html 
+sidebar: sidebar 
+keywords: view, volume, latency, cluster, component 
+summary: 'Vous pouvez consulter des informations détaillées sur la latence d"un volume via la page Explorateur de performances des volumes. Le graphique « Latence totale » affiche la latence totale du volume, tandis que le graphique « Latence détaillée » permet d"évaluer l"impact des latences de lecture et d"écriture sur ce volume.' 
+---
+= Afficher la latence du volume par composant de cluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter des informations détaillées sur la latence d'un volume via la page Explorateur de performances des volumes. Le graphique « Latence totale » affiche la latence totale du volume, tandis que le graphique « Latence détaillée » permet d'évaluer l'impact des latences de lecture et d'écriture sur ce volume.
+
+De plus, le graphique « Latence - Composants du cluster » présente une comparaison détaillée de la latence de chaque composant du cluster afin de déterminer la contribution de chacun à la latence totale du volume. Les composants du cluster suivants sont affichés :
+
+* Réseau
+* Limite maximale de QoS
+* Limite QoS min
+* Traitement réseau
+* Interconnexion de clusters
+* Data Processing
+* Opérations sur les agrégats
+* Activation du volume
+* MetroCluster Ressources
+* Latence du cloud
+* Synchronisation SnapMirror
+
+
+.Étapes
+. Sur la page *Explorateur de performances du volume* de votre volume sélectionné, dans le graphique de latence, sélectionnez *Composants du cluster* dans le menu déroulant.
++
+Le graphique « Latency - Cluster Components » s'affiche.
+
+. Pour afficher une version agrandie du graphique, sélectionnez *Zoom View*.
++
+Le tableau comparatif des composants du cluster s'affiche. Vous pouvez restreindre la comparaison en désélectionnant ou en sélectionnant image:../media/eye_icon.gif["icône en forme d'œil"] associé à chaque composant du cluster.
+
+. Pour afficher les valeurs spécifiques, déplacez votre curseur dans la zone du graphique pour faire apparaître la fenêtre contextuelle.
+

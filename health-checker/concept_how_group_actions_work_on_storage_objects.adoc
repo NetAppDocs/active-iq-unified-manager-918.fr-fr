@@ -1,0 +1,29 @@
+---
+permalink: health-checker/concept_how_group_actions_work_on_storage_objects.html 
+sidebar: sidebar 
+keywords: group actions, work, storage, objects 
+summary: 'Une action de groupe est une opération effectuée sur tous les objets de stockage d"un groupe. Par exemple, vous pouvez configurer une action de groupe pour les seuils de volume afin de modifier simultanément les valeurs de seuil de volume de tous les volumes d"un groupe.' 
+---
+= Comprendre le fonctionnement des actions de groupe sur les objets de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une action de groupe est une opération effectuée sur tous les objets de stockage d'un groupe. Par exemple, vous pouvez configurer une action de groupe pour les seuils de volume afin de modifier simultanément les valeurs de seuil de volume de tous les volumes d'un groupe.
+
+Les groupes prennent en charge des types d'actions de groupe uniques. Un groupe ne peut comporter qu'une seule action de type « seuil d'intégrité des volumes ». Toutefois, vous pouvez configurer un autre type d'action de groupe, s'il est disponible, pour ce même groupe. Le rang d'une action de groupe détermine l'ordre dans lequel elle est appliquée aux objets de stockage. La page de détails d'un objet de stockage indique l'action de groupe qui lui est appliquée.
+
+
+
+[[example-of-unique-group-actions]]
+== Exemple d'actions de groupe uniques
+
+Considérez un volume A qui appartient aux groupes G1 et G2, et pour lequel les actions de groupe de seuil de santé du volume suivantes sont configurées :
+
+* `Change_capacity_threshold`action de groupe avec le rang 1, pour configurer la capacité du volume
+* `Change_snapshot_copies`Action de groupe de rang 2 pour configurer les copies Snapshot du volume
+
+
+L’ `Change_capacity_threshold`action de groupe est toujours prioritaire sur l’ `Change_snapshot_copies`action de groupe et s’applique au volume A. Lorsque Unified Manager termine un cycle de surveillance, les événements liés au seuil d’intégrité du volume A sont réévalués conformément à l’ `Change_capacity_threshold`action de groupe. Vous ne pouvez pas configurer un autre type d’action de groupe pour le seuil de volume, ni pour le groupe G1 ni pour le groupe G2.

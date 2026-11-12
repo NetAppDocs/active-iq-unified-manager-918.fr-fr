@@ -1,0 +1,86 @@
+---
+permalink: events/reference_storage_services_events.html 
+sidebar: sidebar 
+keywords: storage, services, events, impact area, configuration, protection 
+summary: 'Les événements liés aux services de stockage vous fournissent des informations sur la création et l"abonnement à ces services, vous permettant ainsi de détecter d"éventuels problèmes. Ces événements sont regroupés par zone d"impact et comprennent le nom de l"événement et du piège, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements liés aux services de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements liés aux services de stockage vous fournissent des informations sur la création et l'abonnement à ces services, vous permettant ainsi de détecter d'éventuels problèmes. Ces événements sont regroupés par zone d'impact et comprennent le nom de l'événement et du piège, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-configuration]]
+== Domaine d'impact : configuration
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Service de stockage créé(Non applicable)
+ a| 
+Événement
+ a| 
+Service de stockage
+ a| 
+Informations
+
+
+
+ a| 
+Service de stockage souscrit(Non applicable)
+ a| 
+Événement
+ a| 
+Service de stockage
+ a| 
+Informations
+
+
+
+ a| 
+Service de stockage non souscrit(Non applicable)
+ a| 
+Événement
+ a| 
+Service de stockage
+ a| 
+Informations
+
+|===
+
+
+[[impact-area-protection]]
+== Zone d'impact : protection
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Suppression inattendue de la relation gérée SnapMirror RelationshipocumEvtStorageServiceUnsupportedRelationshipDeletion
+ a| 
+Risque
+ a| 
+Service de stockage
+ a| 
+Avertissement
+
+
+
+ a| 
+Suppression inattendue du volume membre du service de stockage(ocumEvtStorageServiceUnexpectedVolumeDeletion)
+ a| 
+Incident
+ a| 
+Service de stockage
+ a| 
+Primordial
+
+|===

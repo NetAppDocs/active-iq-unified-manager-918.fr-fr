@@ -1,0 +1,135 @@
+---
+permalink: events/reference_add_alert_dialog_box.html 
+sidebar: sidebar 
+keywords: add, alert, dialog, box, name, resources, events, actions, command buttons 
+summary: 'Vous pouvez créer des alertes pour être informé lorsqu"un événement particulier est généré, afin de résoudre rapidement le problème et de minimiser ainsi l"impact sur votre environnement. Vous pouvez créer des alertes pour une ressource unique ou un ensemble de ressources, ainsi que pour des événements d"un niveau de gravité particulier. Vous pouvez également spécifier la méthode et la fréquence de notification des alertes.' 
+---
+= Découvrez la boîte de dialogue Ajouter une alerte dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des alertes pour être informé lorsqu'un événement particulier est généré, afin de résoudre rapidement le problème et de minimiser ainsi l'impact sur votre environnement. Vous pouvez créer des alertes pour une ressource unique ou un ensemble de ressources, ainsi que pour des événements d'un niveau de gravité particulier. Vous pouvez également spécifier la méthode et la fréquence de notification des alertes.
+
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+
+[[name]]
+== Nom
+
+Cette zone vous permet de spécifier un nom et une description pour l'alerte :
+
+* *Nom de l'alerte*
++
+Permet de spécifier un nom d'alerte.
+
+* *Description de l'alerte*
++
+Permet de spécifier une description pour l'alerte.
+
+
+
+
+
+[[resources]]
+== Ressources
+
+Cette zone vous permet de sélectionner une ressource individuelle ou de regrouper les ressources selon une règle dynamique pour laquelle vous souhaitez déclencher l'alerte. Une règle dynamique correspond à un ensemble de ressources filtrées selon la chaîne de texte que vous spécifiez. Vous pouvez rechercher des ressources en sélectionnant un type de ressource dans la liste déroulante ou en indiquant le nom exact d'une ressource pour afficher une ressource spécifique.
+
+Si vous créez une alerte à partir de l'une des pages de détails d'un objet de stockage, cet objet est automatiquement inclus dans l'alerte.
+
+* *Inclure*
++
+Permet d'inclure les ressources pour lesquelles vous souhaitez déclencher des alertes. Vous pouvez spécifier une chaîne de caractères pour regrouper les ressources qui correspondent à cette chaîne et sélectionner ce groupe pour l'inclure dans l'alerte. Par exemple, vous pouvez regrouper tous les volumes dont le nom contient la chaîne « abc ».
+
+* *Exclure*
++
+Permet d'exclure les ressources pour lesquelles vous ne souhaitez pas déclencher d'alertes. Par exemple, vous pouvez exclure tous les volumes dont le nom contient la chaîne « xyz ».
+
++
+L'onglet Exclure s'affiche uniquement lorsque vous sélectionnez toutes les ressources d'un type de ressource particulier : par exemple, +<<All Volumes>> ou <<All Volumes whose name contains 'xyz'>>+.
+
++
+Si une ressource correspond à la fois aux règles d'inclusion et d'exclusion que vous avez spécifiées, la règle d'exclusion prévaut sur la règle d'inclusion et cet événement ne génère aucune alerte.
+
+
+
+
+
+[[events]]
+== Événements
+
+Cette section vous permet de sélectionner les événements pour lesquels vous souhaitez créer des alertes. Vous pouvez créer des alertes pour des événements en fonction de leur niveau de gravité ou pour un ensemble d'événements.
+
+Pour sélectionner plusieurs événements, vous devez maintenir la touche Ctrl enfoncée pendant que vous effectuez vos sélections.
+
+* *Gravité de l'événement*
++
+Permet de sélectionner les événements en fonction du type de gravité, qui peut être Critique, Erreur ou Avertissement.
+
+* *Le nom de l'événement contient*
++
+Permet de sélectionner les événements dont le nom contient les caractères spécifiés.
+
+
+
+
+
+[[actions]]
+== Actions
+
+Cette section vous permet de spécifier les utilisateurs à notifier lorsqu’une alerte est déclenchée. Vous pouvez également y définir le mode et la fréquence de notification.
+
+* *Alertez ces utilisateurs*
++
+Permet de spécifier l'adresse e-mail ou le nom d'utilisateur de l'utilisateur qui doit recevoir les notifications.
+
++
+Si vous modifiez l'adresse e-mail spécifiée pour l'utilisateur et rouvrez l'alerte pour la modifier, le champ Nom apparaît vide, car l'adresse e-mail modifiée n'est plus associée à l'utilisateur précédemment sélectionné. De même, si vous avez modifié l'adresse e-mail de l'utilisateur sélectionné depuis la page Users, l'adresse e-mail modifiée n'est pas mise à jour pour l'utilisateur sélectionné.
+
+* *Fréquence de notification*
++
+Permet de spécifier la fréquence à laquelle le serveur de gestion envoie des notifications jusqu'à ce que l'événement soit acquitté, résolu ou déplacé vers l'état obsolète.
+
++
+Vous pouvez choisir les méthodes de notification suivantes :
+
++
+** Notifier une seule fois
+** Notifier à la fréquence spécifiée
+** Notifier à une fréquence spécifiée dans la plage horaire spécifiée
+
+
+* *Émettre un trap SNMP*
++
+Cocher cette case vous permet de spécifier si les traps SNMP doivent être envoyés à l'hôte SNMP configuré globalement.
+
+* *Exécuter le script*
++
+Permet d'ajouter votre script personnalisé à l'alerte. Ce script est exécuté lorsqu'une alerte est générée.
+
++
+[NOTE]
+====
+Si cette fonctionnalité n'apparaît pas dans l'interface utilisateur, c'est parce qu'elle a été désactivée par votre administrateur. Si nécessaire, vous pouvez activer cette fonctionnalité dans *Gestion du stockage* > *Paramètres des fonctionnalités*.
+
+====
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+* *Sauvegarder*
++
+Génère une alerte et ferme la boîte de dialogue.
+
+* *Annuler*
++
+Annule les modifications et ferme la boîte de dialogue.
+
+

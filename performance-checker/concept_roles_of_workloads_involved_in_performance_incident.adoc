@@ -1,0 +1,49 @@
+---
+permalink: performance-checker/concept_roles_of_workloads_involved_in_performance_incident.html 
+sidebar: sidebar 
+keywords: roles, workloads, involved, performance, event 
+summary: 'Unified Manager utilise des rôles pour identifier l"implication d"un workload dans un événement de performance. Ces rôles incluent les victimes, les agresseurs et les prédateurs. Un workload défini par l"utilisateur peut être à la fois victime, agresseur et prédateur.' 
+---
+= Identifier les rôles de la charge de travail dans les événements de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager utilise des rôles pour identifier l'implication d'un workload dans un événement de performance. Ces rôles incluent les victimes, les agresseurs et les prédateurs. Un workload défini par l'utilisateur peut être à la fois victime, agresseur et prédateur.
+
+|===
+| Rôle | Description 
+
+
+ a| 
+Victime
+ a| 
+Un workload défini par l'utilisateur dont les performances ont diminué en raison d'autres workloads, appelés « agresseurs », qui surutilisent un composant du cluster. Seuls les workloads définis par l'utilisateur sont identifiés comme victimes. Unified Manager identifie les workloads victimes en fonction de leur écart de latence : la latence réelle, lors d'un événement, a considérablement augmenté par rapport à la latence prévue (plage attendue).
+
+
+
+ a| 
+Brute
+ a| 
+Un workload défini par l'utilisateur ou par le système, dont la surutilisation d'un composant du cluster a entraîné une baisse des performances d'autres workloads, appelés victimes. Unified Manager identifie les workloads accapareurs en fonction de leur écart d'utilisation d'un composant du cluster, lorsque l'utilisation réelle, lors d'un événement, a largement augmenté par rapport à la plage d'utilisation prévue.
+
+
+
+ a| 
+Requin
+ a| 
+Un workload défini par l'utilisateur présentant l'utilisation la plus élevée d'un composant du cluster par rapport à tous les workloads impliqués dans un événement. Unified Manager identifie les workloads shark en fonction de leur utilisation d'un composant du cluster pendant un événement.
+
+|===
+Les workloads sur un cluster peuvent partager de nombreux composants du cluster, tels que les agrégats et le processeur pour le réseau et le traitement des données. Lorsqu'un workload, tel qu'un volume, augmente son utilisation d'un composant du cluster au point que ce composant ne puisse pas répondre efficacement aux demandes du workload, le composant est en contention. Le workload qui surutilise un composant du cluster est un agresseur. Les autres workloads qui partagent ces composants et dont les performances sont affectées par l'agresseur sont les victimes. L'activité de workloads définis par le système, tels que la déduplication ou les copies Snapshot, peut également dégénérer en « bullying ».
+
+Lorsque Unified Manager détecte un événement, il identifie tous les workloads et composants du cluster impliqués, y compris les workloads agressifs qui ont provoqué l'événement, le composant du cluster en conflit et les workloads victimes dont les performances ont diminué en raison de l'activité accrue des workloads agressifs.
+
+[NOTE]
+====
+Si Unified Manager ne parvient pas à identifier les workloads perturbateurs, il génère uniquement des alertes concernant les workloads victimes et le composant du cluster concerné.
+
+====
+Unified Manager peut identifier les workloads victimes de workloads agressifs, et également identifier quand ces mêmes workloads deviennent des workloads agressifs. Un workload peut être agressif envers lui-même. Par exemple, un workload très performant dont les performances sont limitées par une limite de groupe de règles entraîne la limitation des performances de tous les workloads du groupe de règles, y compris le sien. Un workload qui est agressif ou victime dans un incident de performance en cours peut changer de rôle ou ne plus être un participant à l'incident.

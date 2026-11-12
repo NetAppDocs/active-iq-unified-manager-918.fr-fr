@@ -1,0 +1,60 @@
+---
+permalink: events/task_change_or_cancel_scheduled_maintenance_window.html 
+sidebar: sidebar 
+keywords: change, cancel, scheduled, maintenance, window 
+summary: 'Si vous avez configuré une fenêtre de maintenance Unified Manager pour une date ultérieure, vous pouvez modifier les heures de début et de fin ou empêcher la fenêtre de maintenance d"avoir lieu.' 
+---
+= Modifier ou annuler une fenêtre de maintenance planifiée dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous avez configuré une fenêtre de maintenance Unified Manager pour une date ultérieure, vous pouvez modifier les heures de début et de fin ou empêcher la fenêtre de maintenance d'avoir lieu.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+L'annulation d'une fenêtre de maintenance en cours est utile si vous avez terminé la maintenance du cluster avant l'heure de fin prévue de la fenêtre de maintenance et que vous souhaitez recommencer à recevoir des événements et des alertes du cluster.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration du cluster*.
+. Dans la colonne *Mode de maintenance* du cluster :
++
+|===
+| Si vous voulez... | Effectuez cette étape... 
+
+
+ a| 
+Modifier la plage horaire d'une fenêtre de maintenance planifiée
+ a| 
+.. Cliquez sur le texte « Planifié » à côté du curseur.
+.. Modifiez la date et l'heure de début et/ou de fin, puis cliquez sur *Appliquer*.
+
+
+
+
+ a| 
+Prolonger la durée d'une fenêtre de maintenance active
+ a| 
+.. Cliquez sur le texte « Actif » à côté du bouton coulissant.
+.. Modifiez la date et l'heure de fin, puis cliquez sur *Apply*.
+
+
+
+
+ a| 
+Annuler une fenêtre de maintenance programmée
+ a| 
+Sélectionnez le bouton coulissant et déplacez-le vers la gauche.
+
+
+
+ a| 
+Annuler une fenêtre de maintenance active
+ a| 
+Sélectionnez le bouton coulissant et déplacez-le vers la gauche.
+
+|===
+

@@ -1,0 +1,41 @@
+---
+permalink: data-protection/task_resume_scheduled_transfers_on_quiesced_relationship.html 
+sidebar: sidebar 
+keywords: resume, schedule, transfers, quiesce, relationship, volume relationships page 
+summary: 'Après avoir suspendu une relation pour empêcher les transferts planifiés de se produire, vous pouvez utiliser Resume pour réactiver les transferts planifiés afin que les données du volume source ou principal soient protégées. Les transferts reprennent à partir d"un point de contrôle, s"il en existe un, lors du prochain intervalle de transfert planifié.' 
+---
+= Reprenez les transferts planifiés sur une relation mise en veille depuis la page Relations de volume dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir mis en pause une relation pour interrompre les transferts planifiés, vous pouvez utiliser *Reprendre* pour les réactiver et ainsi protéger les données du volume source ou principal. Les transferts reprennent à partir d'un point de contrôle s'il en existe un, lors du prochain intervalle de transfert planifié.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+
+
+Vous ne pouvez sélectionner au maximum que 10 relations mises en pause pour lesquelles reprendre les transferts.
+
+.Étapes
+. Dans la page *Relations de volumes*, sélectionnez un ou plusieurs volumes dont les relations sont en pause, puis, dans la barre d'outils, cliquez sur *Reprendre*.
+. Dans la boîte de dialogue *Reprendre*, cliquez sur *Continuer*.
++
+Vous revenez à la page Relations de volume.
+
+. Pour consulter les tâches associées et suivre leur progression, cliquez sur le lien de la tâche affiché en haut de la page *Relations de volume*.
+. Effectuez l'une des opérations suivantes :
++
+** Si un seul job s'affiche, sur la page Job details, cliquez sur *Refresh* pour mettre à jour la liste des tâches et les détails des tâches associés au job de configuration de la protection et pour déterminer quand le job est terminé.
+** Si plusieurs tâches sont affichées,
++
+... Sur la page Jobs, cliquez sur le job dont vous souhaitez afficher les détails.
+... Sur la page Détails du travail, cliquez sur *Actualiser* pour mettre à jour la liste des tâches et les détails des tâches associés au travail de configuration de la protection, et pour déterminer quand le travail est terminé. Une fois les travaux terminés, les transferts de données reprennent à l’intervalle de transfert planifié suivant.
+
+
+
+
+

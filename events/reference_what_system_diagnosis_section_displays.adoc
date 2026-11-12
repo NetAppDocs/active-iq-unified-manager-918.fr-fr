@@ -1,0 +1,29 @@
+---
+permalink: events/reference_what_system_diagnosis_section_displays.html 
+sidebar: sidebar 
+keywords: system, diagnosis, section, displays 
+summary: 'La section « Diagnostic système » de la page « Détails de l"événement » fournit des informations qui peuvent vous aider à diagnostiquer les problèmes susceptibles d"être à l"origine de l"événement.' 
+---
+= Découvrez le diagnostic système dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La section « Diagnostic système » de la page « Détails de l'événement » fournit des informations qui peuvent vous aider à diagnostiquer les problèmes susceptibles d'être à l'origine de l'événement.
+
+Cette zone n'est affichée que pour certains événements.
+
+Certains événements de performance fournissent des graphiques pertinents pour l’événement particulier qui a été déclenché. En général, cela comprend un graphique des IOPS ou des MBps et un graphique de latence pour les dix jours précédents. Lorsqu’ils sont présentés de cette manière, vous pouvez voir quels composants de stockage affectent le plus la latence, ou sont affectés par la latence, lorsque l’événement est actif.
+
+Pour les événements de performance dynamiques, les graphiques suivants s’affichent :
+
+* Latence du workload - Affiche l'historique de la latence des principaux workloads victim, bully ou shark au niveau du composant en conflit.
+* Activité du workload - Affiche des détails sur l’utilisation du workload du composant de cluster en contention.
+* Activité des ressources - Afficher les statistiques de performance historiques du composant du cluster en contention.
+
+
+D'autres graphiques s'affichent lorsque certains composants du cluster sont en situation de contention.
+
+D'autres événements fournissent une brève description du type d'analyse effectuée par le système sur l'objet de stockage. Dans certains cas, une ou plusieurs lignes s'affichent, une pour chaque composant analysé, pour les politiques de performances définies par le système qui analysent plusieurs compteurs de performances. Dans ce scénario, une icône verte ou rouge apparaît à côté du diagnostic pour indiquer si un problème a été détecté, ou non, dans ce diagnostic particulier.

@@ -1,0 +1,120 @@
+---
+permalink: install-linux/reference_red_hat_software_and_installation_requirements.html 
+sidebar: sidebar 
+keywords: linux software, installation requirements, system, authorization,  requirements 
+summary: 'Le système Linux sur lequel vous installez Unified Manager requiert des versions spécifiques du système d"exploitation et des logiciels associés.' 
+---
+= Découvrez les logiciels Linux et les exigences d'installation dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le système Linux sur lequel vous installez Unified Manager requiert des versions spécifiques du système d'exploitation et des logiciels associés. Pour les installations Linux, Unified Manager ne peut être installé que sur un système d'exploitation Red Hat Enterprise Linux. Il ne peut pas être installé sur un autre système d'exploitation.
+
+
+
+[[operating-system-software]]
+== Logiciel du système d’exploitation
+
+Le système Linux doit avoir installé les versions suivantes du système d’exploitation et des logiciels de prise en charge :
+
+* Red Hat Enterprise Linux versions 8.x et 9.6, basées sur l'architecture x86_64
+
+
+Consultez l'Interoperability Matrix pour obtenir la liste complète et la plus récente des versions de Red Hat Enterprise Linux prises en charge.
+
+https://mysupport.netapp.com/matrix["NetApp Matrice d'interopérabilité"^]
+
+Le serveur doit être dédié à l'exécution d'Unified Manager. Aucune autre application ne doit être installée sur le serveur. Dans certains environnements, un scanner de vulnérabilités tel que Qualys est installé sur le système Linux en raison de la politique de l'entreprise. Vous devez désactiver le scanner de vulnérabilités avant d'installer Unified Manager afin d'éviter tout échec de l'installation.
+
+
+NOTE: Les outils d'analyse de vulnérabilités (tels que Qualys) peuvent entraîner une utilisation élevée du processeur lors de l'analyse de la machine virtuelle (VM), que ce soit en interne (lorsque Unified Manager et l'outil d'analyse de vulnérabilités sont installés sur la même VM) ou en externe (lorsque Unified Manager et l'outil d'analyse de vulnérabilités sont installés sur deux serveurs différents et que l'outil d'analyse de vulnérabilités analyse la VM sur laquelle Unified Manager est installé). Ce problème rend souvent la VM indisponible et affecte les services Unified Manager. Par conséquent, NetApp recommande de désactiver l'outil d'analyse de vulnérabilités sur la VM sur laquelle Unified Manager est installé. S'il n'est pas possible de désactiver l'outil d'analyse, analysez alors la VM en dehors des heures ouvrables et redémarrez les services une fois l'analyse terminée.
+
+
+
+[[third-party-software]]
+== Logiciels tiers
+
+Unified Manager est déployé sur un serveur web WildFly. WildFly 27.0.1.Final est intégré et configuré avec Unified Manager.
+
+Les packages tiers suivants sont requis, mais ne sont pas inclus dans Unified Manager. Ces packages sont automatiquement installés par le  `yum`programme d'installation, à condition que vous ayez configuré les dépôts comme indiqué dans les sections suivantes.
+
+* MySQL Community Edition version 8.4.10 (provenant du dépôt MySQL)
+* OpenJDK version 17.0.14+6 (provenant du dépôt Red Hat Extra Enterprise Linux Server)
+* Python 3.13.3 (provenant du dépôt Red Hat Extra Enterprise Linux Server)
+* Version 7zip 7z2301-linux-x64. Pour plus d'informations, consultez link:task_configure_7zip_package.html["Configurer le package logiciel 7-zip"].
+
+
+[NOTE]
+====
+Vous devez arrêter toute instance de Unified Manager en cours d'exécution avant de mettre à niveau un logiciel tiers. Une fois l'installation du logiciel tiers terminée, vous pouvez redémarrer Unified Manager.
+
+====
+
+
+[[user-authorization-requirements]]
+== Exigences d'autorisation de l'utilisateur
+
+L'installation d'Unified Manager sur un système Linux peut être effectuée par l'utilisateur root ou par des utilisateurs non root à l'aide de la `sudo` commande.
+
+De plus, l'installation par défaut d'Unified Manager inclut l'utilisateur umadmin (utilisateur de maintenance par défaut) et l'utilisateur jboss dans les fichiers sudoers (`ocum_sudoers` et `ocie_sudoers`) dans le `/etc/sudoers.d/` répertoire. Si vous supprimez ce contenu de votre environnement en raison de politiques de sécurité ou à cause d'un outil de surveillance de la sécurité, vous devez le rajouter. Vous devez conserver la configuration sudoers, car certaines opérations d'Unified Manager nécessitent ces privilèges sudo.
+
+
+
+[[installation-requirements]]
+== exigences d'installation
+
+Les bonnes pratiques d'installation de Red Hat Enterprise Linux et des dépôts associés sur votre système sont décrites ci-dessous. Les systèmes installés ou configurés différemment, ou déployés hors site (dans le cloud), peuvent nécessiter des étapes supplémentaires, et Unified Manager risque de ne pas fonctionner correctement dans ces déploiements.
+
+* Vous devez installer Red Hat Enterprise Linux conformément aux bonnes pratiques de Red Hat et sélectionner les options par défaut suivantes, ce qui nécessite de choisir l’environnement de base "`Server with GUI`".
+* Lors de l'installation d'Unified Manager sur Red Hat Enterprise Linux, le système doit avoir accès au dépôt approprié afin que le programme d'installation puisse accéder et installer toutes les dépendances logicielles requises.
+* Pour que le `yum` programme d’installation puisse trouver les logiciels dépendants dans les dépôts Red Hat Enterprise Linux, vous devez avoir enregistré le système lors de l’installation de Red Hat Enterprise Linux ou ultérieurement à l’aide d’un abonnement Red Hat valide.
++
+Consultez la documentation Red Hat pour obtenir des informations sur Red Hat Subscription Manager.
+
+* Vous devez activer le dépôt Extra Packages for Enterprise Linux (EPEL) pour installer correctement les utilitaires tiers requis sur votre système.
++
+Si le référentiel EPEL n'est pas configuré sur votre système, vous devez le télécharger et le configurer manuellement.
+
++
+Voir link:task_manually_configure_epel_repository.html["Configuration manuelle du référentiel EPEL"].
+
+* Si la version correcte de MySQL n'est pas installée, vous devez activer le dépôt MySQL pour installer correctement le logiciel MySQL sur votre système.
++
+Si le dépôt MySQL n'est pas configuré sur votre système, vous devez le télécharger et le configurer manuellement.
+
++
+Voir link:task_manually_configure_mysql_repository.html["Configuration manuelle du dépôt MySQL"].
+
+* Vous ne devez installer qu'une seule version de Java sur votre hôte Unified Manager ; sinon, le système risque de ne pas pouvoir déterminer la version à utiliser. Voir https://kb.netapp.com/data-mgmt/AIQUM/AIQUM_Kbs/After_updating_Java_on_the_Active_IQ_Unified_Manager_host_services_will_not_start["Après la mise à jour de Java sur l’hôte Active IQ Unified Manager, les services ne démarrent pas"].
+
+
+Si votre système n'a pas accès à Internet et que les dépôts ne sont pas répliqués d'un système connecté à Internet vers le système non connecté, vous devez suivre les instructions d'installation pour déterminer les dépendances logicielles externes de votre système. Vous pouvez ensuite télécharger les logiciels requis sur le système connecté à Internet et copier les `.rpm` fichiers sur le système sur lequel vous prévoyez d'installer Unified Manager. Pour télécharger les artefacts et les packages, vous devez utiliser la `yum install` commande. Vous devez vous assurer que les deux systèmes exécutent la même version du système d'exploitation et que la licence d'abonnement correspond à la version appropriée de Red Hat Enterprise Linux.
+
+[NOTE]
+====
+Vous ne devez pas installer les logiciels tiers requis à partir de dépôts autres que ceux listés ici. Les logiciels installés depuis les dépôts Red Hat sont conçus spécifiquement pour Red Hat Enterprise Linux et respectent les bonnes pratiques Red Hat (organisation des répertoires, permissions, etc.). Les logiciels provenant d'autres sources peuvent ne pas respecter ces recommandations, ce qui peut entraîner l'échec de l'installation d'Unified Manager ou des problèmes lors des mises à jour ultérieures.
+
+====
+
+
+[[port-443-requirement]]
+== Exigence du port 443
+
+Les images génériques de Red Hat Enterprise Linux peuvent bloquer l'accès externe au port 443. De ce fait, il se peut que vous ne puissiez pas vous connecter à l'interface web de l'administrateur après l'installation de Unified Manager. L'exécution de la commande suivante autorise l'accès au port 443 pour tous les utilisateurs et applications externes sur une image générique de Red Hat Enterprise Linux.
+
+`# firewall-cmd --zone=public --add-port=443/tcp --permanent; firewall-cmd --reload`
+
+Vous devez installer Red Hat Enterprise Linux avec l’environnement de base « `Server with GUI` ». Il fournit les commandes utilisées par les instructions d’installation de Unified Manager. D’autres environnements de base peuvent vous obliger à installer des commandes supplémentaires pour valider ou terminer l’installation. Si le `firewall-cmd` n’est pas disponible sur votre système, vous devez l’installer en exécutant la commande suivante :
+
+`# sudo yum install firewalld`
+
+Avant d'exécuter les commandes, veuillez contacter votre service informatique pour vérifier si vos politiques de sécurité exigent une procédure différente.
+
+[NOTE]
+====
+La fonctionnalité THP (Transparent Huge Pages) doit être désactivée sur les systèmes Red Hat. Lorsqu'elle est activée, elle peut, dans certains cas, entraîner l'arrêt d'Unified Manager si certains processus consomment trop de mémoire et sont interrompus.
+
+====

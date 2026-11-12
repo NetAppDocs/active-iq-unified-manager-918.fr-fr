@@ -1,0 +1,52 @@
+---
+permalink: reporting/task_search_for_scheduled_report.html 
+sidebar: sidebar 
+keywords: search, schedule, report 
+summary: 'Vous pouvez rechercher les rapports planifiés par nom, nom de vue, type d"objet ou destinataires.' 
+---
+= Recherchez un rapport planifié dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez rechercher les rapports planifiés par nom, nom de vue, type d'objet ou destinataires.
+
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Planification des rapports*.
+. Utilisez le champ de texte *Rechercher les rapports planifiés*.
++
+[cols="2*"]
+|===
+| Pour trouver des rapports par ... | Essayez ... 
+
+
+ a| 
+Nom de la planification
+ a| 
+Saisissez une partie du nom du calendrier du rapport.
+
+
+
+ a| 
+Nom de la vue
+ a| 
+Saisissez une partie du nom de la vue du rapport. Les vues par défaut et les vues personnalisées apparaissent dans la liste des vues.
+
+
+
+ a| 
+Destinataire
+ a| 
+Saisissez une partie de l'adresse e-mail.
+
+
+
+ a| 
+Type de fichier
+ a| 
+Tapez « PDF », « CSV » ou « XLSX ».
+
+|===
+. Vous pouvez cliquer sur l'en-tête d'une colonne pour trier les rapports par ordre croissant ou décroissant selon cette colonne, par exemple par nom de planification ou par format.
+

@@ -1,0 +1,38 @@
+---
+permalink: install-linux/task_remove_unified_manager.html 
+sidebar: sidebar 
+keywords: remove, unified manager 
+summary: 'Vous pouvez arrêter et désinstaller Unified Manager de l"hôte Red Hat Enterprise Linux à l"aide d"une seule commande.' 
+---
+= Supprimer Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez arrêter et désinstaller Unified Manager de l'hôte Red Hat Enterprise Linux à l'aide d'une seule commande.
+
+.Avant de commencer
+* Vous devez disposer d'un accès utilisateur root au serveur depuis lequel vous souhaitez supprimer Unified Manager.
+* Security-Enhanced Linux (SELinux) doit être désactivé sur le système Linux. Remplacez le mode d'exécution de SELinux par « Permissive » à l'aide de la commande `setenforce 0`.
+* Tous les clusters (sources de données) doivent être supprimés du serveur Unified Manager avant de supprimer le logiciel.
+* Vous devez supprimer manuellement les règles de pare-feu créées pour autoriser ou bloquer le port 3306 de MySQL. Les règles de pare-feu ne sont pas supprimées automatiquement.
+
+
+.Étapes
+. Connectez-vous en tant qu'utilisateur root au serveur sur lequel vous souhaitez supprimer Unified Manager.
+. Arrêtez et supprimez Unified Manager du serveur :
++
+`rpm -e netapp-um`
+
++
+Cette étape supprime tous les paquets RPM NetApp associés. Elle ne supprime pas les modules logiciels requis, tels que Java, MySQL et 7zip.
+
+. *Facultatif:* Le cas échéant, supprimez les modules logiciels de support, tels que Java, MySQL et 7zip:
++
+`rpm -e mysql-community-client mysql-community-server mysql-community-common mysql-community-libs java-x.y`
+
+
+
+Une fois cette opération terminée, le logiciel est désinstallé. Toutes les données du `/opt/netapp/data` répertoire sont déplacées vers le `/opt/netapp/data/BACKUP` dossier après la désinstallation. La désinstallation d'Unified Manager supprime également les packages Java et MySQL, sauf si ces packages sont requis et utilisés par une autre application du système. Cependant, les données MySQL ne sont pas supprimées.

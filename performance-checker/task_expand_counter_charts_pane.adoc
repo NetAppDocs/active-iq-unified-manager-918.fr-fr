@@ -1,0 +1,38 @@
+---
+permalink: performance-checker/task_expand_counter_charts_pane.html 
+sidebar: sidebar 
+keywords: expand, counter, charts, pane 
+summary: Vous pouvez agrandir le volet Graphiques des compteurs afin que les graphiques soient plus grands et plus lisibles. 
+---
+= Développez le volet Graphiques de compteurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez agrandir le volet Graphiques des compteurs afin que les graphiques soient plus grands et plus lisibles.
+
+Une fois que vous avez défini les objets de comparaison et la plage horaire des compteurs, vous pouvez afficher un volet « Graphiques des compteurs » plus grand. Utilisez le bouton *<* au centre de la fenêtre Performance Explorer pour développer le volet.
+
+.Étape
+. Développez ou réduisez le volet *Counter Charts*.
+
+
+|===
+| À... | Faites ceci... 
+
+
+ a| 
+Agrandissez le volet Counter Charts pour qu'il occupe toute la largeur de la page
+ a| 
+Cliquez sur le bouton *<*
+
+
+
+ a| 
+Réduisez le volet Graphiques de compteur à la moitié droite de la page
+ a| 
+Cliquez sur le bouton *>*
+
+|===

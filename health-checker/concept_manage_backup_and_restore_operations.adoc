@@ -1,0 +1,59 @@
+---
+permalink: health-checker/concept_manage_backup_and_restore_operations.html 
+sidebar: sidebar 
+keywords: backup, types, manage, restore, operations 
+summary: 'Vous pouvez créer des sauvegardes d"Active IQ Unified Manager et utiliser la fonctionnalité de restauration pour restaurer la sauvegarde sur le même système (local) ou sur un nouveau système (distant) en cas de panne du système ou de perte de données.' 
+---
+= Gérez les opérations de sauvegarde et de restauration dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des sauvegardes d'Active IQ Unified Manager et utiliser la fonctionnalité de restauration pour restaurer la sauvegarde sur le même système (local) ou sur un nouveau système (distant) en cas de panne du système ou de perte de données.
+
+Il existe trois méthodes de sauvegarde et de restauration selon le système d'exploitation sur lequel Unified Manager est installé et le nombre de clusters et de nœuds gérés :
+
+[cols="3*"]
+|===
+| Système d’exploitation | Taille du déploiement | Méthode de sauvegarde recommandée 
+
+
+ a| 
+VMware vSphere
+ a| 
+N'importe lequel
+ a| 
+Instantané VMware de l'appliance virtuelle Unified Manager
+
+
+
+.2+| Red Hat Enterprise Linux  a| 
+Petit
+ a| 
+Sauvegarde de la base de données MySQL de Unified Manager
+
+
+
+ a| 
+Grand
+ a| 
+NetApp Instantané de la base de données Unified Manager
+
+
+
+.2+| Microsoft Windows  a| 
+Petit
+ a| 
+Sauvegarde de la base de données MySQL de Unified Manager
+
+
+
+ a| 
+Grand
+ a| 
+NetApp Instantané de la base de données Unified Manager avec le protocole iSCSI
+
+|===
+Ces différentes méthodes sont décrites dans les sections suivantes.

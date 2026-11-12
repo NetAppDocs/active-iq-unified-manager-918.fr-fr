@@ -1,0 +1,24 @@
+---
+permalink: events/task_configure_event_retention_settings.html 
+sidebar: sidebar 
+keywords: configure, event, retention, settings 
+summary: 'Vous pouvez spécifier le nombre de mois pendant lesquels un événement est conservé sur le serveur Unified Manager avant d"être automatiquement supprimé.' 
+---
+= Configurez les paramètres de conservation des événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez spécifier le nombre de mois pendant lesquels un événement est conservé sur le serveur Unified Manager avant d'être automatiquement supprimé.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+La conservation des événements pendant plus de 6 mois peut affecter les performances du serveur et n'est pas recommandée.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Conservation des données*.
+. Sur la page *Conservation des données*, sélectionnez le curseur dans la zone *Conservation des événements* et déplacez-le jusqu’au nombre de mois pendant lesquels les événements doivent être conservés, puis cliquez sur *Enregistrer*.
+

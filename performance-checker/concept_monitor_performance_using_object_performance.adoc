@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_monitor_performance_using_object_performance.html 
+sidebar: sidebar 
+keywords: monitoring, performance, inventory, pages 
+summary: Les pages d’inventaire des objets affichent les informations de performance, les événements de performance et l’état de santé de tous les objets d’une catégorie de type d’objet. Vous obtenez ainsi un aperçu rapide de l’état des performances de chaque objet au sein d’un cluster, par exemple pour tous les nœuds ou tous les volumes. 
+---
+= Surveillez les performances des objets à l'aide des pages d'inventaire des performances dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les pages d’inventaire des objets affichent les informations de performance, les événements de performance et l’état de santé de tous les objets d’une catégorie de type d’objet. Vous obtenez ainsi un aperçu rapide de l’état des performances de chaque objet au sein d’un cluster, par exemple pour tous les nœuds ou tous les volumes.
+
+Les pages d'inventaire des objets offrent une vue d'ensemble de l'état des objets, vous permettant d'évaluer les performances globales de tous les objets et de comparer les données de performance des objets. Vous pouvez affiner le contenu des pages d'inventaire des objets en effectuant des recherches et en appliquant un tri et des filtres. Cela est utile lors de la surveillance et de la gestion des performances des objets, car cela vous permet de localiser rapidement les objets présentant des problèmes de performances et de commencer le processus de dépannage.
+
+image::../media/perf_node_inventory.gif[Capture d'écran de l'interface utilisateur montrant les détails de l'objet sur la page d'inventaire Performance/All Nodes.]
+
+Par défaut, les objets des pages d'inventaire des performances sont triés en fonction de la criticité des performances des objets. Les objets présentant de nouveaux événements de performance critiques apparaissent en premier, suivis des objets présentant des événements d'avertissement. Cela permet d'identifier immédiatement les problèmes qui doivent être résolus. Toutes les données de performance sont basées sur une moyenne sur 72 heures.
+
+Vous pouvez facilement accéder à une page de détails d’objet à partir de la page d’inventaire des performances des objets en cliquant sur le nom de l’objet dans la colonne des noms d’objet. Par exemple, sur la page d’inventaire Performance/All Nodes, vous cliqueriez sur un objet nœud dans la colonne *Nodes*. La page de détails de l’objet fournit des informations détaillées et approfondies sur l’objet sélectionné, notamment une comparaison côte à côte des événements actifs.

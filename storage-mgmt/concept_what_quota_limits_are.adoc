@@ -1,0 +1,18 @@
+---
+permalink: storage-mgmt/concept_what_quota_limits_are.html 
+sidebar: sidebar 
+keywords: quota, limits 
+summary: 'Les limites de quota utilisateur sont des valeurs utilisées par le serveur Unified Manager pour déterminer si la consommation d"espace d"un utilisateur approche ou a atteint la limite définie par le quota de l"utilisateur. Si la limite souple est dépassée ou si la limitation stricte est atteinte, le serveur Unified Manager génère des événements de quota utilisateur.' 
+---
+= Découvrez les limites de quota dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les limites de quota utilisateur sont des valeurs que le serveur Unified Manager utilise pour évaluer si la consommation d'espace par un utilisateur approche de la limite ou a atteint la limite définie par le quota de l'utilisateur. Si la limite souple est franchie ou si la limitation stricte est atteinte, le serveur Unified Manager génère des événements de quota utilisateur.
+
+Par défaut, le serveur Unified Manager envoie un e-mail de notification aux utilisateurs qui ont dépassé la limite de quota souple ou atteint la limitation stricte du quota et pour lesquels des événements de quota utilisateur sont configurés. Les utilisateurs disposant du rôle d'Application Administrator peuvent configurer des alertes qui informent les destinataires spécifiés des événements de quota utilisateur ou de quota au groupe.
+
+Vous pouvez spécifier les limites de quota en utilisant soit ONTAP System Manager, soit l’ONTAP CLI.

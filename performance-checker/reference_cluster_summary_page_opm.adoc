@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/reference_cluster_summary_page_opm.html 
+sidebar: sidebar 
+keywords: performance, cluster, summary page 
+summary: 'La page « Résumé des performances du cluster » présente un récapitulatif des événements actifs, des performances IOPS et des performances en Mo/s du cluster. Elle indique également le nombre total d"objets de stockage dans le cluster.' 
+---
+= Consultez la page Résumé du cluster de performances dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page « Résumé des performances du cluster » présente un récapitulatif des événements actifs, des performances IOPS et des performances en Mo/s du cluster. Elle indique également le nombre total d'objets de stockage dans le cluster.

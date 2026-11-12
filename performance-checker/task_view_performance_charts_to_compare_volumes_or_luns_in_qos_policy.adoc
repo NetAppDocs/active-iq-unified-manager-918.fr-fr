@@ -1,0 +1,36 @@
+---
+permalink: performance-checker/task_view_performance_charts_to_compare_volumes_or_luns_in_qos_policy.html 
+sidebar: sidebar 
+keywords: view, performance, charts, compare, volumes, luns, same, qos, policy, group 
+summary: Vous pouvez visualiser les volumes et les LUN qui se trouvent dans les mêmes groupes de stratégie QoS, puis comparer les performances sur un seul graphique IOPS, MB/s ou IOPS/TB pour identifier les éventuels problèmes. 
+---
+= Comparez les volumes ou les LUN au sein du même groupe de règles QoS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez visualiser les volumes et les LUN qui se trouvent dans les mêmes groupes de stratégie QoS, puis comparer les performances sur un seul graphique IOPS, MB/s ou IOPS/TB pour identifier les éventuels problèmes.
+
+Les étapes permettant de comparer les performances des volumes appartenant au même groupe de règles QoS sont décrites ci-dessous. La procédure pour consulter ces informations pour un LUN est similaire.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
++
+La vue « Santé : Tous les volumes » s'affiche par défaut.
+
+. Dans le menu Affichage, sélectionnez *Performance: volumes dans le groupe de règles QoS*.
+. Cliquez sur le nom du volume que vous souhaitez consulter.
++
+La page Performance Explorer s'affiche pour le volume.
+
+. Dans le menu Afficher et comparer, sélectionnez *Volumes dans le même groupe de stratégie QoS*.
++
+Les autres volumes qui partagent la même politique QoS sont répertoriés dans le tableau ci-dessous.
+
+. Cliquez sur le bouton *Ajouter* pour ajouter ces volumes aux graphiques afin de pouvoir comparer les IOPS, les MB/s, les IOPS/TB et autres compteurs de performance pour tous les volumes sélectionnés dans les graphiques.
++
+Vous pouvez modifier la plage horaire pour visualiser les performances sur différents intervalles de temps autres que l’intervalle par défaut de 72 heures.
+
+

@@ -1,0 +1,31 @@
+---
+permalink: api-automation/concept_storage_resource_model.html 
+sidebar: sidebar 
+keywords: storage, resource, ONTAP 
+summary: Les ressources de stockage dans ONTAP peuvent être globalement classées en ressources de stockage physiques et en ressources de stockage logiques. Pour gérer efficacement vos systèmes ONTAP à l’aide des API fournies dans Active IQ Unified Manager, vous devez comprendre le modèle de ressources de stockage et la relation entre les différentes ressources de stockage. 
+---
+= Comprendre le modèle de ressources de stockage ONTAP dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les ressources de stockage dans ONTAP peuvent être globalement classées en _ressources de stockage physiques_ et _ressources de stockage logiques_. Pour gérer efficacement vos systèmes ONTAP à l'aide des API fournies dans Active IQ Unified Manager, vous devez comprendre le modèle de ressources de stockage et la relation entre les différentes ressources de stockage.
+
+* *Ressources de stockage physiques*
++
+Désigne les objets de stockage physique fournis par ONTAP. Les ressources de stockage physique comprennent les disques, les clusters, les contrôleurs de stockage, les nœuds et les agrégats.
+
+* *Ressources de stockage logiques*
++
+Désigne les ressources de stockage fournies par ONTAP qui ne sont pas liées à une ressource physique. Ces ressources sont associées à une machine virtuelle de stockage (SVM, anciennement appelée Vserver) et existent indépendamment de toute ressource de stockage physique spécifique telle qu'un disque, une baie LUN ou un agrégat.
+
++
+Les ressources de stockage logique comprennent les volumes de tous types et les qtrees, ainsi que les fonctionnalités et les configurations que vous pouvez utiliser avec ces ressources, telles que les copies Snapshot, la déduplication, la compression et les quotas.
+
+
+
+L'illustration suivante montre les ressources de stockage dans un cluster à 2 nœuds :
+
+image::../media/storage_resource_model.gif[Capture d'écran de l'interface utilisateur montrant les ressources de stockage dans un cluster à 2 nœuds.]

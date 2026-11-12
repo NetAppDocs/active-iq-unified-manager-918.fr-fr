@@ -1,0 +1,45 @@
+---
+permalink: performance-checker/task_respond_to_system_defined_node_resources_overutilized.html 
+sidebar: sidebar 
+keywords: node, resources, overutilized, performance, events 
+summary: 'Unified Manager génère des événements d"avertissement de surutilisation des ressources du nœud lorsqu"un seul nœud fonctionne au-delà des limites de son efficacité opérationnelle et risque donc d"affecter les latences des workloads. Ces événements définis par le système permettent de corriger d"éventuels problèmes de performance avant que la latence n"affecte de nombreux workloads.' 
+---
+= Répondez aux événements de surutilisation des ressources des nœuds dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager génère des événements d'avertissement de surutilisation des ressources du nœud lorsqu'un seul nœud fonctionne au-delà des limites de son efficacité opérationnelle et risque donc d'affecter les latences des workloads. Ces événements définis par le système permettent de corriger d'éventuels problèmes de performance avant que la latence n'affecte de nombreux workloads.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Il doit y avoir des événements de performance nouveaux ou obsolètes.
+
+
+Unified Manager génère des événements d'avertissement pour les violations de la politique de surutilisation des ressources des nœuds en recherchant les nœuds qui utilisent plus de 100 % de leur capacité de performance pendant plus de 30 minutes.
+
+Vous pouvez utiliser System Manager ou les commandes ONTAP pour corriger ce type de problème de performance, notamment les tâches suivantes :
+
+* Création et application d'une politique QoS aux volumes ou LUN qui utilisent excessivement les ressources système
+* Réduction de la limite de débit maximal QoS d'un groupe de règles auquel des workloads ont été appliqués
+* Déplacement d'un workload vers un autre agrégat ou nœud
+* Augmenter la capacité en ajoutant des disques au nœud ou en passant à un nœud doté d'un CPU plus rapide et de plus de RAM
+
+
+.Étapes
+. Consultez la page *Détails de l'événement* pour obtenir des informations sur l'événement.
+. Veuillez consulter la *Description*, qui décrit le dépassement de seuil ayant provoqué l'événement.
++
+Par exemple, le message « `Perf. Capacity Used value of 139 % on simplicity-02 has triggered a WARNING event to identify potential performance problems in the data processing unit.` » indique que la capacité de performance du nœud simplicity-02 est surutilisée et affecte les performances du nœud.
+
+. Dans la section *Diagnostic système*, consultez les trois graphiques : un pour la capacité de performance utilisée sur le nœud, un pour les IOPS de stockage moyennes utilisées par les principaux workloads, et un pour la latence des principaux workloads. Lorsqu'ils sont organisés de cette manière, vous pouvez voir quels workloads sont à l'origine de la latence sur le nœud.
++
+Vous pouvez voir quels workloads ont des stratégies QoS appliquées, et lesquels n'en ont pas, en déplaçant votre curseur sur le graphique IOPS.
+
+. Dans la section *Actions suggérées*, examinez les suggestions et déterminez les actions que vous devez entreprendre pour éviter une augmentation de la latence du workload.
++
+Si nécessaire, cliquez sur le bouton *Aide* pour afficher plus de détails sur les actions suggérées que vous pouvez effectuer pour tenter de résoudre l'incident de performance.
+
+

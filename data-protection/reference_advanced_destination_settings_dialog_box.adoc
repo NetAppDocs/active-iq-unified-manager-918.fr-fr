@@ -1,0 +1,30 @@
+---
+permalink: data-protection/reference_advanced_destination_settings_dialog_box.html 
+sidebar: sidebar 
+keywords: advanced, destination, settings, dialog box 
+summary: 'Vous pouvez utiliser la boîte de dialogue Paramètres de destination avancés pour activer les paramètres de garantie d"espace sur un volume de destination. Vous pouvez sélectionner les paramètres avancés lorsque la garantie d"espace est désactivée sur la source, mais que vous souhaitez l"activer sur la destination. Les paramètres de déduplication, de compression et d"extension automatique dans une relation SnapMirror sont hérités du volume source et ne peuvent pas être modifiés.' 
+---
+= Utilisez la boîte de dialogue Paramètres de destination avancés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la boîte de dialogue Paramètres de destination avancés pour activer les paramètres de garantie d'espace sur un volume de destination. Vous pouvez sélectionner les paramètres avancés lorsque la garantie d'espace est désactivée sur la source, mais que vous souhaitez l'activer sur la destination. Les paramètres de déduplication, de compression et d'extension automatique dans une relation SnapMirror sont hérités du volume source et ne peuvent pas être modifiés.
+
+
+
+[[space-guarantee]]
+== Garantie d'espace
+
+Garantit qu'un espace suffisant est alloué sur le volume de destination pour que les transferts de données réussissent toujours. Le paramètre de garantie d'espace peut prendre l'une des valeurs suivantes :
+
+* Fichier
+* Volume
+* Aucune
+
+
+Par exemple, vous pouvez avoir un volume de 200 Go contenant des fichiers totalisant 50 Go ; cependant, ces fichiers ne contiennent que 10 Go de données. La garantie de volume alloue 200 Go au volume de destination, quel que soit le contenu du volume source. La garantie de fichier alloue 50 Go afin de garantir un espace suffisant pour les fichiers sources sur le volume de destination ; sélectionner *None* dans ce cas signifie que seuls 10 Go sont alloués sur le volume de destination pour l'espace réellement utilisé par les données des fichiers sur le volume source.
+
+La garantie d'espace est définie par défaut sur Volume.

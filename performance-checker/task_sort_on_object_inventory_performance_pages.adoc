@@ -1,0 +1,23 @@
+---
+permalink: performance-checker/task_sort_on_object_inventory_performance_pages.html 
+sidebar: sidebar 
+keywords: sort, object, inventory, performance, pages 
+summary: Vous pouvez trier toutes les données des pages « Performances de l’inventaire des objets » selon n’importe quelle colonne, par ordre croissant ou décroissant. Cela vous permet de localiser rapidement les données d’inventaire des objets, ce qui est utile pour analyser les performances ou entamer un processus de dépannage. 
+---
+= Triez les données sur les pages de performances de l'inventaire des objets dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez trier toutes les données des pages « Performances de l’inventaire des objets » selon n’importe quelle colonne, par ordre croissant ou décroissant. Cela vous permet de localiser rapidement les données d’inventaire des objets, ce qui est utile pour analyser les performances ou entamer un processus de dépannage.
+
+La colonne sélectionnée pour le tri est indiquée par un nom d’en-tête de colonne en surbrillance et une icône en forme de flèche indiquant le sens du tri à droite du nom. Une flèche vers le haut indique un ordre croissant ; une flèche vers le bas indique un ordre décroissant. Par défaut, le tri s’effectue par *Status* (criticité de l’événement) en ordre décroissant, les événements de performance les plus critiques étant répertoriés en premier.
+
+.Étape
+. Vous pouvez cliquer sur le nom d'une colonne pour basculer l'ordre de tri de la colonne en ordre croissant ou décroissant.
++
+Le contenu de la page « Performances de l'inventaire des objets » est trié par ordre croissant ou décroissant, en fonction de la colonne sélectionnée.
+
+

@@ -1,0 +1,21 @@
+---
+permalink: health-checker/concept_understand_capacity_events_and_thresholds_for_node.html 
+sidebar: sidebar 
+keywords: understand, events, thresholds, node, root, aggregates 
+summary: 'Vous pouvez surveiller l"agrégat racine du nœud à l"aide d"Unified Manager. La bonne pratique consiste à provisionner de manière épaisse le volume racine dans l"agrégat racine afin d"empêcher l"arrêt du nœud.' 
+---
+= Comprendre les événements et les seuils des agrégats racine de nœud dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez surveiller l'agrégat racine du nœud à l'aide d'Unified Manager. La bonne pratique consiste à provisionner de manière épaisse le volume racine dans l'agrégat racine afin d'empêcher l'arrêt du nœud.
+
+Par défaut, les événements de capacité et de performance ne sont pas générés pour les agrégats racine. De plus, les valeurs de seuil utilisées par Unified Manager ne s'appliquent pas aux agrégats racine des nœuds. Seul un représentant du support technique peut modifier les paramètres afin que ces événements soient générés. Lorsque le représentant du support technique modifie les paramètres, les valeurs de seuil de capacité sont appliquées à l'agrégat racine du nœud.
+
+Vous pouvez prendre les mesures appropriées pour empêcher le nœud de s’arrêter en utilisant soit ONTAP System Manager, soit l’ONTAP CLI.
+
+
+NOTE: La fonctionnalité de surveillance des agrégats racine des nœuds n'est pas disponible si les clusters exécutent ONTAP version 9.14.1 ou ultérieure.

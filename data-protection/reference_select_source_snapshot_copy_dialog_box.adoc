@@ -1,0 +1,187 @@
+---
+permalink: data-protection/reference_select_source_snapshot_copy_dialog_box.html 
+sidebar: sidebar 
+keywords: select, source, snapshot, copy, dialog box 
+summary: Vous utilisez la boîte de dialogue Sélectionner la copie Snapshot source pour sélectionner une copie Snapshot spécifique afin de transférer des données entre les relations de protection, ou vous sélectionnez le comportement par défaut, qui varie selon que vous initialisez, mettez à jour ou resynchronisez une relation, et selon que la relation est une SnapMirror ou SnapVault. 
+---
+= Utilisez la boîte de dialogue Sélectionner la copie d'instantané source dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous utilisez la boîte de dialogue Sélectionner la copie Snapshot source pour sélectionner une copie Snapshot spécifique afin de transférer des données entre les relations de protection, ou vous sélectionnez le comportement par défaut, qui varie selon que vous initialisez, mettez à jour ou resynchronisez une relation, et selon que la relation est une SnapMirror ou SnapVault.
+
+
+
+[[default]]
+== Défaut
+
+Permet de sélectionner le comportement par défaut pour déterminer quelle copie Snapshot est utilisée pour initialiser, mettre à jour et resynchroniser les transferts pour les relations SnapVault et SnapMirror.
+
+Si vous effectuez un transfert SnapVault, le comportement par défaut pour chaque opération est le suivant :
+
+[cols="3*"]
+|===
+| Opération | Comportement par défaut de SnapVault lorsque la source est en lecture/écriture | Comportement par défaut de SnapVault lorsque la source est Data Protection (DP) 
+
+
+ a| 
+Initialiser
+ a| 
+Crée une nouvelle copie Snapshot et la transfère.
+ a| 
+Transfère la dernière copie Snapshot exportée.
+
+
+
+ a| 
+Mise à jour
+ a| 
+Transfère uniquement les copies Snapshot étiquetées, comme spécifié dans la stratégie.
+ a| 
+Transfère la dernière copie Snapshot exportée.
+
+
+
+ a| 
+Resynchroniser
+ a| 
+Transfère toutes les copies Snapshot étiquetées créées après la plus récente copie Snapshot commune.
+ a| 
+Transfère la copie Snapshot la plus récente étiquetée.
+
+|===
+Si vous effectuez un transfert SnapMirror, le comportement par défaut de chaque opération est le suivant :
+
+[cols="3*"]
+|===
+| Opération | Comportement de SnapMirror par défaut | Comportement par défaut de SnapMirror lorsque la relation est le deuxième saut dans une cascade de SnapMirror à SnapMirror 
+
+
+ a| 
+Initialiser
+ a| 
+Crée une nouvelle copie Snapshot et la transfère ainsi que toutes les copies Snapshot créées avant cette nouvelle copie Snapshot.
+ a| 
+Transfère toutes les copies Snapshot à partir de la source.
+
+
+
+ a| 
+Mise à jour
+ a| 
+Crée une nouvelle copie Snapshot et la transfère ainsi que toutes les copies Snapshot créées avant cette nouvelle copie Snapshot.
+ a| 
+Transfère toutes les copies Snapshot.
+
+
+
+ a| 
+Resynchroniser
+ a| 
+Crée une nouvelle copie Snapshot, puis transfère toutes les copies Snapshot depuis la source.
+ a| 
+Transfère toutes les copies Snapshot du volume secondaire vers le volume tertiaire et supprime toutes les données ajoutées après la création de la copie Snapshot commune la plus récente.
+
+|===
+
+
+[[existing-snapshot-copy]]
+== Snapshot Copy existante
+
+Permet de sélectionner une copie Snapshot existante dans la liste si la sélection d'une copie Snapshot est autorisée pour cette opération.
+
+* *copie Snapshot*
++
+Affiche les copies Snapshot existantes parmi lesquelles vous pouvez sélectionner un transfert.
+
+* *Date de création*
++
+Affiche la date et l'heure de création de la copie Snapshot. Les copies Snapshot sont classées de la plus récente à la moins récente, la plus récente apparaissant en haut de la liste.
+
+
+
+Si vous effectuez un transfert SnapVault et que vous souhaitez sélectionner une copie Snapshot existante à transférer d'une source vers une destination, le comportement de chaque opération est le suivant :
+
+[cols="3*"]
+|===
+| Opération | SnapVault comportement lors de la spécification d'une copie Snapshot | SnapVault comportement lors de la spécification d'une copie Snapshot dans une cascade 
+
+
+ a| 
+Initialiser
+ a| 
+Transfère la copie Snapshot spécifiée.
+ a| 
+La sélection de la copie Snapshot source n'est pas prise en charge pour les volumes de protection des données.
+
+
+
+ a| 
+Mise à jour
+ a| 
+Transfère la copie Snapshot spécifiée.
+ a| 
+La sélection de la copie Snapshot source n'est pas prise en charge pour les volumes de protection des données.
+
+
+
+ a| 
+Resynchroniser
+ a| 
+Transfère la copie Snapshot sélectionnée.
+ a| 
+La sélection de la copie Snapshot source n'est pas prise en charge pour les volumes de protection des données.
+
+|===
+Si vous effectuez un transfert SnapMirror et que vous souhaitez sélectionner une copie Snapshot existante à transférer d'une source vers une destination, le comportement de chaque opération est le suivant :
+
+[cols="3*"]
+|===
+| Opération | SnapMirror comportement lors de la spécification d'une copie Snapshot | SnapMirror comportement lors de la spécification d'une copie Snapshot dans une cascade 
+
+
+ a| 
+Initialiser
+ a| 
+Transfère toutes les copies Snapshot présentes sur la source, jusqu'à la copie Snapshot spécifiée.
+ a| 
+La sélection de la copie Snapshot source n'est pas prise en charge pour les volumes de protection des données.
+
+
+
+ a| 
+Mise à jour
+ a| 
+Transfère toutes les copies Snapshot présentes sur la source, jusqu'à la copie Snapshot spécifiée.
+ a| 
+La sélection de la copie Snapshot source n'est pas prise en charge pour les volumes de protection des données.
+
+
+
+ a| 
+Resynchroniser
+ a| 
+Transfère toutes les copies Snapshot de la source jusqu'à la copie Snapshot sélectionnée, puis supprime toutes les données ajoutées après la création de la copie Snapshot commune la plus récente.
+ a| 
+La sélection de la copie Snapshot source n'est pas prise en charge pour les volumes de protection des données.
+
+|===
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Soumettre*
++
+Soumet vos sélections et ferme la boîte de dialogue Sélectionner la copie Snapshot source.
+
+* *Annuler*
++
+Annule vos sélections et ferme la boîte de dialogue Sélectionner la copie d'instantané source.
+
+

@@ -1,0 +1,45 @@
+---
+permalink: events/reference_inodes_events.html 
+sidebar: sidebar 
+keywords: inodes, events, impact area, capacity 
+summary: 'Les événements d"inode fournissent des informations lorsque l"inode est plein ou presque plein, afin que vous puissiez surveiller d"éventuels problèmes. Les événements sont regroupés par zone d"impact et comprennent le nom de l"événement et du trap, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements liés aux inodes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements d'inode fournissent des informations lorsque l'inode est plein ou presque plein, afin que vous puissiez surveiller d'éventuels problèmes. Les événements sont regroupés par zone d'impact et comprennent le nom de l'événement et du trap, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-capacity]]
+== Domaine d'impact : capacité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Inodes presque pleins(ocumEvtInodesAlmostFull)
+ a| 
+Risque
+ a| 
+Volume
+ a| 
+Avertissement
+
+
+
+ a| 
+Inodes complets(ocumEvtInodesFull)
+ a| 
+Risque
+ a| 
+Volume
+ a| 
+Erreur
+
+|===

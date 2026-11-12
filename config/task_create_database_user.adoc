@@ -1,0 +1,47 @@
+---
+permalink: config/task_create_database_user.html 
+sidebar: sidebar 
+keywords: create, database, user 
+summary: 'Pour prendre en charge une connexion entre Workflow Automation et Unified Manager, ou pour accéder aux vues de la base de données, vous devez d"abord créer un utilisateur de la base de données avec le rôle Integration Schema ou Report Schema dans l"interface utilisateur Web de Unified Manager.' 
+---
+= Créer un utilisateur de base de données dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour prendre en charge une connexion entre Workflow Automation et Unified Manager, ou pour accéder aux vues de la base de données, vous devez d'abord créer un utilisateur de la base de données avec le rôle Integration Schema ou Report Schema dans l'interface utilisateur Web de Unified Manager.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Les utilisateurs de la base de données assurent l'intégration avec Workflow Automation et l'accès aux vues de base de données spécifiques aux rapports. Les utilisateurs de la base de données n'ont pas accès à l'interface utilisateur web de Unified Manager ni à la console de maintenance, et ne peuvent pas exécuter d'appels d'API.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Utilisateurs*.
+. Sur la page Utilisateurs, cliquez sur *Ajouter*.
+. Dans la boîte de dialogue Ajouter un utilisateur, sélectionnez *Utilisateur de base de données* dans la liste déroulante *Type*.
+. Saisissez un nom et un mot de passe pour l'utilisateur de la base de données.
+. Dans la liste déroulante *Role*, sélectionnez le rôle approprié.
++
+[cols="2*"]
+|===
+| Si vous êtes... | Choisissez ce rôle 
+
+
+ a| 
+Connexion entre Unified Manager et Workflow Automation
+ a| 
+Schéma d'intégration
+
+
+
+ a| 
+Accès aux rapports et aux autres vues de la base de données
+ a| 
+Schéma du rapport
+
+|===
+. Cliquez sur *Add*.
+

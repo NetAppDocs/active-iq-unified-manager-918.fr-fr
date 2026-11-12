@@ -1,0 +1,42 @@
+---
+permalink: performance-checker/concept_understand_performance_panels_on_dashboard.html 
+sidebar: sidebar 
+keywords: understand, performance, panels, dashboard 
+summary: 'Le tableau de bord Unified Manager propose plusieurs panneaux affichant l"état de performance global de tous les clusters surveillés dans votre environnement. Vous pouvez choisir d"afficher l"état de tous les clusters ou celui d"un cluster en particulier.' 
+---
+= Consultez les panneaux de performance sur le tableau de bord Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le tableau de bord Unified Manager propose plusieurs panneaux affichant l'état de performance global de tous les clusters surveillés dans votre environnement. Vous pouvez choisir d'afficher l'état de tous les clusters ou celui d'un cluster en particulier.
+
+Outre les informations de performance, la plupart des panneaux affichent également le nombre d'événements actifs dans cette catégorie, ainsi que le nombre de nouveaux événements ajoutés au cours des 24 dernières heures. Ces informations vous aident à déterminer quels clusters vous devrez peut-être analyser plus en détail pour résoudre les événements signalés. Le fait de cliquer sur les événements affiche les quelques principaux événements et fournit un lien vers la page d'inventaire Event Management filtrée pour afficher les événements de cette catégorie.
+
+Les panneaux suivants indiquent l'état des performances.
+
+* *Panneau de capacité de performance*
++
+Lorsque vous consultez tous les clusters, ce panneau affiche la valeur de capacité de performance de chaque cluster (moyenne sur l’heure précédente) et le nombre de jours avant que la capacité de performance n’atteigne la limite supérieure (en fonction du taux de croissance quotidien). Le fait de cliquer sur l’histogramme vous amène à la page d’inventaire des nœuds de ce cluster. Notez que la page d’inventaire des nœuds affiche la capacité de performance moyenne sur les 72 heures précédentes ; cette valeur peut donc ne pas correspondre à la valeur du Dashboard.
+
++
+Lors de l’affichage d’un seul cluster, ce panneau affiche les valeurs de capacité de performances du cluster, d’IOPS totales et de débit total.
+
+* *Panneau IOPS du workload*
++
+Lorsque la gestion active des workloads est activée et que vous affichez un seul cluster, ce panneau indique le nombre total de workloads actuellement exécutés dans une certaine plage d'IOPS.
+
+* *Panneau de performances du workload*
++
+Lorsque la gestion active des workloads est activée, ce panneau affiche le nombre total de workloads conformes et non conformes affectés à chaque niveau de service de performance défini. En cliquant sur un graphique à barres, vous accédez aux workloads affectés à cette stratégie dans la page Workloads.
+
+* *Panneau d'aperçu de l'utilisation*
++
+Lorsque vous affichez tous les clusters, vous pouvez choisir de les afficher triés par nombre d’IOPS ou par débit (MB/s) le plus élevé.
+
++
+Lorsque vous consultez un seul cluster, vous pouvez choisir d’afficher les workloads de ce cluster classés selon le plus grand nombre d’IOPS ou le débit le plus élevé (MB/s).
+
+

@@ -1,0 +1,43 @@
+---
+permalink: events/reference_description_of_event_impact_areas.html 
+sidebar: sidebar 
+keywords: description, event, impact, areas 
+summary: 'Les événements sont classés en six domaines d"impact (disponibilité, capacité, configuration, performance, protection et sécurité) afin de vous permettre de vous concentrer sur les types d"événements dont vous êtes responsable.' 
+---
+= Découvrez les zones d'impact des événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements sont classés en six domaines d'impact (disponibilité, capacité, configuration, performance, protection et sécurité) afin de vous permettre de vous concentrer sur les types d'événements dont vous êtes responsable.
+
+* *Disponibilité*
++
+Les événements de disponibilité vous avertissent si un objet de stockage se met hors ligne, si un service de protocole tombe en panne, si un problème de basculement du stockage survient ou si un problème matériel survient.
+
+* *Capacité*
++
+Les événements de capacité vous avertissent si vos agrégats, volumes, LUNs ou espaces de noms approchent ou ont atteint un seuil de taille, ou si le taux de croissance est inhabituel pour votre environnement.
+
+* *Configuration*
++
+Les événements de configuration vous informent de la découverte, de la suppression, de l'ajout, du retrait ou du renommage de vos objets de stockage. Ces événements ont un niveau d'impact « Événement » et un type de gravité « Information ».
+
+* *Performances*
++
+Les événements de performance vous informent des conditions de ressources, de configuration ou d'activité sur votre cluster qui pourraient affecter négativement la vitesse d'entrée ou de récupération du stockage des données sur vos objets de stockage surveillés.
+
+* *Protection*
++
+Les événements de protection vous informent des incidents ou des risques impliquant des relations SnapMirror, des problèmes de capacité de destination, des problèmes avec les relations SnapVault ou des problèmes liés aux tâches de protection. Tout objet ONTAP (en particulier les agrégats, les volumes et les SVM) qui héberge des volumes secondaires et des relations de protection est classé dans la zone d'impact de la protection.
+
+* *Sécurité*
++
+Les événements de sécurité vous informent du niveau de sécurité de vos clusters ONTAP, de vos machines virtuelles de stockage (SVM) et de vos volumes en fonction des paramètres définis dans le https://www.netapp.com/pdf.html?item=/media/10674-tr4569pdf.pdf["NetApp Guide de renforcement de la sécurité pour ONTAP 9"^].
+
++
+De plus, cette zone inclut les événements de mise à niveau signalés par la plateforme Active IQ.
+
+

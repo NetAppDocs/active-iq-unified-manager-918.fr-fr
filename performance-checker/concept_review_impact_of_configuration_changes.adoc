@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_review_impact_of_configuration_changes.html 
+sidebar: sidebar 
+keywords: review, impact, configuration, changes, workload, performance 
+summary: 'Les modifications de configuration sur le cluster, telles qu"une défaillance de disque, un basculement HA ou un déplacement de volume, peuvent avoir un impact négatif sur les performances du volume et entraîner une augmentation de la latence.' 
+---
+= Évaluez comment les modifications de configuration affectent les performances de la charge de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les modifications de configuration sur le cluster, telles qu'une défaillance de disque, un basculement HA ou un déplacement de volume, peuvent avoir un impact négatif sur les performances du volume et entraîner une augmentation de la latence.
+
+Dans Unified Manager, vous pouvez consulter la page d'analyse de la charge de travail pour voir quand une modification récente de la configuration s'est produite et la comparer aux opérations et à la latence (temps de réponse) afin de voir s'il y a eu un changement d'activité pour le workload du volume sélectionné.
+
+Les pages de performance d'Unified Manager ne détectent qu'un nombre limité d'événements de modification. Les pages d'état fournissent des alertes pour les autres événements liés aux modifications de configuration. Vous pouvez rechercher le volume dans Unified Manager pour consulter l'historique des événements.

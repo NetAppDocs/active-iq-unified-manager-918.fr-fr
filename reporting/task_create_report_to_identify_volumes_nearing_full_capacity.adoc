@@ -1,0 +1,42 @@
+---
+permalink: reporting/task_create_report_to_identify_volumes_nearing_full_capacity.html 
+sidebar: sidebar 
+keywords: create, report, identify, volumes, full capacity, snapshot, autodelete, turned off 
+summary: Vous pouvez créer un rapport qui contient la liste des volumes qui approchent de leur capacité maximale avec la fonctionnalité Snapshot Autodelete désactivée. Les résultats peuvent vous aider à identifier les volumes pour lesquels vous pourriez vouloir configurer Snapshot Autodelete. 
+---
+= Identifiez les volumes proches de leur capacité maximale avec la suppression automatique des instantanés désactivée dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un rapport qui contient la liste des volumes qui approchent de leur capacité maximale avec la fonctionnalité Snapshot Autodelete désactivée. Les résultats peuvent vous aider à identifier les volumes pour lesquels vous pourriez vouloir configurer Snapshot Autodelete.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée affichant les colonnes requises dans le bon ordre, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Dans le menu Affichage, sélectionnez *Capacité* > *Tous les volumes*.
+. Sélectionnez *Afficher/Masquer* pour supprimer les colonnes que vous ne souhaitez pas voir apparaître dans le rapport.
+. Faites glisser et déposez les colonnes « `Snapshot Autodelete` » et « `Days To Full` » près de la colonne « `Available Data Capacity` ».
+. Cliquez sur l'icône de filtre, ajoutez les deux filtres suivants, puis cliquez sur *Appliquer le filtre*:
++
+** Jours avant saturation inférieurs à 30 jours
+** Snapshot Autodelete est désactivé
+
+
+. Cliquez en haut de la colonne *Days To Full* pour que les volumes avec le moins de jours restants apparaissent en haut de la liste.
+. Enregistrez la vue sous un nom spécifique qui reflète ce qu’affiche la vue, par exemple "`Vols near capacity`".
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pourriez vouloir activer Snapshot Autodelete sur les volumes ou trouver un moyen d’augmenter l’espace disponible.

@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_what_information_is_contained_in_an_alert_email.html 
+sidebar: sidebar 
+keywords: information, contained, alert, email 
+summary: 'Les alertes par e-mail d"Unified Manager indiquent le type d"événement, sa gravité, le nom de la politique ou du seuil enfreint, ainsi qu"une description de l"événement. Le message électronique fournit également un lien hypertexte pour chaque événement qui vous permet d"afficher la page de détails de l"événement dans l"interface utilisateur.' 
+---
+= Consultez les informations contenues dans un e-mail d'alerte dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les alertes par e-mail d'Unified Manager indiquent le type d'événement, sa gravité, le nom de la politique ou du seuil enfreint, ainsi qu'une description de l'événement. Le message électronique fournit également un lien hypertexte pour chaque événement qui vous permet d'afficher la page de détails de l'événement dans l'interface utilisateur.
+
+Tous les utilisateurs qui se sont abonnés pour recevoir des alertes reçoivent des courriels d'alerte.
+
+Si une valeur de compteur de performances ou de capacité subit une variation importante pendant une période de collecte, cela peut déclencher simultanément un événement critique et un événement d’avertissement pour une même stratégie de seuil. Dans ce cas, vous pouvez recevoir un e-mail pour l’événement d’avertissement et un autre pour l’événement critique. En effet, Unified Manager vous permet de vous abonner séparément pour recevoir des alertes en cas de dépassement des seuils d’avertissement et critiques.
+
+Un exemple d'e-mail d'alerte est présenté ci-dessous :
+
+image::../media/um_email_alert.gif[Capture d'écran de l'interface utilisateur montrant un exemple d'e-mail d'alerte.]

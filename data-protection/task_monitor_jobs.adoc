@@ -1,0 +1,29 @@
+---
+permalink: data-protection/task_monitor_jobs.html 
+sidebar: sidebar 
+keywords: monitor, jobs 
+summary: 'Vous pouvez utiliser la page Tâches pour suivre l"état des tâches et consulter leurs propriétés, telles que le type de service de stockage, l"état, l"heure de soumission et l"heure d"achèvement, afin de déterminer si une tâche s"est terminée avec succès.' 
+---
+= Surveillez les tâches dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la page Tâches pour suivre l'état des tâches et consulter leurs propriétés, telles que le type de service de stockage, l'état, l'heure de soumission et l'heure d'achèvement, afin de déterminer si une tâche s'est terminée avec succès.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Protection* > *Tâches*.
++
+La page Jobs s'affiche.
+
+. Consultez la colonne *État* pour déterminer l'état des tâches en cours d'exécution.
+. Cliquez sur le nom d’une tâche pour afficher les détails de cette tâche.
++
+La page Détails de la tâche s'affiche.
+
+

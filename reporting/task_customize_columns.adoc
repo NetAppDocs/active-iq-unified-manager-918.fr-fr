@@ -1,0 +1,23 @@
+---
+permalink: reporting/task_customize_columns.html 
+sidebar: sidebar 
+keywords: customize, columns 
+summary: 'Utilisez l"option Afficher/Masquer pour sélectionner les colonnes à inclure dans votre rapport. Faites glisser les colonnes sur la page d"inventaire pour les réorganiser.' 
+---
+= Personnaliser les colonnes d'un rapport dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Utilisez *Afficher/Masquer* pour sélectionner les colonnes à inclure dans votre rapport. Faites glisser les colonnes sur la page d'inventaire pour les réorganiser.
+
+.Étapes
+. Cliquez sur *Afficher/Masquer* pour ajouter ou supprimer des colonnes.
++
+image::../media/show_hide_3.png[Capture d'écran de l'interface utilisateur montrant comment ajouter ou supprimer des colonnes.]
+
+. Sur la page d'inventaire, faites glisser les colonnes pour les réorganiser dans l'ordre souhaité dans votre rapport.
+. Donnez un nom à la vue non enregistrée pour enregistrer vos modifications.
+

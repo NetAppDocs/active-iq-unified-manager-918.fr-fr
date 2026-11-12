@@ -1,0 +1,37 @@
+---
+permalink: health-checker/task_determine_if_volume_is_offline_because_of_broken_disks.html 
+sidebar: sidebar 
+keywords: determine, volume, offline, broken disks, aggregate 
+summary: Vous pouvez utiliser l’interface utilisateur web de Unified Manager pour confirmer ou infirmer la possibilité qu’un volume soit hors ligne en raison de problèmes de disque RAID ayant mis hors service son agrégat hôte. 
+---
+= Déterminez si un volume est hors ligne en raison de disques défectueux dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser l’interface utilisateur web de Unified Manager pour confirmer ou infirmer la possibilité qu’un volume soit hors ligne en raison de problèmes de disque RAID ayant mis hors service son agrégat hôte.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Pour déterminer si l’indisponibilité du volume est due à des problèmes de disque RAID qui mettent l’agrégat hôte hors ligne, effectuez les actions suivantes :
+
+.Étapes
+. Repérez et cliquez sur le lien hypertexte affiché sous *Agrégat* dans le volet *Périphériques associés* de la page de détails *Volume / Santé*.
++
+La page « Détails de l’agrégat/de l’état » affiche l’état en ligne ou hors ligne de l’agrégat hébergeant. Si l’agrégat est en ligne, les problèmes de disque RAID ne sont pas à l’origine de l’indisponibilité du volume.
+
+. Si l’état de l’agrégat est hors ligne, cliquez sur *Informations disque* et recherchez les événements de disque défectueux dans la liste *Événements* de l’onglet *Informations disque*.
+. Pour identifier plus précisément les disques défectueux, cliquez sur le lien hypertexte affiché sous Node dans le volet *Related Devices*.
++
+La page de détails du cluster/de l'état de santé s'affiche.
+
+. Cliquez sur *Disques*, puis sélectionnez *Défectueux* dans le volet *Filtres* pour afficher tous les disques en état de panne.
++
+Si les disques défectueux ont entraîné la mise hors ligne de l'agrégat hôte, le nom de l'agrégat est affiché dans la colonne Agrégat impacté.
+
+
+
+Après avoir confirmé que l'état hors ligne du volume est dû à des disques RAID défectueux et à l'agrégat hôte hors ligne qui en résulte, contactez l'administrateur ou l'opérateur approprié pour remplacer manuellement les disques défectueux et remettre l'agrégat en ligne.

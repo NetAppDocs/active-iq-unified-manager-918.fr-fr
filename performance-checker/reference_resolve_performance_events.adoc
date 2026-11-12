@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/reference_resolve_performance_events.html 
+sidebar: sidebar 
+keywords: resolving, performance, events 
+summary: 'Vous pouvez utiliser les actions suggérées pour tenter de résoudre vous-même les problèmes de performance. Les trois premières suggestions sont toujours affichées, et les actions de la quatrième suggestion sont spécifiques au type d"événement affiché.' 
+---
+= Résolvez les événements de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser les actions suggérées pour tenter de résoudre vous-même les problèmes de performance. Les trois premières suggestions sont toujours affichées, et les actions de la quatrième suggestion sont spécifiques au type d'événement affiché.
+
+Les liens « Help me do this » fournissent des informations supplémentaires pour chaque action suggérée, y compris des instructions pour effectuer une action spécifique. Certaines actions peuvent impliquer l’utilisation d’Unified Manager, d’ONTAP System Manager, de OnCommand Workflow Automation, des commandes ONTAP CLI, ou d’une combinaison de ces outils.

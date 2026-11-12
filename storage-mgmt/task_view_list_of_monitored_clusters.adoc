@@ -1,0 +1,24 @@
+---
+permalink: storage-mgmt/task_view_list_of_monitored_clusters.html 
+sidebar: sidebar 
+keywords: view, list, monitored, clusters 
+summary: Vous pouvez utiliser la page Cluster Setup pour consulter votre inventaire de clusters. Vous pouvez consulter des détails sur les clusters, tels que leur nom, leur adresse IP et leur état de communication. 
+---
+= Consultez la liste des clusters surveillés par Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la page Cluster Setup pour consulter votre inventaire de clusters. Vous pouvez consulter des détails sur les clusters, tels que leur nom, leur adresse IP et leur état de communication.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+.Étape
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration du cluster*.
++
+Tous les clusters de votre environnement de stockage gérés par Unified Manager sont affichés. La liste des clusters est triée selon la colonne du niveau de gravité de l'état de collecte. Vous pouvez cliquer sur l'en-tête d'une colonne pour trier les clusters selon différentes colonnes.
+
+

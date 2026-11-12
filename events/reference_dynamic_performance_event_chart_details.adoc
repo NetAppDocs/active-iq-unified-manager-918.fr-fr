@@ -1,0 +1,68 @@
+---
+permalink: events/reference_dynamic_performance_event_chart_details.html 
+sidebar: sidebar 
+keywords: dynamic, performance, event, chart, details 
+summary: 'Pour les événements de performance dyniques, la section « Diagnostic système » de la page « Détails de l"événement » répertorie les principaux workload présentant la latence la plus élevée ou l"utilisation la plus élevée du composant de cluster en contention. Les statistiques de performance sont basées sur la période allant du moment où l"événement de performance a été détecté jusqu"à la dernière analyse de l"événement. Les graphiques affichent également les statistiques de performance historiques du composant de cluster en contention.' 
+---
+= Découvrez les événements de performance dynamiques dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour les événements de performance dynamiques, la section Diagnostic système de la page Détails de l'événement répertorie les principaux workloads présentant la latence ou l'utilisation la plus élevée du composant du cluster en contention.
+
+Les statistiques de performance sont basées sur la période comprise entre le moment où l'événement de performance a été détecté et le dernier moment où l'événement a été analysé. Les graphiques affichent également les statistiques de performance historiques du composant du cluster qui est en contention.
+
+Par exemple, vous pouvez identifier les workloads qui utilisent fortement un composant afin de déterminer quel workload déplacer vers un composant moins utilisé. Le déplacement du workload réduirait la quantité de travail sur le composant actuel, ce qui pourrait faire sortir le composant de la contention. En haut de cette section figurent l’heure et la plage de dates auxquelles un événement a été détecté et analysé pour la dernière fois. Pour les événements actifs (nouveaux ou confirmés), l’heure de la dernière analyse est mise à jour.
+
+Les graphiques de latence et d'activité affichent le nom des principales charges de travail lorsque vous survolez le graphique avec votre curseur. En cliquant sur le menu « Type de charge de travail » à droite du graphique, vous pouvez trier les charges de travail en fonction de leur rôle dans l'événement, notamment « requins », « harceleurs » ou « victimes », et afficher des détails sur leur latence et leur utilisation sur le composant du cluster en contention. Vous pouvez comparer la valeur réelle à la valeur attendue pour voir quand le workload se situait en dehors de sa plage attendue de latence ou d'utilisation. Pour plus d'informations, consultez link:..//performance-checker/concept_types_of_workloads_monitored_by_unified_manager.html["Types de workloads surveillés par Unified Manager"].
+
+[NOTE]
+====
+Lorsque vous triez par écart maximal de latence, les charges de travail définies par le système ne sont pas affichées dans le tableau, car la latence ne s'applique qu'aux charges de travail définies par l'utilisateur. Les charges de travail présentant des valeurs de latence très faibles ne sont pas affichées dans le tableau.
+
+====
+Pour plus d'informations sur les seuils de performance dynamiques, consultez link:../performance-checker/concept_analyze_events_from_dynamic_performance_thresholds.html["Analyse des événements à partir de seuils de performance dynamiques"].
+
+Pour plus d'informations sur la façon dont Unified Manager classe les workloads et détermine l'ordre de tri, consultez link:../performance-checker/concept_how_um_determines_performance_impact_for_incident.html["Comment Unified Manager détermine l'impact d'un événement sur les performances"].
+
+Les données des graphiques présentent les statistiques de performance des 24 heures précédant la dernière analyse de l'événement. Les valeurs réelles et attendues pour chaque workload sont basées sur le moment où le workload a été impliqué dans l'événement. Par exemple, un workload peut être impliqué dans un événement après la détection de l'événement, de sorte que ses statistiques de performance peuvent ne pas correspondre aux valeurs au moment de la détection de l'événement. Par défaut, les workloads sont triés par écart maximal de latence.
+
+[NOTE]
+====
+Étant donné que Unified Manager ne conserve qu'un maximum de 30 jours de données historiques de performances et d'événements par tranches de 5 minutes, si l'événement date de plus de 30 jours, aucune donnée de performance n'est affichée.
+
+====
+* *Colonne de tri du workload*
++
+** *Graphique de latence*
++
+Affiche l’impact de l’événement sur la latence du workload lors de la dernière analyse.
+
+** *Colonne d'utilisation des composants*
++
+Affiche des détails sur l’utilisation du workload du composant de cluster en conflit. Dans les graphiques, l’utilisation réelle est représentée par une ligne bleue. Une barre rouge met en évidence la durée de l’événement, de l’heure de détection à la dernière heure analysée. Pour plus d’informations, consultez link:../performance-checker/reference_workload_performance_measurement_values.html["Valeurs de mesure des performances du workload"].
+
++
+[NOTE]
+====
+Pour le composant réseau, étant donné que les statistiques de performance du réseau proviennent d'une activité en dehors du cluster, cette colonne n'est pas affichée.
+
+====
+** *Utilisation des composants*
++
+Affiche l'historique d'utilisation, en pourcentage, des composants de traitement réseau, de traitement des données et d'agrégat, ou l'historique d'activité, en pourcentage, du composant de groupe de règles QoS. Le graphique n'est pas affiché pour les composants réseau ou d'interconnexion. Vous pouvez pointer sur les statistiques pour afficher les statistiques d'utilisation à un moment précis.
+
+** *Historique du total des écritures en MB/s*
++
+Pour le composant Ressources de MetroCluster uniquement, affiche le débit d'écriture total, en mégaoctets par seconde (Mo/s), pour toutes les charges de travail de volume mises en miroir vers le cluster partenaire dans une configuration MetroCluster.
+
+** *Historique des événements*
++
+Affiche des lignes rouges pour indiquer les événements historiques du composant en contention. Pour les événements obsolètes, le graphique affiche les événements survenus avant la détection de l'événement sélectionné et après sa résolution.
+
+
+
+

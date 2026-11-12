@@ -1,0 +1,55 @@
+---
+permalink: data-protection/reference_browse_directories_dialog_box.html 
+sidebar: sidebar 
+keywords: browse, directories, dialog box 
+summary: 'Vous pouvez utiliser la boîte de dialogue Parcourir les répertoires lorsque vous souhaitez restaurer des données dans un répertoire d"un cluster et d"une SVM différents de la source d"origine. Le cluster et le volume source d"origine sont sélectionnés par défaut.' 
+---
+= Utilisez la boîte de dialogue Parcourir les répertoires dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la boîte de dialogue Parcourir les répertoires lorsque vous souhaitez restaurer des données dans un répertoire d'un cluster et d'une SVM différents de la source d'origine. Le cluster et le volume source d'origine sont sélectionnés par défaut.
+
+La boîte de dialogue Parcourir les répertoires vous permet de sélectionner le cluster, le SVM, le volume et le chemin d'accès au répertoire dans lequel vous souhaitez restaurer les données.
+
+* *Cluster*
++
+Affiche la liste des clusters de destination disponibles pour la restauration. Par défaut, le cluster du volume source d'origine est sélectionné.
+
+* *Liste déroulante SVM*
++
+Affiche la liste des SVM disponibles pour le cluster sélectionné. Par défaut, la SVM du volume source d'origine est sélectionnée.
+
+* *Volume*
++
+Affiche la liste de tous les volumes en lecture/écriture d'une SVM sélectionnée. Vous pouvez filtrer les volumes par nom et par espace disponible. Le volume disposant du plus d'espace est affiché en premier, et ainsi de suite, par ordre décroissant. Par défaut, le volume source d'origine est sélectionné.
+
+* *Zone de texte du chemin d'accès au fichier*
++
+Permet de saisir le chemin d'accès au fichier dans lequel vous souhaitez restaurer les données. Ce chemin doit déjà exister.
+
+* *Nom*
++
+Affiche les noms des dossiers disponibles pour le volume sélectionné. Cliquer sur un dossier dans la liste Noms affiche les sous-dossiers, le cas échéant. Les fichiers contenus dans les dossiers ne sont pas affichés. Cliquer sur image:../media/icon_upfolder.gif["icône du dossier parent"] après avoir sélectionné un dossier vous fait remonter d’un niveau dans l’arborescence.
+
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Sélectionnez un répertoire*
++
+Applique vos sélections et ferme la boîte de dialogue Parcourir les répertoires. Si aucun répertoire n'est sélectionné, ce bouton est désactivé.
+
+* *Annuler*
++
+Annule vos sélections et ferme la boîte de dialogue Parcourir les répertoires.
+
+

@@ -1,0 +1,51 @@
+---
+permalink: install-vapp/reference_vmware_software_and_installation_requirements.html 
+sidebar: sidebar 
+keywords: vmware, software, installation, requirements 
+summary: 'Le système VMware vSphere sur lequel vous installez Unified Manager requiert une version spécifique du système d"exploitation et des versions spécifiques des logiciels de prise en charge.' 
+---
+= Découvrez les logiciels VMware et les exigences d'installation d'Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le système VMware vSphere sur lequel vous installez Unified Manager requiert une version spécifique du système d'exploitation et des versions spécifiques des logiciels de prise en charge.
+
+
+
+[[operating-system-software]]
+== Logiciel du système d’exploitation
+
+Le système d'exploitation pris en charge est VMware ESXi 8.0.
+
+[NOTE]
+====
+L'OVA Unified Manager sur les systèmes VMware vSphere exécute Debian OS 13 (Trixie) en interne. Pour des informations sur les versions du matériel de la machine virtuelle que les versions prises en charge des serveurs ESXi peuvent supporter, consultez la documentation VMware.
+
+====
+Les versions suivantes de vSphere sont prises en charge :
+
+* VMware vCenter Server 7.0 et 8.0
+
+
+Consultez l'Interoperability Matrix pour obtenir la liste complète et la plus récente des versions d'ESXi prises en charge.
+
+http://mysupport.netapp.com/matrix["mysupport.netapp.com/matrix"]
+
+Pour que l'appliance virtuelle fonctionne correctement, l'heure du serveur VMware ESXi doit correspondre à celle du serveur NTP. La synchronisation de l'heure du serveur VMware ESXi avec celle du serveur NTP permet d'éviter une défaillance liée à l'heure.
+
+
+
+[[installation-requirements]]
+== exigences d'installation
+
+VMware High Availability est pris en charge pour l'appliance virtuelle Unified Manager.
+
+Si vous déployez un datastore NFS sur un système de stockage exécutant le logiciel ONTAP, utilisez le plug-in NFS NetApp pour VMware VAAI afin d'utiliser le provisionnement thick.
+
+Si le déploiement échoue dans votre environnement avec High Availability en raison de ressources insuffisantes, vous devrez peut-être modifier les Cluster Features Virtual Machine Options en désactivant VM Restart Priority et en laissant Host Isolation Response activé.
+
+
+NOTE: Lors de l'installation ou de la mise à niveau d'Unified Manager, les logiciels tiers et les correctifs de sécurité requis sont automatiquement installés ou mis à niveau sur un système VMware vSphere. Étant donné que les processus d'installation et de mise à niveau d'Unified Manager gèrent ces composants, vous ne devez pas tenter d'installer ou de mettre à niveau séparément un composant tiers.

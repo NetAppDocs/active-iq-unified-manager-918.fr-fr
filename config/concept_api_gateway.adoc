@@ -1,0 +1,22 @@
+---
+permalink: config/concept_api_gateway.html 
+sidebar: sidebar 
+keywords: api gateway 
+summary: 'La fonctionnalité API Gateway permet à Active IQ Unified Manager de constituer un plan de contrôle unique à partir duquel vous pouvez gérer plusieurs clusters ONTAP, sans avoir à vous connecter individuellement à chacun d"eux.' 
+---
+= Découvrez la fonctionnalité API Gateway dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La fonctionnalité API Gateway permet à Active IQ Unified Manager de constituer un plan de contrôle unique à partir duquel vous pouvez gérer plusieurs clusters ONTAP, sans avoir à vous connecter individuellement à chacun d'eux.
+
+Vous pouvez activer cette fonctionnalité à partir des pages de configuration qui s'affichent lors de votre première connexion à Unified Manager. Vous pouvez également activer ou désactiver cette fonctionnalité à partir de *General* > *Feature Settings* > *API Gateway*.
+
+Les API REST de Unified Manager sont différentes des API REST de ONTAP, et toutes les fonctionnalités des API REST de ONTAP ne sont pas accessibles à l’aide des API REST de Unified Manager. Cependant, si vous avez un besoin métier spécifique d’accéder aux API de ONTAP pour gérer des fonctionnalités particulières qui ne sont pas exposées à Unified Manager, vous pouvez activer la fonctionnalité API Gateway et exécuter les API de ONTAP. La passerelle agit comme un proxy pour acheminer les requêtes API en conservant les en-têtes et le corps des requêtes dans le même format que dans les API de ONTAP. Vous pouvez utiliser vos identifiants Unified Manager et exécuter les API spécifiques pour accéder aux clusters ONTAP et les gérer sans transmettre les identifiants de chaque cluster. Unified Manager agit comme point de gestion unique pour exécuter les API sur les clusters ONTAP gérés par votre instance Unified Manager. La réponse renvoyée par les API est la même que celle renvoyée par les API REST de ONTAP correspondantes exécutées directement depuis ONTAP.
+
+Après avoir activé cette fonctionnalité, vous pouvez exécuter les API REST de Unified Manager depuis *Menu Bar* > *Help button* > *API Documentation* > la catégorie *gateway*. Vous pouvez également saisir le nom de l'hôte ou l'adresse IP et l'URL pour accéder à la page de l'API REST au format  `https://<hostname>/docs/api/`
+
+Pour plus d'informations sur les API, consultez link:../api-automation/concept_get_started_with_um_apis.html["Premiers pas avec les API REST d'Active IQ Unified Manager"].

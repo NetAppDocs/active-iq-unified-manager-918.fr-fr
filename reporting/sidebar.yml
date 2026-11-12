@@ -1,0 +1,171 @@
+---
+section: reporting
+title: Générer des rapports personnalisés
+entries:
+- title: Rapports Unified Manager
+  entries:
+  - title: Découvrez les rapports Unified Manager
+    url: "/reporting/concept_unified_manager_reporting.html"
+  - title: Points d'accès pour générer des rapports
+    entries:
+    - title: Explorez les différentes manières d'accéder aux fonctionnalités de reporting
+      url: "/reporting/concept_report_access_points.html"
+    - title: Bases de données Unified Manager accessibles pour la création de rapports
+        personnalisés
+      url: "/reporting/concept_unified_manager_databases_accessible_for_reporting.html"
+    - title: API REST de Unified Manager pouvant être utilisées pour la génération
+        de rapports
+      url: "/reporting/generaltask_um_rest_apis_that_can_be_used_for_reporting.html"
+  - title: Comprendre les rapports
+    url: "/reporting/concept_understand_reports.html"
+  - title: Comprendre la relation entre la vue et le rapport
+    url: "/reporting/concept_understand_view_and_reports_relationship.html"
+  - title: Types de rapports
+    url: "/reporting/reference_types_of_reports.html"
+  - title: Limitations du rapport
+    url: "/reporting/reference_reporting_limitations.html"
+- title: Travailler avec des rapports
+  entries:
+  - title: Flux de travail du rapport
+    url: "/reporting/concept_report_work_flow.html"
+  - title: Démarrage rapide du rapport
+    url: "/reporting/task_report_quick_start.html"
+  - title: Rechercher un rapport planifié
+    url: "/reporting/task_search_for_scheduled_report.html"
+  - title: Personnaliser les rapports
+    entries:
+    - title: Découvrez comment personnaliser les rapports
+      url: "/reporting/concept_customize_reports.html"
+    - title: Personnaliser les colonnes
+      url: "/reporting/task_customize_columns.html"
+    - title: Filtrer les données
+      url: "/reporting/task_filter_data.html"
+    - title: Trier les données
+      url: "/reporting/task_sort_data.html"
+    - title: Utilisez la recherche pour affiner votre vue
+      url: "/reporting/task_search_to_refine_view.html"
+    - title: Utilisez Excel pour personnaliser votre rapport
+      url: "/reporting/task_use_excel_to_customize_your_report.html"
+  - title: Télécharger les rapports
+    url: "/reporting/task_download_reports.html"
+- title: Programmer des rapports
+  entries:
+  - title: Découvrez la planification des rapports
+    url: "/reporting/concept_schedule_reports.html"
+  - title: Planifier un rapport
+    entries:
+    - title: Créer un calendrier de rapport
+      url: "/reporting/task_schedule_report.html"
+    - title: Planifiez les rapports .rptdesign importés
+      url: "/reporting/task_schedule_an_imported_report.html"
+  - title: Gérer les planifications de rapports
+    entries:
+    - title: Consultez, modifiez et supprimez les planifications de rapports
+      url: "/reporting/task_manage_report_schedules.html"
+    - title: Modifier les rapports programmés
+      url: "/reporting/task_edit_scheduled_reports.html"
+    - title: Supprimer les rapports programmés
+      url: "/reporting/task_delete_scheduled_reports.html"
+- title: Exemples de rapports personnalisés
+  entries:
+  - title: Comprendre les exemples de rapports personnalisés
+    url: "/reporting/concept_sample_custom_reports.html"
+  - title: Personnaliser les rapports de stockage du cluster
+    entries:
+    - title: Créez un rapport pour visualiser la capacité par modèle de cluster
+      url: "/reporting/task_create_report_to_view_capacity_by_cluster_model.html"
+    - title: Créez un rapport pour identifier les clusters ayant la plus grande capacité
+        de LUN non allouée
+      url: "/reporting/task_create_report_to_identify_clusters_with_unallocated_capacity.html"
+    - title: Créez un rapport pour afficher les paires HA avec la capacité disponible
+        la plus élevée
+      url: "/reporting/task_create_report_to_view_ha_pairs_with_most_available_capacity.html"
+    - title: Créez un rapport pour visualiser les nœuds exécutant des versions antérieures
+        d'ONTAP
+      url: "/reporting/task_create_report_view_nodes_running_older_versions_of_ontap.html"
+  - title: Personnaliser les rapports de capacité des agrégats
+    entries:
+    - title: Créez un rapport pour visualiser les agrégats atteignant leur pleine
+        capacité
+      url: "/reporting/task_create_report_to_view_aggregates_reaching_full_capacity.html"
+    - title: Créez un rapport pour visualiser les agrégats presque pleins
+      url: "/reporting/task_create_report_to_view_aggregates_that_are_nearly_full.html"
+    - title: Créez un rapport pour afficher les agrégats suralloués
+      url: "/reporting/task_create_report_to_view_aggregates_that_are_overcommitted.html"
+  - title: Personnaliser les rapports de capacité des volumes
+    entries:
+    - title: Créez un rapport pour identifier les volumes proches de leur capacité
+        maximale pour lesquels Snapshot Autodelete est désactivé
+      url: "/reporting/task_create_report_to_identify_volumes_nearing_full_capacity.html"
+    - title: Créez un rapport pour identifier l'espace utilisé par les volumes dont
+        le provisionnement fin est désactivé
+      url: "/reporting/task_create_report_to_identify_space_with_thin_provisioning_disabled.html"
+    - title: Créer un rapport pour identifier les volumes sur les agrégats FabricPool
+        qui doivent déplacer les données vers le niveau cloud
+      url: "/reporting/task_create_report_volumes_that_should_move_data_to_cloud_tier.html"
+  - title: Personnaliser les rapports de capacité Qtree
+    entries:
+    - title: Créez un rapport pour visualiser les qtrees presque pleins
+      url: "/reporting/task_create_report_to_view_qtrees_that_are_nearly_full.html"
+  - title: Personnaliser les rapports de partage NFS
+    entries:
+    - title: Découvrez comment personnaliser les rapports de partage NFS
+      url: "/reporting/concept_customize_nfs_share_reports.html"
+    - title: Créez un rapport pour afficher les volumes dont le chemin de montage
+        est inaccessible
+      url: "/reporting/task_create_report_to_view_volumes_with_an_inaccessible_junction_path.html"
+    - title: Créez un rapport pour afficher les volumes qui utilisent les règles d'export
+        par défaut
+      url: "/reporting/task_create_report_to_view_volumes_with_default_export_policy.html"
+  - title: Personnaliser les rapports de VM de stockage
+    entries:
+    - title: Découvrez comment personnaliser les rapports de machines virtuelles de
+        stockage
+      url: "/reporting/concept_customize_svm_reports.html"
+    - title: Créez un rapport pour visualiser les machines virtuelles de stockage
+        atteignant la limite maximale de volume
+      url: "/reporting/task_create_report_to_view_svms_reaching_maximum_volume_limit.html"
+    - title: Créez un rapport pour visualiser les machines virtuelles de stockage
+        arrêtées
+      url: "/reporting/task_create_report_to_view_stopped_svms.html"
+  - title: Personnaliser les rapports de relation de volume
+    entries:
+    - title: Découvrez comment personnaliser les rapports de relation de volume
+      url: "/reporting/concept_customize_volume_relationship_reports.html"
+    - title: Créez un rapport pour regrouper les relations de volume par source de
+        défaillance
+      url: "/reporting/task_create_report_volume_relationships_source_of_failure.html"
+    - title: Créez un rapport pour regrouper les relations de volume par problème
+      url: "/reporting/task_create_report_to_group_volume_relationships_by_issue.html"
+    - title: Créez un rapport pour visualiser les tendances des transferts de volume
+        à des intervalles de temps spécifiques
+      url: "/reporting/task_create_report_to_view_volumes_at_specific_time_intervals.html"
+    - title: Créez un rapport pour consulter les transferts de volume réussis ou ayant
+        échoué.
+      url: "/reporting/task_create_report_to_view_failed_or_successful_volume_transfers.html"
+    - title: Créez un rapport pour visualiser les transferts de volume en fonction
+        de la taille du transfert
+      url: "/reporting/task_create_report_to_view_volume_transfers_based_on_transfer_size.html"
+    - title: Créez un rapport pour visualiser les transferts de volume regroupés par
+        jour
+      url: "/reporting/task_create_report_to_view_volume_transfers_grouped_by_day.html"
+  - title: Personnaliser les rapports de performance des volumes
+    entries:
+    - title: Créez un rapport pour visualiser les volumes présentant une quantité
+        importante de données froides sur un agrégat qui n'est pas activé pour FabricPool
+      url: "/reporting/task_create_report_for_volumes_with_high_amount_of_cold_data.html"
+- title: Exemples de rapports Microsoft Excel
+  entries:
+  - title: Comprendre des exemples de rapports Microsoft Excel
+    url: "/reporting/concept_sample_microsoft_excel_reports.html"
+  - title: Créez un rapport présentant un tableau et un graphique de capacité d’agrégat
+    url: "/reporting/task_create_report_to_view_capacity.html"
+  - title: Créez un rapport présentant des graphiques comparant la capacité totale
+      de l'agrégat à la capacité disponible.
+    url: "/reporting/task_create_report_to_view_aggregate_capacity_charts.html"
+  - title: Créez un rapport pour consulter les graphiques de capacité disponible des
+      volumes
+    url: "/reporting/task_create_report_to_view_available_volume_capacity_charts.html"
+  - title: Créez un rapport pour visualiser les agrégats présentant le plus grand
+      nombre d'IOPS disponibles
+    url: "/reporting/task_create_report_to_view_aggregates_with_most_available_iops.html"

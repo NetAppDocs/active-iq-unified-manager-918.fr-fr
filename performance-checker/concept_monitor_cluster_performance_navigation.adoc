@@ -1,0 +1,28 @@
+---
+permalink: performance-checker/concept_monitor_cluster_performance_navigation.html 
+sidebar: sidebar 
+keywords: monitor, cluster, performance, navigation 
+summary: 'Vous pouvez surveiller les performances de tous les clusters gérés par Unified Manager. Cette surveillance vous offre une vue d"ensemble des performances des clusters et des objets, et inclut le suivi des événements de performance. Vous pouvez consulter les performances et les événements de manière générale, ou examiner plus en détail les performances des clusters et des objets, ainsi que les événements de performance.' 
+---
+= Surveillez la navigation des performances du cluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez surveiller les performances de tous les clusters gérés par Unified Manager. Cette surveillance vous offre une vue d'ensemble des performances des clusters et des objets, et inclut le suivi des événements de performance. Vous pouvez consulter les performances et les événements de manière générale, ou examiner plus en détail les performances des clusters et des objets, ainsi que les événements de performance.
+
+Voici un exemple parmi les nombreux chemins de navigation possibles pour les performances d'un cluster :
+
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Agrégats*.
+. Pour consulter des informations sur les performances de ces agrégats, sélectionnez la vue Performance: All Aggregates.
+. Identifiez l’agrégat que vous souhaitez examiner et cliquez sur le nom de cet agrégat pour accéder à la page Aggregate / Performance Explorer.
+. Vous pouvez également sélectionner d'autres objets à comparer avec cet agrégat dans le menu Afficher et comparer, puis ajouter l'un de ces objets au volet de comparaison.
++
+Les statistiques des deux objets apparaîtront dans les graphiques des compteurs à des fins de comparaison.
+
+. Dans le volet Comparaison situé à droite de la page Explorateur, cliquez sur *Zoom View* dans l'un des graphiques de compteurs pour afficher des détails sur l'historique des performances de cet agrégat.
+
+
+image::../media/monitor_cluster_performance.png[Capture d'écran de l'interface utilisateur montrant comment examiner un agrégat particulier.]

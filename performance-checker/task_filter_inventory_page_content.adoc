@@ -1,0 +1,67 @@
+---
+permalink: performance-checker/task_filter_inventory_page_content.html 
+sidebar: sidebar 
+keywords: filtering, inventory, page, content 
+summary: 'Dans Unified Manager, vous pouvez filtrer les données des pages d"inventaire pour localiser rapidement les données selon des critères spécifiques. Le filtrage vous permet d"affiner le contenu des pages d"Unified Manager et de n"afficher que les résultats qui vous intéressent. C"est une méthode très efficace pour afficher uniquement les données qui vous intéressent.' 
+---
+= Filtrer le contenu de la page d'inventaire dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dans Unified Manager, vous pouvez filtrer les données des pages d'inventaire pour localiser rapidement les données selon des critères spécifiques. Le filtrage vous permet d'affiner le contenu des pages d'Unified Manager et de n'afficher que les résultats qui vous intéressent. C'est une méthode très efficace pour afficher uniquement les données qui vous intéressent.
+
+Utilisez *Filtering* pour personnaliser la vue de la grille selon vos préférences. Les options de filtre disponibles dépendent du type d'objet affiché dans la grille. Si des filtres sont actuellement appliqués, le nombre de filtres appliqués s'affiche à droite du bouton Filter.
+
+Trois types de paramètres de filtrage sont pris en charge.
+
+|===
+| Paramètre | Validation 
+
+
+ a| 
+Chaîne (texte)
+ a| 
+Les opérateurs sont *contient*, *commence par*, *se termine par* et *ne contient pas*.
+
+
+
+ a| 
+Nombre maximum
+ a| 
+Les opérateurs sont *supérieur à*, *inférieur à*, *au cours des derniers* et *entre*.
+
+
+
+ a| 
+Énumération (texte)
+ a| 
+Les opérateurs sont *is* et *is not*.
+
+|===
+Les champs Colonne, Opérateur et Valeur sont obligatoires pour chaque filtre ; les filtres disponibles correspondent aux colonnes filtrables de la page actuelle. Vous pouvez appliquer jusqu’à quatre filtres. Les résultats filtrés sont basés sur la combinaison des paramètres de filtrage. Les résultats filtrés s’appliquent à toutes les pages de votre recherche filtrée, et pas seulement à la page actuellement affichée.
+
+Vous pouvez ajouter des filtres à l’aide du panneau de filtrage.
+
+. En haut de la page, cliquez sur le bouton *Filtrer*. Le panneau de filtrage s'affiche.
+. Cliquez sur la liste déroulante de gauche et sélectionnez un objet; par exemple, _Cluster_, ou un compteur de performances.
+. Cliquez sur la liste déroulante centrale et sélectionnez l'opérateur que vous souhaitez utiliser.
+. Dans la dernière liste, sélectionnez ou saisissez une valeur pour compléter le filtre pour cet objet.
+. Pour ajouter un autre filtre, cliquez sur *+Add Filter*. Un champ de filtre supplémentaire s'affiche. Complétez ce filtre en suivant la procédure décrite dans les étapes précédentes. Notez qu'après l'ajout de votre quatrième filtre, le bouton *+Add Filter* ne s'affiche plus.
+. Cliquez sur *Appliquer le filtre*. Les options de filtre sont appliquées à la grille et le nombre de filtres s'affiche à droite du bouton Filtre.
+. Utilisez le panneau de filtrage pour supprimer des filtres individuels en cliquant sur l'icône de la corbeille située à droite du filtre à supprimer.
+. Pour supprimer tous les filtres, cliquez sur *Réinitialiser* en bas du panneau de filtrage.
+
+
+
+
+[[filtering-example]]
+== Exemple de filtrage
+
+L'illustration montre le panneau de filtrage avec trois filtres. Le bouton *+Ajouter un filtre* s'affiche lorsque vous avez moins du maximum de quatre filtres.
+
+image::../media/opm_filtering_panel_draft_3.gif[Capture d'écran de l'interface utilisateur montrant le panneau de filtrage avec trois filtres.]
+
+Après avoir cliqué sur *Appliquer le filtre*, le panneau de filtrage se ferme, applique vos filtres et affiche le nombre de filtres appliqués (image:../media/opm_filters_applied.gif[""]).

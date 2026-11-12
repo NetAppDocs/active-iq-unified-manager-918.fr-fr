@@ -1,0 +1,35 @@
+---
+permalink: events/task_schedule_maintenance_window_to_disable_cluster_notifications.html 
+sidebar: sidebar 
+keywords: schedule, maintenance, window, disable, cluster, event, notifications 
+summary: Si vous avez prévu une interruption pour un cluster, par exemple pour mettre à niveau le cluster ou déplacer l’un des nœuds, vous pouvez supprimer les événements et les alertes qui seraient normalement générés pendant cette période en planifiant une fenêtre de maintenance de Unified Manager. 
+---
+= Planifiez une fenêtre de maintenance pour désactiver les notifications d'événements de cluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous avez prévu une interruption pour un cluster, par exemple pour mettre à niveau le cluster ou déplacer l’un des nœuds, vous pouvez supprimer les événements et les alertes qui seraient normalement générés pendant cette période en planifiant une fenêtre de maintenance de Unified Manager.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Pendant une fenêtre de maintenance, les événements liés à tous les objets de ce cluster sont toujours générés, mais ils n'apparaissent pas sur la page des événements, et aucune alerte ni autre type de notification n'est envoyée pour ces événements.
+
+L'heure que vous saisissez pour la fenêtre de maintenance correspond à l'heure du serveur Unified Manager.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration du cluster*.
+. Dans la colonne *Mode de maintenance* du cluster, sélectionnez le bouton curseur et déplacez-le vers la droite.
++
+La fenêtre du calendrier s'affiche.
+
+. Sélectionnez la date et l'heure de début et de fin de la période de maintenance, puis cliquez sur *Appliquer*.
++
+Le message « Planifié » apparaît à côté du curseur.
+
+
+
+Lorsque l'heure de début est atteinte le cluster passe en mode de maintenance et un événement « Fenêtre de maintenance d'objet démarrée » est généré.

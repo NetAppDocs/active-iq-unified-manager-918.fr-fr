@@ -1,0 +1,157 @@
+---
+permalink: data-protection/reference_protection_jobs_page.html 
+sidebar: sidebar 
+keywords: jobs, page 
+summary: 'La page Jobs vous permet de consulter l"état actuel et d"autres informations concernant toutes les tâches de protection des applications partenaires en cours d"exécution, ainsi que celles qui sont terminées. Vous pouvez ainsi voir quelles tâches sont toujours en cours et si une tâche a réussi ou échoué.' 
+---
+= Découvrez la page des tâches dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page Jobs vous permet de consulter l'état actuel et d'autres informations concernant toutes les tâches de protection des applications partenaires en cours d'exécution, ainsi que celles qui sont terminées. Vous pouvez ainsi voir quelles tâches sont toujours en cours et si une tâche a réussi ou échoué.
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Abandonner*
++
+Interrompt la tâche sélectionnée. Cette option est disponible uniquement si la tâche sélectionnée est en cours d'exécution.
+
+* *Réessayer*
++
+Relance une tâche ayant échoué de type Configuration de protection ou Opération de relation de protection. Vous ne pouvez relancer qu'une seule tâche ayant échoué à la fois. Si plusieurs tâches ayant échoué sont sélectionnées, le bouton *Relancer* est désactivé. Vous ne pouvez pas relancer les tâches de service de stockage ayant échoué.
+
+* *Rafraîchir*
++
+Actualise la liste des tâches et les informations qui leur sont associées.
+
+
+
+
+
+[[jobs-list]]
+== Liste des tâches
+
+La liste des tâches affiche, sous forme de tableau, les tâches en cours. Par défaut, la liste affiche uniquement les tâches générées au cours de la semaine écoulée. Vous pouvez utiliser le tri et le filtrage des colonnes pour personnaliser les tâches affichées.
+
+* *Statut*
++
+Affiche l'état actuel d'une tâche. L'état peut être Erreur (image:../media/sev_error.gif[""]) ou Normal (image:../media/sev_normal.gif[""]).
+
+* *ID du travail*
++
+Affiche le numéro d'identification de la tâche. Par défaut, cette colonne est masquée.
+
++
+Le numéro d’identification de la tâche est unique et le serveur l’attribue au démarrage de celle-ci. Vous pouvez rechercher une tâche spécifique en saisissant son numéro d’identification dans le champ de texte fourni par le filtre de colonne.
+
+* *Nom*
++
+Affiche le nom de la tâche.
+
+* *Type*
++
+Affiche le type de tâche. Les types de tâches sont les suivants :
+
++
+** *Acquisition de cluster*
++
+Une tâche Workflow Automation redécouvre un cluster.
+
+** *Configuration de protection*
++
+Une tâche de protection consiste à lancer des workflows Workflow Automation, tels que des planifications cron, la création de politiques SnapMirror, etc.
+
+** *Opération de relation de protection*
++
+Une tâche de protection exécute des opérations SnapMirror.
+
+** *Chaîne de flux de travail de protection*
++
+Une tâche Workflow Automation exécute plusieurs flux de travail.
+
+** *Restaurer*
++
+Une tâche de restauration est en cours.
+
+** *Nettoyage*
++
+Cette tâche consiste à nettoyer les artefacts des membres du service de stockage qui ne sont plus nécessaires à des fins de restauration.
+
+** *Conforme*
++
+Cette tâche consiste à vérifier la configuration des membres du service de stockage afin de s’assurer de leur conformité.
+
+** *Détruire*
++
+La tâche est en train de détruire un service de stockage.
+
+** *Importer*
++
+La tâche consiste à importer des objets de stockage non gérés dans un service de stockage existant.
+
+** *Modifier*
++
+La tâche consiste à modifier les attributs d'un service de stockage existant.
+
+** *S'abonner*
++
+La tâche consiste à abonner des membres à un service de stockage.
+
+** *Se désabonner*
++
+La tâche consiste à désinscrire les membres d'un service de stockage.
+
+** *Mise à jour*
++
+Une tâche de mise à jour de la protection est en cours.
+
+** *Configuration WFA*
++
+Une tâche Workflow Automation envoie les informations d'identification du cluster et synchronise les caches de la base de données.
+
+
+
+* *État*
++
+Affiche l'état d'exécution de la tâche. Les options d'état sont les suivantes :
+
++
+** *Interrompu*
++
+La tâche a été abandonnée.
+
+** *Abandon en cours*
++
+La tâche est en cours d’annulation.
+
+** *Terminé*
++
+Le travail est terminé.
+
+** *En cours d'exécution*
++
+La tâche est en cours.
+
+
+
+* *Heure de soumission*
++
+Affiche l'heure de soumission de la tâche.
+
+* *Durée*
++
+Affiche la durée d'exécution de la tâche. Cette colonne est affichée par défaut.
+
+* *Heure d’achèvement*
++
+Affiche l'heure de fin de la tâche. Par défaut, cette colonne est masquée.
+
+

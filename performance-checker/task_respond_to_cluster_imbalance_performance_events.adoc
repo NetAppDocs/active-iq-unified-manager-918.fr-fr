@@ -1,0 +1,66 @@
+---
+permalink: performance-checker/task_respond_to_cluster_imbalance_performance_events.html 
+sidebar: sidebar 
+keywords: cluster, imbalance, performance, events 
+summary: 'Unified Manager génère des alertes d"déséquilibre du cluster lorsqu"un nœud d"un cluster fonctionne à une charge bien plus élevée que les autres nœuds, ce qui peut donc affecter la latence des workloads. Ces alertes définies par le système permettent de corriger les problèmes de performance potentiels avant que de nombreux workloads ne soient affectés par la latence.' 
+---
+= Répondez aux événements de performance liés au déséquilibre des clusters dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager génère des alertes d'déséquilibre du cluster lorsqu'un nœud d'un cluster fonctionne à une charge bien plus élevée que les autres nœuds, ce qui peut donc affecter la latence des workloads. Ces alertes définies par le système permettent de corriger les problèmes de performance potentiels avant que de nombreux workloads ne soient affectés par la latence.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Unified Manager génère des événements d'avertissement en cas de violation de la règle de seuil de déséquilibre du cluster en comparant la valeur de capacité de performances utilisée pour tous les nœuds du cluster afin de déterminer s'il existe une différence de charge de 30 % entre deux nœuds.
+
+Ces étapes vous aident à identifier les ressources suivantes afin que vous puissiez déplacer les workloads les plus performants vers un nœud moins utilisé :
+
+* Les nœuds du même cluster qui sont moins utilisés
+* Les agrégats sur le nouveau nœud qui sont les moins utilisés
+* Les volumes les plus performants sur le nœud actuel
+
+
+.Étapes
+. Consultez la page de détails *Event* pour afficher des informations sur l’événement.
+. Veuillez consulter la *Description*, qui décrit le dépassement de seuil ayant provoqué l'événement.
++
+Par exemple, le message « `Le compteur de capacité de performance utilisée indique une différence de charge de 62 % entre les nœuds du cluster Dallas-1-8 et a déclenché un événement WARNING basé sur le seuil système de 30 %` » indique que la capacité de performance de l’un des nœuds est surutilisée et affecte les performances du nœud.
+
+. Consultez le texte de la section *Actions suggérées* pour déplacer un volume hautes performances du nœud présentant la valeur de capacité de performances utilisée la plus élevée vers un nœud présentant la valeur de capacité de performances utilisée la plus faible.
+. Identifiez les nœuds présentant les valeurs de capacité de performance utilisée les plus élevées et les plus faibles :
++
+.. Dans la section *Informations sur l'événement*, cliquez sur le nom du cluster source.
+.. Sur la page *Résumé du cluster / des performances*, cliquez sur *Nœuds* dans la zone *Objets gérés*.
+.. Dans la page d’inventaire *Nodes*, triez les nœuds selon la colonne *Performance Capacity Used*.
+.. Identifiez les nœuds présentant les valeurs de capacité de performance utilisée les plus élevées et les plus faibles, et notez leurs noms.
+
+
+. Identifiez le volume utilisant le plus d'IOPS sur le nœud présentant la valeur d'utilisation de la capacité de performance la plus élevée :
++
+.. Cliquez sur le nœud présentant la valeur de capacité de performance utilisée la plus élevée.
+.. Sur la page *Nœud / Explorateur de performances*, sélectionnez *Agrégats sur ce nœud* dans le menu *Afficher et comparer*.
+.. Cliquez sur l'agrégat présentant la valeur de capacité de performance utilisée la plus élevée.
+.. Sur la page *Aggregate / Performance Explorer*, sélectionnez *Volumes on this Aggregate* dans le menu *View and Compare*.
+.. Triez les volumes selon la colonne *IOPS* et notez le nom du volume utilisant le plus grand nombre d'IOPS, ainsi que le nom de l'agrégat dans lequel se trouve ce volume.
+
+
+. Identifiez l'agrégat présentant le taux d'utilisation le plus faible sur le nœud dont la valeur de capacité de performance utilisée est la plus faible:
++
+.. Cliquez sur *Stockage* > *Agrégats* pour afficher la page d'inventaire *Agrégats*.
+.. Sélectionnez la vue *Performances : Tous les agrégats*.
+.. Cliquez sur le bouton *Filter* et ajoutez un filtre où « `Node` » correspond au nom du nœud ayant la valeur de capacité de performance utilisée la plus faible que vous avez notée à l’étape 4.
+.. Notez le nom de l’agrégat dont la valeur de capacité de performance utilisée est la plus faible.
+
+
+. Déplacez le volume du nœud surchargé vers l'agrégat que vous avez identifié comme ayant une faible utilisation sur le nouveau nœud.
++
+Vous pouvez effectuer l'opération de déplacement à l'aide de ONTAP System Manager, OnCommand Workflow Automation, des commandes ONTAP ou d'une combinaison de ces outils.
+
+
+
+Après quelques jours, vérifiez si vous recevez le même événement de déséquilibre du cluster provenant de ce cluster.

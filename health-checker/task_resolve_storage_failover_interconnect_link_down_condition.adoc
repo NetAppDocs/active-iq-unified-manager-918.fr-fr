@@ -1,0 +1,55 @@
+---
+permalink: health-checker/task_resolve_storage_failover_interconnect_link_down_condition.html 
+sidebar: sidebar 
+keywords: scan, resolve, storage, failover, interconnect link, conditions 
+summary: Ce flux de travail fournit un exemple de la manière dont vous pouvez rechercher, évaluer et résoudre les défaillances des liaisons d’interconnexion de basculement du stockage. Dans ce scénario, vous êtes un administrateur qui utilise Unified Manager pour analyser les risques de basculement du stockage avant de lancer une mise à niveau de version ONTAP sur vos nœuds. 
+---
+= Recherchez et résolvez les conditions de liaison d'interconnexion de basculement de stockage hors service dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ce flux de travail fournit un exemple de la manière dont vous pouvez rechercher, évaluer et résoudre les défaillances des liaisons d’interconnexion de basculement du stockage. Dans ce scénario, vous êtes un administrateur qui utilise Unified Manager pour analyser les risques de basculement du stockage avant de lancer une mise à niveau de version ONTAP sur vos nœuds.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Si les interconnexions de basculement du stockage entre les nœuds d’une paire haute disponibilité échouent lors d’une tentative de mise à niveau sans interruption de service, la mise à niveau échoue. Par conséquent, il est courant que l’administrateur surveille et confirme la fiabilité du basculement du stockage sur les nœuds de cluster ciblés pour la mise à niveau avant de la lancer.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion des événements*.
+. Dans la page d'inventaire *Gestion des événements*, sélectionnez *événements de disponibilité active*.
+. En haut de la page d’inventaire *Gestion des événements*, dans la colonne *Nom*, cliquez sur image:../media/filtericon_um60.png["Icône du filtre de colonne"] et entrez  `*failover` dans la zone de texte pour limiter l’affichage de l’événement aux événements liés au basculement du stockage.
++
+Tous les événements passés liés aux conditions de basculement du stockage sont affichés.
+
++
+Dans ce scénario, Unified Manager affiche l’événement « `Storage Failover Interconnect One or More Links Down` » dans sa section Availability Incidents.
+
+. Si un ou plusieurs événements liés au basculement du stockage s'affichent sur la page d'inventaire *Gestion des événements*, procédez comme suit :
++
+.. Cliquez sur le lien du titre de l'événement pour afficher les détails de cet événement.
++
+Dans cet exemple, vous cliquez sur le titre de l’événement "`Storage Failover Interconnect One or More Links Down`".
+
++
+La page des détails de cet événement s'affiche.
+
+.. Sur la page de détails de l'événement, vous pouvez effectuer une ou plusieurs des tâches suivantes :
++
+*** Examinez le message d'erreur dans le champ Cause et évaluez le problème.
+*** Attribuez l'événement à un administrateur.
+*** Acquittez l'événement.
+
+
+
+
+
+
+*Informations connexes*
+
+link:../events/reference_event_details_page.html["Page de détails de l'événement"]
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Rôles et fonctionnalités des utilisateurs d'Unified Manager"]

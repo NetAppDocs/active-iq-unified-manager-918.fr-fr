@@ -1,0 +1,86 @@
+---
+permalink: api-automation/concept_administration_apis.html 
+sidebar: sidebar 
+keywords: perform, administrative, tasks 
+summary: Vous pouvez utiliser les API de la catégorie administration pour modifier les paramètres de sauvegarde, vérifier les informations des fichiers de sauvegarde et les certificats de cluster, et également gérer les clusters ONTAP en tant que sources de données Active IQ Unified Manager. 
+---
+= Effectuez des tâches administratives à l'aide des API dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser les API de la `administration` catégorie pour modifier les paramètres de sauvegarde, vérifier les informations des fichiers de sauvegarde et les certificats de cluster, et également gérer les clusters ONTAP en tant que sources de données d'Active IQ Unified Manager.
+
+[NOTE]
+====
+Vous devez disposer du rôle Application Administrator pour exécuter ces opérations. Vous pouvez également utiliser l’interface utilisateur web de Unified Manager pour configurer ces paramètres.
+
+====
+[cols="3*"]
+|===
+| Verbe HTTP | Chemin | Description 
+
+
+ a| 
+`GET`
+
+`PATCH`
+ a| 
+`/admin/backup-settings`
+
+`/admin/backup-settings`
+ a| 
+Vous pouvez utiliser la `GET` méthode pour consulter les paramètres de la planification des sauvegardes configurée par défaut dans Unified Manager. Vous pouvez vérifier les éléments suivants :
+
+* Si la planification est activée ou désactivée
+* Fréquence de la sauvegarde programmée (quotidienne ou hebdomadaire)
+* Heure de la sauvegarde
+* Nombre maximal de fichiers de sauvegarde à conserver dans l'application
+
+
+L'heure de la sauvegarde est exprimée dans le fuseau horaire du serveur.
+
+Les paramètres de sauvegarde de la base de données sont disponibles par défaut sur Unified Manager, et vous ne pouvez pas créer de planification de sauvegarde. Cependant, vous pouvez utiliser la `PATCH`méthode pour modifier les paramètres par défaut.
+
+
+
+ a| 
+`GET`
+ a| 
+`/admin/backup-file-info`
+ a| 
+Un fichier de vidage de sauvegarde est généré chaque fois que la planification de sauvegarde est modifiée pour Unified Manager. Vous pouvez utiliser cette méthode pour vérifier si le fichier de sauvegarde est généré conformément aux paramètres de sauvegarde modifiés et si les informations du fichier correspondent aux paramètres modifiés.
+
+
+
+ a| 
+`GET`
+ a| 
+`/admin/datasource-certificate`
+ a| 
+Cette méthode permet de consulter le certificat de la source de données (cluster) dans le magasin de certificats de confiance. La validation du certificat est requise avant d'ajouter un cluster ONTAP comme source de données pour Unified Manager.
+
+
+
+ a| 
+`GET`
+
+`POST`
+
+`PATCH`
+
+`DELETE`
+ a| 
+`/admin/datasources/clusters`
+
+`/admin/datasources/clusters/\{key}`
+ a| 
+Vous pouvez utiliser la `GET`méthode pour récupérer les détails des sources de données (clusters ONTAP) gérées par Unified Manager.
+
+Vous pouvez également ajouter un nouveau cluster à Unified Manager en tant que source de données. Pour ajouter un cluster, vous devez connaître son nom de l'hôte, son nom d'utilisateur et son mot de passe.
+
+Pour modifier et supprimer un cluster géré comme source de données par Unified Manager, utilisez la clé de cluster ONTAP.
+
+|===

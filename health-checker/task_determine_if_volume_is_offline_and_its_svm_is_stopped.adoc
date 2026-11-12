@@ -1,0 +1,46 @@
+---
+permalink: health-checker/task_determine_if_volume_is_offline_and_its_svm_is_stopped.html 
+sidebar: sidebar 
+keywords: determine, volume, offline, svm, node 
+summary: 'Vous pouvez utiliser l"interface utilisateur web Unified Manager pour confirmer ou écarter la possibilité qu"un volume soit hors ligne parce que sa machine virtuelle de stockage hôte (SVM) est arrêtée en raison de la panne du nœud qui héberge le volume racine de cette SVM.' 
+---
+= Déterminez si un volume est hors ligne parce que son SVM est arrêté dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser l'interface utilisateur web Unified Manager pour confirmer ou écarter la possibilité qu'un volume soit hors ligne parce que sa machine virtuelle de stockage hôte (SVM) est arrêtée en raison de la panne du nœud qui héberge le volume racine de cette SVM.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Pour déterminer si l'état hors ligne du volume est dû à l'arrêt de la SVM hôte parce que le nœud hébergeant le volume racine de cette SVM est hors service, effectuez les actions suivantes :
+
+.Étapes
+. Repérez et cliquez sur le lien hypertexte affiché sous le SVM dans le volet *Périphériques associés* de la page de détails *Volume / État* du volume hors ligne.
++
+La page de détails Storage VM / Health affiche le statut "`running`" ou "`stopped`" du SVM hôte. Si le statut du SVM est `running`, l'état hors ligne du volume n'est pas causé par une panne du nœud hébergeant le volume racine de ce SVM.
+
+. Si l'état du SVM est à l'arrêt, cliquez sur *Afficher les SVM* pour identifier plus précisément la cause de l'arrêt du SVM hôte.
+. Dans l'en-tête de colonne SVM de la vue *Santé : Toutes les machines virtuelles de stockage*, cliquez sur le symbole de filtre image:../media/filtericon_um60.png["Icône du filtre de colonne"] puis saisissez le nom de la SVM arrêtée.
++
+Les informations relatives à cette SVM sont présentées dans un tableau.
+
+. Dans la vue *Santé : Toutes les machines virtuelles de stockage*, cliquez sur image:../media/gridviewicon.gif["Icône pour l'affichage en grille"], puis sélectionnez l’option *Volume racine*.
++
+La colonne Volume racine est ajoutée à l’inventaire des SVM et affiche le nom du volume racine du SVM arrêté.
+
+. Dans la colonne Volume racine, cliquez sur le nom du volume racine pour afficher la page de détails *VM de stockage / État* de ce volume.
++
+Si l'état du volume racine de la SVM est (Online), l'état hors ligne du volume d'origine n'est pas dû à une panne du nœud qui héberge le volume racine de cette SVM.
+
+. Si l'état du volume racine de la SVM est (Hors ligne), recherchez et cliquez sur le lien hypertexte affiché sous Agrégat dans le volet Appareils associés de la page Détails Volume / Santé du volume racine de la SVM.
+. Repérez et cliquez sur le lien hypertexte affiché sous Nœud dans le volet *Appareils associés* de la page de détails *Agrégat / Santé* de l'agrégat.
++
+L'onglet Nœuds de la page Détails du cluster/de l'état affiche l'état de la paire haute disponibilité de nœuds à laquelle appartient le nœud hébergeant le volume racine de la SVM. L'état du nœud est indiqué à l'écran.
+
+
+
+Après avoir confirmé que l'état hors ligne du volume est dû à l'état hors ligne du SVM hôte de ce volume, lui-même causé par la panne du nœud hébergeant le volume racine de ce SVM, contactez l'administrateur ou l'opérateur compétent pour redémarrer manuellement le nœud en panne.

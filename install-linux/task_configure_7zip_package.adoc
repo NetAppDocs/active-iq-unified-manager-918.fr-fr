@@ -1,0 +1,85 @@
+---
+permalink: install-linux/task_configure_7zip_package.html 
+sidebar: sidebar 
+keywords: manually, configure, 7-zip package, RHEL, Linux, bundled script 
+summary: 'Pour installer Unified Manager avec succès sur un système Red Hat Enterprise Linux (RHEL), votre système doit être configuré pour avoir accès au package 7-zip.' 
+---
+= Configurez le logiciel 7-zip dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour installer correctement Unified Manager sur un système Red Hat Enterprise Linux, votre système doit être configuré avec un accès au package logiciel 7-zip. Si l'accès réseau est disponible et que l'URL 7-zip n'est pas bloquée par un pare-feu, 7-zip est téléchargé automatiquement sur votre système pendant le processus d'installation ou de mise à niveau. NetApp recommande la méthode de téléchargement automatique.
+
+Assurez-vous que l'URL suivante n'est pas bloquée dans votre pare-feu pour permettre à Unified Manager de télécharger automatiquement le package logiciel 7-zip:
+`https://7-zip.org/a/7z2301-linux-x64.tar.xz`
+
+Vous pouvez également préinstaller 7-zip.
+
+
+
+[[pre-install-the-7-zip-package]]
+== Préinstallez le package 7-zip
+
+Vous pouvez préinstaller 7-zip en le téléchargeant manuellement ou à l'aide d'un script fourni. Choisissez l'une des deux méthodes suivantes :
+
+
+
+[[download-using-a-bundled-script]]
+=== Téléchargement à l’aide d’un script fourni
+
+.Étape
+. Exécutez le `install7zip.sh` script inclus dans le fichier zip Unified Manager.
+
+
+
+
+[[download-manually]]
+=== Télécharger manuellement
+
+Assurez-vous de télécharger le package 7-zip uniquement depuis le site officiel.
+
+.Étapes
+. Téléchargez le package 7-zip (version 23.01) depuis le site officiel:
++
+`https://7-zip.org/a/7z2301-linux-x64.tar.xz`
+
+. Copiez le fichier sur votre machine virtuelle RHEL :
++
+[source, CLI]
+----
+7z2301-linux-x64.tar.xz
+----
+. Extraire l'archive:
++
+[source, CLI]
+----
+sudo tar -xf 7z2301-linux-x64.tar.xz
+----
+. Déplacez le `7zz` fichier vers le `/usr/bin/` répertoire:
++
+[source, CLI]
+----
+sudo cp 7zz /usr/bin/
+----
+. Définissez les autorisations d'exécution :
++
+[source, CLI]
+----
+sudo chmod 755 /usr/bin/7zz
+----
+
+
+
+
+[[verify-the-installation]]
+== Vérifiez l'installation
+
+Vérifiez que le paquet 7-zip a bien été installé sur votre système :
+
+[source, CLI]
+----
+7zz -version
+----

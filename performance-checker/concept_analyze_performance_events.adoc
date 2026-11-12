@@ -1,0 +1,14 @@
+---
+permalink: performance-checker/concept_analyze_performance_events.html 
+sidebar: sidebar 
+keywords: analyze, performance, events 
+summary: 'Vous pouvez analyser les événements de performance pour identifier quand ils ont été détectés, s’ils sont actifs (nouveaux ou reconnus) ou obsolètes, les workloads et les composants du cluster concernés, ainsi que les options permettant de résoudre ces événements par vous-même.' 
+---
+= Analysez les événements de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez analyser les événements de performance pour identifier quand ils ont été détectés, s’ils sont actifs (nouveaux ou reconnus) ou obsolètes, les workloads et les composants du cluster concernés, ainsi que les options permettant de résoudre ces événements par vous-même.

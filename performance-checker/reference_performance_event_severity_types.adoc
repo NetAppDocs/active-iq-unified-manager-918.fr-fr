@@ -1,0 +1,45 @@
+---
+permalink: performance-checker/reference_performance_event_severity_types.html 
+sidebar: sidebar 
+keywords: performance, event, severity, types 
+summary: Chaque événement de performance est associé à un niveau de gravité afin de vous aider à prioriser les événements qui nécessitent une action corrective immédiate. 
+---
+= Priorisez les événements de performance par niveau de gravité dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Chaque événement de performance est associé à un niveau de gravité afin de vous aider à prioriser les événements qui nécessitent une action corrective immédiate.
+
+* *Critique*
++
+Un incident de performance s'est produit et pourrait entraîner une interruption de service si des mesures correctives ne sont pas prises immédiatement.
+
++
+Les événements critiques sont envoyés uniquement à partir des seuils définis par l'utilisateur.
+
+* *Avertissement*
++
+Un compteur de performance d'un objet de cluster présente une valeur anormale et doit être surveillé afin d'éviter qu'il n'atteigne le seuil critique. Les événements de cette gravité n'entraînent pas d'interruption de service et ne nécessitent généralement pas d'intervention immédiate.
+
++
+Les événements d’avertissement sont envoyés à partir de seuils définis par l’utilisateur, par le système ou dynamiques.
+
+* *Informations*
++
+Cet événement se produit lorsqu’un nouvel objet est découvert ou lorsqu’une action utilisateur est effectuée. Par exemple, lorsqu’un objet de stockage est supprimé ou que des modifications de configuration sont apportées, un événement de type de gravité Information est généré.
+
++
+Les événements d'information sont envoyés directement par ONTAP lorsqu'il détecte une modification de configuration.
+
+
+
+Pour plus d'informations, consultez les liens suivants :
+
+* link:../events/concept_what_happens_when_an_event_is_received.html["Que se passe-t-il lorsqu'un événement est reçu"]
+* link:../events/concept_what_information_is_contained_in_an_alert_email.html["Quelles informations contient un courriel d'alerte"]
+* link:../events/task_add_alerts.html["Ajout d'alertes"]
+* link:../events/task_add_alerts_for_performance_events.html["Ajout d'alertes pour les événements de performance"]
+

@@ -1,0 +1,56 @@
+---
+permalink: events/reference_storage_shelf_events.html 
+sidebar: sidebar 
+keywords: storage, shelf, events, impact area, availability 
+summary: Les événements du tiroir de stockage vous indiquent si votre tiroir de stockage présente des anomalies afin que vous puissiez surveiller d’éventuels problèmes. Les événements sont regroupés par zone d’impact et comprennent le nom de l’événement et du trap, le niveau d’impact, le type de source et la gravité. 
+---
+= Découvrez les événements liés aux étagères de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements du tiroir de stockage vous indiquent si votre tiroir de stockage présente des anomalies afin que vous puissiez surveiller d’éventuels problèmes. Les événements sont regroupés par zone d’impact et comprennent le nom de l’événement et du trap, le niveau d’impact, le type de source et la gravité.
+
+
+
+[[impact-area-availability]]
+== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Plage de tension anormale(ocumEvtShelfVoltageAbnormal)
+ a| 
+Risque
+ a| 
+Tiroir de stockage
+ a| 
+Avertissement
+
+
+
+ a| 
+Plage de courant anormale(ocumEvtShelfCurrentAbnormal)
+ a| 
+Risque
+ a| 
+Tiroir de stockage
+ a| 
+Avertissement
+
+
+
+ a| 
+Température anormale(ocumEvtShelfTemperatureAbnormal)
+ a| 
+Risque
+ a| 
+Tiroir de stockage
+ a| 
+Avertissement
+
+|===

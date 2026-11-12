@@ -1,0 +1,50 @@
+---
+permalink: performance-checker/concept_set_up_graphite_to_receive_performance_data.html 
+sidebar: sidebar 
+keywords: setting, graphite, receive, performance, data, unified manager 
+summary: 'Graphite est un logiciel libre permettant de collecter et de représenter graphiquement les données de performance des systèmes informatiques. Votre serveur et votre logiciel Graphite doivent être correctement configurés pour recevoir les données statistiques d"Unified Manager.' 
+---
+= Configurez Graphite pour recevoir les données de performance de Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Graphite est un logiciel libre permettant de collecter et de représenter graphiquement les données de performance des systèmes informatiques. Votre serveur et votre logiciel Graphite doivent être correctement configurés pour recevoir les données statistiques d'Unified Manager.
+
+NetApp ne teste ni ne vérifie les versions spécifiques de Graphite ou d'autres outils tiers.
+
+
+NOTE: Le serveur Graphite ne reçoit pas de données de performance pour les volumes provenant d'Unified Manager.
+
+Après avoir installé Graphite conformément aux instructions d'installation, vous devez apporter les modifications suivantes pour prendre en charge le transfert de données statistiques depuis Unified Manager :
+
+* Dans le `/opt/graphite/conf/carbon.conf` fichier, le nombre maximal de fichiers pouvant être créés sur le serveur Graphite par minute doit être défini sur _200_ (`*MAX_CREATES_PER_MINUTE = 200*`).
++
+Selon le nombre de clusters dans votre configuration et les objets statistiques que vous avez sélectionnés, des milliers de nouveaux fichiers peuvent devoir être créés initialement. À raison de 200 fichiers par minute, la création initiale de tous les fichiers de métriques peut prendre 15 minutes, voire plus. Une fois tous les fichiers de métriques uniques créés, ce paramètre n'est plus pertinent.
+
+* Si vous exécutez Graphite sur un serveur déployé avec une adresse IPv6, la valeur de LINE_RECEIVER_INTERFACE dans le `/opt/graphite/conf/carbon.conf` fichier doit être modifiée de "`0.0.0.0`" à "`::`" (`*LINE_RECEIVER_INTERFACE = ::*`)
+* Dans le `/opt/graphite/conf/storage-schemas.conf` fichier, le `retentions` paramètre doit être utilisé pour définir la fréquence sur 5 minutes et la période de rétention sur le nombre de jours adapté à votre environnement.
++
+La durée de conservation peut être aussi longue que votre environnement le permet, mais la fréquence doit être définie sur 5 minutes pour au moins une configuration de conservation. Dans l'exemple suivant, une section est définie pour Unified Manager à l'aide du `pattern` paramètre, et les valeurs définissent la fréquence initiale à 5 minutes et la durée de conservation à 100 jours: `*[OPM]*`
+
++
+`*pattern = ^netapp-performance\..*`
+
++
+`*retentions = 5m:100d*`
+
++
+[NOTE]
+====
+Si l'étiquette de fournisseur par défaut est modifiée et passe de « `netapp-performance` » à une autre, cette modification doit également être reflétée dans le `pattern` paramètre.
+
+====
+
+
+[NOTE]
+====
+Si le serveur Graphite est indisponible lorsque le serveur Unified Manager tente d'envoyer des données de performance, les données ne sont pas transmises et il y aura un manque dans les données collectées.
+
+====

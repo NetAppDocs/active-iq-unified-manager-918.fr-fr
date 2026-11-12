@@ -1,0 +1,78 @@
+---
+permalink: performance-checker/task_create_user_defined_performance_threshold_policies.html 
+sidebar: sidebar 
+keywords: create, user-defined, performance, threshold, policies 
+summary: 'Vous créez des stratégies de seuil de performance pour les objets de stockage afin que des notifications soient envoyées lorsqu"un compteur de performance dépasse une valeur spécifique. La notification d"événement indique que le cluster rencontre un problème de performance.' 
+---
+= Créez des politiques de seuil de performance définies par l'utilisateur dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous créez des stratégies de seuil de performance pour les objets de stockage afin que des notifications soient envoyées lorsqu'un compteur de performance dépasse une valeur spécifique. La notification d'événement indique que le cluster rencontre un problème de performance.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Vous créez des politiques de seuil de performance en saisissant les valeurs de seuil sur la page « Créer une politique de seuil de performance ». Vous pouvez créer de nouvelles politiques en définissant toutes les valeurs de la politique sur cette page, ou vous pouvez copier une politique existante et modifier les valeurs de la copie (opération appelée « clonage »).
+
+Les valeurs de seuil valides sont de 0,001 à 10 000 000 pour les nombres, de 0,001 à 100 pour les pourcentages et de 0,001 à 200 pour les pourcentages de Performance Capacity Used.
+
+[NOTE]
+====
+La version actuelle permet de définir des seuils qui déclenchent l'envoi d'événements lorsqu'une valeur de compteur dépasse le seuil défini. Il n'est pas possible de définir des seuils qui déclenchent l'envoi d'événements lorsqu'une valeur de compteur passe en dessous d'un seuil défini.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, sélectionnez *Seuils d'événements* > *Performance*.
++
+La page « Seuils de performance » s'affiche.
+
+. Cliquez sur le bouton approprié selon que vous souhaitez créer une nouvelle stratégie ou cloner une stratégie similaire et modifier la version clonée.
++
+|===
+| À... | Cliquez... 
+
+
+ a| 
+Créer une nouvelle politique
+ a| 
+*Créer*
+
+
+
+ a| 
+Cloner une stratégie existante
+ a| 
+Sélectionnez une stratégie existante et cliquez sur *Clone*
+
+|===
++
+La page « Créer une stratégie de seuil de performance » ou « Cloner une stratégie de seuil de performance » s’affiche.
+
+. Définissez la politique de seuil en spécifiant les valeurs de seuil des compteurs de performance que vous souhaitez définir pour des objets de stockage spécifiques :
++
+.. Sélectionnez le type d'objet de stockage et spécifiez un nom et une description pour la stratégie.
+.. Sélectionnez le compteur de performances à suivre et spécifiez les valeurs limites qui définissent les événements d'avertissement et critiques.
++
+Vous devez définir au moins une limite d'avertissement ou une limite critique. Il n'est pas nécessaire de définir les deux types de limites.
+
+.. Sélectionnez un compteur de performances secondaire, si nécessaire, et spécifiez les valeurs limites pour les événements d'avertissement et critiques.
++
+L'ajout d'un compteur secondaire exige que les deux compteurs dépassent les valeurs limites avant que le seuil ne soit franchi et qu'un événement ne soit signalé. Seuls certains objets et compteurs peuvent être configurés à l'aide d'une stratégie combinée.
+
+.. Sélectionnez la durée pendant laquelle les valeurs limites doivent être dépassées pour qu'un événement soit envoyé.
+
+
++
+Lors du clonage d’une stratégie existante, vous devez saisir un nouveau nom pour la stratégie.
+
+. Cliquez sur *Enregistrer* pour enregistrer la stratégie.
++
+Vous êtes redirigé vers la page « Seuils de performance ». Un message de confirmation en haut de la page indique que la stratégie de seuil a bien été créée et fournit un lien vers la page « Inventaire » du type d'objet concerné, vous permettant ainsi d'appliquer immédiatement la nouvelle stratégie aux objets de stockage.
+
+
+
+Si vous souhaitez appliquer la nouvelle politique de seuil aux objets de stockage dès maintenant, vous pouvez cliquer sur le lien *Accéder à object_type maintenant* pour accéder à la page Inventory.

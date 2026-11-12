@@ -1,0 +1,44 @@
+---
+permalink: data-protection/task_create_snapmirror_and_snapvault_schedules.html 
+sidebar: sidebar 
+keywords: create, snapmirror, snapvault, schedules 
+summary: 'Vous pouvez créer des planifications de base ou avancées pour SnapMirror et SnapVault afin d"activer des transferts automatiques de protection des données sur un volume source ou principal, de sorte que les transferts aient lieu plus ou moins fréquemment, selon la fréquence à laquelle les données changent sur vos volumes.' 
+---
+= Créer des plannings SnapMirror et SnapVault dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des planifications de base ou avancées pour SnapMirror et SnapVault afin d'activer des transferts automatiques de protection des données sur un volume source ou principal, de sorte que les transferts aient lieu plus ou moins fréquemment, selon la fréquence à laquelle les données changent sur vos volumes.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir déjà rempli la section « Informations sur la destination » de la boîte de dialogue « Configurer la protection ».
+* Vous devez avoir configuré Workflow Automation pour effectuer cette tâche.
+
+
+.Étapes
+. Dans l’onglet *SnapMirror* ou l’onglet *SnapVault* de la boîte de dialogue *Configurer la protection*, cliquez sur le lien *Créer une planification* dans la zone *Paramètres de relation*.
++
+La boîte de dialogue Créer une planification s'affiche.
+
+. Dans le champ *Nom du planning*, saisissez le nom que vous souhaitez donner au planning.
+. Sélectionnez l'une des options suivantes :
++
+** *De base*
++
+Sélectionnez si vous souhaitez créer une planification de base de type intervalle.
+
+** *Avancé*
++
+Cochez cette case si vous souhaitez créer une planification de type cron.
+
+
+
+. Cliquez sur *Créer*.
++
+Le nouvel horaire est affiché dans la liste déroulante « Horaire SnapMirror » ou « Horaire SnapVault ».
+
+

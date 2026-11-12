@@ -1,0 +1,46 @@
+---
+permalink: storage-mgmt/concept_provision_and_manage_workloads.html 
+sidebar: sidebar 
+keywords: provision, manage, workloads 
+summary: 'La fonctionnalité de gestion active d"Active IQ Unified Manager fournit des niveaux de service de performances, des politiques d"efficacité du stockage et des API de fournisseur de stockage pour le provisionnement, la surveillance et la gestion des workloads de stockage dans un centre de données.' 
+---
+= Provisionnez et gérez les charges de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La fonctionnalité de gestion active d'Active IQ Unified Manager fournit des niveaux de service de performances, des politiques d'efficacité du stockage et des API de fournisseur de stockage pour le provisionnement, la surveillance et la gestion des workloads de stockage dans un centre de données.
+
+[NOTE]
+====
+Unified Manager fournit cette fonctionnalité par défaut. Vous pouvez la désactiver dans *Gestion du stockage* > *Paramètres des fonctionnalités* si vous ne prévoyez pas d'utiliser cette fonctionnalité.
+
+====
+Lorsqu'elle est activée, cette fonctionnalité vous permet de provisionner des workloads sur les clusters ONTAP gérés par votre instance de Unified Manager. Vous pouvez également attribuer aux workloads des stratégies, telles que des niveaux de service de performances et des stratégies d'efficacité du stockage, et gérer votre environnement de stockage en fonction de ces stratégies.
+
+Cette fonctionnalité permet les fonctions suivantes :
+
+* Découverte automatique des workloads de stockage sur les clusters ajoutés, permettant une évaluation et un déploiement faciles des workloads de stockage
+* Provisionnement des workloads NAS prenant en charge les protocoles NFS et CIFS
+* Provisionnement des workloads SAN prenant en charge les protocoles iSCSI et FCP
+* Prise en charge des protocoles NFS et CIFS sur le même partage de fichiers
+* Gestion des niveaux de service de performances et des politiques d’efficacité du stockage
+* Attribution de niveaux de service de performance et de politiques d'efficacité du stockage aux workloads de stockage
+
+
+Les options *Provisionnement*, *Stockage* > *workloads* et *Stratégies* du volet gauche de l'interface utilisateur vous permettent de modifier différentes configurations.
+
+Vous pouvez effectuer les opérations suivantes à l’aide de ces options :
+
+* Consultez les workloads de stockage sur la page *Storage* > *Workloads*
+* Créez des workloads de stockage à partir de la page Provision Workload
+* Créer et gérer les niveaux de service de performance à partir des politiques
+* Créer et gérer des stratégies d’efficacité du stockage à partir de Policies
+* Attribuez des stratégies aux workloads de stockage à partir de la page Workloads
+
+
+*Informations connexes*
+
+link:../config/concept_policy_based_storage_management.html["Gestion du stockage basée sur des politiques"]

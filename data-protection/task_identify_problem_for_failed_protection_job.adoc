@@ -1,0 +1,127 @@
+---
+permalink: data-protection/task_identify_problem_for_failed_protection_job.html 
+sidebar: sidebar 
+keywords: identify, problem, perform, corrective actions, failed, protection job 
+summary: 'Vous examinez le message d"erreur d"échec de la tâche dans le champ Cause de la page Event details et déterminez que la tâche a échoué en raison d"une erreur de copie Snapshot. Vous accédez ensuite à la page Volume / Health details pour recueillir davantage d"informations.' 
+---
+= Identifiez le problème et effectuez les actions correctives pour un travail de protection ayant échoué dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous examinez le message d'erreur d'échec de la tâche dans le champ Cause de la page Event details et déterminez que la tâche a échoué en raison d'une erreur de copie Snapshot. Vous accédez ensuite à la page Volume / Health details pour recueillir davantage d'informations.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Le message d'erreur indiqué dans le champ Cause de la page Détails de l'événement contient le texte suivant concernant la tâche ayant échoué :
+
+[listing]
+----
+Protection Job Failed. Reason: (Transfer operation for
+relationship 'cluster2_src_svm:cluster2_src_vol2->cluster3_dst_svm:
+managed_svc2_vol3' ended unsuccessfully. Last error reported by
+Data ONTAP: Failed to create Snapshot copy 0426cluster2_src_vol2snap
+on volume cluster2_src_svm:cluster2_src_vol2. (CSM: An operation
+failed due to an ONC RPC failure.)
+Job Details
+----
+Ce message fournit les informations suivantes :
+
+* La tâche de sauvegarde ou de mise en miroir n'a pas abouti.
++
+Le travail impliquait une relation de protection entre le volume source `cluster2_src_vol2` sur le serveur virtuel `cluster2_src_svm` et le volume de destination `managed_svc2_vol3` sur le serveur virtuel nommé `cluster3_dst_svm`.
+
+* Une tâche de copie Snapshot a échoué pour `0426cluster2_src_vol2snap` sur le volume source `cluster2_src_svm:/cluster2_src_vol2`.
+
+
+Dans ce cas, vous pouvez identifier la cause de l'échec de la tâche et les actions correctives potentielles. Cependant, la résolution de cet échec nécessite d'accéder à l'interface web de System Manager ou aux commandes de l'interface de ligne de commande ONTAP.
+
+.Étapes
+. Vous examinez le message d'erreur et déterminez qu'une tâche de copie Snapshot a échoué sur le volume source, ce qui indique qu'il y a probablement un problème avec votre volume source.
++
+Si vous le souhaitez, vous pouvez cliquer sur le lien *Job Details* à la fin du message d'erreur, mais pour les besoins de ce scénario, vous choisissez de ne pas le faire.
+
+. Vous décidez d’essayer de résoudre l’événement, vous procédez donc comme suit :
++
+.. Cliquez sur le bouton *Assign To* et sélectionnez *Me* dans le menu.
+.. Cliquez sur le bouton *Acknowledge* pour ne plus recevoir de notifications d'alerte répétées, si des alertes ont été configurées pour cet événement.
+.. Vous pouvez également ajouter des notes sur l'événement si vous le souhaitez.
+
+
+. Cliquez sur le champ *Source* dans le volet *Résumé* pour afficher les détails concernant le volume source.
++
+Le champ *Source* contient le nom de l'objet source : dans ce cas, le volume sur lequel la tâche de copie Snapshot a été planifiée.
+
++
+La page des détails Volume / Santé s’affiche pour `cluster2_src_vol2`, affichant le contenu de l’onglet Protection.
+
+. En consultant le graphique de topologie de protection, vous voyez une icône d'erreur associée au premier volume de la topologie, qui est le volume source de la relation SnapMirror.
++
+Vous pouvez également observer les barres horizontales dans l'icône du volume source, indiquant les seuils d'avertissement et d'erreur définis pour ce volume.
+
++
+image::../media/um_topology_cascade_job_failure.gif[Topologie en cascade des échecs de tâches]
+
+. Vous placez votre curseur sur l'icône d'erreur pour afficher la boîte de dialogue contextuelle indiquant les paramètres de seuil et constater que le volume a dépassé le seuil d'erreur, ce qui indique un problème de capacité.
+. Cliquez sur l'onglet *Capacité*.
++
+Informations sur la capacité des affichages `cluster2_src_vol2` de volume.
+
+. Dans le panneau *Capacité*, vous pouvez constater la présence d'une icône d'erreur dans le graphique à barres, indiquant à nouveau que la capacité du volume a dépassé le seuil défini pour ce volume.
+. Sous le graphique de capacité, vous constatez que la croissance automatique du volume a été désactivée et qu'une garantie d'espace du volume a été définie.
++
+Vous pourriez décider d'activer l'extension automatique, mais dans le cadre de ce scénario, vous décidez d'approfondir la question avant de prendre une décision sur la manière de résoudre le problème de capacité.
+
+. Vous faites défiler l’écran jusqu’à la liste *Événements* et vous voyez que les événements « Protection Job Failed », « Volume Days Until Full » et « Volume Space Full » ont été générés.
+. Dans la liste *Événements*, vous cliquez sur l’événement *Volume Space Full* pour obtenir plus d’informations, après avoir déterminé que cet événement semble le plus pertinent pour votre problème de capacité.
++
+La page de détails de l'événement affiche l'événement Volume Space Full pour le volume source.
+
+. Dans la zone *Résumé*, vous lisez le champ Cause de l’événement : `The full threshold set at 90% is breached. 45.38 MB (95.54%) of 47.50 MB is used`.
+. Sous la zone Résumé, vous voyez les actions correctives suggérées.
++
+[TIP]
+====
+Les actions correctives suggérées ne s'affichent que pour certains événements, vous ne verrez donc pas cette zone pour tous les types d'événements.
+
+====
++
+Vous parcourez la liste des actions suggérées que vous pouvez effectuer pour résoudre l’événement « Volume Space Full » :
+
++
+** Activer l'extension automatique sur ce volume.
+** Redimensionnez le volume.
+** Activez et exécutez la déduplication sur ce volume.
+** Activez et exécutez la compression sur ce volume.
+
+
+. Vous décidez d'activer la croissance automatique du volume, mais pour ce faire, vous devez déterminer l'espace libre disponible sur l'agrégat parent et le taux de croissance actuel du volume :
++
+.. Consultez l'agrégat parent, `cluster2_src_aggr1`, dans le volet *Appareils associés*.
++
+[TIP]
+====
+Vous pouvez cliquer sur le nom de l'agrégat pour obtenir plus de détails à son sujet.
+
+====
++
+Vous déterminez que l'agrégat dispose d'un espace suffisant pour permettre l'augmentation automatique du volume.
+
+.. En haut de la page, repérez l'icône indiquant un incident critique et consultez le texte situé en dessous.
++
+Vous déterminez que "Jours avant remplissage complet : moins d'un jour | Taux de croissance quotidien : 5,4 %".
+
+
+
+. Accédez à System Manager ou à l’interface de ligne de commande ONTAP pour activer l’ `volume autogrow`option.
++
+[TIP]
+====
+Notez les noms du volume et de l’agrégat afin de les avoir à disposition lors de l’activation d’autogrow.
+
+====
+. Une fois le problème de capacité résolu, retournez à la page de détails *Event* dans Unified Manager et marquez l'événement comme résolu.
+

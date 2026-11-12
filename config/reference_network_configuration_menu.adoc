@@ -1,0 +1,94 @@
+---
+permalink: config/reference_network_configuration_menu.html 
+sidebar: sidebar 
+keywords: network configuration menu 
+summary: 'Le menu Configuration réseau vous permet de gérer les paramètres réseau. Utilisez ce menu lorsque l"interface utilisateur de Unified Manager n"est pas disponible.' 
+---
+= Menu Configuration réseau dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le menu Configuration réseau vous permet de gérer les paramètres réseau. Utilisez ce menu lorsque l'interface utilisateur de Unified Manager n'est pas disponible.
+
+[NOTE]
+====
+Ce menu n'est pas disponible si Unified Manager est installé sur Red Hat Enterprise Linux ou sur Microsoft Windows.
+
+====
+Les options de menu suivantes sont disponibles.
+
+* *Afficher les paramètres de l'adresse IP*
++
+Affiche les paramètres réseau actuels de l'appliance virtuelle, notamment l'adresse IP, le réseau, l'adresse de diffusion, le masque de sous-réseau, la passerelle et les serveurs DNS.
+
+* *Modifier les paramètres d'adresse IP*
++
+Vous permet de modifier n’importe lequel des paramètres réseau de l’appliance virtuelle, y compris l’adresse IP, le masque de sous-réseau, la passerelle ou les serveurs DNS. Si vous faites passer vos paramètres réseau de DHCP à une configuration réseau statique à l’aide de la console de maintenance, vous ne pouvez pas modifier le nom de l’hôte. Vous devez sélectionner *Commit Changes* pour que les modifications prennent effet.
+
+* *Afficher les paramètres de recherche de noms de domaine*
++
+Affiche la liste de recherche de noms de domaine utilisée pour la résolution des noms d'hôtes.
+
+* *Modifier les paramètres de recherche de noms de domaine*
++
+Permet de modifier les noms de domaine à rechercher lors de la résolution des noms d'hôte. Vous devez sélectionner *Valider les modifications* pour que celles-ci soient prises en compte.
+
+* *Afficher les itinéraires statiques*
++
+Affiche les routes réseau statiques actuelles.
+
+* *Modifier les itinéraires statiques*
++
+Permet d'ajouter ou de supprimer des routes réseau statiques. Vous devez sélectionner *Valider les modifications* pour que les modifications soient prises en compte.
+
++
+** *Ajouter une route*
++
+Permet d'ajouter une route statique.
+
+** *Supprimer la route*
++
+Permet de supprimer un itinéraire statique.
+
+** *Retour*
++
+Vous ramène au *menu principal*.
+
+** *Sortie*
++
+Quitte la console de maintenance.
+
+
+
+* *Désactiver l'interface réseau*
++
+Désactive toutes les interfaces réseau disponibles. Si une seule interface réseau est disponible, vous ne pouvez pas la désactiver. Vous devez sélectionner *Valider les modifications* pour que les modifications prennent effet.
+
+* *Activer l'interface réseau*
++
+Active les interfaces réseau disponibles. Vous devez sélectionner *Valider les modifications* pour que les modifications soient prises en compte.
+
+* *Valider les modifications*
++
+Applique toutes les modifications apportées aux paramètres réseau de l'appliance virtuelle. Vous devez sélectionner cette option pour appliquer toutes les modifications apportées, sinon les modifications ne prennent pas effet.
+
+* *Envoyer un ping à l'hôte*
++
+Envoie une requête ping à un hôte cible pour confirmer les modifications d'adresse IP ou les configurations DNS.
+
+* *Restaurer les paramètres par défaut*
++
+Réinitialise tous les paramètres aux valeurs d'usine. Vous devez sélectionner *Valider les modifications* pour que les modifications soient prises en compte.
+
+* *Retour*
++
+Vous ramène au *menu principal*.
+
+* *Sortie*
++
+Quitte la console de maintenance.
+
+

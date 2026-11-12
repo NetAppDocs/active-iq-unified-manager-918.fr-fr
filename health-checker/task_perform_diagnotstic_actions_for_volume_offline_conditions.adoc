@@ -1,0 +1,39 @@
+---
+permalink: health-checker/task_perform_diagnotstic_actions_for_volume_offline_conditions.html 
+sidebar: sidebar 
+keywords: perform, diagnostic actions, volume, offline, conditions 
+summary: 'Après avoir accédé à la page de détails Volume / Health d"un volume signalé comme hors ligne, vous pouvez rechercher des informations supplémentaires utiles pour diagnostiquer l"état hors ligne du volume.' 
+---
+= Effectuez des actions de diagnostic pour les conditions de mise hors ligne des volumes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir accédé à la page de détails Volume / Health d'un volume signalé comme hors ligne, vous pouvez rechercher des informations supplémentaires utiles pour diagnostiquer l'état hors ligne du volume.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Si le volume signalé comme hors ligne n'a pas été mis hors ligne délibérément, il peut être hors ligne pour plusieurs raisons.
+
+À partir de la page Détails du volume / de l'état du volume hors ligne, vous pouvez accéder à d'autres pages et volets pour confirmer ou éliminer les causes possibles :
+
+* Cliquez sur les liens de la page de détails *Volume / Health* pour déterminer si le volume est hors ligne parce que son nœud hôte est hors service et que le basculement du stockage vers sa paire haute disponibilité a également échoué.
++
+Voir link:task_determine_if_volume_offline_condition_is_by_down_cluster_node.html["Déterminer si l’état hors ligne d’un volume est causé par un nœud en panne"].
+
+* Cliquez sur les liens de la page de détails *Volume / Health* pour déterminer si le volume est hors ligne et si sa machine virtuelle de stockage hôte (SVM) est arrêtée parce que le nœud hébergeant le volume racine de cette SVM est hors service.
++
+Voir link:task_determine_if_volume_is_offline_and_its_svm_is_stopped.html["Déterminer si un volume est hors ligne et si la SVM est arrêtée parce qu'un nœud est hors service"].
+
+* Cliquez sur les liens de la page de détails *Volume / Santé* pour déterminer si le volume est hors ligne en raison de disques défectueux dans son agrégat hôte.
++
+Voir link:task_determine_if_volume_is_offline_because_of_broken_disks.html["Déterminer si un volume est hors ligne en raison de disques défectueux dans un agrégat"].
+
+
+
+*Informations connexes*
+
+link:../config/reference_unified_manager_roles_and_capabilities.html["Rôles et fonctionnalités des utilisateurs d'Unified Manager"]

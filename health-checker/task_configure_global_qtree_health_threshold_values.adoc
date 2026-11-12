@@ -1,0 +1,27 @@
+---
+permalink: health-checker/task_configure_global_qtree_health_threshold_values.html 
+sidebar: sidebar 
+keywords: configure, global, qtree, health, threshold values 
+summary: 'Vous pouvez configurer les valeurs de seuil d"intégrité globales pour tous les qtrees afin de suivre tout dépassement de seuil. Des événements appropriés sont générés en cas de dépassement des seuils d"intégrité, et vous pouvez prendre des mesures préventives en fonction de ces événements. Vous pouvez configurer les valeurs globales en fonction des paramètres de bonne pratique pour les seuils qui s"appliquent à tous les qtrees surveillés.' 
+---
+= Configurez les valeurs de seuil de santé globales de qtree dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer les valeurs de seuil d'intégrité globales pour tous les qtrees afin de suivre tout dépassement de seuil. Des événements appropriés sont générés en cas de dépassement des seuils d'intégrité, et vous pouvez prendre des mesures préventives en fonction de ces événements. Vous pouvez configurer les valeurs globales en fonction des paramètres de bonne pratique pour les seuils qui s'appliquent à tous les qtrees surveillés.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Les options de seuil possèdent des valeurs par défaut pour une meilleure surveillance, toutefois, vous pouvez modifier ces valeurs en fonction des exigences de votre environnement.
+
+Des événements sont générés pour un qtree uniquement lorsqu'un quota Qtree ou un quota par défaut a été défini sur ce qtree. Les événements ne sont pas générés si l'espace défini dans un quota utilisateur ou un quota de groupe a dépassé le seuil.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Seuils d'événements* > *Qtree*.
+. Configurez les valeurs de seuil de capacité appropriées.
+. Cliquez sur *Enregistrer*.
+

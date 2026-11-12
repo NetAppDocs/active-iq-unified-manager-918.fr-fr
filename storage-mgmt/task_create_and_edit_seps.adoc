@@ -1,0 +1,58 @@
+---
+permalink: storage-mgmt/task_create_and_edit_seps.html 
+sidebar: sidebar 
+keywords: create, edit, storage, efficiency, policies 
+summary: 'Lorsque les politiques d"efficacité du stockage définies par le système ne correspondent pas aux exigences de votre workload, vous pouvez créer vos propres politiques d"efficacité du stockage optimisées pour vos workloads.' 
+---
+= Créez et modifiez des stratégies d'efficacité du stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque les politiques d'efficacité du stockage définies par le système ne correspondent pas aux exigences de votre workload, vous pouvez créer vos propres politiques d'efficacité du stockage optimisées pour vos workloads.
+
+.Avant de commencer
+* Vous devez posséder le rôle d'administrateur d'application.
+* Le nom de la stratégie d'efficacité du stockage doit être unique et vous ne pouvez pas utiliser les mots clés réservés suivants :
++
+`High`, `Low`, `Unassigned`, `Learning`, `Idle`, `Default`, et `None`.
+
+
+
+Vous créez et modifiez des Storage Efficiency Policies personnalisées depuis la page Storage Efficiency Policies en définissant les caractéristiques d'efficacité du stockage requises pour les applications qui accéderont au stockage.
+
+[NOTE]
+====
+Vous ne pouvez pas modifier une stratégie d'efficacité du stockage si elle est actuellement attribuée à un workload.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, sous *Paramètres*, sélectionnez *Stratégies* > *Efficacité du stockage*.
+. Dans la page *Storage Efficiency Policies*, cliquez sur le bouton approprié selon que vous souhaitez créer une nouvelle Storage Efficiency Policy ou modifier une Storage Efficiency Policy existante.
++
+|===
+| À... | Suivez ces étapes... 
+
+
+ a| 
+Créer une nouvelle politique d'efficacité du stockage
+ a| 
+Cliquez sur *Ajouter*
+
+
+
+ a| 
+Modifier une politique d’efficacité du stockage existante
+ a| 
+Sélectionnez une politique d’efficacité du stockage existante et cliquez sur *Modifier*
+
+|===
++
+La page permettant d'ajouter ou de modifier une politique d'efficacité du stockage s'affiche.
+
+. Personnalisez la politique d'efficacité du stockage en spécifiant les caractéristiques d'efficacité du stockage, puis cliquez sur *Submit* pour enregistrer la politique d'efficacité du stockage.
+
+
+Vous pouvez appliquer la nouvelle stratégie d'efficacité du stockage ou la stratégie modifiée aux workloads (LUN, partages de fichiers NFS, partages CIFS) à partir de la page Workloads ou lors du provisionnement d'un nouveau workload.

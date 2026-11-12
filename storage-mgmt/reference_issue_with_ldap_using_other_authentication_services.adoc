@@ -1,0 +1,38 @@
+---
+permalink: storage-mgmt/reference_issue_with_ldap_using_other_authentication_services.html 
+sidebar: sidebar 
+keywords: issue, addi, ldap, use, other, authentication, services 
+summary: 'Résoudre un problème lié à l"ajout de LDAP à l"aide d"autres services d"authentification.' 
+---
+= Résolvez le problème causé par l'ajout de LDAP à l'aide d'Other authentication service dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque vous sélectionnez « Autres » comme service d’authentification, les classes d’objets utilisateur et groupe conservent les valeurs du modèle précédemment sélectionné. Si le serveur LDAP n’utilise pas les mêmes valeurs, l’opération risque d’échouer.
+
+*Cause*
+
+Les utilisateurs ne sont pas configurés correctement dans OpenLDAP.
+
+*Mesure corrective*
+
+Vous pouvez résoudre ce problème manuellement en utilisant l'une des solutions de contournement suivantes.
+
+Si vos classes d'objets utilisateur et groupe LDAP sont respectivement « user » et « group », procédez comme suit :
+
+. Dans le volet de navigation de gauche, cliquez sur **Général** > *Authentification à distance*.
+. Dans le menu déroulant *Service d'authentification*, sélectionnez *Active Directory*, puis *Autres*.
+. Remplissez les champs de texte.
+
+
+Si votre classe d'objet utilisateur LDAP et votre classe d'objet groupe sont respectivement posixAccount et posixGroup, procédez comme suit :
+
+. Dans le volet de navigation de gauche, cliquez sur **Général** > *Authentification à distance*.
+. Dans le menu déroulant *Service d'authentification*, sélectionnez *OpenLDAP*, puis *Autres*.
+. Remplissez les champs de texte.
+
+
+Si les deux premières solutions de contournement ne s'appliquent pas, appelez l' `option-set`API, et définissez les `auth.ldap.userObjectClass` et `auth.ldap.groupObjectClass` options sur les valeurs correctes.

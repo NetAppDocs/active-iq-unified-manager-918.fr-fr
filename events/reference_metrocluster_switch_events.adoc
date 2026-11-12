@@ -1,0 +1,83 @@
+---
+permalink: events/reference_metrocluster_switch_events.html 
+sidebar: sidebar 
+keywords: metrocluster, switch, events, impact area, availability 
+summary: 'Les événements de commutateur MetroCluster vous fournissent des informations sur l"état des commutateurs MetroCluster afin que vous puissiez surveiller d"éventuels problèmes. Les événements sont regroupés par zone d"impact et comprennent le nom de l"événement et du trap, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements de commutation MetroCluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements de commutateur MetroCluster pour les configurations MetroCluster over FC vous fournissent des informations sur l'état des commutateurs MetroCluster afin que vous puissiez surveiller les problèmes potentiels. Les événements sont regroupés par zone d'impact et incluent le nom de l'événement et du trap, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-availability]]
+== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Température du commutateur anormale(ocumEvtSwitchTemperatureAbnormal)
+ a| 
+Incident
+ a| 
+Commutateur MetroCluster
+ a| 
+Primordial
+
+
+
+ a| 
+Commutateur inaccessible(ocumEvtSwitchUnreachable)
+ a| 
+Incident
+ a| 
+Commutateur MetroCluster
+ a| 
+Primordial
+
+
+
+ a| 
+Les ventilateurs du commutateur sont tombés en panne(ocumEvtSwitchFansOneOrMoreFailed)
+ a| 
+Incident
+ a| 
+Commutateur MetroCluster
+ a| 
+Primordial
+
+
+
+ a| 
+Les alimentations du commutateur sont défaillantes(ocumEvtSwitchPowerSuppliesOneOrMoreFailed)
+ a| 
+Incident
+ a| 
+Commutateur MetroCluster
+ a| 
+Primordial
+
+
+
+ a| 
+Échec des capteurs de température du commutateur(ocumEvtSwitchTemperatureSensorFailed)
+
+[NOTE]
+====
+Cet événement concerne uniquement les commutateurs Cisco.
+
+==== a| 
+Incident
+ a| 
+Commutateur MetroCluster
+ a| 
+Primordial
+
+|===

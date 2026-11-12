@@ -1,0 +1,34 @@
+---
+permalink: health-checker/concept_backup_and_restore_using_mysql_database_dump.html 
+sidebar: sidebar 
+keywords: backup, restore, using, mysql, database, dump, snapshot copy, copies 
+summary: 'Une sauvegarde par export de la base de données MySQL est une copie de la base de données et des fichiers de configuration d"Active IQ Unified Manager que vous pouvez utiliser en cas de panne du système ou de perte de données. Vous pouvez planifier l"écriture d"une sauvegarde vers un emplacement local ou distant. Il est fortement recommandé de définir un emplacement distant externe au système hôte Active IQ Unified Manager.' 
+---
+= Sauvegarde et restauration à l'aide d'un dump de base de données MySQL dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une sauvegarde par export de la base de données MySQL est une copie de la base de données et des fichiers de configuration d'Active IQ Unified Manager que vous pouvez utiliser en cas de panne du système ou de perte de données. Vous pouvez planifier l'écriture d'une sauvegarde vers un emplacement local ou distant. Il est fortement recommandé de définir un emplacement distant externe au système hôte Active IQ Unified Manager.
+
+[NOTE]
+====
+La sauvegarde de la base de données MySQL est le mécanisme de sauvegarde par défaut lorsque Unified Manager est installé sur un serveur Linux ou Windows. Toutefois, si Unified Manager gère un grand nombre de clusters et de nœuds, ou si vos sauvegardes MySQL prennent plusieurs heures, vous pouvez effectuer la sauvegarde à l'aide de copies Snapshot. Cette fonctionnalité est disponible sur Red Hat Enterprise Linux et Windows.
+
+====
+Une sauvegarde de vidage de base de données se compose d’un seul fichier dans le répertoire de sauvegarde et d’un ou plusieurs fichiers dans le répertoire du référentiel de base de données. Le fichier dans le répertoire de sauvegarde est très petit, car il ne contient qu’un pointeur vers les fichiers situés dans le répertoire du référentiel de base de données qui sont nécessaires pour recréer la sauvegarde.
+
+La première fois que vous générez une sauvegarde de base de données, un fichier unique est créé dans le répertoire de sauvegarde et un fichier de sauvegarde complète est créé dans le répertoire du référentiel de base de données. La fois suivante que vous générez une sauvegarde, un fichier unique est créé dans le répertoire de sauvegarde et un fichier de sauvegarde incrémentielle est créé dans le répertoire du référentiel de base de données, contenant les différences par rapport au fichier de sauvegarde complète. Ce processus se poursuit à mesure que vous créez des sauvegardes supplémentaires, jusqu'au paramètre de rétention maximal, comme illustré dans la figure suivante.
+
+image::../media/database_backup.gif[Un diagramme illustrant trois fichiers de répertoire de sauvegarde pointant vers des fichiers complets et incrémentiels dans le référentiel de base de données]
+
+[NOTE]
+====
+Ne renommez ni ne supprimez aucun des fichiers de sauvegarde dans ces deux répertoires, sinon toute opération de restauration ultérieure échouera.
+
+====
+Si vous enregistrez vos fichiers de sauvegarde sur le système local, vous devriez lancer un processus de copie de ces fichiers vers un emplacement distant afin qu'ils soient disponibles en cas de problème système nécessitant une restauration complète.
+
+Avant de lancer une opération de sauvegarde, Active IQ Unified Manager effectue un contrôle d'intégrité pour vérifier que tous les fichiers et répertoires de sauvegarde requis existent et sont accessibles en écriture. Il vérifie également que l'espace disponible sur le système est suffisant pour créer le fichier de sauvegarde.

@@ -1,0 +1,61 @@
+---
+permalink: events/reference_disable_events_dialog_box.html 
+sidebar: sidebar 
+keywords: disable, events, dialog box, properties, area, command buttons 
+summary: 'La boîte de dialogue « Désactiver les événements » affiche la liste des types d"événements pour lesquels vous pouvez désactiver des événements. Vous pouvez désactiver des événements pour un type d"événement donné en fonction d"un niveau de gravité particulier ou pour un ensemble d"événements.' 
+---
+= Désactivez la boîte de dialogue Événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La boîte de dialogue « Désactiver les événements » affiche la liste des types d'événements pour lesquels vous pouvez désactiver des événements. Vous pouvez désactiver des événements pour un type d'événement donné en fonction d'un niveau de gravité particulier ou pour un ensemble d'événements.
+
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+
+[[event-properties-area]]
+== Zone Propriétés de l'événement
+
+La zone Propriétés de l'événement spécifie les propriétés de l'événement suivantes :
+
+* *Gravité de l'événement*
++
+Permet de sélectionner les événements en fonction de leur niveau de gravité, qui peut être Critique, Erreur, Avertissement ou Information.
+
+* *Le nom de l'événement contient*
++
+Permet de filtrer les événements dont le nom contient les caractères spécifiés.
+
+* *Événements associés*
++
+Affiche la liste des événements correspondant au type de gravité de l'événement et à la chaîne de texte que vous spécifiez.
+
+* *Désactiver les événements*
++
+Affiche la liste des événements que vous avez sélectionnés pour la désactivation.
+
++
+La gravité de l'événement est également affichée avec le nom de l'événement.
+
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes pour les événements sélectionnés :
+
+* *Enregistrer et fermer*
++
+Désactive le type d'événement et ferme la boîte de dialogue.
+
+* *Annuler*
++
+Annule les modifications et ferme la boîte de dialogue.
+
+

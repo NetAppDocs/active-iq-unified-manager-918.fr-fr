@@ -1,0 +1,35 @@
+---
+permalink: performance-checker/concept_search_for_storage_objects.html 
+sidebar: sidebar 
+keywords: search, storage, objects 
+summary: 'Pour accéder rapidement à un objet spécifique, vous pouvez utiliser le champ « Rechercher dans tous les objets de stockage » situé en haut de la barre de menu. Cette méthode de recherche globale dans tous les objets vous permet de localiser rapidement des objets spécifiques par type. Les résultats de la recherche sont triés par type d"objet de stockage et vous pouvez les filtrer à l"aide du menu déroulant. Une recherche valide doit contenir au moins trois caractères.' 
+---
+= Rechercher des objets de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour accéder rapidement à un objet spécifique, vous pouvez utiliser le champ *Rechercher dans tous les objets de stockage* situé en haut de la barre de menu. Cette méthode de recherche globale dans tous les objets vous permet de localiser rapidement des objets spécifiques par type. Les résultats de recherche sont triés par type d'objet de stockage et vous pouvez les filtrer à l'aide du menu déroulant. Une recherche valide doit contenir au moins trois caractères.
+
+La recherche globale affiche le nombre total de résultats, mais seuls les 25 premiers résultats de recherche sont accessibles. De ce fait, la fonctionnalité de recherche globale peut être considérée comme un outil de raccourci pour trouver des éléments spécifiques si vous savez quels éléments vous souhaitez localiser rapidement. Pour obtenir des résultats de recherche complets, vous pouvez utiliser la fonction de recherche dans les pages d'inventaire des objets et la fonctionnalité de filtrage associée.
+
+Vous pouvez cliquer sur la liste déroulante et sélectionner *Tous* pour effectuer une recherche simultanée sur tous les objets et événements. Vous pouvez également cliquer sur la liste déroulante pour spécifier le type d'objet. Saisissez au moins trois caractères du nom de l'objet ou de l'événement dans le champ *Rechercher dans tous les objets de stockage*, puis appuyez sur *Entrée* pour afficher les résultats de la recherche, par exemple :
+
+* Clusters : noms des clusters
+* Nœuds : noms des nœuds
+* Agrégats : noms des agrégats
+* SVMs: noms des SVM
+* Volumes: noms de volumes
+* LUN : chemins d'accès aux LUN
+
+
+image::../media/opm_search_field_jpg.gif[Champ de recherche dans Unified Manager]
+
+[NOTE]
+====
+Les LIF et les ports ne peuvent pas faire l'objet d'une recherche dans la barre de recherche globale.
+
+====
+Dans cet exemple, la liste déroulante a le type d'objet Volume sélectionné. La saisie de « `vol` » dans le champ *Search all Storage Objects* affiche une liste de tous les volumes dont le nom contient ces caractères. Pour les recherches d'objets, vous pouvez cliquer sur n'importe quel résultat de recherche pour accéder à la page Performance Explorer de cet objet. Pour les recherches d'événements, si vous cliquez sur un élément dans le résultat de recherche, vous accédez à la page Event Details.

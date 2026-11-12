@@ -1,0 +1,46 @@
+---
+permalink: health-checker/task_view_antiransomware_status_of_all_volumes_storage_vms.html 
+sidebar: sidebar 
+keywords: view, anti-ransomware status, volumes, storage VMs, SVMs 
+summary: Vous pouvez consulter la liste de tous les volumes et de toutes les VM de stockage ainsi que leur état anti-ransomware actuel afin de déterminer si les données de vos volumes sont correctement protégées contre les attaques de ransomware. 
+---
+= Consultez l'état de protection anti-ransomware de tous les volumes et machines virtuelles de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter la liste de tous les volumes et machines virtuelles de stockage (SVM), ainsi que leur état actuel de protection anti-ransomware, afin de déterminer si les données de vos volumes et SVM sont correctement protégées contre les attaques de ransomware.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Pour plus d'informations sur les différents statuts anti-ransomware, voir link:https://docs.netapp.com/us-en/ontap/anti-ransomware/enable-task.html#system-manager-procedure["ONTAP: Activer la protection anti-ransomware"].
+
+
+
+[[view-security-details-of-all-volumes-with-anti-ransomware-detection]]
+== Consultez les détails de sécurité de tous les volumes dotés d'une détection anti-ransomware
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Dans le menu Affichage, sélectionnez *Santé* > *Sécurité* > *Anti-ransomware*
+. Dans la vue *Sécurité : Anti-ransomware*, vous pouvez trier selon différents champs ou utiliser le filtre.
+
+
+
+NOTE: La protection anti-ransomware n'est pas prise en charge pour les volumes hors ligne, les volumes restreints, les volumes SnapLock, les volumes FlexGroup, les volumes FlexCache, les volumes SAN uniquement, les volumes des machines virtuelles de stockage arrêtées, les volumes racine des machines virtuelles de stockage ou les volumes de protection des données.
+
+
+
+[[view-security-details-of-all-storage-vms-with-anti-ransomware-detection]]
+== Consultez les détails de sécurité de toutes les machines virtuelles de stockage dotées d'une détection anti-ransomware
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage > VM de stockage*.
+. Sélectionnez *Affichage > Sécurité > Anti-ransomware*. Une liste des SVM avec leur statut anti-ransomware s'affiche.
+
+
+
+NOTE: La surveillance anti-ransomware n'est pas prise en charge sur les machines virtuelles de stockage dont le protocole NAS n'est pas activé.

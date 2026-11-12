@@ -1,0 +1,62 @@
+---
+permalink: config/task_change_um_host_name_on_rhel.html 
+sidebar: sidebar 
+keywords: change, unified manager, host name, linux systems 
+summary: 'À un moment donné, vous pourriez souhaiter modifier le nom de l"hôte de la machine Red Hat Enterprise Linux sur laquelle vous avez installé Unified Manager. Par exemple, vous pourriez vouloir renommer cet hôte afin d"identifier plus facilement vos serveurs Unified Manager par type, groupe de travail ou groupe de clusters surveillés lorsque vous affichez la liste de vos machines Linux.' 
+---
+= Modifier le nom de l'hôte Active IQ Unified Manager sur les systèmes Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+À un moment donné, vous pourriez souhaiter modifier le nom de l'hôte de la machine Red Hat Enterprise Linux sur laquelle vous avez installé Unified Manager. Par exemple, vous pourriez vouloir renommer cet hôte afin d'identifier plus facilement vos serveurs Unified Manager par type, groupe de travail ou groupe de clusters surveillés lorsque vous affichez la liste de vos machines Linux.
+
+.Avant de commencer
+Vous devez disposer d'un accès utilisateur root au système Linux sur lequel Unified Manager est installé.
+
+Vous pouvez utiliser le nom de l'hôte (ou l'adresse IP de l'hôte) pour accéder à l'interface web de Unified Manager. Si vous avez configuré une adresse IP statique pour votre réseau lors du déploiement, vous avez alors attribué un nom à l'hôte réseau. Si vous avez configuré le réseau à l'aide du protocole DHCP, le nom de l'hôte doit être récupéré auprès du serveur DNS.
+
+Quelle que soit la manière dont le nom de l'hôte a été attribué, si vous modifiez le nom de l'hôte et avez l'intention d'utiliser le nouveau nom de l'hôte pour accéder à l'interface utilisateur Web de Unified Manager, vous devez générer un nouveau certificat de sécurité.
+
+Si vous accédez à l'interface web en utilisant l'adresse IP du serveur au lieu du nom de l'hôte, vous n'avez pas à générer un nouveau certificat si vous modifiez le nom de l'hôte. Toutefois, il est recommandé, comme bonne pratique, de mettre à jour le certificat afin que le nom de l'hôte qui y figure corresponde au nom de l'hôte réel. Le nouveau certificat ne prend effet qu'après le redémarrage de la machine Linux.
+
+Si vous modifiez le nom de l'hôte dans Unified Manager, vous devez mettre à jour manuellement le nom de l'hôte dans OnCommand Workflow Automation (WFA). Le nom de l'hôte n'est pas mis à jour automatiquement dans WFA.
+
+.Étapes
+. Connectez-vous en tant qu'utilisateur root au système Unified Manager que vous souhaitez modifier.
+. Arrêtez le logiciel Unified Manager et le logiciel MySQL associé en saisissant la commande suivante :
++
+`systemctl stop ocieau ocie mysqld`
+
+. Modifiez le nom de l'hôte à l'aide de la commande Linux `hostnamectl` :
++
+`hostnamectl set-hostname new_FQDN`
+
++
+`hostnamectl set-hostname nuhost.corp.widget.com`
+
+. Régénérez le certificat HTTPS pour le serveur :
++
+`/opt/netapp/essentials/bin/cert.sh create`
+
+. Redémarrez le service réseau :
++
+`systemctl restart NetworkManager.service`
+
+. Une fois le service redémarré, vérifiez si le nouveau nom de l'hôte peut se joindre lui-même par ping :
++
+`ping new_hostname`
+
++
+`ping nuhost`
+
++
+Cette commande devrait renvoyer la même adresse IP que celle définie précédemment pour le nom de l'hôte d'origine.
+
+. Après avoir effectué et vérifié la modification du nom de l'hôte, redémarrez Unified Manager en saisissant la commande suivante :
++
+`systemctl start mysqld ocie ocieau`
+
+

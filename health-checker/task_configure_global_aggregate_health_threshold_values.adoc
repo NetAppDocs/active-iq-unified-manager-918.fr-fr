@@ -1,0 +1,38 @@
+---
+permalink: health-checker/task_configure_global_aggregate_health_threshold_values.html 
+sidebar: sidebar 
+keywords: configure, global, aggregate, health, threshold values 
+summary: 'Vous pouvez configurer des valeurs globales de seuils de santé pour tous les agrégats afin de suivre tout dépassement de seuil. Des événements appropriés sont générés en cas de dépassement de seuil, et vous pouvez prendre des mesures préventives en fonction de ces événements. Vous pouvez configurer ces valeurs globales en fonction des paramètres de bonne pratique pour les seuils qui s"appliquent à tous les agrégats surveillés.' 
+---
+= Configurez les valeurs seuils globales de santé agrégée dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer des valeurs globales de seuils de santé pour tous les agrégats afin de suivre tout dépassement de seuil. Des événements appropriés sont générés en cas de dépassement de seuil, et vous pouvez prendre des mesures préventives en fonction de ces événements. Vous pouvez configurer ces valeurs globales en fonction des paramètres de bonne pratique pour les seuils qui s'appliquent à tous les agrégats surveillés.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Lorsque vous configurez les options globalement, les valeurs par défaut des objets sont modifiées. Cependant, si les valeurs par défaut ont été modifiées au niveau de l'objet, les valeurs globales restent inchangées.
+
+Les options de seuil possèdent des valeurs par défaut pour une meilleure surveillance, toutefois, vous pouvez modifier ces valeurs en fonction des exigences de votre environnement.
+
+Lorsque Autogrow est activé sur les volumes qui se trouvent sur l’agrégat, les seuils de capacité de l’agrégat sont considérés comme dépassés en fonction de la taille maximale du volume définie par autogrow, et non en fonction de la taille du volume d’origine.
+
+[NOTE]
+====
+Les valeurs de seuil d’état de santé ne s’appliquent pas à l’agrégat racine du nœud.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Seuils d'événements* > *Agrégat*.
+. Configurez les valeurs de seuil appropriées pour la capacité, la croissance et les copies Snapshot.
+. Cliquez sur *Enregistrer*.
+
+
+*Informations connexes*
+
+link:../config/task_add_users.html["Ajout d'utilisateurs"]

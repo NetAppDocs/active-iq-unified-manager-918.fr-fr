@@ -1,0 +1,27 @@
+---
+permalink: data-protection/task_view_protection_relationships_from_storage_vms_page.html 
+sidebar: sidebar 
+keywords: storage vm, viewing protection relationships 
+summary: 'La page Machines virtuelles de stockage vous permet de consulter l"état des relations de reprise après sinistre des machines virtuelles de stockage existantes.' 
+---
+= Afficher les relations de protection à partir de la page des machines virtuelles de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page Machines virtuelles de stockage vous permet de consulter l'état des relations de reprise après sinistre des machines virtuelles de stockage existantes.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Vous pouvez également examiner les détails des relations de protection, y compris l’état du transfert et du retard, ainsi que les détails de la source et de la destination. Vous pouvez programmer des rapports ou télécharger les rapports existants au format dont vous avez besoin. Le bouton *Afficher/Masquer* vous permet d’ajouter les colonnes requises aux rapports, car elles ne sont pas affichées par défaut.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *STOCKAGE* > *VM de stockage*.
+. Dans le menu *AFFICHAGE*, sélectionnez *Relation* > *Toutes les relations*.
++
+La vue « Relations : Toutes les relations » affiche toutes les machines virtuelles de stockage configurées.
+
+

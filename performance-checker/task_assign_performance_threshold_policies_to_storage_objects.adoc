@@ -1,0 +1,78 @@
+---
+permalink: performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html 
+sidebar: sidebar 
+keywords: assign, performance, threshold, policies, storage, objects 
+summary: 'Vous attribuez une stratégie de seuil de performance définie par l"utilisateur à un objet de stockage afin qu"Unified Manager signale un événement si la valeur du compteur de performance dépasse le paramètre de stratégie.' 
+---
+= Attribuez des politiques de seuil de performance aux objets de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous attribuez une stratégie de seuil de performance définie par l'utilisateur à un objet de stockage afin qu'Unified Manager signale un événement si la valeur du compteur de performance dépasse le paramètre de stratégie.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+La ou les politiques de seuil de performance que vous souhaitez appliquer à l'objet doivent exister.
+
+Vous ne pouvez appliquer qu'une seule politique de performance à la fois à un objet ou à un groupe d'objets.
+
+Vous pouvez attribuer un maximum de trois stratégies de seuil à chaque objet de stockage. Lors de l'attribution de stratégies à plusieurs objets, si l'un d'eux possède déjà le nombre maximal de stratégies attribuées, Unified Manager effectue les actions suivantes :
+
+* Applique la politique à tous les objets sélectionnés qui n'ont pas atteint leur maximum
+* Ignore les objets ayant atteint le nombre maximal de stratégies
+* Affiche un message indiquant que la stratégie n'a pas été attribuée à tous les objets
+
+
+.Étapes
+. Depuis la page d'inventaire des performances de n'importe quel objet de stockage, sélectionnez le ou les objets auxquels vous souhaitez attribuer une stratégie de seuil :
++
+|===
+| Pour attribuer des seuils à... | Cliquez... 
+
+
+ a| 
+Un seul objet
+ a| 
+La case à cocher située à gauche de cet objet.
+
+
+
+ a| 
+Objets multiples
+ a| 
+La case à cocher située à gauche de chaque objet.
+
+
+
+ a| 
+Tous les objets de la page
+ a| 
+La liste déroulante image:../media/select_dropdown_65_png.gif["sélectionnez l’icône de liste déroulante"], puis choisissez *Sélectionner tous les objets de cette page*.
+
+
+
+ a| 
+Tous les objets du même type
+ a| 
+La image:../media/select_dropdown_65_png.gif["sélectionnez l’icône de liste déroulante"] liste déroulante, puis choisissez *Sélectionner tous les objets*.
+
+|===
++
+Vous pouvez utiliser les fonctionnalités de tri et de filtrage pour affiner la liste des objets sur la page d'inventaire afin de faciliter l'application de politiques de seuil à de nombreux objets.
+
+. Faites votre sélection, puis cliquez sur *Attribuer une politique de seuil de performance*.
++
+La page « Attribuer une stratégie de seuil de performance » s'affiche, présentant une liste des stratégies de seuil qui existent pour ce type spécifique d'objet de stockage.
+
+. Cliquez sur chaque règle pour afficher les détails des paramètres de seuil de performance et vérifier que vous avez sélectionné la règle de seuil appropriée.
+. Après avoir sélectionné la politique de seuil appropriée, cliquez sur *Attribuer une politique*.
++
+Un message de confirmation en haut de la page indique que la politique de seuil a été attribuée à l'objet ou aux objets, et fournit un lien vers la page Alerting afin que vous puissiez configurer les paramètres d'alerte pour cet objet et cette politique.
+
+
+
+Si vous souhaitez recevoir des alertes par e-mail ou sous forme de trap SNMP pour être averti de la génération d'un événement de performance particulier, vous devez configurer les paramètres d'alerte sur la page Alert Setup.

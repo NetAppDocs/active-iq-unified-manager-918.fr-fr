@@ -1,0 +1,37 @@
+---
+permalink: config/reference_https_dialog_box_ocf.html 
+sidebar: sidebar 
+keywords: https certificate page 
+summary: 'La page Certificat HTTPS vous permet de consulter le certificat de sécurité actuel, de télécharger une demande de signature de certificat, de générer un nouveau certificat HTTPS ou d"installer un nouveau certificat HTTPS.' 
+---
+= Découvrez la page relative au certificat HTTPS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page Certificat HTTPS vous permet de consulter le certificat de sécurité actuel, de télécharger une demande de signature de certificat, de générer un nouveau certificat HTTPS auto-signé ou d'installer un nouveau certificat HTTPS.
+
+Si vous n'avez pas généré de nouveau certificat HTTPS auto-signé, le certificat qui apparaît sur cette page est celui qui a été généré lors de l'installation.
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les opérations suivantes :
+
+* *Télécharger la demande de signature de certificat HTTPS*
++
+Télécharge une demande de certification pour le certificat HTTPS actuellement installé. Votre navigateur vous invite à enregistrer le fichier <hostname>.csr afin que vous puissiez fournir le fichier à une autorité de certification pour signature.
+
+* *Installer le certificat HTTPS*
++
+Permet de télécharger et d'installer un certificat de sécurité après sa signature et son renvoi par une autorité de certification. Le nouveau certificat prend effet après le redémarrage du serveur d'administration.
+
+* *Régénérer le certificat HTTPS*
++
+Permet de générer un nouveau certificat HTTPS auto-signé, qui remplace le certificat de sécurité actuel. Le nouveau certificat prend effet après le redémarrage d'Unified Manager.
+
+

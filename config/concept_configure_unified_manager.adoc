@@ -1,0 +1,16 @@
+---
+permalink: config/concept_configure_unified_manager.html 
+sidebar: sidebar 
+keywords: configure, active iq unified manager 
+summary: 'Après avoir installé Active IQ Unified Manager (anciennement OnCommand Unified Manager), vous devez effectuer la configuration initiale (également appelée assistant de première utilisation) pour accéder à l"interface web. Vous pourrez ensuite effectuer des tâches de configuration supplémentaires, telles que l"ajout de clusters, la configuration de l"authentification à distance, l"ajout d"utilisateurs et l"ajout d"alertes.' 
+---
+= Découvrez comment configurer Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir installé Active IQ Unified Manager (anciennement OnCommand Unified Manager), vous devez effectuer la configuration initiale (également appelée assistant de première utilisation) pour accéder à l'interface web. Vous pourrez ensuite effectuer des tâches de configuration supplémentaires, telles que l'ajout de clusters, la configuration de l'authentification à distance, l'ajout d'utilisateurs et l'ajout d'alertes.
+
+Certaines procédures décrites dans ce manuel sont nécessaires pour terminer la configuration initiale de votre instance Unified Manager. D'autres correspondent à des paramètres de configuration recommandés, utiles à définir sur votre nouvelle instance ou qu'il est bon de connaître avant de commencer la surveillance régulière de vos systèmes ONTAP.

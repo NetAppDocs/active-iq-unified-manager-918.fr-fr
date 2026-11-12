@@ -1,0 +1,34 @@
+---
+permalink: events/reference_flash_card_events.html 
+sidebar: sidebar 
+keywords: flash, card, events, impact area, availability 
+summary: 'Les événements liés aux cartes flash vous informent de l"état des cartes flash installées sur les nœuds de votre centre de données, vous permettant ainsi de détecter d"éventuels problèmes. Ces événements sont regroupés par zone d"impact et comprennent le nom de l"événement et du trap, le niveau d"impact, le type de source et la gravité.' 
+---
+= Découvrez les événements liés aux cartes mémoire dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements liés aux cartes flash vous informent de l'état des cartes flash installées sur les nœuds de votre centre de données, vous permettant ainsi de détecter d'éventuels problèmes. Ces événements sont regroupés par zone d'impact et comprennent le nom de l'événement et du trap, le niveau d'impact, le type de source et la gravité.
+
+
+
+[[impact-area-availability]]
+== Domaine d'impact : disponibilité
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Cartes mémoire hors ligne(ocumEvtFlashCardOffline)
+ a| 
+Incident
+ a| 
+Nœud
+ a| 
+Primordial
+
+|===

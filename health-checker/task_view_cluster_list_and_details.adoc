@@ -1,0 +1,36 @@
+---
+permalink: health-checker/task_view_cluster_list_and_details.html 
+sidebar: sidebar 
+keywords: view, cluster list, details 
+summary: Utilisez la vue « Tous les clusters » sur la page « Santé » pour consulter l’inventaire de vos clusters, et la vue « Tous les clusters » sur la page « Capacité » pour obtenir des détails sur la capacité de stockage et son utilisation. 
+---
+= Consultez la liste et les détails des clusters dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La vue « État : Tous les clusters » vous permet de consulter l’inventaire de vos clusters. La vue « Capacité : Tous les clusters » vous permet de consulter un résumé des informations relatives à la capacité et à l’utilisation du stockage dans tous les clusters.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Vous pouvez également consulter les détails de clusters individuels, tels que l’état du cluster, la capacité, la configuration, les LIF, les nœuds et les disques de ce cluster, à l’aide de la page de détails Cluster / Health.
+
+Les informations affichées dans la vue « État : Tous les clusters », la vue « Capacité : Tous les clusters » et la page « Détails du cluster/État » vous aident à planifier votre stockage. Par exemple, avant de provisionner un nouvel agrégat, vous pouvez sélectionner un cluster spécifique dans la vue « État : Tous les clusters » et consulter les détails de sa capacité afin de déterminer s'il dispose de l'espace requis.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Clusters*.
+. Dans le menu View, sélectionnez la vue *Health: All Clusters* pour afficher les informations d’état de santé, ou la vue *Capacity: All Clusters* pour afficher les détails sur la capacité de stockage et l’utilisation dans tous les clusters.
+. Cliquez sur le nom d'un cluster pour afficher tous les détails de ce cluster sur la page de détails *Cluster / Health*.
+
+
+*Informations connexes*
+
+* link:../health-checker/reference_health_cluster_details_page.html["Page de détails Cluster / Santé"]
+* link:../performance-checker/performance-view-all.html#performance-all-clusters-view["Performances: Vue de tous les clusters"]
+* link:../storage-mgmt/task_monitor_metrocluster_configurations.html["Surveillance des MetroCluster configurations"]
+* link:../health-checker/task_view_detailed_security_status_for_clusters_and_svms.html["Affichage de l'état de sécurité des clusters et des machines virtuelles de stockage"]
+* link:../health-checker/concept_what_security_criteria_is_being_evaluated.html["Quels critères de sécurité sont évalués"]
+

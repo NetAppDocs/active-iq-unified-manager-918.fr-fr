@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_use_workload_analyzer.html 
+sidebar: sidebar 
+keywords: workload analyzer 
+summary: Il existe plusieurs façons de lancer l’analyseur de workload depuis l’interface utilisateur. Nous décrivons ici le lancement de l’outil depuis le volet de navigation de gauche. 
+---
+= Utilisez l'analyseur de charge de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Il existe plusieurs façons de lancer l’analyseur de workload depuis l’interface utilisateur. Nous décrivons ici le lancement de l’outil depuis le volet de navigation de gauche.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Workload Analysis*.
++
+La page d'analyse de la charge de travail s'affiche.
+
+. Si vous connaissez le nom du workload, saisissez-le. Si vous n’êtes pas sûr du nom complet, saisissez au moins 3 caractères et le système affiche une liste de workloads correspondant à la chaîne.
+. Sélectionnez la plage horaire si vous souhaitez consulter les statistiques sur une période supérieure aux 2 heures par défaut, puis cliquez sur *Appliquer*.
+. Consultez la section Résumé pour voir les événements qui se sont produits pendant la période considérée.
+. Consultez les graphiques de performance et de capacité pour voir quand l’une des métriques est anormale et vérifiez si des événements correspondent à l’entrée anormale.
+

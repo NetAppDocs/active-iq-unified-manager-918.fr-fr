@@ -1,0 +1,70 @@
+---
+permalink: storage-mgmt/concept_assign_policies_on_workloads.html 
+sidebar: sidebar 
+keywords: assign, policies, workloads, single, multiple, storage, system-recommended, psls 
+summary: 'Vous pouvez attribuer des politiques d"efficacité du stockage (SEP) et des niveaux de service de performance (PSL) aux workloads de stockage à partir de la page Toutes les charges de travail, à l’aide des différentes options de navigation.' 
+---
+= Attribuez des stratégies aux charges de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez attribuer des politiques d'efficacité du stockage (SEP) et des niveaux de service de performance (PSL) aux workloads de stockage à partir de la page Toutes les charges de travail, à l’aide des différentes options de navigation.
+
+
+
+[[assign-policies-to-a-single-workload]]
+== Attribuer des politiques à un seul workload
+
+Vous pouvez affecter un PSL, un SEP ou les deux à un même workload. Procédez comme suit :
+
+. Sélectionnez le workload.
+. Cliquez sur l'icône de modification à côté de la ligne, puis cliquez sur *Modifier*.
++
+Les champs *Niveau de service de performance attribué* et *Politique d'efficacité du stockage* sont activés.
+
+. Sélectionnez le PSL ou le SEP requis, ou les deux.
+. Cliquez sur l'icône de validation pour appliquer les modifications.
+
+
+[NOTE]
+====
+Vous pouvez également sélectionner un workload et cliquer sur *Plus d'actions* pour attribuer les stratégies.
+
+====
+
+
+[[assign-policies-to-multiple-storage-workloads]]
+== Attribuer des politiques à plusieurs workloads de stockage
+
+Vous pouvez affecter un PSL ou un SEP à plusieurs workloads de stockage simultanément. Procédez comme suit :
+
+. Cochez les cases correspondant aux workloads auxquels vous souhaitez attribuer la stratégie, ou sélectionnez tous les workloads de votre data center.
+. Cliquez sur *More Actions*.
+. Pour attribuer un PSL, sélectionnez *Assign Performance Service Level*. Pour attribuer un SEP, sélectionnez *Assign Storage Efficiency Policy*. Une fenêtre contextuelle s'affiche pour vous permettre de sélectionner la stratégie.
+. Sélectionnez la stratégie appropriée et cliquez sur *Appliquer*. Le nombre de workloads auxquels les stratégies sont attribuées s'affiche. Les workloads auxquels les stratégies ne sont pas attribuées sont également répertoriés, avec la raison.
++
+[NOTE]
+====
+L'application de stratégies à des charges de travail en masse peut prendre un certain temps selon le nombre de charges de travail sélectionnées. Vous pouvez cliquer sur le bouton *Exécuter en arrière-plan* et poursuivre vos autres tâches pendant l'exécution de l'opération en arrière-plan. Une fois l'attribution en masse terminée, vous pouvez consulter l'état d'achèvement. Si vous appliquez une PSL à plusieurs charges de travail, vous ne pouvez pas déclencher une autre requête pendant l'exécution de la tâche précédente d'attribution en masse.
+
+====
+
+
+
+
+[[assign-system-recommended-psls-to-workloads]]
+== Attribuer les PSL recommandés par le système aux workloads
+
+Vous pouvez attribuer des PSLs recommandées par le système aux workloads de stockage d'un centre de données qui n'ont aucune PSL attribuée, ou dont les PSLs attribuées ne correspondent pas à la recommandation du système. Pour utiliser cette fonctionnalité, cliquez sur le bouton *Attribuer les PSLs recommandées par le système*. Vous n'avez pas besoin de sélectionner des workloads spécifiques.
+
+Cette recommandation est déterminée en interne par l’analyse du système et est ignorée pour les workloads dont les IOPS et les autres paramètres ne correspondent à aucune définition de PSL disponible. Les workloads de stockage avec les statuts  `Waiting for I/O` et « Apprentissage » sont également exclus.
+
+[NOTE]
+====
+Unified Manager recherche des mots-clés spécifiques dans le nom du workload afin de remplacer l’analyse du système et de recommander un autre PSL pour le workload. Lorsque le nom du workload contient les lettres "`ora`", le PSL **Extreme Performance** est recommandé. Et lorsque le nom du workload contient les lettres "`vm`", le PSL **Performance** est recommandé.
+
+====
+Voir également l’article de la base de connaissances (KB) https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/Active_IQ_Unified_Manager/Performance_Service_Level'_is_not_adaptive_to_a_highly_variable_workload["La fonctionnalité « Attribuer au système le niveau de service de performance recommandé » d’ActiveIQ Unified Manager ne s’adapte pas à un workload très variable"]

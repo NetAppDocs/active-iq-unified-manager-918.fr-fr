@@ -1,0 +1,45 @@
+---
+permalink: events/reference_protection_events.html 
+sidebar: sidebar 
+keywords: protection, events, impact area, protection 
+summary: Les événements de protection vous indiquent si une tâche a échoué ou a été interrompue afin que vous puissiez surveiller d’éventuels problèmes. Les événements sont regroupés par zone d’impact et comprennent le nom de l’événement et du trap, le niveau d’impact, le type de source et la gravité. 
+---
+= Découvrez les événements de protection dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements de protection vous indiquent si une tâche a échoué ou a été interrompue afin que vous puissiez surveiller d’éventuels problèmes. Les événements sont regroupés par zone d’impact et comprennent le nom de l’événement et du trap, le niveau d’impact, le type de source et la gravité.
+
+
+
+[[impact-area-protection]]
+== Zone d'impact : protection
+
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+La tâche de protection a échoué(ocumEvtProtectionJobTaskFailed)
+ a| 
+Incident
+ a| 
+Volume ou service de stockage
+ a| 
+Primordial
+
+
+
+ a| 
+Tâche de protection abandonnée(ocumEvtProtectionJobAborted)
+ a| 
+Risque
+ a| 
+Volume ou service de stockage
+ a| 
+Avertissement
+
+|===

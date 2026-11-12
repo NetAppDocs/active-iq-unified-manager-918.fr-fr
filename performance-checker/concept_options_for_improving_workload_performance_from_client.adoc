@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_options_for_improving_workload_performance_from_client.html 
+sidebar: sidebar 
+keywords: options, improving, workload, performance, client-side 
+summary: 'Vous pouvez vérifier les workloads de vos clients, comme les applications ou les bases de données, qui envoient des E/S vers des volumes impliqués dans un événement de performances afin de déterminer si une modification côté client pourrait corriger l"événement.' 
+---
+= Améliorez les performances de la charge de travail en ajustant les paramètres côté client dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez vérifier les workloads de vos clients, comme les applications ou les bases de données, qui envoient des E/S vers des volumes impliqués dans un événement de performances afin de déterminer si une modification côté client pourrait corriger l'événement.
+
+Lorsque les clients connectés aux volumes d'un cluster augmentent leurs requêtes d'E/S, le cluster doit fournir un effort accru pour répondre à la demande. Si vous identifiez les clients qui génèrent un grand nombre de requêtes d'E/S vers un volume particulier du cluster, vous pouvez améliorer les performances de ce dernier en ajustant le nombre de clients accédant à ce volume ou en réduisant le volume d'E/S qui lui est adressé. Vous pouvez également appliquer ou augmenter une limite au groupe de règles QoS auquel le volume appartient.
+
+Vous pouvez examiner les clients et leurs applications pour déterminer si les clients envoient plus d'E/S que d'habitude, ce qui pourrait provoquer une contention sur un composant du cluster. Sur la page Détails de l'événement, la section Diagnostic système affiche les principaux workloads de volume utilisant le composant en contention. Si vous savez quel client accède à un volume particulier, vous pouvez consulter le client pour déterminer si le matériel client ou une application ne fonctionne pas comme prévu ou effectue plus de travail que d'habitude.
+
+Dans une configuration MetroCluster, les requêtes d'écriture vers un volume sur un cluster local sont répliquées vers un volume sur le cluster distant. Le maintien de la synchronisation du volume source sur le cluster local avec le volume de destination sur le cluster distant peut également accroître la charge sur les deux clusters dans la configuration MetroCluster. En réduisant les requêtes d'écriture vers ces volumes répliqués, les clusters peuvent effectuer moins d'opérations de synchronisation, ce qui réduit l'impact sur les performances des autres workloads.

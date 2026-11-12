@@ -1,0 +1,412 @@
+---
+permalink: events/reference_aggregate_events.html 
+sidebar: sidebar 
+keywords: aggregate events, impact, area, availability, capacity, configuration, performance 
+summary: Les événements d’agrégat vous fournissent des informations sur l’état des agrégats afin que vous puissiez surveiller les problèmes potentiels. Les événements sont regroupés par zone d’impact et comprennent le nom de l’événement et de l’interruption, le niveau d’impact, le type de source et la gravité. 
+---
+= Découvrez les événements d'agrégat dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements d’agrégat vous fournissent des informations sur l’état des agrégats afin que vous puissiez surveiller les problèmes potentiels. Les événements sont regroupés par zone d’impact et comprennent le nom de l’événement et de l’interruption, le niveau d’impact, le type de source et la gravité.
+
+
+
+[[impact-area-availability]]
+== Domaine d'impact : disponibilité
+
+Un astérisque (*) identifie les événements EMS qui ont été convertis en événements Unified Manager.
+
+|===
+| Nom de l'événement(Nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Agrégat hors ligne(ocumEvtAggregateStateOffline)
+ a| 
+Incident
+ a| 
+Agrégat
+ a| 
+Primordial
+
+
+
+ a| 
+Échec de l'agrégat(ocumEvtAggregateStateFailed)
+ a| 
+Incident
+ a| 
+Agrégat
+ a| 
+Primordial
+
+
+
+ a| 
+Agrégat restreint(ocumEvtAggregateStateRestricted)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Reconstruction de l’agrégat(ocumEvtAggregateRaidStateReconstructing)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Agrégat dégradé(ocumEvtAggregateRaidStateDegraded)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Niveau cloud partiellement accessible(ocumEventCloudTierPartiallyReachable)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Niveau cloud inaccessible(ocumEventCloudTierUnreachable)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Erreur
+
+
+
+ a| 
+Accès au niveau cloud refusé pour la relocalisation de l'agrégat *(arlNetraCaCheckFailed)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Erreur
+
+
+
+ a| 
+Accès au niveau cloud refusé pour la relocalisation d'agrégat lors du basculement de stockage *(gbNetraCaCheckFailed)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Erreur
+
+
+
+ a| 
+MetroCluster Agrégat laissé derrière(ocumEvtMetroClusterAggregateLeftBehind)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Erreur
+
+
+
+ a| 
+MetroCluster Mise en miroir de l’agrégat dégradée(ocumEvtMetroClusterAggregateMirrorDegraded)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Erreur
+
+|===
+
+
+[[impact-area-capacity]]
+== Domaine d'impact : capacité
+
+|===
+| Nom de l'événement(Nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Espace d’agrégat presque plein(ocumEvtAggregateNearlyFull)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Espace d'agrégat complet(ocumEvtAggregateFull)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Erreur
+
+
+
+ a| 
+Jours de l'agrégat avant remplissage complet(ocumEvtAggregateDaysUntilFullSoon)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Erreur
+
+
+
+ a| 
+Agrégat suralloué(ocumEvtAggregateOvercommitted)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Erreur
+
+
+
+ a| 
+Agrégat presque surengagé(ocumEvtAggregateAlmostOvercommitted)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Réserve Snapshot de l'agrégat pleine(ocumEvtAggregateSnapReserveFull)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Taux de croissance agrégé anormal(ocumEvtAggregateGrowthRateAbnormal)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+|===
+
+
+[[impact-area-configuration]]
+== Domaine d'impact : configuration
+
+|===
+| Nom de l'événement(Nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Agrégat découvert(Non applicable)
+ a| 
+Événement
+ a| 
+Agrégat
+ a| 
+Informations
+
+
+
+ a| 
+Agrégat renommé(Non applicable)
+ a| 
+Événement
+ a| 
+Agrégat
+ a| 
+Informations
+
+
+
+ a| 
+Agrégat supprimé(Non applicable)
+ a| 
+Événement
+ a| 
+Nœud
+ a| 
+Informations
+
+|===
+
+
+[[impact-area-performance]]
+== Domaine d'impact : performance
+
+|===
+| Nom de l'événement(Nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Dépassement du seuil critique d'IOPS de l'agrégat(ocumAggregateIopsIncident)
+ a| 
+Incident
+ a| 
+Agrégat
+ a| 
+Primordial
+
+
+
+ a| 
+Seuil d'avertissement des IOPS agrégées dépassé(ocumAggregateIopsWarning)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Seuil critique du débit agrégé en MB/s dépassé(ocumAggregateMbpsIncident)
+ a| 
+Incident
+ a| 
+Agrégat
+ a| 
+Primordial
+
+
+
+ a| 
+Dépassement du seuil d'alerte global en MB/s(ocumAggregateMbpsWarning)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Seuil critique de latence agrégée dépassé(ocumAggregateLatencyIncident)
+ a| 
+Incident
+ a| 
+Agrégat
+ a| 
+Primordial
+
+
+
+ a| 
+Seuil d'alerte de latence de l'agrégat dépassé( ocumAggregateLatencyWarning)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Capacité de performance d’agrégat utilisée seuil critique dépassé(ocumAggregatePerfCapacityUsedIncident)
+ a| 
+Incident
+ a| 
+Agrégat
+ a| 
+Primordial
+
+
+
+ a| 
+Seuil d’avertissement de capacité de performance de l’agrégat utilisée dépassé(ocumAggregatePerfCapacityUsedWarning)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Seuil critique d'utilisation de l'agrégat dépassé (ocumAggregateUtilizationIncident)
+ a| 
+Incident
+ a| 
+Agrégat
+ a| 
+Primordial
+
+
+
+ a| 
+Seuil d'alerte d'utilisation de l'agrégat dépassé (ocumAggregateUtilizationWarning)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Seuil de surutilisation des disques agrégés dépassé (ocumAggregateDisksOverUtilizedWarning)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+
+
+ a| 
+Seuil dynamique de l'agrégat dépassé (ocumAggregateDynamicEventWarning)
+ a| 
+Risque
+ a| 
+Agrégat
+ a| 
+Avertissement
+
+|===

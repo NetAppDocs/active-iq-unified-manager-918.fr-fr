@@ -1,0 +1,37 @@
+---
+permalink: api-automation/concept_provision_workflow.html 
+sidebar: sidebar 
+keywords: workflow, workload, management 
+summary: 'Avec Active IQ Unified Manager, vous pouvez provisionner et modifier les charges de travail de stockage (LUN, partages de fichiers NFS et partages CIFS). Le provisionnement comprend plusieurs étapes, de la création de la machine virtuelle de stockage (SVM) à l"application des niveaux de service de performance et des stratégies d"efficacité du stockage aux charges de travail. La modification des charges de travail consiste à ajuster des paramètres spécifiques et à activer des fonctionnalités supplémentaires.' 
+---
+= Provisionnez et modifiez les charges de travail de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Avec Active IQ Unified Manager, vous pouvez provisionner et modifier les charges de travail de stockage (LUN, partages de fichiers NFS et partages CIFS). Le provisionnement comprend plusieurs étapes, de la création de la machine virtuelle de stockage (SVM) à l'application des niveaux de service de performance et des stratégies d'efficacité du stockage aux charges de travail. La modification des charges de travail consiste à ajuster des paramètres spécifiques et à activer des fonctionnalités supplémentaires.
+
+Les flux de travail suivants sont décrits :
+
+* Flux de travail pour le provisionnement de machines virtuelles de stockage (SVM) dans Unified Manager.
++
+[NOTE]
+====
+Cette procédure doit être effectuée avant le provisionnement des LUN ou des partages de fichiers sur Unified Manager.
+
+====
+* Provisionnement de partages de fichiers.
+* Provisionnement des LUN.
+* Modification des LUN et des partages de fichiers (à l’aide de l’exemple de mise à jour du paramètre Performance Service Level pour les charges de travail de stockage).
+* Modification d'un partage de fichiers NFS pour prendre en charge le protocole CIFS
+* Modification des charges de travail pour faire passer la QoS à AQoS
+
+
+[NOTE]
+====
+Pour chaque flux de travail de provisionnement (LUN et partages de fichiers), assurez-vous d'avoir terminé le flux de travail de vérification des SVM sur les clusters.
+
+====
+Vous devez également prendre connaissance des recommandations et des limitations avant d'utiliser chaque API dans les flux de travail. Les détails pertinents des API sont disponibles dans leurs sections respectives, répertoriées dans les concepts et références associés.

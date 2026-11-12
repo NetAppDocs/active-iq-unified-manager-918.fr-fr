@@ -1,0 +1,27 @@
+---
+permalink: performance-checker/task_identify_victim_workloads_involved_in_performance_event.html 
+sidebar: sidebar 
+keywords: identify, victim workloads, dynamic, performance, event 
+summary: 'Dans Unified Manager, vous pouvez identifier les workloads de volume qui présentent le plus grand écart de temps de réponse (latence) causé par un composant de stockage en contention. L"identification de ces workloads vous aide à comprendre pourquoi les applications clientes qui y accèdent fonctionnent plus lentement que d"habitude.' 
+---
+= Identifier les charges de travail victimes dans les événements de performance dynamiques dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dans Unified Manager, vous pouvez identifier les workloads de volume qui présentent le plus grand écart de temps de réponse (latence) causé par un composant de stockage en contention. L'identification de ces workloads vous aide à comprendre pourquoi les applications clientes qui y accèdent fonctionnent plus lentement que d'habitude.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Il doit y avoir des événements de performance dynamique nouveaux, reconnus ou obsolètes.
+
+
+La page de détails de l'événement affiche une liste des workloads définis par l'utilisateur et par le système, classés selon l'écart le plus important d'activité ou d'utilisation sur le composant, ou les plus affectés par l'événement. Ces valeurs sont basées sur les pics que Unified Manager a identifiés lorsqu'il a détecté l'événement et l'a analysé pour la dernière fois.
+
+.Étapes
+. Consultez la page *Détails de l'événement* pour obtenir des informations sur l'événement.
+. Dans les graphiques Workload Latency et Workload Activity, sélectionnez *Victim Workloads*.
+. Passez votre curseur sur les graphiques pour afficher les principales charges de travail définies par l'utilisateur qui affectent le composant, ainsi que le nom de la workload victime.
+

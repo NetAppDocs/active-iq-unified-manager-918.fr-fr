@@ -1,0 +1,20 @@
+---
+permalink: performance-checker/concept_run_storage_efficiency_operations_at_less_busy_times.html 
+sidebar: sidebar 
+keywords: run, storage, efficiency, operations, less, busy, times 
+summary: 'Vous pouvez modifier la stratégie ou la planification qui gère les opérations d"efficacité du stockage afin qu"elles s"exécutent lorsque les workloads des volumes concernés sont moins sollicités.' 
+---
+= Planifiez les opérations d'efficacité du stockage pendant les périodes de moindre activité dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier la stratégie ou la planification qui gère les opérations d'efficacité du stockage afin qu'elles s'exécutent lorsque les workloads des volumes concernés sont moins sollicités.
+
+Les opérations d'efficacité du stockage peuvent consommer une quantité importante de ressources CPU du cluster et impacter négativement les volumes sur lesquels elles sont exécutées. Si ces volumes sont fortement sollicités simultanément à ces opérations, leur latence peut augmenter et déclencher un événement.
+
+Sur la page Détails de l'événement, la section Diagnostic système affiche les workloads du groupe de règles QoS en fonction du pic d'écart d'activité afin d'identifier les workloads perturbateurs. Si « `storage efficiency` » s'affiche en haut du tableau, ces opérations perturbent les workloads victimes. En modifiant la règle d'efficacité ou la planification afin qu'elles s'exécutent lorsque ces workloads sont moins occupés, vous pouvez empêcher les opérations d'efficacité du stockage de provoquer une contention sur un cluster.
+
+Vous pouvez utiliser ONTAP System Manager pour gérer les règles d'efficacité. Vous pouvez utiliser les commandes ONTAP pour gérer les règles d'efficacité et les planifications.

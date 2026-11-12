@@ -1,0 +1,44 @@
+---
+permalink: reporting/task_download_reports.html 
+sidebar: sidebar 
+keywords: download, reports 
+summary: 'Vous pouvez télécharger des rapports et enregistrer les données sur un lecteur local ou réseau en tant que fichier CSV (valeurs séparées par des virgules), fichier Microsoft Excel (.XLSX) ou fichier PDF. Vous pouvez ouvrir les fichiers CSV et XLSX avec des applications de feuille de calcul, telles que Microsoft Excel, et les fichiers PDF avec des lecteurs tels qu"Adobe Acrobat.' 
+---
+= Téléchargez les rapports dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez télécharger des rapports et enregistrer les données sur un lecteur local ou réseau en tant que fichier CSV (valeurs séparées par des virgules), fichier Microsoft Excel (.XLSX) ou fichier PDF. Vous pouvez ouvrir les fichiers CSV et XLSX avec des applications de feuille de calcul, telles que Microsoft Excel, et les fichiers PDF avec des lecteurs tels qu'Adobe Acrobat.
+
+.Étapes
+. Cliquez sur le bouton *Reports* pour télécharger le rapport dans l'un des formats suivants :
++
+[cols="2*"]
+|===
+| Choisir | À... 
+
+
+ a| 
+Télécharger CSV
+ a| 
+Enregistrez le rapport sous forme de fichier de valeurs séparées par des virgules (CSV).
+
+
+
+ a| 
+Télécharger PDF
+ a| 
+Enregistrez le rapport au format .pdf.
+
+
+
+ a| 
+Télécharger Excel
+ a| 
+Enregistrez le rapport au format Microsoft Excel (XLSX).
+
+|===
+

@@ -1,0 +1,42 @@
+---
+permalink: events/task_disable_alerts_for_resolved_and_obsolete_events.html 
+sidebar: sidebar 
+keywords: enable, disable, alerts, resolved, obsolete, events 
+summary: Configurez un paramètre global pour supprimer les alertes concernant les événements qui passent aux états Résolu et Obsolète. 
+---
+= Désactiver les alertes pour les événements résolus et obsolètes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Pour tous les événements que vous avez configurés pour envoyer des alertes, un message d'alerte est envoyé lorsque ces événements passent par tous les états disponibles : Nouveau, Résolu et Obsolète. Si vous ne souhaitez pas recevoir d'alertes pour les événements lorsqu'ils passent aux états Résolu et Obsolète, vous pouvez configurer un paramètre global pour supprimer ces alertes.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Par défaut, aucune alerte n'est envoyée pour les événements lorsqu'ils passent aux états Résolu et Obsolète.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration des alertes*.
+. Sur la page *Configuration des alertes*, effectuez l'une des actions suivantes à l'aide du curseur situé en regard de l'élément *Alertes pour les événements résolus et obsolètes* :
++
+|===
+| À... | Faites ceci... 
+
+
+ a| 
+Cessez d'envoyer des alertes lorsque les événements sont résolus ou deviennent obsolètes
+ a| 
+Déplacez le curseur vers la gauche
+
+
+
+ a| 
+Commencez à envoyer des alertes lorsque des événements sont résolus ou rendus obsolètes
+ a| 
+Déplacez le curseur vers la droite
+
+|===
+

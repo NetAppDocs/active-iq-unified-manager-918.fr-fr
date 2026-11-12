@@ -1,0 +1,35 @@
+---
+permalink: config/task_add_users.html 
+sidebar: sidebar 
+keywords: add, users 
+summary: 'Vous pouvez ajouter des utilisateurs locaux ou des utilisateurs de base de données à l"aide de la page Utilisateurs. Vous pouvez également ajouter des utilisateurs distants ou des groupes appartenant à un serveur d"authentification. Vous pouvez attribuer des rôles à ces utilisateurs et, en fonction des privilèges de ces rôles, les utilisateurs peuvent gérer les objets de stockage et les données avec Unified Manager, ou consulter les données dans une base de données.' 
+---
+= Ajouter des utilisateurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez ajouter des utilisateurs locaux ou des utilisateurs de base de données à l'aide de la page Utilisateurs. Vous pouvez également ajouter des utilisateurs distants ou des groupes appartenant à un serveur d'authentification. Vous pouvez attribuer des rôles à ces utilisateurs et, en fonction des privilèges de ces rôles, les utilisateurs peuvent gérer les objets de stockage et les données avec Unified Manager, ou consulter les données dans une base de données.
+
+.Avant de commencer
+* Vous devez posséder le rôle d'administrateur d'application.
+* Pour ajouter un utilisateur ou un groupe distant, vous devez avoir activé l'authentification à distance et configuré votre serveur d'authentification.
+* Si vous prévoyez de configurer l'authentification SAML afin qu'un fournisseur d'identité (IdP) authentifie les utilisateurs accédant à l'interface graphique, assurez-vous que ces utilisateurs sont définis comme des utilisateurs "`remote`".
++
+L'accès à l'interface utilisateur n'est pas autorisé pour les utilisateurs de type « `local` » ou « `maintenance` » lorsque l'authentification SAML est activée.
+
+
+
+Si vous ajoutez un groupe depuis Windows Active Directory, tous ses membres directs et ses sous-groupes imbriqués peuvent s'authentifier auprès d'Unified Manager, sauf si les sous-groupes imbriqués sont désactivés. Si vous ajoutez un groupe depuis OpenLDAP ou un autre service d'authentification, seuls les membres directs de ce groupe peuvent s'authentifier auprès d'Unified Manager.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Utilisateurs*.
+. Sur la page Utilisateurs, cliquez sur *Ajouter*.
+. Dans la boîte de dialogue Ajouter un utilisateur, sélectionnez le type d'utilisateur que vous souhaitez ajouter et saisissez les informations requises.
++
+Lors de la saisie des informations utilisateur requises, vous devez indiquer une adresse électronique unique pour cet utilisateur. Vous devez éviter d'indiquer des adresses électroniques partagées par plusieurs utilisateurs.
+
+. Cliquez sur *Add*.
+

@@ -1,0 +1,26 @@
+---
+permalink: config/task_restart_unified_manager_virtual_machine.html 
+sidebar: sidebar 
+keywords: restart, unified manager, virtual, machine 
+summary: 'Vous pouvez redémarrer la machine virtuelle depuis la console de maintenance d"Unified Manager. Vous devez redémarrer après avoir généré un nouveau certificat de sécurité ou en cas de problème avec la machine virtuelle.' 
+---
+= Redémarrez la machine virtuelle Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez redémarrer la machine virtuelle depuis la console de maintenance d'Unified Manager. Vous devez redémarrer après avoir généré un nouveau certificat de sécurité ou en cas de problème avec la machine virtuelle.
+
+.Avant de commencer
+L'appliance virtuelle est allumée.
+
+Vous êtes connecté à la console de maintenance en tant qu'utilisateur de maintenance.
+
+Vous pouvez également redémarrer la machine virtuelle depuis vSphere à l'aide de l'option *Restart Guest*. Consultez la documentation VMware pour plus d'informations.
+
+.Étapes
+. Accédez à la console de maintenance.
+. Sélectionnez *Configuration système* > *Redémarrer la machine virtuelle*.
+

@@ -1,0 +1,61 @@
+---
+permalink: events/task_acknowledge_and_resolve_events.html 
+sidebar: sidebar 
+keywords: acknowledge, resolve, events 
+summary: 'Vous devez accuser réception d"un événement avant de commencer à travailler sur le problème qui l"a généré afin de ne pas recevoir de notifications d"alerte répétées. Après avoir pris des mesures correctives pour un événement particulier, vous devez marquer l"événement comme résolu.' 
+---
+= Accuser réception et résoudre les événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous devez accuser réception d'un événement avant de commencer à travailler sur le problème qui l'a généré afin de ne pas recevoir de notifications d'alerte répétées. Après avoir pris des mesures correctives pour un événement particulier, vous devez marquer l'événement comme résolu.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Vous pouvez acquitter et résoudre plusieurs événements simultanément.
+
+[NOTE]
+====
+Vous ne pouvez pas acquitter les événements d'information.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion des événements*.
+. À partir de la liste des événements, effectuez les actions suivantes pour accuser réception des événements :
++
+|===
+| Si vous voulez... | Faites ceci... 
+
+
+ a| 
+Accuser réception et marquer un événement comme résolu
+ a| 
+.. Cliquez sur le nom de l'événement.
+.. Sur la page des détails de l'événement, déterminez la cause de celui-ci.
+.. Cliquez sur *Acknowledge*.
+.. Prenez les mesures correctives appropriées.
+.. Cliquez sur *Marquer comme résolu*.
+
+
+
+
+ a| 
+Accuser réception et marquer plusieurs événements comme résolus
+ a| 
+.. Déterminez la cause des événements à partir de la page de détails de l'événement correspondante.
+.. Sélectionnez les événements.
+.. Cliquez sur *Acknowledge*.
+.. Prenez les mesures correctives appropriées.
+.. Cliquez sur *Marquer comme résolu*.
+
+
+|===
++
+Une fois l'événement marqué comme résolu, il est déplacé vers la liste des événements résolus.
+
+. *Facultatif*: Dans la zone *Notes and Updates*, ajoutez une note sur la façon dont vous avez traité l’événement, puis cliquez sur *Post*.
+

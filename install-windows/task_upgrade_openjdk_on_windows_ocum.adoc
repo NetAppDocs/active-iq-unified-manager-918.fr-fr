@@ -1,0 +1,45 @@
+---
+permalink: install-windows/task_upgrade_openjdk_on_windows_ocum.html 
+sidebar: sidebar 
+keywords: openjdk, jre, upgrade 
+summary: 'Vous pouvez mettre à niveau OpenJDK vers une version plus récente sur le serveur Windows sur lequel Unified Manager est installé afin d"obtenir des correctifs pour les failles de sécurité.' 
+---
+= Mettez à niveau OpenJDK sous Windows pour Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez mettre à niveau OpenJDK vers une version plus récente sur le serveur Windows sur lequel Unified Manager est installé afin d'obtenir des correctifs pour les failles de sécurité.
+
+.Avant de commencer
+Vous devez disposer des privilèges d'administrateur Windows sur le système où Unified Manager est installé.
+
+Vous pouvez mettre à jour les versions d'OpenJDK au sein d'une même famille de versions. Par exemple, vous pouvez passer d'OpenJDK 11.0.16 à OpenJDK 11.0.18, mais vous ne pouvez pas passer directement d'OpenJDK 11 à OpenJDK 12.
+
+.Étapes
+. Connectez-vous en tant qu'utilisateur administrateur sur la machine hôte de Unified Manager.
+. Téléchargez la version appropriée d'OpenJDK (64 bits) depuis le site d'OpenJDK sur le système cible.
++
+Par exemple, téléchargez le  `jdk-17.0.15_windows-x64_bin.zip` fichier depuis link:https://www.oracle.com/java/technologies/javase/jdk17-0-13-later-archive-downloads.html["la page de téléchargement des archives d'Oracle Java SE 17"^].
+
++
+
+NOTE: Un compte Oracle est requis pour télécharger le fichier. Si vous n’avez pas de compte Oracle, accédez à link:https://signon.oracle.com/signin["la page de connexion au compte Oracle"] pour en créer un.
+
+. Utilisez la console des services Windows pour arrêter les services Unified Manager suivants :
++
+** Service d'acquisition NetApp Active IQ (Ocie-au)
+** NetApp Service du serveur de gestion Active IQ (Oncommandsvc)
+
+
+. Développez le `zip` fichier.
+. Copiez les répertoires et les fichiers du répertoire résultant `jdk` (par exemple, `jdk-11.0.18` vers l’emplacement où Java est installé. Exemple : `C:\Program Files\NetApp\JDK\`
+. Démarrez les services Unified Manager à l’aide de la console Windows Services :
++
+** NetApp Service du serveur de gestion Active IQ (Oncommandsvc)
+** Service d'acquisition NetApp Active IQ (Ocie-au)
+
+
+

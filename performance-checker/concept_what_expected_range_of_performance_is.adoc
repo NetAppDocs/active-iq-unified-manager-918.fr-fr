@@ -1,0 +1,33 @@
+---
+permalink: performance-checker/concept_what_expected_range_of_performance_is.html 
+sidebar: sidebar 
+keywords: expected, range, performance, latency, forecast, formed 
+summary: La prévision de latence est une estimation des valeurs de performance minimales et maximales attendues à un instant précis. Pour la latence du workload, les valeurs maximales constituent le seuil de performance. Lorsque la valeur réelle dépasse ce seuil, Unified Manager déclenche un événement de performance dynamique. 
+---
+= Comprendre comment Active IQ Unified Manager calcule la plage de performances attendue
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La prévision de latence est une estimation des valeurs de performance minimales et maximales attendues à un instant précis. Pour la latence du workload, les valeurs maximales constituent le seuil de performance. Lorsque la valeur réelle dépasse ce seuil, Unified Manager déclenche un événement de performance dynamique.
+
+Par exemple, pendant les heures de bureau normales, entre 9 h et 17 h, la plupart des employés consultent leurs courriels entre 9 h et 10 h 30. L’augmentation de la demande sur les serveurs de messagerie entraîne une hausse de l’activité du workload sur le stockage back-end pendant cette période. Les employés peuvent alors constater un temps de réponse lent de leurs clients de messagerie.
+
+Pendant la pause déjeuner, entre 12 h 00 et 13 h 00, et en fin de journée après 17 h 00, la plupart des employés sont généralement loin de leur ordinateur. La charge sur les serveurs de messagerie diminue alors généralement, ce qui réduit aussi la demande sur le stockage back-end. Il peut également y avoir des opérations de workload planifiées, telles que des sauvegardes de stockage ou des analyses antivirus, qui démarrent après 17 h 00 et augmentent l'activité sur le stockage back-end.
+
+Sur plusieurs jours, l’augmentation et la diminution de l’activité du workload déterminent la plage attendue d’activité (prévision de latence), avec des limites supérieure et inférieure pour un workload. Lorsque l’activité réelle du workload d’un objet se situe en dehors des limites supérieure ou inférieure et reste en dehors de ces limites pendant un certain temps, cela peut indiquer que l’objet est surutilisé ou sous-utilisé.
+
+
+
+[[how-the-latency-forecast-is-formed]]
+== Comment la prévision de latence est établie
+
+Unified Manager doit collecter un minimum de 3 jours d’activité de workload avant de pouvoir commencer son analyse et avant que la prévision de latence pour le temps de réponse des E/S puisse être affichée dans la GUI. La collecte de données minimale requise ne tient pas compte de toutes les modifications résultant de l’activité du workload. Après avoir collecté les 3 premiers jours d’activité, Unified Manager ajuste la prévision de latence toutes les 24 heures à 00:00 afin de refléter les modifications de l’activité du workload et d’établir un seuil de performance dynamique plus précis.
+
+[NOTE]
+====
+Le passage à l'heure d'été modifie l'heure système, ce qui affecte les prévisions de latence des statistiques de performance des workloads surveillés. Unified Manager commence immédiatement à corriger la prévision de latence, ce qui prend environ 15 jours. Pendant cette période, vous pouvez continuer à utiliser Unified Manager, mais comme Unified Manager utilise la prévision de latence pour détecter les événements dynamiques, certains événements peuvent ne pas être exacts. Les événements détectés avant le changement d'heure ne sont pas affectés.
+
+====

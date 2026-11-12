@@ -1,0 +1,25 @@
+---
+permalink: health-checker/task_delete_group_actions.html 
+sidebar: sidebar 
+keywords: delete, group actions 
+summary: 'Vous pouvez supprimer une action de groupe depuis Unified Manager lorsque cette action de groupe n"est plus nécessaire.' 
+---
+= Supprimer les actions de groupe dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer une action de groupe depuis Unified Manager lorsque cette action de groupe n'est plus nécessaire.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Lorsque vous supprimez l'action de groupe associée au seuil d'intégrité du volume, les seuils globaux sont appliqués aux objets de stockage de ce groupe. Les seuils d'intégrité définis au niveau de l'objet de stockage ne sont pas affectés.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Groupes*.
+. Dans l'onglet *Actions de groupe*, sélectionnez l'action de groupe que vous souhaitez supprimer, puis cliquez sur *Supprimer*.
+. Dans la boîte de dialogue *Avertissement*, confirmez la suppression en cliquant sur *Oui*.
+

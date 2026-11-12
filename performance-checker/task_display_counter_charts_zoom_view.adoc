@@ -1,0 +1,21 @@
+---
+permalink: performance-checker/task_display_counter_charts_zoom_view.html 
+sidebar: sidebar 
+keywords: display, counter charts, zoom, view 
+summary: 'L"affichage zoom des graphiques de compteur offre un niveau de détail plus fin pour le graphique de compteur sélectionné et sa chronologie associée. Ce zoom permet d"agrandir les données du graphique de compteur, offrant ainsi une vision plus précise des événements de performance et de leurs causes sous-jacentes.' 
+---
+= Afficher la vue zoom des graphiques de compteurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'affichage zoom des graphiques de compteur offre un niveau de détail plus fin pour le graphique de compteur sélectionné et sa chronologie associée. Ce zoom permet d'agrandir les données du graphique de compteur, offrant ainsi une vision plus précise des événements de performance et de leurs causes sous-jacentes.
+
+Vous pouvez afficher la vue de zoom des graphiques de compteur pour n'importe quel graphique de compteur.
+
+.Étapes
+. Cliquez sur *Zoom View* pour ouvrir le graphique sélectionné dans une nouvelle fenêtre de navigateur.
+. Si vous consultez un graphique de répartition puis cliquez sur *Zoom View*, le graphique de répartition s’affiche dans *Zoom View*. Vous pouvez sélectionner *Total* dans *Zoom View* si vous souhaitez modifier l’option d’affichage.
+

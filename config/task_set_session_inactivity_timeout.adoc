@@ -1,0 +1,48 @@
+---
+permalink: config/task_set_session_inactivity_timeout.html 
+sidebar: sidebar 
+keywords: inactivity, timeout 
+summary: 'Vous pouvez spécifier la valeur du délai d"inactivité pour Unified Manager afin que la session se termine automatiquement après un certain temps. Par défaut, ce délai est défini sur 4 320 minutes (72 heures).' 
+---
+= Définissez le délai d'inactivité de la session dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez configurer le délai d'inactivité de Unified Manager pour que la session se termine automatiquement après une certaine période d'inactivité. Par défaut, ce délai est de 4 320 minutes (72 heures).
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Ce paramètre affecte toutes les sessions utilisateur connectées.
+
+[NOTE]
+====
+Cette option n'est pas disponible si vous avez activé l'authentification Security Assertion Markup Language (SAML).
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Paramètres des fonctionnalités*.
+. Sur la page *Paramètres des fonctionnalités*, spécifiez le délai d'inactivité en choisissant l'une des options suivantes :
++
+[cols="2*"]
+|===
+| Si vous voulez... | Ensuite, faites ceci... 
+
+
+ a| 
+Ne définissez aucun délai d'expiration afin que la session ne se ferme jamais automatiquement
+ a| 
+Dans le panneau *Délai d'inactivité*, déplacez le curseur vers la gauche (désactivé) et cliquez sur *Appliquer*.
+
+
+
+ a| 
+Définissez un nombre précis de minutes comme valeur du délai d'expiration
+ a| 
+Dans le panneau *Délai d'inactivité*, déplacez le curseur vers la droite (activé), spécifiez la valeur du délai d'inactivité en minutes et cliquez sur *Appliquer*.
+
+|===
+

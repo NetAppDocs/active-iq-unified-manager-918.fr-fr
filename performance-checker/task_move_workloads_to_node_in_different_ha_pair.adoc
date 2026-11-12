@@ -1,0 +1,95 @@
+---
+permalink: performance-checker/task_move_workloads_to_node_in_different_ha_pair.html 
+sidebar: sidebar 
+keywords: move, workloads, node, different, ha pair 
+summary: 'Vous pouvez utiliser Unified Manager pour identifier un agrégat sur un nœud d"une autre paire haute disponibilité (HA) disposant de plus de capacité de performance disponible que la paire haute disponibilité sur laquelle vos workloads s"exécutent actuellement. Vous pouvez ensuite déplacer les volumes sélectionnés vers des agrégats de la nouvelle paire haute disponibilité.' 
+---
+= Déplacez les charges de travail vers un nœud d'une autre paire haute disponibilité dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour identifier un agrégat sur un nœud d'une autre paire haute disponibilité (HA) disposant de plus de capacité de performance disponible que la paire haute disponibilité sur laquelle vos workloads s'exécutent actuellement. Vous pouvez ensuite déplacer les volumes sélectionnés vers des agrégats de la nouvelle paire haute disponibilité.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Votre cluster doit comporter au minimum deux paires haute disponibilité
++
+Vous ne pouvez pas utiliser cette procédure de correction si votre cluster ne comporte qu'une seule paire haute disponibilité.
+
+* Vous devez avoir noté les noms des deux nœuds de la paire haute disponibilité qui présentent actuellement un problème de performances.
+* Vous devez avoir enregistré la date et l'heure auxquelles les nœuds ont reçu l'événement de performance.
+* Unified Manager doit avoir collecté et analysé des données de performance pendant un mois ou plus.
+
+
+Le déplacement de workloads à hautes performances vers un agrégat sur un nœud disposant d’une plus grande capacité de performance disponible permet aux workloads des deux nœuds de fonctionner plus efficacement. Cette procédure vous aide à identifier les ressources suivantes afin que vous puissiez déplacer des workloads à hautes performances vers un nœud disposant d’une plus grande capacité de performance disponible sur une autre paire haute disponibilité :
+
+* Les nœuds d’une autre paire haute disponibilité sur le même cluster qui disposent de la plus grande capacité de performance disponible
+* Les agrégats sur les nouveaux nœuds qui ont la plus grande capacité de performances disponible
+* Les volumes les plus performants sur les nœuds actuels
+
+
+.Étapes
+. Identifiez les nœuds qui font partie d’une paire haute disponibilité différente sur le même cluster :
++
+.. Sur la page *Détails de l'événement*, cliquez sur le nom du cluster sur lequel se trouvent les nœuds.
++
+Les détails du cluster sont affichés sur la page de destination Performance/Cluster.
+
+.. Sur la page *Résumé*, cliquez sur *Nœuds* dans le volet *Objets gérés*.
++
+La liste des nœuds de ce cluster est affichée dans la vue Performances : Tous les nœuds.
+
+.. Notez les noms des nœuds qui appartiennent à des paires haute disponibilité différentes de la paire haute disponibilité qui rencontre actuellement un problème de performance.
+
+
+. Identifiez, dans la nouvelle paire haute disponibilité, le nœud qui dispose de la plus grande capacité de performances disponible :
++
+.. Dans la vue *Performances : Tous les nœuds*, cliquez sur la colonne *Capacité de performance utilisée* pour trier les nœuds par pourcentage d’utilisation le plus faible.
++
+Ceci fournit une liste de nœuds potentiels vers lesquels vous pourriez déplacer des workloads.
+
+.. Notez le nom du nœud sur une autre paire haute disponibilité vers lequel vous souhaitez déplacer les workloads.
+
+
+. Identifiez un agrégat sur le nouveau nœud qui dispose de la plus grande capacité de performances disponible :
++
+.. Dans la vue *Performances : Tous les nœuds*, cliquez sur le nœud.
++
+Les détails du nœud sont affichés dans la page Performance/Node Explorer.
+
+.. Dans le menu *Affichage et comparaison*, sélectionnez *Agrégats sur ce nœud*.
++
+Les agrégats de ce nœud sont affichés dans la grille.
+
+.. Cliquez sur la colonne *Capacité de performance utilisée* pour trier les agrégats du moins utilisé au plus utilisé.
++
+Cela fournit une liste des agrégats potentiels vers lesquels vous pourriez déplacer des workloads.
+
+.. Notez le nom de l'agrégat vers lequel vous souhaitez déplacer les workloads.
+
+
+. Identifiez les workloads les plus performants parmi les nœuds ayant reçu l'événement :
++
+.. Retournez à la page des détails de l’*Event* pour l’événement.
+.. Dans le champ *Volumes affectés*, cliquez sur le lien correspondant au nombre de volumes pour le premier nœud.
++
+La vue « Performances : Tous les volumes » affiche une liste filtrée des volumes présents sur ce nœud.
+
+.. Cliquez sur la colonne *Capacité totale* pour trier les volumes selon l'espace alloué le plus important.
++
+Cela fournit une liste des volumes potentiels que vous souhaiterez peut-être déplacer.
+
+.. Notez les noms des volumes que vous souhaitez déplacer, ainsi que les noms des agrégats actuels sur lesquels ils se trouvent.
+.. Effectuez les étapes 4c et 4d pour le deuxième nœud qui faisait partie de cet événement afin d'identifier les volumes possibles que vous souhaitez également déplacer à partir de ce nœud.
+
+
+. Déplacez les volumes vers les agrégats que vous avez identifiés comme disposant de la plus grande capacité de performances disponible sur le nouveau nœud.
++
+Vous pouvez effectuer l'opération de déplacement à l'aide de ONTAP System Manager, OnCommand Workflow Automation, des commandes ONTAP ou d'une combinaison de ces outils.
+
+
+
+Après quelques jours, vous pourrez vérifier si vous recevez le même type d'événements de ce nœud ou de cet agrégat.

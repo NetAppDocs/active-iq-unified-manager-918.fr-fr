@@ -1,0 +1,54 @@
+---
+permalink: health-checker/task_view_node_list_and_details.html 
+sidebar: sidebar 
+keywords: view, node list, details 
+summary: Utilisez la vue « Tous les nœuds » sur la page « État » pour afficher la liste des nœuds de vos clusters, ainsi que la page « Détails de l’état du cluster » pour obtenir des informations détaillées sur les nœuds. 
+---
+= Consultez la liste des nœuds et les détails dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La vue « État : Tous les nœuds » permet d'afficher la liste des nœuds de vos clusters. La page « Détails du cluster/État » fournit des informations détaillées sur les nœuds du cluster surveillé.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Vous pouvez consulter des informations détaillées telles que l'état du nœud, le cluster auquel il appartient, les détails de capacité agrégée (utilisée et totale) et les détails de capacité brute (utilisable, disponible et totale). Vous pouvez également obtenir des informations sur les paires haute disponibilité, les baies de disques et les ports.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Nœuds*.
+. Dans la vue *Santé : Tous les nœuds*, cliquez sur le nœud dont vous souhaitez afficher les détails.
++
+Les informations détaillées du nœud sélectionné s'affichent dans la page des détails Cluster / Health. Le volet de gauche affiche la liste des paires haute disponibilité. Par défaut, le volet Détails HA est ouvert et affiche les détails de l'état HA ainsi que les événements liés à la paire haute disponibilité sélectionnée.
+
+. Pour afficher d'autres détails concernant le nœud, effectuez l'action appropriée :
++
+[cols="2*"]
+|===
+| Pour consulter... | Cliquez... 
+
+
+ a| 
+Détails sur les tiroirs disques
+ a| 
+*Baies de disques*.
+
+
+
+ a| 
+Informations relatives au port
+ a| 
+*Ports*.
+
+|===
+
+
+Pour plus d'informations, consultez :
+
+* link:../performance-checker/performance-view-all.html#performance-all-nodes-view["Performances: vue de tous les nœuds"]
+* link:../performance-checker/concept_view_node_and_aggregate_available_iops_values.html["Affichage des valeurs IOPS disponibles au niveau du nœud et de l'agrégat"]
+* link:../performance-checker/concept_view_node_and_aggregate_performance_capacity_used_values.html["Affichage des valeurs de capacité de performance utilisées des nœuds et des agrégats"]
+

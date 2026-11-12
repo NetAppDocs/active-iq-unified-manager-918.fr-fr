@@ -1,0 +1,54 @@
+---
+permalink: events/task_subscribe_to_ontap_ems_events.html 
+sidebar: sidebar 
+keywords: subscribe, ontap, ems events 
+summary: 'Vous pouvez vous abonner pour recevoir les événements Event Management System (EMS) générés par les systèmes sur lesquels le logiciel ONTAP est installé. Un sous-ensemble des événements EMS est automatiquement signalé à Unified Manager, mais d"autres événements EMS ne sont signalés que si vous vous êtes abonné à ces événements.' 
+---
+= Abonnez-vous aux événements ONTAP EMS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez vous abonner pour recevoir les événements Event Management System (EMS) générés par les systèmes sur lesquels le logiciel ONTAP est installé. Un sous-ensemble des événements EMS est automatiquement signalé à Unified Manager, mais d'autres événements EMS ne sont signalés que si vous vous êtes abonné à ces événements.
+
+.Avant de commencer
+Ne vous abonnez pas aux événements EMS déjà ajoutés automatiquement à Unified Manager, car cela peut engendrer de la confusion si vous recevez deux événements concernant le même problème.
+
+Vous pouvez vous abonner à n’importe quel nombre d’événements EMS. Tous les événements auxquels vous vous abonnez sont validés, et seuls les événements validés sont appliqués aux clusters que vous surveillez dans Unified Manager. Le _ONTAP 9 EMS Event Catalog_ fournit des informations détaillées sur tous les messages EMS pour la version spécifiée du logiciel ONTAP 9. Repérez la version appropriée de _EMS Event Catalog_ sur la page ONTAP 9 Product Documentation pour obtenir la liste des événements applicables.
+
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62286["Bibliothèque de produits ONTAP 9"]
+
+Vous pouvez configurer des alertes pour les événements EMS ONTAP auxquels vous êtes abonné et créer des scripts personnalisés à exécuter pour ces événements.
+
+[NOTE]
+====
+Si vous ne recevez pas les événements EMS ONTAP auxquels vous êtes abonné, il se peut qu'un problème de configuration DNS du cluster empêche le cluster d'atteindre le serveur Unified Manager. Pour résoudre ce problème, l'administrateur du cluster doit corriger la configuration DNS du cluster, puis redémarrer Unified Manager. Cette opération permettra de transmettre les événements EMS en attente au serveur Unified Manager.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration de l'événement*.
+. Sur la page de configuration de l'événement, cliquez sur le bouton *S'abonner aux événements EMS*.
+. Dans la boîte de dialogue S'abonner aux événements EMS, saisissez le nom de l'événement EMS ONTAP auquel vous souhaitez vous abonner.
++
+Pour afficher les noms des événements EMS auxquels vous pouvez vous abonner, depuis le shell du cluster ONTAP, vous pouvez utiliser la commande  `event route show` (avant ONTAP 9) ou la commande  `event catalog show` (ONTAP 9 ou version ultérieure).
+
++
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Infrastructure_Management/OnCommand_Suite/How_to_configure_and_receive_alerts_from_ONTAP_EMS_Event_Subscription_in_Active_IQ_Unified_Manager["Comment configurer et recevoir des alertes de ONTAP EMS Event Subscription dans Active IQ Unified Manager"]
+
+. Cliquez sur *Add*.
++
+L'événement EMS est ajouté à la liste Subscribed EMS events, mais la colonne Applicable to Cluster affiche l'état « `Unknown` » pour l'événement EMS que vous avez ajouté.
+
+. Cliquez sur *Enregistrer et fermer* pour enregistrer l'abonnement à l'événement EMS dans le cluster.
+. Cliquez à nouveau sur *S'abonner aux événements EMS*.
++
+Le statut "`Yes`" apparaît dans la colonne Applicable to Cluster pour l’événement EMS que vous avez ajouté.
+
++
+Si le statut n'est pas « `Yes` », vérifiez l'orthographe du nom de l'événement EMS ONTAP. Si le nom est saisi incorrectement, vous devez supprimer l'événement incorrect, puis ajouter à nouveau l'événement.
+
+
+
+Lorsqu'un événement ONTAP EMS se produit, l'événement s'affiche sur la page Événements. Vous pouvez sélectionner l'événement pour afficher les détails de l'événement EMS dans la page Détails de l'événement. Vous pouvez également gérer le traitement de l'événement ou créer des alertes pour l'événement.

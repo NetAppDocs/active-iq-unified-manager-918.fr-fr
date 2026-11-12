@@ -1,0 +1,88 @@
+---
+permalink: reporting/task_create_report_to_view_available_volume_capacity_charts.html 
+sidebar: sidebar 
+keywords: create, report, view, available, volume, capacity, charts 
+summary: Vous pouvez créer un rapport pour analyser la capacité de volume disponible dans un graphique Excel. 
+---
+= Créez un rapport pour afficher les graphiques de capacité de volume disponibles dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un rapport pour analyser la capacité de volume disponible dans un graphique Excel.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes suivantes pour ouvrir une vue « Health: All Volumes », télécharger la vue dans Excel, créer un graphique de capacité disponible, téléverser le fichier Excel personnalisé et planifier le rapport final.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
+. Sélectionnez *Reports* > *Download Excel*.
++
+image::../media/download_excel_menu.png[Capture d'écran de l'interface utilisateur montrant comment télécharger un fichier Excel à partir des rapports.]
+
++
+Selon votre navigateur, vous devrez peut-être cliquer sur *OK* pour enregistrer le fichier.
+
+. Si nécessaire, cliquez sur *Activer la modification*.
+. Dans Excel, ouvrez le fichier téléchargé.
+. Sur la `data` feuille, sélectionnez les données que vous souhaitez utiliser dans les colonnes `Volume` et `Available Data` %.
+. Dans le menu *Insérer*, sélectionnez un `3-D piechart.`
++
+Le graphique indique les volumes présentant le plus grand espace disponible. Il figure sur la fiche technique.
+
++
+[NOTE]
+====
+Selon la configuration de votre réseau, la sélection de colonnes entières ou d'un trop grand nombre de lignes de données peut rendre votre graphique circulaire illisible. Cet exemple utilise un graphique circulaire 3-D, mais vous pouvez utiliser n'importe quel type de graphique. Choisissez le graphique qui représente le mieux les données que vous souhaitez recueillir.
+
+====
+. Intitulez le graphique *Capacité disponible*.
+. Faites un clic droit sur le graphique et sélectionnez *Déplacer le graphique*.
+. Sélectionnez *Nouvelle feuille* et nommez-la *Graphiques des volumes de stockage*.
++
+[NOTE]
+====
+Assurez-vous que la nouvelle feuille apparaisse après les feuilles d'informations et de données.
+
+====
++
+image::../media/move_chart.png[Capture d'écran de l'interface utilisateur montrant comment nommer une nouvelle feuille.]
+
+. Les menus *Design* et *Format*, disponibles lorsque le graphique est sélectionné, vous permettent de personnaliser son apparence.
+. Une fois que vous êtes satisfait, enregistrez le fichier avec vos modifications.
+. Dans Unified Manager, sélectionnez *Rapports* > *Importer Excel*.
++
+[NOTE]
+====
+Assurez-vous d'être dans la même vue que celle où vous avez téléchargé le fichier Excel.
+
+====
+. Sélectionnez le fichier Excel que vous avez modifié.
+. Cliquez sur *Ouvrir*.
+. Cliquez sur *Submit*.
++
+Une coche apparaît à côté de l'élément de menu *Rapports* > *Importer Excel*.
+
++
+image::../media/upload_excel.png[Capture d'écran de l'interface utilisateur montrant comment importer des fichiers excel dans les rapports.]
+
+. Cliquez sur *Scheduled Reports*.
+. Cliquez sur *Ajouter une planification* pour ajouter une nouvelle ligne à la page *Planifications des rapports* afin de définir les caractéristiques de la planification du nouveau rapport.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+[NOTE]
+====
+Sélectionnez le format *XLSX* pour le rapport.
+
+====
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pourriez envisager d’équilibrer la charge sur vos volumes.

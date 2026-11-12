@@ -1,0 +1,68 @@
+---
+permalink: performance-checker/task_define_list_of_correlated_objects_for_comparison_graphing.html 
+sidebar: sidebar 
+keywords: defining, list, correlated, objects, comparison, graphing 
+summary: 'Dans le volet Graphique de compteurs, vous pouvez définir une liste d"objets corrélés pour comparer les données et les performances. Par exemple, si votre machine virtuelle de stockage (SVM) rencontre un problème de performances, vous pouvez comparer tous les volumes de la SVM afin d"identifier celui qui pourrait être à l"origine du problème.' 
+---
+= Définissez des objets corrélés pour la création de graphiques de comparaison dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dans le volet Graphique de compteurs, vous pouvez définir une liste d'objets corrélés pour comparer les données et les performances. Par exemple, si votre machine virtuelle de stockage (SVM) rencontre un problème de performances, vous pouvez comparer tous les volumes de la SVM afin d'identifier celui qui pourrait être à l'origine du problème.
+
+Vous pouvez ajouter n'importe quel objet de la grille des objets corrélés aux volets Comparing et Counter Chart. Cela vous permet d'afficher et de comparer les données de plusieurs objets ainsi qu'avec l'objet racine. Vous pouvez ajouter et supprimer des objets dans la grille des objets corrélés ; toutefois, l'objet racine du volet Comparing ne peut pas être supprimé.
+
+[NOTE]
+====
+L'ajout de nombreux objets au volet de comparaison peut nuire aux performances. Pour maintenir les performances, vous devez sélectionner un nombre limité de graphiques pour la comparaison des données.
+
+====
+.Étapes
+. Dans la grille des objets, repérez l'objet que vous souhaitez ajouter, puis cliquez sur le bouton *Ajouter*.
++
+Le bouton *Add* devient gris et l’objet est ajouté à la liste des objets supplémentaires dans le volet Comparing. Les données de l’objet sont ajoutées aux graphiques dans les volets Counter Charts. La couleur de l’icône en forme d’œil (image:../media/eye_icon.gif[""]) de l’objet correspond à la couleur de la courbe de tendance des données de l’objet dans les graphiques.
+
+. *Facultatif:* Masquer ou afficher les données pour les objets sélectionnés:
++
+|===
+| Pour ce faire... | Prenez cette mesure... 
+
+
+ a| 
+Masquer un objet sélectionné
+ a| 
+Cliquez sur l'icône en forme d'œil (image:../media/eye_icon.gif[""]) de l'objet sélectionné dans le volet Comparaison. Les données de l'objet sont masquées et l'icône en forme d'œil de cet objet devient grise.
+
+
+
+ a| 
+Afficher un objet caché
+ a| 
+Cliquez sur l'icône en forme d'œil gris de l'objet sélectionné dans le volet Comparaison.
+
+L'icône en forme d'œil reprend sa couleur d'origine et les données de l'objet sont réintégrées dans les graphiques du volet Graphiques de compteurs.
+
+|===
+. *Facultatif :* Supprimez les objets sélectionnés du volet *Comparaison*:
++
+|===
+| Pour ce faire... | Prenez cette mesure... 
+
+
+ a| 
+Supprimer un objet sélectionné
+ a| 
+Dans le volet de comparaison, survolez le nom de l'objet sélectionné pour afficher le bouton Supprimer l'objet (*X*), puis cliquez dessus. L'objet est alors supprimé du volet de comparaison et ses données sont effacées des graphiques de compteurs.
+
+
+
+ a| 
+Supprimer tous les objets sélectionnés
+ a| 
+Cliquez sur le bouton Supprimer tous les objets (*X*) en haut du volet Comparaison. Tous les objets sélectionnés et leurs données sont supprimés, ne laissant que l'objet racine.
+
+|===
+

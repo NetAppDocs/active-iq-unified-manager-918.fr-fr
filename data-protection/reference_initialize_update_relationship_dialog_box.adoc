@@ -1,0 +1,88 @@
+---
+permalink: data-protection/reference_initialize_update_relationship_dialog_box.html 
+sidebar: sidebar 
+keywords: initialize, update, dialog box 
+summary: 'La boîte de dialogue Initialiser/Mettre à jour vous permet d"effectuer un premier transfert de base sur une nouvelle relation de protection, ou de mettre à jour une relation si elle est déjà initialisée et que vous souhaitez effectuer une mise à jour manuelle, non planifiée et incrémentale.' 
+---
+= Utilisez la boîte de dialogue Initialiser/Mettre à jour dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La boîte de dialogue Initialiser/Mettre à jour vous permet d'effectuer un premier transfert de base sur une nouvelle relation de protection, ou de mettre à jour une relation si elle est déjà initialisée et que vous souhaitez effectuer une mise à jour manuelle, non planifiée et incrémentale.
+
+
+
+[[transfer-options-tab]]
+== Onglet Options de transfert
+
+L'onglet Options de transfert vous permet de modifier la priorité d'initialisation d'un transfert et de modifier la bande passante utilisée pendant les transferts.
+
+* *Priorité de transfert*
++
+La priorité à laquelle le transfert est exécuté. Vous pouvez choisir entre Normale et Faible. Les relations avec des stratégies qui spécifient une priorité de transfert normale sont exécutées avant celles qui spécifient une priorité de transfert faible. Normale est sélectionnée par défaut.
+
+* *Taux de transfert maximal*
++
+Spécifie le débit maximal auquel les données sont transférées entre les clusters sur le réseau. Si vous choisissez de ne pas utiliser de débit de transfert maximal, le transfert de base entre les relations est illimité. Si vous sélectionnez plusieurs relations avec des débits de transfert maximaux différents, vous pouvez spécifier l'un des paramètres de débit de transfert maximal suivants :
+
++
+** Utilisez les valeurs spécifiées lors de la configuration ou de la modification de chaque relation
++
+Lorsqu'elle est sélectionnée, les opérations d'initialisation et de mise à jour utilisent le taux de transfert maximal spécifié lors de la création ou de la modification de chaque relation. Ce champ est disponible uniquement lors de l'initialisation ou de la mise à jour de plusieurs relations avec des taux de transfert différents.
+
+** Illimité
++
+Indique qu'il n'y a pas de limitation de bande passante pour les transferts entre les relations. Ce champ est disponible uniquement lors de l'initialisation ou de la mise à jour de plusieurs relations avec des débits de transfert différents.
+
+** Limiter la bande passante à
++
+Lorsque cette option est sélectionnée, la bande passante réseau est limitée à la valeur que vous spécifiez. Vous pouvez saisir une valeur numérique, puis sélectionner soit kilobytes per second (KBps), Megabytes per second (MBps), Gigabytes per second (GBps) ou Terabytes per second (TBps). Le débit de transfert maximal que vous spécifiez doit être supérieur à 1 KBps et inférieur à 4 TBps.
+
+
+
+
+
+
+
+[[source-snapshot-copies-tab]]
+== Onglet Copies Snapshot source
+
+L'onglet Source Snapshot Copies affiche les informations suivantes sur la copie Snapshot source utilisée pour le transfert de base :
+
+* *Volume source*
++
+Affiche les noms des volumes sources correspondants.
+
+* *Volume de destination*
++
+Affiche les noms des volumes de destination sélectionnés.
+
+* *Type de source*
++
+Affiche le type de volume. Ce type peut être Lecture/écriture ou protection des données.
+
+* *copie Snapshot*
++
+Affiche la copie Snapshot utilisée pour le transfert de données. Cliquer sur la valeur de la copie Snapshot affiche la boîte de dialogue « Sélectionner la copie Snapshot source », dans laquelle vous pouvez sélectionner une copie Snapshot spécifique pour votre transfert, selon le type de relation de protection dont vous disposez et l'opération que vous effectuez. L'option permettant de spécifier une autre copie Snapshot n'est pas disponible pour les sources de type protection des données.
+
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d'effectuer les tâches suivantes :
+
+* *Annuler*
++
+Annule vos sélections et ferme la boîte de dialogue Initialiser/Mettre à jour.
+
+* *Soumettre*
++
+Enregistre vos sélections et lance la tâche d'initialisation ou de mise à jour.
+
+

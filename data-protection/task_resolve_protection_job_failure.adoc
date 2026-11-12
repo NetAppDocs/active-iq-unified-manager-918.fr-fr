@@ -1,0 +1,36 @@
+---
+permalink: data-protection/task_resolve_protection_job_failure.html 
+sidebar: sidebar 
+keywords: resolve, protection, job failure 
+summary: Ce flux de travail illustre comment identifier et résoudre un échec de tâche de protection à partir du tableau de bord Unified Manager. 
+---
+= Résoudre un échec de tâche de protection dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Ce flux de travail illustre comment identifier et résoudre un échec de tâche de protection à partir du tableau de bord Unified Manager.
+
+.Avant de commencer
+Étant donné que certaines tâches de ce flux de travail nécessitent que vous vous connectiez avec le rôle Administrator, vous devez vous familiariser avec les rôles requis pour utiliser les différentes fonctionnalités.
+
+Dans ce scénario, vous accédez à la page Dashboard pour vérifier si vos tâches de protection présentent des problèmes. Dans la zone Incident de protection, vous remarquez qu'il existe un incident Job Terminated, indiquant une erreur Protection Job Failed sur un volume. Vous examinez cette erreur afin d'en déterminer la cause possible et la solution potentielle.
+
+.Étapes
+. Dans le panneau Protection Incidents de la zone Dashboard Unresolved Incidents and Risks, cliquez sur l'événement *Protection job failed*.
++
+[TIP]
+====
+Le texte lié à l'événement est écrit sous la forme `object_name:/object_name - Error Name`, par exemple `cluster2_src_svm:/cluster2_src_vol2 - Protection Job Failed`.
+
+====
++
+La page de détails de l'événement relatif à la tâche de protection ayant échoué s'affiche.
+
+. Consultez le message d'erreur dans le champ Cause de la zone *Summary* pour déterminer le problème et évaluer les actions correctives potentielles.
++
+Voir link:task_identify_problem_for_failed_protection_job.html["Identifier le problème et effectuer des actions correctives pour une tâche de protection ayant échoué"].
+
+

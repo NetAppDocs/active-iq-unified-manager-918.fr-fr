@@ -1,0 +1,35 @@
+---
+permalink: reporting/task_edit_scheduled_reports.html 
+sidebar: sidebar 
+keywords: editing, schedule, reports 
+summary: Une fois les rapports programmés, vous pouvez les modifier sur la page « Programmation des rapports ». 
+---
+= Modifier les rapports planifiés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une fois les rapports programmés, vous pouvez les modifier sur la page « Programmation des rapports ».
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Planification des rapports*.
++
+image::../media/scheduled_reports_2.gif[Capture d'écran de l'interface utilisateur montrant les rapports programmés.]
+
++
+[NOTE]
+====
+Si vous disposez des autorisations appropriées, vous pouvez modifier n'importe quel rapport et sa planification dans le système.
+
+====
+. Cliquez sur l’icône Plus image:../media/more_icon.gif[""] pour l’horaire que vous souhaitez modifier.
+. Cliquez sur *Modifier*.
+. Vous pouvez modifier le *Nom de la planification*, la *liste des destinataires*, la *Fréquence* et le *Format* de la planification du rapport.
+. Une fois terminé, cliquez sur la coche pour enregistrer vos modifications.
+

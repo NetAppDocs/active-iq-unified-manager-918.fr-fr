@@ -1,0 +1,70 @@
+---
+permalink: performance-checker/reference_what_data_does_workload_analyzer_display.html 
+sidebar: sidebar 
+keywords: workload analyzer, charts, display, data 
+summary: La page de l’analyseur de workload affiche des informations sur les événements en cours susceptibles d’affecter le workload, des recommandations pour résoudre le problème à l’origine de l’événement, ainsi que des graphiques permettant d’analyser l’historique des performances et de la capacité. 
+---
+= Comprendre les données de l'analyseur de charge de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page de l’analyseur de workload affiche des informations sur les événements en cours susceptibles d’affecter le workload, des recommandations pour résoudre le problème à l’origine de l’événement, ainsi que des graphiques permettant d’analyser l’historique des performances et de la capacité.
+
+En haut de la page, vous indiquez le nom du workload (volume ou LUN) que vous souhaitez analyser ainsi que la période pour laquelle vous souhaitez consulter les statistiques. Vous pouvez modifier cette période à tout moment si vous souhaitez afficher une période plus courte ou plus longue.
+
+Les autres zones de la page affichent les résultats de l'analyse ainsi que les graphiques de performance et de capacité.
+
+[NOTE]
+====
+Les graphiques de workload pour les LUN ne fournissent pas le même niveau de statistiques que ceux des volumes ; vous constaterez donc des différences lors de l’analyse de ces deux types de workloads.
+
+====
+* *Résumé des événements*
++
+Affiche un aperçu du nombre et des types d'événements survenus durant la période considérée. En cas d'événements relevant de différents domaines d'impact (par exemple, performance et capacité), ces informations sont affichées afin que vous puissiez sélectionner les détails du type d'événement qui vous intéresse. Cliquez sur le type d'événement pour afficher la liste des noms d'événements.
+
++
+S'il n'y a qu'un seul événement pendant la période concernée, une liste de recommandations pour résoudre le problème est fournie pour certains événements.
+
+* *Chronologie de l'événement*
++
+Affiche tous les événements survenus pendant la période spécifiée. Survolez chaque événement avec votre curseur pour afficher son nom.
+
++
+Si vous avez accédé à cette page en cliquant sur le bouton *Analyze Workload* depuis la page de détails de l'événement, l'icône de l'événement sélectionné apparaît en plus grand afin que vous puissiez identifier l'événement.
+
+* *Zone des graphiques de performance*
++
+Affiche des graphiques de latence, de débit (IOPS et Mo/s) et d'utilisation (pour le nœud et l'agrégat) en fonction de la période sélectionnée. Vous pouvez cliquer sur le lien « Afficher les détails des performances » pour afficher la page Performance Explorer du workload si vous souhaitez effectuer une analyse plus approfondie.
+
++
+** *Latency* affiche la latence du workload sur la période sélectionnée. Le graphique propose trois vues permettant de visualiser :
++
+*** Latence *totale*
+*** *Décomposition* de la latence (décomposée en lectures, écritures et autres processus)
+*** Latence des *composants du cluster* (décomposée par composant du cluster)
+
+
+
+
+
+
+Consultez link:concept_cluster_components_and_why_they_can_be_in_contention.html["Composants du cluster et raisons pour lesquelles ils peuvent être en conflit"] pour obtenir une description des composants du cluster affichés ici. ** *Débit* affiche à la fois les IOPS et le débit en Mo/s du workload sur la période sélectionnée. Le graphique comporte quatre vues qui vous permettent d’afficher : *** le débit *Total* *** le débit *Breakdown* (ventilé par lectures, écritures et autres processus) *** le *Cloud Throughput* (les Mo/s utilisés pour écrire des données dans le cloud et en lire à partir du cloud, pour les workloads qui hiérarchisent de la capacité vers le cloud) *** les *IOPS with Forecast* (une prévision des valeurs supérieure et inférieure du débit en IOPS attendues sur la période) Ce graphique affiche également les paramètres de seuil de débit maximal et minimal de la qualité de service (QoS), s’ils sont configurés, afin que vous puissiez voir où le système peut limiter intentionnellement le débit à l’aide de règles QoS. ** *Utilisation* affiche l’utilisation de l’agrégat et du nœud sur lesquels le workload s’exécute sur la période sélectionnée. Vous pouvez voir ici si votre agrégat ou votre nœud est surutilisé, ce qui peut entraîner une latence élevée. Lors de l’analyse des volumes FlexGroup, plusieurs nœuds et plusieurs agrégats sont répertoriés dans les graphiques d’utilisation.
+
+* *Zone du graphique de capacité*
++
+Affiche des graphiques de la capacité des données et de la capacité Snapshot pour le workload au cours du dernier mois.
+
++
+Pour les volumes, vous pouvez cliquer sur le lien « Afficher les détails de capacité » afin d’afficher la page « Détails de l’état » du workload si vous souhaitez effectuer une analyse plus approfondie. Les LUN ne fournissent pas ce lien, car il n’existe pas de page « Détails de l’état » pour les LUN.
+
++
+** *Vue Capacité* affiche l'espace total disponible alloué au workload et l'espace logique utilisé (après toutes les optimisations NetApp).
+** *Snapshot View* affiche l’espace total réservé aux copies Snapshot, ainsi que l’espace actuellement utilisé. Notez que les LUN ne fournissent pas de Snapshot View.
+** *Cloud Tier View* affiche la capacité utilisée dans le tier de performance local et dans le tier cloud. Ces graphiques incluent une estimation du temps restant avant que la capacité soit pleine pour ce workload. Ces informations sont basées sur l'historique d'utilisation et nécessitent un minimum de 10 jours de données. Lorsqu'il reste moins de 30 jours de capacité, Unified Manager identifie le stockage comme "`almost full`".
+
+
+

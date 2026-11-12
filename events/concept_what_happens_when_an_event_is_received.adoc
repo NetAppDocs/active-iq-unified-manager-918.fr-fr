@@ -1,0 +1,28 @@
+---
+permalink: events/concept_what_happens_when_an_event_is_received.html 
+sidebar: sidebar 
+keywords: happens, when, event, received 
+summary: 'Lorsque Unified Manager reçoit un événement, celui-ci s"affiche sur la page Dashboard, sur la page d"inventaire Event Management, dans les onglets Summary et Explorer de la page Cluster/Performance, et sur la page d"inventaire spécifique à l"objet (par exemple, la page d"inventaire Volumes/Health).' 
+---
+= Comprendre comment Active IQ Unified Manager gère un événement reçu
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque Unified Manager reçoit un événement, celui-ci s'affiche sur la page Dashboard, sur la page d'inventaire Event Management, dans les onglets Summary et Explorer de la page Cluster/Performance, et sur la page d'inventaire spécifique à l'objet (par exemple, la page d'inventaire Volumes/Health).
+
+Lorsque Unified Manager détecte plusieurs occurrences consécutives d'une même condition d'événement pour un même composant de cluster, il les considère comme un seul événement, et non comme des événements distincts. La durée de l'événement est incrémentée pour indiquer qu'il est toujours actif.
+
+Selon la configuration choisie dans la page « Configuration des alertes », vous pouvez informer d'autres utilisateurs de ces événements. L'alerte déclenche les actions suivantes :
+
+* Un courriel concernant l'événement peut être envoyé à tous les utilisateurs administrateurs de Unified Manager.
+* L'événement peut être envoyé à d'autres destinataires par courriel.
+* Un trap SNMP peut être envoyé au récepteur de traps.
+* Vous pouvez exécuter un script personnalisé pour effectuer une action.
+
+
+Ce flux de travail est illustré dans le diagramme suivant.
+
+image::../media/um_perf_threshold_event_flow.gif[Un diagramme illustrant le traitement des événements de seuil, de la collecte des compteurs à la notification par e-mail]

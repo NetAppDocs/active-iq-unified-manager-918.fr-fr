@@ -1,0 +1,18 @@
+---
+permalink: performance-checker/concept_check_for_client_or_network_issues.html 
+sidebar: sidebar 
+keywords: check, client, network, issues 
+summary: 'Lorsque les clients connectés aux volumes d"un cluster augmentent leurs requêtes d"E/S, le cluster doit fournir davantage d"efforts pour répondre à la demande. L"augmentation de la demande sur le cluster peut entraîner une contention au niveau d"un composant, accroître la latence des workloads qui l"utilisent et déclencher un événement dans Unified Manager.' 
+---
+= Comprendre comment les problèmes liés aux clients ou au réseau affectent les performances d'Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsque les clients connectés aux volumes d'un cluster augmentent leurs requêtes d'E/S, le cluster doit fournir davantage d'efforts pour répondre à la demande. L'augmentation de la demande sur le cluster peut entraîner une contention au niveau d'un composant, accroître la latence des workloads qui l'utilisent et déclencher un événement dans Unified Manager.
+
+Sur la page Détails de l'événement, la section Diagnostic système affiche les principaux workloads de volume utilisant le composant en contention. Si vous savez quel client accède à un volume particulier, vous pouvez accéder au client pour déterminer si le matériel du client ou une application ne fonctionne pas comme prévu, ou effectue plus de travail que d'habitude. Il se peut que vous deviez contacter l'administrateur du client ou le fournisseur de l'application pour obtenir de l'aide.
+
+Vous pouvez vérifier votre infrastructure réseau afin de déterminer s'il existe des problèmes matériels, des goulots d'étranglement ou des workloads concurrents susceptibles d'avoir ralenti les requêtes d'E/S entre le cluster et les clients connectés. Il se peut que vous deviez contacter votre administrateur réseau pour obtenir de l'aide.

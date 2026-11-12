@@ -1,0 +1,107 @@
+---
+permalink: api-automation/concept_manage_sep.html 
+sidebar: sidebar 
+keywords: manage, storage, efficiency, policy 
+summary: 'Vous pouvez consulter, créer, modifier et supprimer des politiques d"efficacité du stockage à l"aide des API du fournisseur de stockage.' 
+---
+= Gérez les politiques d'efficacité du stockage à l'aide des API dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter, créer, modifier et supprimer des politiques d'efficacité du stockage à l'aide des API du fournisseur de stockage.
+
+[NOTE]
+====
+Veuillez noter les points suivants :
+
+* Il n'est pas obligatoire d'attribuer une Storage Efficiency Policy lors de la création d'un workload sur Unified Manager.
+* Vous ne pouvez pas dissocier une stratégie d'efficacité du stockage d'un workload après qu'une stratégie lui a été attribuée.
+* Si un workload comporte des paramètres de stockage spécifiés sur des volumes ONTAP, tels que la déduplication et la compression, ces paramètres peuvent être remplacés par les paramètres spécifiés dans la stratégie d'efficacité du stockage que vous appliquez lorsque vous ajoutez les workloads de stockage dans Unified Manager.
+
+
+====
+
+
+[[view-storage-efficiency-policies]]
+== Consultez les politiques d'efficacité du stockage
+
+Vous pouvez utiliser la méthode suivante pour consulter les Storage Efficiency Policies avant de les affecter aux workloads de stockage. Cette API répertorie toutes les Storage Efficiency Policies définies par le système et créées par l'utilisateur, et récupère les attributs de toutes les Storage Efficiency Policies. Si vous souhaitez interroger une Storage Efficiency Policy spécifique, vous devez saisir l'ID unique de la stratégie afin d'en récupérer les détails.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+GET
+ a| 
+`/storage-provider/storage-efficiency-policies`
+
+`/storage-provider/storage-efficiency-policies/\{key}`
+
+|===
+
+
+[[add-storage-efficiency-policies]]
+== Ajouter des politiques d'efficacité du stockage
+
+Vous pouvez utiliser la méthode suivante pour créer des stratégies d'efficacité du stockage personnalisées et les affecter à vos workloads de stockage si les stratégies définies par le système ne répondent pas aux exigences de provisionnement de vos workloads de stockage. Saisissez les détails de la stratégie d'efficacité du stockage que vous souhaitez créer comme paramètres d'entrée.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+POST
+ a| 
+`/storage-provider/storage-efficiency-policies`
+
+|===
+
+
+[[delete-storage-efficiency-policies]]
+== Supprimer les politiques d'efficacité du stockage
+
+Vous pouvez utiliser la méthode suivante pour supprimer une Storage Efficiency Policy spécifique. Vous ne pouvez pas supprimer une Storage Efficiency Policy si elle est affectée à un workload, ou s'il s'agit de la seule Storage Efficiency Policy disponible. Vous devez fournir l'ID unique de la Storage Efficiency Policy comme paramètre d'entrée pour supprimer une Storage Efficiency Policy particulière.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+SUPPRIMER
+ a| 
+`/storage-provider/storage-efficiency-policies/\{key}`
+
+|===
+
+
+[[modify-storage-efficiency-policies]]
+== Modifier les politiques d'efficacité du stockage
+
+Vous pouvez utiliser la méthode suivante pour modifier une stratégie d'efficacité du stockage et mettre à jour ses propriétés. Vous ne pouvez pas modifier une stratégie d'efficacité du stockage définie par le système ou attribuée à un workload. Pour modifier une stratégie d'efficacité du stockage particulière, vous devez fournir son identifiant unique. De plus, vous devez fournir la propriété que vous souhaitez mettre à jour, ainsi que sa valeur.
+
+[cols="3*"]
+|===
+| Catégorie | Verbe HTTP | Chemin 
+
+
+ a| 
+fournisseur de stockage
+ a| 
+CORRECTIF
+ a| 
+`/storage-provider/storage-efficiency-policies/\{key}`
+
+|===

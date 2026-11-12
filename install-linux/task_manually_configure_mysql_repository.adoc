@@ -1,0 +1,60 @@
+---
+permalink: install-linux/task_manually_configure_mysql_repository.html 
+sidebar: sidebar 
+keywords: manually configure mysql repository, mysql key, keys update 
+summary: 'Si le système sur lequel vous installez Unified Manager n"a pas accès au référentiel MySQL Community Edition, vous devez télécharger et configurer manuellement ce référentiel pour que l"installation réussisse.' 
+---
+= Configurez le référentiel MySQL pour Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si le système sur lequel vous installez Unified Manager n'a pas accès au référentiel MySQL Community Edition, vous devez télécharger et configurer manuellement ce référentiel pour que l'installation réussisse.
+
+Le dépôt MySQL donne accès au logiciel MySQL requis qui doit être installé sur votre système.
+
+[NOTE]
+====
+Cette tâche peut échouer si le système n'est pas connecté à Internet. Consultez la documentation MySQL si le système sur lequel vous installez Unified Manager n'a pas accès à Internet.
+
+====
+.Étapes
+. Téléchargez le dépôt MySQL correspondant à votre installation. Pour la version 8, téléchargez-le depuis :
++
+`wget http://repo.mysql.com/yum/mysql-8.4-community/el/8/x86_64/mysql84-community-release-el8-1.noarch.rpm`
+
++
+Pour la version 9, téléchargez-la depuis :
+
++
+`wget http://repo.mysql.com/yum/mysql-8.4-community/el/9/x86_64/mysql84-community-release-el9-1.noarch.rpm`
+
+. Configurer le dépôt MySQL :
++
+`yum install mysql84-community-release-.noarch.rpm`
+
+
+
+Pour un système Red Hat Enterprise Linux 8, si vous utilisez des dépôts internes contenant java-17-openjdk, 7-zip et d'autres progiciels fournis par le dépôt AppStream, vous devez désactiver votre dépôt AppStream et installer MySQL Community Server. Exécutez la commande suivante :
+
+[listing]
+----
+# sudo yum --disablerepo=rhel-8-for-x86_64-appstream-rpms install  mysql-community-server
+----
+Si vous recevez un message d'erreur concernant une clé manquante ou une incompatibilité de clé, et que votre installation échoue, essayez les étapes suivantes :
+
+* Sur un système connecté, importez la clé MySQL mise à jour en exécutant la commande suivante :
+
+
+[listing]
+----
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-<xxxx>
+
+for example:
+
+rpm --import https://repo.mysql.com/RPM-GPG-KEY-mysql-2023
+----
+* Sur un système sans connexion Internet, mettez à jour votre fichier de dépôt MySQL et désactivez `gpgcheck` en marquant `gpgcheck=0`.
+

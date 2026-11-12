@@ -1,0 +1,22 @@
+---
+permalink: performance-checker/concept_manage_performance_thresholds.html 
+sidebar: sidebar 
+keywords: manage, performance, thresholds 
+summary: 'Les politiques de seuil de performance vous permettent de déterminer le moment auquel Unified Manager génère un événement pour informer les administrateurs système des problèmes susceptibles d"affecter les performances du workload. Ces politiques de seuil sont appelées seuils de performance définis par l"utilisateur.' 
+---
+= Gérez les seuils de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les politiques de seuil de performance vous permettent de déterminer le moment auquel Unified Manager génère un événement afin d'informer les administrateurs système des problèmes susceptibles d'affecter les performances du workload. Ces politiques de seuil sont appelées seuils de performance _définis par l'utilisateur_.
+
+Cette version prend en charge les seuils de performance définis par l'utilisateur, définis par le système et dynamiques. Avec les seuils de performance dynamiques et définis par le système, Unified Manager analyse l'activité du workload pour déterminer la valeur de seuil appropriée. Avec les seuils définis par l'utilisateur, vous pouvez définir les limites supérieures de performance pour de nombreux compteurs de performance et pour de nombreux objets de stockage.
+
+[NOTE]
+====
+Les seuils de performance définis par le système et les seuils de performance dynamiques sont définis par Unified Manager et ne sont pas configurables. Si vous recevez des événements inutiles provenant de l'une des stratégies de seuil de performance définies par le système, vous pouvez désactiver les stratégies individuelles depuis la page Event Setup.
+
+====

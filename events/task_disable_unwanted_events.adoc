@@ -1,0 +1,51 @@
+---
+permalink: events/task_disable_unwanted_events.html 
+sidebar: sidebar 
+keywords: disable, unwanted, events 
+summary: 'Tous les événements sont activés par défaut. Vous pouvez désactiver les événements globalement afin d"éviter la génération de notifications pour les événements non pertinents dans votre environnement. Vous pouvez réactiver les événements désactivés lorsque vous souhaitez à nouveau recevoir des notifications les concernant.' 
+---
+= Désactivez les événements indésirables dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Tous les événements sont activés par défaut. Vous pouvez désactiver les événements globalement afin d'éviter la génération de notifications pour les événements non pertinents dans votre environnement. Vous pouvez réactiver les événements désactivés lorsque vous souhaitez à nouveau recevoir des notifications les concernant.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Lorsque vous désactivez des événements, ceux précédemment générés dans le système sont marqués comme obsolètes et les alertes configurées pour ces événements ne sont pas déclenchées. Lorsque vous activez des événements désactivés, les notifications pour ces événements sont générées à partir du prochain cycle de surveillance.
+
+Lorsque vous désactivez un événement pour un objet (par exemple, l' `vol offline` événement), puis que vous le réactivez ultérieurement, Unified Manager ne génère pas de nouveaux événements pour les objets qui étaient hors ligne lorsque l'événement était désactivé. Unified Manager génère un nouvel événement uniquement lorsqu'un changement d'état survient pour l'objet après la réactivation de l'événement.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration de l'événement*.
+. Sur la page *Configuration des événements*, désactivez ou activez les événements en choisissant l'une des options suivantes :
++
+|===
+| Si vous voulez... | Ensuite, faites ceci... 
+
+
+ a| 
+Désactiver les événements
+ a| 
+.. Cliquez sur *Disable*.
+.. Dans la boîte de dialogue Désactiver les événements, sélectionnez le niveau de gravité de l'événement.
+.. Dans la colonne Événements correspondants, sélectionnez les événements que vous souhaitez désactiver en fonction de leur gravité, puis cliquez sur la flèche vers la droite pour déplacer ces événements vers la colonne Événements désactivés.
+.. Cliquez sur *Enregistrer et fermer*.
+.. Vérifiez que les événements que vous avez désactivés apparaissent dans la vue de liste de la page Configuration des événements.
+
+
+
+
+ a| 
+Activer les événements
+ a| 
+.. Cochez la case à cocher de l'événement ou des événements que vous souhaitez activer.
+.. Cliquez sur *Enable*.
+
+
+|===
+

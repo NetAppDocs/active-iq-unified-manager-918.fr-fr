@@ -1,0 +1,58 @@
+---
+permalink: performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html 
+sidebar: sidebar 
+keywords: remove, performance, threshold, policies, storage, objects 
+summary: 'Vous pouvez supprimer une stratégie de seuil de performance définie par l"utilisateur d"un objet de stockage lorsque vous ne souhaitez plus que Unified Manager surveille la valeur du compteur de performance.' 
+---
+= Supprimez les stratégies de seuil de performance des objets de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer une stratégie de seuil de performance définie par l'utilisateur d'un objet de stockage lorsque vous ne souhaitez plus que Unified Manager surveille la valeur du compteur de performance.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Vous ne pouvez supprimer qu’une seule stratégie à la fois sur un objet sélectionné.
+
+Vous pouvez supprimer une stratégie de seuil de plusieurs objets de stockage en sélectionnant plusieurs objets dans la liste.
+
+.Étapes
+. Depuis la page *inventaire* de n'importe quel objet de stockage, sélectionnez un ou plusieurs objets auxquels au moins une politique de seuil de performance est appliquée.
++
+|===
+| Pour effacer les seuils de... | Faites ceci... 
+
+
+ a| 
+Un seul objet
+ a| 
+Sélectionnez la case à cocher à gauche de cet objet.
+
+
+
+ a| 
+Objets multiples
+ a| 
+Sélectionnez la case à cocher à gauche de chaque objet.
+
+
+
+ a| 
+Tous les objets de la page
+ a| 
+Cliquez image:../media/select_dropdown_65_png.gif["sélectionnez l’icône de liste déroulante"] dans l'en-tête de la colonne.
+
+|===
+. Cliquez sur *Effacer la politique de seuil de performance*.
++
+La page « Effacer la stratégie de seuil » s’affiche et présente la liste des stratégies de seuil actuellement attribuées aux objets de stockage.
+
+. Sélectionnez la politique de seuil que vous souhaitez supprimer des objets et cliquez sur *Effacer la politique*.
++
+Lorsque vous sélectionnez une stratégie de seuil, les détails de cette stratégie s’affichent afin que vous puissiez confirmer que vous avez sélectionné la stratégie appropriée.
+
+

@@ -1,0 +1,18 @@
+---
+permalink: data-protection/concept_what_jobs_are.html 
+sidebar: sidebar 
+keywords: jobs 
+summary: 'Un travail est une série de tâches que vous pouvez surveiller à l"aide d"Unified Manager. L"affichage des travaux et de leurs tâches associées vous permet de déterminer s"ils se sont terminés correctement.' 
+---
+= Découvrez les tâches dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Un travail est une série de tâches que vous pouvez surveiller à l'aide d'Unified Manager. L'affichage des travaux et de leurs tâches associées vous permet de déterminer s'ils se sont terminés correctement.
+
+Les tâches sont lancées lorsque vous créez des relations SnapMirror et SnapVault, lorsque vous effectuez une opération sur une relation (rupture, modification, mise en veille, suppression, reprise, resynchronisation et resynchronisation inverse), lorsque vous effectuez des tâches de restauration de données, lorsque vous vous connectez à un cluster, etc.
+
+Lorsque vous lancez une tâche, vous pouvez utiliser la page Tâches et la page Détails de la tâche pour suivre la tâche et l'avancement des opérations associées.

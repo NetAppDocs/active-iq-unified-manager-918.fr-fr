@@ -1,0 +1,41 @@
+---
+permalink: health-checker/task_view_aggregate_list_and_details.html 
+sidebar: sidebar 
+keywords: view, aggregate list, details 
+summary: 'Utilisez la vue « Tous les agrégats » de la page « Santé » pour surveiller votre inventaire d"agrégats, et la vue « Tous les agrégats » de la page « Capacité » pour obtenir des détails sur la capacité et l"utilisation.' 
+---
+= Affichez la liste des agrégats et les détails dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La vue « Santé : Tous les agrégats » vous permet de suivre votre inventaire d'agrégats. La vue « Capacité : Tous les agrégats » vous permet de consulter les informations relatives à la capacité et à l'utilisation des agrégats dans tous les clusters.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+La page « Détails de l'agrégat/de l'état » vous permet de consulter des informations telles que la capacité et la configuration de l'agrégat, ainsi que les informations sur les disques. Vous pouvez utiliser ces informations avant de configurer les paramètres de seuil, si nécessaire.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Agrégats*.
+. Choisissez l'une des méthodes suivantes pour afficher les détails de l'agrégat :
++
+** Pour afficher des informations sur l’état de santé de tous les agrégats dans tous les clusters, dans le menu Affichage, sélectionnez la vue Santé : Tous les agrégats.
+** Pour afficher des informations sur la capacité et l'utilisation de tous les agrégats dans tous les clusters, dans le menu Affichage, sélectionnez la vue Capacité : tous les agrégats.
+** Pour afficher tous les détails, cliquez sur le nom de l'agrégat.
++
+Vous pouvez également afficher tous les détails en cliquant sur *Afficher les détails* dans la boîte de dialogue des détails minimaux.
+
+
+
+. Pour afficher les objets liés à l'agrégat, cliquez sur *Afficher les éléments associés* dans la boîte de dialogue des détails minimaux.
+
+
+*Informations connexes*
+
+* link:../health-checker/reference_health_aggregate_details_page.html["Page de détails de l’agrégat / état de santé"]
+* link:../performance-checker/performance-view-all.html#performance-all-aggregates-view["Performances: Vue de tous les agrégats"]
+* link:../reporting/task_create_report_to_view_aggregates_reaching_full_capacity.html["Créez un rapport pour visualiser les agrégats atteignant leur pleine capacité dans Active IQ Unified Manager"]
+

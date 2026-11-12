@@ -1,0 +1,42 @@
+---
+permalink: storage-mgmt/reference_data_mirroring_status_definitions.html 
+sidebar: sidebar 
+keywords: data mirror, status, definitions 
+summary: Les configurations MetroCluster permettent la mise en miroir des données et offrent également la possibilité de déclencher un basculement si un site entier devient indisponible. L’état de la mise en miroir des données entre les clusters d’une configuration MetroCluster peut être Normal ou Mirroring Unavailable. Comprendre cet état vous permet de gérer efficacement vos configurations MetroCluster. 
+---
+= Découvrez la mise en miroir des données MetroCluster sur FC dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les configurations MetroCluster over FC offrent la mise en miroir des données ainsi que la possibilité supplémentaire de lancer un basculement si un site entier devient indisponible. L’état de la mise en miroir des données entre les clusters dans une configuration MetroCluster over FC peut être normal ou mise en miroir indisponible. La compréhension de cet état vous permet de gérer efficacement vos configurations MetroCluster.
+
+|===
+| État de la mise en miroir des données | Description | Icône affichée 
+
+
+ a| 
+Normal
+ a| 
+La réplication des données entre les clusters de la configuration MetroCluster est normale.
+ a| 
+image:../media/metrocluster_connectivity_optimal.gif["icône optimale de connectivité MetroCluster"]
+
+
+
+ a| 
+Mise en miroir indisponible
+ a| 
+La réplication des données entre les clusters de la configuration MetroCluster est indisponible en raison d'un basculement. Par exemple, lorsque le cluster partenaire est hors service à la suite d'un sinistre ou lors d'un basculement planifié à des fins de test.
+ a| 
+Basculement avec erreurs:
+
+image::../media/metrocluster_connectivity_down.gif[icône de connectivité MetroCluster en panne]
+
+Basculement réussi:
+
+image::../media/metrocluster_connectivity_failover.gif[icône de basculement de connectivité MetroCluster]
+
+|===

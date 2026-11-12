@@ -1,0 +1,119 @@
+---
+permalink: health-checker/concept_how_annotation_rules_work_in_unified_manager.html 
+sidebar: sidebar 
+keywords: annotation rules, work, unified manager 
+summary: 'Une règle d"annotation est un critère que vous définissez pour annoter les objets de stockage (volumes, clusters ou machines virtuelles de stockage (SVM)). Vous pouvez utiliser des groupes de conditions ou des conditions pour définir des règles d"annotation.' 
+---
+= Comprendre le fonctionnement des règles d'annotation dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une règle d'annotation est un critère que vous définissez pour annoter les objets de stockage (volumes, clusters ou machines virtuelles de stockage (SVM)). Vous pouvez utiliser des groupes de conditions ou des conditions pour définir des règles d'annotation.
+
+* Vous devez associer une règle d'annotation à une annotation.
+* Vous devez associer un type d'objet à une règle d'annotation ; un seul type d'objet peut être associé à une règle d'annotation.
+* Unified Manager ajoute ou supprime des annotations aux objets de stockage après chaque cycle de surveillance ou lorsqu'une règle est créée, modifiée, supprimée ou réorganisée.
+* Une règle d'annotation peut comporter un ou plusieurs groupes de conditions, et chaque groupe de conditions peut comporter une ou plusieurs conditions.
+* Les objets de stockage peuvent comporter plusieurs annotations. Une règle d'annotation pour une annotation particulière peut également utiliser différentes annotations dans les conditions de la règle afin d'ajouter une autre annotation à des objets déjà annotés.
+
+
+
+
+[[conditions]]
+== Conditions
+
+Vous pouvez créer plusieurs groupes de conditions, chacun pouvant contenir une ou plusieurs conditions. Vous pouvez appliquer tous les groupes de conditions définis dans une règle d’annotation d’une annotation afin d’annoter des objets de stockage.
+
+Les conditions d'un groupe de conditions sont exécutées à l'aide d'un ET logique. Toutes les conditions du groupe doivent être remplies. Lorsque vous créez ou modifiez une règle d'annotation, une condition est créée qui s'applique, sélectionne et annote uniquement les objets de stockage qui répondent à toutes les conditions du groupe. Vous pouvez utiliser plusieurs conditions au sein d'un groupe de conditions lorsque vous souhaitez limiter la portée des objets de stockage à annoter.
+
+Vous pouvez créer des conditions avec des objets de stockage en utilisant les opérandes et l’opérateur suivants, et en spécifiant la valeur requise.
+
+[cols="2*"]
+|===
+| Type d'objet de stockage | Opérandes applicables 
+
+
+ a| 
+Volume
+ a| 
+* Nom de l'objet
+* Nom du cluster propriétaire
+* Nom de la SVM propriétaire
+* Annotations
+
+
+
+
+ a| 
+SVM
+ a| 
+* Nom de l'objet
+* Nom du cluster propriétaire
+* Annotations
+
+
+
+
+ a| 
+Cluster
+ a| 
+* Nom de l'objet
+* Annotations
+
+
+|===
+Lorsque vous sélectionnez une annotation comme opérande pour un objet de stockage, l'opérateur « Est » est disponible. Pour tous les autres opérandes, vous pouvez sélectionner « Est » ou « Contient » comme opérateur. Lorsque vous sélectionnez l'opérateur « Est », la condition est évaluée afin de vérifier une correspondance exacte entre la valeur de l'opérande et la valeur fournie pour l'opérande sélectionné. Lorsque vous sélectionnez l'opérateur « Contient », la condition est évaluée afin de vérifier qu'au moins un des critères suivants est rempli :
+
+* La valeur de l'opérande correspond exactement à la valeur de l'opérande sélectionné.
+* La valeur de l'opérande contient la valeur fournie pour l'opérande sélectionné.
+
+
+
+
+[[example-of-an-annotation-rule-with-conditions]]
+== Exemple de règle d'annotation avec conditions
+
+Considérez une règle d'annotation avec un groupe de conditions pour un volume présentant les deux conditions suivantes :
+
+* Le nom contient « `vol` »
+* Le nom de la SVM est « `data_svm` »
+
+
+Cette règle d'annotation annote tous les volumes qui incluent « `vol` » dans leur nom et qui sont hébergés sur des SVM portant le nom « `data_svm` » avec l'annotation sélectionnée et le type d'annotation.
+
+
+
+[[condition-groups]]
+== Groupes de conditions
+
+Les groupes de conditions sont exécutés à l’aide d’un OU logique, puis appliqués aux objets de stockage. Pour être annotés, les objets de stockage doivent satisfaire aux exigences d’au moins un groupe de conditions. Les objets de stockage qui satisfont aux conditions de tous les groupes de conditions sont annotés. Vous pouvez utiliser des groupes de conditions pour étendre la portée des objets de stockage à annoter.
+
+
+
+[[example-of-an-annotation-rule-with-condition-groups]]
+== Exemple de règle d'annotation avec groupes de conditions
+
+Considérez une règle d'annotation comportant deux groupes de conditions pour un volume ; chaque groupe contient les deux conditions suivantes :
+
+* Groupe de conditions 1
++
+** Le nom contient « `vol` »
+** Le nom de la SVM est « `data_svm` » Ce groupe de conditions annote tous les volumes qui incluent « `vol` » dans leur nom et qui sont hébergés sur des SVM portant le nom « `data_svm` ».
+
+
+* Groupe de conditions 2
++
+** Le nom contient « `vol` »
+** La valeur d'annotation de data-priority est « `critical` » Ce groupe de conditions annote tous les volumes qui incluent « `vol` » dans leur nom et qui sont annotés avec la valeur d'annotation data-priority comme « `critical` ».
+
+
+
+
+Lorsqu'une règle d'annotation contenant ces deux groupes de conditions est appliquée à des objets de stockage, les objets de stockage suivants sont annotés :
+
+* Tous les volumes qui incluent « `vol` » dans leur nom et qui sont hébergés sur une SVM nommée « `data_svm` ».
+* Tous les volumes qui incluent « `vol` » dans leur nom et qui sont annotés avec la valeur d’annotation de priorité des données « `critical` ».
+

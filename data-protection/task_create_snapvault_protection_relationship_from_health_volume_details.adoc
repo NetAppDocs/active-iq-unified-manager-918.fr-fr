@@ -1,0 +1,48 @@
+---
+permalink: data-protection/task_create_snapvault_protection_relationship_from_health_volume_details.html 
+sidebar: sidebar 
+keywords: create, snapvault, protection, relationship, volume, health details page 
+summary: Vous pouvez créer une relation SnapVault à l’aide de la page des détails du volume et de l’état afin d’activer les sauvegardes de données à des fins de protection sur les volumes. 
+---
+= Créez une relation de protection SnapVault à partir de la page Détails du volume/de l'état dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer une relation SnapVault à l’aide de la page des détails du volume et de l’état afin d’activer les sauvegardes de données à des fins de protection sur les volumes.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation pour effectuer cette tâche.
+
+
+Le menu *Protection* ne s'affiche pas dans les cas suivants :
+
+* Si les paramètres RBAC ne permettent pas cette action: par exemple, si vous ne disposez que de privilèges d’opérateur
+* Lorsque l'ID du volume est inconnu : par exemple, lorsque vous avez une relation intercluster et que le cluster de destination n'a pas encore été découvert
+
+
+.Étapes
+. Dans l’onglet *Protection* de la page de détails *Volume / Health*, cliquez avec le bouton droit sur un volume dans la vue topologique que vous souhaitez protéger.
+. Sélectionnez *Protéger* > *SnapVault* dans le menu.
++
+La boîte de dialogue Configurer la protection s'affiche.
+
+. Cliquez sur *SnapVault* pour afficher l’onglet *SnapVault* et configurer les informations de la ressource secondaire.
+. Cliquez sur *Avancé* pour configurer la déduplication, la compression, l'extension automatique et la garantie d'espace selon vos besoins, puis cliquez sur *Appliquer*.
+. Remplissez la zone *Informations de destination* et la zone *Paramètres de la relation* dans la boîte de dialogue *Configurer la protection*.
+. Cliquez sur *Appliquer*.
++
+Vous revenez à la page Détails du volume / de l'état de santé.
+
+. Cliquez sur le lien de la tâche de configuration de la protection en haut de la page de détails *Volume / Health*.
++
+La page Détails de la tâche s'affiche.
+
+. Cliquez sur *Actualiser* pour mettre à jour la liste des tâches et les détails des tâches associés au travail de configuration de la protection, et pour déterminer quand le travail est terminé.
++
+Une fois les tâches terminées, les nouvelles relations s'affichent dans la vue topologique de la page de détails Volume / Health.
+
+

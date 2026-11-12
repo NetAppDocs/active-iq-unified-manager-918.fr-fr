@@ -1,0 +1,30 @@
+---
+permalink: config/task_edit_user_setts.html 
+sidebar: sidebar 
+keywords: edit, user, settings 
+summary: 'Vous pouvez modifier les paramètres utilisateur, tels que l"adresse e-mail et le rôle, attribués à chaque utilisateur. Par exemple, vous pouvez modifier le rôle d"un utilisateur opérateur de stockage et lui attribuer des privilèges d"administrateur de stockage.' 
+---
+= Modifier les paramètres utilisateur dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les paramètres utilisateur, tels que l'adresse e-mail et le rôle, attribués à chaque utilisateur. Par exemple, vous pouvez modifier le rôle d'un utilisateur opérateur de stockage et lui attribuer les privilèges d'administrateur de stockage.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+Lorsque vous modifiez le rôle attribué à un utilisateur, les modifications sont appliquées lorsque l'une des actions suivantes se produit :
+
+* L'utilisateur se déconnecte puis se reconnecte à Unified Manager.
+* Le délai d’expiration de la session de 24 heures est atteint.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Utilisateurs*.
+. Sur la page Utilisateurs, sélectionnez l'utilisateur dont vous souhaitez modifier les paramètres, puis cliquez sur *Modifier*.
+. Dans la boîte de dialogue Modifier l'utilisateur, modifiez les paramètres appropriés définis pour l'utilisateur.
+. Cliquez sur *Enregistrer*.
+

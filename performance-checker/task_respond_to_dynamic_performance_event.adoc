@@ -1,0 +1,63 @@
+---
+permalink: performance-checker/task_respond_to_dynamic_performance_event.html 
+sidebar: sidebar 
+keywords: dynamic, performance, qos, policy, group, throttling 
+summary: 'Vous pouvez utiliser Unified Manager pour analyser un incident de performance causé par la limitation du débit (Mo/s) des workloads par un groupe de stratégies de qualité de service (QoS). Cette limitation a augmenté les temps de réponse (latence) des workloads de volume du groupe de stratégies. Les informations relatives à cet événement vous permettront de déterminer si de nouvelles limites doivent être définies pour les groupes de stratégies afin de mettre fin à cette limitation.' 
+---
+= Répondez à un événement de limitation dynamique de la QoS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour analyser un incident de performance causé par la limitation du débit (Mo/s) des workloads par un groupe de stratégies de qualité de service (QoS). Cette limitation a augmenté les temps de réponse (latence) des workloads de volume du groupe de stratégies. Les informations relatives à cet événement vous permettront de déterminer si de nouvelles limites doivent être définies pour les groupes de stratégies afin de mettre fin à cette limitation.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Il doit y avoir des événements de performance nouveaux, reconnus ou obsolètes.
+
+
+.Étapes
+. Consultez la page *Détails de l'événement* pour obtenir des informations sur l'événement.
+. Lisez la *Description*, qui affiche le nom des workloads affectés par la limitation.
++
+[NOTE]
+====
+La description peut afficher le même workload pour la victime et l'agresseur, car la limitation de débit fait du workload une victime de lui-même.
+
+====
+. Notez le nom du volume à l'aide d'une application telle qu'un éditeur de texte.
++
+Vous pouvez effectuer une recherche sur le nom du volume pour le retrouver ultérieurement.
+
+. Dans les graphiques de latence du workload et d'utilisation du workload, sélectionnez *Bully Workloads*.
+. Placez votre curseur sur les graphiques pour afficher les principaux workloads définis par l'utilisateur qui affectent le groupe de règles.
++
+La workload en tête de liste présente l'écart le plus important et a provoqué la limitation de débit. L'activité correspond au pourcentage de la limite du groupe de stratégies utilisé par chaque workload.
+
+. Dans la zone *Actions suggérées*, cliquez sur le bouton *Analyser le workload* pour le workload principal.
+. Sur la page Workload Analysis, configurez le graphique Latency pour afficher tous les Cluster Components, et le graphique Throughput pour afficher Breakdown.
++
+Les graphiques de répartition s’affichent sous le graphique de latence et le graphique des IOPS.
+
+. Comparez les limites de QoS dans le graphique *Latence* pour voir quel niveau de bridage a eu un impact sur la latence au moment de l'événement.
++
+Le groupe de règles QoS a un débit maximal de 1 000 opérations par seconde (op/sec), que les workloads qu'il contient ne peuvent pas dépasser collectivement. Au moment de l'incident, les workloads du groupe de règles avaient un débit combiné de plus de 1 200 op/sec, ce qui a amené le groupe de règles à limiter son activité à 1 000 op/sec.
+
+. Comparez les valeurs de *latence de lecture/écriture* aux valeurs de *lecture/écriture/autres*.
++
+Les deux graphiques montrent un nombre élevé de requêtes de lecture avec une latence importante, tandis que le nombre de requêtes et la latence des requêtes d'écriture sont faibles. Ces valeurs vous aident à déterminer si c'est un débit élevé ou un grand nombre d'opérations qui a entraîné une augmentation de la latence. Vous pouvez utiliser ces valeurs pour décider d'appliquer une limite de groupe de règles au débit ou au nombre d'opérations.
+
+. Utilisez ONTAP System Manager pour augmenter la limite actuelle du groupe de stratégies à 1 300 op/sec.
+. Après un jour, retournez dans Unified Manager et saisissez le workload que vous avez enregistré à l'étape 3 dans la page *Analyse de la charge de travail*.
+. Sélectionnez le graphique de répartition du débit.
++
+Le graphique des lectures/écritures/autres s'affiche.
+
+. En haut de la page, pointez votre curseur sur l'icône d'événement de modification (image:../media/opm_change_icon.gif["Icône de l'événement de modification"]) pour la modification de la limite du groupe de stratégies.
+. Comparez le graphique *Lectures/écritures/autres* au graphique *Latence*.
++
+Les requêtes de lecture et d'écriture sont identiques, mais la limitation de débit a cessé et la latence a diminué.
+
+

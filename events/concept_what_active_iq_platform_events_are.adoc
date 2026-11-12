@@ -1,0 +1,24 @@
+---
+permalink: events/concept_what_active_iq_platform_events_are.html 
+sidebar: sidebar 
+keywords: active iq, platform, events 
+summary: Unified Manager peut afficher les événements détectés par la plateforme Active IQ. Ces événements sont créés en appliquant un ensemble de règles aux messages AutoSupport générés à partir de tous les systèmes de stockage surveillés par Unified Manager. 
+---
+= Découvrez les événements de la plateforme Active IQ dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager peut afficher les événements détectés par la plateforme Active IQ. Ces événements sont créés en appliquant un ensemble de règles aux messages AutoSupport générés à partir de tous les systèmes de stockage surveillés par Unified Manager.
+
+Pour plus d'informations, consultez link:../events/concept_how_active_iq_platform_events_are_generated.html["Comment les événements de la plateforme Active IQ sont générés"].
+
+Unified Manager vérifie automatiquement la présence d'un nouveau fichier de règles et ne le télécharge que lorsque des règles plus récentes sont disponibles. Sur les sites sans accès au réseau externe, vous devez importer les règles manuellement via *Gestion du stockage* > *Configuration des événements* > *Importer les règles*.
+
+Ces événements Active IQ ne chevauchent pas les événements Unified Manager existants et identifient des incidents ou des risques liés à la configuration du système, au câblage, aux bonnes pratiques et aux problèmes de disponibilité.
+
+Pour plus d'informations sur l'activation des événements de plateforme, consultez link:../config/concept_active_iq_platform_events.html["Activation des événements du portail Active IQ"]. Pour plus d'informations sur le chargement du fichier de règles, consultez link:../events/task_upload_new_active_iq_rules_file.html["Téléchargement d'un nouveau fichier de règles Active IQ"].
+
+NetApp Active IQ est un service cloud qui fournit des analyses prédictives et une assistance proactive pour optimiser le fonctionnement des systèmes de stockage dans le NetApp cloud hybride. Voir  https://docs.netapp.com/us-en/active-iq/index.html["NetApp Active IQ"^] pour plus d'informations.

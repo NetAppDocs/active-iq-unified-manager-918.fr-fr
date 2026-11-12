@@ -1,0 +1,118 @@
+---
+permalink: api-automation/concept_gateway_apis.html 
+sidebar: sidebar 
+keywords: access, ONTAP, APIs, proxy, access 
+summary: Les API de passerelle vous offrent l’avantage d’utiliser les identifiants Active IQ Unified Manager pour exécuter les API REST ONTAP et gérer les objets de stockage. Ces API sont disponibles lorsque la fonctionnalité API Gateway est activée dans l’interface web de Unified Manager. 
+---
+= Accédez aux API ONTAP via un accès proxy dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les API de passerelle vous offrent l’avantage d’utiliser les identifiants Active IQ Unified Manager pour exécuter les API REST ONTAP et gérer les objets de stockage. Ces API sont disponibles lorsque la fonctionnalité API Gateway est activée dans l’interface web de Unified Manager.
+
+Les API REST de Unified Manager ne prennent en charge qu'un ensemble limité d'actions à effectuer sur les sources de données de Unified Manager, à savoir les clusters ONTAP. Vous pouvez utiliser les autres fonctionnalités via les API ONTAP. Les API de passerelle permettent à Unified Manager de servir d'interface de relais pour acheminer toutes les requêtes d'API à exécuter sur les clusters ONTAP qu'il gère, sans vous connecter individuellement à chaque cluster de data center. Unified Manager sert de point de gestion unique pour exécuter les API sur les clusters ONTAP gérés par votre instance de Unified Manager. La fonctionnalité API Gateway permet à Unified Manager de constituer un plan de contrôle unique à partir duquel vous pouvez gérer plusieurs clusters ONTAP, sans vous y connecter individuellement. Les API de passerelle vous permettent de rester connecté à Unified Manager et de gérer les clusters ONTAP en exécutant des opérations d'API REST ONTAP.
+
+[NOTE]
+====
+Tous les utilisateurs peuvent exécuter une requête à l'aide de l'opération GET. Les administrateurs d'applications peuvent exécuter toutes les opérations REST ONTAP.
+
+====
+La passerelle sert de proxy pour acheminer les requêtes API en conservant l’en-tête et le corps des requêtes dans le même format que dans les API ONTAP. Vous pouvez utiliser vos identifiants Unified Manager et exécuter les opérations spécifiques pour accéder aux clusters ONTAP et les gérer sans avoir à transmettre les identifiants de chaque cluster. Elle continue de gérer l’authentification et l’administration des clusters, mais redirige les requêtes API pour qu’elles s’exécutent directement sur le cluster concerné. La réponse renvoyée par les API est identique à celle renvoyée par les API REST ONTAP correspondantes exécutées directement depuis ONTAP.
+
+[cols="3*"]
+|===
+| Verbe HTTP | Chemin (URL) | Description 
+
+
+ a| 
+`GET`
+ a| 
+`/gateways`
+ a| 
+Cette méthode GET récupère la liste de tous les clusters gérés par Unified Manager qui prennent en charge les appels REST ONTAP. Vous pouvez vérifier les détails du cluster et choisir d'exécuter d'autres méthodes en fonction de l'UUID du cluster, ou identifiant unique universel (UUID).
+
+[NOTE]
+====
+Les API de passerelle récupèrent uniquement les clusters pris en charge par ONTAP 9.5 ou version ultérieure, et ajoutés à Unified Manager via HTTPS.
+
+====
+
+
+ a| 
+`GET`
+
+`POST`
+
+`DELETE`
+
+`PATCH`
+
+`OPTIONS` (non disponible sur Swagger)
+
+`HEAD` (non disponible sur Swagger)
+ a| 
+`/gateways/\{uuid}/\{path}`
+
+[NOTE]
+====
+La valeur de \{uuid} doit être remplacée par l'UUID du cluster sur lequel l'opération REST doit être effectuée. Assurez-vous également que cet UUID correspond à un cluster pris en charge par ONTAP 9.5 ou version ultérieure, et ajouté à Unified Manager via HTTPS. \{path} doit être remplacé par l'URL REST ONTAP. Vous devez supprimer `/api/` de l'URL.
+
+==== a| 
+Il s'agit d'une API proxy à point d'accès unique, prenant en charge les opérations POST, DELETE, PATCH et GET pour toutes les API REST ONTAP. Aucune restriction ne s'applique à l'une quelconque des API tant qu'elle est prise en charge par ONTAP. La fonctionnalité de tunneling ou de proxy ne peut pas être désactivée.
+
+La méthode `OPTIONS` renvoie toutes les opérations prises en charge par une API REST ONTAP. Par exemple, si une API ONTAP ne prend en charge que l’opération `GET`, l’exécution de la méthode `OPTIONS` à l’aide de cette API de passerelle renvoie `GET` comme réponse. Cette méthode n’est pas prise en charge dans Swagger, mais peut être exécutée avec d’autres outils d’API.
+
+La `OPTIONS` méthode détermine si une ressource est disponible. Cette opération peut être utilisée pour consulter les métadonnées d'une ressource dans les en-têtes de réponse HTTP. Cette méthode n'est pas prise en charge par Swagger, mais peut être exécutée dans d'autres outils API.
+
+|===
+
+
+[[understand-the-api-gateway-tunneling]]
+== Comprendre le tunneling de l'API Gateway
+
+Les API de passerelle vous permettent de gérer les objets ONTAP via Unified Manager. Unified Manager gère les clusters et les informations d'authentification, puis redirige les requêtes vers le point de terminaison REST ONTAP. L'API de passerelle transforme l'URL et les liens HATEOAS (Hypermedia as the Engine of Application State) dans l'en-tête et le corps de la réponse avec l'URL de base de la passerelle API. L'API de passerelle agit comme l'URL de base du proxy à laquelle vous ajoutez l'URL REST ONTAP et exécutez le point de terminaison REST ONTAP requis.
+
+
+NOTE: Pour qu'une API ONTAP s'exécute correctement via la passerelle API, l'API doit être prise en charge par cette version du cluster ONTAP sur laquelle elle est exécutée. L'exécution d'une API qui n'est pas prise en charge sur le cluster ONTAP ne renvoie aucun résultat.
+
+Dans cet exemple, l'API de passerelle (URL de base du proxy) est : `+/gateways/{uuid}/+`
+
+L’API ONTAP utilisée est la suivante : `/storage/volumes`. Vous devez ajouter l’URL REST de l’API ONTAP comme valeur du paramètre path.
+
+[NOTE]
+====
+Lors de l'ajout du chemin, assurez-vous d'avoir supprimé le « `/`" symbol at the beginning of the URL. For the API `/storage/volumes,` add `storage/volumes.`
+
+====
+L'URL ajoutée est : `+/gateways/{uuid}/storage/volumes+`
+
+Lors de l'exécution de l' `GET`opération, l'URL générée est la suivante: `GEThttps://<hostname\>/api/gateways/<cluster_UUID\>/storage/volumes`
+
+La balise `/api` de l’URL REST ONTAP est supprimée de l’URL ajoutée, tandis que celle de l’API de passerelle est conservée.
+
+*Exemple de commande cURL*
+
+[listing]
+----
+curl -X GET "https://<hostname>/api/gateways/1cd8a442-86d1-11e0-ae1c-9876567890123/storage/volumes" -H "accept: application/hal+json" -H "Authorization: Basic <Base64EncodedCredentials>"
+----
+L'API renvoie la liste des volumes de stockage de ce cluster. Le format de la réponse est identique à celui que vous obtenez lorsque vous exécutez la même API depuis ONTAP. Les codes d'état renvoyés sont les codes d'état REST d'ONTAP.
+
+
+
+[[set-api-scope]]
+== Définir l'étendue de l'API
+
+Toutes les API ont un contexte défini dans la portée du cluster. Les API qui fonctionnent sur la base des machines virtuelles de stockage ont également le cluster comme portée, c'est-à-dire que les opérations d'API sont exécutées sur une machine virtuelle de stockage particulière au sein d'un cluster géré. Lorsque vous exécutez l' `/gateways/\{uuid}/\{path}`API, veillez à saisir l'UUID du cluster (UUID de la source de données Unified Manager) pour le cluster sur lequel vous exécutez l'opération. Pour définir le contexte sur une machine virtuelle de stockage particulière dans ce cluster, saisissez la clé de la machine virtuelle de stockage comme paramètre X-Dot-SVM-UUID ou le nom de la machine virtuelle de stockage comme paramètre X-Dot-SVM-Name. Le paramètre est ajouté comme filtre dans l'en-tête de chaîne, et l'opération s'exécute dans la portée de cette machine virtuelle de stockage à l'intérieur de ce cluster.
+
+*Exemple de commande cURL*
+
+[listing]
+----
+curl -X GET "https://<hostname>/api/gateways/e4f33f90-f75f-11e8-9ed9-00a098e3215f/storage/volume" -H "accept: application/hal+json" -H "X-Dot-SVM-UUID: d9c33ec0-5b61-11e9-8760-00a098e3215f"
+-H "Authorization: Basic <Base64EncodedCredentials>"
+----
+Pour plus d'informations sur l'utilisation des API REST ONTAP, consultez https://docs.netapp.com/us-en/ontap-automation/index.html["Automatisation de l'API REST ONTAP"]

@@ -1,0 +1,114 @@
+---
+permalink: performance-checker/task_configure_connection_between_um_server_and_external_data_provider.html 
+sidebar: sidebar 
+keywords: configuring, connection, unified manager, server, external, data, provider 
+summary: 'Unified Manager peut envoyer des données de performance du cluster à un serveur externe. Vous pouvez spécifier le type de données statistiques envoyées, ainsi que l"intervalle d"envoi.' 
+---
+= Configurez une connexion entre Active IQ Unified Manager et un fournisseur de données externe
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Unified Manager peut envoyer des données de performance du cluster à un serveur externe. Vous pouvez spécifier le type de données statistiques envoyées, ainsi que l'intervalle d'envoi.
+
+.Avant de commencer
+* Vous devez disposer d'un identifiant utilisateur autorisé à vous connecter à la console de maintenance du serveur Unified Manager.
+* Vous devez disposer des informations suivantes concernant le fournisseur de données externe :
++
+** Nom du serveur ou adresse IP (IPv4 ou IPv6)
+** Port par défaut du serveur (si vous n'utilisez pas le port par défaut 2003)
+
+
+* Vous devez avoir configuré le serveur distant et le logiciel tiers afin qu’ils puissent recevoir des données statistiques du serveur Unified Manager.
+* Vous devez savoir quel groupe de statistiques vous souhaitez envoyer :
++
+** INDICATEUR DE PERFORMANCE: statistiques du moniteur de performances
+** RESOURCE_UTILIZATION: Statistiques du moniteur d’utilisation des ressources et des performances
+** DRILL_DOWN: Toutes les statistiques
+
+
+* Vous devez connaître l’intervalle de temps auquel vous souhaitez transmettre les statistiques : 5, 10 ou 15 minutes
++
+Par défaut, Unified Manager collecte les statistiques toutes les 5 minutes. Si vous définissez l'intervalle de transmission sur 10 (ou 15) minutes, la quantité de données envoyées à chaque transmission est deux (ou trois) fois supérieure à celle obtenue avec l'intervalle par défaut de 5 minutes.
+
++
+[NOTE]
+====
+Si vous modifiez l'intervalle de collecte des performances d'Unified Manager à 10 ou 15 minutes, vous devez modifier l'intervalle de transmission afin qu'il soit égal ou supérieur à l'intervalle de collecte d'Unified Manager.
+
+====
+
+
+Vous pouvez configurer une connexion entre un serveur Unified Manager et un serveur externe de fournisseur de données.
+
+.Étapes
+. Connectez-vous en tant qu'utilisateur de maintenance à la console de maintenance du serveur Unified Manager.
++
+Les invites de la console de maintenance Unified Manager s'affichent.
+
+. Dans la console de maintenance, saisissez le numéro de l’option de menu *External Data Provider*.
++
+Le menu Connexion au serveur externe s'affiche.
+
+. Saisissez le numéro de l'option de menu *Ajouter/Modifier une connexion serveur*.
++
+Les informations de connexion au serveur actuel sont affichées.
+
+. Lorsque vous y êtes invité, saisissez `*y*` pour continuer.
+. Lorsque vous y êtes invité, saisissez l'adresse IP ou le nom du serveur de destination et les informations relatives au port du serveur (si différent du port par défaut 2003).
+. Lorsque vous y êtes invité, saisissez `*y*` pour vérifier que les informations que vous avez saisies sont correctes.
+. Appuyez sur n'importe quelle touche pour revenir au menu Connexion au serveur externe.
+. Saisissez le numéro de l'option de menu *Modifier la configuration du serveur*.
++
+Les informations de configuration actuelles du serveur s’affichent.
+
+. Lorsque vous y êtes invité, saisissez `*y*` pour continuer.
+. Lorsque vous y êtes invité, saisissez le type de statistiques à envoyer, l’intervalle de temps auquel elles sont envoyées et si vous souhaitez activer immédiatement la transmission des statistiques :
++
+|===
+| Pour.. | Entrez... 
+
+
+ a| 
+ID du groupe de statistiques
+ a| 
+`*0*` - INDICATEUR_DE_PERFORMANCE (par défaut)
+
+`*1*` - UTILISATION DES RESSOURCES
+
+`*2*` - FORAGE_EN BAS
+
+
+
+ a| 
+Étiquette du fournisseur
+ a| 
+Nom descriptif du dossier où les statistiques seront stockées sur le serveur externe. « `netapp-performance` » est le nom par défaut, mais vous pouvez en saisir un autre.
+
+En utilisant la notation pointée, vous pouvez définir une structure de dossiers hiérarchique. Par exemple, en saisissant `*stats.performance.netapp*`, les statistiques seront stockées dans *stats* > *performance* > *netapp*.
+
+
+
+ a| 
+Intervalle de transmission
+ a| 
+`*5*` (par défaut), `*10*`, ou `*15*` minutes
+
+
+
+ a| 
+Activer/désactiver
+ a| 
+`*0*` - Désactiver
+
+`*1*` - Activer (par défaut)
+
+|===
+. Lorsque vous y êtes invité, saisissez `*y*` pour vérifier que les informations que vous avez saisies sont correctes.
+. Appuyez sur n'importe quelle touche pour revenir au menu Connexion au serveur externe.
+. Tapez  `*x*` pour quitter la console de maintenance.
+
+
+Une fois la connexion configurée, les données de performance sélectionnées sont envoyées au serveur de destination à l’intervalle de temps spécifié. Quelques minutes peuvent s’écouler avant que les métriques commencent à apparaître dans l’outil externe. Il est possible que vous deviez actualiser votre navigateur pour voir les nouvelles métriques dans la hiérarchie des métriques.

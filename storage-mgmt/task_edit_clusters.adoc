@@ -1,0 +1,37 @@
+---
+permalink: storage-mgmt/task_edit_clusters.html 
+sidebar: sidebar 
+keywords: edit, clusters 
+summary: 'Vous pouvez modifier les paramètres d"un cluster existant, tels que le nom de l"hôte ou l"adresse IP, le nom d"utilisateur, le mot de passe et le port, à l"aide de la boîte de dialogue Edit Cluster.' 
+---
+= Modifier les paramètres du cluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier les paramètres d'un cluster existant, tels que le nom de l'hôte ou l'adresse IP, le nom d'utilisateur, le mot de passe et le port, à l'aide de la boîte de dialogue Edit Cluster.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'applications ou le rôle d'administrateur de stockage.
+
+[NOTE]
+====
+À partir de Unified Manager 9.7, vous pouvez ajouter des clusters uniquement à l'aide de HTTPS.
+
+====
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Configuration du cluster*.
+. Sur la page *Configuration du cluster*, sélectionnez le cluster que vous souhaitez modifier, puis cliquez sur *Modifier*.
+. Dans la boîte de dialogue *Modifier le cluster*, modifiez les valeurs selon vos besoins. + Si vous avez modifié les détails d'un cluster ajouté à Unified Manager, vous pouvez consulter les détails du certificat pour la communication TLS mutuelle, en fonction de la version d'ONTAP. Pour plus d'informations sur la version d'ONTAP, consultez link:../storage-mgmt/task_add_clusters.html["Certificats pour la communication TLS mutuelle"]. + Vous pouvez afficher les détails du certificat en cliquant sur *Détails du certificat*. Si le certificat a expiré, cliquez sur le bouton *Régénérer* pour intégrer le nouveau certificat.
+. Cliquez sur *Submit*.
+. Dans la boîte de dialogue Autoriser l'hôte, cliquez sur *Afficher le certificat* pour consulter les informations du certificat relatives au cluster.
+. Cliquez sur *Oui*.
+
+
+*Informations connexes*
+
+link:../config/task_add_users.html["Ajout d'utilisateurs"]
+
+link:../health-checker/task_view_cluster_list_and_details.html["Affichage de la liste et des détails des clusters"]

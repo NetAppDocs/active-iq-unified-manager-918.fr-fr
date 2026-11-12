@@ -1,0 +1,26 @@
+---
+permalink: storage-mgmt/concept_introduction_to_unified_manager.html 
+sidebar: sidebar 
+keywords: introduction, active iq unified manager 
+summary: 'Active IQ Unified Manager (formerly OnCommand Unified Manager) vous permet de surveiller et de gérer l"état et les performances de vos systèmes de stockage ONTAP à partir d"une interface unique.' 
+---
+= Découvrez Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager (formerly OnCommand Unified Manager) vous permet de surveiller et de gérer l'état et les performances de vos systèmes de stockage ONTAP à partir d'une interface unique.
+
+Unified Manager offre les fonctionnalités suivantes :
+
+* Découverte, surveillance et notifications pour les systèmes équipés du logiciel ONTAP.
+* Tableau de bord permettant d'afficher la capacité, la sécurité et l'état des performances de l'environnement.
+* Infrastructure améliorée pour les alertes, les événements et les seuils.
+* Affiche des graphiques détaillés qui représentent l’activité du workload au fil du temps, notamment les IOPS (opérations), les MBps (débit), la latence (temps de réponse), l’utilisation, la capacité de performance et le taux de cache.
+* Identifie les workloads qui utilisent excessivement les composants du cluster et ceux dont les performances sont affectées par l'augmentation de l'activité.
+* Il fournit des actions correctives suggérées qui peuvent être effectuées pour remédier à certains incidents et événements, ainsi qu’un bouton « Fix It » pour certains événements afin que vous puissiez résoudre le problème immédiatement.
+* S'intègre à OnCommand Workflow Automation pour exécuter des workflows de protection automatisés.
+* Possibilité de créer de nouveaux workloads, tels qu'un LUN ou un partage de fichiers, directement depuis Unified Manager et d'attribuer un Performance Service Level pour définir les objectifs de performance et de stockage pour les utilisateurs accédant à l'application à l'aide de ce workload.
+

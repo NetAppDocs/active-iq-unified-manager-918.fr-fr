@@ -1,0 +1,232 @@
+---
+permalink: performance-checker/performance-view-all.html 
+sidebar: sidebar 
+keywords: performance view 
+summary: Vue des performances de tous les objets de stockage 
+---
+= Consultez les pages d'inventaire des performances pour tous les objets de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les pages d'inventaire des performances permettent de consulter un résumé des informations de performance de chaque objet de stockage disponible, comme les clusters, les agrégats, les volumes, etc. Vous pouvez accéder aux pages de détail des objets de performance pour consulter des informations détaillées sur un objet particulier.
+
+Par défaut, les objets affichés sur les pages de visualisation sont triés selon la criticité des événements. Les objets présentant des événements critiques apparaissent en premier, suivis de ceux présentant des événements d'avertissement. Ceci permet d'identifier immédiatement les problèmes à résoudre.
+
+Vous pouvez exporter les données de ces pages vers un fichier de valeurs séparées par des virgules (`.csv`), un fichier Microsoft Excel (`.xlsx`), ou un document (`.pdf`) en utilisant le bouton *Reports*, puis utiliser les données exportées pour créer des rapports. De plus, vous pouvez personnaliser la page, puis planifier la création et l'envoi réguliers d'un rapport par courriel en utilisant le bouton *Scheduled Reports*.
+
+Tous les champs sur ces pages peuvent être utilisés dans les vues personnalisées et dans les rapports. Certains champs sont liés à des pages associées, ce qui permet un affichage plus détaillé.
+
+
+
+[[performance-all-clusters-view]]
+== Performances: Vue de tous les clusters
+
+La vue « Performances : Tous les clusters » présente un aperçu des événements de performance, des données et des informations de configuration de chaque cluster surveillé par une instance de Unified Manager. Cette page vous permet de surveiller les performances de vos clusters et de résoudre les problèmes de performance et les événements de seuil.
+
+Vous pouvez attribuer des politiques de seuil de performance à n'importe quel objet des pages d'inventaire des objets, ou en supprimer, à l'aide des boutons *Attribuer une politique de seuil de performance* et *Supprimer une politique de seuil de performance*.
+
+Voici quelques champs importants de la vue Performance : All Clusters.
+
+* FQDN du cluster : le nom de domaine complet (FQDN) du cluster.
+* IOPS : le nombre d’opérations d’entrée/sortie par seconde sur le cluster.
+* MB/s : Le débit sur le cluster, mesuré en Mio par seconde.
+* Champs de capacité : capacité libre et capacité totale en GiB.
+* Nom de l'hôte ou adresse IP : nom de l'hôte ou adresse IP (IPv4 ou IPv6) de la LIF de gestion du cluster.
+* Version du système d'exploitation : version du logiciel ONTAP installée sur le cluster.
++
+
+NOTE: Si différentes versions du logiciel ONTAP sont installées sur les nœuds du cluster, le numéro de version le plus bas est indiqué. Vous pouvez afficher la version de ONTAP installée sur chaque nœud dans la vue « Performances : Tous les nœuds ».
+
+* Politique de seuil : la ou les politiques de seuil de performance définies par l’utilisateur et actives sur cet objet de stockage. Placez votre curseur sur les noms de politique contenant des points de suspension (...) pour afficher le nom complet de la politique ou la liste des politiques attribuées. Les boutons « Attribuer une politique de seuil de performance » et « Supprimer la politique de seuil de performance » restent désactivés tant que vous n’avez pas sélectionné un ou plusieurs objets en cochant les cases situées à l’extrême gauche.
+
+
+
+
+[[performance-all-volumes-view]]
+== Performance : vue de tous les volumes
+
+La vue « Performances : Tous les volumes » présente un aperçu des événements de performance, des données de compteur et des informations de configuration de chaque volume FlexVol et volume FlexGroup surveillé par une instance d’Unified Manager. Vous pouvez ainsi surveiller rapidement les performances de vos volumes et résoudre les problèmes de performance et les événements de seuil.
+
+Si vous souhaitez analyser la latence et le débit d’un objet spécifique, cliquez sur le bouton Plus d’options image:icon_kabob.gif[""], puis sur *Analyze Workload*, et vous pourrez afficher les graphiques de performances et de capacité sur la page Analyse du workload. Vous pouvez afficher les détails dans System Manager, à condition de disposer d’identifiants valides pour System Manager.
+
+
+NOTE: Pour les volumes de protection des données (DP), seules les valeurs des compteurs relatives au trafic généré par l'utilisateur sont affichées. Les volumes racine ne sont pas affichés sur cette page.
+
+Voici quelques champs importants de la vue Performances : Tous les volumes.
+
+* Style : soit FlexVol, soit FlexGroup.
+* Latence : pour les volumes FlexVol, il s’agit du temps de réponse moyen du volume pour toutes les requêtes d’E/S, exprimé en millisecondes par opération. Pour les volumes FlexGroup, il s’agit de la latence moyenne de tous les volumes qui les composent.
+* IOPS/To : nombre d’opérations d’entrée/sortie traitées par seconde en fonction de l’espace total consommé par le workload, en téraoctets. Ce compteur mesure le niveau de performance pouvant être fourni par une quantité donnée de capacité de stockage.
+* IOPS : Pour les volumes FlexVol, il s’agit du nombre d’opérations d’entrée/sortie par seconde pour le volume. Pour les volumes FlexGroup, il s’agit de la somme des IOPS de tous les volumes constituants.
+* Mo/s : Pour les volumes FlexVol, il s’agit du débit sur le volume, mesuré en mégaoctets par seconde. Pour les volumes FlexGroup, il s’agit de la somme des Mo/s de tous les volumes constitutifs.
+* Champs de capacité : capacité libre et capacité totale en GiB.
+
+
+Consultez les liens suivants pour plus d'informations :
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["Attribution de stratégies de seuil de performance aux objets de stockage"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["Suppression des politiques de seuil de performance des objets de stockage"]
+* link:../performance-checker/concept_types_of_workloads_monitored_by_unified_manager.html["Types de workloads surveillés par Unified Manager"]
+* link:../performance-checker/task_view_qos_policy_group_settings_for_volumes_or_luns.html["Affichage des paramètres du groupe de règles QoS appliqués à des volumes ou LUN spécifiques"]
+* link:../performance-checker/concept_understand_um_recommendations_to_tier_data_to_cloud.html["Comprendre les recommandations de Unified Manager concernant la hiérarchisation des données vers le cloud"]
+* link:../performance-checker/task_view_performance_charts_to_compare_volumes_or_luns_in_qos_policy.html["Affichage des graphiques de performance pour comparer les volumes ou les LUN appartenant au même groupe de stratégie QoS"]
+
+
+
+
+[[performance-all-aggregates-view]]
+== Performances: Vue de tous les agrégats
+
+La vue « Performances : Tous les agrégats » présente un aperçu des événements de performance, des données et des informations de configuration de chaque agrégat surveillé par une instance d’Unified Manager. Cette page vous permet de surveiller les performances de vos agrégats et de résoudre les problèmes de performance et les événements de seuil.
+
+Voici quelques champs importants dans la vue Performance: All Aggregates.
+
+* Type : Le type d'agrégat :
++
+** disque dur
+** Hybride. Combine des disques durs et des SSD, mais Flash Pool n'a pas été activé.
+** Hybride (Flash Pool). Combine des HDD et des SSD, et Flash Pool est activé.
+** SSD
+** SSD (FabricPool). Associe des disques SSD et un niveau cloud
+** Disque dur (FabricPool). Associe des disques durs et un niveau cloud
+** VMDisk (SDS). Disques virtuels au sein d'une machine virtuelle
+** VMDisk (FabricPool). Associe des disques virtuels et un niveau cloud
+** LUN
+
+
+* Rapports de données inactives : indique si la fonctionnalité de rapport de données inactives est activée ou désactivée pour cet agrégat. Lorsqu’elle est activée, les volumes de cet agrégat affichent la quantité de données froides dans la vue « Performances : Tous les volumes ». La valeur de ce champ est « N/A » si la version d’ONTAP ne prend pas en charge les rapports de données inactives.
+* Politique de seuil : la ou les politiques de seuil de performance définies par l’utilisateur et actives sur cet objet de stockage. Placez votre curseur sur les noms de politique contenant des points de suspension (...) pour afficher le nom complet de la politique ou la liste des noms de politique attribués. Les boutons « Attribuer une politique de seuil de performance » et « Effacer la politique de seuil de performance » restent désactivés tant que vous n’avez pas sélectionné un ou plusieurs objets en cochant les cases situées à l’extrême gauche. Consultez les liens suivants pour plus d’informations :
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["Attribution de stratégies de seuil de performance aux objets de stockage"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["Suppression des politiques de seuil de performance des objets de stockage"]
+
+
+
+
+[[performance-all-nodes-view]]
+== Performances: vue de tous les nœuds
+
+La vue « Performances : Tous les nœuds » présente un aperçu des événements de performance, des données et des informations de configuration de chaque nœud surveillé par une instance d’Unified Manager. Vous pouvez ainsi suivre rapidement les performances de vos nœuds et résoudre les problèmes de performance et les dépassements de seuil.
+
+
+NOTE: Le rapport « Lectures Flash Cache » indique le pourcentage d'opérations de lecture sur le nœud qui sont prises en charge par le cache, au lieu d'être lues sur le disque. Les données Flash Cache ne sont affichées que pour les nœuds, et uniquement lorsqu'un module Flash Cache est installé sur le nœud.
+
+Dans le menu *Rapports*, l'option *Rapport d'inventaire matériel* est disponible lorsque Unified Manager et les clusters qu'il gère sont installés sur un site sans connectivité réseau externe. Ce bouton génère un fichier .csv contenant une liste complète des informations sur les clusters et les nœuds, telles que les numéros de modèle et de série du matériel, les types et le nombre de disques, les licences installées, etc. Cette fonctionnalité de génération de rapports est utile pour le renouvellement des contrats dans des sites sécurisés qui ne sont pas connectés à la plateforme NetApp Active IQ. Vous pouvez attribuer des politiques de seuil de performance à n'importe quel objet des pages d'inventaire des objets, ou en supprimer, à l'aide des boutons *Attribuer une politique de seuil de performance* et *Supprimer une politique de seuil de performance*.
+
+Consultez les liens suivants pour plus d'informations :
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["Attribution de stratégies de seuil de performance aux objets de stockage"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["Suppression des politiques de seuil de performance des objets de stockage"]
+* link:../health-checker/task_generate_hardware_inventory_report_for_contract_renewal.html["Génération d'un rapport d'inventaire du matériel pour le renouvellement du contrat"]
+
+
+
+
+[[performance-all-storage-vms-view]]
+== Performances : vue de toutes les machines virtuelles de stockage
+
+La vue « Performances : Toutes les machines virtuelles de stockage » présente un aperçu des événements de performance, des données et des informations de configuration de chaque machine virtuelle de stockage (SVM) surveillée par une instance d'Unified Manager. Vous pouvez ainsi surveiller rapidement les performances de vos SVM et résoudre les problèmes de performance et les dépassements de seuil. Le champ « Latence » de cette page indique le temps de réponse moyen pour toutes les requêtes d'E/S, exprimé en millisecondes par opération.
+
+
+NOTE: Les SVM listées sur cette page incluent uniquement les SVM de données et de cluster. Unified Manager n'utilise ni n'affiche les SVM d'administration ou de nœud.
+
+Consultez les liens suivants pour plus d'informations :
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["Attribution de stratégies de seuil de performance aux objets de stockage"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["Suppression des politiques de seuil de performance des objets de stockage"]
+
+
+
+
+[[performance-all-luns-view]]
+== Performances : vue de toutes les LUN
+
+La vue « Performances : toutes les LUN » affiche un aperçu des événements de performance, des données et des informations de configuration de chaque LUN surveillé par une instance de Unified Manager. Vous pouvez ainsi surveiller rapidement les performances de vos LUN et résoudre les problèmes de performance et les événements de dépassement de seuil.
+
+Si vous souhaitez analyser la latence et le débit d'un objet spécifique, cliquez sur l'icône Plus image:icon_kabob.gif[""], puis sur *Analyze Workload* et vous pourrez consulter les graphiques de performance et de capacité sur la page *Workload Analysis*.
+
+Consultez les liens suivants pour plus d'informations :
+
+* link:../data-protection/view-lun-relationships.html["Surveillance des LUN dans le cadre d'une relation de groupe de cohérence"]
+* link:../storage-mgmt/task_provision_luns.html["Provisionnement des LUN"]
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["Attribution de stratégies de seuil de performance aux objets de stockage"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["Suppression des politiques de seuil de performance des objets de stockage"]
+* link:../performance-checker/task_view_volumes_or_luns_in_same_qos_policy_group.html["Affichage des volumes ou LUN appartenant au même groupe de stratégie QoS"].
+* link:../performance-checker/task_view_qos_policy_group_settings_for_volumes_or_luns.html["Affichage des paramètres du groupe de règles QoS appliqués à des volumes ou LUN spécifiques"]
+* link:../api-automation/concept_provision_luns.html["Provisionnement des LUN à l'aide d'API"]
+
+
+
+
+[[performance-all-nvme-namespaces-view]]
+== Performance : vue de tous les espaces de noms NVMe
+
+La vue « Performances : Tous les espaces de noms NVMe » présente un aperçu des événements de performance, des données et des informations de configuration de chaque espace de noms NVMe surveillé par une instance de Unified Manager. Vous pouvez ainsi contrôler rapidement les performances et l’état de vos espaces de noms, et résoudre les problèmes ainsi que les événements de seuil.
+
+Les informations suivantes, entre autres, sont signalées : l’état actuel de l’espace de noms. * Hors ligne - L’accès en lecture ou en écriture à l’espace de noms n’est pas autorisé. * En ligne - L’accès en lecture et en écriture à l’espace de noms est autorisé. * NVFail - L’espace de noms a été automatiquement mis hors ligne en raison d’une défaillance de la NVRAM. * Erreur d’espace - L’espace de noms n’a plus d’espace disponible.
+
+Consultez les liens suivants pour plus d'informations :
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["Attribution de stratégies de seuil de performance aux objets de stockage"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["Suppression des politiques de seuil de performance des objets de stockage"]
+
+
+
+
+[[performance-all-network-interfaces-view]]
+== Performance : vue de toutes les interfaces réseau
+
+La vue « Performances : Toutes les interfaces réseau » présente un aperçu des événements de performance, des données et des informations de configuration de chaque interface réseau (LIF) surveillée par cette instance d'Unified Manager. Cette page vous permet de surveiller rapidement les performances de vos interfaces et de résoudre les problèmes de performance et les dépassements de seuil. Voici quelques champs importants de la vue « Performances : Toutes les interfaces réseau ».
+
+* IOPS : opérations d’entrée/sortie par seconde. La valeur IOPS ne s’applique pas aux LIF NFS et aux LIF CIFS, et s’affiche sous la forme N/A pour ces types.
+* Latence : le temps de réponse moyen pour toutes les requêtes d’E/S, exprimé en millisecondes par opération. La latence ne s’applique pas aux LIF NFS et aux LIF CIFS, et s’affiche comme N/A pour ces types.
+* Emplacement principal : l’emplacement principal de l’interface, affiché sous la forme du nom du nœud et du nom du port, séparés par deux points (:). Si l’emplacement est affiché avec des points de suspension (...), vous pouvez placer votre curseur sur le nom de l’emplacement pour afficher l’emplacement complet.
+* Emplacement actuel : emplacement actuel de l’interface, affiché sous la forme du nom du nœud et du nom du port, séparés par deux points (:). Si l’emplacement est affiché avec des points de suspension (...), vous pouvez placer votre curseur sur le nom de l’emplacement pour afficher l’emplacement complet.
+* Rôle : rôle de l’interface : données, cluster, gestion des nœuds ou intercluster.
+
+
+
+NOTE: Les interfaces répertoriées sur cette page comprennent les LIF de données, les LIF de cluster, les LIF de gestion de nœud et les LIF intercluster. Unified Manager n'utilise ni n'affiche les LIF système.
+
+
+
+[[performance-all-ports-view]]
+== Performances : Vue de tous les ports
+
+La vue « Performance : All Ports » affiche une vue d'ensemble des événements de performance, des données et des informations de configuration de chaque port surveillé par une instance de Unified Manager. Cela vous permet de surveiller rapidement les performances de vos ports et de résoudre les problèmes de performance et les événements de seuil. Pour le rôle d'un port, la fonction du port réseau affichée est Data ou Cluster. Les ports FCP ne peuvent pas avoir de rôle, et le rôle est affiché comme N/A.
+
+
+NOTE: Les valeurs des compteurs de performance sont affichées uniquement pour les ports physiques. Elles ne sont pas affichées pour les VLAN ou les groupes d'interfaces.
+
+Consultez les liens suivants pour plus d'informations :
+
+* link:../performance-checker/task_assign_performance_threshold_policies_to_storage_objects.html["Attribution de stratégies de seuil de performance aux objets de stockage"]
+* link:../performance-checker/task_remove_performance_threshold_policies_from_storage_objects.html["Suppression des politiques de seuil de performance des objets de stockage"]
+
+
+
+
+[[performance-qos-policy-groups-view]]
+== Performances: vue des groupes de stratégies QoS
+
+La vue Groupes de stratégies QoS affiche les groupes de stratégies QoS disponibles sur les clusters surveillés par Unified Manager. Cela inclut les stratégies QoS traditionnelles, les stratégies QoS adaptatives et les stratégies QoS attribuées à l’aide de Performance Service Levels.
+
+Voici quelques champs importants de la vue « Performances : Groupes de stratégies QoS ».
+
+* Groupe de stratégies QoS : Le nom du groupe de stratégies QoS. Pour les stratégies NetApp Service Level Manager (NSLM) 1.3 qui ont été importées dans Unified Manager 9.7 ou version ultérieure, le nom affiché ici inclut le nom du SVM et d’autres informations qui ne figurent pas dans le nom lorsque le Performance Service Level a été défini dans NSLM. Par exemple, le nom « NSLM_vs6_Performance_2_0 » signifie qu’il s’agit de la stratégie PSL « Performance » définie par le système NSLM et créée sur le SVM « vs6 » avec une latence attendue de « 2 ms/op ».
+* SVM : la machine virtuelle de stockage (SVM) à laquelle appartient le groupe de règles QoS. Vous pouvez cliquer sur le nom de la machine virtuelle de stockage pour accéder à sa page de détails. Notez que ce champ est vide si la règle QoS a été créée sur la machine virtuelle de stockage Admin, car ce type de machine virtuelle de stockage représente le cluster.
+* Débit minimal : débit minimal, en IOPS, que le groupe de règles garantit de fournir. Pour les stratégies adaptatives, il s’agit du nombre minimal d’IOPS attendus par To alloué au volume ou au LUN, en fonction de la taille allouée à l’objet de stockage.
+* Débit maximal : débit, exprimé en IOPS et/ou Mo/s, que le groupe de stratégies ne doit pas dépasser. Si ce champ est vide, le débit maximal défini dans ONTAP est infini. Pour les stratégies adaptatives, il s’agit du nombre maximal (de pointe) d’IOPS possibles par To alloué au volume ou au LUN, calculé en fonction de la taille allouée ou de la taille utilisée de l’objet de stockage.
+* IOPS minimales absolues : pour les politiques adaptatives, il s’agit de la valeur minimale absolue d’IOPS utilisée comme valeur de remplacement lorsque les IOPS attendues sont inférieures à cette valeur.
+* Taille des blocs : taille des blocs spécifiée pour la politique adaptative de QoS.
+* Allocation minimale : indique si l’« espace alloué » ou l’« espace utilisé » sert à déterminer le débit maximal (pic) en IOPS.
+* Latence attendue : Latence moyenne attendue pour les opérations d’entrée/sortie de stockage.
+* Partagé : Pour les politiques QoS traditionnelles, indique si les valeurs de débit définies dans le groupe de politiques sont partagées entre plusieurs objets.
+* Objets associés : nombre de workloads affectés au groupe de stratégie QoS. Cliquez sur le bouton Développer (image:../media/chevron_down.gif[""]) à côté du nom du groupe de stratégie QoS pour afficher plus de détails sur le groupe de stratégie.
+* Capacité allouée : quantité d’espace actuellement utilisée par les objets appartenant au groupe de stratégie QoS.
+* Objets associés : nombre de workloads affectés au groupe de stratégies QoS, répartis entre volumes et LUN. Vous pouvez cliquer sur le nombre pour accéder à une page contenant des informations détaillées sur les volumes ou LUN sélectionnés.
+
+
+Pour plus d'informations, consultez les rubriques sous link:..//performance-checker/concept_manage_performance_using_qos_policy_group_information.html["Gestion des performances à l'aide des informations sur les groupes de règles QoS"].

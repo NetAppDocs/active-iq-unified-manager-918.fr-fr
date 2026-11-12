@@ -1,0 +1,88 @@
+---
+permalink: storage-mgmt/reference_email_notification_format_page.html 
+sidebar: sidebar 
+keywords: email, notification, format, page 
+summary: 'La page Format de notification par e-mail affiche les règles de l"e-mail envoyé à un utilisateur ou à un groupe d"utilisateurs en cas de problème lié au quota (limite logicielle dépassée ou limitation stricte atteinte).' 
+---
+= Découvrez la page Format des notifications par e-mail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page Format de notification par e-mail affiche les règles de l'e-mail envoyé à un utilisateur ou à un groupe d'utilisateurs en cas de problème lié au quota (limite logicielle dépassée ou limitation stricte atteinte).
+
+La notification par e-mail est envoyée uniquement lorsque les événements de quota utilisateur ou de quota au groupe suivants sont générés : dépassement de la limite souple d'espace disque du quota utilisateur ou du quota au groupe, dépassement de la limite souple du nombre de fichiers du quota utilisateur ou du quota au groupe, atteinte de la limitation stricte d'espace disque du quota utilisateur ou du quota au groupe, ou atteinte de la limitation stricte du nombre de fichiers du quota utilisateur ou du quota au groupe.
+
+* *De*
++
+Affiche l'adresse e-mail à partir de laquelle l'e-mail est envoyé, que vous pouvez modifier. Par défaut, il s'agit de l'adresse e-mail indiquée sur la page Notifications.
+
+* *Objet*
++
+Affiche l'objet de l'e-mail de notification.
+
+* *Détails de l'adresse e-mail*
++
+Affiche le texte de l'e-mail de notification. Vous pouvez le modifier selon vos besoins. Par exemple, vous pouvez ajouter des informations relatives aux attributs du quota et réduire le nombre de mots-clés. Toutefois, vous ne devez pas modifier les mots-clés.
+
++
+Les mots-clés valides sont les suivants :
+
++
+** $EVENT_NAME
++
+Indique le nom de l'événement qui a déclenché la notification par e-mail.
+
+** $QUOTA_TARGET
++
+Spécifie le qtree ou le volume auquel le quota s'applique.
+
+** $QUOTA_USED_PERCENT
++
+Spécifie le pourcentage de limitation stricte du disque, de limitation souple du disque, de limitation stricte des fichiers ou de limitation souple des fichiers utilisé par l'utilisateur ou le groupe d'utilisateurs.
+
+** $QUOTA_LIMIT
++
+Spécifie la limitation stricte de disque ou la limitation stricte de fichier atteinte par l'utilisateur ou le groupe d'utilisateurs et pour laquelle l'un des événements suivants est généré :
+
++
+*** Limitation stricte de l'espace disque du quota utilisateur ou du quota au groupe atteinte
+*** Limite logicielle d'espace disque du quota utilisateur ou du quota au groupe atteinte
+*** Limitation stricte du nombre de fichiers du quota au groupe ou à l'utilisateur atteinte
+*** Limitation souple du nombre de fichiers du quota utilisateur ou du quota au groupe atteinte
+
+
+** $QUOTA_USED
++
+Spécifie l'espace disque utilisé ou le nombre de fichiers créés par l'utilisateur ou le groupe d'utilisateurs.
+
+** $QUOTA_USER
++
+Spécifie le nom de l'utilisateur ou du groupe d'utilisateurs.
+
+
+
+
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+Les boutons de commande vous permettent d’afficher un aperçu, d’enregistrer ou d’annuler les modifications apportées au format de notification par e-mail :
+
+* *Aperçu*
++
+Affiche un aperçu de l'e-mail de notification.
+
+* *Restaurer les paramètres d'usine*
++
+Permet de rétablir les valeurs par défaut d’usine du format de notification.
+
+* *Sauvegarder*
++
+Enregistre les modifications apportées au format de notification.
+
+

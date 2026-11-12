@@ -1,0 +1,37 @@
+---
+permalink: performance-checker/task_view_performance_capacity_counter_charts_to_identify_issues.html 
+sidebar: sidebar 
+keywords: view, performance, capacity, counter charts, identify, issues 
+summary: 'Vous pouvez afficher les graphiques de capacité de performance utilisée pour les nœuds et les agrégats sur la page Explorateur de performances. Cela vous permet d"afficher des données détaillées sur la capacité de performance des nœuds et des agrégats sélectionnés pour une période donnée.' 
+---
+= Consultez les graphiques des compteurs de capacité de performance dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez afficher les graphiques de capacité de performance utilisée pour les nœuds et les agrégats sur la page Explorateur de performances. Cela vous permet d'afficher des données détaillées sur la capacité de performance des nœuds et des agrégats sélectionnés pour une période donnée.
+
+Le graphique de compteur standard affiche les valeurs de capacité de performances utilisées pour les nœuds ou agrégats sélectionnés. Le graphique de compteur détaillé affiche les valeurs totales de capacité de performances de l'objet racine, ventilées selon l'utilisation par les protocoles utilisateur et les processus système en arrière-plan. En outre, la quantité de capacité de performances libre est également indiquée.
+
+[NOTE]
+====
+Étant donné que certaines activités en arrière-plan liées à la gestion du système et des données sont identifiées comme des workloads utilisateur et catégorisées comme des protocoles utilisateur, le pourcentage de protocoles utilisateur peut paraître artificiellement élevé lorsque ces processus s'exécutent. Ces processus s'exécutent généralement aux alentours de minuit, lorsque l'utilisation du cluster est faible. Si vous constatez un pic d'activité des protocoles utilisateur aux alentours de minuit, vérifiez si des tâches de sauvegarde du cluster ou d'autres activités en arrière-plan sont configurées pour s'exécuter à ce moment-là.
+
+====
+.Étapes
+. Sélectionnez l'onglet *Explorer* dans une page *Landing* de nœud ou d'agrégat.
+. Dans le volet *Graphiques de compteurs*, cliquez sur *Choisir les graphiques*, puis sélectionnez le graphique *Perf. Capacité utilisée*.
+. Faites défiler vers le bas jusqu'à ce que vous puissiez voir le graphique.
++
+Les couleurs du graphique standard indiquent si l'objet se trouve dans la plage optimale (jaune), s'il est sous-utilisé (vert) ou s'il est surutilisé (rouge). Le graphique de répartition affiche des informations détaillées sur la capacité de performance de l'objet racine uniquement.
+
++
+image::../media/headroom_counter_charts.gif[Capture d'écran de l'interface utilisateur montrant le graphique de répartition avec la capacité de performance détaillée pour l'objet racine uniquement.]
+
+. Si vous souhaitez afficher l’un ou l’autre graphique en taille réelle, cliquez sur *Zoom View*.
++
+De cette manière, vous pouvez ouvrir plusieurs graphiques de compteur dans des fenêtres distinctes pour comparer les valeurs de capacité de performance utilisée aux valeurs d’IOPS ou de MBps sur la même période.
+
+

@@ -1,0 +1,217 @@
+---
+permalink: install-windows/reference_complete_worksheet_um.html 
+sidebar: sidebar 
+keywords: complete, worksheet 
+summary: 'Avant d"installer et de configurer Unified Manager, assurez-vous d"avoir à portée de main des informations spécifiques sur votre environnement. Vous pouvez les consigner dans une feuille de calcul.' 
+---
+= Remplissez la feuille de calcul dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Avant d'installer et de configurer Unified Manager, assurez-vous d'avoir à portée de main des informations spécifiques sur votre environnement. Vous pouvez les consigner dans une feuille de calcul.
+
+
+
+[[unified-manager-installation-information]]
+== Informations d'installation d'Unified Manager
+
+Les informations nécessaires à l'installation d'Unified Manager.
+
+[cols="2*"]
+|===
+| Système sur lequel le logiciel est déployé | Votre valeur 
+
+
+ a| 
+Nom de domaine pleinement qualifié de l'hôte
+ a| 
+
+
+
+ a| 
+Adresse IP de l'hôte
+ a| 
+
+
+
+ a| 
+Masque de réseau
+ a| 
+
+
+
+ a| 
+Adresse IP de la passerelle
+ a| 
+
+
+
+ a| 
+Adresse DNS principale
+ a| 
+
+
+
+ a| 
+Adresse DNS secondaire
+ a| 
+
+
+
+ a| 
+Domaines de recherche
+ a| 
+
+
+
+ a| 
+Nom d'utilisateur de maintenance
+ a| 
+
+
+
+ a| 
+Mot de passe utilisateur de maintenance
+ a| 
+
+|===
+
+
+[[unified-manager-configuration-information]]
+== Informations de configuration d'Unified Manager
+
+Les détails pour configurer Unified Manager après l'installation. Certaines valeurs sont facultatives selon votre configuration.
+
+[cols="2*"]
+|===
+| Paramètre | Votre valeur 
+
+
+ a| 
+adresse e-mail de l'utilisateur de maintenance
+ a| 
+
+
+
+ a| 
+nom de l'hôte ou adresse IP du serveur SMTP
+ a| 
+
+
+
+ a| 
+Nom d'utilisateur SMTP
+ a| 
+
+
+
+ a| 
+Mot de passe SMTP
+ a| 
+
+
+
+ a| 
+port SMTP
+ a| 
+25 (Valeur par défaut)
+
+
+
+ a| 
+Adresse électronique utilisée pour envoyer les notifications d'alerte
+ a| 
+
+
+
+ a| 
+Nom de l'hôte ou adresse IP du serveur d'authentification
+ a| 
+
+
+
+ a| 
+Nom de l’administrateur Active Directory ou nom unique de liaison LDAP
+ a| 
+
+
+
+ a| 
+Mot de passe Active Directory ou mot de passe de liaison LDAP
+ a| 
+
+
+
+ a| 
+Nom unique de base du serveur d'authentification
+ a| 
+
+
+
+ a| 
+URL du fournisseur d'identité (IdP)
+ a| 
+
+
+
+ a| 
+Métadonnées du fournisseur d'identité (IdP)
+ a| 
+
+
+
+ a| 
+Adresses IP des hôtes de destination des traps SNMP
+ a| 
+
+
+
+ a| 
+port SNMP
+ a| 
+
+|===
+
+
+[[cluster-information]]
+== Informations sur le cluster
+
+Les détails des systèmes de stockage que vous gérez à l'aide d'Unified Manager.
+
+[cols="2*"]
+|===
+| Cluster 1 sur N | Votre valeur 
+
+
+ a| 
+Nom de l'hôte ou adresse IP de gestion du cluster
+ a| 
+
+
+
+ a| 
+Nom d'utilisateur de l'administrateur ONTAP
+
+[NOTE]
+====
+L'administrateur doit avoir reçu le rôle « `admin` ».
+
+==== a| 
+
+
+
+ a| 
+Mot de passe de l'administrateur ONTAP
+ a| 
+
+
+
+ a| 
+Protocole
+ a| 
+HTTPS
+
+|===

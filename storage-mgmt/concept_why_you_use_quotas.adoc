@@ -1,0 +1,21 @@
+---
+permalink: storage-mgmt/concept_why_you_use_quotas.html 
+sidebar: sidebar 
+keywords: use, quotas 
+summary: 'Vous pouvez utiliser des quotas pour limiter l"utilisation des ressources dans des volumes FlexVol, pour fournir une notification lorsque l"utilisation des ressources atteint des niveaux spécifiques, ou pour suivre l"utilisation des ressources.' 
+---
+= Découvrez les quotas dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser des quotas pour limiter l'utilisation des ressources dans des volumes FlexVol, pour fournir une notification lorsque l'utilisation des ressources atteint des niveaux spécifiques, ou pour suivre l'utilisation des ressources.
+
+Vous spécifiez un quota pour les raisons suivantes :
+
+* Pour limiter l'espace disque ou le nombre de fichiers pouvant être utilisés par un utilisateur ou un groupe, ou pouvant être contenus dans un qtree
+* Pour suivre la quantité d'espace disque ou le nombre de fichiers utilisés par un utilisateur, un groupe ou un qtree, sans imposer de limite
+* Pour avertir les utilisateurs lorsque leur utilisation de l’espace disque ou des fichiers est élevée
+

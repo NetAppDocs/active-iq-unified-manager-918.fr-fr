@@ -1,0 +1,25 @@
+---
+permalink: events/task_view_unassigned_events.html 
+sidebar: sidebar 
+keywords: view, unassigned, events 
+summary: Vous pouvez consulter les événements non attribués, puis les attribuer un par un à un utilisateur capable de les résoudre. 
+---
+= Consultez les événements non attribués dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter les événements non attribués, puis les attribuer un par un à un utilisateur capable de les résoudre.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion des événements*.
++
+Par défaut, les événements New et Acknowledged sont affichés sur la page d’inventaire Event Management.
+
+. Dans le volet *Filtres*, sélectionnez l'option de filtre *Non attribué* dans la zone *Attribué à*.
+

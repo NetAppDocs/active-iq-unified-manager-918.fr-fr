@@ -1,0 +1,40 @@
+---
+permalink: data-protection/task_quiesce_protection_relationship_from_health_volume_details.html 
+sidebar: sidebar 
+keywords: quiesce, protection, relationship, volume, health details page 
+summary: Vous pouvez suspendre une relation de protection pour empêcher temporairement les transferts de données. Vous pouvez suspendre une relation lorsque vous souhaitez créer une copie Snapshot d’un volume de destination SnapMirror contenant une base de données et que vous voulez vous assurer que son contenu reste stable pendant la copie Snapshot. 
+---
+= Mettre en veille une relation de protection depuis la page Détails du volume/de la santé dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez suspendre une relation de protection pour empêcher temporairement les transferts de données. Vous pouvez suspendre une relation lorsque vous souhaitez créer une copie Snapshot d’un volume de destination SnapMirror contenant une base de données et que vous voulez vous assurer que son contenu reste stable pendant la copie Snapshot.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+* Vous devez avoir configuré Workflow Automation.
+
+
+L'action de suspension ne s'affiche pas dans les cas suivants :
+
+* Si les paramètres RBAC ne permettent pas cette action, par exemple si vous ne disposez que de privilèges d'opérateur
+* Lorsque l'ID du volume est inconnu, par exemple lorsqu'il existe une relation intercluster et que le cluster de destination n'a pas encore été découvert
+* Lorsque vous n'avez pas associé Workflow Automation et Unified Manager
+
+
+.Étapes
+. Dans l'onglet *Protection* de la page de détails *Volume / Health*, cliquez avec le bouton droit sur la relation dans la vue topologique de la relation de protection que vous souhaitez mettre au repos.
+. Sélectionnez *Quiesce* dans le menu.
+. Cliquez sur *Yes* pour continuer.
++
+L'état de la tâche de mise au repos s'affiche en haut de la page des détails du volume/de l'état de santé, avec un lien vers les détails de la tâche.
+
+. Cliquez sur le lien *Voir les détails* pour accéder à la page de détails du *Job* afin d’obtenir des informations supplémentaires et de consulter la progression du job.
+. *Facultatif:* Cliquez sur la flèche Précédent de votre navigateur pour revenir à la page de détails *Volume / Health*.
++
+Le travail de mise au repos est terminé lorsque toutes les tâches du travail ont été exécutées avec succès.
+
+

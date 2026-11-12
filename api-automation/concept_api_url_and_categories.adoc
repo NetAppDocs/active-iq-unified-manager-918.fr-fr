@@ -1,0 +1,75 @@
+---
+permalink: api-automation/concept_api_url_and_categories.html 
+sidebar: sidebar 
+keywords: active iq, unified manager, api, access, categories 
+summary: 'Les API Active IQ Unified Manager vous permettent de gérer et de provisionner les objets de stockage de votre environnement. Vous pouvez également accéder à l"interface utilisateur Web de Unified Manager pour effectuer certaines de ces opérations.' 
+---
+= Gérez l'accès à l'API et les catégories d'Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+:pp: &#43;&#43;
+
+
+[role="lead"]
+Les API Active IQ Unified Manager vous permettent de gérer et de provisionner les objets de stockage de votre environnement. Vous pouvez également accéder à l'interface utilisateur Web de Unified Manager pour effectuer certaines de ces opérations.
+
+
+
+[[construct-a-url-to-directly-access-rest-apis]]
+== Construisez une URL pour accéder directement aux API REST
+
+Vous pouvez accéder directement aux API REST via un langage de programmation, tel que Python, C#, C{pp}, JavaScript, etc. Saisissez le nom de l'hôte ou l'adresse IP et l'URL pour accéder aux API REST au format suivant :
+
++https://<hostname>/api+
+
+[NOTE]
+====
+Le port par défaut est 443. Vous pouvez configurer le port en fonction des besoins de votre environnement.
+
+====
+
+
+[[access-the-online-api-documentation-page]]
+== Accédez à la page de documentation de l'API en ligne
+
+Vous pouvez accéder à la page de contenu de référence _API Documentation_, fournie avec le produit, pour afficher la documentation de l'API et émettre manuellement un appel d'API (dans l'interface, par exemple Swagger). Vous pouvez accéder à cette documentation en cliquant sur *Menu Bar* > *Help button* > *API Documentation*
+
+Vous pouvez également saisir le nom de l'hôte ou l'adresse IP et l'URL pour accéder à la page de l'API REST au format suivant
+
++https://<hostname>/docs/api/+
+
+
+
+[[categories]]
+== Catégories
+
+Les appels d'API sont organisés de manière fonctionnelle selon les domaines ou les catégories. Pour trouver une API spécifique, cliquez sur la catégorie d'API correspondante.
+
+Les API REST fournies avec Unified Manager vous permettent d'effectuer des fonctions d'administration, de surveillance et de provisionnement. Ces API sont regroupées dans les catégories suivantes.
+
+* *centre de données*
++
+Cette catégorie regroupe les API qui vous aident à gérer et à analyser le stockage du centre de données à l'aide d'outils tels que Work Flow Automation et Ansible. Les API REST de cette catégorie fournissent des informations sur les clusters, les nœuds, les agrégats, les volumes, les LUN, les partages de fichiers, les espaces de noms et les autres éléments de votre centre de données.
+
+* *serveur de gestion*
++
+Les API de la catégorie *management-server* contiennent les API `jobs, system,` et `events`. Les tâches sont des opérations planifiées pour une exécution asynchrone, liées à la gestion des objets de stockage ou des charges de travail sur Unified Manager. L'API `events` renvoie les événements de votre centre de données, et l'API `system` renvoie les détails de l'instance Unified Manager.
+
+* *fournisseur de stockage*
++
+Cette catégorie contient toutes les API de provisionnement requises pour gérer et provisionner les partages de fichiers, les LUN, les niveaux de service de performance et les stratégies d'efficacité du stockage. Les API vous permettent également de configurer les points de terminaison d'accès, les annuaires Active Directory, ainsi que d'attribuer des niveaux de service de performance et des stratégies d'efficacité du stockage aux charges de travail de stockage.
+
+* *administration*
++
+Cette catégorie contient les API utilisées pour exécuter des tâches administratives, telles que la gestion des paramètres de sauvegarde, la consultation des certificats du magasin de confiance pour les sources de données Unified Manager et la gestion des clusters ONTAP en tant que sources de données pour Unified Manager.
+
+* *passerelle*
++
+Unified Manager vous permet d'invoquer les API REST ONTAP via les API de la catégorie gateway et de gérer les objets de stockage dans votre centre de données.
+
+* *sécurité*
++
+Cette catégorie contient des API permettant de gérer les utilisateurs d'Unified Manager.
+
+

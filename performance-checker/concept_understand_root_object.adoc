@@ -1,0 +1,24 @@
+---
+permalink: performance-checker/concept_understand_root_object.html 
+sidebar: sidebar 
+keywords: understand, root, object 
+summary: 'L"objet racine sert de référence par rapport à laquelle les autres objets sont comparés. Cela vous permet d"afficher et de comparer les données des autres objets à l"objet racine, en fournissant une analyse des performances qui vous aide à dépanner et à améliorer les performances des objets.' 
+---
+= Utilisez les objets racine pour la surveillance des performances dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'objet racine sert de référence par rapport à laquelle les autres objets sont comparés. Cela vous permet d'afficher et de comparer les données des autres objets à l'objet racine, en fournissant une analyse des performances qui vous aide à dépanner et à améliorer les performances des objets.
+
+Le nom de l'objet racine s'affiche en haut du volet Comparaison. Les objets supplémentaires s'affichent sous l'objet racine. Bien qu'il n'y ait pas de limite au nombre d'objets supplémentaires que vous pouvez ajouter au volet Comparaison, un seul objet racine est autorisé. Les données de l'objet racine s'affichent automatiquement dans les graphiques du volet Graphiques des compteurs.
+
+Vous ne pouvez pas modifier l'objet racine ; il est toujours défini sur la page de l'objet que vous consultez. Par exemple, si vous ouvrez la page Explorateur de performances du volume Volume1, Volume1 est l'objet racine et ne peut pas être modifié. Si vous souhaitez effectuer une comparaison avec un autre objet racine, vous devez cliquer sur le lien d'un objet et ouvrir sa page de destination.
+
+[NOTE]
+====
+Les événements et les seuils sont affichés uniquement pour les objets racine.
+
+====

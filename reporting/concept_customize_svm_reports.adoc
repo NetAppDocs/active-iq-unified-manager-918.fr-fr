@@ -1,0 +1,14 @@
+---
+permalink: reporting/concept_customize_svm_reports.html 
+sidebar: sidebar 
+keywords: customize, storage, vm reports 
+summary: 'Vous pouvez créer des rapports sur les machines virtuelles de stockage (SVM) afin d"analyser les informations sur les volumes et d"afficher l"état général et la disponibilité du stockage. Par exemple, vous pouvez créer des rapports pour afficher les SVM atteignant le nombre maximal de volumes et pour analyser les SVM arrêtées.' 
+---
+= Personnalisez les rapports de machines virtuelles de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des rapports sur les machines virtuelles de stockage (SVM) afin d'analyser les informations sur les volumes et d'afficher l'état général et la disponibilité du stockage. Par exemple, vous pouvez créer des rapports pour afficher les SVM atteignant le nombre maximal de volumes et pour analyser les SVM arrêtées.

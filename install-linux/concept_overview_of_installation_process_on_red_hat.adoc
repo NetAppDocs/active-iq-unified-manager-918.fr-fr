@@ -1,0 +1,16 @@
+---
+permalink: install-linux/concept_overview_of_installation_process_on_red_hat.html 
+sidebar: sidebar 
+keywords: overview, installation process 
+summary: 'Le processus d"installation décrit les tâches que vous devez effectuer avant de pouvoir utiliser Unified Manager.' 
+---
+= Comprendre la séquence d'installation d'Active IQ Unified Manager sur Red Hat Enterprise Linux
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le processus d'installation décrit les tâches que vous devez effectuer avant de pouvoir utiliser Unified Manager.
+
+image::../media/install_flow_on_rhel_2026.png[Un diagramme qui montre les prérequis, l'installation d'Unified Manager et les flux de travail de configuration initiale sur Red Hat Linux]

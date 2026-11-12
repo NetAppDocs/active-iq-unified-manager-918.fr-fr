@@ -1,0 +1,16 @@
+---
+permalink: storage-mgmt/concept_understand_user_interface.html 
+sidebar: sidebar 
+keywords: understand, user, interface 
+summary: 'L"interface utilisateur d"Unified Manager se compose principalement d"un tableau de bord offrant une vue d"ensemble des objets surveillés. Elle permet également d"accéder à la visualisation de tous les objets du cluster.' 
+---
+= Découvrez l’interface utilisateur de Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'interface utilisateur d'Unified Manager se compose principalement d'un tableau de bord offrant une vue d'ensemble des objets surveillés. Elle permet également d'accéder à la visualisation de tous les objets du cluster.
+
+Vous pouvez sélectionner une vue préférée et utiliser les boutons d'action selon vos besoins. Votre configuration d'écran est enregistrée dans un espace de travail afin que toutes les fonctionnalités dont vous avez besoin soient disponibles lorsque vous démarrez Unified Manager. Toutefois, lorsque vous passez d'une vue à une autre, puis revenez à la vue précédente, il est possible que la vue ne soit pas la même.

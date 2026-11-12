@@ -1,0 +1,38 @@
+---
+permalink: config/task_change_unified_manager_host_name_on_vmware.html 
+sidebar: sidebar 
+keywords: change, unified manager, virtual, appliance, host name 
+summary: 'L"hôte réseau se voit attribuer un nom lors du premier déploiement de l"appliance virtuelle Unified Manager. Vous pouvez modifier le nom de l"hôte après le déploiement. Si vous modifiez le nom de l"hôte, vous devez également régénérer le certificat HTTPS.' 
+---
+= Modifier le nom de l'hôte de l'appliance virtuelle Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'hôte réseau se voit attribuer un nom lors du premier déploiement de l'appliance virtuelle Unified Manager. Vous pouvez modifier le nom de l'hôte après le déploiement. Si vous modifiez le nom de l'hôte, vous devez également régénérer le certificat HTTPS.
+
+.Avant de commencer
+Vous devez être connecté à Unified Manager en tant qu'utilisateur de maintenance, ou disposer du rôle Application Administrator pour effectuer ces tâches.
+
+Vous pouvez utiliser le nom de l'hôte (ou l'adresse IP de l'hôte) pour accéder à l'interface utilisateur web de Unified Manager. Si vous avez configuré une adresse IP statique pour votre réseau lors du déploiement, vous avez alors attribué un nom à l'hôte réseau. Si vous avez configuré le réseau à l'aide de DHCP, le nom de l'hôte doit être obtenu à partir du DNS. Si DHCP ou DNS n'est pas correctement configuré, le nom de l'hôte "`Unified Manager`" est automatiquement attribué et associé au certificat de sécurité.
+
+Quelle que soit la manière dont le nom de l'hôte a été attribué, si vous modifiez le nom de l'hôte et que vous avez l'intention d'utiliser le nouveau nom de l'hôte pour accéder à l'interface utilisateur Web de Unified Manager, vous devez générer un nouveau certificat de sécurité.
+
+Si vous accédez à l’interface web en utilisant l’adresse IP du serveur au lieu du nom de l’hôte, vous n’avez pas besoin de générer un nouveau certificat si vous modifiez le nom de l’hôte. Cependant, il est recommandé, conformément aux bonnes pratiques, de mettre à jour le certificat afin que le nom de l’hôte qui y figure corresponde au nom de l’hôte réel.
+
+Si vous modifiez le nom de l'hôte dans Unified Manager, vous devez mettre à jour manuellement le nom de l'hôte dans OnCommand Workflow Automation (WFA). Le nom de l'hôte n'est pas mis à jour automatiquement dans WFA.
+
+Le nouveau certificat ne prendra effet qu'après le redémarrage de la machine virtuelle Unified Manager.
+
+.Étapes
+. xref:task_generate_an_https_security_certificate_ocf.adoc[Générer un certificat de sécurité HTTPS]
++
+Si vous souhaitez utiliser le nouveau nom de l'hôte pour accéder à l'interface utilisateur web de Unified Manager, vous devez régénérer le certificat HTTPS pour l'associer au nouveau nom de l'hôte.
+
+. xref:task_restart_unified_manager_virtual_machine.adoc[Redémarrez la machine virtuelle Unified Manager]
++
+Après avoir régénéré le certificat HTTPS, vous devez redémarrer la machine virtuelle Unified Manager.
+
+

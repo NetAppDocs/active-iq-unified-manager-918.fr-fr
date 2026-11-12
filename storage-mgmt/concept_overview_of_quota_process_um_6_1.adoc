@@ -1,0 +1,30 @@
+---
+permalink: storage-mgmt/concept_overview_of_quota_process_um_6_1.html 
+sidebar: sidebar 
+keywords: overview, quota, process 
+summary: 'Les quotas peuvent être souples ou stricts. Les quotas souples amènent ONTAP à envoyer une notification lorsque les limites spécifiées sont dépassées, tandis que les quotas stricts empêchent une opération d"écriture de réussir lorsque les limites spécifiées sont dépassées.' 
+---
+= Découvrez le processus de quota dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les quotas peuvent être souples ou stricts. Les quotas souples amènent ONTAP à envoyer une notification lorsque les limites spécifiées sont dépassées, tandis que les quotas stricts empêchent une opération d'écriture de réussir lorsque les limites spécifiées sont dépassées.
+
+Lorsque ONTAP reçoit une requête d'un utilisateur ou d'un groupe d'utilisateurs pour écrire sur un volume FlexVol, il vérifie si des quotas sont activés sur ce volume pour l'utilisateur ou le groupe d'utilisateurs et détermine les éléments suivants :
+
+* La limitation stricte sera-t-elle atteinte ?
++
+Si oui, l’opération d’écriture échoue lorsque la limitation stricte est atteinte et la notification de quota strict est envoyée.
+
+* Si la limite souple sera dépassée
++
+Si oui, l'opération d'écriture réussit lorsque la limite souple est dépassée et que la notification de quota souple est envoyée.
+
+* Si une opération d'écriture ne dépassera pas la limite souple
++
+Si oui, l'opération d'écriture réussit et aucune notification n'est envoyée.
+
+

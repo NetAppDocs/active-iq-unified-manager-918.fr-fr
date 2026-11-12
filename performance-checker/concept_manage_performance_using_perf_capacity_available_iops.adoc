@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/concept_manage_performance_using_perf_capacity_available_iops.html 
+sidebar: sidebar 
+keywords: managing, performance, performance, capacity, available, iops, information 
+summary: 'La capacité de performance indique le débit que vous pouvez obtenir d"une ressource sans dépasser les performances utiles de cette ressource. Lorsqu"elle est affichée à l"aide des compteurs de performance existants, la capacité de performance est le point auquel vous obtenez l"utilisation maximale d"un nœud ou d"un agrégat avant que la latence ne devienne problématique.' 
+---
+= Gérez la capacité de performance et les IOPS disponibles dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La capacité de performance indique le débit maximal que vous pouvez obtenir d'une ressource sans dépasser ses performances utiles. En utilisant les compteurs de performance existants, la capacité de performance correspond au seuil d'utilisation maximale d'un nœud ou d'un agrégat avant que la latence ne devienne problématique.
+
+Unified Manager collecte les statistiques de capacité de performance des nœuds et les agrège dans chaque cluster. La _capacité de performance utilisée_ correspond au pourcentage de capacité de performance actuellement utilisée, et la _capacité de performance libre_ correspond au pourcentage de capacité de performance encore disponible.
+
+Alors que la capacité de performance libre indique le pourcentage de la ressource encore disponible, les IOPS disponibles vous indiquent le nombre d'IOPS pouvant être ajoutés à la ressource avant d'atteindre sa capacité de performance maximale. Grâce à cette métrique, vous avez la garantie de pouvoir ajouter des charges de travail d'un nombre prédéterminé d'IOPS à une ressource.
+
+Le suivi des informations relatives aux capacités de performance présente les avantages suivants :
+
+* Contribue au provisionnement et à l’équilibrage des workflows.
+* Permet d'éviter la surcharge d'un nœud ou la sollicitation excessive de ses ressources, réduisant ainsi le besoin de dépannage.
+* Vous aide à déterminer avec plus de précision où des équipements de stockage supplémentaires pourraient être nécessaires.
+

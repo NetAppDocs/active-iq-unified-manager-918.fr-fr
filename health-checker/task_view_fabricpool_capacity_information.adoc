@@ -1,0 +1,74 @@
+---
+permalink: health-checker/task_view_fabricpool_capacity_information.html 
+sidebar: sidebar 
+keywords: view, fabricPool, cloud tier, mirror tier, capacity, information 
+summary: 'Vous pouvez consulter les informations de capacité FabricPool des clusters, des agrégats et des volumes sur les pages d"inventaire et de détails Capacité et performances de ces objets. Ces pages affichent également les informations de miroir FabricPool lorsqu"un niveau miroir a été configuré.' 
+---
+= Consultez les informations de capacité de FabricPool dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter les informations de capacité FabricPool des clusters, des agrégats et des volumes sur les pages d'inventaire et de détails Capacité et performances de ces objets. Ces pages affichent également les informations de miroir FabricPool lorsqu'un niveau miroir a été configuré.
+
+Ces pages affichent des informations telles que la capacité disponible sur le niveau de performance local et sur le niveau cloud, la quantité de capacité utilisée dans les deux niveaux, les agrégats rattachés à un niveau cloud et les volumes qui mettent en œuvre les fonctionnalités FabricPool en déplaçant certaines informations vers le niveau cloud.
+
+Lorsqu'un niveau cloud est dupliqué vers un autre fournisseur de cloud (le « niveau miroir »), les deux niveaux cloud sont affichés dans la page de détails Aggregate / Health.
+
+.Étapes
+. Effectuez l'une des actions suivantes :
++
+[cols="2*"]
+|===
+| Pour consulter les informations de capacité pour... | Faites ceci... 
+
+
+ a| 
+Groupes
+ a| 
+.. Dans la vue Capacité : Tous les clusters, cliquez sur un cluster.
+.. Sur la page des détails Cluster / Health, cliquez sur l’onglet *Configuration*.
++
+L'affichage indique les noms de tous les niveaux de cloud auxquels ce cluster est connecté.
+
+
+
+
+
+ a| 
+Agrégats
+ a| 
+.. Dans la vue Capacité : Tous les agrégats, cliquez sur un agrégat dont le champ Type indique « `SSD (FabricPool)` » ou « `HDD (FabricPool)` ».
+.. Sur la page des détails de l'agrégat et de l'état, cliquez sur l'onglet *Capacité*.
++
+L'affichage indique la capacité totale utilisée dans le niveau cloud.
+
+.. Cliquez sur l'onglet *Informations sur le disque*.
++
+L'écran affiche le nom du niveau de cloud et la capacité utilisée.
+
+.. Cliquez sur l'onglet *Configuration*.
++
+L'écran affiche le nom du niveau de cloud et d'autres informations détaillées le concernant.
+
+
+
+
+
+ a| 
+Volumes
+ a| 
+.. Dans la vue Capacité : Tous les volumes, cliquez sur un volume où un nom de stratégie apparaît dans le champ « `Stratégie de hiérarchisation` ».
+.. Sur la page Détails du volume/de l’état, cliquez sur l’onglet *Configuration*.
++
+L'écran affiche le nom de la stratégie de hiérarchisation FabricPool attribuée au volume.
+
+
+
+|===
+. Sur la page *Workload Analysis*, vous pouvez sélectionner "`Cloud Tier View`" dans la zone *Capacity Trend* pour voir la capacité utilisée dans le niveau de performances local et dans le Cloud Tier au cours du mois précédent.
+
+
+Pour plus d'informations sur les agrégats FabricPool, voir https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["Aperçu des disques et des agrégats"].

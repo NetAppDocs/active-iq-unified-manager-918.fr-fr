@@ -1,0 +1,55 @@
+---
+permalink: events/task_assign_events_to_specific_users.html 
+sidebar: sidebar 
+keywords: assign, events, specific, users 
+summary: 'Vous pouvez vous attribuer des événements non attribués ou les attribuer à d"autres utilisateurs, y compris des utilisateurs distants. Vous pouvez réattribuer des événements attribués à un autre utilisateur, si nécessaire. Par exemple, en cas de problèmes fréquents sur un objet de stockage, vous pouvez attribuer les événements correspondants à l"utilisateur qui gère cet objet.' 
+---
+= Attribuer des événements à des utilisateurs spécifiques dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez vous attribuer des événements non attribués ou les attribuer à d'autres utilisateurs, y compris des utilisateurs distants. Vous pouvez réattribuer des événements attribués à un autre utilisateur, si nécessaire. Par exemple, en cas de problèmes fréquents sur un objet de stockage, vous pouvez attribuer les événements correspondants à l'utilisateur qui gère cet objet.
+
+.Avant de commencer
+* Le nom d'utilisateur et l'adresse électronique doivent être correctement configurés.
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion des événements*.
+. Sur la page d'inventaire *Event Management*, sélectionnez un ou plusieurs événements que vous souhaitez attribuer.
+. Attribuez l'événement en choisissant l'une des options suivantes :
++
+|===
+| Si vous souhaitez attribuer l'événement à... | Ensuite, faites ceci... 
+
+
+ a| 
+Vous-même
+ a| 
+Cliquez sur *Attribuer à* > *Moi*.
+
+
+
+ a| 
+Un autre utilisateur
+ a| 
+.. Cliquez sur *Attribuer à* > *Un autre utilisateur*.
+.. Dans la boîte de dialogue « Attribuer un propriétaire », saisissez le nom d'utilisateur ou sélectionnez un utilisateur dans la liste déroulante.
+.. Cliquez sur *Attribuer*.
++
+Une notification par courriel est envoyée à l'utilisateur.
+
++
+[NOTE]
+====
+Si vous ne saisissez pas de nom d'utilisateur ou ne sélectionnez pas d'utilisateur dans la liste déroulante et cliquez sur *Assign*, l'événement reste non attribué.
+
+====
+
+
+|===
+

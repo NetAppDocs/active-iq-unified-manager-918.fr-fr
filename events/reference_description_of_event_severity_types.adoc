@@ -1,0 +1,41 @@
+---
+permalink: events/reference_description_of_event_severity_types.html 
+sidebar: sidebar 
+keywords: description, event, severity, types 
+summary: Chaque événement est associé à un niveau de gravité afin de vous aider à prioriser les événements qui nécessitent une action corrective immédiate. 
+---
+= Découvrez les différents types de gravité des événements dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Chaque événement est associé à un niveau de gravité afin de vous aider à prioriser les événements qui nécessitent une action corrective immédiate.
+
+* *Critique*
++
+Un problème est survenu et pourrait entraîner une interruption de service si vous ne prenez pas immédiatement les mesures correctives nécessaires.
+
++
+Les événements critiques pour les performances ne sont envoyés qu'à partir des seuils définis par l'utilisateur.
+
+* *Erreur*
++
+La source d'événement continue de fonctionner; toutefois, des mesures correctives sont nécessaires pour éviter toute interruption de service.
+
+* *Avertissement*
++
+La source de l'événement a connu un incident dont vous devriez être informé, ou un compteur de performance d'un objet du cluster présente une valeur anormale et doit être surveillé afin d'éviter qu'il n'atteigne le seuil critique. Les événements de cette gravité n'entraînent pas d'interruption de service et ne nécessitent généralement pas d'intervention immédiate.
+
++
+Les alertes d'avertissement de performance sont envoyées à partir de seuils définis par l'utilisateur, par le système ou de seuils dynamiques.
+
+* *Informations*
++
+Cet événement se produit lorsqu’un nouvel objet est découvert ou lorsqu’une action utilisateur est effectuée. Par exemple, lorsqu’un objet de stockage est supprimé ou que des modifications de configuration sont apportées, un événement de type de gravité Information est généré.
+
++
+Les événements d'information sont envoyés directement par ONTAP lorsqu'il détecte une modification de configuration.
+
+

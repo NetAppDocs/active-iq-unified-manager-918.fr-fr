@@ -1,0 +1,37 @@
+---
+permalink: performance-checker/task_view_performance_status_of_all_san_array_clusters.html 
+sidebar: sidebar 
+keywords: all san, array, performance, clusters 
+summary: 'Utilisez la vue Tous les clusters sur la page Performances pour afficher l"état des performances de vos clusters All SAN Array.' 
+---
+= Consultez les performances de tous les clusters SAN Array dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser la vue Performances : Tous les clusters pour afficher l’état des performances de vos clusters All SAN Array.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+Vous pouvez consulter des informations générales sur les clusters All SAN Array dans la vue Performance: All Clusters, ainsi que des détails dans la page Cluster / Performance Explorer.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Clusters*.
+. Assurez-vous que la colonne « `Personality` » est affichée dans la vue *Health: All Clusters*, ou ajoutez-la à l’aide de la commande *Show / Hide*.
++
+Cette colonne affiche « `All SAN Array` » pour vos clusters All SAN Array.
+
+. Pour afficher des informations sur les performances de ces clusters, sélectionnez la vue *Performances : Tous les clusters*.
++
+Consultez les informations de performance du cluster All SAN Array.
+
+. Pour afficher des informations détaillées sur les performances de ces clusters, cliquez sur le nom d'un cluster All SAN Array.
+. Cliquez sur l'onglet *Explorer*.
+. Sur la page *Cluster / Performance Explorer*, sélectionnez *Nœuds sur ce cluster* dans le menu *Afficher et comparer*.
++
+Vous pouvez comparer les statistiques de performance des deux nœuds de ce cluster pour vérifier que la charge est quasiment identique sur les deux nœuds. S'il existe d'importants écarts entre les deux nœuds, vous pouvez ajouter le second nœud aux graphiques et comparer les valeurs sur une période plus longue afin d'identifier d'éventuels problèmes de configuration.
+
+

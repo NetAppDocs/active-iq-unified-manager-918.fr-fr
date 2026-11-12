@@ -1,0 +1,21 @@
+---
+permalink: config/task_view_users.html 
+sidebar: sidebar 
+keywords: view, users 
+summary: 'La page Utilisateurs vous permet de consulter la liste des utilisateurs qui gèrent les objets de stockage et les données à l"aide d"Unified Manager. Vous pouvez y voir des informations détaillées sur chaque utilisateur, telles que son nom, son type, son adresse e-mail et le rôle qui lui est attribué.' 
+---
+= Afficher les utilisateurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page Utilisateurs vous permet de consulter la liste des utilisateurs qui gèrent les objets de stockage et les données à l'aide d'Unified Manager. Vous pouvez y voir des informations détaillées sur chaque utilisateur, telles que son nom, son type, son adresse e-mail et le rôle qui lui est attribué.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+.Étape
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Utilisateurs*.
+

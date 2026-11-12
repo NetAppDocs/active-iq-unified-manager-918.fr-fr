@@ -1,0 +1,53 @@
+---
+permalink: health-checker/concept_how_scripts_work_with_alerts.html 
+sidebar: sidebar 
+keywords: scripts, work, alerts 
+summary: 'Vous pouvez associer une alerte à votre script afin que celui-ci s"exécute lorsqu"une alerte est déclenchée par un événement dans Unified Manager. Vous pouvez utiliser ces scripts pour résoudre les problèmes liés aux objets de stockage ou identifier les objets de stockage à l"origine des événements.' 
+---
+= Comprendre le fonctionnement des scripts avec les alertes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez associer une alerte à votre script afin que celui-ci s'exécute lorsqu'une alerte est déclenchée par un événement dans Unified Manager. Vous pouvez utiliser ces scripts pour résoudre les problèmes liés aux objets de stockage ou identifier les objets de stockage à l'origine des événements.
+
+Lorsqu'une alerte est générée pour un événement dans Unified Manager, un e-mail d'alerte est envoyé aux destinataires spécifiés. Si vous avez associé une alte à un script, ce dernier est exécuté. Vous trouverez dans l'e-mail d'alerte le détail des arguments transmis au script.
+
+[NOTE]
+====
+Si vous avez créé un script personnalisé et l'avez associé à une alerte pour un type d'événement spécifique, les actions sont effectuées en fonction de votre script personnalisé pour ce type d'événement, et les actions *Corriger* ne sont pas disponibles par défaut sur la page Actions de gestion ou sur le tableau de bord Unified Manager.
+
+====
+Le script utilise les arguments suivants pour son exécution :
+
+* `-eventID`
+* `-eventName`
+* `-eventSeverity`
+* `-eventSourceID`
+* `-eventSourceName`
+* `-eventSourceType`
+* `-eventState`
+* `-eventArgs`
+
+
+Vous pouvez utiliser les arguments dans vos scripts et recueillir des informations sur les événements associés ou modifier les objets de stockage.
+
+
+
+[[example-for-obtaining-arguments-from-scripts]]
+== Exemple d'obtention d'arguments à partir de scripts
+
+[listing]
+----
+print "$ARGV[0] : $ARGV[1]\n"
+print "$ARGV[7] : $ARGV[8]\n"
+----
+Lorsqu'une alerte est générée, le système exécute ce script et affiche le résultat suivant :
+
+[listing]
+----
+-eventID : 290
+-eventSourceID : 4138
+----

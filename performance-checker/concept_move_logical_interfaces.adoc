@@ -1,0 +1,36 @@
+---
+permalink: performance-checker/concept_move_logical_interfaces.html 
+sidebar: sidebar 
+keywords: move, logical, interfaces, lifs 
+summary: 'Déplacer les interfaces logiques (LIF) vers un port moins occupé peut contribuer à améliorer l"équilibrage de charge, faciliter les opérations de maintenance et l"optimisation des performances, et réduire l"accès indirect.' 
+---
+= Déplacez les LIF pour améliorer les performances dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Déplacer les interfaces logiques (LIF) vers un port moins occupé peut contribuer à améliorer l'équilibrage de charge, faciliter les opérations de maintenance et l'optimisation des performances, et réduire l'accès indirect.
+
+L'accès indirect peut réduire l'efficacité du système. Ce phénomène se produit lorsqu'un workload de volume utilise différents nœuds pour le traitement réseau et le traitement des données. Pour réduire l'accès indirect, vous pouvez réorganiser les LIF, ce qui implique de déplacer les LIF afin qu'elles utilisent le même nœud pour le traitement réseau et le traitement des données. Vous pouvez configurer l'équilibrage de charge pour qu'ONTAP déplace automatiquement les LIF occupées vers un autre port, ou vous pouvez déplacer une LIF manuellement.
+
+[cols="2*"]
+|===
+| *Avantages* | *Considérations* 
+
+
+ a| 
+* Améliorer la répartition de charge.
+* Réduisez l'accès indirect.
+
+ a| 
+[NOTE]
+====
+Lors du déplacement d'une interface logique (LIF) connectée à des partages CIFS, les clients accédant aux partages CIFS sont déconnectés. Toute requête de lecture ou d'écriture sur les partages CIFS est interrompue.
+
+====
+|===
+Vous utilisez les commandes ONTAP pour configurer l'équilibrage de charge. Pour plus d'informations, consultez la documentation réseau ONTAP.
+
+Vous utilisez ONTAP System Manager et les commandes ONTAP CLI pour déplacer manuellement les LIF.

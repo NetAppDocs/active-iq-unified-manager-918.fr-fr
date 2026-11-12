@@ -1,0 +1,18 @@
+---
+permalink: data-protection/concept_monitor_storage_vm_disaster_recovery_relationships.html 
+sidebar: sidebar 
+keywords: disaster recovery, monitor, storage vm protection, relationships 
+summary: Active IQ Unified Manager prend en charge la surveillance des relations de reprise après sinistre des machines virtuelles de stockage, ce qui permet une reprise après sinistre à la granularité d’une machine virtuelle de stockage. La reprise après sinistre des machines virtuelles de stockage permet de récupérer les données présentes dans les volumes constitutifs de la machine virtuelle de stockage ainsi que de restaurer la configuration de la machine virtuelle de stockage. 
+---
+= Découvrez les relations de reprise après sinistre des machines virtuelles de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Active IQ Unified Manager prend en charge la surveillance des relations de reprise après sinistre des machines virtuelles de stockage, ce qui permet une reprise après sinistre à la granularité d’une machine virtuelle de stockage. La reprise après sinistre des machines virtuelles de stockage permet de récupérer les données présentes dans les volumes constitutifs de la machine virtuelle de stockage ainsi que de restaurer la configuration de la machine virtuelle de stockage.
+
+Une relation DR de machine virtuelle de stockage est créée entre la machine virtuelle de stockage source et la machine virtuelle de stockage de destination afin d’assurer une reprise après sinistre asynchrone. Vous pouvez choisir de répliquer la totalité ou une partie de la configuration de la machine virtuelle de stockage (à l’exclusion de la configuration réseau et de protocole), ainsi que les volumes de données, en fonction de la configuration du cluster.
+
+Une fois la relation de reprise après sinistre de la machine virtuelle de stockage configurée, lorsque la machine virtuelle de stockage source devient indisponible en raison d’une défaillance matérielle ou d’un sinistre environnemental, la machine virtuelle de stockage de destination démarre et fournit l’accès aux données avec une perturbation minimale. De même, lorsque la machine virtuelle de stockage source redevient disponible, elle est resynchronisée avec la machine virtuelle de stockage de destination, puis la source redémarre pour fournir l’accès aux données. Vous pouvez utiliser les commandes SnapMirror pour configurer et gérer la relation de reprise après sinistre de la machine virtuelle de stockage.

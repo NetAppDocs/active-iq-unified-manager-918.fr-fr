@@ -1,0 +1,53 @@
+---
+permalink: performance-checker/concept_types_of_workloads_monitored_by_unified_manager.html 
+sidebar: sidebar 
+keywords: types, workloads, monitored, unified manager 
+summary: 'Utilisez Unified Manager pour surveiller les performances de deux types de charges de travail : celles définies par l’utilisateur et celles définies par le système.' 
+---
+= Surveillez les types de charges de travail avec Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour surveiller les performances de deux types de workloads : ceux définis par l’utilisateur et ceux définis par le système.
+
+* *_workloads définis par l'utilisateur_*
++
+Le débit d'E/S des applications vers le cluster. Il s'agit des processus impliqués dans les requêtes de lecture et d'écriture. Un volume, un LUN, un partage NFS, un partage SMB/CIFS et un workload constituent un workload défini par l'utilisateur.
+
++
+[NOTE]
+====
+Unified Manager surveille uniquement l’activité du workload sur le cluster. Il ne surveille pas les applications, les clients ni les chemins d’accès entre les applications et le cluster.
+
+====
++
+Si une ou plusieurs des conditions suivantes sont remplies pour une workload, celle-ci ne peut pas être surveillée par Unified Manager :
+
++
+** Il s'agit d'une copie de protection des données (DP) en mode lecture seule. (Les volumes DP sont surveillés afin de détecter tout trafic généré par l'utilisateur.)
+** Il s'agit d'un clone de données hors ligne.
+** Il s'agit d'un volume en miroir dans une configuration MetroCluster.
+
+
+* *_workloads définis par le système_*
++
+Les processus internes liés à l'efficacité du stockage, à la réplication des données et à l'état du système, notamment :
+
++
+** l'efficacité du stockage, comme la déduplication
+** L'état du disque, qui comprend la reconstruction RAID, le scrubbing du disque, etc.
+** La réplication des données, comme les copies SnapMirror
+** Activités de gestion
+** L'état du système de fichiers, qui comprend diverses activités WAFL
+** Les analyseurs de systèmes de fichiers, tels que WAFL scan
+** Déchargement des copies, par exemple le déchargement des opérations d’efficacité du stockage à partir des hôtes VMware
+** L'état de santé du système, notamment les déplacements de volumes, la compression des données, etc.
+** Volumes non surveillés
+
+
+
+
+Les données de performance des charges de travail définies par le système ne s'affichent dans l'interface graphique que lorsque le composant du cluster utilisé par ces charges de travail est en contention. Par exemple, il est impossible de rechercher le nom d'une charge de travail définie par le système pour consulter ses données de performance dans l'interface graphique.

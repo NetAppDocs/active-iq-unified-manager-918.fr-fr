@@ -1,0 +1,129 @@
+---
+permalink: events/reference_alert_setup_page.html 
+sidebar: sidebar 
+keywords: alert, setup, page, command buttons, list view, details area 
+summary: La page « Configuration des alertes » affiche une liste d’alertes et fournit des informations sur le nom de l’alerte, son statut, la méthode de notification et la fréquence de notification. Vous pouvez également ajouter, modifier, supprimer, activer ou désactiver des alertes depuis cette page. 
+---
+= Découvrez la page de configuration des alertes dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La page « Configuration des alertes » affiche une liste d’alertes et fournit des informations sur le nom de l’alerte, son statut, la méthode de notification et la fréquence de notification. Vous pouvez également ajouter, modifier, supprimer, activer ou désactiver des alertes depuis cette page.
+
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+
+[[command-buttons]]
+== Boutons de commande
+
+* *Ajouter*
++
+Affiche la boîte de dialogue Ajouter une alerte, qui vous permet d'ajouter de nouvelles alertes.
+
+* *Modifier*
++
+Affiche la boîte de dialogue Modifier l'alerte, qui vous permet de modifier les alertes sélectionnées.
+
+* *Supprimer*
++
+Supprime les alertes sélectionnées.
+
+* *Activer*
++
+Permet aux alertes sélectionnées d'envoyer des notifications.
+
+* *Désactiver*
++
+Désactive les alertes sélectionnées lorsque vous souhaitez interrompre temporairement l'envoi de notifications.
+
+* *Test*
++
+Tester les alertes sélectionnées pour vérifier leur configuration après leur ajout ou leur modification.
+
+* *Alertes concernant les événements résolus et obsolètes*
++
+Permet d'activer ou de désactiver l'envoi d'alertes lorsque des événements passent à l'état Résolu ou Obsolète. Cela peut aider à éviter aux utilisateurs de recevoir des notifications inutiles.
+
+
+
+
+
+[[list-view]]
+== Vue de liste
+
+La vue Liste affiche, sous forme de tableau, les informations relatives aux alertes créées. Vous pouvez utiliser les filtres de colonnes pour personnaliser les données affichées. Vous pouvez également sélectionner une alerte pour afficher plus d'informations la concernant dans la zone de détails.
+
+* *Statut*
++
+Indique si une alerte est activée (image:../media/alert_status_enabled.gif[""]) ou désactivée (image:../media/alert_status_disabled.gif[""]).
+
+* *Alerte*
++
+Affiche le nom de l'alerte.
+
+* *Description*
++
+Affiche une description de l'alerte.
+
+* *Méthode de notification*
++
+Affiche le mode de notification sélectionné pour l'alerte. Vous pouvez avertir les utilisateurs par e-mail ou par traps SNMP.
+
+* *Fréquence de notification*
++
+Spécifie la fréquence (en minutes) à laquelle le serveur de gestion continue d'envoyer des notifications jusqu'à ce que l'événement soit acquitté, résolu ou déplacé vers l'état Obsolète.
+
+
+
+
+
+[[details-area]]
+== Zone de détails
+
+La zone de détails fournit plus d'informations sur l'alerte sélectionnée.
+
+* *Nom de l'alerte*
++
+Affiche le nom de l'alerte.
+
+* *Description de l'alerte*
++
+Affiche une description de l'alerte.
+
+* *Événements*
++
+Affiche les événements pour lesquels vous souhaitez déclencher l'alerte.
+
+* *Ressources*
++
+Affiche les ressources pour lesquelles vous souhaitez déclencher l'alerte.
+
+* *Comprend*
++
+Affiche le groupe de ressources pour lequel vous souhaitez déclencher l'alerte.
+
+* *Exclut*
++
+Affiche le groupe de ressources pour lequel vous ne souhaitez pas déclencher l'alerte.
+
+* *Méthode de notification*
++
+Affiche le mode de notification de l'alerte.
+
+* *Fréquence de notification*
++
+Affiche la fréquence à laquelle le serveur de gestion continue d'envoyer des notifications d'alerte jusqu'à ce que l'événement soit acquitté, résolu ou déplacé vers l'état Obsolete.
+
+* *Nom du script*
++
+Affiche le nom du script associé à l'alerte sélectionnée. Ce script est exécuté lorsqu'une alerte est générée.
+
+* *Destinataires du courriel*
++
+Affiche les adresses électroniques des utilisateurs qui reçoivent la notification d'alerte.
+
+

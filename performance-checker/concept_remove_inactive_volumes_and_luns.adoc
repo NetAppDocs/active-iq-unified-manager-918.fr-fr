@@ -1,0 +1,34 @@
+---
+permalink: performance-checker/concept_remove_inactive_volumes_and_luns.html 
+sidebar: sidebar 
+keywords: remove, inactive, volumes, luns 
+summary: Si l’espace libre de l’agrégat a été identifié comme un problème, vous pouvez rechercher les volumes et les LUN inutilisés et les supprimer de l’agrégat. Cela peut contribuer à atténuer le problème d’espace disque insuffisant. 
+---
+= Supprimez les volumes et les LUN inactifs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si l’espace libre de l’agrégat a été identifié comme un problème, vous pouvez rechercher les volumes et les LUN inutilisés et les supprimer de l’agrégat. Cela peut contribuer à atténuer le problème d’espace disque insuffisant.
+
+Si un événement de performance sur un agrégat est dû à un espace disque insuffisant, il existe plusieurs façons de déterminer quels volumes et LUN ne sont plus utilisés.
+
+Pour identifier les volumes inutilisés :
+
+* Sur la page de détails de l'événement, le champ *Nombre d'objets affectés* fournit un lien qui affiche la liste des volumes affectés.
++
+Cliquez sur le lien pour afficher les volumes dans la vue Performance : Tous les volumes. À partir de là, vous pouvez trier les volumes concernés par *IOPS* pour voir quels volumes n'ont pas été actifs.
+
+
+
+Pour identifier les LUN inutilisés :
+
+. Sur la page des détails de l'événement, notez le nom de l'agrégat sur lequel l'événement s'est produit.
+. Dans le volet de navigation de gauche, cliquez sur *Storage* > *LUNs* et sélectionnez *Performance* > *All LUNs* dans le menu *View*.
+. Cliquez sur *Filtrage*, sélectionnez *Agrégat* dans le menu déroulant de gauche, saisissez le nom de l’agrégat dans le champ de texte, puis cliquez sur *Appliquer le filtre*.
+. Triez la liste obtenue des LUN concernées par *IOPS* pour afficher les LUN qui ne sont pas actives.
+
+
+Une fois que vous avez identifié les volumes et les LUN inutilisés, vous pouvez utiliser ONTAP System Manager ou les commandes ONTAP pour supprimer ces objets.

@@ -1,0 +1,27 @@
+---
+permalink: performance-checker/concept_what_happens_when_performance_threshold_policy_is_breached.html 
+sidebar: sidebar 
+keywords: happens, performance, threshold, policy, breached 
+summary: 'Lorsqu"une valeur de compteur dépasse son seuil de performance défini pendant la durée spécifiée, le seuil est franchi et un événement est signalé.' 
+---
+= Répondez aux politiques de seuils de performance dépassés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Lorsqu'une valeur de compteur dépasse son seuil de performance défini pendant la durée spécifiée, le seuil est franchi et un événement est signalé.
+
+Cet événement déclenche les actions suivantes :
+
+* L'événement est affiché dans le tableau de bord, la page Résumé du cluster de performances, la page Événements et la page Inventaire des performances spécifique à l'objet.
+* (facultatif) Une alerte par e-mail concernant l'événement peut être envoyée à un ou plusieurs destinataires, et un trap SNMP peut être envoyé à un récepteur de traps.
+* (facultatif) Un script peut être exécuté pour modifier ou mettre à jour automatiquement les objets de stockage.
+
+
+La première action est toujours exécutée. Vous configurez si les actions facultatives sont exécutées dans la page Configuration des alertes. Vous pouvez définir des actions distinctes selon qu'une stratégie de seuil Warning ou Critical est enfreinte.
+
+Après qu’un dépassement de la stratégie de seuil de performances s’est produit sur un objet de stockage, aucun autre événement n’est généré pour cette stratégie tant que la valeur du compteur ne repasse pas en dessous de la valeur de seuil, moment auquel la durée est réinitialisée pour cette limite. Tant que le seuil continue d’être dépassé, l’heure de fin de l’événement est mise à jour en continu pour indiquer que cet événement est toujours en cours.
+
+Un événement de seuil capture, ou fige, les informations relatives à la gravité et à la définition de la politique afin que des informations de seuil propres à l'événement s'affichent avec celui-ci, même si la politique de seuil est modifiée ultérieurement.

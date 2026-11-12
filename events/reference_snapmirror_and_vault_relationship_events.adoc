@@ -1,0 +1,110 @@
+---
+permalink: events/reference_snapmirror_and_vault_relationship_events.html 
+sidebar: sidebar 
+keywords: asynchronous, mirror, vault, relationship, events, impact area, protection 
+summary: Les événements liés aux relations Asynchronous Mirror et Vault vous fournissent des informations sur l’état de vos relations Asynchronous SnapMirror et Vault afin que vous puissiez surveiller d’éventuels problèmes. Les événements liés aux relations Asynchronous Mirror et Vault sont pris en charge pour les relations de protection des volumes et des Storage VM. Mais seules les relations Vault ne sont pas prises en charge pour la reprise après sinistre des Storage VM. Les événements sont regroupés par zone d’impact et comprennent le nom de l’événement et du trap, le niveau d’impact, le type de source et la gravité. 
+---
+= Découvrez les événements liés à la relation Asynchronous Mirror and Vault dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les événements liés aux relations Asynchronous Mirror et Vault vous fournissent des informations sur l’état de vos relations Asynchronous SnapMirror et Vault afin que vous puissiez surveiller d’éventuels problèmes. Les événements liés aux relations Asynchronous Mirror et Vault sont pris en charge pour les relations de protection des volumes et des Storage VM. Mais seules les relations Vault ne sont pas prises en charge pour la reprise après sinistre des Storage VM. Les événements sont regroupés par zone d’impact et comprennent le nom de l’événement et du trap, le niveau d’impact, le type de source et la gravité.
+
+
+
+[[impact-area-protection]]
+== Zone d'impact : protection
+
+[NOTE]
+====
+Les événements de relations SnapMirror et Vault sont également générés pour les machines virtuelles de stockage protégées par la reprise après sinistre des machines virtuelles de stockage, mais pas pour les relations entre les objets constitutifs.
+
+====
+|===
+| Nom de l'événement (nom du trap) | Niveau d'impact | Type de source | Gravité 
+
+
+ a| 
+Mirror et Vault asynchrones non sains(ocumEvtMirrorVaultRelationshipUnhealthy)
+ a| 
+Risque
+ a| 
+SnapMirror relation
+ a| 
+Avertissement
+
+
+
+ a| 
+Mise en miroir asynchrone et copie de sauvegarde interrompues(ocumEvtMirrorVaultRelationshipStateBrokenoff)
+ a| 
+Risque
+ a| 
+SnapMirror relation
+ a| 
+Erreur
+
+
+
+ a| 
+Échec de l'initialisation asynchrone de la mise en miroir et de l'archivage (ocumEvtMirrorVaultRelationshipInitializeFailed)
+ a| 
+Risque
+ a| 
+SnapMirror relation
+ a| 
+Erreur
+
+
+
+ a| 
+Échec de la mise à jour asynchrone du miroir et du coffre-fort (ocumEvtMirrorVaultRelationshipUpdateFailed)
+ a| 
+Risque
+ a| 
+SnapMirror relation
+ a| 
+Erreur
+
+
+
+ a| 
+Erreur de décalage du miroir asynchrone et du vault (ocumEvtMirrorVaultRelationshipLagError)
+ a| 
+Risque
+ a| 
+SnapMirror relation
+ a| 
+Erreur
+
+
+
+ a| 
+Avertissement de décalage de Asynchronous Mirror and Vault (ocumEvtMirrorVaultRelationshipLagWarning)
+ a| 
+Risque
+ a| 
+SnapMirror relation
+ a| 
+Avertissement
+
+
+
+ a| 
+Échec de la resynchronisation asynchrone de Mirror et Vault(ocumEvtMirrorVaultRelationshipResyncFailed)
+ a| 
+Risque
+ a| 
+SnapMirror relation
+ a| 
+Erreur
+
+|===
+[NOTE]
+====
+L’événement « SnapMirror update failure » est déclenché par le portail Active IQ (Config Advisor).
+
+====

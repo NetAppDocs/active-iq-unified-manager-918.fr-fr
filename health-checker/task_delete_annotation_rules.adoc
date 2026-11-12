@@ -1,0 +1,25 @@
+---
+permalink: health-checker/task_delete_annotation_rules.html 
+sidebar: sidebar 
+keywords: delete, annotation rules 
+summary: 'Vous pouvez supprimer les règles d"annotation de Active IQ Unified Manager lorsque ces règles ne sont plus nécessaires.' 
+---
+= Supprimer les règles d'annotation dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez supprimer les règles d'annotation de Active IQ Unified Manager lorsque ces règles ne sont plus nécessaires.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Lorsque vous supprimez une règle d'annotation, l'annotation est dissociée et supprimée des objets de stockage.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Annotations*.
+. Dans l'onglet *Règles d'annotation*, sélectionnez la règle d'annotation que vous souhaitez supprimer, puis cliquez sur *Supprimer*.
+. Dans la boîte de dialogue *Avertissement*, cliquez sur *Oui* pour confirmer la suppression.
+

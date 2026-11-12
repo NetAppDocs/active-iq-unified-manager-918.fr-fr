@@ -1,0 +1,97 @@
+---
+permalink: performance-checker/reference_what_objects_can_be_used_in_threshold_policies.html 
+sidebar: sidebar 
+keywords: objects, counters, combination, threshold, policies 
+summary: 'Seuls certains compteurs de performance peuvent être utilisés simultanément dans les stratégies combinées. Lorsque des compteurs de performance principaux et secondaires sont spécifiés, les deux doivent dépasser leurs limites maximales pour qu"un événement soit généré.' 
+---
+= Comprendre les objets de stratégie de seuil combinés et les compteurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Seuls certains compteurs de performance peuvent être utilisés simultanément dans les stratégies combinées. Lorsque des compteurs de performance principaux et secondaires sont spécifiés, les deux doivent dépasser leurs limites maximales pour qu'un événement soit généré.
+
+|===
+| Objet et compteur de stockage principaux | Objet de stockage secondaire et compteur 
+
+
+ a| 
+Latence du volume
+ a| 
+IOPS du volume
+
+
+
+ a| 
+Mo/s du volume
+
+
+
+ a| 
+Utilisation de l'agrégat
+
+
+
+ a| 
+Capacité de performance de l’agrégat utilisée
+
+
+
+ a| 
+Utilisation du nœud
+
+
+
+ a| 
+Capacité de performance du nœud utilisée
+
+
+
+ a| 
+Capacité de performance du nœud utilisée - Prise de contrôle
+
+
+
+ a| 
+Latence LUN
+ a| 
+IOPS de la LUN
+
+
+
+ a| 
+Mo/s de la LUN
+
+
+
+ a| 
+Utilisation de l'agrégat
+
+
+
+ a| 
+Capacité de performance de l’agrégat utilisée
+
+
+
+ a| 
+Utilisation du nœud
+
+
+
+ a| 
+Capacité de performance du nœud utilisée
+
+
+
+ a| 
+Capacité de performance du nœud utilisée - Prise de contrôle
+
+|===
+[NOTE]
+====
+Lorsqu'une stratégie de combinaison de volumes est appliquée à un volume FlexGroup, au lieu d'être appliquée à un volume FlexVol, seuls les attributs « Volume IOPS » et « Volume MB/s » peuvent être sélectionnés comme compteur secondaire. Si la stratégie de seuil contient l'un des attributs de nœud ou d'agrégat, la stratégie ne sera pas appliquée au volume FlexGroup, et vous recevrez un message d'erreur décrivant ce cas. Cela s'explique par le fait que les volumes FlexGroup peuvent exister sur plusieurs nœuds ou agrégats.
+
+====

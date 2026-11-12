@@ -1,0 +1,14 @@
+---
+permalink: reporting/concept_customize_nfs_share_reports.html 
+sidebar: sidebar 
+keywords: customize, nfs, share, reports 
+summary: 'Vous pouvez personnaliser les rapports de partage NFS pour analyser les informations relatives aux règles et aux politiques d"export NFS des volumes sur vos systèmes de stockage. Par exemple, vous pouvez personnaliser les rapports pour afficher les volumes dont les chemins de montage sont inaccessibles et les volumes avec les règles d"export par défaut.' 
+---
+= Personnalisez les rapports de partage NFS dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez personnaliser les rapports de partage NFS pour analyser les informations relatives aux règles et aux politiques d'export NFS des volumes sur vos systèmes de stockage. Par exemple, vous pouvez personnaliser les rapports pour afficher les volumes dont les chemins de montage sont inaccessibles et les volumes avec les règles d'export par défaut.

@@ -1,0 +1,69 @@
+---
+permalink: health-checker/concept_cluster_components_and_why_they_can_be_in_contention.html 
+sidebar: sidebar 
+keywords: cluster, components, contention 
+summary: 'Vous pouvez identifier les problèmes de performance du cluster lorsqu"un composant du cluster est en contention. Les performances des workloads qui utilisent ce composant ralentissent et leur temps de réponse (latence) aux requêtes client augmente, ce qui déclenche un événement dans Unified Manager.' 
+---
+= Comprendre la contention des composants du cluster dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez identifier les problèmes de performance du cluster lorsqu'un composant du cluster est en contention. Les performances des workloads qui utilisent ce composant ralentissent et leur temps de réponse (latence) aux requêtes client augmente, ce qui déclenche un événement dans Unified Manager.
+
+Un composant en situation de contention ne peut pas fonctionner à un niveau optimal. Ses performances ont diminué, et les performances des autres composants du cluster et des workloads, appelés « victimes », peuvent présenter une latence accrue. Pour sortir un composant de la contention, vous devez réduire son workload ou augmenter sa capacité à traiter davantage de travail, afin que les performances puissent revenir à des niveaux normaux. Comme Unified Manager collecte et analyse les performances des workloads à intervalles de cinq minutes, il détecte uniquement lorsqu'un composant du cluster est constamment surutilisé. Les pics transitoires de surutilisation qui ne durent qu'une courte période pendant l'intervalle de cinq minutes ne sont pas détectés.
+
+Par exemple, un agrégat de stockage peut être en situation de contention parce qu'une ou plusieurs workloads qu'il contient se disputent le traitement de leurs requêtes d'E/S. D'autres workloads sur l'agrégat peuvent être affectés, ce qui entraîne une baisse de leurs performances. Pour réduire le niveau d'activité sur l'agrégat, vous pouvez prendre différentes mesures, par exemple déplacer une ou plusieurs workloads vers un agrégat ou un nœud moins sollicité, afin de réduire la demande globale de workload sur l'agrégat actuel. Pour un groupe de stratégies QoS, vous pouvez ajuster la limite de débit ou déplacer des workloads vers un autre groupe de stratégies, afin que les workloads ne soient plus limités.
+
+Unified Manager surveille les composants de cluster suivants pour vous alerter lorsqu’ils sont en contention :
+
+* *Réseau*
++
+Représente le temps d'attente des requêtes d'E/S par les protocoles réseau externes du cluster. Ce temps d'attente correspond au temps nécessaire pour que les transactions « transfer ready » soient terminées avant que le cluster puisse répondre à une requête d'E/S. Si le composant réseau est en contention, cela signifie qu'un temps d'attente élevé au niveau du protocole impacte la latence d'une ou plusieurs charges de travail.
+
+* *Traitement réseau*
++
+Représente le composant logiciel du cluster impliqué dans le traitement des E/S entre la couche protocolaire et le cluster. Le nœud gérant le traitement réseau a peut-être changé depuis la détection de l'événement. Si le composant de traitement réseau est en contention, cela signifie qu'une utilisation élevée du nœud de traitement réseau impacte la latence d'un ou de plusieurs workloads.
+
++
+Lors de l'utilisation d'un cluster All SAN Array en configuration active-active, la valeur de latence de traitement réseau est affichée pour les deux nœuds afin que vous puissiez vérifier que la charge est répartie équitablement entre eux.
+
+* *Limite QoS maximale*
++
+Représente le paramètre de débit maximal (de pointe) du groupe de règles de qualité de service (QoS) du stockage attribué au workload. Si le composant du groupe de règles est en conflit, cela signifie que tous les workloads du groupe de règles sont limités par la limite de débit définie, ce qui affecte la latence d'un ou de plusieurs de ces workloads.
+
+* *Limite minimale de QoS*
++
+Représente la latence d’un workload causée par le paramètre minimal de débit QoS (attendu) attribué à d’autres workloads. Si le minimum QoS défini sur certains workloads utilise la majeure partie de la bande passante pour garantir le débit promis, les autres workloads seront limités et présenteront une latence plus élevée.
+
+* *Interconnexion de cluster*
++
+Représente les câbles et adaptateurs auxquels les nœuds du cluster sont physiquement connectés. Si le composant d'interconnexion de cluster est saturé, cela signifie qu'un temps d'attente élevé pour les requêtes d'E/S au niveau de l'interconnexion de cluster affecte la latence d'un ou de plusieurs workloads.
+
+* *Data Processing*
++
+Représente le composant logiciel du cluster impliqué dans le traitement des E/S entre le cluster et l'agrégat de stockage qui contient le workload. Le nœud gérant le traitement des données a peut-être changé depuis la détection de l'événement. Si le composant de traitement des données est en contention, cela signifie qu'une utilisation élevée au niveau du nœud de traitement des données affecte la latence d'un ou de plusieurs workloads.
+
+* *Activation du volume*
++
+Représente le processus qui suit l'utilisation de tous les volumes actifs. Dans les environnements de grande taille où plus de 1 000 volumes sont actifs, ce processus suit le nombre de volumes critiques qui doivent accéder simultanément aux ressources via le nœud. Lorsque le nombre de volumes actifs simultanés dépasse le seuil maximal recommandé, certains volumes non critiques présentent une latence, comme indiqué ici.
+
+* *MetroCluster Ressources*
++
+Représente les ressources MetroCluster, notamment NVRAM et les liaisons inter-commutateurs (ISL), utilisées pour mettre en miroir les données entre les clusters dans une configuration MetroCluster. Si le composant MetroCluster est en conflit, cela signifie qu'un débit d'écriture élevé provenant des workloads sur le cluster local ou un problème d'état de la liaison affecte la latence d'un ou de plusieurs workloads sur le cluster local. Si le cluster n'est pas dans une configuration MetroCluster, cette icône n'est pas affichée.
+
+* *Opérations sur des agrégats ou des agrégats SSD*
++
+Représente l’agrégat de stockage sur lequel les workloads s’exécutent. Si le composant d’agrégat est en contention, cela signifie qu’une utilisation élevée de l’agrégat affecte la latence d’un ou de plusieurs workloads. Un agrégat se compose uniquement de HDD, ou d’un mélange de HDD et de SSD (un agrégat Flash Pool), ou d’un mélange de HDD et d’un niveau cloud (un agrégat FabricPool). Un « `SSD Aggregate` » se compose uniquement de SSD (un agrégat 100 % Flash), ou d’un mélange de SSD et d’un niveau cloud (un agrégat FabricPool).
+
+* *Latence du cloud*
++
+Ce composant logiciel du cluster gère les entrées/sorties entre le cluster et le niveau cloud où sont stockées les données utilisateur. Si le composant de latence cloud est saturé, cela signifie qu'un grand nombre de lectures sur des volumes hébergés sur le niveau cloud impactent la latence d'un ou plusieurs workloads.
+
+* *Synchronisation SnapMirror*
++
+Représente le composant logiciel du cluster impliqué dans la réplication des données utilisateur du volume principal vers le volume secondaire dans une relation synchrone SnapMirror. Si le composant de synchronisation SnapMirror est en contention, cela signifie que l'activité des opérations synchrones SnapMirror affecte la latence d'un ou de plusieurs workloads.
+
+

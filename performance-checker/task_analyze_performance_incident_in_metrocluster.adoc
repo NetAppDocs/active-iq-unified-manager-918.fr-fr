@@ -1,0 +1,37 @@
+---
+permalink: performance-checker/task_analyze_performance_incident_in_metrocluster.html 
+sidebar: sidebar 
+keywords: analyzing, dynamic, performance, event, remote, cluster, metrocluster, configuration 
+summary: Vous pouvez utiliser Unified Manager pour analyser les événements de performance dyniques sur un cluster distant dans une configuration MetroCluster. Cette analyse vous aide à déterminer si un événement sur le cluster distant a provoqué un événement sur son cluster partenaire. 
+---
+= Analysez un événement de performance MetroCluster sur un cluster distant dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez utiliser Unified Manager pour analyser les événements de performance dyniques sur un cluster distant dans une configuration MetroCluster. Cette analyse vous aide à déterminer si un événement sur le cluster distant a provoqué un événement sur son cluster partenaire.
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Vous devez avoir analysé un événement de performance sur un cluster local dans une configuration MetroCluster et obtenu l'heure de détection de l'événement.
+* Vous devez avoir vérifié l'état de santé du cluster local et de son cluster partenaire impliqué dans l'événement de performance et avoir obtenu le nom du cluster partenaire.
+
+
+.Étapes
+. Connectez-vous à l'instance Unified Manager qui surveille le cluster partenaire.
+. Dans le volet de navigation de gauche, cliquez sur *Événements* pour afficher la liste des événements.
+. Dans le sélecteur *Plage horaire*, sélectionnez *Dernière heure*, puis cliquez sur *Appliquer la plage*.
+. Dans le sélecteur *Filtering*, sélectionnez *Cluster* dans le menu déroulant de gauche, saisissez le nom du cluster partenaire dans le champ de texte, puis cliquez sur *Apply Filter*.
++
+Si aucun événement n'a été enregistré pour le cluster sélectionné au cours de la dernière heure, cela indique que le cluster n'a rencontré aucun problème de performance pendant la période où l'événement a été détecté sur son partenaire.
+
+. Si le cluster sélectionné présente des événements détectés au cours de la dernière heure, comparez l'heure de détection de l'événement à celle de l'événement sur le cluster local.
++
+Si ces événements impliquent des workloads perturbateurs provoquant une contention sur le composant de traitement des données, un ou plusieurs de ces workloads perturbateurs peuvent avoir causé l'événement sur le cluster local. Vous pouvez cliquer sur l'événement pour l'analyser et consulter les actions suggérées pour le résoudre sur la page de détails de l'événement.
+
++
+Si ces événements n’impliquent pas de workloads perturbateurs, ils n’ont pas provoqué l’événement de performances sur le cluster local.
+
+

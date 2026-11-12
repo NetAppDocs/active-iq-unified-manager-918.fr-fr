@@ -1,0 +1,30 @@
+---
+permalink: health-checker/task_retrieve_support_bundle_using_windows_client.html 
+sidebar: sidebar 
+keywords: retrieve, support bundle, windows client 
+summary: 'Si vous utilisez Windows, vous pouvez télécharger et installer un outil permettant de récupérer le bundle de support depuis votre serveur Unified Manager. Vous pouvez ensuite envoyer ce bundle au support technique pour un diagnostic plus approfondi du problème. Filezilla ou WinSCP sont des exemples d"outils que vous pouvez utiliser.' 
+---
+= Récupérez le bundle de support à l'aide d'un client Windows dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Si vous utilisez Windows, vous pouvez télécharger et installer un outil permettant de récupérer le bundle de support depuis votre serveur Unified Manager. Vous pouvez ensuite envoyer ce bundle au support technique pour un diagnostic plus approfondi du problème. Filezilla ou WinSCP sont des exemples d'outils que vous pouvez utiliser.
+
+.Avant de commencer
+Vous devez être l'utilisateur de maintenance pour effectuer cette tâche.
+
+Vous devez utiliser un outil prenant en charge SCP ou SFTP.
+
+.Étapes
+. Téléchargez et installez l'outil permettant de récupérer le pack de support.
+. Ouvrez l'outil.
+. Connectez-vous à votre serveur de gestion Unified Manager via SFTP.
++
+Cet outil affiche le contenu du répertoire /support et vous permet de visualiser tous les bundles de support existants.
+
+. Sélectionnez le répertoire de destination du support bundle que vous souhaitez copier.
+. Sélectionnez le bundle de support que vous souhaitez copier et utilisez l'outil pour copier le fichier du serveur Unified Manager vers votre système local.
+

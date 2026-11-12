@@ -1,0 +1,25 @@
+---
+permalink: performance-checker/task_select_performance_thresholds_in_zoom_view.html 
+sidebar: sidebar 
+keywords: select, performance, thresholds, counter, charts, zoom, view 
+summary: 'L"application de seuils dans la vue Zoom des graphiques de compteurs offre une vue détaillée des occurrences d"événements de seuil de performance. Vous pouvez ainsi appliquer ou supprimer des seuils et visualiser immédiatement les résultats, ce qui peut s"avérer utile pour déterminer si le dépannage doit être votre prochaine étape.' 
+---
+= Sélectionnez les seuils de performance dans la vue Zoom des graphiques de compteurs dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+L'application de seuils dans la vue Zoom des graphiques de compteurs offre une vue détaillée des occurrences d'événements de seuil de performance. Vous pouvez ainsi appliquer ou supprimer des seuils et visualiser immédiatement les résultats, ce qui peut s'avérer utile pour déterminer si le dépannage doit être votre prochaine étape.
+
+La sélection de seuils dans la vue agrandie des graphiques de compteurs vous permet de visualiser des données précises sur les événements de seuil de performance. Vous pouvez appliquer n'importe quel seuil figurant dans la zone *Policies* de la vue agrandie des graphiques de compteurs.
+
+Dans la vue zoom des graphiques de compteurs, une seule politique peut être appliquée à la fois à l'objet.
+
+.Étape
+. Sélectionnez ou désélectionnez l'image:../media/eye_icon.gif["icône en forme d'œil"] associé à une politique.
++
+Le seuil sélectionné est appliqué à la vue de zoom des graphiques de compteurs. Les seuils critiques sont affichés sous forme de ligne rouge ; les seuils d’alerte sont affichés sous forme de ligne jaune.
+
+

@@ -1,0 +1,79 @@
+---
+permalink: health-checker/task_add_group_rules.html 
+sidebar: sidebar 
+keywords: add, group rules 
+summary: 'Vous pouvez créer des règles de groupe pour ajouter dynamiquement des objets de stockage, tels que des volumes, des clusters ou des machines virtuelles de stockage (SVM), à un groupe. Pour créer une règle de groupe, vous devez configurer au moins un groupe de conditions avec au moins une condition.' 
+---
+= Ajouter des règles de groupe dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer des règles de groupe pour ajouter dynamiquement des objets de stockage, tels que des volumes, des clusters ou des machines virtuelles de stockage (SVM), à un groupe. Pour créer une règle de groupe, vous devez configurer au moins un groupe de conditions avec au moins une condition.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+Les objets de stockage actuellement surveillés sont ajoutés dès la création de la règle de groupe. Les nouveaux objets ne sont ajoutés qu'une fois le cycle de surveillance terminé.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Gestion du stockage* > *Groupes*.
+. Dans l'onglet *Règles du groupe*, cliquez sur *Ajouter*.
+. Dans la boîte de dialogue *Ajouter une règle de groupe*, spécifiez un nom pour la règle de groupe.
+. Dans le champ *Type d'objet cible*, sélectionnez le type d'objet de stockage que vous souhaitez regrouper.
+. Dans le champ *Groupe*, sélectionnez le groupe requis pour lequel vous souhaitez créer des règles de groupe.
+. Dans la section *Conditions*, procédez comme suit pour créer une condition, un groupe de conditions ou les deux :
++
+[cols="2*"]
+|===
+| Créer.... | Faites ceci... 
+
+
+ a| 
+Une condition
+ a| 
+.. Sélectionnez un opérande dans la liste des opérandes.
+.. Sélectionnez *Contient* ou *Est* comme opérateur.
+.. Saisissez une valeur, ou sélectionnez-en une dans la liste disponible.
+
+
+
+
+ a| 
+Un groupe de conditions
+ a| 
+.. Cliquez sur *Ajouter un groupe de conditions*
+.. Sélectionnez un opérande dans la liste des opérandes.
+.. Sélectionnez *Contient* ou *Est* comme opérateur.
+.. Saisissez une valeur, ou sélectionnez-en une dans la liste disponible.
+.. Cliquez sur *Ajouter une condition* pour créer d'autres conditions si nécessaire, et répétez les étapes a à d pour chaque condition.
+
+
+|===
+. Cliquez sur *Add*.
+
+
+
+
+[[example-for-creating-a-group-rule]]
+== Exemple de création d'une règle de groupe
+
+Pour créer une règle de groupe, procédez comme suit dans la boîte de dialogue Ajouter une règle de groupe : configurez une condition et ajoutez un groupe de conditions.
+
+.Étapes
+. Spécifiez un nom pour la règle de groupe.
+. Sélectionnez le type d'objet en tant que machine virtuelle de stockage (SVM).
+. Sélectionnez un groupe dans la liste des groupes.
+. Dans la section Conditions, sélectionnez *Nom de l'objet* comme opérande.
+. Sélectionnez *Contient* comme opérateur.
+. Saisissez la valeur sous la forme de `svm_data`.
+. Cliquez sur *Ajouter un groupe de conditions*.
+. Sélectionnez *Nom de l'objet* comme opérande.
+. Sélectionnez *Contient* comme opérateur.
+. Saisissez la valeur sous la forme  `vol`.
+. Cliquez sur *Ajouter une condition*.
+. Répétez les étapes 8 à 10 en sélectionnant *data-priority* comme opérande à l'étape 8, *Is* comme opérateur à l'étape 9 et *critical* comme valeur à l'étape 10.
+. Cliquez sur *Ajouter* pour créer la condition de la règle de groupe.
+

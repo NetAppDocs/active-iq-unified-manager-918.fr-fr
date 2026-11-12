@@ -1,0 +1,33 @@
+---
+permalink: performance-checker/task_view_node_iops_based_on_workloads_on_local_node.html 
+sidebar: sidebar 
+keywords: view, node, iops, workloads, reside, only, local node 
+summary: 'Le graphique du compteur IOPS du nœud permet de mettre en évidence les opérations qui transitent uniquement par le nœud local via une LIF réseau pour effectuer des opérations de lecture/écriture sur des volumes situés sur un nœud distant. Les graphiques IOPS - « Total (Local) » et « Breakdown (Local) » affichent les IOPS des données résidant uniquement dans les volumes locaux du nœud actuel.' 
+---
+= Afficher les IOPS des nœuds en fonction des charges de travail locales dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le graphique du compteur IOPS du nœud permet de mettre en évidence les opérations qui transitent uniquement par le nœud local via une interface réseau LIF pour effectuer des opérations de lecture/écriture sur des volumes situés sur un nœud distant. Les graphiques IOPS - "`Total (Local)`" et "`Breakdown (Local)`" affichent les IOPS des données résidant uniquement dans les volumes locaux du nœud actuel.
+
+Les versions « `Local` » de ces graphiques de compteurs sont similaires aux graphiques de nœuds pour la capacité et l’utilisation des performances, car elles affichent également uniquement les statistiques des données résidant sur des volumes locaux.
+
+En comparant les versions "`Local`" de ces graphiques de compteurs aux versions "Total" standard de ces graphiques de compteurs, vous pouvez voir si un volume important de trafic passe par le nœud local pour accéder aux volumes sur le nœud distant. Cette situation peut entraîner des problèmes de performance, éventuellement indiqués par une utilisation élevée du nœud, si un trop grand nombre d'opérations passent par le nœud local pour atteindre un volume sur un nœud distant. Dans ce cas, vous pouvez envisager de déplacer un volume vers le nœud local, ou de créer une LIF sur le nœud distant à laquelle le trafic des hôtes accédant à ce volume peut être connecté.
+
+.Étapes
+. Sur la page *Performance/Node Explorer* de votre nœud sélectionné, dans le graphique IOPS, sélectionnez *Total* dans le menu déroulant.
++
+Le graphique IOPS - Total s'affiche.
+
+. Cliquez sur *Zoom View* pour afficher une version agrandie du graphique dans un nouvel onglet du navigateur.
+. De retour sur la page *Performance/Node Explorer*, dans le graphique IOPS, sélectionnez *Total (Local)* dans le menu déroulant.
++
+Le graphique IOPS - Total (Local) est affiché.
+
+. Cliquez sur *Zoom View* pour afficher une version agrandie du graphique dans un nouvel onglet du navigateur.
+. Comparez les deux graphiques côte à côte et identifiez les zones où les valeurs IOPS semblent très différentes.
+. Déplacez votre curseur sur ces zones pour comparer les IOPS locales et totales à un moment précis.
+

@@ -1,0 +1,16 @@
+---
+permalink: install-vapp/concept_overview_of_deployment_process.html 
+sidebar: sidebar 
+keywords: overview, deployment, process 
+summary: Le processus de déploiement décrit les tâches que vous devez effectuer avant de pouvoir utiliser Unified Manager. 
+---
+= Découvrez le processus de déploiement d’Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le processus de déploiement décrit les tâches que vous devez effectuer avant de pouvoir utiliser Unified Manager.
+
+image::../media/deployment_sequence_oc_6_0.gif[Un diagramme illustrant les prérequis de déploiement d'Unified Manager, le déploiement de l'appliance et les étapes de configuration initiales]

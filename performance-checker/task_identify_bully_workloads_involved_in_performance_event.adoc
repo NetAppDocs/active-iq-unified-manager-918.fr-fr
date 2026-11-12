@@ -1,0 +1,27 @@
+---
+permalink: performance-checker/task_identify_bully_workloads_involved_in_performance_event.html 
+sidebar: sidebar 
+keywords: identify, bully workloads, dynamic, performance, event 
+summary: 'Dans Unified Manager, vous pouvez identifier les workloads qui présentent le plus grand écart d"utilisation pour un composant de cluster en contention. L"identification de ces workloads vous aide à comprendre pourquoi certains volumes du cluster ont des temps de réponse longs (latence).' 
+---
+= Identifier les charges de travail excessives dans les événements de performance dynamiques dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Dans Unified Manager, vous pouvez identifier les workloads qui présentent le plus grand écart d'utilisation pour un composant de cluster en contention. L'identification de ces workloads vous aide à comprendre pourquoi certains volumes du cluster ont des temps de réponse longs (latence).
+
+.Avant de commencer
+* Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+* Il doit y avoir des événements de performance dynamique nouveaux, reconnus ou obsolètes.
+
+
+La page Détails de l'événement affiche une liste des workloads définis par l'utilisateur et par le système, classés selon l'utilisation la plus élevée du composant ou selon ceux qui sont les plus affectés par l'événement. Ces valeurs sont basées sur les pics que Unified Manager a identifiés lorsqu'il a détecté l'événement et l'a analysé pour la dernière fois.
+
+.Étapes
+. Consultez la page de détails de l'événement pour obtenir des informations sur l'événement.
+. Dans les graphiques Latence du workload et Activité du workload, sélectionnez *Bully Workloads*.
+. Passez le curseur sur les graphiques pour afficher les principaux workloads perturbateurs définis par l'utilisateur qui affectent le composant.
+

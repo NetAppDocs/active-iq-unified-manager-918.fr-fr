@@ -1,0 +1,39 @@
+---
+permalink: health-checker/task_view_storage_pool_details.html 
+sidebar: sidebar 
+keywords: view, storage pool, details 
+summary: Vous pouvez consulter les détails du pool de stockage pour surveiller son état, le cache total et disponible, ainsi que les allocations utilisées et disponibles. 
+---
+= Consultez les détails du pool de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter les détails du pool de stockage pour surveiller son état, le cache total et disponible, ainsi que les allocations utilisées et disponibles.
+
+.Avant de commencer
+Vous devez avoir le rôle Operator, Application Administrator ou Storage Administrator.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Agrégats*.
+. Cliquez sur le nom d'un agrégat.
++
+Les détails de l’agrégat sélectionné sont affichés.
+
+. Cliquez sur l'onglet *Informations sur le disque*.
++
+Des informations détaillées sur le disque s'affichent.
+
++
+[NOTE]
+====
+Le tableau Cache s'affiche uniquement lorsque l'agrégat sélectionné utilise un pool de stockage.
+
+====
+. Dans le tableau Cache, déplacez le pointeur sur le nom du pool de stockage requis.
++
+Les détails du pool de stockage s’affichent.
+
+

@@ -1,0 +1,26 @@
+---
+permalink: performance-checker/concept_how_cluster_operations_can_affect_workload_latency.html 
+sidebar: sidebar 
+keywords: cluster, operations, affect, workload, latency 
+summary: 'Les opérations (IOPS) représentent l"activité de tous les workloads définis par l"utilisateur et par le système sur un cluster. Les statistiques d"IOPS vous aident à déterminer si les processus du cluster, tels que les sauvegardes ou l"exécution de la déduplication, ont un impact sur la latence du workload (temps de réponse) ou s"ils ont pu provoquer, ou contribuer à, un incident de performance.' 
+---
+= Évaluez comment les opérations de cluster peuvent affecter la latence des charges de travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les opérations (IOPS) représentent l'activité de tous les workloads définis par l'utilisateur et par le système sur un cluster. Les statistiques d'IOPS vous aident à déterminer si les processus du cluster, tels que les sauvegardes ou l'exécution de la déduplication, ont un impact sur la latence du workload (temps de réponse) ou s'ils ont pu provoquer, ou contribuer à, un incident de performance.
+
+Lors de l'analyse des incidents de performance, vous pouvez utiliser les statistiques d'IOPS pour déterminer si un incident de performance a été causé par un problème sur le cluster. Vous pouvez identifier les activités de workload spécifiques qui ont pu contribuer principalement à l'incident de performance. Les IOPS sont mesurées en opérations par seconde (ops/sec).
+
+image::../media/opm_ops_chart_png.png[Graphique IOPS de Unified Manager]
+
+Cet exemple illustre le graphique IOPS. Les statistiques d’opérations réelles sont représentées par une ligne bleue et les prévisions IOPS des statistiques d’opérations sont en vert.
+
+[NOTE]
+====
+Dans certains cas où un cluster est surchargé, Unified Manager peut afficher le message `Data collection is taking too long on Cluster _cluster_name_`. Cela signifie qu’Unified Manager n’a pas collecté suffisamment de statistiques pour effectuer une analyse. Vous devez réduire les ressources utilisées par le cluster afin que des statistiques puissent être collectées.
+
+====

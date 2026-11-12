@@ -1,0 +1,28 @@
+---
+permalink: health-checker/reference_description_of_predefined_annotation_values.html 
+sidebar: sidebar 
+keywords: description, predefined, annotation values 
+summary: 'La priorité des données est une annotation prédéfinie qui prend les valeurs « Critique », « Élevée » et « Faible ». Ces valeurs permettent d"annoter les objets de stockage en fonction de la priorité des données qu"ils contiennent. Il est impossible de modifier ou de supprimer les valeurs d"annotation prédéfinies.' 
+---
+= Comprendre les valeurs d'annotation prédéfinies dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+*Data-priority* est une annotation prédéfinie qui a pour valeurs Mission critical, High et Low. Ces valeurs vous permettent d'annoter les objets de stockage en fonction de la priorité des données qu'ils contiennent. Vous ne pouvez ni modifier ni supprimer les valeurs d'annotation prédéfinies.
+
+* *Priorité des données:Mission critique*
++
+Cette annotation s'applique aux objets de stockage qui contiennent des données stratégiques. Par exemple, les objets qui contiennent des applications de production peuvent être considérés comme stratégiques.
+
+* *Priorité des données:Élevée*
++
+Cette annotation s'applique aux objets de stockage contenant des données hautement prioritaires. Par exemple, les objets hébergeant des applications métier peuvent être considérés comme hautement prioritaires.
+
+* *Priorité des données:Faible*
++
+Cette annotation s'applique aux objets de stockage contenant des données de faible priorité. Par exemple, les objets situés sur un stockage secondaire, comme les destinations de sauvegarde et de mise en miroir, peuvent être de faible priorité.
+
+

@@ -1,0 +1,23 @@
+---
+permalink: reporting/task_search_to_refine_view.html 
+sidebar: sidebar 
+keywords: search, refine, view 
+summary: 'Une fois que vous avez obtenu l"affichage souhaité, vous pouvez affiner les résultats à l"aide du champ de recherche afin de vous concentrer sur les résultats que vous souhaitez inclure dans le rapport.' 
+---
+= Recherchez pour affiner votre affichage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une fois que vous avez obtenu l'affichage souhaité, vous pouvez affiner les résultats à l'aide du champ de recherche afin de vous concentrer sur les résultats que vous souhaitez inclure dans le rapport.
+
+.Étapes
+. Ouvrez la vue personnalisée ou par défaut que vous souhaitez utiliser comme base pour votre rapport.
+. Saisissez du texte dans le champ de recherche pour affiner les données répertoriées dans la vue. Vous pouvez saisir des données partielles dans n'importe laquelle des colonnes affichées. Par exemple, si vous souhaitez rechercher les nœuds dont le nom contient « US_East », vous pouvez affiner la liste complète des nœuds.
++
+Les résultats de votre recherche sont enregistrés dans la vue personnalisée et utilisés dans le rapport programmé généré.
+
+. Donnez un nom à la vue non enregistrée pour enregistrer vos modifications.
+

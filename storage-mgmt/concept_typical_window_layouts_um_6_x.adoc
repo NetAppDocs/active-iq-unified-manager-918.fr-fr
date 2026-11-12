@@ -1,0 +1,30 @@
+---
+permalink: storage-mgmt/concept_typical_window_layouts_um_6_x.html 
+sidebar: sidebar 
+keywords: typical, window, layouts, object, list, details 
+summary: 'Familiarisez-vous avec la disposition typique des fenêtres de Unified Manager, la liste des objets ou les détails des objets, ainsi qu"avec le paramètre d"affichage recommandé pour une navigation efficace.' 
+---
+= Agencements de fenêtres typiques dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Comprendre la disposition type des fenêtres vous aide à naviguer et à utiliser Active IQ Unified Manager efficacement. La plupart des fenêtres de Unified Manager sont similaires à l'une des deux dispositions générales suivantes : liste d'objets ou détails. Le paramètre d'affichage recommandé est d'au moins 1280 x 1024 pixels.
+
+Toutes les fenêtres ne contiennent pas tous les éléments des schémas suivants.
+
+
+
+[[object-list-window-layout]]
+== Disposition de la fenêtre de liste d'objets
+
+image::../media/object_list.png[Capture d'écran de la fenêtre de liste d'objets Active IQ Unified Manager avec les commandes de navigation, de recherche, de filtrage et de rapport clairement identifiées]
+
+
+
+[[object-details-window-layout]]
+== Disposition de la fenêtre des détails de l’objet
+
+image::../media/object_details.gif[Capture d'écran montrant une fenêtre de détails de volume Active IQ Unified Manager avec des onglets, des informations sur la capacité, des objets associés, l'historique et les événements]

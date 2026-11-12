@@ -1,0 +1,16 @@
+---
+permalink: performance-checker/concept_monitor_performance_using_performance_explorer_pages.html 
+sidebar: sidebar 
+keywords: monitoring, performance, explorer, pages 
+summary: 'Les pages de l"Explorateur de performances affichent des informations détaillées sur les performances de chaque objet d"un cluster. Elles offrent une vue détaillée des performances de tous les objets du cluster, permettant ainsi de sélectionner et de comparer les données de performances d"objets spécifiques sur différentes périodes.' 
+---
+= Surveillez les performances à l'aide des pages Performance Explorer dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Les pages de l'Explorateur de performances affichent des informations détaillées sur les performances de chaque objet d'un cluster. Elles offrent une vue détaillée des performances de tous les objets du cluster, permettant ainsi de sélectionner et de comparer les données de performances d'objets spécifiques sur différentes périodes.
+
+Vous pouvez également évaluer les performances globales de tous les objets et comparer les données de performance des objets côte à côte.

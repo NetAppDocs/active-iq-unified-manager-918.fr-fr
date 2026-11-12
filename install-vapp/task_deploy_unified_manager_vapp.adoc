@@ -1,0 +1,46 @@
+---
+permalink: install-vapp/task_deploy_unified_manager_vapp.html 
+sidebar: sidebar 
+keywords: deploy, unified manager 
+summary: 'Le déploiement d"Unified Manager comprend le téléchargement du logiciel, le déploiement de l"appliance virtuelle, la création d"un nom d"utilisateur et d"un mot de passe de maintenance, et la réalisation de la configuration initiale dans l"interface utilisateur Web.' 
+---
+= Déployer Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Le déploiement d'Unified Manager comprend le téléchargement du logiciel, le déploiement de l'appliance virtuelle, la création d'un nom d'utilisateur et d'un mot de passe de maintenance, et la réalisation de la configuration initiale dans l'interface utilisateur Web.
+
+.Avant de commencer
+* Vous devez vérifier et compléter les exigences système pour le déploiement.
++
+Voir link:concept_requirements_for_installing_unified_manager.html["Configuration système requise"].
+
+* Assurez-vous de disposer des informations suivantes :
++
+** Identifiants de connexion pour le site d’assistance NetApp
+** Identifiants pour accéder au serveur VMware vCenter et au client Web vSphere
+** Adresse IP du serveur ESXi sur lequel vous déployez l'appliance virtuelle Unified Manager
+** Détails concernant le centre de données, tels que l'espace de stockage dans le datastore et les besoins en mémoire
+** Le protocole IPv6 doit être activé sur l'hôte si vous prévoyez d'utiliser l'adressage IPv6.
+
+
+
+
+Vous pouvez déployer Unified Manager en tant qu'appliance virtuelle sur un serveur VMware ESXi.
+
+Vous devez accéder à la console de maintenance à l’aide de la console VMware, et non via SSH.
+
+[NOTE]
+====
+À partir de Unified Manager 9.8, VMware Tools a été remplacé par Open VM Tools  `open-vm-tools`). Vous n'avez plus besoin d'installer VMware Tools dans le cadre de l'installation car `open-vm-tools` il est inclus dans le package d'installation de Unified Manager.
+
+====
+Une fois le déploiement et la configuration initiale terminés, vous pouvez soit ajouter des clusters, soit configurer des paramètres réseau supplémentaires dans la console de maintenance, puis accéder à l'interface utilisateur Web.
+
+.Étapes
+. Suivez les étapes dans link:task_download_unified_manager_ova_file.html["Télécharger Unified Manager"].
+. De plus, suivez les étapes dans link:task_deploy_unified_manager_virtual_appliance_vapp.html["Déployer l’appliance virtuelle Unified Manager"].
+

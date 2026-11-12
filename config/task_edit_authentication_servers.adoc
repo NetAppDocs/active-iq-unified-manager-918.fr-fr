@@ -1,0 +1,25 @@
+---
+permalink: config/task_edit_authentication_servers.html 
+sidebar: sidebar 
+keywords: edit, authentication servers 
+summary: 'Vous pouvez modifier le port utilisé par le serveur Unified Manager pour communiquer avec votre serveur d"authentification.' 
+---
+= Modifier les serveurs d'authentification dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez modifier le port utilisé par le serveur Unified Manager pour communiquer avec votre serveur d'authentification.
+
+.Avant de commencer
+Vous devez posséder le rôle d'administrateur d'application.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Général* > *Authentification à distance*.
+. Cochez la case *Désactiver la recherche de groupes imbriqués*.
+. Dans la section *Serveurs d'authentification*, sélectionnez le serveur d'authentification que vous souhaitez modifier, puis cliquez sur *Modifier*.
+. Dans la boîte de dialogue *Modifier le serveur d'authentification*, modifiez les détails du port.
+. Cliquez sur *Enregistrer*.
+

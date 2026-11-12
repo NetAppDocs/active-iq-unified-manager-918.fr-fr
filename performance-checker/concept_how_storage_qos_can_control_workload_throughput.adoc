@@ -1,0 +1,35 @@
+---
+permalink: performance-checker/concept_how_storage_qos_can_control_workload_throughput.html 
+sidebar: sidebar 
+keywords: storage, qos, control, workload, throughput 
+summary: 'Vous pouvez créer un groupe de règles de qualité de service (QoS) pour contrôler la limite d"E/S par seconde (IOPS) ou de débit (MB/s) des workloads qu"il contient. Si les workloads se trouvent dans un groupe de règles sans limite définie, comme le groupe de règles par défaut, ou si la limite définie ne répond pas à vos besoins, vous pouvez l"augmenter ou déplacer les workloads vers un groupe de règles nouveau ou existant disposant de la limite souhaitée.' 
+---
+= Contrôlez le débit des charges de travail grâce à la QoS de stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un groupe de règles de qualité de service (QoS) pour contrôler la limite d'E/S par seconde (IOPS) ou de débit (MB/s) des workloads qu'il contient. Si les workloads se trouvent dans un groupe de règles sans limite définie, comme le groupe de règles par défaut, ou si la limite définie ne répond pas à vos besoins, vous pouvez l'augmenter ou déplacer les workloads vers un groupe de règles nouveau ou existant disposant de la limite souhaitée.
+
+Les groupes de stratégies QoS « traditionnels » peuvent être attribués à des workloads individuels, par exemple un seul volume ou LUN. Dans ce cas, le workload peut utiliser la totalité de la limite de débit. Les groupes de stratégies QoS peuvent également être attribués à plusieurs workloads ; dans ce cas, la limite de débit est « partagée » entre les workloads. Par exemple, une limite QoS de 9 000 IOPS attribuée à trois workloads empêcherait le total des IOPS de dépasser 9 000 IOPS.
+
+Les groupes de règles de QoS « Adaptive » peuvent également être attribués à des workloads individuels ou à plusieurs workloads. Cependant, même lorsqu'ils sont attribués à plusieurs workloads, chaque workload bénéficie de l’intégralité de la limite de débit au lieu de partager cette valeur de débit avec les autres workloads. De plus, les règles de QoS adaptative ajustent automatiquement le paramètre de débit en fonction de la taille du volume, par workload, maintenant ainsi le ratio d’IOPS par téraoctet à mesure que la taille du volume change. Par exemple, si le pic est défini sur 5 000 IOPS/To dans une règle de QoS adaptative, un volume de 10 To aura un débit maximal de 50 000 IOPS. Si le volume est ensuite redimensionné à 20 To, la QoS adaptative ajuste le maximum à 100 000 IOPS.
+
+À partir d'ONTAP 9.5, vous pouvez inclure la taille de bloc lors de la définition d'une politique QoS adaptative. Cela convertit effectivement la politique d'un seuil d'IOPS/To en un seuil de Mo/s lorsque les workloads utilisent des tailles de bloc très importantes et finissent par consommer un pourcentage élevé du débit.
+
+Pour les règles QoS de groupe partagées, lorsque les IOPS ou le débit en Mo/s de toutes les charges de travail d'un groupe de règles dépassent la limite définie, le groupe de règles limite les charges de travail afin de restreindre leur activité, ce qui peut dégrader les performances de toutes les charges de travail du groupe de règles. Si un événement de performance dynamique est généré par la limitation d'un groupe de règles, la description de l'événement affiche le nom du groupe de règles concerné.
+
+Dans la vue Performance: All Volumes, vous pouvez trier les volumes concernés par IOPS et Mo/s afin de voir quels workloads présentent l’utilisation la plus élevée et ont pu contribuer à l’événement. Dans la page Performance/Volumes Explorer, vous pouvez sélectionner d’autres volumes, ou des LUN sur le volume, pour les comparer à l’utilisation des IOPS ou du débit en MBps du workload concerné.
+
+En attribuant les workloads qui consomment excessivement les ressources du nœud à un groupe de stratégies plus restrictif, ce groupe de stratégies limite leur activité, ce qui peut réduire l’utilisation des ressources sur ce nœud. Toutefois, si vous souhaitez qu’un workload puisse utiliser davantage de ressources du nœud, vous pouvez augmenter la valeur du groupe de stratégies.
+
+Vous pouvez utiliser System Manager, les commandes ONTAP ou Unified Manager Performance Service Levels pour gérer les groupes de stratégies, notamment les tâches suivantes :
+
+* Création d'un groupe de règles
+* Ajout ou suppression de workloads dans un groupe de stratégies
+* Déplacer un workload entre des groupes de stratégie
+* Modification de la limite de débit d'un groupe de stratégies
+* Déplacement d'une workload vers un autre agrégat et/ou nœud
+

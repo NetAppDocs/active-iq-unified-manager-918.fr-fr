@@ -1,0 +1,51 @@
+---
+permalink: storage-mgmt/reference_cluster_connectivity_status_definitions.html 
+sidebar: sidebar 
+keywords: cluster, connectivity, status, definitions 
+summary: Comprendre les états de connectivité entre les clusters dans une configuration MetroCluster, tels que Optimal, Impacté ou Hors service. 
+---
+= Comprendre la connectivité des clusters dans une configuration MetroCluster sur FC dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+La connectivité entre les clusters dans une configuration MetroCluster over FC peut présenter l’un des états suivants : Optimal, Impacted ou Down. La compréhension des états de connectivité vous permet de gérer efficacement vos configurations MetroCluster.
+
+|===
+| État de la connectivité | Description | Icône affichée 
+
+
+ a| 
+Optimal
+ a| 
+La connectivité entre les clusters dans la configuration MetroCluster est normale.
+ a| 
+image:../media/metrocluster_connectivity_optimal.gif["icône optimale de connectivité MetroCluster"]
+
+
+
+ a| 
+Impacté
+ a| 
+Une ou plusieurs erreurs compromettent l’état de disponibilité du basculement ; toutefois, les deux clusters de la configuration MetroCluster restent opérationnels. Par exemple, en cas de panne de la liaison ISL, de panne de la liaison IP intercluster ou d’inaccessibilité du cluster partenaire.
+ a| 
+image:../media/metrocluster_connectivity_impacted.gif["icône de connectivité MetroCluster"]
+
+
+
+ a| 
+En panne
+ a| 
+La connectivité entre les clusters dans la configuration MetroCluster est interrompue, car l'un des clusters ou les deux sont hors service ou que les clusters sont en mode de basculement. Par exemple, lorsque le cluster partenaire est hors service à la suite d'un sinistre ou lors d'un basculement planifié à des fins de test.
+ a| 
+Basculement avec erreurs:
+
+image::../media/metrocluster_connectivity_down.gif[icône de connectivité MetroCluster en panne]
+
+Basculement réussi:
+
+image::../media/metrocluster_connectivity_failover.gif[icône de basculement de connectivité MetroCluster]
+
+|===

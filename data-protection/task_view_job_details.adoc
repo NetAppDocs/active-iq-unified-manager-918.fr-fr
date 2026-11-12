@@ -1,0 +1,23 @@
+---
+permalink: data-protection/task_view_job_details.html 
+sidebar: sidebar 
+keywords: view, job, details 
+summary: 'Après avoir démarré un job, vous pouvez suivre sa progression depuis la page Détails du job et surveiller les tâches associées afin de détecter d"éventuelles erreurs.' 
+---
+= Affichez les détails du travail dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Après avoir démarré un job, vous pouvez suivre sa progression depuis la page Détails du job et surveiller les tâches associées afin de détecter d'éventuelles erreurs.
+
+.Avant de commencer
+Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Protection* > *Tâches*.
+. Dans la page Jobs, cliquez sur le nom d’un job dans la colonne *Name* pour afficher la liste des tâches associées à ce job.
+. Cliquez sur une tâche pour afficher des informations supplémentaires dans le volet *Détails de la tâche* et le volet *Messages de la tâche* à droite de la liste des tâches.
+

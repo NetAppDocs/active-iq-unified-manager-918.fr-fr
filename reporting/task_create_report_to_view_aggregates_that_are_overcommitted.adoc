@@ -1,0 +1,42 @@
+---
+permalink: reporting/task_create_report_to_view_aggregates_that_are_overcommitted.html 
+sidebar: sidebar 
+keywords: create, report, view, aggregates, overcommitted 
+summary: 'Vous pouvez créer un rapport pour analyser la capacité de stockage et l"utilisation des agrégats, et pour afficher les agrégats en surengagement.' 
+---
+= Créez un rapport pour afficher les agrégats surengagés dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez créer un rapport pour analyser la capacité de stockage et l'utilisation des agrégats, et pour afficher les agrégats en surengagement.
+
+.Avant de commencer
+* Vous devez disposer du rôle Application Administrator ou Storage Administrator.
+
+
+Suivez les étapes ci-dessous pour créer une vue personnalisée affichant les agrégats qui dépassent le seuil de surallocation, puis planifiez la génération d'un rapport pour cette vue.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Agrégats*.
+. Dans le menu Affichage, sélectionnez *Capacité* > *Tous les agrégats*.
+. Sélectionnez *Afficher/Masquer* pour supprimer les colonnes que vous ne souhaitez pas inclure dans le rapport.
+. Faites glisser la colonne « `Overcommitted Capacity %` » près de la colonne « `Aggregate` ».
+. Cliquez sur l'icône de filtre, ajoutez les filtres suivants, puis cliquez sur *Apply Filter* :
++
+** Le pourcentage de capacité surallouée est supérieur à 100%
+
+
+. Cliquez en haut de la colonne "`Overcommitted Capacity %`" pour trier les résultats par pourcentage de capacité.
+. Enregistrez la vue sous un nom spécifique qui reflète ce qu'elle affiche, par exemple « `Aggregates overcommitted` », et cliquez sur la coche (image:../media/blue_check.gif[""]).
+. Cliquez sur le bouton *Rapports programmés* sur la page d'inventaire.
+. Cliquez sur *Ajouter une planification* pour ajouter une nouvelle ligne à la page Planifications des rapports afin de définir les caractéristiques de la planification du nouveau rapport.
+. Saisissez un nom pour la planification du rapport et remplissez les autres champs du rapport, puis cliquez sur la coche (image:../media/blue_check.gif[""]) à la fin de la ligne.
++
+Le rapport est envoyé immédiatement à titre de test. Ensuite, le rapport est généré et envoyé par courriel aux destinataires indiqués, selon la fréquence spécifiée.
+
+
+
+D’après les résultats présentés dans le rapport, vous pourriez souhaiter ajouter davantage de capacité aux agrégats ou déplacer certaines données de certains agrégats.

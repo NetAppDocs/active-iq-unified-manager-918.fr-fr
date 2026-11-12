@@ -1,0 +1,86 @@
+---
+permalink: storage-mgmt/concept_manage_storage_efficiency_policies.html 
+sidebar: sidebar 
+keywords: manage, storage, efficiency, policies, guidelines, create, custom 
+summary: 'Une stratégie d"efficacité du stockage (SEP) vous permet de définir les caractéristiques d"efficacité du stockage d"un workload. Vous pouvez attribuer une SEP à un workload lors de la création initiale du workload, ou ultérieurement en modifiant le workload.' 
+---
+= Gérer les politiques d'efficacité du stockage dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Une stratégie d'efficacité du stockage (SEP) vous permet de définir les caractéristiques d'efficacité du stockage d'un workload. Vous pouvez attribuer une SEP à un workload lors de la création initiale du workload, ou ultérieurement en modifiant le workload.
+
+L'efficacité du stockage comprend l'utilisation de technologies telles que le thin provisioning, la déduplication et la compression des données, qui augmentent l'utilisation du stockage et réduisent les coûts de stockage. Lors de la création de SEP, vous pouvez utiliser ces technologies d'économie d'espace individuellement ou conjointement pour obtenir une efficacité maximale du stockage. Lorsque vous associez les stratégies à vos workloads de stockage, les paramètres de stratégie spécifiés leur sont attribués. Unified Manager vous permet d'attribuer des SEP définies par le système et par l'utilisateur afin d'optimiser les ressources de stockage de votre centre de données.
+
+Unified Manager fournit deux SEP définies par le système : High et Low. Ces SEP s'appliquent à la plupart des workloads de stockage dans un centre de données, toutefois, vous pouvez créer vos propres politiques si les SEP définies par le système ne répondent pas à vos exigences.
+
+Vous ne pouvez pas modifier une SEP définie par le système ou actuellement affectée à un workload. Vous ne pouvez pas supprimer une SEP affectée à un workload, ou s'il s'agit de la seule SEP disponible.
+
+La page « Politiques d’efficacité du stockage » répertorie les SEP disponibles et vous permet d’ajouter, de modifier et de supprimer des SEP personnalisées. Cette page affiche les informations suivantes :
+
+|===
+| Champ | Description 
+
+
+ a| 
+Nom
+ a| 
+Nom du SEP.
+
+
+
+ a| 
+Type
+ a| 
+Si la stratégie est définie par le système ou par l'utilisateur.
+
+
+
+ a| 
+Réserve d'espace
+ a| 
+Si le volume est à provisionnement fin ou à provisionnement épais.
+
+
+
+ a| 
+Déduplication
+ a| 
+Si la déduplication est activée sur la workload:
+
+* En ligne : la déduplication s’effectue pendant l’écriture sur le workload
+* Contexte : La déduplication se produit dans le workload
+* Désactivée : la déduplication est désactivée sur le workload
+
+
+
+
+ a| 
+Compression
+ a| 
+Indique si la compression des données est activée sur le workload :
+
+* En ligne : la compression des données s’effectue lors de leur écriture sur le workload
+* Contexte : la compression des données se produit dans le workload
+* Désactivation : la compression des données est désactivée sur le workload
+
+
+
+
+ a| 
+Charges de travail
+ a| 
+Nombre de workloads de stockage auxquels le SEP a été attribué
+
+|===
+
+
+[[guidelines-for-creating-a-custom-storage-efficiency-policy]]
+== Lignes directrices pour la création d'une politique d'efficacité du stockage personnalisée
+
+Si les SEP existants ne répondent pas aux exigences de stratégie pour vos workloads de stockage, vous pouvez créer un SEP personnalisé. Toutefois, il est recommandé d'utiliser les SEP définis par le système pour vos workloads de stockage et de ne créer des SEP personnalisés qu'en cas de nécessité.
+
+Vous pouvez consulter le SEP attribué aux workloads sur la page « Tous les workloads » et sur la page des détails du volume / de l’état de santé. Vous pouvez consulter le taux de réduction des données au niveau du cluster (sans les copies Snapshot) en fonction de ces gains d’efficacité du stockage dans le panneau « Capacité » du tableau de bord et dans la vue « Capacité : Tous les clusters ».

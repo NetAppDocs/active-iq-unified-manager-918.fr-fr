@@ -1,0 +1,31 @@
+---
+permalink: performance-checker/task_view_qos_policy_group_settings_for_volumes_or_luns.html 
+sidebar: sidebar 
+keywords: view, qos, policy, group, settings, applied, specific, volumes, luns 
+summary: Vous pouvez consulter les groupes de stratégies QoS qui ont été appliqués à vos volumes et LUNs, et vous pouvez accéder à la vue Performance/QoS Policy Groups pour afficher les paramètres de configuration détaillés de chaque stratégie QoS. 
+---
+= Affichez les paramètres des groupes de règles QoS pour les volumes ou les LUN dans Active IQ Unified Manager
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vous pouvez consulter les groupes de stratégies QoS qui ont été appliqués à vos volumes et LUNs, et vous pouvez accéder à la vue Performance/QoS Policy Groups pour afficher les paramètres de configuration détaillés de chaque stratégie QoS.
+
+Les étapes permettant de consulter la politique QoS appliquée à un volume sont indiquées ci-dessous. La procédure est similaire pour un LUN.
+
+.Étapes
+. Dans le volet de navigation de gauche, cliquez sur *Stockage* > *Volumes*.
++
+La vue « Santé : Tous les volumes » s'affiche par défaut.
+
+. Dans le menu Affichage, sélectionnez *Performance: volumes dans le groupe de règles QoS*.
+. Repérez le volume que vous souhaitez examiner et faites défiler vers la droite jusqu'à ce que vous voyiez la colonne *Groupe de stratégie QoS*.
+. Cliquez sur le nom du groupe de stratégies QoS.
++
+La page Quality of Service correspondante s'affiche selon qu'il s'agit d'une politique QoS traditionnelle, d'une politique QoS adaptative ou d'une politique QoS créée à l'aide de Unified Manager Performance Service Levels.
+
+. Consultez les paramètres de configuration détaillés du groupe de stratégies QoS.
+. Cliquez sur le bouton d’extension (image:../media/chevron_down.gif[""]) à côté du nom du groupe de stratégie QoS pour afficher plus de détails sur ce groupe de stratégie.
+
